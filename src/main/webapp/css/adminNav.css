@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* 기본틀 */
+#adminNav {
+	width: 250px;
+	height: 100%;
+	padding: 100px 0;
+	background: #dddddd;
+	border-right: 1px solid #999;
+	font-size: 11pt;
+}
+#adminNav > ul {
+	padding: 10px;
+}
+#adminNav > ul li {
+	list-style: none;
+	padding: 7px 20px;
+}
+#adminNav li a {
+	text-decoration: none;
+	color: black;
+}
+
+/* 메뉴 */
+#adminNav .navMenu {
+	
+}
+#adminNav .navClickMenu {
+	background: #999;
+	color: white;	
+}
+#adminNav .navClickMenu a {
+	background: #999;
+	color: white;	
+}
+
+/* 소메뉴 */
+#adminNav .navSubMenu {
+	display: none;
+}
+#adminNav .navSubClickMenu {
+	display: block;
+	padding-left: 30px;
+	color: white;
+}
+#adminNav .navSubClickMenu a {
+	color: white;
+}
