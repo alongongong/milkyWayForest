@@ -1,0 +1,7 @@
+@charset "UTF-8";
+#findStoreDiv {
+	display: flex;
+}
+#findStoreDiv #storeList {
+	width: 375px;
+}
