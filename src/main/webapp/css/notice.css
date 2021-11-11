@@ -1,1 +1,39 @@
 @charset "UTF-8";
+#eventViewForm {
+	width: 80%;
+}
+#eventViewForm legend {
+	font-size: 23pt;
+}
+#eventViewForm #eventViewTable {
+	width: 100%;
+	border-bottom: 1px solid #999;
+}
+#eventViewForm #eventViewTable th {
+	border: 1px solid #999;
+	font-size: 18pt;
+	padding: 5px;
+}
+#eventViewForm #eventViewDate {
+	float: right;
+	padding: 9px 20px;
+	font-size: 8pt;
+	color: #999;
+	font-weight: normal;
+	vertical-align: middle;
+}
+#eventViewForm #eventViewTable td {
+	padding: 20px;
+}
+#eventViewForm #eventViewTable tr:first-child {
+	border: 1px solid #999;
+} 
+#eventViewForm #eventListBtn {
+	width: 100px;
+	height: 35px;
+	float: right;
+}
+#eventViewForm:after {
+	content: '';
+	clear: both;
+}

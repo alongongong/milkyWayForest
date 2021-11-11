@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* body { background-color: red; } 확인용 */
+
+html { font-size: 15px; }
+body { font-size: .7rem; }
+
+header { boder:none; }
+header > div h1 { padding: .9rem 0 .7rem 1rem; }
+header h1 img { width:3.5rem; }
+header > div nav { display:none; }
+header > div .spot { right: 4rem; top:1.3rem; }
+header > div .spot i { display: inline-block; font-size: 2.8rem; }
+header .total { display: inline-block; position: absolute; right:.9rem; 
+top:1.8rem; font-size: 3rem; }
+header > div .spot li a { padding:0; }
+header > div .spot li ~ li a:after { display: none; }
+/*모바일창시, 2,3,5번째 항목들은 사라지게한다*/
+header > div .spot li:nth-child(2),
+header > div .spot li:nth-child(3),
+header > div .spot li:nth-child(4),
+header > div .spot li:nth-child(6) {display:none;}
+header > div .spot li span { position:absolute; left:-4000%;}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/* body { background-color: blue; } 확인용 */ 
+
+html { font-size: 17px; }
+body { font-size: 1rem; }
+
+header > div { width: 100%; margin: 0; }
+header > div h1 { padding: .3rem 0 .3rem 1rem; }
