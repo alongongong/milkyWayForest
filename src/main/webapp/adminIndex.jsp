@@ -22,6 +22,9 @@ ul, li, a, hr, p{
 	width: 85%;
 	margin: 0 auto;
 }
+#adminSection {
+	padding: 30px;
+}
 </style>
 
 </head>
