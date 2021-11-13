@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#mugMenuDiv,
+#glassMenuDiv, 
+#plasticMenuDiv, 
+#stainlessMenuDiv,
+#thermosMenuDiv, 
+#coffeEtcMenuDiv {
+	background : #FAFAD2;
+}
