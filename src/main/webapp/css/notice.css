@@ -2,6 +2,8 @@
 /* 게시판 공통 사항 */
 #eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #qnaBoardForm {
 	width: 80%;	
+	margin: 0 auto;
+	padding: 0;
 }
 #eventBoardForm legend, #eventViewForm legend, #faqBoardForm legend, #noticeBoardForm legend, #qnaBoardForm legend {
 	font-size: 23pt;
@@ -19,9 +21,9 @@
 	text-decoration: none;
 	color: #777;
 }
-#eventBoardNav a img, #noticeBoardNav a img, #eventViewBoardNav a img, #faqBoardNav a img, #qnaBoardNav a img {
+/* #eventBoardNav a img, #noticeBoardNav a img, #eventViewBoardNav a img, #faqBoardNav a img, #qnaBoardNav a img {
 	margin-bottom: 5px;
-}
+} */
 #eventBoardNav a:last-child, #noticeBoardNav a:last-child, #eventViewBoardNav a:last-child, #faqBoardNav a:last-child, #qnaBoardNav a:last-child {
 	font-weight: bold;
 }

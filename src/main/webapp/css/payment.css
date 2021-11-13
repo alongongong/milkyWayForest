@@ -1,0 +1,24 @@
+@charset "UTF-8";
+#paymentForm {
+	width: 80%;
+	margin: 0 auto;
+}
+#paymentForm #paymentBody {
+	display: flex;
+	height: 1000px;
+}
+#paymentForm #leftDiv {
+	width: 75%;
+}
+#paymentForm #rightDiv {
+	width: 23%;
+}
+#paymentForm #paymentStickyDiv {
+	position: sticky;
+	border: 1px solid #999;
+	top: 30px;
+}
+#paymentForm #paymentBody:after {
+	content: '';
+	clear: both;
+}

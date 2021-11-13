@@ -16,7 +16,7 @@
 	<div id="noticeBoardSearchDiv">
 		<div>
 			<input type="text" id="noticeBoardSearch" placeholder="검색어를 입력해 주세요." size="35">
-			<input type="button" id="noticeBoardSearchBtn" class="btn table" value="검색">
+			<input type="button" id="noticeBoardSearchBtn" class="btn" value="검색">
 		</div>
 	</div>
 	<br>
