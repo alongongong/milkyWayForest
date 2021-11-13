@@ -1,10 +1,69 @@
 @charset "UTF-8";
-#eventViewForm {
-	width: 80%;
+/* 게시판 공통 사항 */
+#eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #qnaBoardForm {
+	width: 80%;	
 }
-#eventViewForm legend {
+#eventBoardForm legend, #eventViewForm legend, #faqBoardForm legend, #noticeBoardForm legend, #qnaBoardForm legend {
 	font-size: 23pt;
 }
+
+/* 게시판 위치 표시 */
+#eventBoardNav, #noticeBoardNav, #eventViewBoardNav, #faqBoardNav, #qnaBoardNav {
+	margin-bottom: 30px;
+}
+#eventBoardNav div, #eventViewBoardNav div, #noticeBoardNav div, #faqBoardNav div, #qnaBoardNav div {
+	float: right;
+	color: #777;
+}
+#eventBoardNav a, #noticeBoardNav a, #eventViewBoardNav a, #faqBoardNav a, #qnaBoardNav a {
+	text-decoration: none;
+	color: #777;
+}
+#eventBoardNav a img, #noticeBoardNav a img, #eventViewBoardNav a img, #faqBoardNav a img, #qnaBoardNav a img {
+	margin-bottom: 5px;
+}
+#eventBoardNav a:last-child, #noticeBoardNav a:last-child, #eventViewBoardNav a:last-child, #faqBoardNav a:last-child, #qnaBoardNav a:last-child {
+	font-weight: bold;
+}
+
+
+/* 공지사항 리스트 */
+#noticeBoardForm #noticeBoardSearchDiv {
+	background: #eee;
+	height: 80px;
+}
+#noticeBoardForm #noticeBoardSearchDiv div {
+	float: right;
+	padding-right: 30px;
+	margin-top: 20px;
+}
+#noticeBoardForm #noticeBoardSearchDiv #noticeBoardSearch {
+	border: 1px solid #aaa;
+	height: 40px;
+	margin-right: 5px;
+}
+#noticeBoardForm #noticeBoardSearchDiv #noticeBoardSearchBtn {
+	height: 40px;
+	padding: 5px 20px;
+	margin-bottom: 5px;
+	background: #154520;
+	color: white;
+}
+#noticeBoardForm #noticeBoardTable th {
+	text-align: center;
+}
+
+
+/* 이벤트 리스트 */
+#eventBoardForm #eventBoardNowDiv, #eventBoardForm #eventBoardEndDiv {
+	background: #eee;
+	height: 70px;
+	font-size: 15pt;
+	font-weight: bold;
+	padding: 20px 30px;
+}
+
+/* 이벤트 글내용 */
 #eventViewForm #eventViewTable {
 	width: 100%;
 	border-bottom: 1px solid #999;

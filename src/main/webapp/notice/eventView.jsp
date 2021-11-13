@@ -3,6 +3,14 @@
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="eventViewForm">
 	<legend>이벤트</legend>
+	<br>
+	<div id="eventViewBoardNav">
+		<div>
+			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="">notice</a> > 
+			<a href="">이벤트</a>
+		</div>
+	</div>
 	<br><br>
 	<table id="eventViewTable">
 		<tr>
