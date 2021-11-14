@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+#writeAgreeForm>ul,#writeAgreeForm>ul>li>ul>li{list-style: none}
+#writeAgreeForm>ul>.check01{width:100%; margin:0 auto;}
+#writeAgreeForm>ul>.check03{width:100%; margin:0 auto;}
+#writeAgreeForm>ul>li>.writeAgreeFix::after{content: "";display: block;clear: both;}
+#writeAgreeForm>ul>li>.writeAgreeFix{margin:0;padding:0;}
+#writeAgreeForm{width: 40%;margin: 0 auto;}
+#writeAgreeForm>ul.writeAgreeBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
+#writeAgreeForm>.writeAgreeCheckBox,.writeAgreeCheckBox>ul{position: relative; padding:0;}
+#writeAgreeForm>.writeAgreeCheckBox>ul>li{float: left;}
+#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:first-child{width: 100%;padding: 20px;font-weight: 600;color: #888;}
+#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:nth-child(2){position: absolute;top: 58%;right: 5%;margin-top: -12px;}
+#writeAgreeForm>.footBtwrap>li{float: left;width: 50%;height: 60px;}
+#writeAgreeForm>.footBtwrap>li>button{display: block; width: 100%;height: 100%; font-size: 20px;text-align: center;line-height: 60px;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent{background:#f7f7f7; box-sizing:border-box; color:#666 !important; width:95%; height:160px;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent{border:1px solid #ddd; border-radius:3px;margin-bottom:20px;overflow:scroll;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent{padding:2%; margin:0 auto;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent>p:first-child{font-size:17px; text-align:center; color:green; font-weight:bold;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent>p{font-size:15px;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent>ul>li{font-size:15px;list-style:none;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent>ul{padding:0;}
+#writeAgreeForm>ul>li>div>ul>div>li{font-size:150%; font-weight:bold; color:skyblue; list-style:none;text-align:center;}
+#writeAgreeForm>.writeAgreeBox>.writeAgreeCheckBox>div>.writeAgreeFix>li>#writeAgreeImg{width:50%; height:200px; margin:0 auto; padding:3%}
+#writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
+#writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}
+#writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc;}
