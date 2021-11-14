@@ -4,28 +4,16 @@
 	padding:0;
 }
 
-#findIdForm div.main-container{
+#findIdForm #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	margin-top: 21px;
+	/* margin-top: 21px; */
 }
-#findIdForm div.main-container div.main-wrap{
-	width:768px;
+#findIdForm #main-container #main-wrap{
+	/* width:768px; */
 
-}
-
-/*** header ***/
-#findIdForm header div.logo-wrap{
-	padding-top:55px;
-	display:flex;	
-	flex-direction: column;
-	align-items: center;
-}
-#findIdForm header div.logo-wrap img{
-	width: 200px;
-	height: 200px;
 }
 
 /*** section ***/
@@ -37,43 +25,45 @@
 }
 
 /* 아이디 찾는 방법 선택 */
-#findIdForm div.findId-select-wrap h2{
+#findIdForm #findId-select-wrap h2{
 	font-size: 20px;
 }
-#findIdForm div.findId-select-wrap p{
+#findIdForm #findId-select-wrap p{
 	font-size: 15px;
 }
-#findIdForm div.findId-select-wrap ul{
-	padding-top:25px;
+#findIdForm #findId-select-wrap ul{
+	/* padding-top:25px; */
 	list-style: none;
 	width: 465px;
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: center; */
 }
-#findIdForm div.findId-select-wrap ul li{
-	padding-bottom: 10px;
+#findIdForm #findId-select-wrap ul li{
+	/* padding-bottom: 10px; */
 }
-#findIdForm div.findId-select-wrap ul li button{
-	width: 465px;
+#findIdForm #findId-select-wrap ul li button{
+	width: 230px;
 	height: 56px;
 	border: solid 1px gray;
 	text-align: left;
 	background: white;
+	display: block;
+	float: left;
 }
-#findIdForm div.findId-select-wrap ul li button span{
+#findIdForm #findId-select-wrap ul li button span{
 	padding-left: 20px;
 	font-size: 18px;
 }
 
 /* 질문으로 찾기 */
-#findIdForm .findId-question-wrap{
+#findIdForm #findId-question-wrap{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#findIdForm div.findId-question-wrap select{
+#findIdForm #findId-question-wrap select{
 	width: 99%;
 	height:30px;
 	text-align: center;
@@ -84,17 +74,17 @@
 	background: white;
 	margin: 5px auto;
 	padding: 5px 0;
-
+	margin-bottom: 13px;
 }
-#findIdForm div.findId-question-input-wrap{
+#findIdForm #findId-question-input-wrap{
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
-	margin-top: 13px;
+	/* margin-top: 13px; */
 }
 
-#findIdForm div.findId-question-input-wrap input{
+#findIdForm #findId-question-input-wrap input{
 	border: none;
 	width:430px;
 	margin-top: 10px;
@@ -104,31 +94,21 @@
 }
 
 /* 이메일로 찾기 */
-#findIdForm div.findId-email-wrap{
+#findIdForm #findId-email-wrap{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#findIdForm div.findId-email-input-wrap, div.check-email-input-wrap{
+#findIdForm #findId-email-input-wrap, #check-email-input-wrap{
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
-	margin-top: 13px;
+	/* margin-top: 13px; */
+	margin-bottom: 13px;
 }
-#findIdForm div.findId-email-input-wrap input{
-	border: none;
-	width:210px;
-	margin-top: 10px;
-	font-size: 14px;
-	margin-left: 10px;
-	height:30px;
-}
-
-
-
-#findIdForm div.check-email-input-wrap input{
+#findIdForm #findId-email-input-wrap input{
 	border: none;
 	width:430px;
 	margin-top: 10px;
@@ -136,10 +116,21 @@
 	margin-left: 10px;
 	height:30px;
 }
-#findIdForm div.check-email-button-wrap {
-	padding-top: 13px;
+
+
+
+#findIdForm #check-email-input-wrap input{
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
 }
-#findIdForm div.check-email-button-wrap button{
+#findIdForm #check-email-button-wrap, #findIdForm #check-number-button-wrap {
+	padding: 13px 0;
+}
+#findIdForm #check-email-button-wrap button, #findIdForm #check-number-button-wrap button{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
@@ -152,45 +143,14 @@
 
 
 /* 공통 부분 */
-#findIdForm div.findId-button-wrap {
+#findIdForm #findId-button-wrap {
 	padding-top: 13px;
 }
-#findIdForm div.findId-button-wrap button{
+#findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
 	background: dargray;
 	color: black;
 	border: solid 1px black;
-}
-
-/*** footer ***/
-#findIdForm footer{
-	padding-top: 95px;
-	padding-bottom: 15px;
-
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	width:768px;
-	
-	/* footer영역을 맨 아래로 붙이는 방법 */
-	/* position: fixed;
-    bottom: 0;
-    width: 100%; */
-}
-#findIdForm div.copyright-wrap{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 15px;
-
-}
-#findIdForm div.copyright-wrap span{
-	font-size: 13px;
-	line-height: 15px;
-}
-#findIdForm div.copyright-wrap span img{
-	width: 15px;
-	height: 15px;
 }
