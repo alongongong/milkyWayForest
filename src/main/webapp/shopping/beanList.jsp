@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원두/차</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/beanNTea.css">
+<title>원두</title>
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/beanList.css">
 </head>
-
 <body>
-<form id="beanNTeaForm" name="beanNTeaForm">
+<form id="beanListForm" name="beanListForm">
 	<header>
 		<div>
 			<h1><a href="#a"><img src="/milkyWayForest/image/milkywayForestLogoYun.png" alt="logo"></a></h1>
@@ -34,38 +33,41 @@
 			</div>
 		
 	</header>
-
-<h1>원두/차</h1>
-
-	<div id="beanNTeaNav">
+	
+	<section id="content_box">
+		<h1>원두 전체상품</h1>
+		
+		<div id="beanListNav">
 		<div>
 			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="">Menu</a> > 
-			<a href="">원두/차</a>
-			
+			<a href="">원두/차</a> > 
+			<a href="">원두</a>
 		</div>
-	</div>
+		</div>
+		
+		
 
-	<div id ="beanNTeaMenu">
-	<div id ="beanNTeaMenuSubject">원두 / 차</div>
-	<br>
-		<ul>
-            <li>
-				<a href="#">원두</a>&nbsp; &nbsp;
-         	    <a href="#">차</a>&nbsp; &nbsp;
-			</li>
-		</ul>
-	</div>
-
-
-<br><br><br>
-
-<div id="beanMenuDiv">원두</div>
-<br><br><br>
-
-<div id="teaMenuDiv">차</div>
-<br><br><br>
-
+			<div class="productGroup">
+			<div>
+				<select>
+					<option>상세분류</option>
+					<option>신규출시된 메뉴</option>
+					<option>시즌 한정상품</option>
+					<option>판매완료된 상품</option>
+				</select>
+				</div>
+			</div>
+			
+			<div id="beanMenuDiv">원두</div>
+			
+			<!-- 상품배열 -->
+				<ul class="beanList1">
+					<li><a href="#"><img></a></li>
+					<li><a href="#">상품이름</a></li>
+				</ul>
+		
+	</section>
 </form>
 </body>
 </html>

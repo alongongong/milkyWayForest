@@ -1,31 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/findIdForm.css">
 
 <form name="findIdForm" id="findIdForm">
-<div class="main-container">
-	<div class="main-wrap">
-		<header>
-			<div class="logo-wrap">
-				<img src="/milkyWayForest/img/milkyway.jpg" alt="logo">
-			</div>
-		</header>
-		
+<div id="main-container">
+	<div id="main-wrap">
 		<section>
-			<div class="findId-select-wrap">
+			<div id="findId-select-wrap">
 				<h2>아이디 찾기</h2>
 				<p>아이디 찾는 방법을 선택하세요</p>
 				<ul>
-					<li><button class="select-question-button"><span>질문으로 찾기</span></button></li>
-					<li><button class="select-email-button"><span>이메일로 찾기</span></button></li>
+					<li><button id="select-question-button"><span>질문으로 찾기</span></button></li>
+					<li><button id="select-email-button"><span>이메일로 찾기</span></button></li>
 				</ul>
 			</div>
 			
 			<!-- 질문으로 찾기 버튼 클릭하면 보이게 -->
-			<div class="findId-question-wrap">
-				<select>
-					<option>---질문을 선택하세요---</option>
+			<div id="findId-question-wrap">
+				<select class="form-select form-select-lg mb-3">
+					<option selected>---질문을 선택하세요---</option>
 					<option value="추억의 장소">기억에 남는 추억의 장소는?</option>
 					<option value="좌우명">자신의 인생 좌우명은?</option>
 					<option value="보물">자신의 보물 1호는?</option>
@@ -37,41 +31,37 @@
 				</select>
 				
 				<p>질문에 대한 답을 입력하세요</p>
-				<div class="findId-question-input-wrap">	
+				<div id="findId-question-input-wrap">	
 					<input type="text" name="findId-question-input"></input>
 				</div>
 			</div>
 			
 			<!-- 이메일로 찾기 버튼 클릭하면 보이게 -->
-			<div class="findId-email-wrap">
+			<div id="findId-email-wrap">
 				<p>이메일을 입력하세요</p>
-				<div class="findId-email-input-wrap">
+				<div id="findId-email-input-wrap">
 					<input type="email" name="email">
 				</div>
 				
-				<div class="check-email-button-wrap">
-					<button class="check-email-button">인증번호 받기</button>
+				<div id="check-email-button-wrap">
+					<button id="check-email-button">인증번호 받기</button>
 				</div>
 				
 				<p>인증번호를 입력하세요</p>
-				<div class="check-email-input-wrap">
+				<div id="check-email-input-wrap">
 					<input type="text" name="check-email-input">
+				</div>
+				
+				<div id="check-number-button-wrap">
+					<button id="check-number-button">인증번호 확인</button>
 				</div>
 			</div>
 			
 			<!-- 공통으로 계속 뜨는 부분 -->
-			<div class="findId-button-wrap">
-				<button class="findId-button">아이디 찾기</button>
+			<div id="findId-button-wrap">
+				<button id="findId-button">아이디 찾기</button>
 			</div>
 		</section>
-		
-		<footer>
-			<div class="copyright-wrap">
-				<span>
-					<img src="/milkyWayForest/img/milkyway.jpg" alt="logo"> Copyright © MilkyWayForest Corp. All Rights Reserved.
-				</span>
-			</div>
-		</footer>	
-	</div><!-- main-wrap -->
-</div><!-- main-container -->
+	</div>
+</div>
 </form>
