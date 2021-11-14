@@ -4,48 +4,36 @@
 	padding:0;
 }
 
-#loginForm div.main-container{
+#loginForm #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 	margin-top: 21px;
 }
-#loginForm div.main-container div.main-wrap{
+#loginForm #main-container #main-wrap{
 	width:768px;
 
 }
 
-/*** header ***/
-#loginForm header div.logo-wrap{
-	padding-top:55px;
-	display:flex;	
-	flex-direction: column;
-	align-items: center;
-}
-#loginForm header div.logo-wrap img{
-	width: 200px;
-	height: 200px;
-}
-
 /*** section - ID Login ***/
-#loginForm section.login-input-wrap{
+#loginForm #login-input-wrap{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#loginForm section.login-input-wrap h2{
+#loginForm #login-input-wrap h2{
 	font-size: 20px;
 }
-#loginForm div.id-input-wrap, div.pwd-input-wrap{
+#loginForm #id-input-wrap, #pwd-input-wrap{
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
 	margin-top: 13px;
 }
-#loginForm div.id-input-wrap input, div.pwd-input-wrap input{
+#loginForm #id-input-wrap input, #pwd-input-wrap input{
 	border: none;
 	width:430px;
 	margin-top: 10px;
@@ -53,10 +41,10 @@
 	margin-left: 10px;
 	height:30px;
 }
-#loginForm div.login-button-wrap {
+#loginForm #login-button-wrap {
 	padding-top: 13px;
 }
-#loginForm div.login-button-wrap button{
+#loginForm #login-button-wrap button{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
@@ -66,16 +54,16 @@
 }
 
 /*** section - Easy Login ***/
-#loginForm section.easy-login-wrap{
+#loginForm #easy-login-wrap{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-top: 40px;
 }
-#loginForm section.easy-login-wrap h2{
+#loginForm #easy-login-wrap h2{
 	font-size: 20px;
 }
-#loginForm section.easy-login-wrap ul{
+#loginForm #easy-login-wrap ul{
 	padding-top:25px;
 	list-style: none;
 	width: 465px;
@@ -83,63 +71,32 @@
 	flex-direction: column;
 	align-items: center;
 }
-#loginForm section.easy-login-wrap ul li{
+#loginForm #easy-login-wrap ul li{
 	padding-bottom: 10px;
 }
-#loginForm section.easy-login-wrap ul li button{
+#loginForm #easy-login-wrap ul li button{
 	width: 465px;
 	height: 56px;
 	border: solid 1px gray;
 	text-align: left;
 	background: white;
 }
-#loginForm section.easy-login-wrap ul li button img{
+#loginForm #easy-login-wrap ul li button img{
 	padding-left: 15px;
 	width: 15px;
 	height: 15px;
 }
 
-#loginForm section.easy-login-wrap ul li button span{
+#loginForm #easy-login-wrap ul li button span{
 	padding-left: 20px;
 	font-size: 18px;
 }
-#loginForm section.easy-login-wrap p.find-write{
+#loginForm #easy-login-wrap p.find-write{
 	color: black;
 	font-size: 14px;
 	padding-top: 10px;
 
 }
-#loginForm section.easy-login-wrap p.find-write a{
+#loginForm #easy-login-wrap p.find-write a{
 	text-decoration: none;
-}
-
-/*** footer ***/
-#loginForm footer{
-	padding-top: 95px;
-	padding-bottom: 15px;
-
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	width:768px;
-	
-	/* footer영역을 맨 아래로 붙이는 방법 */
-	/* position: fixed;
-    bottom: 0;
-    width: 100%; */
-}
-#loginForm div.copyright-wrap{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 15px;
-
-}
-#loginForm div.copyright-wrap span{
-	font-size: 13px;
-	line-height: 15px;
-}
-#loginForm div.copyright-wrap span img{
-	width: 15px;
-	height: 15px;
 }
