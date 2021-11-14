@@ -31,11 +31,11 @@ ul, li, a, hr, p{
 <body>
 <div id="container">
 	<div id="adminNav">
-		<jsp:include page="nav/nav.jsp"></jsp:include>
+		<jsp:include page="nav/adminNav.jsp"></jsp:include>
 	</div>
 	
 	<div id="adminSection">
-		<jsp:include page="${display }"></jsp:include>
+		<jsp:include page="${adminDisplay }"></jsp:include>
 	</div>
 </div>
 </body>
