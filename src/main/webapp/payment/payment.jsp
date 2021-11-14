@@ -14,20 +14,21 @@
 				<th>총금액</th>
 				<th>예상적립금</th>
 			</tr>
-		</table>
-	</div>
+		</table> <!-- paymentProductTable -->
+	</div> <!-- paymentProductDiv -->
+	
 	<div id="paymentBody">
 		<div id="leftDiv">
 			<div id="paymentOrderer">
 				asdadasd
-			</div>
-		</div>
+			</div> <!-- paymentOrderer -->
+		</div> <!-- leftDiv -->
 		<div id="rightDiv">
 			<div id="paymentStickyDiv">
-				총 상품금액<br>
-				총 할인금액<br>
-				총 결제금액<br>				
-			</div>
-		</div>
-	</div>
+				총 상품금액<span id="totalProductPrice"></span><br>
+				총 할인금액<span id="totalSalePrice"></span><br>
+				총 결제금액<span id="totalPayPrice"></span><br>				
+			</div> <!-- paymentStickyDiv -->
+		</div> <!-- rightDiv -->
+	</div> <!-- paymentBody -->
 </form>

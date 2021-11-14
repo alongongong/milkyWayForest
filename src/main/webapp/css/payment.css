@@ -18,7 +18,3 @@
 	border: 1px solid #999;
 	top: 30px;
 }
-#paymentForm #paymentBody:after {
-	content: '';
-	clear: both;
-}

@@ -12,7 +12,7 @@
 	font-weight: bold;
 }
 #cartForm #cartBody {
-	height: 1000px;
+	height: 1300px;
 }
 #cartForm #cartTableDiv {
 	width: 75%;
@@ -29,7 +29,6 @@
 	width: 23%;
 	border: 1px solid #999;
 	padding: 20px 10px;
-	
 }
 #cartForm #cartOrderDetail {
 	border-bottom: 1px solid #ccc;
@@ -52,5 +51,6 @@
 }
 #cartForm #cartBody:after {
 	content: '';
+	display: block;
 	clear: both;
 }
