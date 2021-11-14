@@ -1,26 +1,107 @@
 @charset "UTF-8";
-#beanNTeaForm #beanMenuDiv ,#beanNTeaForm #teaMenuDiv{
-	background : #FAFAD2;
-	
-	width: 80%;
-	height: 50px;  /* 높이는 픽셀로 너비는 % 로 주는게 편함 */
-}  /* 패딩으로 픽셀을 주기  스타일안에서 줄떄는 단위를 꼭쓰기 */
 
-#dd {
-	border: 1px solid black;
-	
-}
+#beanNTeaForm a { text-decoration-line: none; }
+#beanNTeaForm header { background-color : #f6f5ef; }
+#beanNTeaForm li {list-style: none; }
+/*상,하단 메뉴*/
+#beanNTeaForm header > div { position: relative; width: 69rem; margin: 0 auto; } /*width~margin 가운데정렬*/
+#beanNTeaForm header > div:after { content: ""; display: block; clear: both; }
+/*로고*/
+#beanNTeaForm header > div h1{ float: left; padding: 0.1rem 0 0.1rem; }
 
-.bean {
-	border-collapse: collapse;
-	
+/*하단메뉴*/
+#beanNTeaForm header > div .menu { font-size: .6rem; float: right; padding: 4rem 0 0; }
+#beanNTeaForm header > div nav > ul > li { float: left; }
+#beanNTeaForm header > div nav > ul > li > a { display: block; padding: .75rem 1.4rem 0; height: .4rem; 
+font-size: .8rem; color:#333; line-height: 100%; }
+
+/*상단메뉴*/
+#beanNTeaForm header > div .spot { position: absolute; right: 2.25rem; top: 1rem; }
+#beanNTeaForm header > div .spot li { float: left; position: relative; }
+#beanNTeaForm header > div .spot li a { padding: 0 .5rem; font-size: .7rem; color:#333; 
+line-height: 100%; }
+/*상단메뉴 미니바*/
+#beanNTeaForm header > div .spot li ~ li a:after { content: ""; position: absolute; left: 0; top: 50%; 
+width: 1px; height: .6rem; background: #e5e5e5; transform: translateY(-25%); }
+/*상단메뉴 '검색'옆 미니바 제거*/
+#beanNTeaForm header > div .spot li:last-child a:after { display: none; }
+
+/*매장검색*/
+#beanNTeaForm header > div .spot li:last-child a { display: block; padding: 0; width: 1.7rem;
+height: 1rem; background:#fff; border: 1px solid #ccc; text-align: center; line-height: 1rem;
+font-size: 0; color: transparent; border-radius: .25rem; }
+/*매장검색 아이콘*/
+#beanNTeaForm header > div .spot li:last-child a:before { content: "\e97a"; font-family: 'xeicon';
+font-size: 1rem; color:#000; }
+#beanNTeaForm header > div .spot i { display:none; }
+#beanNTeaForm header .total { display : none; }
+
+
+
+#beanNTeaForm h1 {
 	margin: 50px;
 }
 
-.bean th{
-	border-bottom: none;
-} 
-/* .bean td {
-	 padding: 10px;
-	 border-bottom: 1px solid;
-} */
+/* 게시판 목록네비  */
+#beanNTeaForm #beanNTeaNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#beanNTeaForm #beanNTeaNav div{
+	float: right;
+	color: #777;
+}
+
+#beanNTeaForm #beanNTeaNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#beanNTeaForm #beanNTeaNav a:last-child {
+	font-weight: bold;
+	
+}
+
+
+
+
+#beanNTeaForm #beanNTeaMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	/* margin-top: 100px;  */
+	width: 80%;
+}
+#beanNTeaForm #beanNTeaMenuSubject {
+	
+	font-size : 20px;
+	font-weight: bold; 
+	
+}
+
+#beanNTeaForm #beanNTeaMenu li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#beanNTeaForm #beanMenuDiv ,#beanNTeaForm #teaMenuDiv{
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 10px auto;
+	font-size : 20px;
+	font-weight: bold; 
+	
+	
+	/* 높이는 픽셀로 너비는 % 로 주는게 편함 */
+}  /* 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
+
+#beanNTeaForm #beanNTeaMenu a:link { color: black; text-decoration: none; }
+#beanNTeaForm #beanNTeaMenu a:visited { color: black; text-decoration: none; }
+#beanNTeaForm #beanNTeaMenu a:hover { color: darkgreen; text-decoration: underline; }
+#beanNTeaForm #beanNTeaMenu a:active { color: black; text-decoration: none; }
+
+

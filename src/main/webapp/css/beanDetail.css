@@ -1,0 +1,54 @@
+@charset "UTF-8";
+#beanDetailForm h1 {
+	margin: 50px;
+}
+#beanDetailForm #beanDetailNav {
+		display: inline-block;
+		/* padding-right: 50px; */
+		/* margin-right : 50px; */
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#beanDetailForm .productView {
+	position: relative;
+	padding: 100px 0 0 800px ;
+	width: 950px;
+	box-sizing: border-box; 
+	
+}
+#beanDetailForm .productView .beanDetailImg {
+	position:absolute;
+	left: 70px;
+	top:0;
+}
+#beanDetailForm .productView .beanDetailImg > img {
+	border: 1px solid silver;
+	width: 370px;
+	height: 380px;
+}
+
+#beanDetailForm .productView .beanDetailImg li:after {
+	content:"";
+	display: block;
+	clear:both;
+	
+}
+
+#beanDetailForm .productView .beanDetailImg li {
+	float:left;
+	list-style: none;
+	padding: 10px 10px 0 0;
+}
+
+#beanDetailForm .productView .beanDetailImg li.on img {
+	border-color: #0a56a9;
+}
+
+
+#beanDetailForm .productView .beanDetailImg li img {
+	border: 1px solid silver;
+	width: 70px;
+	height: 70px;
+}
