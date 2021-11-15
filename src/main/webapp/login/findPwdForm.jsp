@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="/milkyWayForest/css/findPwdForm.css">
+<link rel="stylesheet" href="/milkyWayForest/css/login.css">
 
 <form name="findPwdForm" id="findPwdForm">
 <div id="main-container">
