@@ -8,7 +8,7 @@
 	<div id="main-wrap">
 		<section id="login-input-wrap">
 			<h2>ID 로그인</h2>
-			<div id="id-input-wrap">	
+			<div id="id-input-wrap" style="outline: none; border-bottom:1px solid #999;">	
 				<input type="text" placeholder="아이디"></input>
 				<div id="id-input-div"></div>
 			</div>

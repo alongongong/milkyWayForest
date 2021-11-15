@@ -28,6 +28,9 @@
 		<div class="productView">
 			<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
 			<table>
+			<tr>
+				<td>제목</td>
+			</tr>
 			</table>
 		
 				
