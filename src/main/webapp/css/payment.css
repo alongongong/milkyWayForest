@@ -3,9 +3,20 @@
 	width: 80%;
 	margin: 0 auto;
 }
-#paymentForm #paymentBody {
-	display: flex;
-	height: 1000px;
+#paymentForm #paymentContainer {
+	display: grid;
+	grid-template-rows: minmax(100px, auto);
+	grid-template-columns: 75% 23%;
+	column-gap: 2%;
+	height: 1300px;
+}
+#paymentForm .item:nth-child(1){
+	grid-column: 1 / 3;
+	
+}
+#paymentForm .item:last-child {
+	grid-column: 2 / 3;
+	grid-row: 2 / 5;
 }
 #paymentForm #leftDiv {
 	width: 75%;
@@ -13,8 +24,41 @@
 #paymentForm #rightDiv {
 	width: 23%;
 }
-#paymentForm #paymentStickyDiv {
+#paymentForm #paymentTotal {
 	position: sticky;
 	border: 1px solid #999;
 	top: 30px;
+	padding: 30px 10px 10px 10px;
+}
+#paymentForm #paymentTotal p {
+	margin-top: 30px; 
+	padding: 10px 0;
+	color: #dc3545;
+	font-size: 13pt;
+	border-top: 1px solid #ccc;
+}
+#paymentForm #paymentOrderBtn {
+	width: 100%;
+	height: 40px;
+	margin: 5px 0;
+}
+#paymentForm #paymentCancelBtn {
+	width: 100%;
+	padding-top: 3px;
+	font-size: 10pt;
+}
+#paymentForm .table {
+	border-top: 2px solid #999;
+	border-bottom: 2px solid #999; 
+}
+#paymentForm #payShipZipcodeBtn {
+	height: 28px;
+	margin-bottom: 5px;
+	padding: 2px 5px;
+}
+#paymentForm #paymentMethod ul {
+	padding: 20px;
+}
+#paymentForm #paymentMethod li {
+	list-style: none;
 }
