@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>커피용품</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/coffeeEtcList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="coffeeEtcListForm" name="coffeeEtcListForm">
 	<section id="content_box">
-		<h1>거피용품 전체상품</h1>
+		<h1>커피용품 전체상품</h1>
 		
 		<div id="coffeeEtcListNav">
 		<div>
@@ -31,7 +31,7 @@
 				</select>
 				</div>
 		
-			<div id="coffeeEtcMenuDiv">보온병</div>
+			<div id="coffeeEtcMenuDiv">커피용품</div>
 			
 			<!-- 상품배열 -->
 				<ul class="coffeeEtcList1">

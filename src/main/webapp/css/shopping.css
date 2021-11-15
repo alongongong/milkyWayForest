@@ -1,0 +1,579 @@
+@charset "UTF-8";
+
+/* 원두/차 메뉴 */
+
+#beanNTeaForm h1 {
+	margin: 50px;
+}
+
+/* 원두/차 게시판 목록네비  */
+#beanNTeaForm #beanNTeaNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#beanNTeaForm #beanNTeaNav div{
+	float: right;
+	color: #777;
+}
+
+#beanNTeaForm #beanNTeaNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#beanNTeaForm #beanNTeaNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#beanNTeaForm #beanNTeaMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	/* margin-top: 100px;  */
+	width: 80%;
+}
+#beanNTeaForm #beanNTeaMenuSubject {
+	
+	font-size : 20px;
+	font-weight: bold; 
+	
+}
+
+#beanNTeaForm #beanNTeaMenu li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#beanNTeaForm #beanMenuDiv ,#beanNTeaForm #teaMenuDiv{
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 10px auto;
+	font-size : 20px;
+	font-weight: bold; 
+	
+	
+	/* 높이는 픽셀로 너비는 % 로 주는게 편함 */
+}  /* 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
+
+#beanNTeaForm #beanNTeaMenu a:link { color: black; text-decoration: none; }
+#beanNTeaForm #beanNTeaMenu a:visited { color: black; text-decoration: none; }
+#beanNTeaForm #beanNTeaMenu a:hover { color: darkgreen; text-decoration: underline; }
+#beanNTeaForm #beanNTeaMenu a:active { color: black; text-decoration: none; }
+
+
+
+
+/* 상품 메뉴 */
+
+#productForm h1 {
+	margin: 50px;
+	
+}
+
+/*  상품 > 게시판 목록네비  */
+#productForm #productNav {  
+	margin-bottom: 90px;
+	margin-right: 90px;
+}
+
+#productForm #productNav div{
+	float: right;
+	color: #777;
+}
+
+#productForm #productNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#productForm #productNav a:last-child {
+	font-weight: bold;
+	
+}
+
+/* 상품메뉴박스 */
+#productForm #productMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	width: 80%;
+}
+
+#productForm #productMenuSubject {
+	font-size : 20px;
+	font-weight: bold; 
+	
+}
+#productForm #productMenu li {
+	
+	list-style: none;
+	font-size : 18px;
+}
+
+
+#productForm #mugMenuDiv,
+#productForm #glassMenuDiv, 
+#productForm #plasticMenuDiv, 
+#productForm #stainlessMenuDiv,
+#productForm #thermosMenuDiv, 
+#productForm #coffeEtcMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 50px auto;
+	font-size : 20px;
+	font-weight: bold; 
+}
+
+#productForm #productMenu a:link { color: black; text-decoration: none; }
+#productForm #productMenu a:visited { color: black; text-decoration: none; }
+#productForm #productMenu a:hover { color: darkgreen; text-decoration: underline; }
+#productForm #productMenu a:active { color: black; text-decoration: none; }
+
+
+/* 원두리스트 메뉴 폼 */
+
+#beanListForm h1 {
+	margin: 50px;
+}
+
+/* 게시판 목록네비  */
+#beanListForm #beanListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#beanListForm #beanListNav div{
+	float: right;
+	color: #777;
+	
+}
+
+#beanListForm #beanListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#beanListForm #beanListNav a:last-child {
+	font-weight: bold;
+	
+}
+
+
+#beanListForm .productGroup {
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+	
+}
+#beanListForm .productGroup div{
+	float: right;
+	
+}
+
+#beanListForm .productGroup select {
+	padding : 5px 10px;
+	/* margin-bottom: 30px;
+	margin-right: 80px;  */
+}
+
+
+#beanListForm #beanMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#beanListForm .beanList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 차 리스트 메뉴 */
+
+#teaListForm h1 {
+	margin: 50px;
+}
+
+
+#teaListForm #teaListNav {
+		display: inline-block;
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#teaListForm .productGroup {
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* border: 1px solid red; */
+	
+}
+
+#teaListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#teaListForm #teaMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#teaListForm .teaList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 머그 리스트 메뉴 */
+#mugListForm h1 {
+	margin: 50px;
+}
+
+
+#mugListForm #mugListNav {
+		display: inline-block;
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#mugListForm .productGroup {
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* border: 1px solid red; */
+	
+}
+
+#mugListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#mugListForm #mugMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#mugListForm .mugList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 글라스 리스트 메뉴 */
+#glassListForm h1 {
+	margin: 50px;
+}
+
+
+#glassListForm #glassListNav {
+		display: inline-block;
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#glassListForm .productGroup {
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* border: 1px solid red; */
+	
+}
+
+#glassListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#glassListForm #glassMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#glassListForm .glassList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+/* 플라스틱텀블러 리스트 메뉴 */
+
+#plasticTumblrListForm h1 {
+	margin: 50px;
+}
+
+
+#plasticTumblrListForm #plasticTumblrListNav {
+		display: inline-block;
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#plasticTumblrListForm .productGroup {
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* border: 1px solid red; */
+	
+}
+
+#plasticTumblrListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#plasticTumblrListForm #plasticTumblrMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#plasticTumblrListForm .plasticTumblrList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 스테인리스텀블러 리스트 메뉴 */
+
+#stainlessTumblrForm h1 {
+	margin: 50px;
+}
+
+
+#stainlessTumblrListForm #stainlessTumblrListNav {
+		display: inline-block;
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#stainlessTumblrListForm .productGroup {
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* border: 1px solid red; */
+	
+}
+
+#stainlessTumblrListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#stainlessTumblrListForm #stainlessTumblrMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#stainlessTumblrListForm .stainlessTumblrList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 보온병 리스트 메뉴 */
+
+#thermosListForm h1 {
+	margin: 50px;
+}
+#thermosListForm #thermosListNav {
+		display: inline-block;
+		/* padding-right: 50px; */
+		/* margin-right : 50px; */
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#thermosListForm .productGroup {
+	/* float: right;  */
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* margin-right: 100px; */
+	/* margin-bottom: 500px 500px;  */
+	/* border: 1px solid red; */
+	
+}
+
+#thermosListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#thermosListForm #thermosMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#thermosListForm .thermosList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 커피용품 리스트 메뉴 */
+
+#coffeeEtcListForm h1 {
+	margin: 50px;
+}
+#coffeeEtcListForm #coffeeEtcListNav {
+		display: inline-block;
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		
+}
+
+#coffeeEtcListForm .productGroup {
+	/* float: right;  */
+	display: inline-block;
+	padding-left : 130px; 
+	margin: 0 80px 0 1050px;  
+	/* margin-right: 100px; */
+	/* margin-bottom: 500px 500px;  */
+	/* border: 1px solid red; */
+	
+}
+
+#coffeeEtcListForm .productGroup select {
+	padding : 3px;
+}
+
+
+#coffeeEtcListForm #coffeeEtcMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#coffeeEtcListForm .coffeeEtcList1 li {
+	display: inline-block;
+	list-style: none;
+	font-size : 18px;
+	margin-left: 80px
+}
+
+
+/* 원두상세페이지 */
+
+#beanDetailForm h1 {
+	margin: 50px;
+}
+#beanDetailForm #beanDetailNav {
+		display: inline-block;
+		/* padding-right: 50px; */
+		/* margin-right : 50px; */
+		margin-left: 1120px;
+		margin-bottom: 30px;
+		/* border: 1px solid red; */
+}
+
+#beanDetailForm .productView {
+	position: relative;
+	padding: 100px 0 0 600px ; 
+	width: 950px;
+	box-sizing: border-box; 
+	
+}
+
+#beanDetailForm .productView #productEngName {
+	
+	border-bottom: 1px solid black;
+}
+
+#beanDetailForm .productView .beanDetailImg {
+	position:absolute;
+	left: 70px;
+	top:0;
+}
+#beanDetailForm .productView .beanDetailImg > img {
+	border: 1px solid silver;
+	width: 370px;
+	height: 380px;
+}
+
+#beanDetailForm .productView .beanDetailImg li:after {
+	content:"";
+	display: block;
+	clear:both;
+	
+}
+
+#beanDetailForm .productView .beanDetailImg li {
+	float:left;
+	list-style: none;
+	padding: 10px 10px 0 0;
+}
+
+#beanDetailForm .productView .beanDetailImg li.on img {
+	border-color: #0a56a9;
+}
+
+
+#beanDetailForm .productView .beanDetailImg li img {
+	border: 1px solid silver;
+	width: 70px;
+	height: 70px;
+}
+
+
+
+
+
+

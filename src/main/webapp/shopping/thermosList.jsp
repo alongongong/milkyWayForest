@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>보온병</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/thermosList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="thermosListForm" name="thermosListForm">

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>글라스</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/glassList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="glassListForm" name="glassListForm">
