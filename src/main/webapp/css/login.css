@@ -1,0 +1,250 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+
+/*********************** 로그인 창 ***********************/
+#loginForm #main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+#loginForm #login-input-wrap, #loginForm #easy-login-wrap{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#loginForm #login-input-wrap h2, #loginForm #easy-login-wrap h2{
+	font-size: 20px;
+}
+#loginForm #id-input-wrap, #pwd-input-wrap{
+	width: 465px;
+	height :48px;
+	border: solid 1px gray;
+	background: white;
+	margin-top: 13px;
+}
+#loginForm #id-input-wrap input, #pwd-input-wrap input{
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+#loginForm #id-input-wrap input:focus, #pwd-input-wrap input:focus{
+	outline: none;
+}
+#loginForm #id-input-div, #loginForm #pwd-input-div{
+	padding-top: 8px;
+    font-size: 10px;
+    color: red;
+	width: 465px;
+	height :10px;
+}
+
+
+#loginForm #login-button-wrap {
+	padding-top: 13px;
+}
+#loginForm #login-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: dargray;
+	color: black;
+	border: solid 1px black;
+}
+
+#loginForm #easy-login-wrap ul{
+	padding-top:25px;
+	list-style: none;
+	width: 465px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#loginForm #easy-login-wrap ul li{
+	padding-bottom: 10px;
+}
+#loginForm #easy-login-wrap ul li button{
+	width: 465px;
+	height: 56px;
+	border: solid 1px gray;
+	text-align: left;
+	background: white;
+}
+#loginForm #easy-login-wrap ul li button img{
+	padding-left: 15px;
+	width: 15px;
+	height: 15px;
+}
+
+#loginForm #easy-login-wrap ul li button span{
+	padding-left: 20px;
+	font-size: 18px;
+}
+#loginForm #easy-login-wrap p{
+	color: black;
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+#loginForm #easy-login-wrap p a{
+	text-decoration: none;
+}
+
+
+/***** 아이디 찾기 창 *****/
+#findIdForm #main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+/*** section ***/
+#findIdForm section{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*********************** 아이디 찾는 방법 선택 ***********************/
+#findIdForm #findId-select-wrap h2{
+	font-size: 20px;
+}
+#findIdForm #findId-select-wrap p, #findIdForm #findId-question-wrap p, #findIdForm #findId-email-wrap p{
+	font-size: 15px;
+}
+#findIdForm #findId-select-wrap ul{
+	list-style: none;
+	width: 465px;
+}
+
+#findIdForm #findId-select-wrap ul li button{
+	width: 230px;
+	height: 56px;
+	border: solid 1px gray;
+	text-align: left;
+	background: white;
+	display: block;
+	float: left;
+}
+#findIdForm #findId-select-wrap ul li button span{
+	padding-left: 20px;
+	font-size: 15px;
+}
+
+#findIdForm #findId-question-wrap, #findIdForm #findId-email-wrap{
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#findIdForm #findId-question-wrap select{
+	width: 99%;
+	height:48px;
+	text-align: center;
+	display: block;
+	font-size: 15px;
+	color: black;
+	border: solid 1px gray;
+	background: white;
+	margin: 5px auto;
+	padding: 5px 0;
+	margin-bottom: 13px;
+}
+#findIdForm #findId-question-input-wrap, #findIdForm #findId-email-input-wrap, #check-email-input-wrap{
+	width: 465px;
+	height :48px;
+	border: solid 1px gray;
+	background: white;
+	margin-bottom: 13px;
+	/* margin-top: 13px; */
+}
+#findIdForm #findId-question-input-wrap input, #findIdForm #findId-email-input-wrap input, #findIdForm #check-email-input-wrap input{
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+#findIdForm #findId-question-input-wrap input:focus, #findIdForm #findId-email-input-wrap input:focus, #findIdForm #check-email-input-wrap input:focus{
+	outline: none;
+}
+#findIdForm #check-email-button-wrap, #findIdForm #check-number-button-wrap, #findIdForm #findId-button-wrap {
+	padding: 13px 0;
+}
+#findIdForm #check-email-button-wrap button, #findIdForm #check-number-button-wrap button, #findIdForm #findId-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: dargray;
+	color: black;
+	border: solid 1px black;
+}
+
+/*********************** 비밀번호 찾기 창 ***********************/
+#findPwdForm #main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+#findPwdForm section{
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#findPwdForm section h2{
+	font-size: 20px;
+}
+#findPwdForm #findPwd-input-wrap, #findPwdForm #findPwd-setting-wrap{
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#findPwdForm #findPwd-input-wrap p, #findPwdForm #findPwd-setting-wrap p{
+	font-size: 15px;
+	margin-top: 13px;
+}
+#findPwdForm #findPwd-id-input-wrap, #findPwdForm #findPwd-email-input-wrap, #findPwdForm #check-number-input-wrap,
+#findPwdForm #findPwd-pwd-input-wrap, #findPwdForm #findPwd-repwd-input-wrap {
+	width: 465px;
+	height :48px;
+	border: solid 1px gray;
+	background: white;
+}
+
+#findPwdForm #findPwd-id-input-wrap input, #findPwdForm #findPwd-email-input-wrap input, #findPwdForm #check-number-input-wrap input,
+#findPwdForm #findPwd-pwd-input-wrap input, #findPwdForm #findPwd-repwd-input-wrap input{
+	border: none;
+	width:430px;
+	margin: 10px 0;
+	font-size: 14px;
+	margin-left: 10px;
+	height:30px;
+}
+#findPwdForm #findPwd-id-input-wrap input:focus, #findPwdForm #findPwd-email-input-wrap input:focus, #findPwdForm #check-number-input-wrap input:focus,
+#findPwdForm #findPwd-pwd-input-wrap input:focus, #findPwdForm #findPwd-repwd-input-wrap input:focus{
+	outline: none;
+}
+#findPwdForm #check-email-button-wrap, #findPwdForm #check-number-button-wrap, #findPwdForm #findPwd-button-wrap {
+	padding: 13px 0;
+}
+#findPwdForm #check-email-button-wrap button, #findPwdForm #check-number-button-wrap button, #findPwdForm #findPwd-button-wrap button{
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: dargray;
+	color: black;
+	border: solid 1px black;
+}
