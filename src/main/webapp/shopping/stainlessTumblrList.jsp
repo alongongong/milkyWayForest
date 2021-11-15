@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>스테인리스 텀블러</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/stainlessTumblrList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="stainlessTumblrListForm" name="stainlessTumblrListForm">

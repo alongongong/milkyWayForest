@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>머그</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/mugList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="mugListForm" name="mugListForm">

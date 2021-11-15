@@ -5,34 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>원두</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/beanList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="beanListForm" name="beanListForm">
-	<header>
-		<div>
-			<h1><a href="#a"><img src="/milkyWayForest/image/milkywayForestLogoYun.png" alt="logo"></a></h1>
-			<nav>
-				<ul class="menu">
-					<li><a href="#a">CODINGCAFE</a></li>
-					<li><a href="#a">MENU</a></li>
-					<li><a href="#a">SHOPPING</a></li>
-					<li><a href="#a">STORE</a></li>
-					<li><a href="#a">WHAT's NEW</a></li>
-				</ul>
-			</nav>
-			<ul class="spot">
-					<li><a href="#a"><i class="xi-user"></i><span>Sign In</span></a></li>
-					<li><a href="#a">Login</a></li>
-					<li><a href="#a">My Page</a></li>
-					<li><a href="#a">Customer Service &amp; Ideas</a></li>
-					<li><a href="#a"><i class="xi-maker"><span>Find a Store</span></i></a></li>
-					<li><a href="#a">search</a></li>
-				</ul>
-				<a href="#a" class="total xi-bars"></a>
-			</div>
-		
-	</header>
+	
 	
 	<section id="content_box">
 		<h1>원두 전체상품</h1>
@@ -65,6 +42,7 @@
 				<ul class="beanList1">
 					<li><a href="#"><img></a></li>
 					<li><a href="#">상품이름</a></li>
+					<li><a href="#">가격</a></li>
 				</ul>
 		
 	</section>

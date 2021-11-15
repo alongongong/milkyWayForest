@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>플라스틱 텀블러</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/plasticTumblrList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="plasticTumblrListForm" name="plasticTumblrListForm">

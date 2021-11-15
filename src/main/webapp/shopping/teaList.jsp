@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>차</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/teaList.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
 <form id="teaListForm" name="teaListForm">
