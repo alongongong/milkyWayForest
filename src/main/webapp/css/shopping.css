@@ -78,7 +78,7 @@
 /*  상품 > 게시판 목록네비  */
 #productForm #productNav {  
 	margin-bottom: 90px;
-	margin-right: 90px;
+	margin-right: 110px;
 }
 
 #productForm #productNav div{
@@ -208,23 +208,42 @@
 }
 
 
-#teaListForm #teaListNav {
-		display: inline-block;
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+/* 차 리스트 게시판 목록네비  */
+#teaListForm #teaListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#teaListForm #teaListNav div{
+	float: right;
+	color: #777;
+}
+
+#teaListForm #teaListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#teaListForm #teaListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #teaListForm .productGroup {
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+	
+}
+#teaListForm .productGroup div{
+	float: right;
 	
 }
 
 #teaListForm .productGroup select {
-	padding : 3px;
+	padding : 5px 10px;
+	/* margin-bottom: 30px;
+	margin-right: 80px;  */
 }
 
 
@@ -251,24 +270,44 @@
 }
 
 
-#mugListForm #mugListNav {
-		display: inline-block;
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+/* 머그 리스트 게시판 목록네비  */
+#mugListForm #mugListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#mugListForm #mugListNav div{
+	float: right;
+	color: #777;
+}
+
+#mugListForm #mugListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#mugListForm #mugListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #mugListForm .productGroup {
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+	
+}
+#mugListForm  .productGroup div{
+	float: right;
 	
 }
 
 #mugListForm .productGroup select {
-	padding : 3px;
+	padding : 5px 10px;
+	/* margin-bottom: 30px;
+	margin-right: 80px;  */
 }
+
 
 
 #mugListForm #mugMenuDiv {
@@ -293,12 +332,25 @@
 	margin: 50px;
 }
 
+/* 글라스 리스트 게시판 목록네비  */
+#glassListForm #glassListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
 
-#glassListForm #glassListNav {
-		display: inline-block;
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+#glassListForm #glassListNav div{
+	float: right;
+	color: #777;
+}
+
+#glassListForm #glassListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#glassListForm #glassListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #glassListForm .productGroup {
@@ -336,12 +388,25 @@
 	margin: 50px;
 }
 
+/* 플라스틱 텀블러 리스트 게시판 목록네비  */
+#plasticTumblrListForm #plasticTumblrListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
 
-#plasticTumblrListForm #plasticTumblrListNav {
-		display: inline-block;
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+#plasticTumblrListForm #plasticTumblrListNav div{
+	float: right;
+	color: #777;
+}
+
+#plasticTumblrListForm #plasticTumblrListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#plasticTumblrListForm #plasticTumblrListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #plasticTumblrListForm .productGroup {
@@ -381,11 +446,25 @@
 }
 
 
-#stainlessTumblrListForm #stainlessTumblrListNav {
-		display: inline-block;
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+/* 스테인리스 텀블러 리스트 게시판 목록네비  */
+#stainlessTumblrListForm #stainlessTumblrListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#stainlessTumblrListForm #stainlessTumblrListNav div{
+	float: right;
+	color: #777;
+}
+
+#stainlessTumblrListForm #stainlessTumblrListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#stainlessTumblrListForm #stainlessTumblrListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #stainlessTumblrListForm .productGroup {
@@ -423,13 +502,26 @@
 #thermosListForm h1 {
 	margin: 50px;
 }
-#thermosListForm #thermosListNav {
-		display: inline-block;
-		/* padding-right: 50px; */
-		/* margin-right : 50px; */
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+
+/* 보온병 리스트 게시판 목록네비  */
+#thermosListForm #thermosListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#thermosListForm #thermosListNav div{
+	float: right;
+	color: #777;
+}
+
+#thermosListForm #thermosListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#thermosListForm #thermosListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #thermosListForm .productGroup {
@@ -470,11 +562,26 @@
 #coffeeEtcListForm h1 {
 	margin: 50px;
 }
-#coffeeEtcListForm #coffeeEtcListNav {
-		display: inline-block;
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		
+
+/* 커피용품 리스트 게시판 목록네비  */
+#coffeeEtcListForm #coffeeEtcListNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#coffeeEtcListForm #coffeeEtcListNav div{
+	float: right;
+	color: #777;
+}
+
+#coffeeEtcListForm #coffeeEtcListNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#coffeeEtcListForm #coffeeEtcListNav a:last-child {
+	font-weight: bold;
+	
 }
 
 #coffeeEtcListForm .productGroup {
