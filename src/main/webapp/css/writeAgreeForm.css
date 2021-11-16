@@ -25,3 +25,10 @@
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}
 #writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc;}
+
+/* 회원가입폼 */
+#memberWriteForm{width: 40%;margin: 0 auto;}
+#memberWriteForm>#memberWriteBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi{height:20%; list-style:none;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:180%;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle>#memberWriteTitleContent{text-align:center;}
