@@ -22,7 +22,7 @@
 			
 			<div class="second_block">
 				<p class="pic2">
-					<img src="/milkyWayForest/image/cp_infomt_img.png" alt="cp_infofnp" >
+					<img src="/milkyWayForest/image/cp_infomt_img1.PNG" alt="cp_infofnp_img1" >
 				</p>
 				<p class="text3">
 				㈜스타벅스커피 코리아는<br>
@@ -32,29 +32,38 @@
 				업계를 선도하는 기업으로 성장해 오고 있습니다.<br>
 				</p>
 			</div>
-				
-				<div class="info3">
-					<div><a><img src="/milkyWayForest/image/cp_information_st_img01.jpg" alt="cp_information_st"></a></div>
-					<span><strong><p>“㈜스타벅스커피 코리아는 스타벅스커피 인터내셔널과<br>
-	 				신세계 그룹의 공동투자로 설립된 합작 법인입니다.”</p></strong></span>
-	 			</div>
-	 			
-	 			<div class="info4"></div>
-	 			<div><p>
+			
+			<p class="pic3">
+				<img src="/milkyWayForest/image/cp_information_st_img01.jpg" alt="cp_information_st">
+			</p>	
+					
+			<div class="text4">
+				<strong>“㈜스타벅스커피 코리아는 스타벅스커피 인터내셔널과<br>
+		 		신세계 그룹의 공동투자로 설립된 합작 법인입니다.”</strong>
+	 		</div>
+	 		
+	 		<p class="text5">
 	 			스타벅스는 국내에 새로운 커피 문화를 소개하며, 국내 협력사와의 동반성장, 글로벌 인재 양성, 고용창출, 환경보호 등<br>
-				다양한 이해관계자들과 지역사회를 배려하는 사회적 책임과 성장을 함께 추구하고 있습니다.<br>
-	 			</p></div>
+				다양한 이해관계자들과 지역사회를 배려하는 사회적 책임과 성장을 함께 추구하고 있습니다.
+	 		</p>
 	 			
-	 			<div class="info5"></div>
-	 			<div><p><strong>“지역사회와 커피 지식을 나누고 있습니다.”</strong></p></div>
-	 			<div><img src="/milkyWayForest/image/cp_infomtSt_img.png" alt="cp_infomtSt"></div>
-	 			<div>
-	 			스타벅스는 모든 직원을 파트너로 존중하고 있으며,<br>
-				커피 전문가(Coffee Master) 과정을 통과한<br>
-				숙련된 바리스타들은 뛰어난 지식과 열정을 통해<br>
-				고객의 일상을 풍요롭게 하는 최고의 서비스를 제공해 드리며,<br>
-				지역사회와 커피 지식을 나누고 있습니다.<br>
-	 			</div>
+	 		<div class="third_block">
+	 			<div class="text_block">
+		 			<p class="text6"><strong>“지역사회와 커피 지식을 나누고 있습니다.”</strong></p>
+			 		<p class="text7">
+				 	스타벅스는 모든 직원을 파트너로 존중하고 있으며,<br>
+					커피 전문가(Coffee Master) 과정을 통과한<br>
+					숙련된 바리스타들은 뛰어난 지식과 열정을 통해<br>
+					고객의 일상을 풍요롭게 하는 최고의 서비스를 제공해 드리며,<br>
+					지역사회와 커피 지식을 나누고 있습니다.<br>
+					</p>
+				</div>
+				<p class="pic4">
+					<img src="/milkyWayForest/image/cp_infomtSt_img.png" alt="cp_infomtSt">
+				</p>
+	 		</div>
+	 		
+	 		
 	 
 	 			<div class="info6"></div>
 				<div>
