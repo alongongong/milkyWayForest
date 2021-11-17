@@ -5,28 +5,28 @@
 /* 전체 가운데 정렬 */
 #companyInfo { display: flex; width: 78rem; margin: 0 auto; }
 
+/*메인화면을 왼쪽과 오른쪽으로 나누*/
 #companeInfo #leftDiv {
 	width: 70%;
 }
-
 #companyInfo #rightDiv {
-	width : 28%;
-	margin-left: 2%;
+	width : 25%;
+	margin-left: 5%;
 }
-
 /* cp_information_img01의 마진 */
 .pic1 { margin-top: 3rem; width: 100%; }
-.pic1 img { width: 60rem;}
+.pic1 img { width: 59rem; height: 23rem; }
 
 /* "커피 이상의 특별한 경험을 소개합니다." */
-.text1 { margin : 1.5rem 0 1.5rem 0; font-style: italic; font-size: 1.5rem; color:#00592D; }
+.text1 { margin : 1.5rem 0 1.5rem 0; font-style: oblique; font-size: 1.45rem; color:#00592D; }
 
-/*"세계인들의~~정착시키고 있습니다"*/
+/* "세계인들의 생활속에 스며~~ 커피문화를 정착시키고 있습니다" */
 .text2 { position:relative; font-size: 1rem;}
 
-.second_block { position:relative; margin-top: 3rem; }
+/* second_block */
+.second_block { position:relative; margin: 1 0 1 3rem;  }
 .second_block p { display: inline-block; }
-.second_block .text3 { margin : 2rem 2rem 5rem 2rem; font-style: italic; font-size: 1.25rem; color:#00592D; }
+.second_block .text3 { vertical-align: 6em; margin : 0 0 0 4.7rem; font-style: oblique; font-size: 1.15rem; color:#00592D; }
 
 /* 동그라미 사진*/
 .pic2 { font-size: 1.4rem; color:#00592D; }
@@ -34,13 +34,27 @@
 /* pic3 */
 .pic3 { width: 100%; }
 .pic3 img { width: 100%; }
+
 /**/
-.text4 { margin : 1.5rem 0 1.5rem 0; font-style: italic; font-size: 1.5rem; color:#00592D; }
+.text4 { margin : 1.5rem 0 1.5rem 0; font-style: oblique; font-size: 1.45rem; color:#00592D; }
 .text5 { position:relative; font-size: 1rem; }
 
 
 /* third_block */
-.third_block { display: flex; margin-top: 3rem;  width:100%; }
-.text_block { margin : 1.5rem 4rem 1.5rem 0; text-align: right; width:50%; }
-.third_block .text3 { margin : 2rem 2rem 5rem 2rem; font-style: italic; font-size: 1.25rem; color:#00592D; }
+.third_block { display: flex; margin-top: 2rem;  width:100%; }
+.pic4 img { margin-bottom: 3rem;}
+.text_block { margin: 6rem 7.5rem 1rem 0; text-align: right; width:50%; }
+.third_block .text3 { margin : 1rem 0rem 5rem 6rem; font-style: oblique; font-size: 1.25rem; color:#00592D; }
 .text6 { margin : 1.5rem 0 0.5rem 0; font-style: italic; font-size: 1.2rem; color:#00592D; }
+
+/* final_block */
+.pic5 { width: 100%; }
+.pic5 img { width: 100% }
+.text8 { margin : 1.5rem 0 0 0; }
+.text9 { margin : 3rem 0 3rem 0; }
+
+/* fianl_banner */
+.final_banner { background-color : #f6f5ef;  }
+
+/* rightDiv */
+.rightDiv .gradeBenefitInfo { margin-top: 3rem; }
