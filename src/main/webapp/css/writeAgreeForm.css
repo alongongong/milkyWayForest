@@ -11,24 +11,31 @@
 #writeAgreeForm>.writeAgreeCheckBox>ul>li{float: left;}
 #writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:first-child{width: 100%;padding: 20px;font-weight: 600;color: #888;}
 #writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:nth-child(2){position: absolute;top: 58%;right: 5%;margin-top: -12px;}
-#writeAgreeForm>.footBtwrap>li{float: left;width: 50%;height: 60px;}
-#writeAgreeForm>.footBtwrap>li>button{display: block; width: 100%;height: 100%; font-size: 20px;text-align: center;line-height: 60px;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent{background:#f7f7f7; box-sizing:border-box; color:#666 !important; width:95%; height:160px;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent{border:1px solid #ddd; border-radius:3px;margin-bottom:20px;overflow:scroll;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent{padding:2%; margin:0 auto;}
-#writeAgreeForm>ul>li>div>#writeAgreeContent>p:first-child{font-size:17px; text-align:center; color:green; font-weight:bold;}
+#writeAgreeForm>ul>li>div>#writeAgreeContent>p:first-child{font-size:17px; text-align:center; color:green; font-weight:900;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent>p{font-size:15px;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent>ul>li{font-size:15px;list-style:none;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent>ul{padding:0;}
 #writeAgreeForm>ul>li>div>ul>div>li{font-size:150%; font-weight:bold; color:skyblue; list-style:none;text-align:center;}
-#writeAgreeForm>.writeAgreeBox>.writeAgreeCheckBox>div>.writeAgreeFix>li>#writeAgreeImg{width:50%; height:200px; margin:0 auto; padding:3%}
+#writeAgreeForm>.writeAgreeBox>.writeAgreeCheckBox>div>.writeAgreeFix>li>#writeAgreeImg{width:50%; height:190px; margin:0 auto; padding:3%}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}
 #writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc;}
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li>#writeAgreeBtn1{cursor:pointer; width:40%; height:10%;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 10%; background-color: white; border:1; border-color: black; }
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li{list-style:none;}
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul{padding:0;}
+#writeAgreeForm>ul>.check01>div>.writeAgreeFix>div>li>#writeAllAgreecheck{margin-left:87%;}
 
 /* 회원가입폼 */
 #memberWriteForm{width: 40%;margin: 0 auto;}
 #memberWriteForm>#memberWriteBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi{height:20%; list-style:none;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:180%;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle>#memberWriteTitleContent{text-align:center;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi{list-style:none; height:20%}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:185%;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitleContent{text-align:center;font-size:160%;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>ul{padding:0;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(1){text-align:center;font-size:160%; list-style:none;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(2){text-align:center; list-style:none; font-size:100%;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(3){text-align:center; list-style:none; font-size:80%;}
+#memberWriteForm>#memberWriteBox>#blankSpace{list-style:none; height:9%}
