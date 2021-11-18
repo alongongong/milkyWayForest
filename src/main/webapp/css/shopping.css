@@ -170,8 +170,8 @@
 	margin-bottom: 180px;
 	margin-right: 110px;
 	
-	
 }
+
 #beanListForm .productGroup div{
 	float: right;
 	
@@ -297,7 +297,7 @@
 	
 	
 }
-#mugListForm  .productGroup div{
+#mugListForm .productGroup div{
 	float: right;
 	
 }
@@ -354,10 +354,13 @@
 }
 
 #glassListForm .productGroup {
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#glassListForm .productGroup div{
+	float: right;
 	
 }
 
@@ -410,12 +413,16 @@
 }
 
 #plasticTumblrListForm .productGroup {
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
 	
 }
+
+#plasticTumblrListForm .productGroup div{
+	float: right;
+	
+}
+
 
 #plasticTumblrListForm .productGroup select {
 	padding : 3px;
@@ -468,10 +475,13 @@
 }
 
 #stainlessTumblrListForm .productGroup {
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#stainlessTumblrListForm .productGroup div{
+	float: right;
 	
 }
 
@@ -525,13 +535,13 @@
 }
 
 #thermosListForm .productGroup {
-	/* float: right;  */
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* margin-right: 100px; */
-	/* margin-bottom: 500px 500px;  */
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#thermosListForm .productGroup div{
+	float: right;
 	
 }
 
@@ -585,13 +595,13 @@
 }
 
 #coffeeEtcListForm .productGroup {
-	/* float: right;  */
-	display: inline-block;
-	padding-left : 130px; 
-	margin: 0 80px 0 1050px;  
-	/* margin-right: 100px; */
-	/* margin-bottom: 500px 500px;  */
-	/* border: 1px solid red; */
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#coffeeEtcListForm .productGroup div{
+	float: right;
 	
 }
 
@@ -622,14 +632,27 @@
 #beanDetailForm h1 {
 	margin: 50px;
 }
-#beanDetailForm #beanDetailNav {
-		display: inline-block;
-		/* padding-right: 50px; */
-		/* margin-right : 50px; */
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
+/* 커피용품 리스트 게시판 목록네비  */
+#beanDetailForm #beanDetailNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
 }
+
+#beanDetailForm #beanDetailNav div{
+	float: right;
+	color: #777;
+}
+
+#beanDetailForm #beanDetailNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#beanDetailForm #beanDetailNav a:last-child {
+	font-weight: bold;
+	
+}
+
 
 #beanDetailForm .productView {
 	position: relative;
