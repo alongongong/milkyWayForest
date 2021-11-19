@@ -619,10 +619,10 @@
 
 /* 원두상세페이지 */
 
-#beanDetailForm h1 {
+#shoppingDetailForm h1 {
 	margin: 50px;
 }
-#beanDetailForm #beanDetailNav {
+#shoppingDetailForm #shoppingDetailNav {
 		display: inline-block;
 		/* padding-right: 50px; */
 		/* margin-right : 50px; */
@@ -631,56 +631,123 @@
 		/* border: 1px solid red; */
 }
 
-#beanDetailForm .productView {
+#shoppingDetailForm .productView {
 	position: relative;
-	padding: 100px 0 0 600px ; 
+	padding: 0 0 0 600px ; 
 	width: 950px;
 	box-sizing: border-box; 
-	
+	margin: 0 auto;
 }
 
-#beanDetailForm .productView #productEngName {
-	
+#shoppingDetailForm .productView #productKorName {
+	font-size: 24px;
+}
+
+#shoppingDetailForm .productView #productEngName {
+	font-size: 24px;
 	border-bottom: 1px solid black;
+	padding : 0 0 20px 0;
+	
+	
 }
 
-#beanDetailForm .productView .beanDetailImg {
+#shoppingDetailForm .productView .beanDetailImg {
 	position:absolute;
 	left: 70px;
-	top:0;
+	top: 20px;
 }
-#beanDetailForm .productView .beanDetailImg > img {
+#shoppingDetailForm .productView .beanDetailImg > img {
 	border: 1px solid silver;
 	width: 370px;
 	height: 380px;
 }
 
-#beanDetailForm .productView .beanDetailImg li:after {
+#shoppingDetailForm .productView .beanDetailImg li:after {
 	content:"";
 	display: block;
 	clear:both;
 	
 }
 
-#beanDetailForm .productView .beanDetailImg li {
+#shoppingDetailForm .productView .beanDetailImg li {
 	float:left;
 	list-style: none;
 	padding: 10px 10px 0 0;
 }
 
-#beanDetailForm .productView .beanDetailImg li.on img {
+#shoppingDetailForm .productView .beanDetailImg li.on img {
 	border-color: #0a56a9;
 }
 
 
-#beanDetailForm .productView .beanDetailImg li img {
+#shoppingDetailForm .productView .beanDetailImg li img {
 	border: 1px solid silver;
 	width: 70px;
 	height: 70px;
 }
 
+#shoppingDetailForm #detailTable {
+	width: 350px;
+	
+}
 
+#shoppingDetailForm table td {
+	padding: 12px 0; 
+	font-size: 14px;
+	color: black;
+	
+}
 
+#shoppingDetailForm table td.price {
+	font-size: 19px;
+	color:  #ccc;
+	
+}
 
+#shoppingDetailForm table td.price b {
+	font-size: 22px;
+	
+}
 
+#shoppingDetailForm table td.total {
+	font-size: 19px;
+	color:  #0a56a9;
+	
+}
 
+#shoppingDetailForm table td.total b {
+	font-size: 22px;
+	
+}
+#shoppingDetailForm table .length {
+	position: relative;
+	border: 1px solid  #ccc;
+	width: 70px;
+	height: 32px;
+	
+}
+
+#shoppingDetailForm table .length input {
+	width: 44px;
+	height: 32px;
+	border: none;
+	
+}
+
+#shoppingDetailForm table .length a {
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 26px;
+	height: 16px;
+	color: transparent;  /* 글자를 투명하게 가려주는것  */
+}
+
+/* #beanDetailForm table .length a:nth-of-type {
+	
+	} */
+	
+	
+	
+	

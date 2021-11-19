@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원두 상세페이지</title>
+<title>상세페이지</title>
 <link rel="stylesheet" href="/milkyWayForest/css/shopping.css">
 </head>
 <body>
-<form id="beanDetailForm" name="beanDetailForm">
+<form id="shoppingDetailForm" name="shoppingDetailForm">
 
 	
 	<section id="content_box">
 		<h1>원두</h1>
 		
-		<div id="beanDetailNav">
+		<div id="shoppingDetailNav">
 			<div>
 				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 				<a href="">Menu</a> > 
@@ -107,7 +107,7 @@
 			</table>
 		
 				
-			<div class="beanDetailImg">
+			<div class="shoppingDetailImg">
 				<img src ="/milkyWayForest/image/C001.jpg" alt="C001">
 					<ul>
 						<li class="on"><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
