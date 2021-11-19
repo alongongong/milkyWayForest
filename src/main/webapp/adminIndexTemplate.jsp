@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +17,10 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="./assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <link href="/milkyWayForest/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/milkyWayForest/assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <link href="/milkyWayForest/assets/demo/demo.css" rel="stylesheet" />
 </head>
 <body class="">
   <div class="wrapper ">
@@ -77,7 +78,12 @@
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="description">Your content here</h3>
+          	<c:if test="${empty display }">
+            	<jsp:include page="admin/pAllMenu.jsp" />
+            </c:if>
+            <c:if test="${not empty display }">
+            	<jsp:include page="${display }" />
+            </c:if>
           </div>
         </div>
       </div>

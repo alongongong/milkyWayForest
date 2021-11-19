@@ -16,6 +16,13 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
+          <li class="menu">메뉴 관리</li>
+          <li class="active ">
+            <a href="/milkyWayForest/admin/pAllMenu">
+              <i class="nc-icon nc-bullet-list-67"></i>
+              <p>메뉴 관리</p>
+            </a>
+          </li>
           <li class="menu">회원 혜택 관리</li>
           <li>
             <a href="javascript:;">
@@ -99,13 +106,6 @@
             <a href="javascript:;">
               <i class="nc-icon nc-chart-pie-36"></i>
               <p>판매 통계</p>
-            </a>
-          </li>
-          <li class="menu">메뉴 관리</li>
-          <li class="active ">
-            <a href="javascript:;">
-              <i class="nc-icon nc-bullet-list-67"></i>
-              <p>메뉴 관리</p>
             </a>
           </li>
         </ul>
