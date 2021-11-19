@@ -8,13 +8,8 @@
 	<div id="main-wrap">
 		<section id="login-input-wrap">
 			<h2>ID 로그인</h2>
-<<<<<<< HEAD
-			<div id="id-input-wrap" style="outline: none; border-bottom:1px solid #999;">	
-				<input type="text" placeholder="아이디"></input>
-=======
 			<div id="id-input-wrap">	
 				<input type="text" id="id-input" placeholder="아이디"></input>
->>>>>>> f8ce4c1c8a021ef5e6c0c958c63e981bf9df9857
 				<div id="id-input-div"></div>
 			</div>
 			<div id="pwd-input-wrap">	
@@ -30,13 +25,13 @@
 			<h2>간편 로그인</h2>
 			<ul>
 				<li>
-					<button>
+					<button id="kakao-login-btn">
 						<img src="/milkyWayForest/image/kakao.png" alt="kakao">
 						<span>카카오로 로그인</span>
 					</button>
 				</li>
-				<li>
-					<button>
+				<!-- <li>
+					<button id="naver-login-btn">
 						<img src="/milkyWayForest/image/naver.png" alt="naver">
 						<span>네이버로 로그인</span>
 					</button>
@@ -46,7 +41,7 @@
 						<img src="/milkyWayForest/image/google.png" alt="google">
 						<span>구글로 로그인</span>
 					</button>
-				</li>
+				</li> -->
 			</ul>
 			<p id="find-write">
 				<a href="#">아이디 찾기</a> | 
@@ -60,3 +55,5 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/login.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>

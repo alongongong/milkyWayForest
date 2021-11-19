@@ -22,14 +22,16 @@
 		</div>
 		
 		
-			<div class="productGroup">
-				<select>
-					<option>상세분류</option>
-					<option>신규출시된 메뉴</option>
-					<option>시즌 한정상품</option>
-					<option>판매완료된 상품</option>
-				</select>
-				</div>
+		<div class="productGroup">
+			<div>
+			<select>
+				<option>상세분류</option>
+				<option>신규출시된 메뉴</option>
+				<option>시즌 한정상품</option>
+				<option>판매완료된 상품</option>
+			</select>
+			</div>
+		</div>
 		
 			<div id="glassMenuDiv">글라스</div>
 			

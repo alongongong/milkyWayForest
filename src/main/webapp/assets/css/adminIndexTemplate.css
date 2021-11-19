@@ -10,4 +10,7 @@
 
 .sidebar .nav li > a, .off-canvas-sidebar .nav li > a {
 	padding: 0;
+
+	margin: 10px 0 5px 5px;
+	padding: 5px 0 0 10px;
 }

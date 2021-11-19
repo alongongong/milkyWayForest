@@ -23,13 +23,15 @@
 		
 		
 			<div class="productGroup">
-				<select>
-					<option>상세분류</option>
-					<option>신규출시된 메뉴</option>
-					<option>시즌 한정상품</option>
-					<option>판매완료된 상품</option>
-				</select>
+				<div>
+					<select>
+						<option>상세분류</option>
+						<option>신규출시된 메뉴</option>
+						<option>시즌 한정상품</option>
+						<option>판매완료된 상품</option>
+					</select>
 				</div>
+			</div>
 		
 			<div id="mugMenuDiv">머그</div>
 			

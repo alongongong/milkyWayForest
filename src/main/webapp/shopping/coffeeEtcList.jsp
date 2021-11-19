@@ -23,6 +23,7 @@
 		
 		
 			<div class="productGroup">
+				<div>
 				<select>
 					<option>상세분류</option>
 					<option>신규출시된 메뉴</option>
@@ -30,6 +31,7 @@
 					<option>판매완료된 상품</option>
 				</select>
 				</div>
+			</div>	
 		
 			<div id="coffeeEtcMenuDiv">커피용품</div>
 			

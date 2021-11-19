@@ -9,7 +9,7 @@
         <li class="writeAgreeCheckBox check01">
           <div>
             <ul class="writeAgreeFix">
-                <li align="center"><img id="writeAgreeImg" src="../image/starbucksStaff.jpg"></li>
+                <li align="center"><img id="writeAgreeImg" src="../img/starbucksStaff.jpg"></li>
             </ul>
           </div>
         </li>
@@ -19,9 +19,14 @@
              <div>
                <li>회원가입 약관동의 단계입니다.</li>
              </div>
+             <div>
+               <li>
+                 <input type="checkbox" id="writeAllAgreecheck">
+               </li>
+             </div>
            </ul>
           </div>
-      </li>
+        </li>
 
         </li>
         <li class="writeAgreeCheckBox check03">
@@ -135,12 +140,14 @@
               <li>타인의 개인정보를 도용하여 가입할 경우 향후 적발 시 서비스 이용제한 및 법적 제재를 받으실 수 있습니다.</p>
               <li>스타벅스커피 코리아의 공식 홈페이지는 Internet Explorer 9.0이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.</p><br><br>
             </ul>
+          <div>
+              <ul>
+                <li align="center"><input type="button" id="writeAgreeBtn1" value="동의"></li>
+              </ul>
+          </div>
           </div>
         </li>
     </ul>
-    <ul class="footBtwrap writeAgreeFix">
-        <li><button class="writeAgreeBtn1">비동의</button></li>
-        <li><button class="writeAgreeBtn2">동의</button></li>
     </ul>
 </form>
 </body>
