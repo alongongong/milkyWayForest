@@ -1,17 +1,36 @@
 $('#loginForm #login-button').click(function(){
-	$('#loginForm #id-input-div').empty();
-	$('#loginForm #pwd-input-div').empty();
+	$('#loginForm #result-div').empty();
 	
 	if($('#loginForm #id-input').val()=='') {
-		$('#loginForm #id-input-div').html('아이디를 입력하세요');
+		$('#loginForm #result-div').show();
+		$('#loginForm #result-div').html('아이디를 입력하세요');
 		$('#loginForm #id-input').focus();	
 			
 	}else if($('#loginForm #pwd-input').val()=='') {
-		$('#loginForm #pwd-input-div').html('비밀번호를 입력하세요');
+		$('#loginForm #result-div').show();
+		$('#loginForm #result-div').html('비밀번호를 입력하세요');
 		$('#loginForm #pwd-input').focus();	
 	}
 	else{
-		$.ajax({});
+		$.ajax({
+			url: '/milkyWayForest/member/login',
+			type: 'post',
+			data: $('#loginForm').serialize(),
+			dataType: 'text',
+			success: function(data){
+				data = data.trim();
+				
+				if(data == 'loginOk'){
+					location.href='/milkyWayForest/index.jsp';
+				}else if(data == 'loginFail'){
+					$('#loginForm #result-div').show();
+					$('#loginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');
+				}
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
 	}
 
 });
@@ -117,6 +136,38 @@ var naverLogin = new naver.LoginWithNaverId(
 	}
 
 });*/
+
+/////////////////////////////////////////////////////////////////
+
+//아이디 찾기
+$('#findIdForm').ready(function(){
+	$('#findIdForm #result1-div').empty();
+	$('#findIdForm #result2-div').empty();
+	$('#findIdForm #result3-div').empty();
+	
+	$('#findIdForm #select-question-button').click(function(){
+		$('#findIdForm #findId-question-wrap').show();
+		$('#findIdForm #findId-email-wrap').hide();
+		
+		$('#findIdForm #findId-button').click(function(){
+			alert(33);
+			if($('#findId-question-wrap option:selected').index() < 1){
+				$('#findIdForm #result3-div').html('직업을 선택하세요');
+				$('#findId-question-wrap option:eq(0)').attr('selected', true);
+				return false;
+			}
+		});
+		
+	});
+	
+	$('#findIdForm #select-email-button').click(function(){
+		$('#findIdForm #findId-question-wrap').hide();
+		$('#findIdForm #findId-email-wrap').show();
+	});
+	
+	
+
+});	
 
 
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,125 +17,14 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="./assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <link href="/milkyWayForest/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/milkyWayForest/assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <link href="/milkyWayForest/assets/demo/demo.css" rel="stylesheet" />
 </head>
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="white" data-active-color="danger">
-      <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
-          <!-- <div class="logo-image-small">
-            <img src="./assets/img/logo-small.png">
-          </div> -->
-          <!-- <p>CT</p> -->
-        </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Your Logo
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="menu">회원 혜택 관리</li>
-          <li class="active ">
-            <a href="javascript:;">
-              <i class="nc-icon nc-bank"></i>
-              <p>회원리스트</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-bank"></i>
-              <p>등급별 혜택</p>
-            </a>
-          </li>
-          <li class="menu">상품 관리</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-bank"></i>
-              <p>상품 조회, 수정, 삭제</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-bank"></i>
-              <p>상품 등록</p>
-            </a>
-          </li>
-          <li class="menu">상담 관리</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>상담 관리</p>
-            </a>
-          </li>
-          <li class="menu">판매 관리</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-diamond"></i>
-              <p>일자별 주문 내역 확인</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-bank"></i>
-              <p>주문 확인 / 발송 관리</p>
-            </a>
-          </li>
-           <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-bank"></i>
-              <p>취소, 교환, 반품 관리</p>
-            </a>
-          </li>
-          <li class="menu">게시글 관리</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>문의 관리 게시판</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>상품 리뷰 관리</p>
-            </a>
-          </li>
-          <li class="menu">물류 관리</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>물류 관리</p>
-            </a>
-          </li>
-          <li class="menu">통계</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>접속자수 통계</p>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>판매 통계</p>
-            </a>
-          </li>
-          <li class="menu">메뉴 관리</li>
-          <li>
-            <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>메뉴 관리</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+   <jsp:include page="nav/adminNavTemplate.jsp" />
     
     <div class="main-panel" style="height: 100vh;">
       <!-- Navbar -->
@@ -188,10 +78,16 @@
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="description">Your content here</h3>
+          	<c:if test="${empty display }">
+            	<jsp:include page="admin/pAllMenu.jsp" />
+            </c:if>
+            <c:if test="${not empty display }">
+            	<jsp:include page="${display }" />
+            </c:if>
           </div>
         </div>
       </div>
+      
       <footer class="footer" style="position: absolute; bottom: 0; width: -webkit-fill-available;">
         <div class="container-fluid">
           <div class="row">

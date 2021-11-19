@@ -1,5 +1,16 @@
 @charset "UTF-8";
-.memu {
-	margin: 10px;
-	padding: 5px;
+.menu {
+    margin: 5px;
+    padding: 5px;
+}
+
+.sidebar .nav li.active > a, .sidebar .nav li.active > a > i, .off-canvas-sidebar .nav li.active > a, .off-canvas-sidebar .nav li.active > a > i {
+    padding: 0;
+}
+
+.sidebar .nav li > a, .off-canvas-sidebar .nav li > a {
+	padding: 0;
+
+	margin: 10px 0 5px 5px;
+	padding: 5px 0 0 10px;
 }
