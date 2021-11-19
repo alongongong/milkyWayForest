@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css"> -->
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/login.css">
 
 <form name="loginForm" id="loginForm">
@@ -10,22 +10,21 @@
 			<h2>ID 로그인</h2>
 			<div id="id-input-wrap">	
 				<input type="text" id="id-input" placeholder="아이디"></input>
-				<div id="id-input-div"></div>
 			</div>
 			<div id="pwd-input-wrap">	
 				<input type="password" id="pwd-input" placeholder="비밀번호"></input>
-				<div id="pwd-input-div"></div>
 			</div>
 			<div id="login-button-wrap">
-				<button id="login-button" type="button">로그인</button>
+				<button type="button" id="login-button" type="button">로그인</button>
 			</div>
+			<div id="result-div"></div>
 		</section>
 		
 		<section id="easy-login-wrap">
 			<h2>간편 로그인</h2>
 			<ul>
 				<li>
-					<button id="kakao-login-btn">
+					<button type="button" id="kakao-login-btn">
 						<img src="/milkyWayForest/image/kakao.png" alt="kakao">
 						<span>카카오로 로그인</span>
 					</button>

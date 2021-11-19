@@ -38,9 +38,10 @@
 #loginForm #id-input-wrap input:focus, #pwd-input-wrap input:focus{
 	outline: none;
 }
-#loginForm #id-input-div, #loginForm #pwd-input-div{
-	padding-top: 8px;
-    font-size: 10px;
+#loginForm #result-div{
+	display: none;
+	padding-top: 10px;
+    font-size: 12px;
     color: red;
 	width: 465px;
 	height :10px;
@@ -98,7 +99,7 @@
 }
 
 
-/***** 아이디 찾기 창 *****/
+/*********************** 아이디 찾기 창 ***********************/
 #findIdForm #main-container{
 	width:100%;
 	display:flex;
@@ -114,12 +115,13 @@
 	align-items: center;
 }
 
-/*********************** 아이디 찾는 방법 선택 ***********************/
+/***** 아이디 찾는 방법 선택 *****/
 #findIdForm #findId-select-wrap h2{
 	font-size: 20px;
 }
 #findIdForm #findId-select-wrap p, #findIdForm #findId-question-wrap p, #findIdForm #findId-email-wrap p{
 	font-size: 15px;
+	margin-top: 1em;
 }
 #findIdForm #findId-select-wrap ul{
 	list-style: none;
@@ -142,10 +144,15 @@
 
 #findIdForm #findId-question-wrap, #findIdForm #findId-email-wrap{
 	padding-top: 60px;
-	display: flex;
+	/* display: flex; */
 	flex-direction: column;
 	align-items: center;
 }
+
+#findIdForm #findId-email-wrap{
+	display: none;
+}
+
 #findIdForm #findId-question-wrap select{
 	width: 99%;
 	height:48px;
@@ -164,8 +171,6 @@
 	height :48px;
 	border: solid 1px gray;
 	background: white;
-	margin-bottom: 13px;
-	/* margin-top: 13px; */
 }
 #findIdForm #findId-question-input-wrap input, #findIdForm #findId-email-input-wrap input, #findIdForm #check-email-input-wrap input{
 	border: none;
@@ -178,9 +183,16 @@
 #findIdForm #findId-question-input-wrap input:focus, #findIdForm #findId-email-input-wrap input:focus, #findIdForm #check-email-input-wrap input:focus{
 	outline: none;
 }
-#findIdForm #check-email-button-wrap, #findIdForm #check-number-button-wrap, #findIdForm #findId-button-wrap {
-	padding: 13px 0;
+
+#findIdForm #result1-div, #findIdForm #result2-div, #findIdForm #result3-div{
+	display: none;
+	padding-top: 10px;
+    font-size: 12px;
+    color: red;
+	width: 465px;
+	height :10px;
 }
+
 #findIdForm #check-email-button-wrap button, #findIdForm #check-number-button-wrap button, #findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;
@@ -188,44 +200,45 @@
 	background: dargray;
 	color: black;
 	border: solid 1px black;
+	margin-top: 13px;
 }
 
 /*********************** 비밀번호 찾기 창 ***********************/
-#findPwdForm #main-container{
+#findPwdForm1 #main-container, #findPwdForm2 #main-container, #findPwdForm3 #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 }
-#findPwdForm section{
+#findPwdForm1 section, #findPwdForm2 section, #findPwdForm3 section{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#findPwdForm section h2{
+#findPwdForm1 section h2, #findPwdForm2 section h2, #findPwdForm3 section h2{
 	font-size: 20px;
 }
-#findPwdForm #findPwd-input-wrap, #findPwdForm #findPwd-setting-wrap{
+#findPwdForm1 #findPwd-input-wrap, #findPwdForm2 #findPwd-input-wrap,#findPwdForm3 #findPwd-setting-wrap{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#findPwdForm #findPwd-input-wrap p, #findPwdForm #findPwd-setting-wrap p{
+#findPwdForm1 #findPwd-input-wrap p, #findPwdForm3 #findPwd-setting-wrap p{
 	font-size: 15px;
 	margin-top: 13px;
 }
-#findPwdForm #findPwd-id-input-wrap, #findPwdForm #findPwd-email-input-wrap, #findPwdForm #check-number-input-wrap,
-#findPwdForm #findPwd-pwd-input-wrap, #findPwdForm #findPwd-repwd-input-wrap {
+#findPwdForm1 #findPwd-id-input-wrap, #findPwdForm2 #findPwd-email-input-wrap, #findPwdForm2 #check-number-input-wrap,
+#findPwdForm3 #findPwd-pwd-input-wrap, #findPwdForm3 #findPwd-repwd-input-wrap {
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
 }
 
-#findPwdForm #findPwd-id-input-wrap input, #findPwdForm #findPwd-email-input-wrap input, #findPwdForm #check-number-input-wrap input,
-#findPwdForm #findPwd-pwd-input-wrap input, #findPwdForm #findPwd-repwd-input-wrap input{
+#findPwdForm1 #findPwd-id-input-wrap input, #findPwdForm2 #findPwd-email-input-wrap input, #findPwdForm2 #check-number-input-wrap input,
+#findPwdForm3 #findPwd-pwd-input-wrap input, #findPwdForm3 #findPwd-repwd-input-wrap input{
 	border: none;
 	width:430px;
 	margin: 10px 0;
@@ -233,14 +246,23 @@
 	margin-left: 10px;
 	height:30px;
 }
-#findPwdForm #findPwd-id-input-wrap input:focus, #findPwdForm #findPwd-email-input-wrap input:focus, #findPwdForm #check-number-input-wrap input:focus,
-#findPwdForm #findPwd-pwd-input-wrap input:focus, #findPwdForm #findPwd-repwd-input-wrap input:focus{
+#findPwdForm1 #findPwd-id-input-wrap input:focus, #findPwdForm2 #findPwd-email-input-wrap input:focus, #findPwdForm2 #check-number-input-wrap input:focus,
+#findPwdForm3 #findPwd-pwd-input-wrap input:focus, #findPwdForm3 #findPwd-repwd-input-wrap input:focus{
 	outline: none;
 }
-#findPwdForm #check-email-button-wrap, #findPwdForm #check-number-button-wrap, #findPwdForm #findPwd-button-wrap {
+#findPwdForm1 #result-div, #findPwdForm2 #result1-div, #findPwdForm2 #result2-div, #findPwdForm3 #result-div{
+	display: none;
+	padding-top: 10px;
+    font-size: 12px;
+    color: red;
+	width: 465px;
+	height :10px;
+}
+
+#findPwdForm1 #check-id-button-wrap, #findPwdForm2 #check-email-button-wrap, #findPwdForm2 #check-number-button-wrap, #findPwdForm3 #findPwd-button-wrap {
 	padding: 13px 0;
 }
-#findPwdForm #check-email-button-wrap button, #findPwdForm #check-number-button-wrap button, #findPwdForm #findPwd-button-wrap button{
+#findPwdForm1 #check-id-button-wrap button, #findPwdForm2 #check-email-button-wrap button, #findPwdForm2 #check-number-button-wrap button, #findPwdForm3 #findPwd-button-wrap button{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
