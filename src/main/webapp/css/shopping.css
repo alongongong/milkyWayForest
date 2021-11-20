@@ -627,46 +627,36 @@
 }
 
 
-/* 원두상세페이지 */
+/* 쇼핑 상세페이지 */
 
 #shoppingDetailForm h1 {
 	margin: 50px;
 }
-/* <<<<<<< HEAD */
-#shoppingDetailForm #shoppingDetailNav {
-		display: inline-block;
-		/* padding-right: 50px; */
-		/* margin-right : 50px; */
-		margin-left: 1120px;
-		margin-bottom: 30px;
-		/* border: 1px solid red; */
-}
 
-#shoppingDetailForm .productView {
-}
-/* 커피용품 리스트 게시판 목록네비  */
-#beanDetailForm #beanDetailNav {  
+
+/* 게시판 목록네비  */
+
+#shoppingDetailForm #shoppingDetailNav {  
 	margin-bottom: 90px;
 	margin-right: 110px;
 }
 
-#beanDetailForm #beanDetailNav div{
+#shoppingDetailForm #shoppingDetailNav div{
 	float: right;
 	color: #777;
 }
 
-#beanDetailForm #beanDetailNav a{
+#shoppingDetailForm #shoppingDetailNav a{
 	text-decoration: none;
 	color: #777;
 	
 }
-#beanDetailForm #beanDetailNav a:last-child {
+#shoppingDetailForm #shoppingDetailNav a:last-child {
 	font-weight: bold;
 	
 }
 
-
-#beanDetailForm .productView {
+#shoppingDetailForm .productView {
 	position: relative;
 	padding: 0 0 0 600px ; 
 	width: 950px;
@@ -686,43 +676,48 @@
 	
 }
 
-#shoppingDetailForm .productView .beanDetailImg {
+#shoppingDetailForm .productView .shoppingDetailImg {
 	position:absolute;
 	left: 70px;
 	top: 20px;
 }
-#shoppingDetailForm .productView .beanDetailImg > img {
+#shoppingDetailForm .productView .shoppingDetailImg > img {
 	border: 1px solid silver;
 	width: 370px;
 	height: 380px;
 }
 
-#shoppingDetailForm .productView .beanDetailImg li:after {
+#shoppingDetailForm .productView .shoppingDetailImg li:after {
 	content:"";
 	display: block;
 	clear:both;
 	
 }
 
-#shoppingDetailForm .productView .beanDetailImg li {
+#shoppingDetailForm .productView .shoppingDetailImg ul {
+	left: 70px;
+	
+}
+
+#shoppingDetailForm .productView .shoppingDetailImg li {
 	float:left;
 	list-style: none;
 	padding: 10px 10px 0 0;
 }
 
-#shoppingDetailForm .productView .beanDetailImg li.on img {
+#shoppingDetailForm .productView .shoppingDetailImg li.on img {
 	border-color: #0a56a9;
 }
 
 
-#shoppingDetailForm .productView .beanDetailImg li img {
+#shoppingDetailForm .productView .shoppingDetailImg li img {
 	border: 1px solid silver;
 	width: 70px;
 	height: 70px;
 }
 
 #shoppingDetailForm #detailTable {
-	width: 350px;
+	width: 400px;
 	
 }
 
@@ -764,25 +759,81 @@
 
 #shoppingDetailForm table .length input {
 	width: 44px;
-	height: 32px;
+	height: 31px;
 	border: none;
-	
+	border-right:1px solid #c6c6c6;
+	text-align:center;
 }
 
 #shoppingDetailForm table .length a {
 	overflow: hidden;
 	position: absolute;
 	right: 0;
-	top: 0;
-	width: 26px;
-	height: 16px;
+	
+	width: 20px;
+	height: 15px;
 	color: transparent;  /* 글자를 투명하게 가려주는것  */
 }
+#shoppingDetailForm .productView table .length a:nth-of-type(1) {
+	top: 0;
+	background :url("/milkyWayForest/image/ico_up.png")
+	no-repeat center;
 
-/* #beanDetailForm table .length a:nth-of-type {
+}
+
+#shoppingDetailForm .productView table .length a:nth-of-type(2) {
+	bottom: 0;
+	background :url("/milkyWayForest/image/ico_down.png")
+	no-repeat center;
+	border-top:1px solid #c6c6c6;
+}
+
+#shoppingDetailForm .productView .shoppingSelect {
+	width:70%;
+	border: 1px solid #c6c6c6;
+	box-sizing: border-box;
+	background: url("/milkyWayForest/image/ico_select.png") 
+	no-repeat right 6px center;
+	appearance: none; 
 	
-	} */
+}
+
+#shoppingDetailForm .productView .btnDiv {
+	padding: 30px 0 0 15px; 
+	text-align: center;
 	
 	
-	
+}
+
+#shoppingDetailForm .productView #wishListBtn {
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
+	border-radius: 5px;
+	background : white;	
+	color: #154520; 
+	font-weight: bold;
+
+}
+
+#shoppingDetailForm .productView #cartBtn {
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
+	border-radius: 5px;
+	background : white;	
+	color: #154520; 
+	font-weight: bold;
+		
+}	
+#shoppingDetailForm .productView #purchaseBtn {
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
+	border-radius: 5px;
+	background : #154520; 
+	color:  white; 
+	font-weight: bold;
+		
+}	
 	
