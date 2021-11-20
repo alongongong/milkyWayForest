@@ -1,0 +1,17 @@
+create table milkyProductInfo(
+    productCode number primary key,		-- 상품코드
+    productName varchar(50),			-- 상품명
+    category varchar(30),				-- 카테고리
+    productUnit number,					-- 상품단가
+    productRate number,					-- 할인율
+    enterCount number,					-- 입고수량
+    sellCount number					-- 판매수량
+);
+
+
+create table milkyProductDetail (
+	productCode number,					-- 상품코드
+	productEngName varchar(100),		-- 영어이름
+	productSmallInfo varchar(200),		-- 상세정보1
+	productDetailInfo varchar(500)		-- 상세정보2
+);
