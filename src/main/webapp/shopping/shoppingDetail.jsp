@@ -53,33 +53,23 @@
 					<td>옵션</td>
 					<td>
 						
-						<div class="shopppionOption1">
-							<div>
-								<select>
-									<option>--옵션--</option>
-									<option>1</option>
-									<option>2</option>
-								</select>
-						   </div>
-			           </div>
-					
+						<select class="shoppingSelect">
+							<option>--옵션--</option>
+							<option>1</option>
+							<option>2</option>
+						</select>
+						
 					</td>
 				</tr>
 			
 				<tr>
 					<td>옵션</td>
 					<td>
-						
-						<div class="shopppionOption1">
-							<div>
-								<select>
-									<option>--옵션--</option>
-									<option>1</option>
-									<option>2</option>
-								</select>
-							</div>
-						</div>
-					
+						<select class="shoppingSelect">
+							<option>--옵션--</option>
+							<option>1</option>
+							<option>2</option>
+						</select>
 					</td>
 				</tr>
 				
@@ -87,7 +77,7 @@
 					<td>구매수량</td>
 					<td>
 						<div class="length">
-							<input type="number">
+							<input type="number" min="1" value="1">  <!--마이너스 안들어가게 min -->
 							<a href="#a">증가</a>
 							<a href="#a">감소</a>
 						</div>
@@ -109,14 +99,17 @@
 				
 			<div class="shoppingDetailImg">
 				<img src ="/milkyWayForest/image/C001.jpg" alt="C001">
+			
 					<ul>
+					
 						<li class="on"><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
 						<li><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
 						<li><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
+					
 					</ul>
 			</div>
 			
-			<div>
+			<div class="btnDiv">
 				<input type="button" id="wishListBtn" value="찜하기"> 
 				<input type="button" id="cartBtn" value="장바구니"> 
 				<input type="button" id="purchaseBtn" value="구매하기">
