@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/milkyWayForest//css/companyInfo.css">
-</head>
+</head> 
 	<!-- Info 배너사진 -->
 	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
