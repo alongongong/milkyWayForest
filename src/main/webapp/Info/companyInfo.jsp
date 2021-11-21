@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/milkyWayForest//css/default.css">
-<link rel="stylesheet" href="/milkyWayForest//css/companyInfo.css"> <!-- PC전용 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/milkyWayForest//css/companyInfo.css">
 </head>
 	<!-- Info 배너사진 -->
-	<p class="top">
+	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
-	</p>
+	</div>
+	
+	<p class="top-text"><h1>은하숲</h1></p>
 	
 	<body>
 	<div id="companyInfo">
@@ -21,9 +23,9 @@
 			</div>
 				
 			<div class="text1"><strong>"커피 이상의 특별한 경험을 소개합니다."</strong></div>
-			<p class="text2">
-			세계인들의 생활 속에 스며들어 전 세계의 커피 문화를 선도하고 있는 은하숲이 일상을 풍요롭게 하는 제3의 공간으로서<br>
-			국내에서도 지역사회 속에서 고객 과 함께하며 새로운 커피문화를 정착시키고 있습니다.</p>
+				<p class="text2">
+				세계인들의 생활 속에 스며들어 전 세계의 커피 문화를 선도하고 있는 은하숲이 일상을 풍요롭게 하는 제3의 공간으로서<br>
+				국내에서도 지역사회 속에서 고객 과 함께하며 새로운 커피문화를 정착시키고 있습니다.</p>
 			
 			<div class="second_block">
 				<p class="pic2">
@@ -31,7 +33,7 @@
 				</p>
 				<p class="text3">
 				㈜은하숲은<br>
-				1993년 이대점 1호점을 시작으로 모든 매장을 직영하며,<br>
+				스*벅스의 협력사로서,<br>
 				지역사회 속에서 일상을 풍요롭게 하는<br>
 				특별한 은하숲 경험을 전달하면서<br>
 				업계를 선도하는 기업으로 성장해 오고 있습니다.<br>
@@ -43,7 +45,7 @@
 			</p>	
 					
 			<div class="text4">
-				<strong>“㈜은하숲은 은하숲커피 인터내셔널과<br>
+				<strong>“㈜은하숲은 스*벅스 인터내셔널과<br>
 		 		비트그룹의 공동투자로 설립된 합작 법인입니다.”</strong>
 	 		</div>
 	 		
@@ -75,28 +77,30 @@
 				<p class="text8">
 					오늘날 은하숲은 전세계 각국에서 수만여 명의 파트너들이 근무하는 세계 최고의 커피 전문 회사로,<br>
 					최상급 아라비카 원두의 윤리적 구매와 50년 이상의 전문적인 로스팅 기술을 통한 철저한 품질 관리와 기업의 사회적 책임 완수를 통해<br>
-					특별한 스타벅스의 경험과 문화를 한 잔의 커피와 함께 제공하며, 각 국의 커피 문화를 선도하고 있습니다.<br>
+					특별한 은하숲의 경험과 문화를 한 잔의 커피와 함께 제공하며, 각 국의 커피 문화를 선도하고 있습니다.<br>
 				</p>
 				<p class="text9">
-					가까운 은하숲 매장이나 트위터, 페이스북, 유튜브를 방문하면 매일 새로운 은하숲을 경험할 수 있습니다.<br>
+					가까운 스*벅스의 매장이나 트위터, 페이스북, 유튜브를 통해 스*벅스와 함께하는 은하숲의 발걸음을 보실 수 있습니다.<br>
 				</p>
-			</div>
-			
-			<div class="fianl_banner">
-				
 			</div>
 		</div>
 		
+		<!-- 오른쪽 nav_Info	 -->
 			<div id="rightDiv">
-				<div class="gradeBenefitInfo">
-				 <table border="1" cellspacing="0" cellpadding="5">
-			      <tr>
-			         <td width="200" align="left">등급혜택 안내</td>
-			         </td>	
-			      </tr>
-			      </table>
-			     </div>
+				<div class="navtable">
+					<p class="nav_Info">
+						<a href=""><Strong>은하숲 소개</Strong>
+							<span class="bi bi-chevron-down"></span>
+						</a>
+						<ul style="display:none;">
+							<li>
+								<a href="">은화숲</a>
+							<li>
+								<a href="">등급 및 혜택</a>
+							</li>
+						</ul>
+					</p>
+				</div>
 			</div>
-	</div>
 </body> 
 </html>
