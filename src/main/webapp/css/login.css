@@ -29,17 +29,15 @@
 }
 #loginForm #id-input-wrap input, #pwd-input-wrap input{
 	border: none;
-	width:430px;
-	margin-top: 10px;
-	font-size: 14px;
-	margin-left: 10px;
-	height:30px;
+    width: 460px;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 45px;
 }
 #loginForm #id-input-wrap input:focus, #pwd-input-wrap input:focus{
 	outline: none;
 }
 #loginForm #result-div{
-	display: none;
 	padding-top: 10px;
     font-size: 12px;
     color: red;
@@ -174,18 +172,16 @@
 }
 #findIdForm #findId-question-input-wrap input, #findIdForm #findId-email-input-wrap input, #findIdForm #check-email-input-wrap input{
 	border: none;
-	width:430px;
-	margin-top: 10px;
-	font-size: 14px;
-	margin-left: 10px;
-	height:30px;
+    width: 460px;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 45px;
 }
 #findIdForm #findId-question-input-wrap input:focus, #findIdForm #findId-email-input-wrap input:focus, #findIdForm #check-email-input-wrap input:focus{
 	outline: none;
 }
 
 #findIdForm #result1-div, #findIdForm #result2-div, #findIdForm #result3-div{
-	display: none;
 	padding-top: 10px;
     font-size: 12px;
     color: red;
@@ -240,18 +236,16 @@
 #findPwdForm1 #findPwd-id-input-wrap input, #findPwdForm2 #findPwd-email-input-wrap input, #findPwdForm2 #check-number-input-wrap input,
 #findPwdForm3 #findPwd-pwd-input-wrap input, #findPwdForm3 #findPwd-repwd-input-wrap input{
 	border: none;
-	width:430px;
-	margin: 10px 0;
-	font-size: 14px;
-	margin-left: 10px;
-	height:30px;
+    width: 460px;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 45px;
 }
 #findPwdForm1 #findPwd-id-input-wrap input:focus, #findPwdForm2 #findPwd-email-input-wrap input:focus, #findPwdForm2 #check-number-input-wrap input:focus,
 #findPwdForm3 #findPwd-pwd-input-wrap input:focus, #findPwdForm3 #findPwd-repwd-input-wrap input:focus{
 	outline: none;
 }
 #findPwdForm1 #result-div, #findPwdForm2 #result1-div, #findPwdForm2 #result2-div, #findPwdForm3 #result-div{
-	display: none;
 	padding-top: 10px;
     font-size: 12px;
     color: red;

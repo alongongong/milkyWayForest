@@ -39,18 +39,18 @@ public class LoginController {
 	//이메일 인증
 	@GetMapping(value = "/loginEmailCheck")
 	@ResponseBody
-    public void loginEmailCheck(String email) throws Exception{
+    public String loginEmailCheck(String email) throws Exception{
 		System.out.println(email);
 		
 		int checkNum = (int)(Math.random() * (99999 - 10000 + 1)) + 10000;
-		System.out.println("인증번호 : "+checkNum);
+		System.out.println("인증번호 : " + checkNum);
 		
 		/* 이메일 보내기 */
         String setFrom = "milkywayforest11@gmail.com";
         String toMail = email;
         String title = "아이디 찾기 인증 이메일 입니다.";
         String content = 
-                "안녕하세요." +
+                "안녕하세요. 은하숲입니다." +
                 "<br><br>" + 
                 "인증 번호는 " + checkNum + "입니다." + 
                 "<br>" + 
@@ -68,6 +68,10 @@ public class LoginController {
         }catch(Exception e) {
             e.printStackTrace();
         }
+        
+        String num = checkNum + "";
+        
+        return num;
     }
 
 	

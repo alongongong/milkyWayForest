@@ -12,7 +12,7 @@
 	</bean>
 	
 	<context:component-scan base-package="admin.controller" />
-	<!-- <context:component-scan base-package="login.controller" /> -->
+	<context:component-scan base-package="login.controller" />
 	
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />
 	

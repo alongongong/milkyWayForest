@@ -2,12 +2,10 @@ $('#loginForm #login-button').click(function(){
 	$('#loginForm #result-div').empty();
 	
 	if($('#loginForm #id-input').val()=='') {
-		$('#loginForm #result-div').show();
 		$('#loginForm #result-div').html('아이디를 입력하세요');
 		$('#loginForm #id-input').focus();	
 			
 	}else if($('#loginForm #pwd-input').val()=='') {
-		$('#loginForm #result-div').show();
 		$('#loginForm #result-div').html('비밀번호를 입력하세요');
 		$('#loginForm #pwd-input').focus();	
 	}
@@ -23,7 +21,6 @@ $('#loginForm #login-button').click(function(){
 				if(data == 'loginOk'){
 					location.href='/milkyWayForest/index.jsp';
 				}else if(data == 'loginFail'){
-					$('#loginForm #result-div').show();
 					$('#loginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');
 				}
 			},
@@ -156,11 +153,9 @@ $('#findIdForm').ready(function(){
 		
 		if($('#findIdForm select option:selected').index() < 1){
 			$('#findIdForm option:eq(0)').attr('selected', true);
-			$('#findIdForm #result1-div').show();
 			$('#findIdForm #result1-div').html('질문을 선택하세요');
 			
 		}else if($('#findIdForm #findId-question-input').val()=='') {
-			$('#findIdForm #result1-div').show();
 			$('#findIdForm #result1-div').html('답을 입력하세요');
 			$('#findIdForm #findId-question-input').focus();	
 			
@@ -169,13 +164,12 @@ $('#findIdForm').ready(function(){
 				url: '/milkyWayForest/login/findId',
 				type: 'post',
 				data: {'question' : $('#findIdForm select option:selected').val(), 'answer' : $('#findIdForm #findId-question-input').val()},
-				dataType: 'text',
+				dataType: 'jason',
 				success: function(data){
 					data = data.trim();
 					
 					if(data == 'findIdOk'){
 						location.href='/milkyWayForest/login/loginForm';
-						$('#loginForm #result-div').show();
 						$('#loginForm #result-div').html('찾으신 아이디는 '+data.id+'입니다');
 						
 					}else if(data == 'findIdFail'){
@@ -197,33 +191,68 @@ $('#findIdForm').ready(function(){
 		$('#findIdForm #findId-email-wrap').show();
 	});
 	
-	//이메일 인증번호 받기 https://moonong.tistory.com/45, https://kimvampa.tistory.com/105?category=771727 참고
+	var code = '';
+	//이메일 인증번호 받기 https://kimvampa.tistory.com/105?category=771727 참고
 	$('#findIdForm #check-email-button').click(function(){
 		$('#findIdForm #result2-div').empty();
 		
-		if($('#findIdForm #findId-email-input').val()=='') {
-			$('#findIdForm #result2-div').show();
+		var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var email = $('#findIdForm #findId-email-input').val();
+		
+		if(email =='') {
 			$('#findIdForm #result2-div').html('이메일을 입력하세요');
-			$('#findIdForm #findId-email-input').focus();	
+			$('#findIdForm #findId-email-input').focus();
+	
+		}else if(!emailForm.test(email)){
+			$('#findIdForm #result2-div').html('잘못된 이메일 형식입니다');
 			
 		}else{
-			var email = $('#findIdForm #findId-email-input').val(); //입력한 이메일
-		
 			$.ajax({
+       			url: "/milkyWayForest/login/loginEmailCheck",
 				type: "get",
-       			url: "/milkyWayForest/login/loginEmailCheck?email=" + email
-				/*
-				url: '/milkyWayForest/login/loginEmailCheck',
-				type: 'post',
-				data: {'email' : $('#findIdForm #findId-email-input').val()},
-				dataType: 'text',
+       			data: {'email' : $('#findIdForm #findId-email-input').val()},
+       			dataType: 'text',
 				success: function(data){
-					
+					$('#findIdForm #result2-div').html('인증번호가 발송되었습니다');
+					$("#findIdForm #check-email-input").attr("disabled", false);
+					code = data;
 				},
 				error: function(err){
 					console.log(err);
 				}
-				*/
+			});
+		}
+	});
+	
+	//인증번호 확인
+	$('#findIdForm #check-number-button').click(function(){
+		$('#findIdForm #result2-div').empty();
+		
+		var inputCode = $('#findIdForm #check-email-input').val();
+		
+		if(inputCode != code){
+			$('#findIdForm #result2-div').html('인증번호를 다시 확인해주세요');
+			
+		}else{
+			$.ajax({
+				url: '/milkyWayForest/login/findId',
+				type: 'post',
+				data: {'email' : $('#findIdForm #findId-email-input').val()},
+				dataType: 'jason',
+				success: function(data){
+					data = data.trim();
+					
+					if(data == 'findIdOk'){
+						location.href='/milkyWayForest/login/loginForm';
+						$('#loginForm #result-div').html('찾으신 아이디는 '+data.id+'입니다');
+						
+					}else if(data == 'findIdFail'){
+						$('#findIdForm #result1-div').html('질문과 답을 다시 한번 확인하세요');
+					}
+				},
+				error: function(err){
+					console.log(err);
+				}
 			});
 		}
 	});
