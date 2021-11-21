@@ -2,10 +2,13 @@
 /* banner 사진 (꽉차게) */
 * { margin: 0; padding: 0; }
 
+.top { position: relative; }
+.top .top-text { position: absolute; color:white;}
+
 /* 전체 가운데 정렬 */
 #companyInfo { display: flex; width: 78rem; margin: 0 auto; }
 
-/*메인화면을 왼쪽과 오른쪽으로 나누*/
+/*메인화면을 왼쪽과 오른쪽으로 나눔*/
 #companeInfo #leftDiv {
 	width: 70%;
 }
@@ -53,8 +56,17 @@
 .text8 { margin : 1.5rem 0 0 0; }
 .text9 { margin : 3rem 0 3rem 0; }
 
-/* fianl_banner */
-.final_banner { background-color : #f6f5ef;  }
-
 /* rightDiv */
-.rightDiv .gradeBenefitInfo { margin-top: 3rem; }
+#rightDiv .navtable { 
+    margin-top: 3rem; border-top: 3px solid #222; border-bottom: 1px solid #A6A6A6; }
+#rightDiv > a  { color: #444; display: block;
+	position: relative; width: 175px; }	
+#rightDiv .nav_Info {
+	display: block; padding: 20px 30px 20px 15px; font-size: 16px;
+}
+.nav_Info .bibi-chevron-down { right: 15px;  width: 12px; }
+
+a { font-size: 100%; text-decoration: none; vertical-align: baseline; 
+	background: transparent; cursor: pointer; }		
+a:link { color: #222; } a:visited { color: #222; } a:hover { color: #222; } a:active { color: #222; }
+

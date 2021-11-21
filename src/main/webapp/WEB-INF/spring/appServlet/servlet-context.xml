@@ -14,6 +14,8 @@
 	<context:component-scan base-package="admin.controller" />
 	<!-- <context:component-scan base-package="login.controller" /> -->
 	
+	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />
+	
 	<mvc:resources location="/assets/" mapping="/assets/**" />
 	
 	<mvc:resources location="/js/" mapping="/js/**" />

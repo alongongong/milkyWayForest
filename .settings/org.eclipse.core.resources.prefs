@@ -1,5 +1,10 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=d78ef21f26434956737308d4c76b8bb6182b8a35
 eclipse.preferences.version=1
 encoding//src/main/java/admin/controller/AdminController.java=UTF-8
-encoding//src/main/webapp/WEB-INF/command.properties=UTF-8
+encoding//src/main/webapp/sql/admin.txt=UTF-8
+encoding//src/main/webapp/sql/gradeInfo.txt=UTF-8
 encoding//src/main/webapp/sql/member.txt=UTF-8
+encoding//src/main/webapp/sql/notice.txt=UTF-8
 encoding/<project>=UTF-8
