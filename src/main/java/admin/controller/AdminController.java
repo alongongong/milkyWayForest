@@ -22,7 +22,7 @@ public class AdminController {
 	@RequestMapping(value="/admin/pAllMenu", method=RequestMethod.GET)
 	public String pAllMenu(String dataNum, Model model) { 
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "¸Ş´º °ü¸®");
+		model.addAttribute("subject", "ë©”ë‰´ ê´€ë¦¬");
 		model.addAttribute("display", "pAllMenu.jsp");
 		return "/admin/adminIndex";
 	}
@@ -30,7 +30,7 @@ public class AdminController {
 	@GetMapping("/admin/memberList")
 	public String memberLIst(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "È¸¿ø¸®½ºÆ®");
+		model.addAttribute("subject", "íšŒì›ë¦¬ìŠ¤íŠ¸");
 		model.addAttribute("display", "pMemberList.jsp");
 		return "/admin/adminIndex";
 	}
@@ -38,7 +38,7 @@ public class AdminController {
 	@GetMapping("/admin/gradeBenefit")
 	public String gradeBenefit(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "µî±Şº° ÇıÅÃ");
+		model.addAttribute("subject", "ë“±ê¸‰ë³„ í˜œíƒ");
 		model.addAttribute("display", "pGradeBenefit.jsp");
 		return "/admin/adminIndex";
 	}
@@ -46,7 +46,7 @@ public class AdminController {
 	@GetMapping("/admin/productList")
 	public String productList(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "»óÇ° Á¶È¸, ¼öÁ¤, »èÁ¦");
+		model.addAttribute("subject", "ìƒí’ˆ ì¡°íšŒ, ìˆ˜ì •, ì‚­ì œ");
 		model.addAttribute("display", "pProductList.jsp");
 		return "/admin/adminIndex";
 	}
@@ -54,7 +54,7 @@ public class AdminController {
 	@GetMapping("/admin/productInsert")
 	public String productInsert(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "»óÇ° µî·Ï");
+		model.addAttribute("subject", "ìƒí’ˆ ë“±ë¡");
 		model.addAttribute("display", "pProductInsert.jsp");
 		return "/admin/adminIndex";
 	}
@@ -62,7 +62,7 @@ public class AdminController {
 	@GetMapping("/admin/talk")
 	public String talk(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "»ó´ã °ü¸®");
+		model.addAttribute("subject", "ìƒë‹´ ê´€ë¦¬");
 		model.addAttribute("display", "pTalk.jsp");
 		return "/admin/adminIndex";
 	}
@@ -70,7 +70,7 @@ public class AdminController {
 	@GetMapping("/admin/dailyOrder")
 	public String dailyOrder(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "ÀÏÀÚº° ÁÖ¹® ³»¿ª È®ÀÎ");
+		model.addAttribute("subject", "ì¼ìë³„ ì£¼ë¬¸ ë‚´ì—­ í™•ì¸");
 		model.addAttribute("display", "pDailyOrder.jsp");
 		return "/admin/adminIndex";
 	}
@@ -78,7 +78,7 @@ public class AdminController {
 	@GetMapping("/admin/orderNShip")
 	public String orderNShip(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "ÁÖ¹® È®ÀÎ / ¹ß¼Û °ü¸®");
+		model.addAttribute("subject", "ì£¼ë¬¸ í™•ì¸ / ë°œì†¡ ê´€ë¦¬");
 		model.addAttribute("display", "pOerderNShip");
 		return "/admin/adminIndex";
 	}
@@ -86,7 +86,7 @@ public class AdminController {
 	@GetMapping("/admin/orderCancel")
 	public String orderCancel(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "Ãë¼Ò, ±³È¯, ¹İÇ° °ü¸®");
+		model.addAttribute("subject", "ì·¨ì†Œ, êµí™˜, ë°˜í’ˆ ê´€ë¦¬");
 		model.addAttribute("display", "pOrderCancel.jsp");
 		return "/admin/adminIndex";
 	}
@@ -94,10 +94,40 @@ public class AdminController {
 	@GetMapping("/admin/qnaBoard")
 	public String qnaBoard(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
-		model.addAttribute("subject", "¹®ÀÇ °Ô½ÃÆÇ °ü¸®");
+		model.addAttribute("subject", "ë¬¸ì˜ ê²Œì‹œíŒ ê´€ë¦¬");
 		model.addAttribute("display", "pQnaBoard.jsp");
 		return "/admin/adminIndex";
 	}
 	
-	//@GetMapping("")
+	@GetMapping("/admin/reviewBoard")
+	public String reviewBoard(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "ìƒí’ˆ ë¦¬ë·° ê´€ë¦¬");
+		model.addAttribute("display", "pReviewBoard.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/stock")
+	public String stock(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "ë¬¼ë¥˜ ê´€ë¦¬");
+		model.addAttribute("display", "pStock.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/memberStatics")
+	public String memberStatics(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "ì ‘ì†ììˆ˜ í†µê³„");
+		model.addAttribute("display", "pMemberStatics.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/payStatics")
+	public String payStatics(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "íŒë§¤ í†µê³„");
+		model.addAttribute("display", "pPayStatics.jsp");
+		return "/admin/adminIndex";
+	}
 }
