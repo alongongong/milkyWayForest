@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>milkyWayForest</display-name>
+  
+  <!-- 
+  	웹과 상관없이 독립된 WAC
+   /WEB-INF/applicationContext.xml 기본적으로 얘로 설정됨!
+   	 -> /WEB-INF/spring/root-context.xml 로 이름과 위치 변경
+   -->
+   <context-param>
+   	<param-name>contextConfigLocation</param-name>
+   	<param-value>/WEB-INF/spring/root-context.xml</param-value>
+   </context-param>
+   <listener>
+   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+   </listener>
+   
+  
+  
+    <!-- 
+  웹과 관련된 WAC
+  /WEB-INF/dispatcher-servlet.xml 기본적으로 얘로 설정됨! 
+  	-> /WEB-INF/spring/appServlet/servlet-context.xml 로 이름과 위치를 변경한다.
+  
+   -->
+    <servlet>
+	<servlet-name>dispatcherServlet</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	
+	<!-- 파일명이나 위치를 변경할 때 아래와 같이 써준다. -->
+	<init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/spring/appServlet/servlet-context.xml
+		</param-value>
+	</init-param><!-- 얘를 걸어주면 위의 dispatcher를 찾아가지 않음. -->
+
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>dispatcherServlet</servlet-name>
+	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+
+  <!-- 스프링 파라메터로 한글을 넘길 때 -->
+  <filter>
+   <filter-name>encodingFilter</filter-name>
+   <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+   <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+   </init-param>
+  </filter>
+  <filter-mapping>
+   <filter-name>encodingFilter</filter-name>
+   <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

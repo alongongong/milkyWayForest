@@ -1,0 +1,14 @@
+create table milkyShipment(
+    shipCode number primary key,	-- 배송지 번호
+    id varchar(15),
+    shipNickname varchar(20),		-- 배송지 닉네임
+    shipReceiver varchar(20),		-- 배송지 수신인
+    shipTel1 varchar(5),
+    shipTel2 varchar(5),
+    shipTel3 varchar(5),
+    shipZipcode varchar(10),
+    shipAddr1 varchar(50),
+    shipAddr2 varchar(50)
+);
+
+create sequence milkyShipmentSeq nocache nocycle;

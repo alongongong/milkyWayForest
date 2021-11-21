@@ -18,5 +18,6 @@
 	</div>
 </body>
 <footer>
+	<jsp:include page="main/footer.jsp" />
 </footer>
 </html>
