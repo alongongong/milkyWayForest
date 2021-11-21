@@ -98,14 +98,11 @@
 		
 				
 			<div class="shoppingDetailImg">
-				<img src ="/milkyWayForest/image/C001.jpg" alt="C001">
-			
-					<ul>
-					
+				<img src ="/milkyWayForest/image/C001.jpg" alt="C001" id="bigImg">
+					<ul class="imgList">
 						<li class="on"><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
-						<li><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
-						<li><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
-					
+						<li><a href="#a"><img src ="/milkyWayForest/image/C002.jpg" alt="C001"></a></li>
+						<li><a href="#a"><img src ="/milkyWayForest/image/C003.jpg" alt="C001"></a></li>
 					</ul>
 			</div>
 			
@@ -121,6 +118,9 @@
 		
 	</section>
 </form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/shopping.js"></script>
 
 </body>
 </html>
