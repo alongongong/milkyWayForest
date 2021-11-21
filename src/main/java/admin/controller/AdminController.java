@@ -95,7 +95,9 @@ public class AdminController {
 	public String qnaBoard(String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "문의 게시판 관리");
-		model.addAttribute(dataNum, model);
+		model.addAttribute("display", "pQnaBoard.jsp");
 		return "/admin/adminIndex";
 	}
+	
+	//@GetMapping("")
 }

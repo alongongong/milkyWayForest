@@ -1,7 +1,7 @@
 create table milkyMember(
     id varchar(15) primary key,
     name varchar(15),
-    nickname varchar(20),	-- ´Ğ³×ÀÓ
+    nickname varchar(20),	-- ë‹‰ë„¤ì„
     pwd varchar(20),
     gender varchar(5),
     yy number,
@@ -12,17 +12,17 @@ create table milkyMember(
     tel3 varchar(5),
     email1 varchar(20),
     email2 varchar(20),
-    writeDate date default sysdate,				-- °¡ÀÔÀÏÀÚ
-    memberGrade varchar(15) default 'welcome',	-- È¸¿øµî±Ş
-    savedMoney number default 0, 				-- Àû¸³±İ
-    idPwdQuestion varchar(50),					-- ¾ÆÀÌµğºñ¹øÃ£±â Áú¹®
-    idPwdAnswer varchar(50),					-- ¾ÆÀÌµğºñ¹øÃ£±â ´ä
-    writePath varchar(20),						-- °¡ÀÔ°æ·Î
-    loginTime date default sysdate);			-- ·Î±×ÀÎ ½Ã°£
+    writeDate date default sysdate,				-- ê°€ì…ì¼ì
+    memberGrade varchar(15) default 'welcome',	-- íšŒì›ë“±ê¸‰
+    savedMoney number default 0, 				-- ì ë¦½ê¸ˆ
+    idPwdQuestion varchar(50),					-- ì•„ì´ë””ë¹„ë²ˆì°¾ê¸° ì§ˆë¬¸
+    idPwdAnswer varchar(50),					-- ì•„ì´ë””ë¹„ë²ˆì°¾ê¸° ë‹µ
+    writePath varchar(20),						-- ê°€ì…ê²½ë¡œ
+    loginTime date default sysdate);			-- ë¡œê·¸ì¸ ì‹œê°„
     
     
 create table milkyMemberBenefit(
 	id varchar(15),
-	coupon varchar(30));	-- ÄíÆù
+	coupon varchar(30));	-- ì¿ í°
 	
 	

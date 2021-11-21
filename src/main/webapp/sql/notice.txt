@@ -1,4 +1,4 @@
--- °øÁö»çÇ×
+-- ê³µì§€ì‚¬í•­
 create table milkyNotice (
   noticeCode number primary key,
   noticeSubject varchar(50),
@@ -11,7 +11,7 @@ create table milkyNotice (
 create sequence milkyNoticeSeq nocache nocycle;
 
 
--- ÀÌº¥Æ®
+-- ì´ë²¤íŠ¸
 create table milkyEvent (
   eventCode number primary key,
   eventSubject varchar(50),
@@ -25,7 +25,7 @@ create table milkyEvent (
 create sequence milkyEventSeq nocache nocycle;
 
 
--- ÀÚÁÖ ¹¯´Â Áú¹®
+-- ìì£¼ ë¬»ëŠ” ì§ˆë¬¸
 create table milkyFAQ (
   FAQCode number primary key,
   FAQSubject varchar(50),
@@ -38,7 +38,7 @@ create table milkyFAQ (
 create sequence milkyFAQSeq nocache nocycle;
 
 
--- 1´ë1¹®ÀÇ
+-- 1ëŒ€1ë¬¸ì˜
 create table milkyQnA (
   QnACode number primary key,
   QnASubject varchar(50),
@@ -54,7 +54,7 @@ create table milkyQnA (
 create sequence milkyQnASeq nocache nocycle;
 
 
--- ¸®ºä
+-- ë¦¬ë·°
 create table milkyReview (
   reviewCode number primary key,
   productCode number,
@@ -67,7 +67,7 @@ create table milkyReview (
 create sequence milkyReviewSeq nocache nocycle;
 
 
--- ´ñ±Û
+-- ëŒ“ê¸€
 create table milkyComment (
   commentCode number primary key,
   QnACode number,
