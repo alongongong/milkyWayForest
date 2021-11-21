@@ -1,5 +1,8 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=bda41b0aaf20b2c617c5cbae07f4585453159568
 eclipse.preferences.version=1
-encoding//src/main/webapp/WEB-INF/command.properties=UTF-8
 encoding//src/main/webapp/sql/admin.txt=UTF-8
 encoding//src/main/webapp/sql/gradeInfo.txt=UTF-8
 encoding//src/main/webapp/sql/member.txt=UTF-8
+encoding//src/main/webapp/sql/notice.txt=UTF-8

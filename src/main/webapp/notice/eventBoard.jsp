@@ -16,13 +16,20 @@
 	<div id="eventBoardNowDiv">
 		<div>진행 이벤트</div>
 	</div>
+	<div id="eventBoardNowBody">
+		<!-- ajax로 append -->
+	</div>
 	<br>
 	<br>
+	
 	<table id="eventBoardTable" class="table">
 	</table>
 	<br><br>
 	<div id="eventBoardEndDiv">
 		<div>종료 이벤트</div>
+	</div>
+	<div id="eventBoardNowBody">
+		<!-- ajax로 append -->
 	</div>
 	<br><br>
 	<table id="eventBoardTable" class="table">

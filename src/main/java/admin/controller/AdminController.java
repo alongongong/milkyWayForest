@@ -59,4 +59,45 @@ public class AdminController {
 		return "/admin/adminIndex";
 	}
 	
+	@GetMapping("/admin/talk")
+	public String talk(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "상담 관리");
+		model.addAttribute("display", "pTalk.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/dailyOrder")
+	public String dailyOrder(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "일자별 주문 내역 확인");
+		model.addAttribute("display", "pDailyOrder.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/orderNShip")
+	public String orderNShip(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "주문 확인 / 발송 관리");
+		model.addAttribute("display", "pOerderNShip");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/orderCancel")
+	public String orderCancel(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "취소, 교환, 반품 관리");
+		model.addAttribute("display", "pOrderCancel.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	@GetMapping("/admin/qnaBoard")
+	public String qnaBoard(String dataNum, Model model) {
+		model.addAttribute("dataNum", dataNum);
+		model.addAttribute("subject", "문의 게시판 관리");
+		model.addAttribute("display", "pQnaBoard.jsp");
+		return "/admin/adminIndex";
+	}
+	
+	//@GetMapping("")
 }
