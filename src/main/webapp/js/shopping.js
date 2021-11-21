@@ -12,10 +12,3 @@ $(function(){
 
 });
 
-
-$(function(){
-	 num++
-	 $.each()
-	
-	$('length')
-});
