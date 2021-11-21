@@ -24,7 +24,7 @@
 </head>
 <body class="">
   <div class="wrapper ">
-   <jsp:include page="nav/adminNavTemplate.jsp" />
+   <jsp:include page="admin/adminNavTemplate.jsp" />
     
     <div class="main-panel" style="height: 100vh;">
      

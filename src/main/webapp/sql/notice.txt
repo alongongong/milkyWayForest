@@ -1,0 +1,83 @@
+-- 공지사항
+create table milkyNotice (
+  noticeCode number primary key,
+  noticeSubject varchar(50),
+  id varchar(15),
+  noticeContent varchar(1000),
+  noticeHit number default 0,
+  noticeDate date default sysdate
+);
+
+create sequence milkyNoticeSeq nocache nocycle;
+
+
+-- 이벤트
+create table milkyEvent (
+  eventCode number primary key,
+  eventSubject varchar(50),
+  id varchar(15),
+  eventContent varchar(1000),
+  eventeHit number default 0,
+  eventDate date default sysdate
+);
+
+
+create sequence milkyEventSeq nocache nocycle;
+
+
+-- 자주 묻는 질문
+create table milkyFAQ (
+  FAQCode number primary key,
+  FAQSubject varchar(50),
+  id varchar(15),
+  FAQContent varchar(1000),
+  FAQHit number default 0,
+  FAQDate date default sysdate
+);
+
+create sequence milkyFAQSeq nocache nocycle;
+
+
+-- 1대1문의
+create table milkyQnA (
+  QnACode number primary key,
+  QnASubject varchar(50),
+  id varchar(15),
+  QnAContent varchar(500),
+  QnAPwd varchar(15),
+  QnAHit number default 0,
+  QnAImage1 varchar(20),
+  QnAImage2 varchar(20),
+  QnADate date default sysdate
+);
+
+create sequence milkyQnASeq nocache nocycle;
+
+
+-- 리뷰
+create table milkyReview (
+  reviewCode number primary key,
+  productCode number,
+  reviewSubject varchar(50),
+  id varchar(15),
+  reviewContent varchar(500),
+  reviewDate date default sysdate
+);
+
+create sequence milkyReviewSeq nocache nocycle;
+
+
+-- 댓글
+create table milkyComment (
+  commentCode number primary key,
+  QnACode number,
+  id varchar(15),
+  commentContent varchar(300),
+  commentRef number default 0,
+  commentLev number default 0,
+  commentStep number default 0,
+  commentReply number default 0,
+  commentDate date default sysdate
+);
+
+create sequence milkyCommentSeq nocache nocycle;

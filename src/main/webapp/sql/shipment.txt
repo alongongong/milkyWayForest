@@ -10,3 +10,5 @@ create table milkyShipment(
     shipAddr1 varchar(50),
     shipAddr2 varchar(50)
 );
+
+create sequence milkyShipmentSeq nocache nocycle;

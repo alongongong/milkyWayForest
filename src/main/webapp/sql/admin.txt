@@ -1,0 +1,7 @@
+create table milkyAdmin (
+  adminId varchar(15) primary key,
+  adminPwd varchar(20),
+  adminName varchar(15),
+  adminDate date default sysdate,
+  adminLoginDate date default sysdate
+);
