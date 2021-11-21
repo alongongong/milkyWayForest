@@ -19,7 +19,7 @@
 			<!-- 질문으로 찾기 버튼 클릭하면 보이게 -->
 			<div id="findId-question-wrap">
 				<select class="form-select form-select-lg mb-3">
-					<option selected>---질문을 선택하세요---</option>
+					<option>---질문을 선택하세요---</option>
 					<option value="추억의 장소">기억에 남는 추억의 장소는?</option>
 					<option value="좌우명">자신의 인생 좌우명은?</option>
 					<option value="보물">자신의 보물 1호는?</option>
@@ -32,18 +32,22 @@
 				
 				<p>질문에 대한 답을 입력하세요</p>
 				<div id="findId-question-input-wrap">	
-					<input type="text" name="findId-question-input"></input>
+					<input type="text" id="findId-question-input" name="findId-question-input"></input>
 				</div>
+				
+				<div id="findId-button-wrap">
+					<button type="button" id="findId-button1">아이디 찾기</button>
+				</div>
+				<div id="result1-div"></div>
 			</div>
 			
 			<!-- 이메일로 찾기 버튼 클릭하면 보이게 -->
 			<div id="findId-email-wrap">
 				<p>이메일을 입력하세요</p>
 				<div id="findId-email-input-wrap">
-					<input type="email" name="email">
+					<input type="email" id="findId-email-input" name="email">
 				</div>
 				
-				<div id="result1-div"></div>
 				<div id="check-email-button-wrap">
 					<button type="button" id="check-email-button">인증번호 받기</button>
 				</div>
@@ -52,16 +56,14 @@
 				<div id="check-email-input-wrap">
 					<input type="text" name="check-email-input">
 				</div>
-				
-				<div id="result2-div"></div>
+
 				<div id="check-number-button-wrap">
 					<button type="button" id="check-number-button">인증번호 확인</button>
 				</div>
-			</div>
-
-			<div id="result3-div"></div>
-			<div id="findId-button-wrap">
-				<button type="button" id="findId-button">아이디 찾기</button>
+				<div id="findId-button-wrap">
+					<button type="button" id="findId-button2">아이디 찾기</button>
+				</div>
+				<div id="result2-div"></div>
 			</div>
 		</section>
 	</div>

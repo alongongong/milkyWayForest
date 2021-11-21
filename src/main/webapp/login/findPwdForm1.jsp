@@ -14,10 +14,10 @@
 					<input type="text" name="id">
 				</div>
 
-				<div id="result-div"></div>
 				<div id="check-id-button-wrap">
 					<button type="button" id="check-id-button">다음</button>
 				</div>
+				<div id="result-div"></div>
 			</div>
 		</section>
 	</div>
