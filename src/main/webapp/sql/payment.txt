@@ -1,0 +1,32 @@
+create table milkyPayment (
+  paymentCode number primary key,		-- 주문번호 M(주문날짜)-011000(seq) 형식
+  id varchar(15),						
+  paymentMethod varchar(20),			-- 결제수단
+  shipPay number,						-- 배송비
+  deliveryInfo varchar(30),				-- 배송 요청사항
+  payDate date default sysdate			-- 결제날짜
+);
+
+create sequence milkyPaymentSeq nocache nocycle;
+
+
+create table milkyPaymentOption (
+  paymentCode number,
+  productCode number,					-- 상품번호
+  productOption varchar(30),			-- 상품옵션
+  payQty number,						-- 주문개수
+  payPrice number,						-- 단가
+  payRate number						-- 할인율
+);
+
+create table milkyPaymentShip (
+  paymentCode number,
+  payShipNickname varchar(20),			-- 주문배송지닉네임
+  payShipReceiver varchar(20),			-- 주문수령인
+  payShipTel1 varchar(5),
+  payShipTel2 varchar(5),
+  payShipTel3 varchar(5),
+  payShipZipcode varchar(10),
+  payShipAddr1 varchar(50),
+  payShipAddr2 varchar(50)
+);

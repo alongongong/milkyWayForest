@@ -11,8 +11,8 @@
 				<h2>아이디 찾기</h2>
 				<p>아이디 찾는 방법을 선택하세요</p>
 				<ul>
-					<li><button id="select-question-button"><span>질문으로 찾기</span></button></li>
-					<li><button id="select-email-button"><span>이메일로 찾기</span></button></li>
+					<li><button type="button" id="select-question-button"><span>질문으로 찾기</span></button></li>
+					<li><button type="button" id="select-email-button"><span>이메일로 찾기</span></button></li>
 				</ul>
 			</div>
 			
@@ -43,8 +43,9 @@
 					<input type="email" name="email">
 				</div>
 				
+				<div id="result1-div"></div>
 				<div id="check-email-button-wrap">
-					<button id="check-email-button">인증번호 받기</button>
+					<button type="button" id="check-email-button">인증번호 받기</button>
 				</div>
 				
 				<p>인증번호를 입력하세요</p>
@@ -52,14 +53,15 @@
 					<input type="text" name="check-email-input">
 				</div>
 				
+				<div id="result2-div"></div>
 				<div id="check-number-button-wrap">
-					<button id="check-number-button">인증번호 확인</button>
+					<button type="button" id="check-number-button">인증번호 확인</button>
 				</div>
 			</div>
-			
-			<!-- 공통으로 계속 뜨는 부분 -->
+
+			<div id="result3-div"></div>
 			<div id="findId-button-wrap">
-				<button id="findId-button">아이디 찾기</button>
+				<button type="button" id="findId-button">아이디 찾기</button>
 			</div>
 		</section>
 	</div>

@@ -1,0 +1,8 @@
+create table milkyWishList (
+  wishListCode number primary key,
+  id varchar(15),
+  productCode number,
+  wishDate date default sysdate
+);
+
+create sequence milkyWishListSeq nocache nocycle;

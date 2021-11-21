@@ -15,20 +15,22 @@
 		<h1>원두</h1>
 		
 		<div id="beanDetailNav">
-		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a> > 
-			<a href="">원두/차</a> > 
-			<a href="">원두</a>
-		</div>
+			<div>
+				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+				<a href="">Menu</a> > 
+				<a href="">원두/차</a> > 
+				<a href="">원두</a>
+			</div>
 		</div>
 		
 		
-		<div class="productView">
+	<div class="productView">
 			<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
-			<table>
+			<table id="detailTable">
+			
+				
 				<tr>
-					<td colspan="2">상품 한국이름</td>
+					<td id="productKorName" colspan="2">상품 한국이름</td>
 				</tr>
 				
 				<tr>
@@ -42,7 +44,55 @@
 				
 				<tr>
 					<td>가격</td>
-					<td>금액</td>
+					<td class="price"><b>금액</b>원</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td>옵션</td>
+					<td>
+						
+						<div class="shopppionOption1">
+							<div>
+								<select>
+									<option>--옵션--</option>
+									<option>1</option>
+									<option>2</option>
+								</select>
+						   </div>
+			           </div>
+					
+					</td>
+				</tr>
+			
+				<tr>
+					<td>옵션</td>
+					<td>
+						
+						<div class="shopppionOption1">
+							<div>
+								<select>
+									<option>--옵션--</option>
+									<option>1</option>
+									<option>2</option>
+								</select>
+							</div>
+						</div>
+					
+					</td>
+				</tr>
+				
+				<tr>
+					<td>구매수량</td>
+					<td>
+						<div class="length">
+							<input type="number">
+							<a href="#a">증가</a>
+							<a href="#a">감소</a>
+						</div>
+					</td>
+					
 				</tr>
 				
 				<tr>
@@ -51,39 +101,9 @@
 				</tr>
 				
 				<tr>
-					<td>옵션</td>
-					<td>
-						
-						<div class="shopppionOption1">
-							<div>
-								<select>
-									<option>--옵션--</option>
-									<option>1</option>
-									<option>2</option>
-								</select>
-							</div>
-						</div>
-					
-					</td>
+					<td>가격</td>
+					<td class="total"><b>금액</b>원</td>
 				</tr>
-			
-				<tr>
-					<td>옵션</td>
-					<td>
-						
-						<div class="shopppionOption1">
-							<div>
-								<select>
-									<option>--옵션--</option>
-									<option>1</option>
-									<option>2</option>
-								</select>
-							</div>
-						</div>
-					
-					</td>
-				</tr>
-			
 			</table>
 		
 				
@@ -95,14 +115,16 @@
 						<li><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
 					</ul>
 			</div>
+			
 			<div>
-			<input type="button" id="wishListBtn" value="찜하기"> 
-			<input type="button" id="cartBtn" value="장바구니"> 
-			<input type="button" id="purchaseBtn" value="구매하기">
-				<!-- <a href="#a">장바구니</a>
-				<a href="#a">구매하기</a> -->
+				<input type="button" id="wishListBtn" value="찜하기"> 
+				<input type="button" id="cartBtn" value="장바구니"> 
+				<input type="button" id="purchaseBtn" value="구매하기">
+					<!-- <a href="#a">장바구니</a>
+					<a href="#a">구매하기</a> -->
 			</div>
-		</div>
+			
+	</div>
 		
 	</section>
 </form>

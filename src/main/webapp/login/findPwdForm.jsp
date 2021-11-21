@@ -20,7 +20,7 @@
 				</div>
 				
 				<div id="check-email-button-wrap">
-					<button id="check-email-button">인증번호 받기</button>
+					<button type="button" id="check-email-button">인증번호 받기</button>
 				</div>
 				
 				<p>인증번호를 입력하세요</p>
@@ -29,7 +29,7 @@
 				</div>
 				
 				<div id="check-number-button-wrap">
-					<button id="check-number-button">인증번호 확인</button>
+					<button type="button" id="check-number-button">인증번호 확인</button>
 				</div>
 			</div>
 			
@@ -45,7 +45,7 @@
 				</div>
 
 				<div id="findPwd-button-wrap">
-					<button id="findPwd-button">비밀번호 재설정</button>
+					<button type="button" id="findPwd-button">비밀번호 재설정</button>
 				</div>	
 			</div>
 		</section>

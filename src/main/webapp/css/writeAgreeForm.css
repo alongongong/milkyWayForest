@@ -22,20 +22,24 @@
 #writeAgreeForm>.writeAgreeBox>.writeAgreeCheckBox>div>.writeAgreeFix>li>#writeAgreeImg{width:50%; height:190px; margin:0 auto; padding:3%}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}
-#writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc;}
-#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li>#writeAgreeBtn1{cursor:pointer; width:40%; height:10%;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 10%; background-color: white; border:1; border-color: black; }
+#writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc; margin-right:10%;}
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li>#writeAgreeBtn1{cursor:pointer; width:30%; height:7%;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black; }
 #writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li{list-style:none;}
 #writeAgreeForm>.writeAgreeBox>.check08>div>div>ul{padding:0;}
-#writeAgreeForm>ul>.check01>div>.writeAgreeFix>div>li>#writeAllAgreecheck{margin-left:87%;}
+#writeAgreeForm>ul>.check01>div>.writeAgreeFix>div>li>#writeAllAgreecheck{margin-left:85%;}
 
 /* 회원가입폼 */
 #memberWriteForm{width: 40%;margin: 0 auto;}
 #memberWriteForm>#memberWriteBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi{list-style:none; height:20%}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:185%;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:200%;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitleContent{text-align:center;font-size:160%;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>ul{padding:0;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(1){text-align:center;font-size:160%; list-style:none;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(2){text-align:center; list-style:none; font-size:100%;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(3){text-align:center; list-style:none; font-size:80%;}
 #memberWriteForm>#memberWriteBox>#blankSpace{list-style:none; height:9%}
+#memberWriteForm>#memberWriteBox>li{list-style:none; height:9%; text-align:center; }
+#memberWriteForm>#memberWriteBox>li>#memberWriteId{width:90%; height:70%; margin:1.5%;}
+#memberWriteForm>#memberWriteBox>li>#memberWritePwd{width:90%; height:70%; margin:1.5%;}
+#memberWriteForm>#memberWriteBox>li>#memberWriteRePwd{width:90%; height:70%; margin:1.5%;}
