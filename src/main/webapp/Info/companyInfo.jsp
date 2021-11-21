@@ -8,10 +8,11 @@
 <link rel="stylesheet" href="/milkyWayForest//css/companyInfo.css">
 </head>
 	<!-- Info 배너사진 -->
-	<p class="top">
+	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
-		<p class="top-text"><h1>은하숲</h1></p>
-	</p>
+	</div>
+	
+	<p class="top-text"><h1>은하숲</h1></p>
 	
 	<body>
 	<div id="companyInfo">
