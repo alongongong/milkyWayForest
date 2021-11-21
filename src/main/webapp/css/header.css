@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* rem 반응형웹에서 쓴다 '%'같은 개념 */
-* { margin : 0; padding : 0; }
+body { margin : 0; padding : 0; }
 
 html { font-size: 18px; }
 body { font-size: .6rem; }
