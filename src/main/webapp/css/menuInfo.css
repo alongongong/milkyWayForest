@@ -269,4 +269,322 @@
 	
 }
 
+/* 브레드 메뉴 폼 */
+
+#breadInfoForm h1 {
+	margin: 50px;
+}
+
+/* 게시판 목록네비  */
+#breadInfoForm #breadInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#breadInfoForm #breadInfoNav div{
+	float: right;
+	color: #777;
+	
+}
+
+#breadInfoForm #breadInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#breadInfoForm #breadInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#breadInfoForm .productGroup {
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#breadInfoForm .productGroup div{
+	float: right;
+	
+}
+
+#breadInfoForm .productGroup select {
+	padding : 5px 10px;
+	
+}
+
+#breadInfoForm #breadInfoMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+
+
+#breadInfoForm .productList1 li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#breadInfoForm .listDiv {
+	border : 1px solid red;
+	display: inline-block;
+	padding: 10px 30px 0 0;
+	margin-left : 180px ;
+	
+}
+
+
+/* 샐러드 메뉴 폼 */
+
+#saladInfoForm h1 {
+	margin: 50px;
+}
+
+/* 게시판 목록네비  */
+#saladInfoForm #saladInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#saladInfoForm #saladInfoNav div{
+	float: right;
+	color: #777;
+	
+}
+
+#saladInfoForm #saladInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#saladInfoForm #saladInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#saladInfoForm .productGroup {
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#saladInfoForm .productGroup div{
+	float: right;
+	
+}
+
+#saladInfoForm .productGroup select {
+	padding : 5px 10px;
+	
+}
+
+#saladInfoForm #saladInfoMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+
+
+#saladInfoForm .productList1 li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#saladInfoForm .listDiv {
+	border : 1px solid red;
+	display: inline-block;
+	padding: 10px 30px 0 0;
+	margin-left : 180px ;
+	
+}
+
+
+/* 샌드위치 메뉴 폼 */
+
+#sandwitchInfoForm h1 {
+	margin: 50px;
+}
+
+/* 게시판 목록네비  */
+#sandwitchInfoForm #sandwitchInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#sandwitchInfoForm #sandwitchInfoNav div{
+	float: right;
+	color: #777;
+	
+}
+
+#sandwitchInfoForm #sandwitchInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#sandwitchInfoForm #sandwitchInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#sandwitchInfoForm .productGroup {
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#sandwitchInfoForm .productGroup div{
+	float: right;
+	
+}
+
+#sandwitchInfoForm .productGroup select {
+	padding : 5px 10px;
+	
+}
+
+#sandwitchInfoForm #sandwitchInfoMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+
+
+#sandwitchInfoForm .productList1 li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#sandwitchInfoForm .listDiv {
+	border : 1px solid red;
+	display: inline-block;
+	padding: 10px 30px 0 0;
+	margin-left : 180px ;
+	
+}
+
+
+/* 메뉴 상세페이지 */
+
+#menuDetailForm h1 {
+	margin: 50px;
+}
+
+
+/* 게시판 목록네비  */
+
+#menuDetailForm #menuDetailNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#menuDetailForm #menuDetailNav div{
+	float: right;
+	color: #777;
+}
+
+#menuDetailForm #menuDetailNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#menuDetailForm #menuDetailNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#menuDetailForm .productView {
+	position: relative;
+	padding: 0 0 0 600px ; 
+	width: 950px;
+	box-sizing: border-box; 
+	margin: 0 auto;
+}
+
+#menuDetailForm .productView #productKorName {
+	font-size: 24px;
+}
+
+#menuDetailForm .productView #productEngName {
+	font-size: 24px;
+	border-bottom: 1px solid black;
+	padding : 0 0 20px 0;
+	
+	
+}
+
+#menuDetailForm .productView .menuDetailImg {
+	position:absolute;
+	left: 70px;
+	top: 20px;
+}
+#menuDetailForm .productView .menuDetailImg > img {
+	border: 1px solid silver;
+	width: 370px;
+	height: 380px;
+}
+
+#menuDetailForm .productView .menuDetailImg li:after {
+	content:"";
+	display: block;
+	clear:both;
+	
+}
+
+#menuDetailForm .productView .menuDetailImg ul {
+	left: 70px;
+	padding: 0;
+	
+}
+
+#menuDetailForm .productView .menuDetailImg li {
+	float:left;
+	list-style: none;
+	padding: 10px 10px 0 0;
+}
+
+#menuDetailForm .productView .menuDetailImg li.on img {
+	border-color:  #154520;
+}
+
+#menuDetailForm .productView .menuDetailImg li img {
+	border: 1px solid silver;
+	width: 70px;
+	height: 70px;
+}
+
+#menuDetailForm #detailTable {
+	width: 400px;
+	
+}
+
+#menuDetailForm table td {
+	padding: 12px 0; 
+	font-size: 14px;
+	color: black;
+	
+}
+
+
+
+
+
+
+
+
 

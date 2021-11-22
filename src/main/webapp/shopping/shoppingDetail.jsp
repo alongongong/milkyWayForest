@@ -12,7 +12,7 @@
 
 	
 	<section id="content_box">
-		<h1>원두</h1>
+		<h1>상품</h1>
 		
 		<div id="shoppingDetailNav">
 			<div>
@@ -54,7 +54,7 @@
 					<td>
 						
 						<select class="shoppingSelect">
-							<option>--옵션--</option>
+							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
 							<option>1</option>
 							<option>2</option>
 						</select>
@@ -66,7 +66,7 @@
 					<td>옵션</td>
 					<td>
 						<select class="shoppingSelect">
-							<option>--옵션--</option>
+							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
 							<option>1</option>
 							<option>2</option>
 						</select>
@@ -77,9 +77,9 @@
 					<td>구매수량</td>
 					<td>
 						<div class="length">
-							<input type="number" min="1" value="1">  <!--마이너스 안들어가게 min -->
-							<a href="#a">증가</a>
-							<a href="#a">감소</a>
+							<input type="text" value="1">  <!--마이너스 안들어가게 min -->
+							<a href="#a" id="plus">증가</a>
+							<a href="#a" id="minus">감소</a>
 						</div>
 					</td>
 					
@@ -87,7 +87,7 @@
 				
 				<tr>
 					<td>배송비</td>
-					<td>2500원(50,000원 구매시 무료)</td>
+					<td>2500원  (50,000원 구매시 무료)</td>
 				</tr>
 				
 				<tr>
@@ -100,7 +100,13 @@
 			<div class="shoppingDetailImg">
 				<img src ="/milkyWayForest/image/C001.jpg" alt="C001" id="bigImg">
 					<ul class="imgList">
-						<li class="on"><a href="#a"><img src ="/milkyWayForest/image/C001.jpg" alt="C001"></a></li>
+						<li class="on">
+							<div class="imgListBorder">
+							<a href="#a">
+							<img src ="/milkyWayForest/image/C001.jpg" alt="C001">
+							</a>
+							</div>
+						</li>
 						<li><a href="#a"><img src ="/milkyWayForest/image/C002.jpg" alt="C001"></a></li>
 						<li><a href="#a"><img src ="/milkyWayForest/image/C003.jpg" alt="C001"></a></li>
 					</ul>
