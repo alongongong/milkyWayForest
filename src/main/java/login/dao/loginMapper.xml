@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="loginSQL">
+	<select id="login" parameterType="member" resultType="member">
+		select * from milkymember where id=#{id} and pwd=#{pwd}
+	</select>
+	
+	<select id="loginEmailCheck" parameterType="member" resultType="member">
+		select * from milkymember where email1=#{email1} and email2=#{email2}
+	</select>
+</mapper>

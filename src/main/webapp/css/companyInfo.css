@@ -2,8 +2,11 @@
 /* banner 사진 (꽉차게) */
 * { margin: 0; padding: 0; }
 
-.top { position: relative; }
-.top .top-text { position: absolute; color:white;}
+.top { position: relative; width: 100%;}
+.top-text-box { position: absolute; bottom:3rem; /* display:flex;  */
+				/* justify-content: space-between; */ }
+.top-text-box h1 {  color:white; width: 78rem; margin: 0 auto;  }
+
 
 /* 전체 가운데 정렬 */
 #companyInfo { display: flex; width: 78rem; margin: 0 auto; }
@@ -62,11 +65,13 @@
 #rightDiv > a  { color: #444; display: block;
 	position: relative; width: 175px; }	
 #rightDiv .nav_Info {
-	display: block; padding: 20px 30px 20px 15px; font-size: 16px;
+	display: block; padding: 20px 15px 20px 15px; font-size: 16px;
 }
 .nav_Info .bibi-chevron-down { right: 15px;  width: 12px; }
 
 a { font-size: 100%; text-decoration: none; vertical-align: baseline; 
 	background: transparent; cursor: pointer; }		
 a:link { color: #222; } a:visited { color: #222; } a:hover { color: #222; } a:active { color: #222; }
+
+
 

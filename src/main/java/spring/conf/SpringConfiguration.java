@@ -50,8 +50,9 @@ public class SpringConfiguration {
 			// 여기에 mybatis-config.xml의 경로를 알려줘야하는데, 문자열로 주면 안됨. 
 			// setConfigLocation에서 매개변수를 Resource로 보내주길 원하기때문에, 우리가 가지고 있는 classpath를 Resource형식으로 바꾸어줌.
 		sqlSessionFactoryBean.setDataSource(dataSource());
+		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("login/dao/loginMapper.xml"));
 		//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
-			return sqlSessionFactoryBean.getObject(); // 우리가 반환하고 싶은 것은 SqlSessionFactory이기 때문에 변환해주기
+		return sqlSessionFactoryBean.getObject(); // 우리가 반환하고 싶은 것은 SqlSessionFactory이기 때문에 변환해주기
 	}
 	
 	@Bean
