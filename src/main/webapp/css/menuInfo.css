@@ -1,0 +1,272 @@
+@charset "UTF-8";
+
+/* 음료 메뉴 */
+
+#drinkInfoForm h1 {
+	margin: 50px;
+}
+
+/* 음료 게시판 목록네비  */
+#drinkInfoForm #drinkInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#drinkInfoForm #drinkInfoNav div{
+	float: right;
+	color: #777;
+}
+
+#drinkInfoForm #drinkInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#drinkInfoForm #drinkInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#drinkInfoForm #drinkInfoMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	width: 80%;
+}
+#drinkInfoForm #drinkInfoMenuSubject {
+	
+	font-size : 20px;
+	font-weight: bold; 
+	
+}
+
+#drinkInfoForm #drinkInfoMenu li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#drinkInfoForm #teaInfoMenuDiv ,#drinkInfoForm #coffeeInfoMenuDiv{
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 10px auto;
+	font-size : 20px;
+	font-weight: bold; 
+
+} 
+
+#drinkInfoForm #drinkInfoMenu a:link { color: black; text-decoration: none; }
+#drinkInfoForm #drinkInfoMenu a:visited { color: black; text-decoration: none; }
+#drinkInfoForm #drinkInfoMenu a:hover { color: darkgreen; text-decoration: underline; }
+#drinkInfoForm #drinkInfoMenu a:active { color: black; text-decoration: none; }
+
+
+
+/* 푸드 메뉴 */
+
+#foodInfoForm h1 {
+	margin: 50px;
+}
+
+/* 푸드 게시판 목록네비  */
+#foodInfoForm #foodInfooNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#foodInfoForm #foodInfoNav div{
+	float: right;
+	color: #777;
+}
+
+#foodInfoForm #foodInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#foodInfoForm #foodInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#foodInfoForm #foodInfoMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	width: 80%;
+}
+#foodInfoForm #foodInfoMenuSubject {
+	
+	font-size : 20px;
+	font-weight: bold; 
+	
+}
+
+#foodInfoForm #foodInfoMenu li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#foodInfoForm #cakeInfoMenuDiv ,
+#foodInfoForm #breadInfoMenuDiv,
+#foodInfoForm #saladInfoMenuDiv, 
+#foodInfoForm #sandwitchInfoMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 10px auto;
+	font-size : 20px;
+	font-weight: bold; 
+
+} 
+
+#foodInfoForm #foodInfoMenu a:link { color: black; text-decoration: none; }
+#foodInfoForm #foodInfoMenu a:visited { color: black; text-decoration: none; }
+#foodInfoForm #foodInfoMenu a:hover { color: darkgreen; text-decoration: underline; }
+#foodInfoForm #foodInfoMenu a:active { color: black; text-decoration: none; }
+
+
+/* 차음료 메뉴 폼 */
+
+#teaInfoForm h1 {
+	margin: 50px;
+}
+
+/* 게시판 목록네비  */
+#teaInfoForm #teaInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#teaInfoForm #teaInfoNav div{
+	float: right;
+	color: #777;
+	
+}
+
+#teaInfoForm #teaInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#teaInfoForm #teaInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+
+#teaInfoForm .productGroup {
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#teaInfoForm .productGroup div{
+	float: right;
+	
+}
+
+#teaInfoForm .productGroup select {
+	padding : 5px 10px;
+	
+}
+
+
+#teaInfoForm #teaInfoMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+
+
+#teaInfoForm .productList1 li {
+	list-style: none;
+	font-size : 18px;
+}
+
+#teaInfoForm .listDiv {
+	border : 1px solid red;
+	display: inline-block;
+	padding: 10px 30px 0 0;
+	margin-left : 180px ;
+	
+}
+
+/* 커피음료 메뉴 폼 */
+
+#coffeeInfoForm h1 {
+	margin: 50px;
+}
+
+/* 게시판 목록네비  */
+#coffeeInfoForm #coffeeInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#coffeeInfoForm #coffeeInfoNav div{
+	float: right;
+	color: #777;
+	
+}
+
+#coffeeInfoForm #coffeeInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#coffeeInfoForm #coffeeInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#coffeeInfoForm .productGroup {
+	margin-bottom: 180px;
+	margin-right: 110px;
+	
+}
+
+#coffeeInfoForm .productGroup div{
+	float: right;
+	
+}
+
+#coffeeInfoForm .productGroup select {
+	padding : 5px 10px;
+	
+}
+
+#coffeeInfoForm #coffeeInfoMenuDiv {
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 20px auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+
+
+#coffeeInfoForm .productList1 li {
+	list-style: none;
+	font-size : 18px;
+	
+}
+
+#coffeeInfoForm .listDiv {
+	border : 1px solid red;
+	display: inline-block;
+	padding: 10px 30px 0 0;
+	margin-left : 180px ;
+	
+}
+
+
