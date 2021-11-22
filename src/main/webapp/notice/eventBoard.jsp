@@ -17,6 +17,12 @@
 		<div>진행 이벤트</div>
 	</div>
 	<div id="eventBoardNowBody">
+	<div>1</div>
+	<div>1</div>
+	<div>1</div>
+	<div>1</div>
+	<div>1</div>
+	<div>1</div>
 		<!-- ajax로 append -->
 	</div>
 	<br>

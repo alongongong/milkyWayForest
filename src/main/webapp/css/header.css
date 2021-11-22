@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* rem 반응형웹에서 쓴다 '%'같은 개념 */
 /* * { margin : 0; padding : 0; } */
-body { margin : 0; padding : 0; }
+body { margin : 0; }
 
 html { font-size: 18px; }
 body { font-size: .6rem; }
@@ -11,7 +11,8 @@ header { background-color : #f6f5ef;  }
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */
-header > div { position: relative; width: 69rem; margin: 0 auto; } 
+/* header > div { position: relative; width: 69rem; margin: 0 auto; }  */
+header > div {  }
 header > div:after { content: ""; display: block; clear: both; }
 
 /* 로고 */
@@ -42,4 +43,4 @@ font-size: 0; color: transparent; border-radius: .25rem; }
 header > div .spot li:last-child a:before { content: "\e97a"; font-family: 'xeicon';
 font-size: 1rem; color:#000; }
 header > div .spot i { display:none; }
-header .total { display : none; }
+header .total { display : none; color: black; }
