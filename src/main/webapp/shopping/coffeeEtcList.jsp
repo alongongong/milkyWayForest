@@ -35,11 +35,14 @@
 		
 			<div id="coffeeEtcMenuDiv">커피용품</div>
 			
-			<!-- 상품배열 -->
-				<ul class="coffeeEtcList1">
+		<!-- 상품배열 -->
+			<div class="listDiv">
+				<ul class="productList1">
 					<li><a href="#"><img></a></li>
 					<li><a href="#">상품이름</a></li>
+					<li><a href="#">가격</a></li>
 				</ul>
+			</div>
 		
 	</section>
 </form>
