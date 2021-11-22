@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* 전체DIV */
+#container { width: 78rem; margin: 0 auto;  }
+
+/* 등급 및 혜택 TEXT */
+.grade-top-text { margin : 2rem 0 3rem 0; }
+
+/* 별별마다 pic1 */
+.grade_pic1 { margin : 0 0 2rem 0; }
+
+/* 회원 등급별 혜택 표 */
+.second_block{ display:grid; grid-template-columns: 33% 33% 34%; 
+			  /*  grid-column-gap: 1%; */ 
+			   margin-top: 1.5rem; border:1px solid #BDBDBD; }	
+.second_block > div { border-right: 1px solid #BDBDBD; }
+.second_block .three { border: 0;}
+
+/* */
+.info1_text {
+padding-top: 1.5rem;
+}
+.info1_text li {
+    margin-bottom: 5px;
+}
+.li {
+	font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    padding-left: 11px;
+}

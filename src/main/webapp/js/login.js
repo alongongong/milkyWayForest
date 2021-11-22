@@ -2,12 +2,10 @@ $('#loginForm #login-button').click(function(){
 	$('#loginForm #result-div').empty();
 	
 	if($('#loginForm #id-input').val()=='') {
-		$('#loginForm #result-div').show();
 		$('#loginForm #result-div').html('아이디를 입력하세요');
 		$('#loginForm #id-input').focus();	
 			
 	}else if($('#loginForm #pwd-input').val()=='') {
-		$('#loginForm #result-div').show();
 		$('#loginForm #result-div').html('비밀번호를 입력하세요');
 		$('#loginForm #pwd-input').focus();	
 	}
@@ -15,16 +13,16 @@ $('#loginForm #login-button').click(function(){
 		$.ajax({
 			url: '/milkyWayForest/login/login',
 			type: 'post',
-			data: $('#loginForm').serialize(),
-			dataType: 'text',
+			data: {'id':$('#loginForm #id-input').val(),
+				   'pwd':$('#loginForm #pwd-input').val()},
 			success: function(data){
-				data = data.trim();
+				console.log(JSON.stringify(data));
 				
-				if(data == 'loginOk'){
-					location.href='/milkyWayForest/index.jsp';
-				}else if(data == 'loginFail'){
-					$('#loginForm #result-div').show();
+				if(data == ''){
 					$('#loginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');
+				}else{
+					alert(data+'님 로그인 성공');
+					location.href='/milkyWayForest/index.jsp';
 				}
 			},
 			error: function(err){
@@ -37,25 +35,26 @@ $('#loginForm #login-button').click(function(){
 
 //카카오 로그인
 $('#loginForm #kakao-login-btn').click(function(){
-	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용해준다.
+	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용
 	console.log(Kakao.isInitialized()); // sdk초기화여부판단
 	
-    Kakao.Auth.login({
-      success: function (response) {
-        Kakao.API.request({
-          url: '/v2/user/me',
-          success: function (response) {
-        	  console.log(response)
-          },
-          fail: function (error) {
-            console.log(error)
-          },
-        })
-      },
-      fail: function (error) {
-        console.log(error)
-      },
-    })
+	Kakao.Auth.login({
+		success: function (response) {
+      		//사용자 정보 가져오기
+        	Kakao.API.request({
+			url: '/v2/user/me', //계정 정보를 가져오는 request url
+          	success: function (response) {
+        		console.log(response)  
+			},
+			fail: function (error) {
+			  console.log(error)
+			},
+		})
+	},
+		fail: function (error) {
+			console.log(error)
+		},
+	})
 	
 });
 /*
@@ -156,31 +155,31 @@ $('#findIdForm').ready(function(){
 		
 		if($('#findIdForm select option:selected').index() < 1){
 			$('#findIdForm option:eq(0)').attr('selected', true);
-			$('#findIdForm #result1-div').show();
 			$('#findIdForm #result1-div').html('질문을 선택하세요');
 			
 		}else if($('#findIdForm #findId-question-input').val()=='') {
-			$('#findIdForm #result1-div').show();
 			$('#findIdForm #result1-div').html('답을 입력하세요');
 			$('#findIdForm #findId-question-input').focus();	
 			
-		}else{
+		}else{		
 			$.ajax({
-				url: '/milkyWayForest/login/findId',
+				url: '/milkyWayForest/login/findIdQna',
 				type: 'post',
-				data: {'question' : $('#findIdForm select option:selected').val(), 'answer' : $('#findIdForm #findId-question-input').val()},
-				dataType: 'text',
+				data: {'idPwdQuestion' : $('#findIdForm select option:selected').val(), 
+					   'idPwdAnswer' : $('#findIdForm #findId-question-input').val()},
 				success: function(data){
+					console.log(JSON.stringify(data));
+					/*
 					data = data.trim();
 					
 					if(data == 'findIdOk'){
 						location.href='/milkyWayForest/login/loginForm';
-						$('#loginForm #result-div').show();
 						$('#loginForm #result-div').html('찾으신 아이디는 '+data.id+'입니다');
 						
 					}else if(data == 'findIdFail'){
 						$('#findIdForm #result1-div').html('질문과 답을 다시 한번 확인하세요');
 					}
+					*/
 				},
 				error: function(err){
 					console.log(err);
@@ -197,36 +196,81 @@ $('#findIdForm').ready(function(){
 		$('#findIdForm #findId-email-wrap').show();
 	});
 	
-	//이메일 인증번호 받기 https://moonong.tistory.com/45, https://kimvampa.tistory.com/105?category=771727 참고
+	var code = '';
+	var id='';
+	
+	//인증번호 받기 https://kimvampa.tistory.com/105?category=771727 참고
 	$('#findIdForm #check-email-button').click(function(){
 		$('#findIdForm #result2-div').empty();
 		
-		if($('#findIdForm #findId-email-input').val()=='') {
-			$('#findIdForm #result2-div').show();
+		var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var email1 = $('#findIdForm #findId-email-input1').val();
+		var email2 = $('#findIdForm #findId-email-input2').val();
+		var email = email1+"@"+email2;
+		
+		if(email =='') {
 			$('#findIdForm #result2-div').html('이메일을 입력하세요');
-			$('#findIdForm #findId-email-input').focus();	
+			$('#findIdForm #findId-email-input').focus();
+	
+		}else if(!emailForm.test(email)){
+			$('#findIdForm #result2-div').html('잘못된 이메일 형식입니다');
 			
 		}else{
-			var email = $('#findIdForm #findId-email-input').val(); //입력한 이메일
-		
+			//디비에 등록된 이메일인지 확인
 			$.ajax({
-				type: "get",
-       			url: "/milkyWayForest/login/loginEmailCheck?email=" + email
-				/*
-				url: '/milkyWayForest/login/loginEmailCheck',
-				type: 'post',
-				data: {'email' : $('#findIdForm #findId-email-input').val()},
-				dataType: 'text',
+				url: "/milkyWayForest/login/loginEmailCheck",
+				type: "post",
+       			data: {'email1' : email1, 'email2' : email2},
 				success: function(data){
+					//alert(data);
 					
+					if(data == 'non_exist'){
+						$('#findIdForm #result2-div').html('본인 확인 이메일 주소를 정확히 입력하세요');
+					
+					}else{
+						id = data;
+						//alert('디비 등록된 이메일? '+data);
+					
+						//이메일 발송
+						$.ajax({
+			       			url: "/milkyWayForest/login/loginEmailSend",
+							type: "get",
+			       			data: {'email' : email},
+							success: function(data){
+								$('#findIdForm #result2-div').html('인증번호가 발송되었습니다');
+								$("#findIdForm #check-email-input").attr("disabled", false);
+								code = data;
+							},
+							error: function(err){
+								console.log(err);
+							}
+						});
+					}
 				},
 				error: function(err){
 					console.log(err);
 				}
-				*/
 			});
+			
 		}
 	});
+	
+	//인증번호 확인
+	$('#findIdForm #check-number-button').click(function(){
+		$('#findIdForm #result2-div').empty();
+		
+		var inputCode = $('#findIdForm #check-email-input').val();
+		
+		if(inputCode != code){
+			$('#findIdForm #result2-div').html('인증번호를 다시 확인해주세요');
+			
+		}else{
+			alert('본인의 아이디는 '+id+'입니다');
+			location.href='/milkyWayForest/login/loginForm';
+		}
+	});
+	
+	
 	
 
 });	
@@ -234,4 +278,37 @@ $('#findIdForm').ready(function(){
 /////////////////////////////////////////////////////////////////
 
 //비밀번호 찾기
+$('#findPwdForm1 #check-id-button').click(function(){
+	$('#findPwdForm1 #result-div').empty();
+	
+	if($('#loginForm #id-input').val()=='') {
+		$('#loginForm #result-div').html('아이디를 입력하세요');
+		$('#loginForm #id-input').focus();	
+			
+	}else if($('#loginForm #pwd-input').val()=='') {
+		$('#loginForm #result-div').html('비밀번호를 입력하세요');
+		$('#loginForm #pwd-input').focus();	
+	}
+	else{
+		$.ajax({
+			url: '/milkyWayForest/login/login',
+			type: 'post',
+			data: {'id':$('#loginForm #id-input').val(),
+				   'pwd':$('#loginForm #pwd-input').val()},
+			success: function(data){
+				console.log(JSON.stringify(data));
+				
+				if(data == ''){
+					$('#loginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');
+				}else{
+					alert(data+'님 로그인 성공');
+					location.href='/milkyWayForest/index.jsp';
+				}
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+	}
 
+});

@@ -35,11 +35,14 @@
 		
 			<div id="glassMenuDiv">글라스</div>
 			
-			<!-- 상품배열 -->
-				<ul class="glassList1">
-					<li><a href="#"><img></a></li>
-					<li><a href="#">상품이름</a></li>
-				</ul>
+		<!-- 상품배열 -->
+		<div class="listDiv">
+			<ul class="productList1">
+				<li><a href="#"><img></a></li>
+				<li><a href="#">상품이름</a></li>
+				<li><a href="#">가격</a></li>
+			</ul>
+		</div>
 		
 	</section>
 </form>

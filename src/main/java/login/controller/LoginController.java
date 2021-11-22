@@ -1,16 +1,22 @@
 package login.controller;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import login.service.LoginService;
+import member.bean.MemberDTO;
 
 @Controller
 @RequestMapping(value="/login")
@@ -19,38 +25,73 @@ public class LoginController {
 	private LoginService loginService;
 	@Autowired
 	private JavaMailSender mailSender;
+	@Autowired
+    BCryptPasswordEncoder passwordEncoder;
 	
+	//로그인창
 	@GetMapping(value="/loginForm")
-	public String loginForm() {
-		return "/login/loginForm";
+	public String loginForm(Model model) {
+		model.addAttribute("display", "login/loginForm.jsp");
+		return "/index";
 	}
 	
-//	@PostMapping(value="/login")
-//	@ResponseBody
-//	public void login(@ModelAttribute MemberDTO memberDTO) {
-//		loginService.login(memberDTO);
+	//아이디 로그인
+	@PostMapping(value="/login")
+	@ResponseBody
+	public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {	
+		MemberDTO memberDTO2 = loginService.login(memberDTO);
+		
+		if(memberDTO2 == null) {
+			return "";
+		}
+		
+		session.setAttribute("memId", memberDTO2.getId());
+		System.out.println("LoginController 세션아이디 저장 "+session.getAttribute("memId"));	
+
+		return memberDTO2.getId();
+	}
+	
+	//아이디 찾기창
+	@GetMapping(value="/findId")
+	public String findId(Model model) {
+		model.addAttribute("display", "login/findIdForm.jsp");
+		return "/index";
+	}
+	
+	//질문으로 찾기
+//	@GetMapping(value="/findIdQna")
+//	public String findIdQna(@ModelAttribute MemberDTO memberDTO) {
+//		return loginService.findIdQna(memberDTO);
 //	}
 	
-	@GetMapping(value="/findId")
-	public String findId() {
-		return "/login/findId";
+	//이메일 확인
+	@PostMapping("/loginEmailCheck")
+	@ResponseBody
+	public String loginEmailCheck(@ModelAttribute MemberDTO memberDTO) {
+		MemberDTO memberDTO2 = loginService.loginEmailCheck(memberDTO);
+
+		if(memberDTO2 == null)
+			return "non_exist"; //이메일 발송 불가능
+		else
+			return memberDTO2.getId(); //이메일 발송 가능
+		
 	}
 	
-	//이메일 인증
-	@GetMapping(value = "/loginEmailCheck")
+	//이메일 발송
+	@GetMapping(value = "/loginEmailSend")
 	@ResponseBody
-    public void loginEmailCheck(String email) throws Exception{
-		System.out.println(email);
+    public String loginEmailSend(String email) throws Exception{
+		System.out.println("LoginController 인증 이메일 : "+email);
 		
 		int checkNum = (int)(Math.random() * (99999 - 10000 + 1)) + 10000;
-		System.out.println("인증번호 : "+checkNum);
+		System.out.println("LoginController 인증번호 : " + checkNum);
 		
-		/* 이메일 보내기 */
+		//이메일 보내기
         String setFrom = "milkywayforest11@gmail.com";
         String toMail = email;
-        String title = "아이디 찾기 인증 이메일 입니다.";
+        String title = "이메일 인증번호가 발급되었습니다.";
         String content = 
-                "안녕하세요." +
+                "안녕하세요. 은하숲입니다." +
                 "<br><br>" + 
                 "인증 번호는 " + checkNum + "입니다." + 
                 "<br>" + 
@@ -68,12 +109,17 @@ public class LoginController {
         }catch(Exception e) {
             e.printStackTrace();
         }
+        
+        String num = checkNum + "";
+        
+        return num;
     }
 
-	
+	//비밀번호 찾기 창
 	@GetMapping(value="/findPwd")
-	public String findPwd() {
-		return "/login/findPwd";
+	public String findPwd(Model model) {
+		model.addAttribute("display", "login/findPwdForm1.jsp");
+		return "/index";
 	}
 	
 	

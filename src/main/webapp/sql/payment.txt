@@ -1,28 +1,28 @@
 create table milkyPayment (
-  paymentCode number primary key,		-- ÁÖ¹®¹øÈ£ M(ÁÖ¹®³¯Â¥)-011000(seq) Çü½Ä
+  paymentCode varchar(20) primary key,		-- ï¿½Ö¹ï¿½ï¿½ï¿½È£ M(ï¿½Ö¹ï¿½ï¿½ï¿½Â¥)-011000(seq) ï¿½ï¿½ï¿½ï¿½
   id varchar(15),						
-  paymentMethod varchar(20),			-- °áÁ¦¼ö´Ü
-  shipPay number,						-- ¹è¼Ûºñ
-  deliveryInfo varchar(30),				-- ¹è¼Û ¿äÃ»»çÇ×
-  payDate date default sysdate			-- °áÁ¦³¯Â¥
+  paymentMethod varchar(20),			-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  shipPay number,						-- ï¿½ï¿½Ûºï¿½
+  deliveryInfo varchar(30),				-- ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+  payDate date default sysdate			-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¥
 );
 
 create sequence milkyPaymentSeq nocache nocycle;
 
 
 create table milkyPaymentOption (
-  paymentCode number,
-  productCode number,					-- »óÇ°¹øÈ£
-  productOption varchar(30),			-- »óÇ°¿É¼Ç
-  payQty number,						-- ÁÖ¹®°³¼ö
-  payPrice number,						-- ´Ü°¡
-  payRate number						-- ÇÒÀÎÀ²
+  paymentCode varchar(20),
+  productCode varchar(10),					-- ï¿½ï¿½Ç°ï¿½ï¿½È£
+  productOption varchar(30),			-- ï¿½ï¿½Ç°ï¿½É¼ï¿½
+  payQty number,						-- ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½
+  payPrice number,						-- ï¿½Ü°ï¿½
+  payRate number						-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 );
 
 create table milkyPaymentShip (
-  paymentCode number,
-  payShipNickname varchar(20),			-- ÁÖ¹®¹è¼ÛÁö´Ð³×ÀÓ
-  payShipReceiver varchar(20),			-- ÁÖ¹®¼ö·ÉÀÎ
+  paymentCode varchar(20),
+  payShipNickname varchar(20),			-- ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½
+  payShipReceiver varchar(20),			-- ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   payShipTel1 varchar(5),
   payShipTel2 varchar(5),
   payShipTel3 varchar(5),

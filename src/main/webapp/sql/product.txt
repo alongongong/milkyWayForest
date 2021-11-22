@@ -1,20 +1,28 @@
 create table milkyProductInfo(
-    productCode number primary key,
-    productName varchar(50),
+    productCode varchar(10) primary key,
+    productName varchar(80),
     category varchar(30),
     productOption varchar(30),
     productUnit number,
     productRate number,
-    enterCount number,
-    sellCount number
+    enterCount number default 0,
+    sellCount number default 0,
+    wishCount number defalut 0
 );
-
-create sequence milkyProductSeq nocache nocycle;
 
 
 create table milkyProductDetail (
-	productCode number,					-- »óÇ°ÄÚµå
-	productEngName varchar(100),		-- ¿µ¾îÀÌ¸§
-	productSmallInfo varchar(200),		-- »ó¼¼Á¤º¸1
-	productDetailInfo varchar(500)		-- »ó¼¼Á¤º¸2
+	productCode varchar(10),					-- ï¿½ï¿½Ç°ï¿½Úµï¿½
+	productEngName varchar(100),		-- ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½
+	productSmallInfo varchar(400),		-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1
+	productDetailInfo varchar(1300)		-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2
 );
+
+
+create table milkyProductImage (
+    productCode varchar(10),
+    productImageName varchar(50)
+);
+
+
+create sequence milkyProductSeq nocache nocycle;

@@ -36,10 +36,13 @@
 			<div id="plasticTumblrMenuDiv">플라스틱 텀블러</div>
 			
 			<!-- 상품배열 -->
-				<ul class="plasticTumblrList1">
+			<div class="listDiv">
+				<ul class="productList1">
 					<li><a href="#"><img></a></li>
 					<li><a href="#">상품이름</a></li>
+					<li><a href="#">가격</a></li>
 				</ul>
+			</div>
 		
 	</section>
 </form>

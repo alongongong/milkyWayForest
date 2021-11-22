@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
+#writeAgreeForm{width: 40%;margin: 0 auto;}
+#writeAgreeForm>ul.writeAgreeBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
 #writeAgreeForm>ul,#writeAgreeForm>ul>li>ul>li{list-style: none}
 #writeAgreeForm>ul>.check01{width:100%; margin:0 auto;}
 #writeAgreeForm>ul>.check03{width:100%; margin:0 auto;}
-#writeAgreeForm>ul>li>.writeAgreeFix::after{content: "";display: block;clear: both;}
 #writeAgreeForm>ul>li>.writeAgreeFix{margin:0;padding:0;}
-#writeAgreeForm{width: 40%;margin: 0 auto;}
-#writeAgreeForm>ul.writeAgreeBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
 #writeAgreeForm>.writeAgreeCheckBox,.writeAgreeCheckBox>ul{position: relative; padding:0;}
 #writeAgreeForm>.writeAgreeCheckBox>ul>li{float: left;}
 #writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:first-child{width: 100%;padding: 20px;font-weight: 600;color: #888;}
@@ -19,7 +18,7 @@
 #writeAgreeForm>ul>li>div>#writeAgreeContent>ul>li{font-size:15px;list-style:none;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent>ul{padding:0;}
 #writeAgreeForm>ul>li>div>ul>div>li{font-size:150%; font-weight:bold; color:skyblue; list-style:none;text-align:center;}
-#writeAgreeForm>.writeAgreeBox>.writeAgreeCheckBox>div>.writeAgreeFix>li>#writeAgreeImg{width:50%; height:190px; margin:0 auto; padding:3%}
+#writeAgreeForm>.writeAgreeBox>.writeAgreeCheckBox>div>.writeAgreeFix>li>#writeAgreeImg{width:50%; height:90%; margin:0 auto; padding:3%}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}
 #writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc; margin-right:10%;}
@@ -29,17 +28,38 @@
 #writeAgreeForm>ul>.check01>div>.writeAgreeFix>div>li>#writeAllAgreecheck{margin-left:85%;}
 
 /* 회원가입폼 */
-#memberWriteForm{width: 40%;margin: 0 auto;}
-#memberWriteForm>#memberWriteBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi{list-style:none; height:20%}
+#memberWriteForm{width: 40%;  margin: 0 auto;}
+#memberWriteForm>#memberWriteBox{background-color: #fff; margin:0; padding:0;border: 1px solid #ddd; }
+#memberWriteForm>#memberWriteBox>#memberWriteLi{list-style:none; height:80px;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:200%;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitleContent{text-align:center;font-size:160%;}
+#memberWriteForm>#memberWriteBox>#memberWriteLi>div>#image1{text-align:center;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>ul{padding:0;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(1){text-align:center;font-size:160%; list-style:none;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(2){text-align:center; list-style:none; font-size:100%;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>ul>li:nth-child(3){text-align:center; list-style:none; font-size:80%;}
-#memberWriteForm>#memberWriteBox>#blankSpace{list-style:none; height:9%}
-#memberWriteForm>#memberWriteBox>li{list-style:none; height:9%; text-align:center; }
-#memberWriteForm>#memberWriteBox>li>#memberWriteId{width:90%; height:70%; margin:1.5%;}
-#memberWriteForm>#memberWriteBox>li>#memberWritePwd{width:90%; height:70%; margin:1.5%;}
-#memberWriteForm>#memberWriteBox>li>#memberWriteRePwd{width:90%; height:70%; margin:1.5%;}
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(1){text-align:center;font-size:160%; list-style:none;}
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul{padding:0;}
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(2){text-align:center; list-style:none; font-size:100%;}
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(3){text-align:center; list-style:none; font-size:80%;}
+#memberWriteForm>#memberWriteBox>#blankSpace{list-style:none; height:100px;}
+#memberWriteForm>#memberWriteBox>li{list-style:none; height:35px; }
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteId{margin-top:12px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWritePwd{margin-top:8px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteRePwd{margin-top:8px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteName{margin-top:8px;height:20px;;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteNick{margin-top:8px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#writeQuestion{margin-top:8px;height:20px; width:65%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#writeAnwer{margin-top:10px;width:20%; height:20px; margin-left:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>.sex{margin-top:3%; margin-left:5%;}
+#memberWriteForm>#memberWriteBox>li>div>#writeTel1{width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#writeTel2{width:25%;height:20px;margin-top:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#writeTel3{width:25%;height:20px;margin-top:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail{width:60%; height:20px; margin-top:10px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; }
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail1{height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#joinPath{margin-top:4%;height:40%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#year{margin-top:10px;width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#month{width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#day{width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>.blankLi>.labelName{ float:left; width:30%;height:100%;border-right:1px solid gray; text-align:right;}
+#memberWriteForm>#memberWriteBox>.blankLi>.labelName>p{padding-right:10%; margin-top:5%; margin-bottom:0; height:80%;}
+#memberWriteForm>#memberWriteBox>.blankLi>.writeInputText{width:65%;float:right;height:100%; }
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteBtn{margin-top:60px;cursor:pointer; width:140px; height:50px;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteReset{cursor:pointer; width:140px; height:50px;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black;}

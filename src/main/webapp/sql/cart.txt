@@ -1,5 +1,5 @@
 create table milkyCart (
-  cartCode number primary key,
+  cartCode varchar(10) primary key,
   id varchar(15),
   productCode number,
   cartOption varchar(30),

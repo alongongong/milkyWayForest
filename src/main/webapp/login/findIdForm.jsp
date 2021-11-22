@@ -45,7 +45,9 @@
 			<div id="findId-email-wrap">
 				<p>이메일을 입력하세요</p>
 				<div id="findId-email-input-wrap">
-					<input type="email" id="findId-email-input" name="email">
+					<input type="email" id="findId-email-input1" name="email1">
+					<span>@</span>
+					<input type="email" id="findId-email-input2" name="email2">
 				</div>
 				
 				<div id="check-email-button-wrap">
@@ -54,15 +56,15 @@
 				
 				<p>인증번호를 입력하세요</p>
 				<div id="check-email-input-wrap">
-					<input type="text" name="check-email-input">
+					<input type="text" id="check-email-input" name="check-email-input" disabled="disabled">
 				</div>
 
 				<div id="check-number-button-wrap">
 					<button type="button" id="check-number-button">인증번호 확인</button>
 				</div>
-				<div id="findId-button-wrap">
+				<!-- <div id="findId-button-wrap">
 					<button type="button" id="findId-button2">아이디 찾기</button>
-				</div>
+				</div> -->
 				<div id="result2-div"></div>
 			</div>
 		</section>

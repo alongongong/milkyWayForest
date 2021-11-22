@@ -27,7 +27,7 @@
   
    <jsp:include page="adminNav.jsp" />
     
-    <div class="main-panel" style="height: 100vh;">
+    <div class="main-panel">
      
 		 <!-- Navbar -->
 		 <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">

@@ -11,7 +11,7 @@
 			<div id="findPwd-input-wrap">
 				<p>비밀번호를 찾고자 하는 아이디를 입력하세요</p>
 				<div id="findPwd-id-input-wrap">
-					<input type="text" name="id">
+					<input type="text" id="findPwd-id-input" name="id">
 				</div>
 
 				<div id="check-id-button-wrap">
