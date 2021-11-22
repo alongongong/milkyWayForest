@@ -29,7 +29,7 @@
 }
 #loginForm #id-input-wrap input, #pwd-input-wrap input{
 	border: none;
-    width: 460px;
+    width: 454px;
     font-size: 14px;
     padding-left: 10px;
     height: 45px;
@@ -170,12 +170,26 @@
 	border: solid 1px gray;
 	background: white;
 }
-#findIdForm #findId-question-input-wrap input, #findIdForm #findId-email-input-wrap input, #findIdForm #check-email-input-wrap input{
+#findIdForm #findId-question-input-wrap input, #findIdForm #check-email-input-wrap input{
 	border: none;
-    width: 460px;
+    width: 454px;
     font-size: 14px;
     padding-left: 10px;
     height: 45px;
+}
+#findIdForm #findId-email-input-wrap input{
+	border: none;
+    width: 220px;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 45px;
+    display: inline-block;
+    float: left;
+}
+#findIdForm #findId-email-input-wrap span{
+	display: inline-block;
+	float: left;
+	padding-top: 10px;
 }
 #findIdForm #findId-question-input-wrap input:focus, #findIdForm #findId-email-input-wrap input:focus, #findIdForm #check-email-input-wrap input:focus{
 	outline: none;
@@ -236,7 +250,7 @@
 #findPwdForm1 #findPwd-id-input-wrap input, #findPwdForm2 #findPwd-email-input-wrap input, #findPwdForm2 #check-number-input-wrap input,
 #findPwdForm3 #findPwd-pwd-input-wrap input, #findPwdForm3 #findPwd-repwd-input-wrap input{
 	border: none;
-    width: 460px;
+    width: 454px;
     font-size: 14px;
     padding-left: 10px;
     height: 45px;

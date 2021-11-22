@@ -45,7 +45,9 @@
 			<div id="findId-email-wrap">
 				<p>이메일을 입력하세요</p>
 				<div id="findId-email-input-wrap">
-					<input type="email" id="findId-email-input" name="email">
+					<input type="email" id="findId-email-input1" name="email1">
+					<span>@</span>
+					<input type="email" id="findId-email-input2" name="email2">
 				</div>
 				
 				<div id="check-email-button-wrap">
