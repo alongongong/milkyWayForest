@@ -6,6 +6,7 @@
 
 	<typeAliases>
 		<typeAlias type="product.bean.ProductDTO" alias="product"/>
-	</typeAliases>
 
+		<typeAlias type="member.bean.MemberDTO" alias="member"/>
+	</typeAliases>
 </configuration>

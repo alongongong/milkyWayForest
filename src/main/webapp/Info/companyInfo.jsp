@@ -10,10 +10,15 @@
 	<!-- Info 배너사진 -->
 	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
+		<div class="top-text-box">
+<!-- 			<div class="top-text"> -->
+				<h1>은하숲</h1>
+			<!-- </div> -->
+			<div class="">아무고나</div>
+		</div>
 	</div>
 	
-	<p class="top-text"><h1>은하숲</h1></p>
-	
+		
 	<body>
 	<div id="companyInfo">
 		<div id="leftDiv">
@@ -89,18 +94,21 @@
 			<div id="rightDiv">
 				<div class="navtable">
 					<p class="nav_Info">
-						<a href=""><Strong>은하숲 소개</Strong>
-							<span class="bi bi-chevron-down"></span>
+						<a href="javascript:void(0);"><Strong>은하숲 소개</Strong>
+							<span class="bi bi-chevron-down" style="float: right;"></span>
+							<span class="bi bi-chevron-up" style="display: none;"></span>
 						</a>
-						<ul style="display:none;">
+						<ul id="noneDiv" style="display:none;">
 							<li>
-								<a href="">은화숲</a>
+								<a href="/milkyWayForest/Info/companyInfo.jsp">은화숲</a>
 							<li>
-								<a href="">등급 및 혜택</a>
+								<a href="/milkyWayForest/Info/gradeBenefit.jsp">등급 및 혜택</a>
 							</li>
 						</ul>
 					</p>
 				</div>
 			</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/Info.js"></script>
 </body> 
 </html>

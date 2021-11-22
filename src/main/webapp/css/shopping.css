@@ -746,7 +746,7 @@
 
 #shoppingDetailForm .productView .shoppingDetailImg ul {
 	left: 70px;
-	
+	padding: 0;
 }
 
 #shoppingDetailForm .productView .shoppingDetailImg li {
@@ -755,8 +755,13 @@
 	padding: 10px 10px 0 0;
 }
 
+#shoppingDetailForm .productView .shoppingDetailImg li.on .imgListBorder {
+	margin-left: 0;
+	
+}
+
 #shoppingDetailForm .productView .shoppingDetailImg li.on img {
-	border-color: #0a56a9;
+	border-color: #154520;
 }
 
 
@@ -791,7 +796,7 @@
 
 #shoppingDetailForm table td.total {
 	font-size: 19px;
-	color:  #0a56a9;
+	color:  #154520;
 	
 }
 
@@ -809,7 +814,7 @@
 
 #shoppingDetailForm table .length input {
 	width: 44px;
-	height: 31px;
+	height: 30px;
 	border: none;
 	border-right:1px solid #c6c6c6;
 	text-align:center;
@@ -819,7 +824,6 @@
 	overflow: hidden;
 	position: absolute;
 	right: 0;
-	
 	width: 20px;
 	height: 15px;
 	color: transparent;  /* 글자를 투명하게 가려주는것  */
@@ -851,14 +855,14 @@
 #shoppingDetailForm .productView .btnDiv {
 	padding: 30px 0 0 15px; 
 	text-align: center;
-	
-	
+
 }
 
 #shoppingDetailForm .productView #wishListBtn {
 	width: 100px;
 	height: 40px;
 	font-size: 15px;
+	border: 1px solid #154520;
 	border-radius: 5px;
 	background : white;	
 	color: #154520; 
@@ -870,6 +874,7 @@
 	width: 100px;
 	height: 40px;
 	font-size: 15px;
+	border: 1px solid #154520;
 	border-radius: 5px;
 	background : white;	
 	color: #154520; 
@@ -880,6 +885,7 @@
 	width: 100px;
 	height: 40px;
 	font-size: 15px;
+	border: 1px solid #154520;
 	border-radius: 5px;
 	background : #154520; 
 	color:  white; 

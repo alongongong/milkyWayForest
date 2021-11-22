@@ -1,8 +1,8 @@
-package login.service;
+package login.dao;
 
 import member.bean.MemberDTO;
 
-public interface LoginService {
+public interface LoginDAO {
 
 	public MemberDTO login(MemberDTO memberDTO);
 

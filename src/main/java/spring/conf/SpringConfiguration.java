@@ -53,7 +53,7 @@ public class SpringConfiguration {
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:*/dao/*Mapper.xml"));
-			return sqlSessionFactoryBean.getObject(); // 우리가 반환하고 싶은 것은 SqlSessionFactory이기 때문에 변환해주기
+		return sqlSessionFactoryBean.getObject();
 	}
 	
 	@Bean

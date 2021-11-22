@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
+<!-- <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css"> -->
 <link rel="stylesheet" href="/milkyWayForest/css/login.css">
 
 <form name="loginForm" id="loginForm">
@@ -9,10 +9,10 @@
 		<section id="login-input-wrap">
 			<h2>ID 로그인</h2>
 			<div id="id-input-wrap">	
-				<input type="text" id="id-input" placeholder="아이디"></input>
+				<input type="text" id="id-input" name="id" placeholder="아이디"></input>
 			</div>
 			<div id="pwd-input-wrap">	
-				<input type="password" id="pwd-input" placeholder="비밀번호"></input>
+				<input type="password" id="pwd-input" name="pwd" placeholder="비밀번호"></input>
 			</div>
 			<div id="login-button-wrap">
 				<button type="button" id="login-button" type="button">로그인</button>
