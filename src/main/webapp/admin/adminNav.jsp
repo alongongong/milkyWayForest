@@ -20,7 +20,7 @@
       	<input type="hidden" value="${dataNum }" id="liNum">
         <ul class="nav">
           <li class="menu">메뉴 관리</li>
-          <li class="navMenu active" id="1">
+          <li class="navMenu" id="1">
             <a href="/milkyWayForest/admin/pAllMenu?dataNum=1">
               <i class="nc-icon nc-bullet-list-67"></i>
               <p>메뉴 관리</p>
