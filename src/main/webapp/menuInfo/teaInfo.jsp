@@ -4,23 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글라스</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
+<title>차음료</title>
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/menuInfo.css">
 </head>
 <body>
-<form id="glassListForm" name="glassListForm">
+<form id="teaInfoForm" name="teaInfoForm">
 	<section id="content_box">
-		<h1>글라스 전체상품</h1>
+		<h1>차 전체메뉴</h1>
 		
-		<div id="glassListNav">
-		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a> > 
-			<a href="">상품</a> > 
-			<a href="">글라스</a>
+		<div id="teaInfoNav">
+			<div>
+				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+				<a href="">Menu</a> > 
+				<a href="">음료</a> > 
+				<a href="">차</a>
+			</div>
 		</div>
-		</div>
-		
 		
 		<div class="productGroup">
 			<div>
@@ -32,9 +31,9 @@
 			</select>
 			</div>
 		</div>
-		
-			<div id="glassMenuDiv">글라스</div>
 			
+		<div id="teaInfoMenuDiv">차</div>
+		
 		<!-- 상품배열 -->
 		<div class="listDiv">
 			<ul class="productList1">

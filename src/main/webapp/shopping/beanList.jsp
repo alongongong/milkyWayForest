@@ -22,11 +22,9 @@
 			<a href="">원두</a>
 		</div>
 		</div>
-		
-		
-
+			
 			<div class="productGroup">
-			<div>
+				<div>
 				<select>
 					<option>상세분류</option>
 					<option>신규출시된 메뉴</option>
@@ -39,11 +37,13 @@
 			<div id="beanMenuDiv">원두</div>
 			
 			<!-- 상품배열 -->
-				<ul class="beanList1">
+			<div class="listDiv">
+				<ul class="productList1">
 					<li><a href="#"><img></a></li>
 					<li><a href="#">상품이름</a></li>
 					<li><a href="#">가격</a></li>
 				</ul>
+			</div>
 		
 	</section>
 </form>
