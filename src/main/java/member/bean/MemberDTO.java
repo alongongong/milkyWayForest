@@ -20,12 +20,12 @@ public class MemberDTO {
 	private String email1;
 	private String email2;
 	private Date writeDate;
-	private String memberGrade; // 'welcome',	-- È¸¿øµî±Þ
-	private int savedMoney; //					-- Àû¸³±Ý
-	private String idPwdQuestion; //			-- ¾ÆÀÌµðºñ¹øÃ£±â Áú¹®
-	private String idPwdAnswer; //				-- ¾ÆÀÌµðºñ¹øÃ£±â ´ä
-	private String writePath; //				-- °¡ÀÔ°æ·Î
-	private Date loginTime; // sysdate			-- ·Î±×ÀÎ ½Ã°£
-	private String couponName; //				-- ÄíÆù¸í
+	private String memberGrade; // 'welcome',	-- È¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	private int savedMoney; //					-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private String idPwdQuestion; //			-- ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String idPwdAnswer; //				-- ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½Ã£ï¿½ï¿½ ï¿½ï¿½
+	private String writePath; //				-- ï¿½ï¿½ï¿½Ô°ï¿½ï¿½
+	private Date loginTime; // sysdate			-- ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
+	private String couponName; //				-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String coupon;
 }
