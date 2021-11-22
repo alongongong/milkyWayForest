@@ -4,4 +4,8 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	<typeAliases>
+		<typeAlias type="product.bean.ProductDTO" alias="product"/>
+	</typeAliases>
+
 </configuration>

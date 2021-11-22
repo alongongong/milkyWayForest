@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* 상품등록 */
+#pProductInsert{
+	margin: 30px;
+	padding: 50px 20px;
+}
+
+#pProductInsert #pProductInsertTable {
+	margin: auto 20px;
+}
+#pProductInsert #emptyDiv {
+	color: red;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+#pProductListDiv #pProductListTable input {
+	border: 0;
+	outline: 0;
+}
+
+#pProductListDiv #pProductListTable .updateBtn {
+	width: 45px;
+	height: 25px;
+	padding: 0;
+	display: none;
+}
+
+ #pProductListDiv #pProductListTable .deleteBtn {
+	width: 45px;
+	height: 25px;
+	padding: 0;
+}

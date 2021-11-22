@@ -1,7 +1,7 @@
 create table milkyWishList (
-  wishListCode number primary key,
+  wishListCode varchar(10) primary key,
   id varchar(15),
-  productCode number,
+  productCode varchar(10),
   wishDate date default sysdate
 );
 

@@ -8,6 +8,7 @@
 	<div id="main-wrap">
 		<section>
 			<h2>비밀번호 찾기</h2>
+			<input type="hidden" value="${id}"	>
 			<div id="findPwd-input-wrap">
 				<p>이메일을 입력하세요</p>
 				<div id="findPwd-email-input-wrap">

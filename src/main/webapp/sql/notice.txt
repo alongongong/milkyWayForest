@@ -57,7 +57,7 @@ create sequence milkyQnASeq nocache nocycle;
 -- 리뷰
 create table milkyReview (
   reviewCode number primary key,
-  productCode number,
+  productCode varchar(10),
   reviewSubject varchar(50),
   id varchar(15),
   reviewContent varchar(500),
