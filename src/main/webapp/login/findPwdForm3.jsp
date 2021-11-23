@@ -9,22 +9,27 @@
 		<section>
 			<h2>비밀번호 찾기</h2>
 			<div id="findPwd-setting-wrap">
-				<p>비밀번호를 재설정하세요</p>
+			
+				<input type="hidden" id="id" value="${id}">
+			
+				<p>은하숲 아이디 : ${id }</p>
 				<div id="findPwd-pwd-input-wrap">
-					<input type="text" name="pwd">
-				</div>
-				
-				<p>다시 한번 입력하세요</p>
-				<div id="findPwd-repwd-input-wrap">
-					<input type="text" name="repwd">
+					<input type="password" id="pwd" name="pwd" placeholder="새 비밀번호">
 				</div>
 
-				<div id="result-div"></div>
+				<div id="findPwd-repwd-input-wrap">
+					<input type="password" id="repwd" name="repwd" placeholder="새 비밀번호 확인">
+				</div>
+
 				<div id="findPwd-button-wrap">
 					<button type="button" id="findPwd-button">비밀번호 재설정</button>
 				</div>	
+				<div id="result-div"></div>
 			</div>
 		</section>
 	</div>
 </div>
 </form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/login.js"></script>

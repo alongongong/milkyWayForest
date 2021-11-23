@@ -10,4 +10,16 @@
 	<select id="loginEmailCheck" parameterType="member" resultType="member">
 		select * from milkymember where email1=#{email1} and email2=#{email2}
 	</select>
+	
+	<select id="findIdQna" parameterType="member" resultType="member">
+		select * from milkymember where idPwdQuestion=#{idPwdQuestion} and idPwdAnswer=#{idPwdAnswer}
+	</select>
+	
+	<select id="loginIdCheck" parameterType="String" resultType="member">
+		select * from milkymember where id=#{id}
+	</select>
+	
+	<update id="findPwdUpdate" parameterType="member">
+		update milkymember set pwd=#{pwd} where id=#{id}
+	</update>
 </mapper>
