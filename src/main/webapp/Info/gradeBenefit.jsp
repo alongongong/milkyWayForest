@@ -48,11 +48,17 @@
 		<article class="info2_inner" id="showcase">
 			<div class="info2_center">
 			<h3><strong>회원 등급별 상세 혜택 및 유의사항</strong></h3>
-				<ul class="note_list">
-					<li class="card_flip" style="opacity: 1; position: relative; top:0px; left: 0px; transform:perspective(520px);">
-				
-				
-				</ul>
+				<div class="note_list">
+					
+					<div class="2">2</div>
+					<div class="3">3</div>
+					<div class="4">4</div>
+					<div class="5">5</div>
+					<div class="6">6</div>
+					<div class="7">7</div>
+					<div class="8">8</div>
+					<div class="9">9</div>
+				</div>
 			</div>
 		</article>
 	</section>
