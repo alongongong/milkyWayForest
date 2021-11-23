@@ -4,27 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>원두/차</title>
+<title>쇼핑</title>
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 </head>
 
 <body>
-<form id="beanNTeaForm" name="beanNTeaForm">
+<form id="shoppingForm" name="shoppingForm">
 
 
-<h1> 원두 / 차 </h1>
+<h1>원두/차</h1>
 
-	<div id="beanNTeaNav">
+	<div id="shoppingNav">
 		<div>
 			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a> > 
-			<a href="">원두/차</a>
-			
+			<a href="">Menu</a>  
 		</div>
 	</div>
 
-	<div id ="beanNTeaMenu">
-	<div id ="beanNTeaMenuSubject">원두 / 차</div>
+	<div id ="shoppingMenu">
+	<div id ="shoppingMenuSubject"> 쇼핑 </div>
 	<br>
 		<ul>
             <li>

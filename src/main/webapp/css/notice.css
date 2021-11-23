@@ -70,7 +70,7 @@
 
 #eventBoardForm #eventBoardNowBody, #eventBoardForm #eventBoardEndBody {
 	display: grid;
-	grid-template-row: minmax(100px, auto);
+	/* grid-template-row: minmax(100px, auto); */
 	grid-template-columns: 24% 24% 24% 24%;
 	column-gap: 2%;
 }
