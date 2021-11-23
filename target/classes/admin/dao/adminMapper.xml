@@ -44,4 +44,12 @@
 	<update id="stockUpdate" parameterType="java.util.Map">
 		update milkystock product set entercount=#{enterCount} where productCode=#{productCode}
 	</update>
+	
+	<select id="getGradeBenefit" resultType="grade">
+		select * from milkygradeinfo
+	</select>
+	
+	<update id="updateGradeBenefit" parameterType="grade">
+		update milkygradeinfo set gradeBenefit=#{gradeBenefit} where gradeName=#{gradeName}
+	</update>
 </mapper>

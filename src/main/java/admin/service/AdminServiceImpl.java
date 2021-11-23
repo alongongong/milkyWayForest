@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import admin.dao.AdminDAO;
+import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -48,6 +49,16 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<QnaBoardDTO> getQnaBoard() {
 		return adminDAO.getQnaBoard();
+	}
+
+	@Override
+	public List<GradeDTO> getGradeBenefit() {
+		return adminDAO.getGradeBenefit();
+	}
+
+	@Override
+	public void updateGradeBenefit(GradeDTO gradeDTO) {
+		adminDAO.updateGradeBenefit(gradeDTO);
 	}
 
 }

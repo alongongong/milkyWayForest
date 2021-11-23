@@ -8,5 +8,8 @@
 		<typeAlias type="product.bean.ProductDTO" alias="product"/>
 
 		<typeAlias type="member.bean.MemberDTO" alias="member"/>
+		
+		<typeAlias type="grade.bean.GradeDTO" alias="grade" />
+		
 	</typeAliases>
 </configuration>
