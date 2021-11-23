@@ -1,11 +1,11 @@
-package admin.service;
+package admin.dao;
 
 import java.util.List;
 
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
-public interface AdminService {
+public interface AdminDAO {
 
 	public void pProductInsert(ProductDTO productDTO);
 
@@ -20,5 +20,4 @@ public interface AdminService {
 	public void stockUpdate(String productCode, int enterCount);
 
 	public List<QnaBoardDTO> getQnaBoard();
-
 }

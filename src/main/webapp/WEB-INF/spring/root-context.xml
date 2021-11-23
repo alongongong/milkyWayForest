@@ -13,6 +13,8 @@
 
 	<context:component-scan base-package="info.service" />
 	
+	<context:component-scan base-package="admin.dao" />
+	
 	<context:component-scan base-package="product.dao" />
 	
 	<context:component-scan base-package="login.dao" />

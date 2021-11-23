@@ -1,4 +1,23 @@
 @charset "UTF-8";
+/* 회원혜택관리 */
+#pGradeBenefitDiv #gradeBenefitWrap {
+	display: grid;
+	grid-template-columns: 33% 34% 33%;
+	border: 1px solid #999;
+	border-right: 0;
+	margin: 30px;
+}
+
+#pGradeBenefitDiv #gradeBenefitWrap > div {
+	border-right: 1px solid #999;
+	text-align: center;
+}
+
+#pGradeBenefitDiv #gradeBenefitBtnWrap {
+	text-align: center;
+}
+
+
 /* 상품등록 */
 #pProductInsert{
 	margin: 30px;
@@ -51,3 +70,4 @@
 	height: 25px;
 	padding: 0;
 }
+
