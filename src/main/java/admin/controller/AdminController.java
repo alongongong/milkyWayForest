@@ -162,4 +162,16 @@ public class AdminController {
 	public void productDelete(@RequestParam String productCode) {
 		adminService.productDelete(productCode);
 	}
+	
+	@PostMapping("/admin/getStock")
+	@ResponseBody
+	public List<ProductDTO> getStock(){
+		return adminService.getStock();
+	}
+	
+	@PostMapping("/admin/stockUpdate")
+	@ResponseBody
+	public void stockUpdate(@RequestParam String productCode, @RequestParam int enterCount) {
+		adminService.stockUpdate(productCode, enterCount);
+	}
 }

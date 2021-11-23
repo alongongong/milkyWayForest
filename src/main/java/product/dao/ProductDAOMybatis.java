@@ -1,6 +1,8 @@
 package product.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +36,18 @@ public class ProductDAOMybatis implements ProductDAO {
 	@Override
 	public void productDelete(String productCode) {
 		sqlSession.delete("productSQL.productDelete", productCode);
+	}
+
+	@Override
+	public List<ProductDTO> getStock() {
+		return sqlSession.selectList("productSQL.getStock");
+	}
+
+	@Override
+	public void stockUpdate(String productCode, int enterCount) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("productCode", productCode);
+		map.put("enterCount", enterCount);
+		sqlSession.update("productSQL.stockUpdate", map);
 	}
 }

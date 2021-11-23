@@ -34,4 +34,14 @@ public class AdminServiceImpl implements AdminService {
 		productDAO.productDelete(productCode);
 	}
 
+	@Override
+	public List<ProductDTO> getStock() {
+		return productDAO.getStock();
+	}
+
+	@Override
+	public void stockUpdate(String productCode, int enterCount) {
+		productDAO.stockUpdate(productCode, enterCount);
+	}
+
 }

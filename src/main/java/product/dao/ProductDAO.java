@@ -14,4 +14,8 @@ public interface ProductDAO {
 
 	public void productDelete(String productCode);
 
+	public List<ProductDTO> getStock();
+
+	public void stockUpdate(String productCode, int enterCount);
+
 }

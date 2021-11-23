@@ -5,9 +5,7 @@ create table milkyProductInfo(
     productOption varchar(30),
     productUnit number,
     productRate number,
-    enterCount number default 0,
-    sellCount number default 0,
-    wishCount number defalut 0
+    wishCount number default 0
 );
 
 
@@ -22,6 +20,13 @@ create table milkyProductDetail (
 create table milkyProductImage (
     productCode varchar(10),
     productImageName varchar(50)
+);
+
+
+create table milkystock(
+    productCode varchar(10),
+    enterCount number default 0,
+    sellCount number default 0
 );
 
 

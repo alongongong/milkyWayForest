@@ -14,6 +14,8 @@
 	font-weight: bold;
 }
 
+
+/* 상품조회 */
 #pProductListDiv #pProductListTable input {
 	border: 0;
 	outline: 0;
@@ -26,7 +28,25 @@
 	display: none;
 }
 
- #pProductListDiv #pProductListTable .deleteBtn {
+#pProductListDiv #pProductListTable .deleteBtn {
+	width: 45px;
+	height: 25px;
+	padding: 0;
+}
+
+
+/* 물류관리 */
+#pStockDiv #pStockTable input {
+	border: 0;
+	outline: 0;
+}
+#pStockDiv #pStockTable .updateBtn {
+	width: 45px;
+	height: 25px;
+	padding: 0;
+	display: none;
+}
+#pStockDiv #pStockTable .deleteBtn {
 	width: 45px;
 	height: 25px;
 	padding: 0;
