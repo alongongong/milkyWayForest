@@ -1,4 +1,3 @@
-
 $(function(){
        $('.nav_Info').click(function(){
        		if($('#noneDiv').css('display')=='none'){
