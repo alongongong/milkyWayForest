@@ -12,16 +12,14 @@
 		
 		<div class="grade_text1">
 			<div class="grade-top-text"><h1>등급 및 혜택</h1></div>
-			<ul class="smap"></ul> <!--  -->
+			<ul class="smap"></ul> 
 		</div>
 	
 	<div class="grade_pic1">
 		<img src="/milkyWayForest/image/benefit.png" alt="benefit" width="100%" >
 	</div>
 	
-	<h3 class="grade_text2">
-		<strong>회원 등급별 혜택</strong>
-	</h3>
+	<h3 class="grade_text2"><strong>회원 등급별 혜택</strong></h3>
 	
 	<div class="second_block">
 		<div class="one">
@@ -43,7 +41,23 @@
 		<li class="list">별★의 유효기간은 일년입니다.</li>
 		<li class="list">쿠폰 및 그린/골드 대상 회원 전용 이벤트는 프로모션 운영에 따라 변경될 수 있습니다.</li>
 	</ul>
-	
 </div>
+
+	<div id="container2">
+	<section class="info2">
+		<article class="info2_inner" id="showcase">
+			<div class="info2_center">
+			<h3><strong>회원 등급별 상세 혜택 및 유의사항</strong></h3>
+				<ul class="note_list">
+					<li class="card_flip" style="opacity: 1; position: relative; top:0px; left: 0px; transform:perspective(520px);">
+				
+				
+				</ul>
+			</div>
+		</article>
+	</section>
+	</div>
+
+
 </body> 
 </html>

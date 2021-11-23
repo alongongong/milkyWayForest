@@ -21,7 +21,7 @@
 
 			<div id="mainNavMenu">
 				<ul id="companyInfo">
-					<li><a href="/milkyWayForest/info">회사소개</a></li>
+					<li><a href="/milkyWayForest/info/componyInfo">회사소개</a></li>
 					
 					<li><a href="/milkyWayForest/info/componyInfo">회사소개</a></li>
 					<li><a href="/milkyWayForest/info/gradeBenefitInfo">등급 혜택 안내</a></li>
