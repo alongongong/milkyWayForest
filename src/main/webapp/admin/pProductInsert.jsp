@@ -26,11 +26,14 @@
 				<td>카테고리</td>
 				<td>
 					<select id="category" name="category" style="width: 409px; height:27px;">
-						<option value="Glass">글라스</option>
-						<option value="Mug">머그</option>
-						<option value="CoffeeBean">원두</option>
-						<option value="Stainless">스테인리스 텀블러</option>
-						<option value="Plastic">플라스틱 텀블러</option>
+						<option value="글라스">글라스</option>
+						<option value="머그">머그</option>
+						<option value="원두">원두</option>
+						<option value="스테인리스 텀블러">스테인리스 텀블러</option>
+						<option value="플라스틱 텀블러">플라스틱 텀블러</option>
+						<option value="차">차</option>
+						<option value="보온병">보온병</option>
+						<option value="커피용품">커피용품</option>
 					</select>
 				</td>
 			</tr>

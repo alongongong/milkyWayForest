@@ -10,6 +10,10 @@
 	<context:component-scan base-package="admin.service"/>
 	
 	<context:component-scan base-package="login.service" />
+
+	<context:component-scan base-package="info.service" />
+	
+	<context:component-scan base-package="admin.dao" />
 	
 	<context:component-scan base-package="shopping.service" />
 	
@@ -21,4 +25,6 @@
 	<context:component-scan base-package="shopping.dao" />
 	
 	<context:component-scan base-package="login.dao" />
+	
+	<context:component-scan base-package="info.dao" />
 </beans>
