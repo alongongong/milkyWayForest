@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link rel="stylesheet" type="text/css" href="../css/writeAgreeForm.css">
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/writeAgreeForm.css">
 
 <body>
   <form action="" id="writeAgreeForm">
@@ -9,7 +9,7 @@
         <li class="writeAgreeCheckBox check01">
           <div>
             <ul class="writeAgreeFix">
-                <li align="center"><img id="writeAgreeImg" src="../img/starbucksStaff.jpg"></li>
+                <li align="center"><img id="writeAgreeImg" src="/milkyWayForest/image/starbucksStaff.jpg"></li>
             </ul>
           </div>
         </li>
