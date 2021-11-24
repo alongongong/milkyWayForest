@@ -4,7 +4,9 @@
 <div class="card" id="pProductListDiv">
   <div class="card-header">
     <h4 class="card-title"> 상품 리스트</h4>
-	<div id="productSearch"></div>
+	<div id="productSearch">
+		
+	</div>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -30,12 +32,6 @@
           </th>
           <th>
           	할인율(%)
-          </th>
-          <th>
-          	입고
-          </th>
-          <th>
-          	출고
           </th>
           <th>
           	찜하기
@@ -84,14 +80,7 @@ $(function(){
 					id: 'productRate'+index,
 					value: items.productRate,
 					size: '4'
-				}))).append($('<td>').append($('<input>',{
-					type: 'text',
-					id: 'enterCount'+index,
-					value: items.enterCount,
-					size: '3'
 				}))).append($('<td>',{
-					text: items.sellCount,
-				})).append($('<td>',{
 					text: items.wishCount,
 				})).append($('<td>').append($('<input>',{
 					type: 'button',
@@ -119,8 +108,7 @@ $(function(){
 								'productEngName': $('#productEngName'+index).val(),
 								'productOption': $('#productOption'+index).val(),
 								'productUnit': $('#productUnit'+index).val(),
-								'productRate': $('#productRate'+index).val(),
-								'enterCount': $('#enterCount'+index).val()},
+								'productRate': $('#productRate'+index).val()},
 						success: function(data) {
 							alert('수정되었습니다.');
 							location.href='/milkyWayForest/admin/productList?dataNum=4';
@@ -144,6 +132,7 @@ $(function(){
 						}
 					});
 				});
+				
 			});
 		},
 		error: function(err) {

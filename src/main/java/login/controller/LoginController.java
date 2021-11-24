@@ -50,6 +50,31 @@ public class LoginController {
 
 		return memberDTO2.getId();
 	}
+
+	//카카오 로그인 세션 저장
+	@PostMapping(value="/kakaoLogin")
+	@ResponseBody
+	public void kakaoLogin(@ModelAttribute MemberDTO memberDTO, HttpSession session) {	
+		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getNickname());
+		System.out.println(memberDTO.getMm());
+		System.out.println(memberDTO.getDd());
+		System.out.println(memberDTO.getEmail1());
+		System.out.println(memberDTO.getEmail2());
+		
+		//아이디 있는지 확인
+		MemberDTO memberDTO2 = loginService.loginIdCheck(memberDTO.getId());
+
+		if(memberDTO2 == null) {
+			System.out.println("회원가입 필요!");
+			//아이디 없으면 회원가입 //writeService.kakaoWrite(memberDTO); 
+		}
+
+
+		session.setAttribute("memId", memberDTO.getId());
+		session.setAttribute("memNickname", memberDTO.getNickname());
+		System.out.println("LoginController 세션카카오아이디 저장 "+session.getAttribute("memId"));	
+	}
 	
 	//아이디 찾기창
 	@GetMapping(value="/findId")
@@ -59,10 +84,16 @@ public class LoginController {
 	}
 	
 	//질문으로 찾기
-//	@GetMapping(value="/findIdQna")
-//	public String findIdQna(@ModelAttribute MemberDTO memberDTO) {
-//		return loginService.findIdQna(memberDTO);
-//	}
+	@PostMapping(value="/findIdQna")
+	@ResponseBody
+	public String findIdQna(@ModelAttribute MemberDTO memberDTO) {
+		MemberDTO memberDTO2 = loginService.findIdQna(memberDTO);
+
+		if(memberDTO2 == null)
+			return "findIdQna_non_exist"; //아이디 없음
+		else
+			return memberDTO2.getId(); //아이디 있음
+	}
 	
 	//이메일 확인
 	@PostMapping("/loginEmailCheck")
@@ -71,7 +102,7 @@ public class LoginController {
 		MemberDTO memberDTO2 = loginService.loginEmailCheck(memberDTO);
 
 		if(memberDTO2 == null)
-			return "non_exist"; //이메일 발송 불가능
+			return "loginEmailCheck_non_exist"; //이메일 발송 불가능
 		else
 			return memberDTO2.getId(); //이메일 발송 가능
 		
@@ -114,14 +145,56 @@ public class LoginController {
         
         return num;
     }
-
-	//비밀번호 찾기 창
+	
+	//아이디 찾기 결과 창
+	@GetMapping(value="/findIdResult")
+	public String findIdResult(String id, Model model) {
+		model.addAttribute("id", id);
+		model.addAttribute("display", "login/findIdResult.jsp");
+		return "/index";
+	}
+	
+	//비밀번호 찾기 창 1
 	@GetMapping(value="/findPwd")
 	public String findPwd(Model model) {
 		model.addAttribute("display", "login/findPwdForm1.jsp");
 		return "/index";
 	}
 	
+	//아이디 확인
+	@PostMapping("/loginIdCheck")
+	@ResponseBody
+	public String loginIdCheck(String id) {
+		MemberDTO memberDTO2 = loginService.loginIdCheck(id);
+
+		if(memberDTO2 == null)
+			return "loginIdCheck_non_exist"; //아이디 없음
+		else
+			return memberDTO2.getId(); //아이디 있음
+		
+	}
+	 
+	//비밀번호 찾기 창 2
+	@GetMapping(value="/findPwd2")
+	public String findPwd2(String id, Model model) {
+		model.addAttribute("id", id);
+		model.addAttribute("display", "login/findPwdForm2.jsp");
+		return "/index";
+	}
 	
+	//비밀번호 찾기 창 3
+	@GetMapping(value="/findPwd3")
+	public String findPwd3(String id, Model model) {
+		model.addAttribute("id", id);
+		model.addAttribute("display", "login/findPwdForm3.jsp");
+		return "/index";
+	}
+	
+	//비밀번호 재설정
+	@PostMapping(value="/findPwdUpdate")
+	@ResponseBody
+	public void findPwdUpdate(@ModelAttribute MemberDTO memberDTO, Model model) {	
+		loginService.findPwdUpdate(memberDTO);
+	}
 	
 }

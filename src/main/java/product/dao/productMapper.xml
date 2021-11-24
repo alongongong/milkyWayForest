@@ -5,33 +5,4 @@
  
 <mapper namespace="productSQL">
 	
-	<insert id="pProductInsert" parameterType="product">
-		begin
-		insert into milkyproductinfo values(#{productCode}, #{productName}, #{category}, #{productOption}, #{productUnit}, #{productRate}, 0, 0, 0);
-		insert into milkyproductdetail values(#{productCode}, #{productEngName}, #{productSmallInfo}, #{productDetailInfo});
-		end;
-	</insert>
-	
-	<select id="getProductList" resultType="product">
-		select productCode, productName, productEngName, category, productOption, productUnit,
-				productRate, enterCount, sellCount, wishCount 
-		from milkyproductinfo 
-		join milkyproductdetail using(productcode)
-		order by productCode
-	</select>
-	
-	<update id="productUpdate" parameterType="product">
-		begin
-		update milkyproductinfo set productname=#{productName}, productOption=#{productOption},
-				productUnit=#{productUnit}, productRate=#{productRate}, enterCount=#{enterCount} where productCode=#{productCode};
-		update milkyproductdetail set productEngName=#{productEngName} where productCode=#{productCode};
-		end;
-	</update>
-	
-	<delete id="productDelete">
-		begin
-		delete milkyproductinfo where productCode=#{productCode};
-		delete milkyproductdetail where productcode=#{productCode};
-		end;
-	</delete>
 </mapper>

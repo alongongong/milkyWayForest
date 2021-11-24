@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="adminSQL">
+	
+	<insert id="pProductInsert" parameterType="product">
+		begin
+		insert into milkyproductinfo values(#{productCode}, #{productName}, #{category}, #{productOption}, #{productUnit}, #{productRate}, 0);
+		insert into milkyproductdetail values(#{productCode}, #{productEngName}, #{productSmallInfo}, #{productDetailInfo});
+		insert into milkystock values(#{productCode}, 0, 0);
+		end;
+	</insert>
+	
+	<select id="getProductList" resultType="product">
+		select productCode, productName, productEngName, category, productOption, productUnit,
+				productRate, wishCount 
+		from milkyproductinfo 
+		join milkyproductdetail using(productcode)
+		order by productCode
+	</select>
+	
+	<update id="productUpdate" parameterType="product">
+		begin
+		update milkyproductinfo set productname=#{productName}, productOption=#{productOption},
+				productUnit=#{productUnit}, productRate=#{productRate} where productCode=#{productCode};
+		update milkyproductdetail set productEngName=#{productEngName} where productCode=#{productCode};
+		end;
+	</update>
+	
+	<delete id="productDelete">
+		begin
+		delete milkystock where productcode=#{productCode};
+		delete milkyproductdetail where productcode=#{productCode};
+		delete milkyproductinfo where productCode=#{productCode};
+		end;
+	</delete>
+	
+	<select id="getStock" resultType="product">
+		select productCode, productName, entercount, sellcount from milkystock join milkyproductinfo using(productcode) order by productCode
+	</select>
+	
+	<update id="stockUpdate" parameterType="java.util.Map">
+		update milkystock product set entercount=#{enterCount} where productCode=#{productCode}
+	</update>
+	
+	<select id="getGradeBenefit" resultType="grade">
+		select * from milkygradeinfo
+	</select>
+	
+	<update id="updateGradeBenefit" parameterType="java.util.Map">
+		begin
+		update milkygradeinfo set gradeBenefit=#{welcome} where gradeName='welcome';
+		update milkygradeinfo set gradeBenefit=#{green} where gradeName='green';
+		update milkygradeinfo set gradeBenefit=#{gold} where gradeName='gold';
+		end;
+	</update>
+	
+	<select id="getQnaBoard" resultType="qnaBoard">
+		select * from milkyqna
+	</select>
+</mapper>

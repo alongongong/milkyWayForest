@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import admin.service.AdminService;
+import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
+import qnaBoard.bean.QnaBoardDTO;
 
 @Controller
 public class AdminController {
@@ -162,4 +164,35 @@ public class AdminController {
 	public void productDelete(@RequestParam String productCode) {
 		adminService.productDelete(productCode);
 	}
+	
+	@PostMapping("/admin/getStock")
+	@ResponseBody
+	public List<ProductDTO> getStock(){
+		return adminService.getStock();
+	}
+	
+	@PostMapping("/admin/stockUpdate")
+	@ResponseBody
+	public void stockUpdate(@RequestParam String productCode, @RequestParam int enterCount) {
+		adminService.stockUpdate(productCode, enterCount);
+	}
+	
+	@PostMapping("/admin/getGradeBenefit")
+	@ResponseBody
+	public List<GradeDTO> getGradeBenefit(){
+		return adminService.getGradeBenefit();
+	}
+	
+	@PostMapping("/admin/updateGradeBenefit")
+	@ResponseBody
+	public void updateGradeBenefit(@RequestParam String welcome, @RequestParam String green, @RequestParam String gold) {
+		adminService.updateGradeBenefit(welcome, green, gold);
+	}
+	
+	@PostMapping("/admin/getQnaBoard")
+	@ResponseBody
+	public List<QnaBoardDTO> getQnaBoard() {
+		return adminService.getQnaBoard();
+	}
+	
 }
