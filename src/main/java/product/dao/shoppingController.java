@@ -1,4 +1,4 @@
-package shopping.controller;
+package product.dao;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
