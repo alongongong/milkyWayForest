@@ -3,13 +3,13 @@
     
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/writeAgreeForm.css">
 
-<body>
+
   <form action="" id="writeAgreeForm">
     <ul class="writeAgreeBox">
         <li class="writeAgreeCheckBox check01">
           <div>
             <ul class="writeAgreeFix">
-                <li align="center"><img id="writeAgreeImg" src="/milkyWayForest/image/starbucksStaff.jpg"></li>
+                <li align="center"><img id="writeAgreeImg" src="/milkyWayForest/image/starbucksStaff.JPG"></li>
             </ul>
           </div>
         </li>
@@ -33,7 +33,7 @@
             <ul class="writeAgreeFix">
                 <li>홈페이지 이용약관 동의(필수)</li>
                 <li class="checkBtn">
-                    <input type="checkbox" name="chk">
+                    <input type="checkbox" id="writeCheck1"class="acptChck"name="chk">
                 </li>
             </ul>
             <div id="writeAgreeContentbox">
@@ -165,7 +165,7 @@
             <ul class="writeAgreeFix">
                 <li>개인정보 수집 및 이용동의 (필수)</li>
                 <li class="">
-                    <input type="checkbox" name="chk">
+                    <input type="checkbox" id="writeCheck2" class="acptChck" name="chk">
                 </li>
             </ul>
             <div>
@@ -178,7 +178,7 @@
             <ul class="writeAgreeFix">
                 <li>이벤트 등 프로모션 알림 메일 수신동의(선택)</li>
                 <li class="">
-                    <input type="checkbox" name="chk">
+                    <input type="checkbox" class="acptChck" name="chk">
                 </li>
             </ul>
         </li>
@@ -200,13 +200,15 @@
             </ul>
           <div>
               <ul>
-                <li align="center"><input type="button" id="writeAgreeBtn1" value="동의"></li>
+                <li align="center"><input type="button" disabled="disabled" id="writeAgreeBtn1" value="동의"></li>
               </ul>
           </div>
           </div>
         </li>
     </ul>
-    </ul>
 </form>
-</body>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/write.js"></script>
+
 

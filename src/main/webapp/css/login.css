@@ -213,7 +213,53 @@
 	margin-top: 13px;
 }
 
-/*********************** 비밀번호 찾기 창 ***********************/
+/*********************** 아이디 찾기 결과 창 ***********************/
+#findIdResultForm #main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+#findIdResultForm #findIdResult-wrap{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#findIdResultForm #findIdResult-wrap h2{
+	font-size: 20px;
+}
+
+#findIdResultForm #findIdResult-wrap p{
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+#findIdResultForm #id-wrap{
+	font-size: 20px;
+	margin: 60px auto;
+}
+
+#findIdResultForm #id-wrap #id-result{
+	border: 1px solid;
+	width: 465px;
+	height: 120px;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+#findIdResultForm #find-write{
+	color: black;
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+#findIdResultForm #find-write a{
+	text-decoration: none;
+}
+
+/*********************** 비밀번호 찾기 창 ************************/
 #findPwdForm1 #main-container, #findPwdForm2 #main-container, #findPwdForm3 #main-container{
 	width:100%;
 	display:flex;
@@ -233,9 +279,9 @@
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 }
-#findPwdForm1 #findPwd-input-wrap p, #findPwdForm3 #findPwd-setting-wrap p{
+#findPwdForm1 #findPwd-input-wrap p, #findPwdForm2 #findPwd-input-wrap p, #findPwdForm3 #findPwd-setting-wrap p{
 	font-size: 15px;
 	margin-top: 13px;
 }
@@ -246,8 +292,11 @@
 	border: solid 1px gray;
 	background: white;
 }
+#findPwdForm1 #findPwd-id-input-wrap, #findPwdForm2 #findPwd-email-input-wrap, #findPwdForm2 #check-number-input-wrap, #findPwdForm3 #findPwd-pwd-input-wrap, #findPwdForm3 #findPwd-repwd-input-wrap{
+	margin-bottom: 10px;	
+}
 
-#findPwdForm1 #findPwd-id-input-wrap input, #findPwdForm2 #findPwd-email-input-wrap input, #findPwdForm2 #check-number-input-wrap input,
+#findPwdForm1 #findPwd-id-input-wrap input, #findPwdForm2 #check-number-input-wrap input,
 #findPwdForm3 #findPwd-pwd-input-wrap input, #findPwdForm3 #findPwd-repwd-input-wrap input{
 	border: none;
     width: 454px;
@@ -255,11 +304,26 @@
     padding-left: 10px;
     height: 45px;
 }
+#findPwdForm2 #findPwd-email-input-wrap input{
+	border: none;
+    width: 220px;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 45px;
+    display: inline-block;
+    float: left;
+}
+#findPwdForm2 #findPwd-email-input-wrap span{
+	display: inline-block;
+	float: left;
+	padding-top: 10px;
+}
+
 #findPwdForm1 #findPwd-id-input-wrap input:focus, #findPwdForm2 #findPwd-email-input-wrap input:focus, #findPwdForm2 #check-number-input-wrap input:focus,
 #findPwdForm3 #findPwd-pwd-input-wrap input:focus, #findPwdForm3 #findPwd-repwd-input-wrap input:focus{
 	outline: none;
 }
-#findPwdForm1 #result-div, #findPwdForm2 #result1-div, #findPwdForm2 #result2-div, #findPwdForm3 #result-div{
+#findPwdForm1 #result-div, #findPwdForm2 #result-div, #findPwdForm3 #result-div{
 	padding-top: 10px;
     font-size: 12px;
     color: red;
@@ -268,7 +332,7 @@
 }
 
 #findPwdForm1 #check-id-button-wrap, #findPwdForm2 #check-email-button-wrap, #findPwdForm2 #check-number-button-wrap, #findPwdForm3 #findPwd-button-wrap {
-	padding: 13px 0;
+	/* padding: 13px 0; */
 }
 #findPwdForm1 #check-id-button-wrap button, #findPwdForm2 #check-email-button-wrap button, #findPwdForm2 #check-number-button-wrap button, #findPwdForm3 #findPwd-button-wrap button{
 	width: 465px;
@@ -277,4 +341,40 @@
 	background: dargray;
 	color: black;
 	border: solid 1px black;
+}
+#findPwdForm2 #check-email-button-wrap button{
+	margin-bottom: 30px;
+}
+
+/*********************** 비밀번호 찾기 결과 창 ***********************/
+#findPwdResultForm #main-container{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+#findPwdResultForm #findPwdResult-wrap{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#findPwdResultForm #findPwdResult-wrap h2{
+	font-size: 20px;
+}
+
+#findPwdResultForm #findPwdResult-wrap p{
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+
+#findPwdResultForm #find-write{
+	color: black;
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+#findPwdResultForm #find-write a{
+	text-decoration: none;
 }
