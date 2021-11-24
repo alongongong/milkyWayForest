@@ -5,10 +5,14 @@
 <mapper namespace="shoppingSQL">
 	
 	<select id="getShoppingList" resultType="shopping">
-		select productName,category,productUnit
+		select productName,category,productUnit,PRODUCTIMAGENAME
 		from milkyproductinfo 
 		join milkyproductimage using(productcode)
+		where rownum between 1 and 8
 	</select>
+	<!-- 이미지 주소의 경로를 가져오는게 select PRODUCTIMAGENAME 를 해주는것. 
+	
+	 -->
 
 
 </mapper>

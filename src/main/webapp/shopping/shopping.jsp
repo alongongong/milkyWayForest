@@ -75,26 +75,25 @@ $(function(){
 				$('<div>',{
 					width: 100,
 					align: 'center',
-					text : items.productName,
-					  
+					text : items.productName + items.productUnit
 				})
 				.append($('<div>',{
 				 	width: 100,
 					align: 'center',
-					text :  items.productUnit,
-					   		
+					text :  items.productName + items.productUnit
+					  	   
 				}))
 				.append($('<div>',{
 				 	width: 100,
 					align: 'center',
-					text :  items.productName,
-					   		
+					text :  items.productName + items.productUnit
+			  	    	
 				}))
 				.append($('<div>',{
 				 	width: 100,
 					align: 'center',
-					text :  items.productUnit,
-					 	  
+					text : items.productName + items.productUnit
+	  	    				
 				}))
 				
 				.appendTo($('#div'));
