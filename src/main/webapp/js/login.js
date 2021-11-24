@@ -33,22 +33,21 @@ $('#loginForm #login-button').click(function(){
 
 });
 
-//카카오 로그인 - REST API 방법 (구현됨)
+/*
+//카카오 로그인 - REST API 방법
 $('#loginForm #kakao-login-btn').click(function(){
-	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용
-	console.log(Kakao.isInitialized()); // sdk초기화여부판단
 	
-    $.ajax({
+	$.ajax({
         url: '/milkyWayForest/login/getKakaoAuthUrl',
         type: 'get',
-        //async: false,
-        //dataType: 'text',
-        success: function (res) {
-            location.href = res;
+        async: false, //응답을 모두 완료 후 다음 로직을 실행함 , 동기식 동작
+        success: function (data) {
+            location.href = data; //카카오 로그인 창 url 리턴
+            
         }
     });
-
-  $(document).ready(function() {
+  
+    $(document).ready(function() {
 
       var kakaoInfo = '${kakaoInfo}';
 
@@ -62,12 +61,12 @@ $('#loginForm #kakao-login-btn').click(function(){
           + "\n nickname : " 
           + data['nickname']);
       }
-  });
+  }); 
   
 }); 
+*/
 
-/*
-//카카오 로그인 - 자바스크립트 방법 (구현됨)
+//카카오 로그인 - 자바스크립트 방법 - https://tyrannocoding.tistory.com/61 참고
 $('#loginForm #kakao-login-btn').click(function(){
 	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용
 	console.log(Kakao.isInitialized()); // sdk초기화여부판단
@@ -79,16 +78,45 @@ $('#loginForm #kakao-login-btn').click(function(){
 				url: '/v2/user/me', //계정 정보를 가져오는 request url
 	          	success: function (data) {
 	        		console.log(data)  
-	        		alert(data.properties.nickname+'님 카카오 로그인 성공, id: '+data.id);
 	        		
+	        		//카카오 로그인 선택 동의 사항
+					var mm;
+					var dd;
+					var email1;
+					var email2;
+
+					if(!(data.kakao_account.hasOwnProperty("birthday"))){
+						mm = 0;
+						dd = 0;
+					
+					}if(data.kakao_account.hasOwnProperty("birthday")){
+						var birthday = data.kakao_account.birthday;
+						mm = birthday.substr(0,2);
+						dd = birthday.substr(2,2);
+						
+					}if(!(data.kakao_account.hasOwnProperty("email"))){
+						email1 = 'no_email';
+						email2 = 'no_email';
+						
+					}if(data.kakao_account.hasOwnProperty("email")){
+						var email = (data.kakao_account.email).split("@");
+						email1 = email[0];
+						email2 = email[1];
+					}
+
 	        		//세션에 카카오 계정 정보 저장
 	        		$.ajax({
 			       			url: "/milkyWayForest/login/kakaoLogin",
 							type: "post",
 			       			data: {'id' : data.id,
-			       				   'nickname' : data.properties.nickname},
+			       				   'nickname' : data.properties.nickname,
+			       				   'mm' : mm,
+			       				   'dd' : dd,
+			       				   'email1' : email1,
+			       				   'email2' : email2},
 							success: function(){
-								//location.href='/milkyWayForest/index.jsp';
+								location.href='/milkyWayForest/index.jsp';
+								
 							},
 							error: function(err){
 								console.log(err);
@@ -108,7 +136,7 @@ $('#loginForm #kakao-login-btn').click(function(){
 	
 });
 
-
+/*
 //카카오로그아웃  
 function kakaoLogout() {
     if (Kakao.Auth.getAccessToken()) {
@@ -160,7 +188,7 @@ $('#findIdForm').ready(function(){
 				success: function(data){
 					console.log(JSON.stringify(data));
 					
-					if(data == 'non_exist'){
+					if(data == 'findIdQna_non_exist'){
 						$('#findIdForm #result2-div').html('질문과 답을 다시 한번 확인하세요');
 					
 					}else{
@@ -212,7 +240,7 @@ $('#findIdForm').ready(function(){
 				success: function(data){
 					//alert(data);
 					
-					if(data == 'non_exist'){
+					if(data == 'loginEmailCheck_non_exist'){
 						$('#findIdForm #result2-div').html('본인 확인 이메일 주소를 정확히 입력하세요');
 					
 					}else{
@@ -286,7 +314,7 @@ $('#findPwdForm1 #check-id-button').click(function(){
 			success: function(data){
 				//alert(data);
 				
-				if(data == 'non_exist'){
+				if(data == 'loginIdCheck_non_exist'){
 					$('#findPwdForm1 #result-div').html('입력하신 아이디를 찾을 수 없습니다');
 				
 				}else{

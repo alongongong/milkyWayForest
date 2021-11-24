@@ -62,9 +62,6 @@
 				<div id="check-number-button-wrap">
 					<button type="button" id="check-number-button">인증번호 확인</button>
 				</div>
-				<!-- <div id="findId-button-wrap">
-					<button type="button" id="findId-button2">아이디 찾기</button>
-				</div> -->
 				<div id="result2-div"></div>
 			</div>
 		</section>
