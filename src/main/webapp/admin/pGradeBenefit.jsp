@@ -9,13 +9,13 @@
 			<div><br>GOLD<br><br></div>
 			
 			<div>
-				<textarea id="welcomeBenefit" name="welcome" cols="37" rows="8"></textarea>
+				<textarea id="welcomeBenefit" name="welcome" rows="8"></textarea>
 			</div>
 			<div>
-				<textarea id="greenBenefit" name="green" cols="38" rows="8"></textarea>
+				<textarea id="greenBenefit" name="green" rows="8"></textarea>
 			</div>
 			<div>
-				<textarea id="goldBenefit" name="gold" cols="37" rows="8"></textarea>
+				<textarea id="goldBenefit" name="gold" rows="8"></textarea>
 			</div>
 		</div>
 	

@@ -8,6 +8,10 @@
 	margin: 30px;
 }
 
+#gradeBenefitWrap #welcomeBenefit, #gradeBenefitWrap #greenBenefit, #gradeBenefitWrap #goldBenefit {
+	width: 98%;
+}
+
 #pGradeBenefitDiv #gradeBenefitWrap > div {
 	border-right: 1px solid #999;
 	text-align: center;
