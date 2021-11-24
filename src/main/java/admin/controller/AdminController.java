@@ -107,7 +107,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/reviewBoard")
-	public String reviewBoard(@ModelAttribute String dataNum, Model model) {
+	public String reviewBoard(@RequestParam String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "상품 리뷰 관리");
 		model.addAttribute("display", "pReviewBoard.jsp");
