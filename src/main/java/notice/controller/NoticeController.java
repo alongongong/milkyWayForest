@@ -56,7 +56,7 @@ public class NoticeController {
 	
 	@GetMapping("/notice/qnaBoardWriteForm")
 	public String qnaBoardWriteForm(Model model) {
-		model.addAttribute("display", "/notice/qnaBoardWriteForm.jsp");
+		model.addAttribute("display", "notice/qnaBoardWriteForm.jsp");
 		return "/index";
 	}
 	
