@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="/milkyWayForest/css/default.css">
 <link rel="stylesheet" href="/milkyWayForest/css/header.css"> <!-- PC전용 -->
 	<!-- 모바일, 태블릿에서도 가능한 반응형 웹 크기 960(모바일), 1120(태블릿) -->
-<link rel="stylesheet" href="css/header_tablet.css" media="all and (max-width:1023px)"> <!--1120 이하 태블릿-->
-<link rel="stylesheet" href="css/header_mobile.css" media="all and (max-width:767px)"> <!--960 이하 모바일-->														 
+<link rel="stylesheet" href="/milkyWayForest/css/header_tablet.css" media="all and (max-width:1023px)"> <!--1120 이하 태블릿-->
+<link rel="stylesheet" href="/milkyWayForest/css/header_mobile.css" media="all and (max-width:767px)"> <!--960 이하 모바일-->														 
 </head>
 <body>
 	<header>

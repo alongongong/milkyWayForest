@@ -27,26 +27,27 @@ body { margin: 0; }
 /* info2 */
 #container2 { margin: 0 auto; padding: 0;  }
 
+.one img {	height:363px; }
+.two img { height:363px; }
+.three img { height:363px; }
+
 .info2 { padding: 40px 0 60px 0; background: #f4f4f2;  }
 .info2_center { width: 78rem; margin: 0 auto;  }
 .info2_inner h3 { font-size: 24px; color: #222; font-weight: bold; padding-bottom: 19px; }
 
-.note_list { 
-	display:grid; grid-template-columns: 23% 23% 23% 23%; 
-	grid-column-gap: 2%; 
-	background-color: #FFFFFF; 
-	margin-top: 1.5rem; 
-			 }	
-
-.note_list > div {
-    border-radius: 3px;
-    float: left;
-    height: 296px;
-    margin: 0 0 20px 20px;
-    position: relative;
-    text-align: center;
-    /* width: 260px; */
-    width: 24%;
-    background-color: green;
+ul.note_list {
+    margin-left: -20px;
 }
-
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+}
+.note_list {
+	m
+}

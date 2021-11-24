@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="qnaBoardForm">
 	<legend>Q&A</legend>
@@ -30,6 +31,10 @@ $(function(){
 		error: function(err) {
 			console.log(err);
 		}
+	});
+	
+	$('#qnaBoardWriteBtn').click(function(){
+		location.href="/milkyWayForest/notice/qnaBoardWriteForm";
 	});
 });
 </script>
