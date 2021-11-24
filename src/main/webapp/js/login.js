@@ -189,10 +189,9 @@ $('#findIdForm').ready(function(){
 					console.log(JSON.stringify(data));
 					
 					if(data == 'findIdQna_non_exist'){
-						$('#findIdForm #result2-div').html('질문과 답을 다시 한번 확인하세요');
+						$('#findIdForm #result1-div').html('질문과 답을 다시 한번 확인하세요');
 					
 					}else{
-						alert(data);
 						var id = data;
 						location.href='/milkyWayForest/login/findIdResult?id='+id;
 					}
@@ -357,7 +356,7 @@ $('#findPwdForm2 #check-email-button').click(function(){
 				success: function(data){
 					//alert(data);
 					
-					if(data == 'non_exist'){
+					if(data == 'loginEmailCheck_non_exist'){
 						$('#findPwdForm2 #result-div').html('본인 확인 이메일 주소를 정확히 입력하세요');
 					
 					}else{

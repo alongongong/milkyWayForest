@@ -55,12 +55,12 @@ public class LoginController {
 	@PostMapping(value="/kakaoLogin")
 	@ResponseBody
 	public void kakaoLogin(@ModelAttribute MemberDTO memberDTO, HttpSession session) {	
-//		System.out.println(memberDTO.getId());
-//		System.out.println(memberDTO.getNickname());
-//		System.out.println(memberDTO.getMm());
-//		System.out.println(memberDTO.getDd());
-//		System.out.println(memberDTO.getEmail1());
-//		System.out.println(memberDTO.getEmail2());
+		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getNickname());
+		System.out.println(memberDTO.getMm());
+		System.out.println(memberDTO.getDd());
+		System.out.println(memberDTO.getEmail1());
+		System.out.println(memberDTO.getEmail2());
 		
 		//아이디 있는지 확인
 		MemberDTO memberDTO2 = loginService.loginIdCheck(memberDTO.getId());
