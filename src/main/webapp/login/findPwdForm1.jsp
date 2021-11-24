@@ -11,7 +11,7 @@
 			<div id="findPwd-input-wrap">
 				<p>비밀번호를 찾고자 하는 아이디를 입력하세요</p>
 				<div id="findPwd-id-input-wrap">
-					<input type="text" id="findPwd-id-input" name="id">
+					<input type="text" id="id" name="id" placeholder="은하숲 아이디">
 				</div>
 
 				<div id="check-id-button-wrap">
@@ -23,3 +23,6 @@
 	</div>
 </div>
 </form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/login.js"></script>

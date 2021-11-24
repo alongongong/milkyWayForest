@@ -8,4 +8,10 @@ public interface LoginDAO {
 
 	public MemberDTO loginEmailCheck(MemberDTO memberDTO);
 
+	public MemberDTO findIdQna(MemberDTO memberDTO);
+
+	public MemberDTO loginIdCheck(String id);
+
+	public void findPwdUpdate(MemberDTO memberDTO);
+
 }

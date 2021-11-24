@@ -19,8 +19,21 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public MemberDTO loginEmailCheck(MemberDTO memberDTO) {
 		return loginDAO.loginEmailCheck(memberDTO);
-		
-		
+	}
+
+	@Override
+	public MemberDTO findIdQna(MemberDTO memberDTO) {
+		return loginDAO.findIdQna(memberDTO);
+	}
+
+	@Override
+	public MemberDTO loginIdCheck(String id) {
+		return loginDAO.loginIdCheck(id);
+	}
+
+	@Override
+	public void findPwdUpdate(MemberDTO memberDTO) {
+		loginDAO.findPwdUpdate(memberDTO);
 	}
 
 }

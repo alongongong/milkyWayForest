@@ -2,7 +2,9 @@ package admin.service;
 
 import java.util.List;
 
+import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
+import qnaBoard.bean.QnaBoardDTO;
 
 public interface AdminService {
 
@@ -13,5 +15,15 @@ public interface AdminService {
 	public void productUpdate(ProductDTO productDTO);
 
 	public void productDelete(String productCode);
+
+	public List<ProductDTO> getStock();
+
+	public void stockUpdate(String productCode, int enterCount);
+
+	public List<QnaBoardDTO> getQnaBoard();
+
+	public List<GradeDTO> getGradeBenefit();
+
+	public void updateGradeBenefit(GradeDTO gradeDTO);
 
 }
