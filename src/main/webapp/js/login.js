@@ -33,8 +33,41 @@ $('#loginForm #login-button').click(function(){
 
 });
 
+//카카오 로그인 - REST API 방법 (구현됨)
+$('#loginForm #kakao-login-btn').click(function(){
+	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용
+	console.log(Kakao.isInitialized()); // sdk초기화여부판단
+	
+    $.ajax({
+        url: '/milkyWayForest/login/getKakaoAuthUrl',
+        type: 'get',
+        //async: false,
+        //dataType: 'text',
+        success: function (res) {
+            location.href = res;
+        }
+    });
 
-//카카오 로그인
+  $(document).ready(function() {
+
+      var kakaoInfo = '${kakaoInfo}';
+
+      if(kakaoInfo != ""){
+          var data = JSON.parse(kakaoInfo);
+
+          alert("카카오로그인 성공 \n accessToken : " + data['accessToken']);
+          alert(
+          "user : \n" + "email : "
+          + data['email']  
+          + "\n nickname : " 
+          + data['nickname']);
+      }
+  });
+  
+}); 
+
+/*
+//카카오 로그인 - 자바스크립트 방법 (구현됨)
 $('#loginForm #kakao-login-btn').click(function(){
 	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용
 	console.log(Kakao.isInitialized()); // sdk초기화여부판단
@@ -75,7 +108,7 @@ $('#loginForm #kakao-login-btn').click(function(){
 	
 });
 
-/*
+
 //카카오로그아웃  
 function kakaoLogout() {
     if (Kakao.Auth.getAccessToken()) {

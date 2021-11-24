@@ -69,42 +69,53 @@ $(function(){
 		dataType: 'json',
 		success : function(data) {
 			 alert(JSON.stringify(data));
-			
-			/*  $.each(data, function(index,items) {
-				 $('<div/>' /*  {} */
-					.append($('<ul>', {} /* .append($('<li>' {}).append($('<img>'{}))) */
-					.append($('<li>',{
-						width: 100,
-						align: 'center',
-						text :  items.productname,
-						list-style: 'none'
-				 })).append($('<li>',{
-					 	width: 100,
-						align: 'center',
-						text :  items.productUnit,
-						list-style: 'none'
-				 })) ))); */
-				 
-				 
-				 
-				 /* $('<div/>').append($('<li>', {
-					align : 'center',
-					list-style: 'none'
+		
+			$.each(data, function(index,items) {
 				
-				}).append($('<img/>', {})) */
-					
-				 /* width: 100,
-					align: 'center',
-					text :  items.productname
-				
-				}).append($('<td/>' {
+				$('<div>',{
 					width: 100,
 					align: 'center',
-					text :  items.productUnit
-					
-				})).appendTo($('#beanNTeaMenuDiv')) */
+					text : items.productName,
+					  
+				})
+				.append($('<div>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productUnit,
+					   		
+				}))
+				.append($('<div>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productName,
+					   		
+				}))
+				.append($('<div>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productUnit,
+					 	  
+				}))
 				
-			} 
+				.appendTo($('#div'));
+			});
+			
+				
+				/* $('<ul>')
+				.append($('<li>',{
+					width: 100,
+					align: 'center',
+					text : items.productName,
+					list-style: 'none'
+				}))
+				.append($('<li>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productUnit,
+					list-style: 'none'
+				})) .appendTo($('#div')); */
+				
+				
 		},
 		error: function(err) {
 			console.log(err);

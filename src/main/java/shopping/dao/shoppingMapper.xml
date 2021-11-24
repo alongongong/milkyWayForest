@@ -5,7 +5,9 @@
 <mapper namespace="shoppingSQL">
 	
 	<select id="getShoppingList" resultType="shopping">
-		select * from milkyProductInfo
+		select productName,category,productUnit
+		from milkyproductinfo 
+		join milkyproductimage using(productcode)
 	</select>
 
 
