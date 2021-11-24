@@ -49,7 +49,15 @@
 		select * from milkygradeinfo
 	</select>
 	
-	<update id="updateGradeBenefit" parameterType="grade">
-		update milkygradeinfo set gradeBenefit=#{gradeBenefit} where gradeName=#{gradeName}
+	<update id="updateGradeBenefit" parameterType="java.util.Map">
+		begin
+		update milkygradeinfo set gradeBenefit=#{welcome} where gradeName='welcome';
+		update milkygradeinfo set gradeBenefit=#{green} where gradeName='green';
+		update milkygradeinfo set gradeBenefit=#{gold} where gradeName='gold';
+		end;
 	</update>
+	
+	<select id="getQnaBoard" resultType="qnaBoard">
+		select * from milkyqna
+	</select>
 </mapper>

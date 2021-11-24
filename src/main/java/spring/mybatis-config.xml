@@ -12,5 +12,8 @@
 		<typeAlias type="grade.bean.GradeDTO" alias="grade" />
 
 		<typeAlias type="shopping.bean.ShoppingDTO" alias="shopping"/>
+		
+		<typeAlias type="qnaBoard.bean.QnaBoardDTO" alias="qnaBoard"/>
+
 	</typeAliases>
 </configuration>

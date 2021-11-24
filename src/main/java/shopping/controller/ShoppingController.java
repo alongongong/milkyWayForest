@@ -18,7 +18,7 @@ import shopping.service.ShoppingService;
 @Controller
 public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 에이작스(그럼 내가 만든폼에 스크립트에 만들기) 
 	@Autowired					// 에이작스를 쓸때는 거의 리스판스바디를 쓴다(인덱스로 돌아갈 필요가 없을때는)
-	private ShoppingService shoppingService;								//포스트맵핑을 쓴다.(리스판스 바디랑 같이)
+	private ShoppingService shoppingService;
 	
 	@GetMapping("/shopping")
 	public String shopping(Model model) {

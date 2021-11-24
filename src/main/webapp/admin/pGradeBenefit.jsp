@@ -9,13 +9,13 @@
 			<div><br>GOLD<br><br></div>
 			
 			<div>
-				<textarea id="welcomeBenefit" cols="37" rows="8"></textarea>
+				<textarea id="welcomeBenefit" name="welcome" rows="8"></textarea>
 			</div>
 			<div>
-				<textarea id="greenBenefit" cols="38" rows="8"></textarea>
+				<textarea id="greenBenefit" name="green" rows="8"></textarea>
 			</div>
 			<div>
-				<textarea id="goldBenefit" cols="37" rows="8"></textarea>
+				<textarea id="goldBenefit" name="gold" rows="8"></textarea>
 			</div>
 		</div>
 	
@@ -55,7 +55,7 @@ $(function(){
 			type: 'post',
 			data: $('#gradeBenefitForm').serialize(),
 			success: function(data){
-				
+				alert('수정되었습니다.');
 			},
 			error: function(err){
 				console.log(err);
