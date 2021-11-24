@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class shoppingController {
 	
+	
 	@RequestMapping(value="/shopping/beanNTea" , method=RequestMethod.GET)
 	public String beanNTea(Model model) {
 		model.addAttribute("display", "/shopping/beanNTea.jsp");
