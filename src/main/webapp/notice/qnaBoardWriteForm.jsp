@@ -12,7 +12,8 @@
 		</ul>
 		<input type="button" value="나의 문의 내역 보기" id="myQnaList" class="btn btn-secondary">
 	</div>
-	<form id="qnaBoardWriteForm" method="post" enctype="multipart/form-data">
+	<form id="qnaBoardWriteForm" method="post" enctype="multipart/form-data"
+		action="/milkyWayForest/notice/qnaBoardWrite">
 		<table id="qnaBoardWriteTable" class="table">
 			<tr>
 				<td width="200px">문의 유형</td>
@@ -35,7 +36,7 @@
 			<tr>
 				<td>내용</td>
 				<td>
-					<textarea id="qnaContent" rows="17"></textarea>
+					<textarea id="qnaContent" name="qnaContent" rows="17"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -47,13 +48,13 @@
 			<tr>
 				<td>이미지 첨부파일1</td>
 				<td>
-					<input type="file" id="qnaImage1" name="qnaImage1">
+					<input type="file" name="img">
 				</td>
 			</tr>
 			<tr>
 				<td>이미지 첨부파일2</td>
 				<td>
-					<input type="file" id="qnaImage2" name="qnaImage2">
+					<input type="file" name="img">
 				</td>
 			</tr>
 			<tr>

@@ -52,7 +52,6 @@ $(function(){
 		url: '/milkyWayForest/admin/getProductList',
 		type: 'post',
 		success: function(data) {
-			alert(JSON.stringify(data));
 			$.each(data, function(index, items){
 				$('<tr>').append($('<td>',{
 					id: 'productCode'+index,

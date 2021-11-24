@@ -6,7 +6,7 @@
 <mapper namespace="noticeSQL">
 	<insert id="qnaBoardWrite" parameterType="qnaBoard">
 		insert into milkyqna values(
-		milkyQnASeq.nextval, #{qnaQuestionType}, #{qnaSubject}, #{id}, 
+		milkyQnASeq.nextval, #{qnaQuestionType}, #{qnaSubject}, 'aaa', 
 		#{qnaContent}, #{qnaPwd}, #{qnaHit}, #{qnaImage1}, #{qnaImage2}, sysdate)
 	</insert>
 	
