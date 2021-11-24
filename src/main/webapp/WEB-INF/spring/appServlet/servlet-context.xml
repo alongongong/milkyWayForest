@@ -16,6 +16,7 @@
 	<context:component-scan base-package="shopping.controller"/>
 	<context:component-scan base-package="info.controller"/>
 	
+	
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />
 	
 	<mvc:resources location="/assets/" mapping="/assets/**" />

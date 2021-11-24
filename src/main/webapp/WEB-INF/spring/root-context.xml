@@ -15,7 +15,14 @@
 	
 	<context:component-scan base-package="admin.dao" />
 	
+	<context:component-scan base-package="shopping.service" />
+	
+	<context:component-scan base-package="product.service" />
+	
+	
 	<context:component-scan base-package="product.dao" />
+	
+	<context:component-scan base-package="shopping.dao" />
 	
 	<context:component-scan base-package="login.dao" />
 	

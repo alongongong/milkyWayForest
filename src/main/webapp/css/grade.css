@@ -1,6 +1,6 @@
 @charset "UTF-8";
 * {font-family: Georgia, "Malgun Gothic", serif;}
-
+body { margin: 0; }
 /* 전체DIV */
 #container { width: 78rem; margin: 0 auto;  }
 
@@ -21,7 +21,7 @@
 /* */
 .info1_text { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 
-.info1_text li { margin-bottom: 5px; }
+.info1_text li { margin-bottom: 7px; }
 .li { font-size: 14px; color: #666; line-height: 1.6; padding-left: 11px; s}
 
 /* info2 */
@@ -30,4 +30,23 @@
 .info2 { padding: 40px 0 60px 0; background: #f4f4f2;  }
 .info2_center { width: 78rem; margin: 0 auto;  }
 .info2_inner h3 { font-size: 24px; color: #222; font-weight: bold; padding-bottom: 19px; }
+
+.note_list { 
+	display:grid; grid-template-columns: 23% 23% 23% 23%; 
+	grid-column-gap: 2%; 
+	background-color: #FFFFFF; 
+	margin-top: 1.5rem; 
+			 }	
+
+.note_list > div {
+    border-radius: 3px;
+    float: left;
+    height: 296px;
+    margin: 0 0 20px 20px;
+    position: relative;
+    text-align: center;
+    /* width: 260px; */
+    width: 24%;
+    background-color: green;
+}
 
