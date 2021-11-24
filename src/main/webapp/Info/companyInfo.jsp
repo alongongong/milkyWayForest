@@ -5,15 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="/milkyWayForest//css/companyInfo.css">
+<link rel="stylesheet" href="/milkyWayForest/css/companyInfo.css">
 </head> 
 	<!-- Info 배너사진 -->
 	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
 		<div class="top-text-box">
-<!-- 			<div class="top-text"> -->
 				<h1>은하숲</h1>
-			<!-- </div> -->
 			<div class="">아무고나</div>
 		</div>
 	</div>

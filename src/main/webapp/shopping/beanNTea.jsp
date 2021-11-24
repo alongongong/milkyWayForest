@@ -12,7 +12,7 @@
 <form id="beanNTeaForm" name="beanNTeaForm">
 
 
-<h1>원두/차</h1>
+<h1> 원두 / 차 </h1>
 
 	<div id="beanNTeaNav">
 		<div>

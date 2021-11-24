@@ -1,10 +1,88 @@
 @charset "UTF-8";
 
+/* 쇼핑 메뉴 */
+
+#shoppingForm h1 {
+	margin: 50px;
+}
+
+/* 쇼핑 게시판 목록네비  */
+#shoppingForm #shoppingNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#shoppingForm #shoppingNav div{
+	float: right;
+	color: #777;
+}
+
+#shoppingForm #shoppingNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#shoppingForm #shoppingNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#shoppingForm #shoppingMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	/* margin-top: 100px;  */
+	width: 80%;
+}
+#shoppingForm #shoppingMenuSubject {
+	font-size : 20px;
+	font-weight: bold; 
+}
+
+#shoppingForm #shoppingMenu #menu2 {
+	font-size : 18px;
+	font-weight: bold; 
+	
+}
+
+#shoppingForm #shoppingMenu li {
+	list-style: none;
+	font-size : 17px;
+	
+}
+
+#shoppingForm #beanNTeaMenuDiv ,#shoppingForm #productMenuDiv{
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 10px auto;
+	font-size : 20px;
+	font-weight: bold; 
+
+	/* 높이는 픽셀로 너비는 % 로 주는게 편함 */
+}  /* 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
+#shoppingForm #div {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	
+}
+
+
+#shoppingForm #shoppingMenu a:link { color: black; text-decoration: none; }
+#shoppingForm #shoppingMenu a:visited { color: black; text-decoration: none; }
+#shoppingForm #shoppingMenu a:hover { color: darkgreen; text-decoration: underline; }
+#shoppingForm #shoppingMenu a:active { color: black; text-decoration: none; }
+
+
+
 /* 원두/차 메뉴 */
 
 #beanNTeaForm h1 {
 	margin: 50px;
 }
+
 
 /* 원두/차 게시판 목록네비  */
 #beanNTeaForm #beanNTeaNav {  

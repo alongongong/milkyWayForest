@@ -1,5 +1,75 @@
 @charset "UTF-8";
 
+/* 메뉴소개 */
+
+#menuInfoForm h1 {
+	margin: 50px;
+}
+
+/* 음료 게시판 목록네비  */
+#menuInfoForm #menuInfoNav {  
+	margin-bottom: 90px;
+	margin-right: 110px;
+}
+
+#menuInfoForm #menuInfoNav div{
+	float: right;
+	color: #777;
+}
+
+#menuInfoForm #menuInfoNav a{
+	text-decoration: none;
+	color: #777;
+	
+}
+#menuInfoForm #menuInfoNav a:last-child {
+	font-weight: bold;
+	
+}
+
+#menuInfoForm #menuInfoMenu {
+	border: 1px solid silver;
+	padding : 20px;
+	margin: 50px auto;
+	width: 80%;
+}
+#menuInfoForm #menuInfoMenuSubject {
+	
+	font-size : 20px;
+	font-weight: bold; 
+	
+}
+
+#menuInfoForm #menuInfoMenu #menu2 {
+	font-size : 18px;
+	font-weight: bold; 
+	
+}
+
+#menuInfoForm #menuInfoMenu li {
+	list-style: none;
+	font-size : 17px;
+	
+}
+
+#menuInfoForm #drinkInfoMenuDiv ,#menuInfoForm #foodInfoMenuDiv{
+	background : #eee;
+	width: 80%;
+	height: 25px;  
+	padding: 20px;
+	margin: 10px auto;
+	font-size : 20px;
+	font-weight: bold; 
+
+} 
+
+#menuInfoForm #menuInfoMenu a:link { color: black; text-decoration: none; }
+#menuInfoForm #menuInfoMenu a:visited { color: black; text-decoration: none; }
+#menuInfoForm #menuInfoMenu a:hover { color: darkgreen; text-decoration: underline; }
+#menuInfoForm #menuInfoMenu a:active { color: black; text-decoration: none; }
+
+
+
 /* 음료 메뉴 */
 
 #drinkInfoForm h1 {

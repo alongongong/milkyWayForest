@@ -19,7 +19,7 @@
 			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="">Menu</a> > 
 			<a href="">원두/차</a> > 
-			<a href="">원두/</a>
+			<a href="">원두</a>
 		</div>
 		</div>
 			
