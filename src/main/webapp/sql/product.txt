@@ -2,7 +2,7 @@ create table milkyProductInfo(
     productCode varchar(10) primary key,
     productName varchar(80),
     category varchar(30),
-    productOption varchar(30),
+    productOption varchar(40),
     productUnit number,
     productRate number,
     wishCount number default 0

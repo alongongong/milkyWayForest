@@ -11,8 +11,7 @@
 <body>
 <form id="shoppingForm" name="shoppingForm">
 
-
-<h1>원두/차</h1>
+<h1> 쇼핑 </h1>
 
 	<div id="shoppingNav">
 		<div>
@@ -26,21 +25,104 @@
 	<br>
 		<ul>
             <li>
-				<a href="#">원두</a>&nbsp; &nbsp;
-         	    <a href="#">차</a>&nbsp; &nbsp;
+			 	<span id="menu2">
+			 	원두 / 차  &nbsp; &nbsp; &nbsp;
+			 	</span>
+				<a href="#"> 원두</a>&nbsp; &nbsp;
+				<a href="#"> 차</a>
+			</li>
+			<br>
+			
+			<li>
+				<span id="menu2">
+				상품  &nbsp; &nbsp;
+				</span>
+				<a href="#"> 머그</a>&nbsp; &nbsp;
+				<a href="#"> 글라스</a>&nbsp; &nbsp;
+				<a href="#"> 플라스틱 텀블러</a>&nbsp; &nbsp;
+				<a href="#"> 스테인리스 텀블러</a>&nbsp; &nbsp;
+				<a href="#"> 보온병</a>&nbsp; &nbsp;
+				<a href="#"> 커피용품</a>
 			</li>
 		</ul>
 	</div>
 
+	<br><br><br>
+
+<div id="beanNTeaMenuDiv">원두 / 차</div>
+<div id="div">
+
+</div>
 
 <br><br><br>
 
-<div id="beanMenuDiv">원두</div>
-<br><br><br>
-
-<div id="teaMenuDiv">차</div>
+<div id="productMenuDiv">상품</div>
 <br><br><br>
 
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/shopping/getShoppingList',  
+		type: 'post',
+		dataType: 'json',
+		success : function(data) {
+			 alert(JSON.stringify(data));
+		
+			$.each(data, function(index,items) {
+				
+				$('<div>',{
+					width: 100,
+					align: 'center',
+					text : items.productName,
+					  
+				})
+				.append($('<div>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productUnit,
+					   		
+				}))
+				.append($('<div>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productName,
+					   		
+				}))
+				.append($('<div>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productUnit,
+					 	  
+				}))
+				
+				.appendTo($('#div'));
+			});
+			
+				
+				/* $('<ul>')
+				.append($('<li>',{
+					width: 100,
+					align: 'center',
+					text : items.productName,
+					list-style: 'none'
+				}))
+				.append($('<li>',{
+				 	width: 100,
+					align: 'center',
+					text :  items.productUnit,
+					list-style: 'none'
+				})) .appendTo($('#div')); */
+				
+				
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+});
+</script>
+
 </body>
 </html>

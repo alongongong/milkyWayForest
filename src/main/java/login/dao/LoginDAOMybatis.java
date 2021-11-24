@@ -24,4 +24,20 @@ public class LoginDAOMybatis implements LoginDAO {
 		return sqlSession.selectOne("loginSQL.loginEmailCheck", memberDTO);
 	}
 
+	@Override
+	public MemberDTO findIdQna(MemberDTO memberDTO) {
+		return sqlSession.selectOne("loginSQL.findIdQna", memberDTO);
+	}
+
+	@Override
+	public MemberDTO loginIdCheck(String id) {
+		return sqlSession.selectOne("loginSQL.loginIdCheck", id);
+	}
+
+	@Override
+	public void findPwdUpdate(MemberDTO memberDTO) {
+		sqlSession.update("loginSQL.findPwdUpdate", memberDTO);
+		
+	}
+
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -20,28 +21,28 @@ public class AdminDAOMybatis implements AdminDAO {
 	
 	@Override
 	public void pProductInsert(ProductDTO productDTO) {
-		sqlSession.insert("productSQL.pProductInsert", productDTO);
+		sqlSession.insert("adminSQL.pProductInsert", productDTO);
 		
 	}
 
 	@Override
 	public List<ProductDTO> getProductList() {
-		return sqlSession.selectList("productSQL.getProductList");
+		return sqlSession.selectList("adminSQL.getProductList");
 	}
 
 	@Override
 	public void productUpdate(ProductDTO productDTO) {
-		sqlSession.update("productSQL.productUpdate", productDTO);
+		sqlSession.update("adminSQL.productUpdate", productDTO);
 	}
 
 	@Override
 	public void productDelete(String productCode) {
-		sqlSession.delete("productSQL.productDelete", productCode);
+		sqlSession.delete("adminSQL.productDelete", productCode);
 	}
 
 	@Override
 	public List<ProductDTO> getStock() {
-		return sqlSession.selectList("productSQL.getStock");
+		return sqlSession.selectList("adminSQL.getStock");
 	}
 
 	@Override
@@ -49,12 +50,21 @@ public class AdminDAOMybatis implements AdminDAO {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("productCode", productCode);
 		map.put("enterCount", enterCount);
-		sqlSession.update("productSQL.stockUpdate", map);
+		sqlSession.update("adminSQL.stockUpdate", map);
 	}
 
 	@Override
 	public List<QnaBoardDTO> getQnaBoard() {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("adminSQL.getQnaBoard");
+	}
+
+	@Override
+	public List<GradeDTO> getGradeBenefit() {
+		return sqlSession.selectList("adminSQL.getGradeBenefit");
+	}
+
+	@Override
+	public void updateGradeBenefit(Map<String, String> map) {
+		sqlSession.update("adminSQL.updateGradeBenefit", map);
 	}
 }
