@@ -109,7 +109,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/reviewBoard")
-	public String reviewBoard(@ModelAttribute String dataNum, Model model) {
+	public String reviewBoard(@RequestParam String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "상품 리뷰 관리");
 		model.addAttribute("display", "pReviewBoard.jsp");
@@ -185,8 +185,8 @@ public class AdminController {
 	
 	@PostMapping("/admin/updateGradeBenefit")
 	@ResponseBody
-	public void updateGradeBenefit(@ModelAttribute GradeDTO gradeDTO) {
-		adminService.updateGradeBenefit(gradeDTO);
+	public void updateGradeBenefit(@RequestParam String welcome, @RequestParam String green, @RequestParam String gold) {
+		adminService.updateGradeBenefit(welcome, green, gold);
 	}
 	
 	@PostMapping("/admin/getQnaBoard")

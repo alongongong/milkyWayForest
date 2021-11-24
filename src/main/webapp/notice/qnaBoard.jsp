@@ -13,4 +13,23 @@
 	</div>
 	<br>
 	<table id="qnaBoardTable"></table>
+	<div id="qndBoardBtnDiv">
+		<input type="button" id="qnaBoardWriteBtn" value="글쓰기">
+	</div>
 </form>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/notice/getQnaBoard',
+		type: 'post',
+		success: function(data){
+			alert(JSON.stringify(data));
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+</script>

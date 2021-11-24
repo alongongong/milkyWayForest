@@ -24,6 +24,8 @@ public interface AdminService {
 
 	public List<GradeDTO> getGradeBenefit();
 
-	public void updateGradeBenefit(GradeDTO gradeDTO);
+	public void updateGradeBenefit(String welcome, String green, String gold);
+
+	
 
 }

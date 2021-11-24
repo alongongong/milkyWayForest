@@ -1,6 +1,7 @@
 package admin.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
@@ -24,5 +25,5 @@ public interface AdminDAO {
 
 	public List<GradeDTO> getGradeBenefit();
 
-	public void updateGradeBenefit(GradeDTO gradeDTO);
+	public void updateGradeBenefit(Map<String, String> map);
 }
