@@ -1,12 +1,15 @@
 package admin.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import admin.dao.AdminDAO;
 import grade.bean.GradeDTO;
+import oracle.net.aso.m;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -57,8 +60,12 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void updateGradeBenefit(GradeDTO gradeDTO) {
-		adminDAO.updateGradeBenefit(gradeDTO);
+	public void updateGradeBenefit(String welcome, String green, String gold) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("welcome", welcome);
+		map.put("green", green);
+		map.put("gold", gold);
+		adminDAO.updateGradeBenefit(map);		
 	}
 
 }

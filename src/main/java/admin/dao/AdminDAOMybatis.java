@@ -55,8 +55,7 @@ public class AdminDAOMybatis implements AdminDAO {
 
 	@Override
 	public List<QnaBoardDTO> getQnaBoard() {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("adminSQL.getQnaBoard");
 	}
 
 	@Override
@@ -65,7 +64,7 @@ public class AdminDAOMybatis implements AdminDAO {
 	}
 
 	@Override
-	public void updateGradeBenefit(GradeDTO gradeDTO) {
-		sqlSession.update("adminSQL.updateGradeBenefit", gradeDTO);
+	public void updateGradeBenefit(Map<String, String> map) {
+		sqlSession.update("adminSQL.updateGradeBenefit", map);
 	}
 }

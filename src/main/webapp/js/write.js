@@ -1,77 +1,75 @@
-//1
-function dateSelect(docForm,selectIndex) {
-	watch = new Date(docForm.year.options[docForm.year.selectedIndex].text, docForm.month.options[docForm.month.selectedIndex].value,1);
-	hourDiffer = watch - 86400000;
-	calendar = new Date(hourDiffer);
-
-	var daysInMonth = calendar.getDate();
-		for (var i = 0; i < docForm.day.length; i++) {
-			docForm.day.options[0] = null;
-		}
-		for (var i = 0; i < daysInMonth; i++) {
-			docForm.day.options[i] = new Option(i+1);
+$('#memberWriteForm #memberWriteBtn').click(function(){
+	
+	$('#idDiv').empty();
+	$('#pwdDiv').empty();
+	$('#pwdReDiv').empty();
+	$('#nameDiv').empty();
+	$('#nickNameDiv').empty();
+	$('#emailDiv').empty();
+	$('#athDiv').empty();
+	
+	if($('#memberWriteForm #memberWriteId').val() == ''){
+		$('#emailDiv').html('아이디 입력');
+		$('#memberWriteId').focus();
+	}else if($('#memberWriteForm #memberWritePwd').val() == ''){
+		$('#emailDiv').html('비밀번호 입력');
+		$('#memberWritePwd').focus();
+	}else if($('#memberWriteForm #memberWritePwd').val() != $('#memberWriteRePwd').val()){
+		$('#emailDiv').html('비밀번호 틀림');
+		$('#memberWritePwd').focus();
+	}else if($('#memberWriteForm #memberWriteName').val() == ''){
+		$('#emailDiv').html('이름 입력');
+		$('#memberWriteName').focus();
+	}else if($('#memberWriteForm #memberWriteNick').val() == ''){
+		$('#emailDiv').html('닉네임 입력');
+		$('#memberWriteNick').focus();
+	}else if($('#memberWriteForm #memberWriteEmail').val() == ''){
+		$('#emailDiv').html('이메일 입력');
+	}else if($('#memberWriteForm #memberWriteEmail1').val() == ''){
+		$('#emailDiv').html('도메인 입력');
+	}else if($('#memberWriteForm #athntNmbr').val() == ''){
+		$('#emailDiv').html('이메일 인증 해주세요');
 	}
-	document.form1.day.options[0].selected = true;
-}
-//2
-function Today(year,mon,day){
-     if(year == "null" && mon == "null" && day == "null"){       
-     today = new Date();
-     this_year=today.getFullYear();
-     this_month=today.getMonth();
-     this_month+=1;
-     if(this_month <10) this_month="0" + this_month;
- 
-     this_day=today.getDate();
-     if(this_day<10) this_day="0" + this_day;     
- }
- else{  
-     var this_year = eval(year);
-     var this_month = eval(mon); 
-     var this_day = eval(day);
-     }
- 
-  montharray=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); 
-  maxdays = montharray[this_month-1]; 
-//아래는 윤달을 구하는 것
-  if (this_month==2) { 
-      if ((this_year/4)!=parseInt(this_year/4)) maxdays=28; 
-      else maxdays=29; 
-  } 
- 
- document.writeln("<select name='year' size=1 onChange='dateSelect(this.form,this.form.month.selectedIndex);'>");
-     for(i=this_year-5;i<this_year+6;i++){//현재 년도에서 과거로 5년까지 미래로 5년까지를 표시함
-         if(i==this_year) document.writeln("<OPTION VALUE="+i+ " selected >" +i); 
-         else document.writeln("<OPTION VALUE="+i+ ">" +i); 
-     }    
- document.writeln("</select>년");      
+	else{
+		$.ajax({
+			url: '/milkyWayForest/write/write',
+			type:'post',
+			data: $('memberWriteForm').serialize(),
+			success: function(){
+				alert('회원 가입 등록');
+				location.href='/milkyWayForest/index.';
+			},
+			error:function(err){
+				console.log(err);
+			}
+		});
+	}
+});
 
- 
- document.writeln("<select name='month' size=1 onChange='dateSelect(this.form,this.selectedIndex);'>");
-     for(i=1;i<=12;i++){ 
-         if(i<10){
-             if(i==this_month) document.writeln("<OPTION VALUE=0" +i+ " selected >0"+i); 
-             else document.writeln("<OPTION VALUE=0" +i+ ">0"+i);
-         }         
-         else{
-             if(i==this_month) document.writeln("<OPTION VALUE=" +i+ " selected >" +i);  
-             else document.writeln("<OPTION VALUE=" +i+ ">" +i);  
-         }                     
-    }         
- document.writeln("</select>월");
- 
- document.writeln("<select name='day' size=1>");
-     for(i=1;i<=maxdays;i++){ 
-         if(i<10){
-             if(i==this_day) document.writeln("<OPTION VALUE=0" +i+ " selected >0"+i); 
-             else document.writeln("<OPTION VALUE=0" +i+ ">0"+i); 
-         }
-         
-         else{
-             if(i==this_day) document.writeln("<OPTION VALUE=" +i+ " selected } >"+i); 
-             else document.writeln("<OPTION VALUE=" +i+ ">" +i);  
-         }                     
-    }         
- document.writeln("</select>일"); 
-   
-}
+$('#memberWriteForm #athntEmail').click(function(){
+	
+	var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	var email1 = $('#memberWriteForm #memberWriteEmail').val();
+	var email2 = $('#memberWriteForm #memberWriteEmail1').val();
+	var email = email1+"@"+email2;
+	
+	if(email == ''){
+		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
+		$('#memberWriteForm #memberWriteEmail').focus();
+	}else if(!emailForm.test(email)){
+		$('#memberWriteForm #emailDiv').html('잘못된 이메일 형식입니다');
+	}
+});
+
+$('#writeAllAgreecheck').click(function(){
+	if($('#writeAllAgreecheck').prop("checked")){
+		$('.acptChck').prop("checked", true);
+	}else{
+		$('.acptChck').prop("checked", false);
+	}
+});
+
+
+
+
+
