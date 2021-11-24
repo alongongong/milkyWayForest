@@ -17,11 +17,11 @@
           <div>
            <ul class="writeAgreeFix">
              <div>
-               <li>회원가입 약관동의 단계입니다.</li>
+               <li id="writeSubject"style="text-align:center;">회원가입 약관동의 단계입니다.</li>
              </div>
              <div>
-               <li>
-                 <input type="checkbox" id="writeAllAgreecheck">
+               <li align="right" style="padding-right:30px;">
+                 <input type="checkbox" id="writeAllAgreecheck"><label for="writeAllAgreecheck"></label>
                </li>
              </div>
            </ul>
@@ -33,7 +33,8 @@
             <ul class="writeAgreeFix">
                 <li>홈페이지 이용약관 동의(필수)</li>
                 <li class="checkBtn">
-                    <input type="checkbox" id="writeCheck1"class="acptChck"name="chk">
+                    <input type="checkbox" id="writeCheck1" name="acptChck1"class="acptChck"name="chk">
+                    <label for="writeCheck1"></label>
                 </li>
             </ul>
             <div id="writeAgreeContentbox">
@@ -164,8 +165,9 @@
         <li class="writeAgreeCheckBox check04">
             <ul class="writeAgreeFix">
                 <li>개인정보 수집 및 이용동의 (필수)</li>
-                <li class="">
-                    <input type="checkbox" id="writeCheck2" class="acptChck" name="chk">
+                <li>
+                    <input type="checkbox" id="writeCheck2" name="acptChck1" class="acptChck" name="chk">
+                    <label for="writeCheck2"></label>
                 </li>
             </ul>
             <div>
@@ -178,7 +180,8 @@
             <ul class="writeAgreeFix">
                 <li>이벤트 등 프로모션 알림 메일 수신동의(선택)</li>
                 <li class="">
-                    <input type="checkbox" class="acptChck" name="chk">
+                    <input type="checkbox" id="writeCheck3"class="acptChck" name="chk">
+                    <label for="writeCheck3"></label>
                 </li>
             </ul>
         </li>
@@ -207,7 +210,9 @@
         </li>
     </ul>
 </form>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+
+</script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/write.js"></script>
 
