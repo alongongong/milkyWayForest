@@ -4,5 +4,11 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="noticeSQL">
+	<insert id="qnaBoardWrite" parameterType="qnaBoard">
+		insert into milkyqna values(
+		milkyQnASeq.nextval, #{qnaQuestionType}, #{qnaSubject}, 'aaa', 
+		#{qnaContent}, #{qnaPwd}, #{qnaHit}, #{qnaImage1}, #{qnaImage2}, sysdate)
+	</insert>
+	
 	
 </mapper>

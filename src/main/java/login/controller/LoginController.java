@@ -50,16 +50,19 @@ public class LoginController {
 
 		return memberDTO2.getId();
 	}
-	
+
 	//카카오 로그인 세션 저장
 	@PostMapping(value="/kakaoLogin")
 	@ResponseBody
 	public void kakaoLogin(@ModelAttribute MemberDTO memberDTO, HttpSession session) {	
-		//checkId 리턴값을 디티오에 담아오고, 값이 없으면 회원가입 -> 로그인
-//		if(memberDTO2 != null) {
-//			//회원가입 디비 다녀오기
-//			writeService.kakaoWrite(memberDTO);			
-//		}
+		//아이디 있는지 확인
+		MemberDTO memberDTO2 = loginService.loginIdCheck(memberDTO.getId());
+
+		if(memberDTO2 == null) {
+			//아이디 없으면 회원가입
+			loginService.kakaoWrite(memberDTO); 
+		}
+
 
 		session.setAttribute("memId", memberDTO.getId());
 		session.setAttribute("memNickname", memberDTO.getNickname());
@@ -80,7 +83,7 @@ public class LoginController {
 		MemberDTO memberDTO2 = loginService.findIdQna(memberDTO);
 
 		if(memberDTO2 == null)
-			return "non_exist"; //아이디 없음
+			return "findIdQna_non_exist"; //아이디 없음
 		else
 			return memberDTO2.getId(); //아이디 있음
 	}
@@ -92,7 +95,7 @@ public class LoginController {
 		MemberDTO memberDTO2 = loginService.loginEmailCheck(memberDTO);
 
 		if(memberDTO2 == null)
-			return "non_exist"; //이메일 발송 불가능
+			return "loginEmailCheck_non_exist"; //이메일 발송 불가능
 		else
 			return memberDTO2.getId(); //이메일 발송 가능
 		
@@ -158,7 +161,7 @@ public class LoginController {
 		MemberDTO memberDTO2 = loginService.loginIdCheck(id);
 
 		if(memberDTO2 == null)
-			return "non_exist"; //아이디 없음
+			return "loginIdCheck_non_exist"; //아이디 없음
 		else
 			return memberDTO2.getId(); //아이디 있음
 		

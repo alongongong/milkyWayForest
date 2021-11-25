@@ -28,7 +28,7 @@
 						<span>카카오로 로그인</span>
 					</button>
 				</li>
-				<!-- <li>
+				<%-- <li>
 					<button id="naver-login-btn">
 						<img src="/milkyWayForest/image/naver.png" alt="naver">
 						<span>네이버로 로그인</span>
@@ -39,7 +39,7 @@
 						<img src="/milkyWayForest/image/google.png" alt="google">
 						<span>구글로 로그인</span>
 					</button>
-				</li> -->
+				</li> --%>
 			</ul>
 			<p id="find-write">
 				<a href="/milkyWayForest/login/findId">아이디 찾기</a> | 

@@ -24,9 +24,9 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#emailDiv').html('닉네임 입력');
 		$('#memberWriteNick').focus();
 	}else if($('#memberWriteForm #memberWriteEmail').val() == ''){
-		$('#emailDiv').html('이메일 입력');
+		$('#emailDiv').html('이메일을 입력해주세요');
 	}else if($('#memberWriteForm #memberWriteEmail1').val() == ''){
-		$('#emailDiv').html('도메인 입력');
+		$('#emailDiv').html('이메일을 입력해주세요');
 	}else if($('#memberWriteForm #athntNmbr').val() == ''){
 		$('#emailDiv').html('이메일 인증 해주세요');
 	}
@@ -68,8 +68,32 @@ $('#writeAllAgreecheck').click(function(){
 		$('.acptChck').prop("checked", false);
 	}
 });
+//$('#writeAllAgreecheck').change(function(){
+//	var checked = $(this).prop('checked');
+//	$('.acptChck1').prop('checked', checked);
+//});
+
+$('input[name="acptChck1"]').change(function(){
+	var tmpLength = $('input[name="acptChck1"]').length;
+	var checkedLength = $('input[name="acptChck1"]:checked').length;
+	var selectAll = (tmpLength == checkedLength);
+	$('#writeAllAgreecheck').prop('checked', selectAll);
+	selectAll ? $('#writeAgreeBtn1').removeAttr('disabled'):$('#writeAgreeBtn1').attr('disabled','disabled');
+});
+//전체선택 checkbox의 상태에 따라 id = next 값을 가진 버튼의 비활성화를 적용/해제
+$('#writeAllAgreecheck').change(function(){
+	//#checkAll의 값이 true 인 경우 $('#next').removeAttr('disabled');
+	//#checkAll의 값이 false인 경우 $('#next').attr('disabled','disabled'); 이 적용됨
+	$(this).prop('checked') ? $('#writeAgreeBtn1').removeAttr('disabled'):$('#writeAgreeBtn1').attr('disabled','disabled');
+});
 
 
+//약관동의 동의버튼 이동 
+$(document).ready(function(){
+	$('#writeAgreeForm #writeAgreeBtn1').click(function(){
+		$(location).attr('href','/milkyWayForest/write/memberWrite')
+	});
+});
 
 
 

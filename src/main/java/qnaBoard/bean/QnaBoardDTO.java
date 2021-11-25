@@ -10,6 +10,7 @@ import lombok.Data;
 @Data
 public class QnaBoardDTO {
 	private int qnaCode;
+	private String qnaQuestionType;
 	private String qnaSubject;
 	private String id;
 	private String qnaContent;

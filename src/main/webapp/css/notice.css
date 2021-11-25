@@ -110,3 +110,33 @@
 	content: '';
 	clear: both;
 }
+
+
+/* 문의 게시판 */
+#qnaBoardWriteDiv {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#qnaBoardWriteDiv #qnaBoardWriteInfo {
+	margin: 40px;
+	padding: 40px;
+	border: 1px solid gold;
+}
+
+#qnaBoardWriteDiv #qnaBoardWriteTable {
+	margin: 90px 0 30px 0;
+}
+
+#qnaBoardWriteDiv #qnaBoardWriteTable input,
+#qnaBoardWriteDiv #qnaBoardWriteTable select {
+	width: 85%;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid #999;
+	vertical-align: bottom;
+}
+
+#qnaBoardWriteDiv #qnaBoardWriteTable textarea {
+	width: 85%;
+}

@@ -14,4 +14,6 @@ public interface LoginService {
 
 	public void findPwdUpdate(MemberDTO memberDTO);
 
+	public void kakaoWrite(MemberDTO memberDTO);
+
 }

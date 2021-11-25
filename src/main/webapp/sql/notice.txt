@@ -41,9 +41,10 @@ create sequence milkyFAQSeq nocache nocycle;
 -- 1대1문의
 create table milkyQnA (
   QnACode number primary key,
+  qnaQuestionType varchar(20),
   QnASubject varchar(50),
   id varchar(15),
-  QnAContent varchar(500),
+  QnAContent varchar(800),
   QnAPwd varchar(15),
   QnAHit number default 0,
   QnAImage1 varchar(20),

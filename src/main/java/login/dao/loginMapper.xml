@@ -7,6 +7,11 @@
 		select * from milkymember where id=#{id} and pwd=#{pwd}
 	</select>
 	
+	<insert id="kakaoWrite" parameterType="member">
+		insert into milkymember (id, nickname, mm, dd, email1, email2, writePath) 
+		values (#{id}, #{nickname}, #{mm}, #{dd}, #{email1}, #{email2}, #{writePath})
+	</insert>
+	
 	<select id="loginEmailCheck" parameterType="member" resultType="member">
 		select * from milkymember where email1=#{email1} and email2=#{email2}
 	</select>

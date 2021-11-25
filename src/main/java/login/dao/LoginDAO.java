@@ -14,4 +14,6 @@ public interface LoginDAO {
 
 	public void findPwdUpdate(MemberDTO memberDTO);
 
+	public void kakaoWrite(MemberDTO memberDTO);
+
 }
