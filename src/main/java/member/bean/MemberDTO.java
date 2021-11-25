@@ -19,13 +19,13 @@ public class MemberDTO {
 	private String tel3;
 	private String email1;
 	private String email2;
-	private Date writeDate;
+	private String writeDate;
 	private String memberGrade; // 'welcome',	-- ȸ�����
 	private int savedMoney; //					-- ������
 	private String idPwdQuestion; //			-- ���̵���ã�� ����
 	private String idPwdAnswer; //				-- ���̵���ã�� ��
 	private String writePath; //				-- ���԰��
-	private Date loginTime; // sysdate			-- �α��� �ð�
+	private String loginTime; // sysdate			-- �α��� �ð�
 	private String couponName; //				-- ������
 	private String coupon;
 }

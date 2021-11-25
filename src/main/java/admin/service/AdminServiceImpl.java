@@ -117,7 +117,15 @@ public class AdminServiceImpl implements AdminService {
 		boardPaging.makePagingHTML();
 		
 		List<MemberDTO> list = adminDAO.getMemberList(map);
-		return null;
+		
+		JSONObject json = new JSONObject();
+		
+		if(list != null) {
+			json.put("list", list);
+			json.put("boardPaging", boardPaging);
+			json.put("pg", pg);
+		}
+		return json;
 	}
 
 }

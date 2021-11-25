@@ -43,7 +43,38 @@ $(function(){
 		url: '/milkyWayForest/admin/getMemberList?pg='+${pg},
 		type: 'post',
 		success: function(data){
-			alert(JSON.stringify(data));
+			// alert(JSON.stringify(data));
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.nickname
+				})).append($('<td>',{
+					text: items.name
+				})).append($('<td>',{
+					text: items.gender
+				})).append($('<td>',{
+					text: items.tel1+"-"+items.tel2+"-"+items.tel3
+				})).append($('<td>',{
+					text: items.email1+"@"+items.email2
+				})).append($('<td>',{
+					text: items.yy+'-'+items.mm+'-'+items.dd
+				})).append($('<td>',{
+					text: items.memberGrade
+				})).append($('<td>',{
+					text: items.savedMoney
+				})).append($('<td>',{
+					text: items.couponName
+				})).append($('<td>',{
+					text: items.loginTime
+				})).append($('<td>',{
+					text: items.writePath
+				})).append($('<td>',{
+					text: items.writeDate
+				})).appendTo($('#pQnaBoardTable'));
+			});
+			
+			$('#boardPagingDiv').html(data.boardPaging);
 		},
 		error: function(err){
 			console.log(err);

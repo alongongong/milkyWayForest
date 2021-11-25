@@ -40,6 +40,7 @@ public class AdminController {
 	public String memberLIst(@RequestParam String dataNum, @RequestParam int pg, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "회원리스트");
+		model.addAttribute("pg", pg);
 		model.addAttribute("display", "pMemberList.jsp");
 		return "/admin/adminIndex";
 	}
