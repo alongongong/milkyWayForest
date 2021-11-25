@@ -68,54 +68,25 @@ $(function(){
 		type: 'post',
 		dataType: 'json',
 		success : function(data) {
-			 alert(JSON.stringify(data));
-		
+	
+			
+		 alert(JSON.stringify(data));
+
 			$.each(data, function(index,items) {
-				
-				$('<div>',{
+				$('<div>').append($('<img>', {
+					src: "/milkyWayForest/productImage/"+items.productImageName,
+					width: '100%'
+					
+				}))
+				.append($('<div>',{
 					width: 100,
 					align: 'center',
-					text : items.productName,
-					  
-				})
-				.append($('<div>',{
-				 	width: 100,
-					align: 'center',
-					text :  items.productUnit,
-					   		
-				}))
-				.append($('<div>',{
-				 	width: 100,
-					align: 'center',
-					text :  items.productName,
-					   		
-				}))
-				.append($('<div>',{
-				 	width: 100,
-					align: 'center',
-					text :  items.productUnit,
-					 	  
+					text : items.productName + items.productUnit
 				}))
 				
 				.appendTo($('#div'));
 			});
 			
-				
-				/* $('<ul>')
-				.append($('<li>',{
-					width: 100,
-					align: 'center',
-					text : items.productName,
-					list-style: 'none'
-				}))
-				.append($('<li>',{
-				 	width: 100,
-					align: 'center',
-					text :  items.productUnit,
-					list-style: 'none'
-				})) .appendTo($('#div')); */
-				
-				
 		},
 		error: function(err) {
 			console.log(err);

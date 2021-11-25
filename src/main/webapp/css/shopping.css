@@ -62,6 +62,8 @@
 
 	/* 높이는 픽셀로 너비는 % 로 주는게 편함 */
 }  /* 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
+
+
 #shoppingForm #div {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
