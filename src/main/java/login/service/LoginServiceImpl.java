@@ -36,4 +36,10 @@ public class LoginServiceImpl implements LoginService{
 		loginDAO.findPwdUpdate(memberDTO);
 	}
 
+	@Override
+	public void kakaoWrite(MemberDTO memberDTO) {
+		loginDAO.kakaoWrite(memberDTO);
+		
+	}
+
 }

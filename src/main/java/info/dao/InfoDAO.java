@@ -1,5 +1,11 @@
 package info.dao;
 
+import java.util.List;
+
+import grade.bean.GradeDTO;
+
 public interface InfoDAO {
-//컨트롤러-> 서비스(서비스-서비스임플) -> DAO -> mapper -> (ajax=>success)
+
+	public List<GradeDTO> getBenefit();
+
 }
