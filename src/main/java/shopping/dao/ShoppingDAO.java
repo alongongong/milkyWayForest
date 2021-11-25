@@ -8,4 +8,5 @@ public interface ShoppingDAO {
 
 	public List<ShoppingDTO> getShoppingList();
 
+
 }

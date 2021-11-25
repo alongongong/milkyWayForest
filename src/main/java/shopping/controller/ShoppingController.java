@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import shopping.bean.ShoppingDTO;
@@ -83,7 +84,7 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	
 	@GetMapping("/shopping/coffeeEtcList")
 	public String coffeeEtcList(Model model) {
-	model.addAttribute("display", "/shopping/coffeeEtcList.jsp");
+	model.addAttribute("display", "/shopping/coffeeEtcList.jsp");  //모델이라는 객체안에 디스플레이를 넣는것. 그 디스플레이 안에는 파일주소값이 넣어져있고.
 	return "/index";
 	}
 	
@@ -92,6 +93,6 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	public List<ShoppingDTO> getShoppingList() {
 		return shoppingService.getShoppingList(); 
 	}
-	
+
 	
 }

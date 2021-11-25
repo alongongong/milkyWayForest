@@ -17,11 +17,11 @@
 			<div>
 				<ul class="writeAgreeFix">
 					<div>
-						<li id="writeSubject"style="text-align:center;">회원가입 약관동의 단계입니다.</li>
+						<li id="writeSubject" style="text-align:center;">회원가입 약관동의 단계입니다.</li>
              		</div>
              		<div>
                			<li align="right" style="padding-right:30px;">
-							<input type="checkbox" id="writeAllAgreecheck">
+							<input type="checkbox" id="writeAllAgreecheck" class="acptChck" >
 							<label for="writeAllAgreecheck"></label>
                			</li>
 					</div>
@@ -32,7 +32,7 @@
 			<ul class="writeAgreeFix">
 				<li>홈페이지 이용약관 동의(필수)</li>
 				<li class="checkBtn">
-					<input type="checkbox" id="writeCheck1" name="acptChck1"class="acptChck"name="chk">
+					<input type="checkbox" id="writeCheck1" name="acptChck1" class="acptChck" name="chk">
                     <label for="writeCheck1"></label>
                 </li>
             </ul>
@@ -213,14 +213,23 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/write.js"></script>
 <script type="text/javascript">
-/* window.onpageshow = function(event){
+/* $('#writeAgreeForm').ready(function(){
+	$('#writeAgreeForm .acptChck').each(function(){
+		$(this).prop('checked', false);
+	})
 	
-	//$("input[name='acptChck1']:checkbox:checked").attr("checked","");
+}); */
+
+/* window.onpageshow = function(event){
+	$("#writeAllAgreecheck:checkbox:checked").prop("checked",false);
+	$(".acptChck:checkbox:checked").prop("checked",false); */
+
+	
 	//$("input:checkbox[class='acptChck']:checked").attr("checked", "");
-$("input[type=checkbox][checked]").each(function() {
-	$(this).attr('checked', false);
-});
-} */
+/* $("input[type=checkbox][checked]").each(function() {
+	$(this).attr('checked', false); */
+/* }); */
+} 
 </script>
 
 

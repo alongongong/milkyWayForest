@@ -98,9 +98,9 @@
 						</a>
 						<ul id="noneDiv" style="display:none;">
 							<li>
-								<a href="/milkyWayForest/Info/companyInfo.jsp">은화숲</a>
+								<a href="/milkyWayForest/info/componyInfo">은하숲</a>
 							<li>
-								<a href="/milkyWayForest/Info/gradeBenefit.jsp">등급 및 혜택</a>
+								<a href="/milkyWayForest/info/gradeBenefitInfo">등급 및 혜택</a>
 							</li>
 						</ul>
 					</p>

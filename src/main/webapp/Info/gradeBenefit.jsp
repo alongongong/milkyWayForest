@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/grade.css">
 </head> 
 <body>
+<form id="gradeBenefitForm" name="gradeBenefitForm">
 	<div id="container">
 		
 		<div class="grade_text1">
@@ -93,7 +94,43 @@
 		</article>
 	</section>
 	</div>
-
-
+</form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/info/getBenefit',  
+		type: 'post',
+		//dataType: 'json',
+		success : function(data) {
+			
+			alert(JSON.stringify(data));
+		
+			$.each(data, function(index,items) {
+				
+				$('<div>',{
+					width: 100,
+					align: 'left',
+					text : items.gradeBenefit,			  
+			})
+				.append($('<div>',{
+				 	width: 100,
+					align: 'left',
+					text :  items.gradeBenefit,   		
+			}))
+				.append($('<div>',{
+				 	width: 100,
+					align: 'left',
+					text :  items.gradeBenefit,				   		
+			}))					
+				.appendTo($('#div'));
+			});
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+});
+</script>
 </body> 
 </html>
