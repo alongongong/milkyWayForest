@@ -14,3 +14,6 @@
 	margin: 10px 0 5px 5px;
 	padding: 5px 0 0 10px;
 }
+.row .col-md-12 {
+	min-height: 90vh;
+}

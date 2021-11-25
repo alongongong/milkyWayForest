@@ -10,10 +10,12 @@ import java.net.URL;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,7 +44,7 @@ public class KakaoController {
 	@RequestMapping(value = "/login/oauth_kakao")
 	public String oauthKakao(
 			@RequestParam(value = "code", required = false) String code
-			, Model model) throws Exception {
+			, Model model, HttpSession session) throws Exception {
 
 		System.out.println("#########" + code);
         String access_Token = getAccessToken(code);
