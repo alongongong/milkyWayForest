@@ -14,5 +14,10 @@ public class MemberWriteController {
 		model.addAttribute("display", "write/writeAgreeForm.jsp");
 		return "/index";
 	}
+	@GetMapping(value="memberWrite")
+	public String memberWrite(Model model) {
+		model.addAttribute("display", "write/memberWrite.jsp");
+		return "/index";
+	}
 
 }
