@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import grade.bean.GradeDTO;
+import member.bean.MemberDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -21,9 +22,15 @@ public interface AdminDAO {
 
 	public void stockUpdate(String productCode, int enterCount);
 
-	public List<QnaBoardDTO> getQnaBoard();
+	public List<QnaBoardDTO> getQnaBoard(Map<String, Integer> map);
 
 	public List<GradeDTO> getGradeBenefit();
 
 	public void updateGradeBenefit(Map<String, String> map);
+
+	public int getTotalA();
+
+	public int getTotalMemA();
+
+	public List<MemberDTO> getMemberList(Map<String, Integer> map);
 }

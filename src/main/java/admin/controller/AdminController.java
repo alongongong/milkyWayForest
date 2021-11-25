@@ -2,6 +2,7 @@ package admin.controller;
 
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import admin.service.AdminService;
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
-import qnaBoard.bean.QnaBoardDTO;
 
 @Controller
 public class AdminController {
@@ -37,7 +37,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/memberList")
-	public String memberLIst(@RequestParam String dataNum, Model model) {
+	public String memberLIst(@RequestParam String dataNum, @RequestParam int pg, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "회원리스트");
 		model.addAttribute("display", "pMemberList.jsp");
@@ -101,9 +101,10 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/qnaBoard")
-	public String qnaBoard(@RequestParam String dataNum, Model model) {
+	public String qnaBoard(@RequestParam String dataNum, @RequestParam int pg, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "문의 게시판 관리");
+		model.addAttribute("pg", pg);
 		model.addAttribute("display", "pQnaBoard.jsp");
 		return "/admin/adminIndex";
 	}
@@ -191,8 +192,14 @@ public class AdminController {
 	
 	@PostMapping("/admin/getQnaBoard")
 	@ResponseBody
-	public List<QnaBoardDTO> getQnaBoard() {
-		return adminService.getQnaBoard();
+	public JSONObject getQnaBoard(@RequestParam int pg) {
+		return adminService.getQnaBoard(pg);
+	}
+	
+	@PostMapping("/admin/getMemberList")
+	@ResponseBody
+	public JSONObject getMemberList(@RequestParam int pg) {
+		return adminService.getMemberList(pg);
 	}
 	
 }

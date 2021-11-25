@@ -28,7 +28,7 @@
           </li>
           <li class="menu">회원 혜택 관리</li>
           <li class="navMenu" id="2">
-            <a href="/milkyWayForest/admin/memberList?dataNum=2">
+            <a href="/milkyWayForest/admin/memberList?dataNum=2&pg=1">
               <i class="nc-icon nc-bank"></i>
               <p>회원리스트</p>
             </a>
@@ -80,7 +80,7 @@
           </li>
           <li class="menu">게시글 관리</li>
           <li class="navMenu" id="10">
-            <a href="/milkyWayForest/admin/qnaBoard?dataNum=10">
+            <a href="/milkyWayForest/admin/qnaBoard?dataNum=10&pg=1">
               <i class="nc-icon nc-email-85"></i>
               <p>문의 게시판 관리</p>
             </a>

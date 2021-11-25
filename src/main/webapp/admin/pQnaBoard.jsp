@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <div class="card" id="pQnaBoardDiv">
   <div class="card-header">
-    <h4 class="card-title"> 상품 리스트</h4>
+    <h4 class="card-title"> 문의 게시판</h4>
 	<div id="stockSearch">
 		
 	</div>
@@ -37,6 +37,9 @@
         <tbody>
         </tbody>
       </table>
+      <br>
+      <div id="boardPagingDiv"></div>
+      <br><br>
     </div>
   </div>
 </div>
@@ -44,15 +47,49 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
+	$('#pQnaBoardTable tbody').empty();
 	$.ajax({
-		url: '/milkyWayForest/admin/getQnaBoard',
+		url: '/milkyWayForest/admin/getQnaBoard?pg='+${pg},
 		type: 'post',
 		success: function(data){
-			alert(JSON.stringify(data));
+			
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>').append($('<input>',{
+					type: 'checkbox',
+					id: 'qnaCheck'+index,
+					class: 'qnaCheck'
+				}))).append($('<td>',{
+					text: items.qnaQuestionType
+				})).append($('<td>',{
+					text: items.qnaCode
+				})).append($('<td>',{
+					text: items.qnaSubject
+				})).append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.qnaDate
+				})).append($('<td>',{
+					text: items.qnaAnswerCheck
+				})).appendTo($('#pQnaBoardTable tbody'));
+			});
+			
+			$('#boardPagingDiv').html(data.boardPaging);
+			
+			$('#qnaAllCheck').click(function(){
+				if($(this).is('checked')) {
+					$('.qnaCheck').prop('checked', false);	
+				} else {
+					$('.qnaCheck').prop('checked', true);
+				}
+			});
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
 });
+
+function boardPaging(page){
+	location.href="/milkyWayForest/admin/qnaBoard?dataNum=10&pg="+page;
+}
 </script>

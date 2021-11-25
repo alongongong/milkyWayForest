@@ -4,12 +4,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import admin.dao.AdminDAO;
 import grade.bean.GradeDTO;
-import oracle.net.aso.m;
+import member.bean.MemberDTO;
+import paging.BoardPaging;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -17,6 +19,8 @@ import qnaBoard.bean.QnaBoardDTO;
 public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminDAO adminDAO;
+	@Autowired
+	private BoardPaging boardPaging;
 		
 	@Override
 	public void pProductInsert(ProductDTO productDTO) {
@@ -50,8 +54,34 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<QnaBoardDTO> getQnaBoard() {
-		return adminDAO.getQnaBoard();
+	public JSONObject getQnaBoard(int pg) {
+		int endNum = pg * 10;
+		int startNum = endNum - 9;
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		int totalA = adminDAO.getTotalA();
+		int totalP = (totalA - 1) / 10 + 1;
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(10);
+		boardPaging.setPageSize(10);
+		boardPaging.setTotalA(totalA);
+		boardPaging.makePagingHTML();
+		
+		List<QnaBoardDTO> list = adminDAO.getQnaBoard(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(list != null) {
+			json.put("list", list);
+			json.put("boardPaging", boardPaging.getPagingHTML().toString());
+			json.put("pg", pg);
+		}
+		
+		return json;
 	}
 
 	@Override
@@ -66,6 +96,28 @@ public class AdminServiceImpl implements AdminService {
 		map.put("green", green);
 		map.put("gold", gold);
 		adminDAO.updateGradeBenefit(map);		
+	}
+
+	@Override
+	public JSONObject getMemberList(int pg) {
+		int endNum = pg * 20;
+		int startNum = endNum - 19;
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		int totalMemA = adminDAO.getTotalMemA();
+		int totalMemP = (totalMemA - 1) / 20 + 1;
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(10);
+		boardPaging.setPageSize(20);
+		boardPaging.setTotalA(totalMemA);
+		boardPaging.makePagingHTML();
+		
+		List<MemberDTO> list = adminDAO.getMemberList(map);
+		return null;
 	}
 
 }

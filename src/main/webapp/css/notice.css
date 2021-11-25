@@ -8,6 +8,15 @@
 #eventBoardForm legend, #eventViewForm legend, #faqBoardForm legend, #noticeBoardForm legend, #qnaBoardForm legend {
 	font-size: 23pt;
 }
+#currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+}
+#paging {
+	padding: 3px 8px;
+}
 
 
 
@@ -139,4 +148,9 @@
 
 #qnaBoardWriteDiv #qnaBoardWriteTable textarea {
 	width: 85%;
+}
+#qnaBoardForm #qnaBoardPaging {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
 }

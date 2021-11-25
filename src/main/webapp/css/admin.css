@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/* 공통사항 */
+#currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+}
+#paging {
+	padding: 3px 8px;
+}
+
+
 /* 회원혜택관리 */
 #pGradeBenefitDiv #gradeBenefitWrap {
 	display: grid;
@@ -55,6 +67,18 @@
 	width: 45px;
 	height: 25px;
 	padding: 0;
+}
+
+
+/* 문의 게시판 */
+#pQnaBoardDiv #pQnaBoardTable th, #pQnaBoardDiv #pQnaBoardTable td {
+	text-align: center;
+} 
+
+#pQnaBoardDiv #boardPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 }
 
 

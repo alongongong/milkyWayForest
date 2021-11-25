@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import grade.bean.GradeDTO;
+import member.bean.MemberDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -54,8 +55,8 @@ public class AdminDAOMybatis implements AdminDAO {
 	}
 
 	@Override
-	public List<QnaBoardDTO> getQnaBoard() {
-		return sqlSession.selectList("adminSQL.getQnaBoard");
+	public List<QnaBoardDTO> getQnaBoard(Map<String, Integer> map) {
+		return sqlSession.selectList("adminSQL.getQnaBoard", map);
 	}
 
 	@Override
@@ -66,5 +67,20 @@ public class AdminDAOMybatis implements AdminDAO {
 	@Override
 	public void updateGradeBenefit(Map<String, String> map) {
 		sqlSession.update("adminSQL.updateGradeBenefit", map);
+	}
+
+	@Override
+	public int getTotalA() {
+		return sqlSession.selectOne("adminSQL.getTotalA");
+	}
+
+	@Override
+	public int getTotalMemA() {
+		return sqlSession.selectOne("adminSQL.getTotalMemA");
+	}
+
+	@Override
+	public List<MemberDTO> getMemberList(Map<String, Integer> map) {
+		return sqlSession.selectList("adminSQL.getMemberList", map);
 	}
 }

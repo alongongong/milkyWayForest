@@ -1,10 +1,10 @@
 package notice.controller;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +25,8 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@GetMapping("/notice/qnaBoard")
-	public String qnaBoard(Model model) {
+	public String qnaBoard(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
 		model.addAttribute("display", "notice/qnaBoard.jsp");
 		return "/index";
 	}
@@ -63,11 +64,12 @@ public class NoticeController {
 	// ------------------------------------------------
 	
 	@PostMapping("/notice/qnaBoardWrite")
-	public String qnaBoardWrite(@ModelAttribute QnaBoardDTO qnaBoardDTO,
+	@ResponseBody
+	public void qnaBoardWrite(@ModelAttribute QnaBoardDTO qnaBoardDTO,
 								@RequestParam MultipartFile[] img,
 								Model model) {
-		System.out.println("check1");
-		String filePath = "C:\\study\\Spring\\workspace\\milkyWayForest\\src\\main\\storage";
+		String filePath = "D:\\Spring\\workspace\\milkyWayForest\\src\\main\\webapp\\storage";
+		// String filePath = "C:\\study\\Spring\\workspace\\milkyWayForest\\src\\main\\storage";
 		String fileName;
 		File file;
 		
@@ -84,7 +86,7 @@ public class NoticeController {
 		} else {
 			qnaBoardDTO.setQnaImage1("");
 		}
-		System.out.println("check2");
+		
 		if(img[1] != null) {
 			fileName = img[1].getOriginalFilename();
 			file = new File(filePath, fileName);
@@ -98,11 +100,16 @@ public class NoticeController {
 		} else {
 			qnaBoardDTO.setQnaImage2("");
 		}
-		System.out.println("check3");
+
 		noticeService.qnaBoardWrite(qnaBoardDTO);
-		
-		model.addAttribute("display", "notice/qnaBoard.jsp");
-		return "/index";
+
 	}
+	
+	@PostMapping("/notice/getQnaBoard")
+	@ResponseBody
+	public JSONObject getQnaBoard(@RequestParam int pg) {
+		return noticeService.getQnaBoard(pg);
+	}
+	
 	
 }

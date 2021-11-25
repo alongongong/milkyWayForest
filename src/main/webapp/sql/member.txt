@@ -23,7 +23,7 @@ create table milkyMember(
     
 create table milkyMemberBenefit(
 	id varchar(15),
-	couponName varchar(30),	-- 쿠폰명
-	coupon varchar(30));	-- 쿠폰
+	couponName varchar(50),	-- 쿠폰명
+	coupon varchar(150));	-- 쿠폰
 	
 	

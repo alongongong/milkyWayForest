@@ -49,6 +49,7 @@ create table milkyQnA (
   QnAHit number default 0,
   QnAImage1 varchar(20),
   QnAImage2 varchar(20),
+  qnaAnswerCheck varchar(15) default '답변 대기',
   QnADate date default sysdate
 );
 

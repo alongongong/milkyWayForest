@@ -1,7 +1,5 @@
 package qnaBoard.bean;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -18,5 +16,6 @@ public class QnaBoardDTO {
 	private int qnaHit;
 	private String qnaImage1;
 	private String qnaImage2;
-	private Date qnaDate;
+	private String qnaAnswerCheck; // 답변 대기, 답변 완료
+	private String qnaDate;
 }

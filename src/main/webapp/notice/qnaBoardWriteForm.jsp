@@ -20,10 +20,12 @@
 				<td>
 					<select id="qnaQuestionType" name="qnaQuestionType">
 						<option>문의 유형</option>
-						<option id="productType">상품 문의</option>
-						<option id="shipType">배송 문의</option>
-						<option id="cancelType">취소/교환/반품 문의</option>
-						<option id="etcType">기타 문의</option>
+						<option value="상품 문의">상품 문의</option>
+						<option value="배송 문의">배송 문의</option>
+						<option value="취소 문의">취소 문의</option>
+						<option value="교환 문의">교환 문의</option>
+						<option value="반품 문의">반품 문의</option>
+						<option value="기타 문의">기타 문의</option>
 					</select>
 				</td>
 			</tr>

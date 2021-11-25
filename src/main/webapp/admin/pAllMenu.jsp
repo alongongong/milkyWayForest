@@ -71,7 +71,7 @@
 					<li><a href="/milkyWayForest/notice/noticeBoard">공지사항</a></li>
 					<li><a href="/milkyWayForest/notice/eventBoard">이벤트</a></li>
 					<li><a href="/milkyWayForest/notice/faqBoard">자주 묻는 질문</a></li>
-					<li><a href="/milkyWayForest/notice/qnaBoard">문의 게시판</a></li>
+					<li><a href="/milkyWayForest/notice/qnaBoard?pg=1">문의 게시판</a></li>
 					
 					<li><a href="/milkyWayForest/notice/eventView">이벤트 글내용</a></li>
 				</ul><!-- 공지사항 -->

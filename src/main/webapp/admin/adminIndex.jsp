@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/assets/css/adminIndex.css">
 <link rel="apple-touch-icon" sizes="76x76" href="/milkyWayForest/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/milkyWayForest/assets/img/favicon.png">

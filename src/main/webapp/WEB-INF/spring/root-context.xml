@@ -32,4 +32,6 @@
 	<context:component-scan base-package="info.dao" />
 	
 	<context:component-scan base-package="notice.dao" />
+	
+	<context:component-scan base-package="paging" />
 </beans>
