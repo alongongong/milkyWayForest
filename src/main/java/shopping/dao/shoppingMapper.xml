@@ -5,14 +5,25 @@
 <mapper namespace="shoppingSQL">
 	
 	<select id="getShoppingList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
-		from milkyproductinfo 
-		join milkyproductimage using(productcode)
-		where rownum between 1 and 8
-	</select>
-	<!-- 이미지 주소의 경로를 가져오는게 select PRODUCTIMAGENAME 를 해주는것. 
-	
-	 -->
+	(select productName,category,productUnit,PRODUCTIMAGENAME
+      from milkyproductinfo 
+      join milkyproductimage using(productcode)
+      where (to_number(substr(productcode,2,3)) between 1 and 4)
+      and category= '원두')
+     union
+    (select productName,category,productUnit,PRODUCTIMAGENAME
+      from milkyproductinfo 
+      join milkyproductimage using(productcode)
+      where (to_number(substr(productcode,2,3)) between 1 and 4)
+        and category= '티')
+ 	
+    </select>
+    
+    
+	<!-- 이미지 주소의 경로를 가져오는게 select PRODUCTIMAGENAME 를 해주는것.  -->
+	<!-- TO_NUMBER : 문자를 숫자로 변환 
+		substr(2,3) : 2번째부터 시작해서 3글자를 가져와주세요.
+	-->
 
 
 </mapper>

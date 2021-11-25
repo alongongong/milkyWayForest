@@ -13,5 +13,6 @@ public class ShoppingDTO {
 	private int enterCount;
 	private int sellCount;
 	private int wishCount;
+	private String productImageName;
 	
 }
