@@ -3,6 +3,42 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
- <mapper namespace="write">
- 
+ <mapper namespace="writeSQL">
+ 	
+ 	<insert id="write" parameterType="member">
+ 	BEGIN
+ 		insert into milkymember values(#{id}, 
+ 									   #{name}, 
+ 									   #{nickname}, 
+ 									   #{pwd}, 
+ 									   #{gender}, 
+ 									   #{yy}, 
+ 									   #{mm}, 
+ 									   #{dd}, 
+ 									   #{tel1}, 
+ 									   #{tel2}, 
+ 									   #{tel3}, 
+ 									   #{email1}, 
+ 									   #{email2}, 
+ 									   sysdate, 
+ 									   'welcome', 
+ 									   1000, 
+ 									   #{idPwdQuestion}, 
+ 									   #{idPwdAnswer}, 
+ 									   #{writePath}, 
+ 									   sysdate);
+ 		insert into milkyMemberBenefit values(#{id},
+ 									          '가입혜택',
+ 									          '5만원이상 구매시 2000원 할인쿠폰 1장');
+ 	END;
+ 	</insert>
+ 	
+ 	<select id="writeEmailCheck" parameterType="member" resultType="member">
+ 		select * from milkymember where email1=#{email1} and email2=#{email2}
+ 	</select>
+ 	
+ 	<select id="writeIdCheck" parameterType="String" resultType="member">
+ 		select * from milkymember where id=#{id}
+ 	</select>
+ 	
  </mapper>

@@ -21,6 +21,8 @@
 	
 	<context:component-scan base-package="notice.service" />
 	
+	<context:component-scan base-package="member.service" />
+	
 	
 	
 	<context:component-scan base-package="product.dao" />
@@ -32,4 +34,6 @@
 	<context:component-scan base-package="info.dao" />
 	
 	<context:component-scan base-package="notice.dao" />
+	
+	<context:component-scan base-package="member.dao" />
 </beans>

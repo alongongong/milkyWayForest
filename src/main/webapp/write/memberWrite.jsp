@@ -26,6 +26,7 @@
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteId" name="id" placeholder="ID">
+          <input type="hidden" id="checkId" val="">
           <div id="idDiv" style="width:20%; display:inline;"></div>
         </div>
       </li>
@@ -89,8 +90,8 @@
           <p>성별</p>
         </div>
         <div class="writeInputText">
-          <input type="radio" name="gender" class="gender" value="man">남
-          <input type="radio" name="gender" class="gender" value="woman">여
+          <input type="radio" name="gender" class="gender" value="남">남
+          <input type="radio" name="gender" class="gender" value="여">여
         </div>
       </li>
       <li class="blankLi">
@@ -99,12 +100,12 @@
         </div>
         <div class="writeInputText">
           <select id="writeTel1" name="tel1">
-              <option>010</option>
-              <option>011</option>
-              <option>016</option>
-              <option>017</option>
-              <option>018</option>
-              <option>019</option>
+              <option value="010">010</option>
+              <option value="011">011</option>
+              <option value="016">016</option>
+              <option value="017">017</option>
+              <option value="018">018</option>
+              <option value="019">019</option>
           </select>-
         <input type="text" id="writeTel2" name="tel2">-<input type="text" id="writeTel3" name="tel3">
       </div>
@@ -133,7 +134,7 @@
           	<input type="text" id="memberWriteEmail" name="email1">
 			@
 			<input type="text" id="memberWriteEmail1" name="email2" list="email2" placeholder="직접입력">
-			<datalist id="email2">
+			<datalist id="email2" name="email2">
 				<option value="naver.com">naver.com
 				<option value="daum.net">daum.net
 				<option value="gmail.com">gmail.com
@@ -154,7 +155,7 @@
       </li>
       <li style="height:160px;">
         <div align="center">
-          <input type="button" id="memberWriteBtn" value="회원가입">
+          <input type="button" id="memberWriteBtn" value="회원가입" disabled="disabled">
           <input type="reset" id="memberWriteReset" value="취소">
         </div>
       </li>
