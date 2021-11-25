@@ -37,7 +37,11 @@ public class LoginDAOMybatis implements LoginDAO {
 	@Override
 	public void findPwdUpdate(MemberDTO memberDTO) {
 		sqlSession.update("loginSQL.findPwdUpdate", memberDTO);
-		
+	}
+
+	@Override
+	public void kakaoWrite(MemberDTO memberDTO) {
+		sqlSession.insert("loginSQL.kakaoWrite", memberDTO);
 	}
 
 }
