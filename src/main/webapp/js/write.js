@@ -88,5 +88,12 @@ $('#writeAllAgreecheck').change(function(){
 });
 
 
+//약관동의 동의버튼 이동 
+$(document).ready(function(){
+	$('#writeAgreeForm #writeAgreeBtn1').click(function(){
+		$(location).attr('href','/milkyWayForest/write/memberWrite')
+	});
+});
+
 
 
