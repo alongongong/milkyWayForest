@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import shopping.bean.ShoppingDTO;
 
+
 @Repository
 public class ShoppingDAOMybatis implements ShoppingDAO {
 	@Autowired
@@ -17,5 +18,7 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 	public List<ShoppingDTO> getShoppingList() {
 		return sqlSession.selectList("shoppingSQL.getShoppingList");
 	}
+
+	
 
 }

@@ -7,6 +7,8 @@ import shopping.bean.ShoppingDTO;
 public interface ShoppingService {
 
 	public List<ShoppingDTO> getShoppingList();
+
+	
 	
 	
 

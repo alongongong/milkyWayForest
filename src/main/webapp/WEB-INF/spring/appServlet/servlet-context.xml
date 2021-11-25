@@ -34,6 +34,8 @@
 	
 	<mvc:resources location="/image/" mapping="/image/**" />
 	
+	<mvc:resources location="/productImage/" mapping="/productImage/**"/>
+	
 	<mvc:annotation-driven />
 	
 </beans>

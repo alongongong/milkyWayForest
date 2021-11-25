@@ -17,5 +17,7 @@ public class ShoppingServiceImpl implements ShoppingService {
 	public List<ShoppingDTO> getShoppingList() {
 		return shoppingDAO.getShoppingList();
 	}
+
 	
+
 }

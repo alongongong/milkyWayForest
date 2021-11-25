@@ -1,6 +1,6 @@
 @charset "UTF-8";
 * {font-family: Georgia, "Malgun Gothic", serif;}
-body { margin: 0; }
+body { margin: 0;  }
 /* 전체DIV */
 #container { width: 78rem; margin: 0 auto;  }
 
@@ -21,8 +21,9 @@ body { margin: 0; }
 /* */
 .info1_text { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 
-.info1_text li { margin-bottom: 7px; }
-.li { font-size: 14px; color: #666; line-height: 1.6; padding-left: 11px; s}
+.info1_text li { margin-bottom: 7px; font-size: 20px; 
+color: #666; line-height: 1.6; padding-left: 11px;}
+
 
 /* info2 */
 #container2 { margin: 0 auto; padding: 0;  }
@@ -49,5 +50,4 @@ ul {
 }
 }
 .note_list {
-	m
 }
