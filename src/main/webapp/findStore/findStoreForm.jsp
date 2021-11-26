@@ -10,10 +10,25 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9430d87716e33fcf4d177c0233ad2b94"></script>
 <script>
-	var location_name = 'aa';
+	var location_name = '스타벅스';
 	var x = 37.57309;
 	var y = 126.97469;
 	var mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
+	$(function(){
+		$.ajax({
+			   type: 'get',
+			   url: 'https://dapi.kakao.com/v2/local/search/address.json',
+			   headers: { Authorization: 'KakaoAK {983faebe014b975e78a41ddbea38de92}' },
+			   data: { query: 'loacation_name'},
+			   success: function(data){
+			      alert(JSON.stringigy(data));
+			   },
+			   error: function(err){
+			      console.log(err);
+			   }
+			   
+			});
+	});
 	mapOption = {
 		center: new kakao.maps.LatLng(x+0.0007, y), // 지도의 중심좌표
 		level: 4, // 지도의 확대 레벨
@@ -45,21 +60,6 @@
 	
 	// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
 	kakao.maps.event.addListener(marker, 'click', function() {
-	    alert('마커를 클릭했습니다!');
-	});
-	$(function(){
-		$.ajax({
-			   type: 'get',
-			   url: 'https://dapi.kakao.com/v2/local/search/address.json',
-			   headers: { Authorization: 'KakaoAK {983faebe014b975e78a41ddbea38de92}' },
-			   data: { query: 'loacation_name'},
-			   success: function(data){
-			      alert('success');
-			   },
-			   error: function(err){
-			      console.log(err);
-			   }
-			   
-			});
+	    location.href="https://map.kakao.com/";
 	});
 </script>
