@@ -8,8 +8,14 @@
 	</select>
 	
 	<insert id="kakaoWrite" parameterType="member">
+	BEGIN
 		insert into milkymember (id, nickname, mm, dd, email1, email2, writePath) 
 		values (#{id}, #{nickname}, #{mm}, #{dd}, #{email1}, #{email2}, #{writePath})
+		
+		insert into milkyMemberBenefit values(#{id},
+ 									          '가입혜택',
+ 									          '5만원이상 구매시 2000원 할인쿠폰 1장');
+	END;
 	</insert>
 	
 	<select id="loginEmailCheck" parameterType="member" resultType="member">

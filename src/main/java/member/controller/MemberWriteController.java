@@ -96,6 +96,7 @@ public class MemberWriteController {
 		else
 			return memberDTO2.getId();
 	}
+	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	@ResponseBody
 	public void write(@ModelAttribute MemberDTO memberDTO) {
