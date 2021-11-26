@@ -6,128 +6,95 @@
 <form id="mypageMain">
 <div id="main-wrapper" class="container">
 	<div id="main-nav" class="item">
-		<div id="nav-wrapper" class="alert alert-light" role="alert">
-			<ul class="nav flex-column">
-			  <li class="nav-item">
-			    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">나의 쇼핑 내역</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link active alert-link" href="#">주문/배송조회</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">전체 주문내역</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">주문취소/교환/반품내역</a>
-			  </li>
-			  
-			  <li class="nav-item">
-			    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">나의 혜택 관리</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link active alert-link" href="#">나의 활동</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">등급/혜택</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">적립금/쿠폰</a>
-			  </li>
-		
-			  <li class="nav-item">
-			    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">나의 관심 목록</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link active alert-link" href="#">찜한 상품</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">최근 본 상품</a>
-			  </li>
-		
-			  <li class="nav-item">
-			    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">회원정보</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link active alert-link" href="#">회원정보 변경/탈퇴</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">배송지 관리</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link alert-link" href="#">게시글 관리</a>
-			  </li>
-			</ul>
-		</div><!-- nav-wrapper -->
-	</div><!-- main-nav -->
-	
-	<div id="main-component" class="item">
-		<div id="myInfoBox-wrapper">
-			<div id="myInfoPhoto">
-				<img src="" alt="회원등급이미지">
-			</div>
-			
-			<div id="myInfoDescript">
-				<span>저희 은하숲을 이용해주셔서 감사합니다. 
-					<strong>${memId }</strong>님은
-					<strong>${gradeName }</strong>등급입니다.
-				</span>
-			</div>
-		</div><!-- myInfoBox-wrapper -->
+		<jsp:include page="mypageNav.jsp"/>
+	</div>
 
-		<div id="myBenefit-wrapper">
-			<ul>
-				<li>
-					<span>사용가능한 쿠폰</span>
-					<a href="#">${count }</a>
-				</li>
-				<li>
-					<span>사용가능한 적립금</span>
-					<a href="#">${count }</a>
-				</li>
-				<li>
-					<span>총 주문 횟수</span>
-					<a href="#">${count }</a>
-				</li>
-				<li>
-					<span>총 주문 금액</span>
-					<a href="#">${count }</a>
-				</li>
-			</ul>
-		</div><!-- myBenefit-wrapper -->
-		
-		<div id="myShipment-wrapper">
-			<div id="myShipment-title">
-				<span>나의 주문처리 현황 (최근 3개월 기준)</span>
+	<div id="myInfoBox-wrapper" class="item card" style="height: 200px;">
+		<div class="row no-gutters">
+			<div id="myInfoPhoto" class="col-md-4">
+				<img src="/milkyWayForest/image/welcome.PNG" class="card-img rounded float-left" style="width:100px; height:100px;" alt="회원등급이미지">
 			</div>
 			
-			<div id="myShipment-state">
-				<ul>
-					<li>
-						<span>입금대기중</span>
-						<a href="#">${count }</a>
-					</li>
-					<li>
-						<span>결제완료</span>
-						<a href="#">${count }</a>
-					</li>
-					<li>
-						<span>배송준비중</span>
-						<a href="#">${count }</a>
-					</li>
-					<li>
-						<span>배송중</span>
-						<a href="#">${count }</a>
-					</li>
-					<li>
-						<span>배송완료</span>
-						<a href="#">${count }</a>
-					</li>
-				</ul>
+			<div id="myInfoDescript" class="col-md-8">
+				<div class="card-body">
+					<h5 class="card-title">한눈에 내 정보 보기</h5>
+					<p class="card-text">저희 은하숲을 이용해주셔서 감사합니다.<br>
+						<strong>${memId }ㅇㅇㅇ</strong>님은
+						<strong>${gradeName }ㅇㅇㅇ</strong>등급입니다.
+					</p>
+				</div>
 			</div>
-		</div><!-- myShipment-wrapper -->
+		</div>
+	</div><!-- 내 정보 -->
+
+	<div id="myBenefit-wrapper" class="item">
+		<ul class="list-group">
+			<li class="list-group-item list-group-item-action">
+				<span>사용가능한 쿠폰
+					<a href="#">0</a>장
+				</span>
+			</li>
+			<li class="list-group-item list-group-item-action">
+				<span>사용가능한 적립금
+					<a href="#">0</a>원
+				</span>
+			</li>
+			<li class="list-group-item list-group-item-action">
+				<span>총 주문 횟수
+					<a href="#">0</a>회
+				</span>
+			</li>
+			<li class="list-group-item list-group-item-action">
+				<span>총 주문 금액
+					<a href="#">0</a>원
+				</span>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="myShipment-wrapper" class="item">
+		<div id="myShipment-title" class="navbar navbar-light bg-light">
+			<span class="navbar-brand mb-0 h1">나의 주문처리 현황 (최근 3개월 기준)</span>
+		</div>
 		
+		<div id="myShipment-state">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td scope="col">입금대기중</td>
+						<td scope="col">결제완료</td>
+						<td scope="col">배송준비중</td>
+						<td scope="col">배송중</td>
+						<td scope="col">배송완료</td>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div><!-- 나의 주문처리 현황 -->
+	
+	<div id="myPayment-wrapper" class="item">
+		<div id="myPayment-title" class="navbar navbar-light bg-light">
+			<span class="navbar-brand mb-0 h1">배송상품 주문정보 (6개월 내 최근 3건)</span>
+		</div>
 		
-	</div><!-- main-component -->
+		<div id="myPayment-state">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td scope="col">주문번호</td>
+						<td scope="col">이미지</td>
+						<td scope="col">상품정보</td>
+						<td scope="col">수량</td>
+						<td scope="col">상품금액</td>
+						<td scope="col">배송비</td>
+						<td scope="col">주문처리상태</td>
+						<td scope="col">취소/교환/반품</td>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div><!-- 배송상품 주문정보 -->
+	
 </div><!-- main-wrapper -->
 </form>
 
