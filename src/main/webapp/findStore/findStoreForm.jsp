@@ -10,27 +10,35 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9430d87716e33fcf4d177c0233ad2b94"></script>
 <script>
-	var location_name = '스타벅스';
-	var x = 37.57309;
-	var y = 126.97469;
-	var mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
 	$(function(){
-		$.ajax({
-			   type: 'get',
-			   url: 'https://dapi.kakao.com/v2/local/search/address.json',
-			   headers: { Authorization: 'KakaoAK {983faebe014b975e78a41ddbea38de92}' },
-			   data: { query: 'loacation_name'},
-			   success: function(data){
-			      alert(JSON.stringigy(data));
-			   },
-			   error: function(err){
-			      console.log(err);
-			   }
-			   
+	var location_name = '스타벅스';
+	var location_id = [];
+	var x = [];
+	var y = [];
+
+	$.ajax({
+		type: 'get',
+		url: 'https://dapi.kakao.com/v2/local/search/keyword.json',
+		headers: { 'Authorization': 'KakaoAK 983faebe014b975e78a41ddbea38de92' },
+		data: { 'query': location_name},
+		success: function(data){
+			alert(JSON.stringify(data));
+			$.each(data.documents, function(index, items){
+				x[index] = items.x;
+				y[index] = items.y;
+				location_id[index] = items.id
+				console.log(x[index]+"  "+y[index]+"  "+location_id);
 			});
+			
+		},
+		error: function(err){
+			console.log(err);
+		}
 	});
+	
+	var mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
 	mapOption = {
-		center: new kakao.maps.LatLng(x+0.0007, y), // 지도의 중심좌표
+		center: new kakao.maps.LatLng(x[0]+0.0007, y[0]), // 지도의 중심좌표
 		level: 4, // 지도의 확대 레벨
 		mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 	}; 
@@ -46,13 +54,13 @@
 	
 	// 지도에 마커를 생성하고 표시한다
 	var marker = new kakao.maps.Marker({
-	    position: new kakao.maps.LatLng(x, y), // 마커의 좌표
-	    map: map // 마커를 표시할 지도 객체
+		position: new kakao.maps.LatLng(x[0], y[0]), // 마커의 좌표
+		map: map // 마커를 표시할 지도 객체
 	});
 	
 	// 마커 위에 표시할 인포윈도우를 생성한다
 	var infowindow = new kakao.maps.InfoWindow({
-	    content : '<div style="padding:5px;">인포윈도우 :D</div>' // 인포윈도우에 표시할 내용
+		content : '<div style="padding:5px;">인포윈도우 :D</div>' // 인포윈도우에 표시할 내용
 	});
 	
 	// 인포윈도우를 지도에 표시한다
@@ -60,6 +68,7 @@
 	
 	// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
 	kakao.maps.event.addListener(marker, 'click', function() {
-	    location.href="https://map.kakao.com/";
+		location.href="https://place.map.kakao.com/"+location_id;
+	});
 	});
 </script>
