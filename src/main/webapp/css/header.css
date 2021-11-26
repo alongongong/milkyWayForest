@@ -12,7 +12,7 @@ header { background-color : #f6f5ef;  position: sticky; top: 0; z-index: 99;}
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */
-header > div { position: relative; width: 69rem; margin: 0 auto; height: 120px; } 
+header > div { position: relative; width: 78rem; margin: 0 auto; padding: 1rem 0 1rem 0 ; height: 120px; } 
 /* header > div { position: relative; width: 69rem; margin: 0 auto; }  */
 header > div:after { content: ""; display: block; clear: both; }
 

@@ -6,16 +6,26 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/milkyWayForest/css/companyInfo.css">
-</head> 
+</head>
+
+<div id="allDiv">
+
 	<!-- Info 배너사진 -->
 	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
 		<div class="top-text-box">
-				<h1>은하숲</h1>
-			<div class="">아무고나</div>
+			<div class="Eunha"><h1>은하숲</h1></div>
+		
+		<div id="top_banner_text">
+		<div>
+			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="">은하숲 소개</a> > 
+			<a href="">은하숲</a>
 		</div>
 	</div>
-	
+	<br>
+		</div>
+	</div>
 		
 	<body>
 	<div id="companyInfo">
@@ -25,10 +35,13 @@
 				 alt="cp_information">
 			</div>
 				
-			<div class="text1"><strong>"커피 이상의 특별한 경험을 소개합니다."</strong></div>
+			<div class="text1">
+				<strong>"커피 이상의 특별한 경험을 소개합니다."</strong>
+			</div>
 				<p class="text2">
-				세계인들의 생활 속에 스며들어 전 세계의 커피 문화를 선도하고 있는 은하숲이 일상을 풍요롭게 하는 제3의 공간으로서<br>
-				국내에서도 지역사회 속에서 고객 과 함께하며 새로운 커피문화를 정착시키고 있습니다.</p>
+			세계인들의 생활 속에 스며들어 전 세계의 커피 문화를 선도하고 있는 은하숲이 일상을 풍요롭게 하는 제3의 공간으로서<br>
+			국내에서도 지역사회 속에서 고객 과 함께하며 새로운 커피문화를 정착시키고 있습니다.
+				</p>
 			
 			<div class="second_block">
 				<p class="pic2">
@@ -94,19 +107,18 @@
 					<p class="nav_Info">
 						<a href="javascript:void(0);"><Strong>은하숲 소개</Strong>
 							<span class="bi bi-chevron-down" style="float: right;"></span>
-							<span class="bi bi-chevron-up" style="display: none;"></span>
+							<span class="bi bi-chevron-up" style="display: none; float: right;"></span>
 						</a>
-						<ul id="noneDiv" style="display:none;">
-							<li>
-								<a href="/milkyWayForest/info/componyInfo">은하숲</a>
-							<li>
+						<ul id="noneDiv" style="display:none; padding-left:18px;">
+							<li><a href="/milkyWayForest/info/componyInfo">은하숲</a></li>
+							<li style="padding-top:5px; padding-bottom:20px;">
 								<a href="/milkyWayForest/info/gradeBenefitInfo">등급 및 혜택</a>
 							</li>
 						</ul>
-					</p>
+					</div>
 				</div>
 			</div>
-			
+		</div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/Info.js"></script>
 </body> 
