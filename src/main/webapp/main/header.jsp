@@ -24,21 +24,21 @@
 		<!--				header전체메뉴				--> 		
 		<!--				header 하단메뉴				-->
 		<div>
-			<h1><a href="#a"><img src="/milkyWayForest/image/milkyWayForestLogo.png" alt="logo"></a></h1>
+			<h1><a href="/milkyWayForest/admin"><img src="/milkyWayForest/image/milkyWayForestLogo.png" alt="logo"></a></h1>
 			<nav>
 				<ul class="menu">
-					<li><a href="#a">EUNHASOOP</a></li>
-					<li><a href="#a">MENU</a></li>
-					<li><a href="#a">SHOPPING</a></li>
-					<li><a href="#a">STORE</a></li>
+					<li><a href="/milkyWayForest/info/componyInfo">EUNHASOOP</a></li>
+					<li><a href="/milkyWayForest/menuInfo">MENU</a></li>
+					<li><a href="/milkyWayForest/shopping">SHOPPING</a></li>
+					<li><a href="/milkyWayForest/findStore">STORE</a></li>
 					<li><a href="#a">WHAT's NEW</a></li>
 				</ul>
 			</nav>
 		 	<!--				header 상단메뉴				-->
 				<ul class="spot">
-					<li><a href="#a"><i class="xi-user"></i><span>Sign In</span></a></li>
-					<li><a href="#a">Login</a></li>
-					<li><a href="#a">My Page</a></li>
+					<li><a href="/milkyWayForest/write/memberAgree"><i class="xi-user"></i><span>Sign In</span></a></li>
+					<li><a href="/milkyWayForest/login/loginForm">Login</a></li>
+					<li><a href="/milkyWayForest/mypage">My Page</a></li>
 					<li><a href="#a">Customer Service &amp; Ideas</a></li>
 					<li><a href="#a"><span></span></i></a></li>
 					<li><a href="#a">search</a></li>

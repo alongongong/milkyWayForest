@@ -90,7 +90,6 @@
 				
 				<ul id="memberLogin">
 					<li><a href="/milkyWayForest/login/loginForm">로그인</a></li>
-					<li><a href="/milkyWayForest/login/login">로그인 버튼</a></li>
 					<li><a href="/milkyWayForest/login/findId">아이디 찾기</a></li>
 					<li><a href="/milkyWayForest/login/findPwd">비밀번호 찾기</a></li>
 				</ul><!-- 로그인 -->
