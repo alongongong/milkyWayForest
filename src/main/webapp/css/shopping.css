@@ -63,11 +63,19 @@
 	/* 높이는 픽셀로 너비는 % 로 주는게 편함 */
 }  /* 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
 
-
-#shoppingForm #div {
+#shoppingForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
+	
+}
+
+
+#shoppingForm #menuImgDiv2 {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	text-align: center;
 	
 }
 
