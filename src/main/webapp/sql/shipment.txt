@@ -1,8 +1,8 @@
 create table milkyShipment(
-    shipCode number primary key,	-- ¹è¼ÛÁö ¹øÈ£
+    shipCode number primary key,	-- ë°°ì†¡ì§€ë²ˆí˜¸
     id varchar(15),
-    shipNickname varchar(20),		-- ¹è¼ÛÁö ´Ğ³×ÀÓ
-    shipReceiver varchar(20),		-- ¹è¼ÛÁö ¼ö½ÅÀÎ
+    shipNickname varchar(20),		-- ë°°ì†¡ì§€ ë‹‰ë„¤ì„
+    shipReceiver varchar(20),		-- ë°°ì†¡ì§€ ìˆ˜ë ¹ì¸
     shipTel1 varchar(5),
     shipTel2 varchar(5),
     shipTel3 varchar(5),

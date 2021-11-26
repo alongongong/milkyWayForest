@@ -10,10 +10,10 @@ create table milkyProductInfo(
 
 
 create table milkyProductDetail (
-	productCode varchar(10),					-- ��ǰ�ڵ�
-	productEngName varchar(100),		-- �����̸�
-	productSmallInfo varchar(400),		-- ������1
-	productDetailInfo varchar(1300)		-- ������2
+	productCode varchar(10),			-- 상품코드
+	productEngName varchar(100),		-- 영문명
+	productSmallInfo varchar(400),		-- 상세정보1
+	productDetailInfo varchar(1300)		-- 상세정보2
 );
 
 

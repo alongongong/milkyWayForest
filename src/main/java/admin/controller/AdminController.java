@@ -89,7 +89,7 @@ public class AdminController {
 	public String orderNShip(@RequestParam String dataNum, Model model) {
 		model.addAttribute("dataNum", dataNum);
 		model.addAttribute("subject", "주문 확인 / 발송 관리");
-		model.addAttribute("display", "pOerderNShip");
+		model.addAttribute("display", "pOrderNShip.jsp");
 		return "/admin/adminIndex";
 	}
 	
