@@ -67,7 +67,7 @@
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	
+	font-weight : bold;
 }
 
 
@@ -75,7 +75,7 @@
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	text-align: center;
+	
 	
 }
 
