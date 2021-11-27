@@ -32,7 +32,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/spring/appServlet/servlet-context.xml
-			/WEB-INF/spring/appServlet/security-context.xml
+			/WEB-INF/spring/appServlet/spring-security.xml
 		</param-value>
 	</init-param><!-- 얘를 걸어주면 위의 dispatcher를 찾아가지 않음. -->
 
