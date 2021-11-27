@@ -60,9 +60,10 @@ create sequence milkyQnASeq nocache nocycle;
 create table milkyReview (
   reviewCode number primary key,
   productCode varchar(10),
-  reviewSubject varchar(50),
+  reviewlike varchar(30),
   id varchar(15),
-  reviewContent varchar(500),
+  reviewContent varchar(1000),
+  reviewAnswerCheck varchar(15) default '답변 대기',
   reviewDate date default sysdate
 );
 
