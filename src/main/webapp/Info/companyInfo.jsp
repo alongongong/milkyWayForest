@@ -14,7 +14,10 @@
 	<div class="top">
 		<img src="/milkyWayForest/image/Infobanner.png" alt="Infobanner" width="100%" >
 		<div class="top-text-box">
-			<div class="Eunha"><h1>은하숲</h1></div>
+			<div class="Eunha" style="font: 21px Avenir, Arial, georgia;
+    		color: #fefefe;">
+    			<h1>은하숲</h1>
+    		</div>
 		
 		<div id="top_banner_text">
 		<div>
@@ -47,7 +50,7 @@
 				<p class="pic2">
 					<img src="/milkyWayForest/image/cp_infomt_img1.PNG" alt="cp_infofnp_img1" >
 				</p>
-				<p class="text3">
+			<p class="text3">
 				㈜은하숲은<br>
 				스*벅스의 협력사로서,<br>
 				지역사회 속에서 일상을 풍요롭게 하는<br>
