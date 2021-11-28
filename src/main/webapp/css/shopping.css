@@ -75,7 +75,7 @@
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	
+	font-weight : bold;
 	
 }
 
@@ -153,6 +153,21 @@
 #beanNTeaForm #beanNTeaMenu a:hover { color: darkgreen; text-decoration: underline; }
 #beanNTeaForm #beanNTeaMenu a:active { color: black; text-decoration: none; }
 
+#beanNTeaForm #menuImgDiv1{
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	font-weight : bold;
+	
+}
+
+#beanNTeaForm #menuImgDiv2{
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	font-weight : bold;
+	
+}
 
 
 

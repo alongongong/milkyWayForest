@@ -117,9 +117,9 @@ $(function(){
 			alert(JSON.stringify(data));
 	
 			$.each(data, function(index,items) {
-				$('<div>').append($('<div>', {
-					width: '400px',
-					height: '400px',
+				$('<div>') .append($('<div>', {
+					width: '300px',
+					height: '300px',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -130,12 +130,15 @@ $(function(){
 					
 				})))
 				.append($('<div>',{
-					width: '100',
+					width: '50%',
 					align: 'center',
-					text : items.productName + items.productUnit
+					
+					text : items.productName 
 				}))
-				
-				
+				.append($('<div>',{
+					width: '50%',
+					text : items.productUnit
+				}))
 				.appendTo($('#menuImgDiv2'));
 			});
 			
