@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import admin.service.AdminService;
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
+import qnaBoard.bean.QnaBoardDTO;
 
 @Controller
 public class AdminController {
@@ -203,4 +204,9 @@ public class AdminController {
 		return adminService.getMemberList(pg);
 	}
 	
+	@PostMapping("/admin/qnaCommentInsert")
+	@ResponseBody
+	public void qnaCommentInsert(@ModelAttribute QnaBoardDTO qnaBoardDTO) {
+		adminService.qnaCommentInsert(qnaBoardDTO);
+	}
 }

@@ -35,3 +35,9 @@ $('#insertProductBtn').click(function(){
 		});
 	}
 });
+
+$('#pQnaBoardTable').on('click', '.qnaSubject', function(){
+	$('.pQnaContentClick').removeClass('pQnaContentClick').addClass('pQnaContent');
+	$(this).next().find('td').removeClass('pQnaContent').addClass('pQnaContentClick');
+	$(this).next().next().find('td').removeClass('pQnaContent').addClass('pQnaContentClick');
+});

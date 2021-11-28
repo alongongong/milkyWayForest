@@ -13,9 +13,6 @@
       <table class="table" id="pQnaBoardTable">
         <thead class=" text-primary">
           <th>
-          	<input type="checkbox" id="qnaAllCheck">
-          </th>
-          <th>
             말머리
           </th>
           <th>
@@ -45,6 +42,7 @@
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/admin.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('#pQnaBoardTable tbody').empty();
@@ -54,11 +52,9 @@ $(function(){
 		success: function(data){
 			
 			$.each(data.list, function(index, items){
-				$('<tr>').append($('<td>').append($('<input>',{
-					type: 'checkbox',
-					id: 'qnaCheck'+index,
-					class: 'qnaCheck'
-				}))).append($('<td>',{
+				$('<tr>',{
+					class: 'qnaSubject'
+				}).append($('<td>',{
 					text: items.qnaQuestionType
 				})).append($('<td>',{
 					text: items.qnaCode
@@ -71,17 +67,60 @@ $(function(){
 				})).append($('<td>',{
 					text: items.qnaAnswerCheck
 				})).appendTo($('#pQnaBoardTable tbody'));
+				
+				
+				$('<tr>').append($('<td>',{
+					colspan: '6',
+					text: items.qnaContent,
+					style: 'padding: 20px;',
+					class: 'pQnaContent'
+				})).appendTo($('#pQnaBoardTable tbody'));
+				
+				$('<tr>').append($('<td>',{
+					colspan: '6',
+					style: 'padding: 10px 10px 20px 10px;',
+					class: 'pQnaContent'
+				}).append($('<textarea>',{
+					type: 'text',
+					id: 'qnaComment'+index,
+					style: 'width: 80%; margin: 5px; height: 60px; vertical-align: middle'
+				})).append($('<input>',{
+					type: 'button',
+					value: '입력',
+					class: 'btn qnaCommentBtn',
+					id: 'commentInsertBtn'+index,
+					style: 'height: 60px;'
+				})).append($('<div>',{
+					id: 'commentDiv'+index
+				}))).appendTo($('#pQnaBoardTable tbody'));
+				
+				$('#commentInsertBtn'+index).click(function(){
+					if($('#qnaComment'+index).val() == ''){
+						alert('댓글을 입력하세요.');
+					} else {
+						$.ajax({
+							url: '/milkyWayForest/admin/qnaCommentInsert',
+							type: 'post',
+							data: 'commentContent='+$('#qnaComment'+index).val()+'&qnaCode='+items.qnaCode,
+							success: function(data){
+								alert('작성완료');
+								$('<p>',{
+									text: $('#qnaComment'+index).val()
+								}).appendTo($('#commentDiv'+index));
+								$('#qnaComment'+index).empty();
+								
+							},
+							error: function(err){
+								console.log(err);
+							}
+						});
+					}
+				});
 			});
 			
 			$('#boardPagingDiv').html(data.boardPaging);
 			
-			$('#qnaAllCheck').click(function(){
-				if($(this).is('checked')) {
-					$('.qnaCheck').prop('checked', false);	
-				} else {
-					$('.qnaCheck').prop('checked', true);
-				}
-			});
+			
 		},
 		error: function(err){
 			console.log(err);
