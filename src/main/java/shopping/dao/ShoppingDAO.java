@@ -10,5 +10,7 @@ public interface ShoppingDAO {
 
 	public List<ShoppingDTO> getShoppingList2();
 
+	public List<ShoppingDTO> getBeanNTeaList();
 
+	public List<ShoppingDTO> getBeanNTeaList2();
 }

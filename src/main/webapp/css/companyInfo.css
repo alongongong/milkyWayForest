@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-*{ margin: 0; padding: 0; font-family: Georgia, "Malgun Gothic", serif; }
+*{ margin: 0; padding: 0;  }
 /* 배너사진*/
 #allDiv .top { position: relative; width: 100%;}
-#allDiv .top-text-box { position: absolute; bottom:1.5rem; 
+#allDiv .top-text-box { position: absolute; bottom:1rem; 
 /* display:flex;    justify-content: space-between; */ width: 100%; margin: 0 auto; }
 
 #allDiv .Eunha h1 { color:white; width: 78rem; margin: 0 auto; }
@@ -29,9 +29,9 @@ color:#00592D; }
 #allDiv .text2 { position:relative; font-size: 1rem;}
 
 /* second_block */
-#allDiv .second_block { position:relative; margin: 1 0 1 3rem;  }
+#allDiv .second_block { position:relative; padding: 2rem 0 2rem 0; }
 #allDiv .second_block p { display: inline-block; }
-#allDiv .second_block .text3 { vertical-align: 6em; margin : 0 0 0 4.7rem; 
+#allDiv .second_block .text3 { vertical-align: 5em; margin : 0 0 0 8rem; 
 font-style: oblique; font-size: 1.15rem; color:#00592D; }
 
 /* 동그라미 사진*/
@@ -47,7 +47,7 @@ font-style: oblique; font-size: 1.15rem; color:#00592D; }
 
 
 /* third_block */
-#allDiv .third_block { display: flex; margin-top: 2rem;  width:100%; }
+#allDiv .third_block { display: flex; margin-top: 2rem;  width:100%; padding: 1rem 0 1rem 0;}
 #allDiv .pic4 img { margin-bottom: 3rem;}
 #allDiv .text_block { margin: 6rem 7.5rem 1rem 0; text-align: right; width:50%; }
 #allDiv .third_block .text3 { margin : 1rem 0rem 5rem 6rem; font-style: oblique; font-size: 1.25rem; color:#00592D; }
