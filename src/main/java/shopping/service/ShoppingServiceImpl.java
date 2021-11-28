@@ -33,6 +33,77 @@ public class ShoppingServiceImpl implements ShoppingService {
 		return shoppingDAO.getBeanNTeaList2();
 	}
 
+	@Override
+	public List<ShoppingDTO> getBeanList() {
+		return shoppingDAO.getBeanList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getTeaList() {
+		return shoppingDAO.getTeaList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getProductList() {
+		return shoppingDAO.getProductList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getProductList2() {
+		return shoppingDAO.getProductList2();
+	}
+
+	@Override
+	public List<ShoppingDTO> getProductList3() {
+		return shoppingDAO.getProductList3();
+	}
+
+	@Override
+	public List<ShoppingDTO> getProductList4() {
+		return shoppingDAO.getProductList4();
+	}
+
+	@Override
+	public List<ShoppingDTO> getProductList5() {
+		return shoppingDAO.getProductList5();
+	}
+
+	@Override
+	public List<ShoppingDTO> getProductList6() {
+		return shoppingDAO.getProductList6();
+	}
+
+	@Override
+	public List<ShoppingDTO> getMugList() {
+		return shoppingDAO.getMugList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getGlassList() {
+		return shoppingDAO.getGlassList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getPlasticTumblrList() {
+		return shoppingDAO.getPlasticTumblrList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getStainlessTumblrList() {
+		return shoppingDAO.getStainlessTumblrList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getThermosList() {
+		return shoppingDAO.getThermosList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getCoffeeEtcList() {
+		return shoppingDAO.getCoffeeEtcList();
+	}
+	
+
 	
 
 }

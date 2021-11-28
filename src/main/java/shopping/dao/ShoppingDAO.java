@@ -13,4 +13,32 @@ public interface ShoppingDAO {
 	public List<ShoppingDTO> getBeanNTeaList();
 
 	public List<ShoppingDTO> getBeanNTeaList2();
+
+	public List<ShoppingDTO> getBeanList();
+
+	public List<ShoppingDTO> getTeaList();
+
+	public List<ShoppingDTO> getProductList();
+
+	public List<ShoppingDTO> getProductList2();
+
+	public List<ShoppingDTO> getProductList3();
+
+	public List<ShoppingDTO> getProductList4();
+
+	public List<ShoppingDTO> getProductList5();
+
+	public List<ShoppingDTO> getProductList6();
+
+	public List<ShoppingDTO> getMugList();
+
+	public List<ShoppingDTO> getGlassList();
+
+	public List<ShoppingDTO> getPlasticTumblrList();
+
+	public List<ShoppingDTO> getStainlessTumblrList();
+
+	public List<ShoppingDTO> getThermosList();
+
+	public List<ShoppingDTO> getCoffeeEtcList();
 }
