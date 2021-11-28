@@ -1,10 +1,16 @@
 package mypage.controller;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import mypage.service.MypageService;
 
@@ -27,5 +33,15 @@ public class MypageController {
 		model.addAttribute("display", "mypage/mypageMyInfo.jsp");
 		return "/index";
 	}
+	
+	//회원정보 불러오기
+	@PostMapping(value="/getMypageMyInfo")
+	@ResponseBody
+	public Map<String, String> getMypageMyInfo(HttpSession session) {
+		//System.out.println(id);
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getMypageMyInfo(id);
+	}
+	
 
 }

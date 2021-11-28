@@ -15,8 +15,8 @@
 				<div class="card-body">
 					<h5 class="card-title">한눈에 내 정보 보기</h5>
 					<p class="card-text">안녕하세요. 저희 은하숲을 이용해주셔서 감사합니다.<br>
-						<strong>${memId }ㅇㅇㅇ</strong>님은
-						<strong>${gradeName }ㅇㅇㅇ</strong>등급입니다.
+						<strong>${memId }</strong>님은
+						<strong>${gradeName }</strong>등급입니다.
 					</p>
 				</div>
 			</div>
