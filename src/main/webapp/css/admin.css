@@ -80,7 +80,13 @@
 	width: 70%;
 	margin: 0 auto;
 }
+#pQnaBoardDiv .pQnaContent {
+	display: none;
+}
 
+#pQnaBoardDiv .pQnaContentClick {
+	visibility: visible;
+}
 
 /* 물류관리 */
 #pStockDiv #pStockTable input {

@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
+import qnaBoard.bean.QnaBoardDTO;
 
 public interface AdminService {
 
@@ -28,6 +29,8 @@ public interface AdminService {
 	public void updateGradeBenefit(String welcome, String green, String gold);
 
 	public JSONObject getMemberList(int pg);
+
+	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO);
 
 	
 

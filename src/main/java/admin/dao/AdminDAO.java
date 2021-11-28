@@ -33,4 +33,6 @@ public interface AdminDAO {
 	public int getTotalMemA();
 
 	public List<MemberDTO> getMemberList(Map<String, Integer> map);
+
+	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO);
 }

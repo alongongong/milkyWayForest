@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/grade.css">
 </head> 
 <body>
+
 <form id="gradeBenefitForm" name="gradeBenefitForm">
 	<div id="container">
 		
@@ -23,8 +24,9 @@
 	<h3 class="grade_text2"><strong>회원 등급별 혜택</strong></h3>
 	
 	<div class="second_block">
+	
 		<div class="one">
-			<img src="/milkyWayForest/image/welcome.PNG" alt="welcome" width="100%">
+			<img src="/milkyWayForest/image/welcome.png" alt="welcome" width="100%">
 			<p class="welcome_text">
 			1
 			</p>

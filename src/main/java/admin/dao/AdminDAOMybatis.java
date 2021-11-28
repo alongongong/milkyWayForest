@@ -83,4 +83,9 @@ public class AdminDAOMybatis implements AdminDAO {
 	public List<MemberDTO> getMemberList(Map<String, Integer> map) {
 		return sqlSession.selectList("adminSQL.getMemberList", map);
 	}
+
+	@Override
+	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO) {
+		return sqlSession.insert("adminSQL.qnaCommentInsert", qnaBoardDTO);
+	}
 }
