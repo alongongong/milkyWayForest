@@ -26,7 +26,7 @@
 	<div class="second_block">
 	
 		<div class="one">
-			<img src="/milkyWayForest/image/welcome.PNG" alt="welcome" width="100%">
+			<img src="/milkyWayForest/image/welcome.png" alt="welcome" width="100%">
 			<p class="welcome_text">
 			1
 			</p>
