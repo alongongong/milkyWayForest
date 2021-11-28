@@ -3,6 +3,9 @@
     
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/writeAgreeForm.css">
 <form action="" id="writeAgreeForm">
+	<ul id="simpleWrite">
+		<li><input type="button" id="kakaoWriteBtn" value="카카오 회원가입"></li>
+	</ul>
 	<ul class="writeAgreeBox">
 		<li class="writeAgreeCheckBox check01">
 			<div>

@@ -95,7 +95,7 @@
 				</ul><!-- 로그인 -->
 				
 				<ul id="myPage">
-					<li><a href="/milkyWayForest/mypage">마이페이지</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMain">마이페이지</a></li>
 					
 					<li><a href="">주문/배송정보</a></li>
 					<li><a href="">주문 내역</a></li>

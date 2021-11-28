@@ -93,6 +93,24 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	public List<ShoppingDTO> getShoppingList() {
 		return shoppingService.getShoppingList(); 
 	}
-
+	
+	@PostMapping(value="/shopping/getShoppingList2")
+	@ResponseBody
+	public List<ShoppingDTO> getShoppingList2() {
+		return shoppingService.getShoppingList2(); 
+	}
+	
+	@PostMapping(value="/shopping/getBeanNTeaList")
+	@ResponseBody
+	public List<ShoppingDTO> getBeanNTeaList() {
+		return shoppingService.getBeanNTeaList(); 
+	}
+	
+	@PostMapping(value="/shopping/getBeanNTeaList2")
+	@ResponseBody
+	public List<ShoppingDTO> getBeanNTeaList2() {
+		return shoppingService.getBeanNTeaList2(); 
+	}
+	
 	
 }

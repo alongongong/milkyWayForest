@@ -4,6 +4,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shoppingSQL">
 	
+	<!-- shopping.jsp 목록  -->
 	<select id="getShoppingList" resultType="shopping">
 	(select productName,category,productUnit,PRODUCTIMAGENAME
       from milkyproductinfo 
@@ -24,6 +25,37 @@
 	<!-- TO_NUMBER : 문자를 숫자로 변환 
 		substr(2,3) : 2번째부터 시작해서 3글자를 가져와주세요.
 	-->
-
+	<select id="getShoppingList2" resultType="shopping">
+		(select productName,category,productUnit,PRODUCTIMAGENAME
+    	  from milkyproductinfo 
+    	  join milkyproductimage using(productcode)
+   	      where (to_number(substr(productcode,2,3)) between 1 and 4)
+     	  and category= '머그' and substr(PRODUCTIMAGENAME, 6,1)='1' )
+	     union
+	    (select productName,category,productUnit,PRODUCTIMAGENAME
+	      from milkyproductinfo 
+	      join milkyproductimage using(productcode)
+	      where (to_number(substr(productcode,2,3)) between 1 and 4)
+	      and category= '플라스틱 텀블러' and substr(PRODUCTIMAGENAME, 6,1)='1')
+	
+	</select>
+	
+	<!-- beanNTea.jsp 목록  -->
+	<select id="getBeanNTeaList" resultType="shopping">
+		select productName,category,productUnit,PRODUCTIMAGENAME
+    	  from milkyproductinfo 
+    	  join milkyproductimage using(productcode)
+   	      where (to_number(substr(productcode,2,3)) between 1 and 8)
+     	  and category= '원두' 
+	 </select>
+	
+	<select id="getBeanNTeaList2" resultType="shopping">
+		select productName,category,productUnit,PRODUCTIMAGENAME
+    	  from milkyproductinfo 
+    	  join milkyproductimage using(productcode)
+   	      where (to_number(substr(productcode,2,3)) between 1 and 7)
+     	  and category= '티' 
+	 </select>
+	
 
 </mapper>

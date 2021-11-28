@@ -19,6 +19,21 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 		return sqlSession.selectList("shoppingSQL.getShoppingList");
 	}
 
+	@Override
+	public List<ShoppingDTO> getShoppingList2() {
+		return sqlSession.selectList("shoppingSQL.getShoppingList2");
+	}
+
+	@Override
+	public List<ShoppingDTO> getBeanNTeaList() {
+		return sqlSession.selectList("shoppingSQL.getBeanNTeaList");
+	}
+
+	@Override
+	public List<ShoppingDTO> getBeanNTeaList2() {
+		return sqlSession.selectList("shoppingSQL.getBeanNTeaList2");
+	}
+
 	
 
 }

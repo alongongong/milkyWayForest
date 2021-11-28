@@ -22,7 +22,7 @@
       <li id="blankSpace"></li>
       <li class="blankLi">
         <div class="labelName">
-          <p>ID</p>
+          <p>＊ ID</p>
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteId" name="id" placeholder="ID">
@@ -32,7 +32,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>비밀번호</p>
+          <p>＊ 비밀번호</p>
         </div>
         <div class="writeInputText">
           <input type="password" id="memberWritePwd" name="pwd" placeholder="비밀번호">
@@ -41,7 +41,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>비밀번호 확인</p>
+          <p>＊ 비밀번호 확인</p>
         </div>
         <div class="writeInputText">
           <input type="password" id="memberWriteRePwd" placeholder="비밀번호 확인">
@@ -50,7 +50,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>이름</p>
+          <p>＊ 이름</p>
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteName" name="name">
@@ -59,7 +59,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>닉네임</p>
+          <p>＊ 닉네임</p>
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteNick" name="nickname">
@@ -128,7 +128,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>이메일 주소</p>
+          <p>＊ 이메일 주소</p>
         </div>
         <div class="writeInputText">
           	<input type="text" id="memberWriteEmail" name="email1">
@@ -155,7 +155,7 @@
       </li>
       <li style="height:160px;">
         <div align="center">
-          <input type="button" id="memberWriteBtn" value="회원가입" disabled="disabled">
+          <input type="button" id="memberWriteBtn" value="회원가입">
           <input type="reset" id="memberWriteReset" value="취소">
         </div>
       </li>

@@ -23,6 +23,8 @@
 	
 	<context:component-scan base-package="member.service" />
 	
+	<context:component-scan base-package="mypage.service" />
+	
 	
 	
 	<context:component-scan base-package="product.dao" />
@@ -38,5 +40,7 @@
 	<context:component-scan base-package="paging" />
 
 	<context:component-scan base-package="member.dao" />
+	
+	<context:component-scan base-package="mypage.dao" />
 
 </beans>

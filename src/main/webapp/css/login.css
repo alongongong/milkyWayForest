@@ -11,30 +11,35 @@
 	flex-direction:column;
 	align-items:center;
 }
-#loginForm #login-input-wrap, #loginForm #easy-login-wrap{
+#loginForm #login-input-wrap, 
+#loginForm #easy-login-wrap{
 	padding-top: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#loginForm #login-input-wrap h2, #loginForm #easy-login-wrap h2{
+#loginForm #login-input-wrap h2, 
+#loginForm #easy-login-wrap h2{
 	font-size: 20px;
 }
-#loginForm #id-input-wrap, #pwd-input-wrap{
+#loginForm #id-input-wrap, 
+#loginForm #pwd-input-wrap{
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
 	margin-top: 13px;
 }
-#loginForm #id-input-wrap input, #pwd-input-wrap input{
+#loginForm #id-input-wrap input, 
+#loginForm #pwd-input-wrap input{
 	border: none;
     width: 454px;
     font-size: 14px;
     padding-left: 10px;
     height: 45px;
 }
-#loginForm #id-input-wrap input:focus, #pwd-input-wrap input:focus{
+#loginForm #id-input-wrap input:focus, 
+#loginForm #pwd-input-wrap input:focus{
 	outline: none;
 }
 #loginForm #result-div{
@@ -117,7 +122,9 @@
 #findIdForm #findId-select-wrap h2{
 	font-size: 20px;
 }
-#findIdForm #findId-select-wrap p, #findIdForm #findId-question-wrap p, #findIdForm #findId-email-wrap p{
+#findIdForm #findId-select-wrap p, 
+#findIdForm #findId-question-wrap p, 
+#findIdForm #findId-email-wrap p{
 	font-size: 15px;
 	margin-top: 1em;
 }
@@ -140,9 +147,9 @@
 	font-size: 15px;
 }
 
-#findIdForm #findId-question-wrap, #findIdForm #findId-email-wrap{
+#findIdForm #findId-question-wrap, 
+#findIdForm #findId-email-wrap{
 	padding-top: 60px;
-	/* display: flex; */
 	flex-direction: column;
 	align-items: center;
 }
@@ -164,13 +171,16 @@
 	padding: 5px 0;
 	margin-bottom: 13px;
 }
-#findIdForm #findId-question-input-wrap, #findIdForm #findId-email-input-wrap, #check-email-input-wrap{
+#findIdForm #findId-question-input-wrap, 
+#findIdForm #findId-email-input-wrap, 
+#findIdForm #check-email-input-wrap{
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
 }
-#findIdForm #findId-question-input-wrap input, #findIdForm #check-email-input-wrap input{
+#findIdForm #findId-question-input-wrap input, 
+#findIdForm #check-email-input-wrap input{
 	border: none;
     width: 454px;
     font-size: 14px;
@@ -191,11 +201,15 @@
 	float: left;
 	padding-top: 10px;
 }
-#findIdForm #findId-question-input-wrap input:focus, #findIdForm #findId-email-input-wrap input:focus, #findIdForm #check-email-input-wrap input:focus{
+#findIdForm #findId-question-input-wrap input:focus, 
+#findIdForm #findId-email-input-wrap input:focus, 
+#findIdForm #check-email-input-wrap input:focus{
 	outline: none;
 }
 
-#findIdForm #result1-div, #findIdForm #result2-div, #findIdForm #result3-div{
+#findIdForm #result1-div, 
+#findIdForm #result2-div, 
+#findIdForm #result3-div{
 	padding-top: 10px;
     font-size: 12px;
     color: red;
@@ -203,7 +217,9 @@
 	height :10px;
 }
 
-#findIdForm #check-email-button-wrap button, #findIdForm #check-number-button-wrap button, #findIdForm #findId-button-wrap button{
+#findIdForm #check-email-button-wrap button, 
+#findIdForm #check-number-button-wrap button, 
+#findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
@@ -260,44 +276,63 @@
 }
 
 /*********************** 비밀번호 찾기 창 ************************/
-#findPwdForm1 #main-container, #findPwdForm2 #main-container, #findPwdForm3 #main-container{
+#findPwdForm1 #main-container, 
+#findPwdForm2 #main-container, 
+#findPwdForm3 #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 }
-#findPwdForm1 section, #findPwdForm2 section, #findPwdForm3 section{
+#findPwdForm1 section, 
+#findPwdForm2 section, 
+#findPwdForm3 section{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#findPwdForm1 section h2, #findPwdForm2 section h2, #findPwdForm3 section h2{
+#findPwdForm1 section h2, 
+#findPwdForm2 section h2, 
+#findPwdForm3 section h2{
 	font-size: 20px;
 }
-#findPwdForm1 #findPwd-input-wrap, #findPwdForm2 #findPwd-input-wrap,#findPwdForm3 #findPwd-setting-wrap{
+#findPwdForm1 #findPwd-input-wrap, 
+#findPwdForm2 #findPwd-input-wrap,
+#findPwdForm3 #findPwd-setting-wrap{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
 }
-#findPwdForm1 #findPwd-input-wrap p, #findPwdForm2 #findPwd-input-wrap p, #findPwdForm3 #findPwd-setting-wrap p{
+#findPwdForm1 #findPwd-input-wrap p, 
+#findPwdForm2 #findPwd-input-wrap p, 
+#findPwdForm3 #findPwd-setting-wrap p{
 	font-size: 15px;
 	margin-top: 13px;
 }
-#findPwdForm1 #findPwd-id-input-wrap, #findPwdForm2 #findPwd-email-input-wrap, #findPwdForm2 #check-number-input-wrap,
-#findPwdForm3 #findPwd-pwd-input-wrap, #findPwdForm3 #findPwd-repwd-input-wrap {
+#findPwdForm1 #findPwd-id-input-wrap, 
+#findPwdForm2 #findPwd-email-input-wrap, 
+#findPwdForm2 #check-number-input-wrap,
+#findPwdForm3 #findPwd-pwd-input-wrap, 
+#findPwdForm3 #findPwd-repwd-input-wrap {
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
 	background: white;
 }
-#findPwdForm1 #findPwd-id-input-wrap, #findPwdForm2 #findPwd-email-input-wrap, #findPwdForm2 #check-number-input-wrap, #findPwdForm3 #findPwd-pwd-input-wrap, #findPwdForm3 #findPwd-repwd-input-wrap{
+#findPwdForm1 #findPwd-id-input-wrap, 
+#findPwdForm2 #findPwd-email-input-wrap, 
+#findPwdForm2 #check-number-input-wrap, 
+#findPwdForm3 #findPwd-pwd-input-wrap, 
+#findPwdForm3 #findPwd-repwd-input-wrap{
 	margin-bottom: 10px;	
 }
 
-#findPwdForm1 #findPwd-id-input-wrap input, #findPwdForm2 #check-number-input-wrap input,
-#findPwdForm3 #findPwd-pwd-input-wrap input, #findPwdForm3 #findPwd-repwd-input-wrap input{
+#findPwdForm1 #findPwd-id-input-wrap input, 
+#findPwdForm2 #check-number-input-wrap input,
+#findPwdForm3 #findPwd-pwd-input-wrap input, 
+#findPwdForm3 #findPwd-repwd-input-wrap input{
 	border: none;
     width: 454px;
     font-size: 14px;
@@ -319,11 +354,16 @@
 	padding-top: 10px;
 }
 
-#findPwdForm1 #findPwd-id-input-wrap input:focus, #findPwdForm2 #findPwd-email-input-wrap input:focus, #findPwdForm2 #check-number-input-wrap input:focus,
-#findPwdForm3 #findPwd-pwd-input-wrap input:focus, #findPwdForm3 #findPwd-repwd-input-wrap input:focus{
+#findPwdForm1 #findPwd-id-input-wrap input:focus, 
+#findPwdForm2 #findPwd-email-input-wrap input:focus, 
+#findPwdForm2 #check-number-input-wrap input:focus,
+#findPwdForm3 #findPwd-pwd-input-wrap input:focus, 
+#findPwdForm3 #findPwd-repwd-input-wrap input:focus{
 	outline: none;
 }
-#findPwdForm1 #result-div, #findPwdForm2 #result-div, #findPwdForm3 #result-div{
+#findPwdForm1 #result-div, 
+#findPwdForm2 #result-div, 
+#findPwdForm3 #result-div{
 	padding-top: 10px;
     font-size: 12px;
     color: red;
@@ -331,10 +371,16 @@
 	height :10px;
 }
 
-#findPwdForm1 #check-id-button-wrap, #findPwdForm2 #check-email-button-wrap, #findPwdForm2 #check-number-button-wrap, #findPwdForm3 #findPwd-button-wrap {
+#findPwdForm1 #check-id-button-wrap, 
+#findPwdForm2 #check-email-button-wrap, 
+#findPwdForm2 #check-number-button-wrap, 
+#findPwdForm3 #findPwd-button-wrap {
 	/* padding: 13px 0; */
 }
-#findPwdForm1 #check-id-button-wrap button, #findPwdForm2 #check-email-button-wrap button, #findPwdForm2 #check-number-button-wrap button, #findPwdForm3 #findPwd-button-wrap button{
+#findPwdForm1 #check-id-button-wrap button, 
+#findPwdForm2 #check-email-button-wrap button, 
+#findPwdForm2 #check-number-button-wrap button, 
+#findPwdForm3 #findPwd-button-wrap button{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
