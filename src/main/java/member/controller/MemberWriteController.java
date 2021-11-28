@@ -5,6 +5,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,8 @@ public class MemberWriteController {
 	private MemberWriteService memberWriteService;
 	@Autowired
 	private JavaMailSender mailSender;
+	@Autowired
+	private BCryptPasswordEncoder bcryptPasswordEncoder;
 
 	@GetMapping(value="/memberAgree")
 	public String writeAgreeForm(Model model) {
@@ -96,9 +99,14 @@ public class MemberWriteController {
 		else
 			return memberDTO2.getId();
 	}
+	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	@ResponseBody
 	public void write(@ModelAttribute MemberDTO memberDTO) {
+		System.out.println("암호화 되기 전 : " + memberDTO.getPwd());
+		memberDTO.setPwd(bcryptPasswordEncoder.encode(memberDTO.getPwd()));
+		System.out.println("암호화 됟ㄴ 후 : " + memberDTO.getPwd());
 		memberWriteService.write(memberDTO);
 	}
+	
 }

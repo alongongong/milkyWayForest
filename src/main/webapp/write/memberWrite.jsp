@@ -155,7 +155,7 @@
       </li>
       <li style="height:160px;">
         <div align="center">
-          <input type="button" id="memberWriteBtn" value="회원가입" disabled="disabled">
+          <input type="button" id="memberWriteBtn" value="회원가입">
           <input type="reset" id="memberWriteReset" value="취소">
         </div>
       </li>

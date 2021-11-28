@@ -50,13 +50,16 @@
 	<br><br><br>
 
 <div id="beanNTeaMenuDiv">원두 / 차</div>
-<div id="div">
+<div id="menuImgDiv1">
 
 </div>
 
 <br><br><br>
 
 <div id="productMenuDiv">상품</div>
+<div id="menuImgDiv2">
+
+</div>
 <br><br><br>
 
 </form>
@@ -69,22 +72,33 @@ $(function(){
 		dataType: 'json',
 		success : function(data) {
 	
-			
-		 alert(JSON.stringify(data));
+		// alert(JSON.stringify(data));
 
 			$.each(data, function(index,items) {
-				$('<div>').append($('<img>', {
-					src: "/milkyWayForest/productImage/"+items.productImageName,
-					width: '100%'
+				$('<div>') .append($('<div>', {
+					width: '300px',
+					height: '300px',
+					position: 'relative'
 					
+				}).append($('<img>', {
+					src: "/milkyWayForest/productImage/"+items.productImageName,
+					position: 'absolute',
+					width: '100%',
+					height: '100%'
+					
+				})))
+				.append($('<div>',{
+					width: '50%',
+					align: 'center',
+					
+					text : items.productName 
 				}))
 				.append($('<div>',{
-					width: 100,
-					align: 'center',
-					text : items.productName + items.productUnit
+					width: '50%',
+					text : items.productUnit
 				}))
-				
-				.appendTo($('#div'));
+			
+				.appendTo($('#menuImgDiv1'));
 			});
 			
 		},
@@ -92,6 +106,45 @@ $(function(){
 			console.log(err);
 		}
 	});	
+});
+
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/shopping/getShoppingList2',  
+		type: 'post',
+		dataType: 'json',
+		success : function(data) {
+			alert(JSON.stringify(data));
+	
+			$.each(data, function(index,items) {
+				$('<div>').append($('<div>', {
+					width: '400px',
+					height: '400px',
+					position: 'relative'
+					
+				}).append($('<img>', {
+					src: "/milkyWayForest/productImage/"+items.productImageName,
+					position: 'absolute',
+					width: '100%',
+					height: '100%'
+					
+				})))
+				.append($('<div>',{
+					width: '100',
+					align: 'center',
+					text : items.productName + items.productUnit
+				}))
+				
+				
+				.appendTo($('#menuImgDiv2'));
+			});
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+	
 });
 </script>
 

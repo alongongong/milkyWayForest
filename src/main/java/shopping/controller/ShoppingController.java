@@ -93,6 +93,12 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	public List<ShoppingDTO> getShoppingList() {
 		return shoppingService.getShoppingList(); 
 	}
+	
+	@PostMapping(value="/shopping/getShoppingList2")
+	@ResponseBody
+	public List<ShoppingDTO> getShoppingList2() {
+		return shoppingService.getShoppingList2(); 
+	}
 
 	
 }

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+#mypageMain #main-wrapper {
+	display: grid;
+	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
+	grid-template-columns: 250px 400px 400px;
+	/* grid-template-columns: repeat(3, minmax(250px, auto)); 열(column)의 배치, repeat(반복횟수, 반복값) */
+	row-gap: 10px;
+	column-gap: 20px;
+	align-items: stretch; /* 세로 방향 정렬 */
+	justify-items: stretch; /* 가로 방향 정렬 */
+	align-content: stretch; /* 아이템 그룹 세로 정렬 */
+	justify-content: stretch; /* 아이템 그룹 가로 정렬 */
+}
+#mypageMain #main-nav {
+	grid-column: 1; /* end를 생략하면 한 칸 */
+	grid-row: 1 / 4;
+	width: 250px;
+}
+#mypageMain #myInfoBox-wrapper{
+	grid-column: 2;
+	grid-row: 1;
+	position: relative;
+	width: 400px;
+}
+#mypageMain #myInfoPhoto{
+	float: left;
+}
+#mypageMain #myInfoPhoto img{
+	margin: 50px 10px;
+}
+#mypageMain #myInfoDescript{
+	width: 330px;
+	position: absolute;
+	left: 100px;
+	padding-top: 25px;
+    padding-left: 5px;
+}
+
+#mypageMain #myBenefit-wrapper{
+	grid-column: 3;
+	grid-row: 1;
+}
+#mypageMain #myShipment-wrapper{
+	grid-column: 2 / span 2;
+	grid-row: 2;
+}
+#mypageMain #myPayment-wrapper{
+	grid-column: 2 / span 2;
+	grid-row: 3;
+}
