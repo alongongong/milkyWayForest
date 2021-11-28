@@ -23,6 +23,16 @@ public class ShoppingServiceImpl implements ShoppingService {
 		return shoppingDAO.getShoppingList2();
 	}
 
+	@Override
+	public List<ShoppingDTO> getBeanNTeaList() {
+		return shoppingDAO.getBeanNTeaList();
+	}
+
+	@Override
+	public List<ShoppingDTO> getBeanNTeaList2() {
+		return shoppingDAO.getBeanNTeaList2();
+	}
+
 	
 
 }
