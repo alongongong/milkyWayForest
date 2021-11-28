@@ -103,9 +103,7 @@ public class MemberWriteController {
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	@ResponseBody
 	public void write(@ModelAttribute MemberDTO memberDTO) {
-		System.out.println("암호화 되기 전 : " + memberDTO.getPwd());
 		memberDTO.setPwd(bcryptPasswordEncoder.encode(memberDTO.getPwd()));
-		System.out.println("암호화 됟ㄴ 후 : " + memberDTO.getPwd());
 		memberWriteService.write(memberDTO);
 	}
 	
