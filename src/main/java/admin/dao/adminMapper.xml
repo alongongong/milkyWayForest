@@ -78,4 +78,8 @@
 		membergrade, savedmoney, writepath, to_char(loginTime,'yyyy-mm-dd') "loginTime", "couponName" from milkymember 
 		join (select id, count(couponname) "couponName" from milkymemberbenefit group by id) using(id)) a) where rn between #{startNum} and #{endNum}
 	</select>
+	
+	<insert id="qnaCommentInsert" parameterType="qnaBoard">
+		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, 'aaa', #{commentContent})
+	</insert>
 </mapper>

@@ -128,4 +128,9 @@ public class AdminServiceImpl implements AdminService {
 		return json;
 	}
 
+	@Override
+	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO) {
+		return adminDAO.qnaCommentInsert(qnaBoardDTO);
+	}
+
 }
