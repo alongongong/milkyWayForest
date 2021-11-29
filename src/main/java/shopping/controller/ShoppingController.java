@@ -89,6 +89,13 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	return "/index";
 	}
 	
+	@GetMapping("/shopping/shoppingDetail")
+	public String shoppingDetail(Model model) {
+		model.addAttribute("display", "/shopping/shoppingDetail.jsp");
+		return "/index";
+		
+	}
+	
 	
 	//shopping.jsp 에이작스
 	@PostMapping(value="/shopping/getShoppingList")
@@ -208,6 +215,14 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	@ResponseBody
 	public List<ShoppingDTO> getCoffeeEtcList() {
 		return shoppingService.getCoffeeEtcList(); 
+	}
+	
+
+	//shoppingDetail.jsp  에이작스
+	@PostMapping(value="/shopping/getShoppingDetail")
+	@ResponseBody
+	public List<ShoppingDTO> getShoppingDetail() {
+		return shoppingService.getShoppingDetail(); 
 	}
 	
 }
