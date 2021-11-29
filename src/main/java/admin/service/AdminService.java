@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 
+import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
-import qnaBoard.bean.QnaBoardDTO;
 
 public interface AdminService {
 
@@ -30,7 +30,9 @@ public interface AdminService {
 
 	public JSONObject getMemberList(int pg);
 
-	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO);
+	public Object qnaCommentInsert(CommentDTO qnaBoardDTO);
+
+	public List<CommentDTO> getQnaCommentContent(int qnaCode);
 
 	
 

@@ -79,7 +79,14 @@
 		join (select id, count(couponname) "couponName" from milkymemberbenefit group by id) using(id)) a) where rn between #{startNum} and #{endNum}
 	</select>
 	
-	<insert id="qnaCommentInsert" parameterType="qnaBoard">
-		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, 'aaa', #{commentContent})
+	<insert id="qnaCommentInsert" parameterType="comment">
+		begin
+		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, 'aaa', #{commentContent});
+		update milkyqna set qnaAnswerCheck='답변 완료' where qnaCode=#{qnaCode};
+		end;
 	</insert>
+	
+	<select id="getQnaCommentContent" parameterType="int" resultType="comment">
+		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
+	</select>
 </mapper>

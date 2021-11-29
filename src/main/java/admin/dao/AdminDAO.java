@@ -3,6 +3,7 @@ package admin.dao;
 import java.util.List;
 import java.util.Map;
 
+import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
 import product.bean.ProductDTO;
@@ -34,5 +35,7 @@ public interface AdminDAO {
 
 	public List<MemberDTO> getMemberList(Map<String, Integer> map);
 
-	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO);
+	public Object qnaCommentInsert(CommentDTO commentDTO);
+
+	public List<CommentDTO> getQnaCommentContent(int qnaCode);
 }

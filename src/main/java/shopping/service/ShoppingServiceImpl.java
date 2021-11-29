@@ -102,6 +102,11 @@ public class ShoppingServiceImpl implements ShoppingService {
 	public List<ShoppingDTO> getCoffeeEtcList() {
 		return shoppingDAO.getCoffeeEtcList();
 	}
+
+	@Override
+	public List<ShoppingDTO> getShoppingDetail() {
+		return shoppingDAO.getShoppingDetail();
+	}
 	
 
 	

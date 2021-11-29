@@ -48,3 +48,88 @@ color: #666; line-height: 1.6; padding-left: 11px;}
     padding-inline-start: 40px;
 }
 #gradeBenefitForm .note_list {}
+
+/* 카드리스트 */
+#gradeBenefitForm #cardList_wrap {
+	width: 78rem;
+	margin: 0 auto;
+}
+#gradeBenefitForm #cardList {
+	display: grid;
+	/* grid-template-columns: 300px 300px 300px 300px;
+	grid-template-rows: 300px 300px 300px 300px; */
+	grid-template-columns: repeat(4, minmax(300px, auto));
+	grid-template-rows: repeat(4, minmax(300px, auto));
+	grid-column-gap: 2%;
+
+}
+#gradeBenefitForm #cardList #1 {
+	grid-column: 1;
+	grid-row: 1;
+	background:#FFFFFF;
+}
+#gradeBenefitForm #cardList #2 {
+	grid-column: 2;
+	grid-row: 1;
+	background:#FFFFFF;
+}
+#gradeBenefitForm #cardList #3 {
+	grid-column: 3;
+	grid-row: 1;
+	background:#FFFFFF;
+}
+#gradeBenefitForm #cardList #4 {
+	grid-column: 4;
+	grid-row: 1;
+	background:#FFFFFF;
+}
+#gradeBenefitForm #cardList #5 {
+	grid-column: 1;
+	grid-row: 2;
+	background:#FFFFFF;
+}
+#gradeBenefitForm #cardList #6 {
+	grid-column: 2;
+	grid-row: 2;
+	background-color: #FFFFFF;
+}
+#gradeBenefitForm #cardList #7 {
+	grid-column: 3;
+	grid-row: 2;
+	background-color: #FFFFFF;
+}
+#gradeBenefitForm #cardList #8 {
+	grid-column: 4;
+	grid-row: 2;
+	background-color: #FFFFFF;
+}
+#gradeBenefitForm #cardList #9 {
+	grid-column: 1;
+	grid-row: 3;
+	background-color: #FFFFFF;
+}
+#gradeBenefitForm #cardList #10 {
+	grid-column: 2;
+	grid-row: 3;
+	background-color: #FFFFFF;
+}
+#gradeBenefitForm #cardList #11 {
+	grid-column: 3;
+	grid-row: 3;
+	background-color: white;
+}
+#gradeBenefitForm #cardList #12 {
+	grid-column: 4;
+	grid-row: 3;
+	background-color: white;
+}
+#gradeBenefitForm #cardList #13 {
+	grid-column: 1;
+	grid-row: 4;
+	background-color: white;
+}
+#gradeBenefitForm #cardList #14 {
+	grid-column: 2;
+	grid-row: 4;
+	background-color: white;
+}
