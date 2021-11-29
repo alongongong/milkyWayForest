@@ -41,4 +41,6 @@ public interface ShoppingDAO {
 	public List<ShoppingDTO> getThermosList();
 
 	public List<ShoppingDTO> getCoffeeEtcList();
+
+	public List<ShoppingDTO> getShoppingDetail();
 }

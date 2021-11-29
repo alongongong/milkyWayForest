@@ -14,5 +14,8 @@ public class ShoppingDTO {
 	private int sellCount;
 	private int wishCount;
 	private String productImageName;
+	private String productEngName;
+	private String productSmallInfo;
+	private String productDetailInfo;
 	
 }
