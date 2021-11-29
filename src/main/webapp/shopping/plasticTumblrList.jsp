@@ -34,17 +34,58 @@
 			</div>
 		
 			<div id="plasticTumblrMenuDiv">플라스틱 텀블러</div>
-			
 			<!-- 상품배열 -->
-			<div class="listDiv">
-				<ul class="productList1">
-					<li><a href="#"><img></a></li>
-					<li><a href="#">상품이름</a></li>
-					<li><a href="#">가격</a></li>
-				</ul>
-			</div>
+				<div id="menuImgDiv1">
+					<!-- 에이작스로 목록불러오기 -->
+				</div>
 		
 	</section>
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/shopping/getPlasticTumblrList',  
+		type: 'post',
+		dataType: 'json',
+		success : function(data) {
+	
+		// alert(JSON.stringify(data));
+
+			$.each(data, function(index,items) {
+				$('<div>') .append($('<div>', {
+					width: '300px',
+					height: '300px',
+					position: 'relative'
+					
+				}).append($('<img>', {
+					src: "/milkyWayForest/productImage/"+items.productImageName,
+					position: 'absolute',
+					width: '100%',
+					height: '100%'
+					
+				})))
+				.append($('<div>',{
+					width: '50%',
+					align: 'center',
+					
+					text : items.productName 
+				}))
+				.append($('<div>',{
+					width: '50%',
+					text : items.productUnit
+				}))
+			
+				.appendTo($('#menuImgDiv1'));
+			});
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+});
+
+</script>
 </body>
 </html>

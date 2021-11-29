@@ -88,6 +88,23 @@
 	visibility: visible;
 }
 
+#pQnaBoardTable .commentContent {
+	background: #ddd;
+	height: 80px;
+	margin: 5px auto;
+	width: 87%;
+	border-radius: 7px;
+	padding: 10px 15px;
+}
+
+#pQnaBoardTable .commentUpdateBtn, #pQnaBoardTable .commentDeleteBtn {
+	font-size: 9pt;
+	padding: 5px;
+	color: blue;
+	background: none;
+	margin: 0;
+}
+
 /* 물류관리 */
 #pStockDiv #pStockTable input {
 	border: 0;

@@ -32,3 +32,59 @@ $(function(){
 
 });
 
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/shopping/getShoppingDetail',  
+		type: 'post',
+		dataType: 'json',
+		success : function(data) {
+			console.log(JSON.stringify(data));
+			
+			$.each(data, function(index,items) {
+				$('<tr>')
+				.append($('<td>', {
+					colspan: '2',
+					text: items.productName,
+					id: 'productKorName'
+				
+				}))
+				.append($('<tr>')
+				.append($('<td>' , {
+					colspan: '2',
+					text: items.productEngName,
+					id: 'productEngName'
+				
+				})))
+				
+				.append($('<tr>')
+				.append($('<td>' , {
+					colspan: '2',
+					text: items.productSmallInfo,
+				})))
+				
+				.append($('<tr>')
+				.append($('<td>' , {
+					text: 가격,
+				}))
+				.append($('<td>' , {
+					text: items.productUnit,
+					class: price
+				
+				})))
+			
+			});
+			
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+});
+
+
+
+
+
+
+

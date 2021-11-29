@@ -3,7 +3,7 @@
 <form id="pReviewBoardForm">
 <div class="card" id="pReviewBoardDiv">
   <div class="card-header">
-    <h4 class="card-title"> 주문 확인 / 발송 관리</h4>
+    <h4 class="card-title"> 상품 리뷰 관리</h4>
 	<div id="stockSearch">
 		
 	</div>

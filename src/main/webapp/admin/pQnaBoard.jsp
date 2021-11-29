@@ -80,7 +80,11 @@ $(function(){
 					colspan: '6',
 					style: 'padding: 10px 10px 20px 10px;',
 					class: 'pQnaContent'
-				}).append($('<textarea>',{
+				}).append($('<div>',{
+					id: 'commentDiv'+index,
+					align: 'left',
+					background: '#ccc'
+				})).append($('<textarea>',{
 					type: 'text',
 					id: 'qnaComment'+index,
 					style: 'width: 80%; margin: 5px; height: 60px; vertical-align: middle'
@@ -90,9 +94,43 @@ $(function(){
 					class: 'btn qnaCommentBtn',
 					id: 'commentInsertBtn'+index,
 					style: 'height: 60px;'
-				})).append($('<div>',{
-					id: 'commentDiv'+index
 				}))).appendTo($('#pQnaBoardTable tbody'));
+				
+				
+				$.ajax({
+					url: '/milkyWayForest/admin/getQnaCommentContent',
+					type: 'post',
+					data: 'qnaCode='+items.qnaCode,
+					success: function(data) {
+						
+						$.each(data, function(index1, items){
+							console.log(index+" "+ index1+" "+items.commentContent)
+							$('#commentDiv'+index).append($('<p>',{
+								class: 'commentContent'
+							}).append($('<span>', {
+								text: items.id,
+								style: 'margin: 0 10px;'
+							})).append($('<input>',{
+								type: 'button',
+								value: '수정',
+								id: 'commentUpdataBtn'+index,
+								class: 'btn commentUpdateBtn'
+							})).append($('<input>',{
+								type: 'button',
+								value: '삭제',
+								id: 'commentDeleteBtn'+index,
+								class: 'btn commentDeleteBtn'
+							})).append($('<p>', {
+								text: items.commentContent
+							})));
+						});
+						
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+				
 				
 				$('#commentInsertBtn'+index).click(function(){
 					if($('#qnaComment'+index).val() == ''){
@@ -105,9 +143,11 @@ $(function(){
 							success: function(data){
 								alert('작성완료');
 								$('<p>',{
-									text: $('#qnaComment'+index).val()
+									text: $('#qnaComment'+index).val(),
+									class: 'commentContent'
 								}).appendTo($('#commentDiv'+index));
 								$('#qnaComment'+index).empty();
+
 								
 							},
 							error: function(err){
@@ -126,6 +166,7 @@ $(function(){
 			console.log(err);
 		}
 	});
+	
 });
 
 function boardPaging(page){
