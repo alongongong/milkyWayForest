@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
 import product.bean.ProductDTO;
@@ -85,7 +86,12 @@ public class AdminDAOMybatis implements AdminDAO {
 	}
 
 	@Override
-	public Object qnaCommentInsert(QnaBoardDTO qnaBoardDTO) {
-		return sqlSession.insert("adminSQL.qnaCommentInsert", qnaBoardDTO);
+	public Object qnaCommentInsert(CommentDTO commentDTO) {
+		return sqlSession.insert("adminSQL.qnaCommentInsert", commentDTO);
+	}
+
+	@Override
+	public List<CommentDTO> getQnaCommentContent(int qnaCode) {
+		return sqlSession.selectList("adminSQL.getQnaCommentContent", qnaCode);
 	}
 }
