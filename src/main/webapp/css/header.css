@@ -17,7 +17,7 @@ header > div { position: relative; width: 78rem; margin: 0 auto; padding: 1rem 0
 header > div:after { content: ""; display: block; clear: both; }
 
 /* 로고 */
-header > div h1 { float: left; padding: 1rem 0 0.1rems; margin: auto 0; }
+header > div h1 { float: left; padding: 1.5rem 0 0.1rems; margin: auto 0; }
 
 /*header 하단메뉴*/
 header > div .menu { font-size: .7rem; float: right; padding: 4rem 0 0; }
