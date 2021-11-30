@@ -1,6 +1,7 @@
 package mypage.controller;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -109,6 +110,38 @@ public class MypageController {
         
         return num;
     }
+	
+	//회원정보 수정
+	@PostMapping(value="/mypageMyInfoUpdate")
+	@ResponseBody
+	public void mypageMyInfoUpdate(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+		//비밀번호 암호화
+		memberDTO.setPwd(passwordEncoder.encode(memberDTO.getPwd()));
+		
+		//선택정보 값
+		if(memberDTO.getIdPwdQuestion() != "false" && memberDTO.getIdPwdAnswer() != "") {
+			
+		}else {	
+			memberDTO.setIdPwdQuestion("false");
+			memberDTO.setIdPwdAnswer("false");
+//		}else if(memberDTO.getIdPwdAnswer()=="") {
+//			memberDTO.setIdPwdQuestion("false");
+//			memberDTO.setIdPwdAnswer("false");
+		}
+		
+//		System.out.println(memberDTO.getId()); //세션 아이디값 null로 들어오는 거 ??
+//		System.out.println(memberDTO.getNickname());
+//		System.out.println(memberDTO.getPwd());
+//		System.out.println(memberDTO.getTel1());
+//		System.out.println(memberDTO.getEmail1());
+		System.out.println(memberDTO.getIdPwdQuestion());
+		System.out.println(memberDTO.getIdPwdAnswer());
+//		System.out.println(session.getAttribute("memId"));
+		
+//		memberDTO.setId((String) session.getAttribute("memId"));
+		
+		mypageService.mypageMyInfoUpdate(memberDTO);
+	}
 	
 
 }

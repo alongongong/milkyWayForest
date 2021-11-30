@@ -5,7 +5,9 @@
   <div class="card-header">
     <h4 class="card-title"> 상품 리스트</h4>
 	<div id="productSearch">
-		
+		<ul id="updateInfo">
+			<li>상품이름, 영어이름, 옵션, 상품가, 할인율을 입력하면 수정하기 버튼이 나타납니다.</li>
+		</ul>
 	</div>
   </div>
   <div class="card-body">
@@ -118,18 +120,20 @@ $(function(){
 					});
 				});
 				$('#deleteBtn'+index).click(function(){
-					$.ajax({
-						url: '/milkyWayForest/admin/productDelete',
-						type: 'post',
-						data: 'productCode='+$('#productCode'+index).text(),
-						success: function(data) {
-							alert('삭제되었습니다.');
-							location.href='/milkyWayForest/admin/productList?dataNum=4';
-						},
-						error: function(err) {
-							console.log(err);
-						}
-					});
+					if(confirm('정말 삭제하시겠습니까?')) {
+						$.ajax({
+							url: '/milkyWayForest/admin/productDelete',
+							type: 'post',
+							data: 'productCode='+$('#productCode'+index).text(),
+							success: function(data) {
+								alert('삭제되었습니다.');
+								location.href='/milkyWayForest/admin/productList?dataNum=4';
+							},
+							error: function(err) {
+								console.log(err);
+							}
+						});
+					}
 				});
 				
 			});

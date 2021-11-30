@@ -143,9 +143,11 @@
 #mypageMyInfo #myBasicInfo-wrapper{
 	grid-column: 2;
 	grid-row: 2;
-	width: 840px;
-	padding-left: 15px;
+	width: 820px;
 	margin-top: 60px;
+}
+#mypageMyInfo #myBasicInfo-state table tbody tr:first-child #td-id {
+	width: 200px;
 }
 #mypageMyInfo #myBasicInfo-state #pwd,
 #mypageMyInfo #myBasicInfo-state #repwd,
@@ -153,7 +155,7 @@
 	width: 200px;
 }
 #mypageMyInfo #myBasicInfo-state #idPwdQuestion-wrapper {
-	width: 650px;
+	width: 600px;
 }
 
 #mypageMyInfo #myBasicInfo-state #tel-input-wrapper,
@@ -162,10 +164,17 @@
 }
 #mypageMyInfo #main-wrapper #myBasicInfo-wrapper #myBasicInfo-state #email-number-wrapper #emailNum {
 	width: 200px;
-	flex: 0 1 auto;
+	flex: 0 1 auto; /* flex-basis값보다 커지지 않고, 컨테이너 공간이 모자라면 크기가 줄고, flex 항목은 주축 방향으로 지정된 크기 또는 자기 내부 요소 크기 만큼 공간을 차지*/
 }
 
 #mypageMyInfo #myBasicInfo-state #email-input-wrapper #email-send-button,
 #mypageMyInfo #myBasicInfo-state #email-number-wrapper #email-number-button {
 	margin-left: 10px;
+}
+#mypageMyInfo #result-div{
+	padding-top: 10px;
+    font-size: 12px;
+    color: red;
+	width: 465px;
+	height :10px;
 }

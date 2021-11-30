@@ -68,7 +68,11 @@
 	height: 25px;
 	padding: 0;
 }
-
+#productSearch #updateInfo {
+	padding: 50px;
+	margin: 5px;
+	background: #ddd;
+}
 
 /* 문의 게시판 */
 #pQnaBoardDiv #pQnaBoardTable th, #pQnaBoardDiv #pQnaBoardTable td {

@@ -60,7 +60,7 @@
 				</div>
 
 				<div id="check-number-button-wrap">
-					<button type="button" id="check-number-button">인증번호 확인</button>
+					<button type="button" id="check-number-button" disabled="disabled">인증번호 확인</button>
 				</div>
 				<div id="result2-div"></div>
 			</div>

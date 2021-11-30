@@ -6,6 +6,7 @@ import java.util.Map;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
+import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -38,4 +39,6 @@ public interface AdminDAO {
 	public Object qnaCommentInsert(CommentDTO commentDTO);
 
 	public List<CommentDTO> getQnaCommentContent(int qnaCode);
+
+	public List<PaymentDTO> getDailyOrder();
 }

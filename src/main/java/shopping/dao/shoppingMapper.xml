@@ -175,6 +175,7 @@
 	<!-- 쇼핑 상세페이지 -->
 	<select id="getShoppingDetail" resultType="shopping">
 		select 
+			productcode,
 			productName,
 			category,
 			productUnit,
@@ -185,7 +186,8 @@
 			productDetailInfo
     	from milkyproductinfo 
     	join milkyproductimage using(productcode)
-   	    where category= '원두'
-	</select>
+    	join milkyproductdetail using(productcode)
+    	  where productcode='B001'
+   	</select>
 
 </mapper>

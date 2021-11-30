@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
-<form id="mypageMyInfo">
+<form id="mypageMyInfo" name="mypageMyInfo">
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -23,31 +23,31 @@
 			<table class="table table-bordered">
 				<tbody>
 					<tr>
-						<td width="150px;">아이디</td>
+						<td id="td-id">아이디 *</td>
 						<td>
-							<input type="text" id="id" name="id" value="${memId }" class="form-control bg-white border-0" disabled>
+							<input type="text" id="id" name="id" value="${memId }" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
-						<td>비밀번호</td>
+						<td>비밀번호 *</td>
 						<td>
 							<input type="password" id="pwd" name="pwd" class="form-control bg-white border">
 						</td>
 					</tr>
 					<tr>
-						<td>비밀번호 확인</td>
+						<td>비밀번호 확인 *</td>
 						<td>
-							<input type="password" id="repwd" name="repwd" class="form-control bg-white border">
+							<input type="password" id="repwd" class="form-control bg-white border">
 						</td>
 					</tr>
 					<tr>
-						<td>이름</td>
+						<td>이름 *</td>
 						<td>
-							<input type="text" id="name" name="name"class="form-control bg-white border-0" disabled>
+							<input type="text" id="name" name="name" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
-						<td>닉네임</td>
+						<td>닉네임 *</td>
 						<td>
 							<input type="text" id="nickname" name="nickname" class="form-control bg-white border">
 						</td>
@@ -57,7 +57,7 @@
 						<td>
 							<div id="idPwdQuestion-wrapper" class="input-group mb-3">
 								<select class="custom-select" id="idPwdQuestion" name="idPwdQuestion">
-									<option selected>---질문을 선택하세요---</option>
+									<option value="false" selected>---질문을 선택하세요---</option>
 								    <option value="추억의 장소">기억에 남는 추억의 장소는?</option>
 								    <option value="좌우명">자신의 인생 좌우명은?</option>
 								    <option value="보물">자신의 보물 1호는?</option>
@@ -74,15 +74,13 @@
 						</td>
 					</tr>
 					<tr>
-						<td>성별</td>
+						<td>성별 *</td>
 						<td>
-							<div class="input-group-text bg-white border-0">
-								<input type="text" id="gender" name="gender" class="form-control bg-white border-0" disabled>							
-							</div>
+							<input type="text" id="gender" name="gender" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
-						<td>휴대폰 번호</td>
+						<td>휴대폰 번호 *</td>
 						<td>
 							<div id="tel-input-wrapper" class="input-group mb-3">
 								<input type="text" id="tel1" name="tel1" class="form-control bg-white border rounded">
@@ -98,18 +96,18 @@
 						</td>
 					</tr>
 					<tr>
-						<td>생년월일</td>
+						<td>생년월일 *</td>
 						<td>
 							<div id="birthday-input-wrapper" class="input-group mb-3">
-								<input type="text" id="yy" name="yy" class="form-control bg-white border-0" disabled>
+								<input type="text" id="yy" name="yy" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">년</span>
 								</div>
-								<input type="text" id="mm" name="mm" class="form-control bg-white border-0" disabled>
+								<input type="text" id="mm" name="mm" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">월</span>
 								</div>
-								<input type="text" id="dd" name="dd" class="form-control bg-white border-0" disabled>
+								<input type="text" id="dd" name="dd" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">일</span>
 								</div>
@@ -117,36 +115,36 @@
 						</td>
 					</tr>
 					<tr>
-						<td>이메일 주소</td>
+						<td>이메일 주소 *</td>
 						<td>
 							<div id="email-input-wrapper" class="input-group mb-3">
 								<input type="text" id="email1" name="email1" class="form-control bg-white border rounded">
-								<input type="hidden" id="reEmail1" name="reemail1" class="form-control bg-white border-0">
+								<input type="hidden" id="reEmail1" class="form-control bg-white border-0">
 								
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">@</span>
 								</div>
 								<input type="text" id="email2" name="email2" class="form-control bg-white border rounded">
 								
-								<input type="hidden" id="reEmail2" name="reemail2" class="form-control bg-white border-0">
+								<input type="hidden" id="reEmail2" class="form-control bg-white border-0">
 								<button type="button" id="email-send-button" class="btn btn-info">이메일인증</button>
 							</div>
 							
 							<div id="email-number-wrapper" class="input-group">
 								<input type="text" id="emailNum" name="emailNum" class="form-control bg-white border rounded" disabled>
-								<button type="button" id="email-number-button" class="btn btn-info">인증번호확인</button>
+								<button type="button" id="email-number-button" class="btn btn-info" disabled>인증번호확인</button>
 							</div>
 						</td>
 					</tr>
 				</tbody>
 			</table>
+			<div id="result-div"></div>
 			
 			<div align="center" id="button-wrap">
 				<button type="button" id="Update-button" class="btn btn-info">회원정보수정</button>
 				<button type="button" id="Delete-button" class="btn btn-info">회원탈퇴</button>
 				<button type="reset" id="reset-button" class="btn btn-info">취소</button>
 			</div>
-			<div id="result-div"></div>
 		</div>
 	</div>
 	
@@ -154,6 +152,8 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/milkyWayForest/js/mypage.js"></script>
+
 <script>
 //회원정보 불러오기
 $('#mypageMyInfo').ready(function(){
@@ -212,7 +212,7 @@ $('#mypageMyInfo #email-send-button').click(function(){
 	var email1 = $('#mypageMyInfo #email1').val();
 	var email2 = $('#mypageMyInfo #email2').val();
 	var email = email1+"@"+email2;
-	
+
 	if(email1 =='') {
 		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
 		$('#mypageMyInfo #email1').focus();
@@ -231,8 +231,10 @@ $('#mypageMyInfo #email-send-button').click(function(){
 			type: "get",
    			data: {'email' : email},
 			success: function(data){
+				$('#mypageMyInfo #emailNum').val('');
 				$('#mypageMyInfo #result-div').html('인증번호가 발송되었습니다');
 				$("#mypageMyInfo #emailNum").prop("disabled", false);
+				$("#mypageMyInfo #email-number-button").prop("disabled", false);
 				code = data;
 			},
 			error: function(err){
@@ -255,8 +257,11 @@ $('#mypageMyInfo #email-number-button').click(function(){
 		$('#mypageMyInfo #result-div').html('인증번호를 다시 확인해주세요');
 		
 	}else if(inputCode == code){
-		//아이디 찾기 결과 창
-		//location.href='/milkyWayForest/mypage/findIdResult?id='+id;
+		$('#mypageMyInfo #result-div').html('인증번호가 확인되었습니다');
+		$('#reEmail1').val($('#mypageMyInfo #email1').val());
+		$('#reEmail2').val($('#mypageMyInfo #email2').val());
+		$("#mypageMyInfo #emailNum").prop("disabled", true);
+		$("#mypageMyInfo #email-number-button").prop("disabled", true);
 	}
 });
 
@@ -268,37 +273,76 @@ $('#mypageMyInfo #Update-button').click(function(){
 	var pwdForm = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/; 
 	var nicknameForm = /^[\w\Wㄱ-ㅎㅏ-ㅣ가-힣]{2,20}$/;
 	var telForm = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+	var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	
 	var pwd = $('#mypageMyInfo #pwd').val();
+	var repwd = $('#mypageMyInfo #repwd').val();
 	var nickname = $('#mypageMyInfo #nickname').val();
 	var tel1 = $('#mypageMyInfo #tel1').val();
 	var tel2 = $('#mypageMyInfo #tel2').val();
 	var tel3 = $('#mypageMyInfo #tel3').val();
 	var tel = tel1 + "-" +  tel2 + "-" + tel3;
+	var email1 = $('#mypageMyInfo #email1').val();
+	var email2 = $('#mypageMyInfo #email2').val();
+	var email = email1+"@"+email2;
+	var reEmail1 = $('#mypageMyInfo #reEmail1').val();
+	var reEmail2 = $('#mypageMyInfo #reEmail2').val();
 	
-	if($('#mypageMyInfo #pwd').val()=='') {
+	if(pwd == '') {
 		$('#mypageMyInfo #result-div').html('비밀번호를 입력하세요');
 		$('#mypageMyInfo #pwd').focus();
 		
 	}else if(!pwdForm.test(pwd)){
 		$('#mypageMyInfo #result-div').html('잘못된 비밀번호 형식입니다');
 		
-	}else if($('#mypageMyInfo #repwd').val()=='') {
+	}else if(repwd == '') {
 		$('#mypageMyInfo #result-div').html('비밀번호를 한번 더 입력하세요');
 		$('#mypageMyInfo #repwd').focus();
 		
-	}else if($('#mypageMyInfo #pwd').val() != $('#mypageMyInfo #repwd').val()) {
+	}else if(pwd != repwd) {
 		$('#mypageMyInfo #result-div').html('비밀번호가 맞지 않습니다');
 	
-	}else {
+	}else if(nickname == '') {
+		$('#mypageMyInfo #result-div').html('닉네임을 입력하세요');
+		$('#mypageMyInfo #nickname').focus();
+		
+	}else if(!nicknameForm.test(nickname)){
+		$('#mypageMyInfo #result-div').html('잘못된 닉네임 형식입니다');
+
+	}else if(tel1 == '') {
+		$('#mypageMyInfo #result-div').html('휴대폰 번호를 입력하세요');
+		$('#mypageMyInfo #tel1').focus();
+		
+	}else if(tel2 == '') {
+		$('#mypageMyInfo #result-div').html('휴대폰 번호를 입력하세요');
+		$('#mypageMyInfo #tel2').focus();
+		
+	}else if(tel3 == '') {
+		$('#mypageMyInfo #result-div').html('휴대폰 번호를 입력하세요');
+		$('#mypageMyInfo #tel3').focus();
+		
+	}else if(!telForm.test(tel)){
+		$('#mypageMyInfo #result-div').html('잘못된 휴대폰 번호 형식입니다');
+		
+	}else if(email1 =='') {
+		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
+		$('#mypageMyInfo #email1').focus();
+
+	}else if(email2 =='') {
+		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
+		$('#mypageMyInfo #email2').focus();
+
+	}else if(!emailForm.test(email)){
+		$('#mypageMyInfo #result-div').html('잘못된 이메일 형식입니다');
+		
+	}else if(email1==reEmail1 && email2==reEmail2){
+		
 		$.ajax({
-			url: '/milkyWayForest/login/findPwdUpdate',
+			url: '/milkyWayForest/mypage/mypageMyInfoUpdate',
 			type: 'post',
-			data: {'id' : $('#mypageMyInfo #id').val(),
-				   'pwd': $('#mypageMyInfo #pwd').val()},
+			data: $('#mypageMyInfo').serialize(),
 			success: function(){
-				alert('비밀번호가 변경되었습니다');
-				location.href='/milkyWayForest/login/loginForm';
+				//location.href='/milkyWayForest/login/loginForm';
 			},
 			error: function(err){
 				console.log(err);

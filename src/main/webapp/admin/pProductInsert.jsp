@@ -7,7 +7,7 @@
 			<tr>
 				<td>상품 코드</td>
 				<td>
-					<input type="text" id="productCode" name="productCode" size="50">
+					<input type="text" id="productCode" name="productCode" size="50"  value="11" disabled>
 				</td>
 			</tr>
 			<tr>

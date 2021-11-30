@@ -154,6 +154,26 @@
 	text-align: center;
 	margin: 0 auto;
 }
-
-
+#qnaBoardTable .qnaSubject:hover {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#qnaBoardTable .pwdWrite {
+	display: none;
+}
+#qnaBoardTable .pwdWriteShow {
+	visibility: visible;
+}
+#qnaBoardTable .contentHide {
+	display: none;
+}
+#qnaBoardTable .contentShow {
+	visibility: visible;
+}
+#qnaBoardTable .qndPwdCheck {
+	color: red; 
+	font-size: 8pt;
+	margin-top: 10px;
+}
 

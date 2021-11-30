@@ -54,7 +54,9 @@ $(function(){
 				})).append($('<td>',{
 					text: items.qnaQuestionType
 				})).append($('<td>',{
-					text: items.qnaSubject
+					text: items.qnaSubject,
+					id: 'qnaSubject'+index,
+					class: 'qnaSubject'
 				})).append($('<td>',{
 					text: items.id
 				})).append($('<td>',{
@@ -65,7 +67,9 @@ $(function(){
 					text: items.qnaAnswerCheck
 				})).appendTo($('#qnaBoardTable tbody'));
 			
-				$('<tr>').append($('<td>',{
+				$('<tr>', {
+					class: 'pwdWrite'
+				}).append($('<td>',{
 					colspan: '8',
 					style: 'vertical-align: middle; text-align: center; padding: 60px'
 				}).append($('<input>',{
@@ -74,9 +78,40 @@ $(function(){
 					style: 'margin-right: 5px;'
 				})).append($('<input>',{
 					type: 'button',
-					value: '입력'
+					value: '입력',
+					id: 'pwdBtn'+index
+				})).append($('<div>',{
+					class: 'qndPwdCheck'
 				}))).appendTo($('#qnaBoardTable tbody'));
 				
+				$('<tr>', {
+					class: 'contentHide'
+				}).append($('<td>', {
+					colspan: '8',
+					text: items.qnaContent,
+					style: 'vertical-align: middle; text-align: center; padding: 50px'
+				})).appendTo($('#qnaBoardTable tbody'));
+				
+			
+				$('#pwdBtn'+index).click(function(){
+					if(items.qnaPwd == $(this).prev().val()){
+						$('.pwdWriteShow').removeClass('pwdWriteShow').addClass('pwdWrite');
+						$(this).parent().parent().next().removeClass('contentHide').addClass('contentShow');
+					} else {
+						$('.qndPwdCheck').empty();
+						$('.qndPwdCheck').text('비밀번호가 일치하지 않습니다.');
+					}
+				});
+				
+			});
+			
+			$('.qnaSubject').click(function() {
+				if($(this).parent().next().attr('class')=='pwdWrite') {
+					$('.pwdWriteShow').removeClass('pwdWriteShow').addClass('pwdWrite');
+					$(this).parent().next().removeClass('pwdWrite').addClass('pwdWriteShow');
+				} else {
+					$(this).parent().next().removeClass('pwdWriteShow').addClass('pwdWrite');
+				}
 			});
 			
 			
