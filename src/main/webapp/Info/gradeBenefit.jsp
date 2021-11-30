@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/grade.css">
 </head> 
 <body>
@@ -67,20 +68,195 @@
 				<!-- 카드 -->
 			<div id="cardList_wrap">
 				<div id="cardList">
-					<div id="1" class="item">1</div>
-					<div id="2" class="item">2</div>
-					<div id="3" class="item">3</div>
-					<div id="4" class="item">4</div>
-					<div id="5" class="item">5</div>
-					<div id="6" class="item">6</div>
-					<div id="7" class="item">7</div>
-					<div id="8" class="item">8</div>
-					<div id="9" class="item">9</div>
-					<div id="10" class="item">10</div>
-					<div id="11" class="item">11</div>
-					<div id="12" class="item">12</div>
-					<div id="13" class="item">13</div>
-					<div id="14" class="item">14</div>
+					<div id="1" class="item bg-white" style="op">
+						<div class="1_1pic" align="center" style="padding-top:2.5rem;">
+							<img src="/milkyWayForest/image/list_01_bg.png" alt="list_01">
+						</div>
+						<div class="1_2pic" align="center">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+						</div>
+						<p class="1_text" align="center" style="padding-top:1rem;">
+							골드회원 적립금 5%
+						</p>
+						<div align="center" style="padding-top:1rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					
+					<div id="2" class="item bg-white">
+						<div class="2_1pic" align="center" style="padding-top:3.5rem;">
+							<img src="/milkyWayForest/image/list_02_bg.png" alt="list_01">
+						</div>
+						<div class="2_2pic" align="center" style="padding-top:.5rem;" >
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+						</div>
+						<p class="2_text" align="center" style="padding-top:.8rem;">
+							Personalized Offer 쿠폰
+						</p>
+						<div align="center" style="padding-top:1rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					
+					<div id="3" class="item bg-white">
+						<div class="3_1pic" align="center" style="padding-top:1.9rem;">
+							<img src="/milkyWayForest/image/list_03_gold_bg.png" alt="list_01">
+						</div>
+						<div class="3_2pic" align="center">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+						</div>
+						<p class="3_text" align="center" style="padding-top:1rem;">
+							골드회원만의 e-Gold Card 발급!
+						</p>
+						<div align="center" style="padding-top:1rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="4" class="item bg-white">
+						<div class="4_1pic" align="center" style="padding-top:3rem;">
+							<img src="/milkyWayForest/image/web_msr_icon_02.png" alt="list_01">
+						</div>
+						<div class="4_2pic" align="center">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="4_text" align="center" style="padding-top:1rem;">
+							Beverage BOGO 쿠폰
+						</p>
+						<div align="center" style="padding-top:1rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="5" class="item bg-white">
+						<div class="5_1pic" align="center" style="padding-top:3rem;">
+							<img src="/milkyWayForest/image/list_13_bg.png" alt="list_01">
+						</div>
+						<div class="5_2pic" align="center">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="5_text" align="center" style="padding-top:1rem;">
+							250g 원두 또는 12개입 VIA 구매 시,<br>
+							카페 아메리카노(Hot/Iced) 쿠폰
+						</p>
+						<div align="center" style="padding-top:1rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="6" class="item bg-white">
+						<div class="6_1pic" align="center" style="padding-top:2rem;">
+							<img src="/milkyWayForest/image/list_06_bg.png" alt="list_01">
+						</div>
+						<div class="6_2pic" align="center" style="padding-top:.5rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="6_text" align="center" style="padding-top:1rem;">
+							스타벅스 리저브™ 원두 구매 시, 스타벅스<br>
+							리저브™ 음료
+						</p>
+						<div align="center" style="padding-top:.5rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="7" class="item bg-white">
+						<div class="7_1pic" align="center" style="padding-top:2rem;">
+							<img src="/milkyWayForest/image/tevana_Icon.png" alt="list_01">
+						</div>
+						<div class="7_2pic" align="center" style="padding-top:.5rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="7_text" align="center" style="padding-top:1rem;">
+							티바나 패키지 티 구매 시,<br>
+							풀 리프 티(Hot/Iced) 쿠폰
+						</p>
+						<div align="center" style="padding-top:.5rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="8" class="item bg-white">
+						<div class="8_1pic" align="center" style="padding-top:2rem;">
+							<img src="/milkyWayForest/image/web_msr_icon_03.png" alt="list_01">
+						</div>
+						<div class="8_2pic" align="center" style="padding-top:.5rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="8_text" align="center" style="padding-top:2rem;">
+							생일 쿠폰 발행
+						</p>
+						<div align="center" style="padding-top:.8rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="9" class="item bg-white">
+						<div class="9_1pic" align="center" style="padding-top:2rem;">
+							<img src="/milkyWayForest/image/web_msr_icon_01.png" alt="list_01">
+						</div>
+						<div class="9_2pic" align="center" style="padding-top:.5rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="9_text" align="center" style="padding-top:2rem;">
+							웰컴 첫 구매 쿠폰 발행
+						</p>
+						<div align="center" style="padding-top:.8rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="10" class="item bg-white">
+						<div class="10_1pic" align="center" style="padding-top:3.5rem;">
+							<img src="/milkyWayForest/image/list_08_bg.png" alt="list_01">
+						</div>
+						<div class="10_2pic" align="center" style="padding-top:.5rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="10_text" align="center" style="padding-top:2rem;">
+							분실 신고 시 잔액 보호
+						</p>
+						<div align="center" style="padding-top:.8rem;">
+							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						</div>
+					</div>
+					
+					<div id="11" class="item bg-white">
+						<div class="11_1pic" align="center" style="padding-top:2.5rem;">
+							<img src="/milkyWayForest/image/web_msr_icon_04.png" alt="list_01">
+						</div>
+						<div class="11_2pic" align="center" style="padding-top:1rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="11_text" align="center" style="padding-top:1.5rem;">
+							스타벅스 카드로 구매 시,<br>
+							Free Extra 1개 제공
+						</p>
+					</div>
+					
+					<div id="12" class="item bg-white">
+						<div class="12_1pic" align="center" style="padding-top:2.5rem;">
+							<img src="/milkyWayForest/image/list_10_bg.png" alt="list_01">
+						</div>
+						<div class="12_2pic" align="center" style="padding-top:1rem;">
+							<img src="/milkyWayForest/image/icon_level_03.png" alt="list_01">
+							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
+						</div>
+						<p class="12_text" align="center" style="padding-top:1.5rem;">
+							기능 설정 후 스타벅스 카드로 결제 시,<br>
+							현금영수증 자동 발행
+						</p>
+					</div>
 				</div>
 			</div>
 
