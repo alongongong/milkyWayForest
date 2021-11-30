@@ -154,6 +154,22 @@
 	text-align: center;
 	margin: 0 auto;
 }
-
+#qnaBoardTable .qnaSubject:hover {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#qnaBoardTable .pwdWrite {
+	display: none;
+}
+#qnaBoardTable .pwdWriteShow {
+	visibility: visible;
+}
+#qnaBoardTable .contentHide {
+	display: none;
+}
+#qnaBoardTable #contentShow {
+	visibility: visible;
+}
 
 

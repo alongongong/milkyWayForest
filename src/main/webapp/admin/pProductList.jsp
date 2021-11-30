@@ -5,7 +5,9 @@
   <div class="card-header">
     <h4 class="card-title"> 상품 리스트</h4>
 	<div id="productSearch">
-		
+		<ul id="updateInfo">
+			<li>상품이름, 영어이름, 옵션, 상품가, 할인율을 입력하면 수정하기 버튼이 나타납니다.</li>
+		</ul>
 	</div>
   </div>
   <div class="card-body">

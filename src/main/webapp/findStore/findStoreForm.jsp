@@ -22,7 +22,7 @@
 		headers: { 'Authorization': 'KakaoAK 983faebe014b975e78a41ddbea38de92' },
 		data: { 'query': location_name},
 		success: function(data){
-			alert(JSON.stringify(data));
+			console.log(JSON.stringify(data));
 			$.each(data.documents, function(index, items){
 				x[index] = items.x;
 				y[index] = items.y;
@@ -38,7 +38,7 @@
 	
 	var mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
 	mapOption = {
-		center: new kakao.maps.LatLng(x[0]+0.0007, y[0]), // 지도의 중심좌표
+		center: new kakao.maps.LatLng(37.499517,127.031495), // 지도의 중심좌표
 		level: 4, // 지도의 확대 레벨
 		mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 	}; 
@@ -54,13 +54,13 @@
 	
 	// 지도에 마커를 생성하고 표시한다
 	var marker = new kakao.maps.Marker({
-		position: new kakao.maps.LatLng(x[0], y[0]), // 마커의 좌표
+		position: new kakao.maps.LatLng(37.499517, 127.031495), // 마커의 좌표
 		map: map // 마커를 표시할 지도 객체
 	});
 	
 	// 마커 위에 표시할 인포윈도우를 생성한다
 	var infowindow = new kakao.maps.InfoWindow({
-		content : '<div style="padding:5px;">인포윈도우 :D</div>' // 인포윈도우에 표시할 내용
+		content : '<div style="padding:5px;">스타벅스 국기원사거리점</div>' // 인포윈도우에 표시할 내용
 	});
 	
 	// 인포윈도우를 지도에 표시한다
