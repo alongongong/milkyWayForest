@@ -27,12 +27,12 @@ create sequence milkyEventSeq nocache nocycle;
 
 -- 자주 묻는 질문
 create table milkyFAQ (
-  FAQCode number primary key,
-  FAQSubject varchar(50),
+  faqCode number primary key,
+  faqSubject varchar(50),
   id varchar(15),
-  FAQContent varchar(1000),
-  FAQHit number default 0,
-  FAQDate date default sysdate
+  faqContent varchar(1000),
+  faqHit number default 0,
+  faqDate date default sysdate
 );
 
 create sequence milkyFAQSeq nocache nocycle;
@@ -40,17 +40,17 @@ create sequence milkyFAQSeq nocache nocycle;
 
 -- 1대1문의
 create table milkyQnA (
-  QnACode number primary key,
+  qnACode number primary key,
   qnaQuestionType varchar(20),
-  QnASubject varchar(50),
+  qnASubject varchar(50),
   id varchar(15),
-  QnAContent varchar(800),
-  QnAPwd varchar(15),
-  QnAHit number default 0,
-  QnAImage1 varchar(20),
-  QnAImage2 varchar(20),
+  qnAContent varchar(800),
+  qnAPwd varchar(15),
+  qnAHit number default 0,
+  qnAImage1 varchar(20),
+  qnAImage2 varchar(20),
   qnaAnswerCheck varchar(15) default '답변 대기',
-  QnADate date default sysdate
+  qnADate date default sysdate
 );
 
 create sequence milkyQnASeq nocache nocycle;
@@ -60,7 +60,7 @@ create sequence milkyQnASeq nocache nocycle;
 create table milkyReview (
   reviewCode number primary key,
   productCode varchar(10),
-  reviewlike varchar(30),
+  reviewLike varchar(30),
   id varchar(15),
   reviewContent varchar(1000),
   reviewAnswerCheck varchar(15) default '답변 대기',
@@ -73,7 +73,7 @@ create sequence milkyReviewSeq nocache nocycle;
 -- 댓글
 create table milkyComment (
   commentCode number primary key,
-  QnACode number,
+  qnACode number,
   id varchar(15),
   commentContent varchar(300),
   commentRef number default 0,

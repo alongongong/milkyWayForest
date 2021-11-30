@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import admin.dao.AdminDAO;
+import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
 import paging.BoardPaging;
@@ -126,6 +127,16 @@ public class AdminServiceImpl implements AdminService {
 			json.put("pg", pg);
 		}
 		return json;
+	}
+
+	@Override
+	public Object qnaCommentInsert(CommentDTO commentDTO) {
+		return adminDAO.qnaCommentInsert(commentDTO);
+	}
+
+	@Override
+	public List<CommentDTO> getQnaCommentContent(int qnaCode) {
+		return adminDAO.getQnaCommentContent(qnaCode);
 	}
 
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import admin.service.AdminService;
+import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
 
@@ -203,4 +204,15 @@ public class AdminController {
 		return adminService.getMemberList(pg);
 	}
 	
+	@PostMapping("/admin/qnaCommentInsert")
+	@ResponseBody
+	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO) {
+		adminService.qnaCommentInsert(commentDTO);
+	}
+	
+	@PostMapping("/admin/getQnaCommentContent")
+	@ResponseBody
+	public List<CommentDTO> getQnaCommentContent(@RequestParam int qnaCode) {
+		return adminService.getQnaCommentContent(qnaCode);
+	}
 }

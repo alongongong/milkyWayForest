@@ -64,7 +64,21 @@ $(function(){
 				})).append($('<td>',{
 					text: items.qnaAnswerCheck
 				})).appendTo($('#qnaBoardTable tbody'));
+			
+				$('<tr>').append($('<td>',{
+					colspan: '8',
+					style: 'vertical-align: middle; text-align: center; padding: 60px'
+				}).append($('<input>',{
+					type: 'text',
+					placeholder: '비밀번호 입력',
+					style: 'margin-right: 5px;'
+				})).append($('<input>',{
+					type: 'button',
+					value: '입력'
+				}))).appendTo($('#qnaBoardTable tbody'));
+				
 			});
+			
 			
 			$('#qnaBoardPaging').html(data.boardPaging)
 		},

@@ -1,9 +1,11 @@
 package mypage.dao;
 
-import java.util.Map;
+import member.bean.MemberDTO;
 
 public interface MypageDAO {
 
-	public Map<String, String> getMypageMyInfo(String id);
+	public MemberDTO getMypageMyInfo(String id);
+
+	public MemberDTO mypagePwdCheck(MemberDTO memberDTO);
 
 }

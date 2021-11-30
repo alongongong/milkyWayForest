@@ -2,7 +2,7 @@ create table milkyMember(
     id varchar(15) primary key,
     name varchar(15),
     nickname varchar(20),	-- 닉네임
-    pwd varchar(20),
+    pwd varchar(80),
     gender varchar(5),
     yy number,
     mm number,

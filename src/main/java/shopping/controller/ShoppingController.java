@@ -21,6 +21,7 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	@Autowired					// 에이작스를 쓸때는 거의 리스판스바디를 쓴다(인덱스로 돌아갈 필요가 없을때는)
 	private ShoppingService shoppingService;
 	
+	//관리자페이지에서 해당 페이지 주소로 연결
 	@GetMapping("/shopping")
 	public String shopping(Model model) {
 	model.addAttribute("display", "/shopping/shopping.jsp");
@@ -88,6 +89,15 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	return "/index";
 	}
 	
+	@GetMapping("/shopping/shoppingDetail")
+	public String shoppingDetail(Model model) {
+		model.addAttribute("display", "/shopping/shoppingDetail.jsp");
+		return "/index";
+		
+	}
+	
+	
+	//shopping.jsp 에이작스
 	@PostMapping(value="/shopping/getShoppingList")
 	@ResponseBody
 	public List<ShoppingDTO> getShoppingList() {
@@ -100,6 +110,7 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 		return shoppingService.getShoppingList2(); 
 	}
 	
+	//beanNTea.jsp 에이작스
 	@PostMapping(value="/shopping/getBeanNTeaList")
 	@ResponseBody
 	public List<ShoppingDTO> getBeanNTeaList() {
@@ -112,5 +123,106 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 		return shoppingService.getBeanNTeaList2(); 
 	}
 	
+	//beanList.jsp 에이작스
+	@PostMapping(value="/shopping/getBeanList")
+	@ResponseBody
+	public List<ShoppingDTO> getBeanList() {
+		return shoppingService.getBeanList(); 
+	}
+	
+	//teaList.jsp 에이작스
+	@PostMapping(value="/shopping/getTeaList")
+	@ResponseBody
+	public List<ShoppingDTO> getTeaList() {
+		return shoppingService.getTeaList(); 
+	}
+	
+	//product.jsp 에이작스
+	@PostMapping(value="/shopping/getProductList")
+	@ResponseBody
+	public List<ShoppingDTO> getProductList() {
+		return shoppingService.getProductList(); 
+	}
+	
+	@PostMapping(value="/shopping/getProductList2")
+	@ResponseBody
+	public List<ShoppingDTO> getProductList2() {
+		return shoppingService.getProductList2(); 
+	}
+	
+	@PostMapping(value="/shopping/getProductList3")
+	@ResponseBody
+	public List<ShoppingDTO> getProductList3() {
+		return shoppingService.getProductList3(); 
+	}
+	
+	@PostMapping(value="/shopping/getProductList4")
+	@ResponseBody
+	public List<ShoppingDTO> getProductList4() {
+		return shoppingService.getProductList4(); 
+	}
+	
+	@PostMapping(value="/shopping/getProductList5")
+	@ResponseBody
+	public List<ShoppingDTO> getProductList5() {
+		return shoppingService.getProductList5(); 
+	}
+	
+	@PostMapping(value="/shopping/getProductList6")
+	@ResponseBody
+	public List<ShoppingDTO> getProductList6() {
+		return shoppingService.getProductList6(); 
+	}
+	
+	//mugList.jsp 에이작스
+	@PostMapping(value="/shopping/getMugList")
+	@ResponseBody
+	public List<ShoppingDTO> getMugList() {
+		return shoppingService.getMugList(); 
+	}
+	
+	//glassList.jsp 에이작스
+	@PostMapping(value="/shopping/getGlassList")
+	@ResponseBody
+	public List<ShoppingDTO> getGlassList() {
+		return shoppingService.getGlassList(); 
+	}
+	
+	
+	//plasticTumblrList.jsp 에이작스
+	@PostMapping(value="/shopping/getPlasticTumblrList")
+	@ResponseBody
+	public List<ShoppingDTO> getPlasticTumblrList() {
+		return shoppingService.getPlasticTumblrList(); 
+	}
+	
+	//stainlessTumblrList.jsp 에이작스
+	@PostMapping(value="/shopping/getStainlessTumblrList")
+	@ResponseBody
+	public List<ShoppingDTO> getStainlessTumblrList() {
+		return shoppingService.getStainlessTumblrList(); 
+	}
+	
+	//thermosList.jsp 에이작스
+	@PostMapping(value="/shopping/getThermosList")
+	@ResponseBody
+	public List<ShoppingDTO> getThermosList() {
+		return shoppingService.getThermosList(); 
+	}
+	
+	//coffeeEtcList.jsp 에이작스
+	@PostMapping(value="/shopping/getCoffeeEtcList")
+	@ResponseBody
+	public List<ShoppingDTO> getCoffeeEtcList() {
+		return shoppingService.getCoffeeEtcList(); 
+	}
+	
+
+	//shoppingDetail.jsp  에이작스
+	@PostMapping(value="/shopping/getShoppingDetail")
+	@ResponseBody
+	public List<ShoppingDTO> getShoppingDetail() {
+		return shoppingService.getShoppingDetail(); 
+	}
 	
 }

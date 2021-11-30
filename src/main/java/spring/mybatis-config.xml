@@ -14,6 +14,8 @@
 		<typeAlias type="shopping.bean.ShoppingDTO" alias="shopping"/>
 		
 		<typeAlias type="qnaBoard.bean.QnaBoardDTO" alias="qnaBoard"/>
+		
+		<typeAlias type="comment.bean.CommentDTO" alias="comment"/>
 
 	</typeAliases>
 </configuration>

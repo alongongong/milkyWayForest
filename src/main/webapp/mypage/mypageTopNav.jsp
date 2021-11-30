@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
-<div id="topNav-wrapper" class="container">
+<div id="topNav-wrapper">
 	<div id="myInfoBox-wrapper" class="item card">
 		<div class="row no-gutters">
 			<div id="myInfoPhoto" class="col-md-4">

@@ -34,12 +34,9 @@
 			</div>
 		
 			<div id="teaMenuDiv">차</div>
-			
-		<!-- 상품배열 -->
-			<div class="listDiv">
-				<div id="menuImgDiv1">
+			<!-- 상품배열 -->
+			<div id="menuImgDiv1">
 				<!-- 에이작스로 목록불러오기 -->
-				</div>
 			</div>
 		
 	</section>
@@ -48,7 +45,7 @@
 <script type="text/javascript">
 $(function(){
 	$.ajax({
-		url: '/milkyWayForest/shopping/getBeanNTeaList',  
+		url: '/milkyWayForest/shopping/getTeaList',  
 		type: 'post',
 		dataType: 'json',
 		success : function(data) {

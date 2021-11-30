@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 
+import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import product.bean.ProductDTO;
 
@@ -28,6 +29,10 @@ public interface AdminService {
 	public void updateGradeBenefit(String welcome, String green, String gold);
 
 	public JSONObject getMemberList(int pg);
+
+	public Object qnaCommentInsert(CommentDTO qnaBoardDTO);
+
+	public List<CommentDTO> getQnaCommentContent(int qnaCode);
 
 	
 
