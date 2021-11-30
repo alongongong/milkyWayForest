@@ -1,7 +1,5 @@
 package mypage.dao;
 
-import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +21,10 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public MemberDTO mypagePwdCheck(MemberDTO memberDTO) {
 		return sqlSession.selectOne("mypageSQL.mypagePwdCheck", memberDTO);
+	}
+
+	@Override
+	public void mypageMyInfoUpdate(MemberDTO memberDTO) {
+		sqlSession.update("mypageSQL.mypageMyInfoUpdate", memberDTO);
 	}
 }

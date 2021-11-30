@@ -140,7 +140,7 @@ $('#findIdForm').ready(function(){
 		$('#findIdForm #result1-div').empty();
 		
 		if($('#findIdForm select option:selected').index() < 1){
-			$('#findIdForm option:eq(0)').attr('selected', true);
+			$('#findIdForm option:eq(0)').prop('selected', true);
 			$('#findIdForm #result1-div').html('질문을 선택하세요');
 			
 		}else if($('#findIdForm #findId-question-input').val()=='') {
@@ -225,7 +225,8 @@ $('#findIdForm').ready(function(){
 			       			data: {'email' : email},
 							success: function(data){
 								$('#findIdForm #result2-div').html('인증번호가 발송되었습니다');
-								$("#findIdForm #check-email-input").attr("disabled", false);
+								$("#findIdForm #check-email-input").prop("disabled", false);
+								$("#findIdForm #check-number-button").prop("disabled", false);
 								code = data;
 							},
 							error: function(err){
@@ -342,7 +343,8 @@ $('#findPwdForm2 #check-email-button').click(function(){
 				   			data: {'email' : email},
 							success: function(data){
 								$('#findPwdForm2 #result-div').html('인증번호가 발송되었습니다');
-								$("#findPwdForm2 #check-number-input").attr("disabled", false);
+								$("#findPwdForm2 #check-number-input").prop("disabled", false);
+								$("#findPwdForm2 #check-number-button").prop("disabled", false);
 								code = data;
 							},
 							error: function(err){

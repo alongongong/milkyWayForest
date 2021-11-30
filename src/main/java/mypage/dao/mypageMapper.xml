@@ -10,4 +10,17 @@
 	<select id="mypagePwdCheck" parameterType="member" resultType="member">
 		select * from milkymember where id=#{id}
 	</select>
+	
+	<update id="mypageMyInfoUpdate" parameterType="member">
+		update milkymember set nickname=#{nickname},
+							   pwd=#{pwd}, 
+							   tel1=#{tel1},
+							   tel2=#{tel2},
+							   tel3=#{tel3},
+							   email1=#{email1},
+							   email2=#{email2},
+							   idPwdQuestion=#{idPwdQuestion},
+							   idPwdAnswer=#{idPwdAnswer}
+		where id=#{id}
+	</update>
 </mapper>

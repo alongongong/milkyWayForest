@@ -1,7 +1,5 @@
 package mypage.service;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +19,10 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public MemberDTO mypagePwdCheck(MemberDTO memberDTO) {
 		return mypageDAO.mypagePwdCheck(memberDTO);
+	}
+
+	@Override
+	public void mypageMyInfoUpdate(MemberDTO memberDTO) {
+		mypageDAO.mypageMyInfoUpdate(memberDTO);
 	}
 }
