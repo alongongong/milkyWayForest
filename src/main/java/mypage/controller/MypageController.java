@@ -134,11 +134,11 @@ public class MypageController {
 //		System.out.println(memberDTO.getPwd());
 //		System.out.println(memberDTO.getTel1());
 //		System.out.println(memberDTO.getEmail1());
-//		System.out.println(memberDTO.getIdPwdQuestion());
-//		System.out.println(memberDTO.getIdPwdAnswer());
+		System.out.println(memberDTO.getIdPwdQuestion());
+		System.out.println(memberDTO.getIdPwdAnswer());
 //		System.out.println(session.getAttribute("memId"));
 		
-		memberDTO.setId((String) session.getAttribute("memId"));
+//		memberDTO.setId((String) session.getAttribute("memId"));
 		
 		mypageService.mypageMyInfoUpdate(memberDTO);
 	}

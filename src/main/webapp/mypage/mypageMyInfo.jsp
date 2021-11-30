@@ -25,7 +25,7 @@
 					<tr>
 						<td id="td-id">아이디 *</td>
 						<td>
-							<input type="text" id="id" name="id" value="${memId }" class="form-control bg-white border-0" disabled>
+							<input type="text" id="id" name="id" value="${memId }" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -43,7 +43,7 @@
 					<tr>
 						<td>이름 *</td>
 						<td>
-							<input type="text" id="name" name="name" class="form-control bg-white border-0" disabled>
+							<input type="text" id="name" name="name" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -76,9 +76,7 @@
 					<tr>
 						<td>성별 *</td>
 						<td>
-							<div class="input-group-text bg-white border-0">
-								<input type="text" id="gender" name="gender" class="form-control bg-white border-0" disabled>							
-							</div>
+							<input type="text" id="gender" name="gender" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -101,15 +99,15 @@
 						<td>생년월일 *</td>
 						<td>
 							<div id="birthday-input-wrapper" class="input-group mb-3">
-								<input type="text" id="yy" name="yy" class="form-control bg-white border-0" disabled>
+								<input type="text" id="yy" name="yy" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">년</span>
 								</div>
-								<input type="text" id="mm" name="mm" class="form-control bg-white border-0" disabled>
+								<input type="text" id="mm" name="mm" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">월</span>
 								</div>
-								<input type="text" id="dd" name="dd" class="form-control bg-white border-0" disabled>
+								<input type="text" id="dd" name="dd" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">일</span>
 								</div>
