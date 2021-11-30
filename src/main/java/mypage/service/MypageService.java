@@ -8,4 +8,6 @@ public interface MypageService {
 
 	public MemberDTO mypagePwdCheck(MemberDTO memberDTO);
 
+	public void mypageMyInfoUpdate(MemberDTO memberDTO);
+
 }

@@ -31,50 +31,35 @@ $(function(){
 	});
 
 });
+			
+
+
 
 $(function(){
 	$.ajax({
 		url: '/milkyWayForest/shopping/getShoppingDetail',  
 		type: 'post',
-		dataType: 'json',
+		dataType: 'json',  
 		success : function(data) {
+		
 			console.log(JSON.stringify(data));
+				
+		$.each(data, function(index,items) {		
+			$('#korsubjectSpan').text(items.productName);
+			$('#engsubjectSpan').text(items.productEngName);
+			$('#productSmallinfoSpan').text(items.productSmallInfo);
+			$('#productpriceSpan').text(items.productUnit);
+			$('#productOptionSpan2').text(items.productOption);
 			
-			$.each(data, function(index,items) {
-				$('<tr>')
-				.append($('<td>', {
-					colspan: '2',
-					text: items.productName,
-					id: 'productKorName'
-				
-				}))
-				.append($('<tr>')
-				.append($('<td>' , {
-					colspan: '2',
-					text: items.productEngName,
-					id: 'productEngName'
-				
-				})))
-				
-				.append($('<tr>')
-				.append($('<td>' , {
-					colspan: '2',
-					text: items.productSmallInfo,
-				})))
-				
-				.append($('<tr>')
-				.append($('<td>' , {
-					text: 가격,
-				}))
-				.append($('<td>' , {
-					text: items.productUnit,
-					class: price
-				
-				})))
-			
-			});
-			
-			
+			if(index==0) {
+			$('#bigImg').attr('src', '/milkyWayForest/productImage/'+items.productImageName);
+			$('#img1').attr('src', '/milkyWayForest/productImage/'+items.productImageName);}
+			else if(index==1) {
+			$('#img2').attr('src', '/milkyWayForest/productImage/'+items.productImageName);}
+			else if( index==2) {
+			$('#img3').attr('src', '/milkyWayForest/productImage/'+items.productImageName);}
+		});
+		
 		},
 		error: function(err) {
 			console.log(err);
