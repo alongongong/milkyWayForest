@@ -120,18 +120,20 @@ $(function(){
 					});
 				});
 				$('#deleteBtn'+index).click(function(){
-					$.ajax({
-						url: '/milkyWayForest/admin/productDelete',
-						type: 'post',
-						data: 'productCode='+$('#productCode'+index).text(),
-						success: function(data) {
-							alert('삭제되었습니다.');
-							location.href='/milkyWayForest/admin/productList?dataNum=4';
-						},
-						error: function(err) {
-							console.log(err);
-						}
-					});
+					if(confirm('정말 삭제하시겠습니까?')) {
+						$.ajax({
+							url: '/milkyWayForest/admin/productDelete',
+							type: 'post',
+							data: 'productCode='+$('#productCode'+index).text(),
+							success: function(data) {
+								alert('삭제되었습니다.');
+								location.href='/milkyWayForest/admin/productList?dataNum=4';
+							},
+							error: function(err) {
+								console.log(err);
+							}
+						});
+					}
 				});
 				
 			});

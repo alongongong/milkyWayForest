@@ -16,6 +16,8 @@
 		<typeAlias type="qnaBoard.bean.QnaBoardDTO" alias="qnaBoard"/>
 		
 		<typeAlias type="comment.bean.CommentDTO" alias="comment"/>
+		
+		<typeAlias type="payment.bean.PaymentDTO" alias="payment"/>
 
 	</typeAliases>
 </configuration>
