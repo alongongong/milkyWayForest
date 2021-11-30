@@ -89,4 +89,11 @@
 	<select id="getQnaCommentContent" parameterType="int" resultType="comment">
 		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
 	</select>
+	
+	<select id="getDailyOrder" resultType="payment">
+		select * from milkypayment 
+		join milkypaymentoption using(paymentCode)
+		join milkypaymentship using(paymentCode)
+		order by paymentcode
+	</select>
 </mapper>

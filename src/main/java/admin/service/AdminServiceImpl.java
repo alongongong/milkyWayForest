@@ -13,6 +13,7 @@ import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
 import paging.BoardPaging;
+import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -137,6 +138,11 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<CommentDTO> getQnaCommentContent(int qnaCode) {
 		return adminDAO.getQnaCommentContent(qnaCode);
+	}
+
+	@Override
+	public List<PaymentDTO> getDailyOrder() {
+		return adminDAO.getDailyOrder();
 	}
 
 }
