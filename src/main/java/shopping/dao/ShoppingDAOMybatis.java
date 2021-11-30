@@ -45,7 +45,7 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 	}
 
 	@Override
-	public List<ShoppingDTO> getProductList() {
+	public List<ShoppingDTO>  getProductList() {
 		return sqlSession.selectList("shoppingSQL.getProductList");
 	}
 

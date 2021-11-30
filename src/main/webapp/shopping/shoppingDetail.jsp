@@ -28,26 +28,31 @@
 			<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
 			<table id="detailTable">
 			
-				
 				<tr>
-					<td id="productKorName" colspan="2">상품 한국이름</td>
+					<td id="productKorName" colspan="2">
+					<span id="korsubjectSpan"></span>
+					</td>
 				</tr>
 				
 				<tr>
-					<td id="productEngName" colspan="2">상품 영어이름</td>
+					<td id="productEngName" colspan="2">
+					<span id="engsubjectSpan"></span>
+					</td>
 				</tr>
 				
 				
 				<tr>
-					<td colspan="2">상품설명</td>
+					<td colspan="2">
+					<span id="productSmallinfoSpan"></span>
+					</td>
 				</tr>
 				
 				<tr>
 					<td>가격</td>
-					<td class="price"><b>금액</b>원</td>
+					<td class="price">
+					<b><span id="productpriceSpan"></span></b>원
+					</td>
 				</tr>
-				
-				
 				
 				<tr>
 					<td>옵션</td>
@@ -55,24 +60,13 @@
 						
 						<select class="shoppingSelect">
 							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
-							<option>1</option>
-							<option>2</option>
+							<option><span id="productOptionSpan2"></span></option>
+							<option><span id="productOptionSpan2"></span></option>
 						</select>
 						
 					</td>
 				</tr>
 			
-				<tr>
-					<td>옵션</td>
-					<td>
-						<select class="shoppingSelect">
-							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
-							<option>1</option>
-							<option>2</option>
-						</select>
-					</td>
-				</tr>
-				
 				<tr>
 					<td>구매수량</td>
 					<td>
@@ -92,23 +86,25 @@
 				
 				<tr>
 					<td>가격</td>
-					<td class="total"><b>금액</b>원</td>
+					<td class="total">
+					<b><span id="productTotalSpan"></span></b>원
+					</td>
 				</tr>
 			</table>
 		
 				
 			<div class="shoppingDetailImg">
-				<img src ="/milkyWayForest/image/C001.jpg" alt="C001" id="bigImg">
+				<img alt="B001" id="bigImg">
 					<ul class="imgList">
 						<li class="on">
 							<div class="imgListBorder">
 							<a href="#a">
-							<img src ="/milkyWayForest/image/C001.jpg" alt="C001">
+							<img id="img1" alt="B001">
 							</a>
 							</div>
 						</li>
-						<li><a href="#a"><img src ="/milkyWayForest/image/C002.jpg" alt="C001"></a></li>
-						<li><a href="#a"><img src ="/milkyWayForest/image/C003.jpg" alt="C001"></a></li>
+						<li><a href="#a"><img id="img2" alt="B001"></a></li>
+						<li><a href="#a"><img id="img3"  alt="B001"></a></li>
 					</ul>
 			</div>
 			

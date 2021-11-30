@@ -84,7 +84,12 @@ $(function(){
 					src: "/milkyWayForest/productImage/"+items.productImageName,
 					position: 'absolute',
 					width: '100%',
-					height: '100%'
+					height: '100%',
+					class: 'imgss'
+					
+				})).append($('<input>', { 
+					type: 'hidden',
+					value: items.productCode
 					
 				})))
 				.append($('<div>',{
@@ -99,6 +104,10 @@ $(function(){
 				}))
 			
 				.appendTo($('#menuImgDiv1'));
+			});
+			
+			$('.imgss').click(function(){
+				location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+$(this).next().val();
 			});
 			
 		},
