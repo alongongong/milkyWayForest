@@ -1,5 +1,11 @@
 @charset "UTF-8";
-*{
+#loginForm,
+#findIdForm,
+#findIdResultForm,
+#findPwdForm1, 
+#findPwdForm2, 
+#findPwdForm3,
+#findPwdResultForm {
 	margin:0;
 	padding:0;
 }
@@ -33,7 +39,7 @@
 #loginForm #id-input-wrap input, 
 #loginForm #pwd-input-wrap input{
 	border: none;
-    width: 454px;
+    width: 452px;
     font-size: 14px;
     padding-left: 10px;
     height: 45px;
@@ -132,7 +138,6 @@
 	list-style: none;
 	width: 465px;
 }
-
 #findIdForm #findId-select-wrap ul li button{
 	width: 230px;
 	height: 56px;

@@ -27,21 +27,24 @@
 	
 		<div class="one">
 			<img src="/milkyWayForest/image/welcome.png" alt="welcome" width="100%">
-			<p class="welcome_text">
-			1
-			</p>
+			<pre class="welcome_text" 
+			style="margin-bottom: 12px; font-size: 18px; 
+			color: #666; line-height: 2; padding-left: 13px;">
+			</pre>
 		</div>
 		<div class="two">
 			<img src="/milkyWayForest/image/green.PNG" alt="welcome" width="100%">
-			<p class="green_text">
-			2
-			</p>
+			<pre class="green_text" 
+			style="margin-bottom: 12px; font-size: 18px; 
+			color: #666; line-height: 2; padding-left: 13px;">
+			</pre>
 		</div>
 		<div class="three">
 			<img src="/milkyWayForest/image/gold.PNG" alt="welcome" width="100%">
-			<p class="gold_text">
-			3
-			</p>
+			<pre class="gold_text" 
+			style="margin-bottom: 12px; font-size: 18px; 
+			color: #666; line-height: 2; padding-left: 13px;" >
+			</pre>
 		</div>
 	</div>
 	
@@ -62,36 +65,25 @@
 			<h3><strong>회원 등급별 상세 혜택 및 유의사항</strong></h3>
 			
 				<!-- 카드 -->
-				<ul class="note_list">
-				
-				<li class="card_flip_card_flip1" style="opacity: 1; position: relative; top:0px; left:0px; transform: perspective(520px); z-index: 5;">
-				
-					<li class="back_grade_card01" style="transform: rotateY(0deg); height:296px; 
-					width:260px; transform-style:preserve-3d; position: absolute; 
-					transition: all 2.5s ease-out 0s; backface-visibility: hidden;">
-					<p class="icon_level">
-						<span class="icon_level"></span>
-							<img src="/milkyWayForest/image/list_01_bg.png" alt="list_01_bg">
-							<img src="/milkyWayForest/image/icon_level_03.png" alt="icon_level">
-							<p class="list_text01">별 12개 무료 음료 쿠폰</p>
-						</span>
-					</li>
-					
-					
-					<div class="2">2</div>
-					<div class="3">3</div>
-					<div class="4">4</div>
-					<div class="5">5</div>
-					<div class="6">6</div>
-					<div class="7">7</div>
-					<div class="8">8</div>
-					<div class="9">9</div>
-					<div class="10">10</div>
-					<div class="11">11</div>
-					<div class="12">12</div>
-					<div class="13">13</div>
-					<div class="14">14</div>
-				</ul>
+			<div id="cardList_wrap">
+				<div id="cardList">
+					<div id="1" class="item">1</div>
+					<div id="2" class="item">2</div>
+					<div id="3" class="item">3</div>
+					<div id="4" class="item">4</div>
+					<div id="5" class="item">5</div>
+					<div id="6" class="item">6</div>
+					<div id="7" class="item">7</div>
+					<div id="8" class="item">8</div>
+					<div id="9" class="item">9</div>
+					<div id="10" class="item">10</div>
+					<div id="11" class="item">11</div>
+					<div id="12" class="item">12</div>
+					<div id="13" class="item">13</div>
+					<div id="14" class="item">14</div>
+				</div>
+			</div>
+
 			</div>
 		</article>
 	</section>
@@ -106,27 +98,16 @@ $(function(){
 		//dataType: 'json',
 		success : function(data) {
 			
-			alert(JSON.stringify(data));
-		
+			/* alert(JSON.stringify(data)); */
 			$.each(data, function(index,items) {
-				
-				$('<div>',{
-					width: 100,
-					align: 'left',
-					text : items.gradeBenefit,			  
-			})
-				.append($('<div>',{
-				 	width: 100,
-					align: 'left',
-					text :  items.gradeBenefit,   		
-			}))
-				.append($('<div>',{
-				 	width: 100,
-					align: 'left',
-					text :  items.gradeBenefit,				   		
-			}))					
-				.appendTo($('#div'));
-			});
+				if(items.gradeName=='welcome'){
+					$('.welcome_text').text(items.gradeBenefit)
+				}else if(items.gradeName=='green'){
+					$('.green_text').text(items.gradeBenefit)
+				}else if(items.gradeName=='gold'){
+					$('.gold_text').text(items.gradeBenefit)
+				}
+			});	
 		},
 		error: function(err) {
 			console.log(err);

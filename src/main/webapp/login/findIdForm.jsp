@@ -10,9 +10,9 @@
 			<div id="findId-select-wrap">
 				<h2>아이디 찾기</h2>
 				<p>아이디 찾는 방법을 선택하세요</p>
-				<ul>
-					<li><button type="button" id="select-question-button"><span>질문으로 찾기</span></button></li>
-					<li><button type="button" id="select-email-button"><span>이메일로 찾기</span></button></li>
+				<ul class="nav">
+					<li class="nav-item"><button type="button" id="select-question-button"><span>질문으로 찾기</span></button></li>
+					<li class="nav-item"><button type="button" id="select-email-button"><span>이메일로 찾기</span></button></li>
 				</ul>
 			</div>
 			

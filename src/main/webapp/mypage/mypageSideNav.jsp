@@ -46,7 +46,7 @@
 	    <a class="nav-link disabled text-dark" href="#" tabindex="-1" aria-disabled="true">회원정보</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active alert-link" href="/milkyWayForest/mypage/mypageMyInfo">회원정보 변경/탈퇴</a>
+	    <a class="nav-link active alert-link" href="/milkyWayForest/mypage/mypagePwdForm">회원정보 변경/탈퇴</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link alert-link" href="#">배송지 관리</a>

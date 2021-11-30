@@ -44,7 +44,7 @@
 			<p id="find-write">
 				<a href="/milkyWayForest/login/findId">아이디 찾기</a> | 
 				<a href="/milkyWayForest/login/findPwd">비밀번호 찾기</a> | 
-				<a href="/milkyWayForest/write/memberWrite">회원가입</a>
+				<a href="/milkyWayForest/write/memberWrite">회원가입</a> | 
 			</p>
 		</section>
 	</div>

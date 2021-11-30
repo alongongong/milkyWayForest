@@ -62,8 +62,8 @@ $('#loginForm #kakao-login-btn').click(function(){
 						dd = birthday.substr(2,2);
 						
 					}if(!(data.kakao_account.hasOwnProperty("email"))){
-						email1 = 'no_email';
-						email2 = 'no_email';
+						email1 = 'false';
+						email2 = 'false';
 						
 					}else{
 						var email = (data.kakao_account.email).split("@");
@@ -191,9 +191,13 @@ $('#findIdForm').ready(function(){
 		var email2 = $('#findIdForm #findId-email-input2').val();
 		var email = email1+"@"+email2;
 		
-		if(email =='') {
+		if(email1 =='') {
 			$('#findIdForm #result2-div').html('이메일을 입력하세요');
-			$('#findIdForm #findId-email-input').focus();
+			$('#findIdForm #findId-email-input1').focus();
+	
+		}else if(email2 =='') {
+			$('#findIdForm #result2-div').html('이메일을 입력하세요');
+			$('#findIdForm #findId-email-input2').focus();
 	
 		}else if(!emailForm.test(email)){
 			$('#findIdForm #result2-div').html('잘못된 이메일 형식입니다');

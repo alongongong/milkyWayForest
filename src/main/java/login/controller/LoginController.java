@@ -35,20 +35,24 @@ public class LoginController {
 		return "/index";
 	}
 	
-	//아이디 로그인
+	//아이디 로그인 https://nahosung.tistory.com/75 비밀번호 암호화 참고
 	@PostMapping(value="/login")
 	@ResponseBody
 	public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {	
 		MemberDTO memberDTO2 = loginService.login(memberDTO);
 		
-		if(memberDTO2 == null) {
-			return "";
-		}
+		//비밀번호 복호화
+		String inputPwd = memberDTO.getPwd();
+		String dbPwd = memberDTO2.getPwd();
 		
-		session.setAttribute("memId", memberDTO2.getId());
-		System.out.println("LoginController 세션아이디 저장 "+session.getAttribute("memId"));	
-
-		return memberDTO2.getId();
+		if(! passwordEncoder.matches(inputPwd, dbPwd)) {
+			return "";
+			
+		}else {
+			session.setAttribute("memId", memberDTO2.getId());
+			System.out.println("LoginController 세션아이디 저장 "+session.getAttribute("memId"));				
+			return memberDTO2.getId();			
+		}	
 	}
 
 	//카카오 로그인 세션 저장
@@ -186,7 +190,10 @@ public class LoginController {
 	//비밀번호 재설정
 	@PostMapping(value="/findPwdUpdate")
 	@ResponseBody
-	public void findPwdUpdate(@ModelAttribute MemberDTO memberDTO, Model model) {	
+	public void findPwdUpdate(@ModelAttribute MemberDTO memberDTO, Model model) {
+		//비밀번호 암호화
+		memberDTO.setPwd(passwordEncoder.encode(memberDTO.getPwd()));
+		
 		loginService.findPwdUpdate(memberDTO);
 	}
 	
