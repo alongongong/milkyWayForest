@@ -223,4 +223,16 @@ public class AdminController {
 	public List<PaymentDTO> getDailyOrder() {
 		return adminService.getDailyOrder();
 	}
+	
+	@PostMapping("/admin/getOrderNShip")
+	@ResponseBody
+	public List<PaymentDTO> getOrderNShip() {
+		return adminService.getOrderNShip();
+	}
+	
+	@PostMapping("/admin/getOrderCancel")
+	@ResponseBody
+	public List<PaymentDTO> getOrderCancel() {
+		return adminService.getOrderCancel();
+	}
 }

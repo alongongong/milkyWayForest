@@ -145,4 +145,14 @@ public class AdminServiceImpl implements AdminService {
 		return adminDAO.getDailyOrder();
 	}
 
+	@Override
+	public List<PaymentDTO> getOrderNShip() {
+		return adminDAO.getOrderNShip();
+	}
+
+	@Override
+	public List<PaymentDTO> getOrderCancel() {
+		return adminDAO.getOrderCancel();
+	}
+
 }

@@ -100,4 +100,14 @@ public class AdminDAOMybatis implements AdminDAO {
 	public List<PaymentDTO> getDailyOrder() {
 		return sqlSession.selectList("adminSQL.getDailyOrder");
 	}
+
+	@Override
+	public List<PaymentDTO> getOrderNShip() {
+		return sqlSession.selectList("adminSQL.getOrderNShip");
+	}
+
+	@Override
+	public List<PaymentDTO> getOrderCancel() {
+		return sqlSession.selectList("adminSQL.getOrderCancel");
+	}
 }

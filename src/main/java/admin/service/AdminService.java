@@ -37,6 +37,10 @@ public interface AdminService {
 
 	public List<PaymentDTO> getDailyOrder();
 
+	public List<PaymentDTO> getOrderNShip();
+
+	public List<PaymentDTO> getOrderCancel();
+
 	
 
 }
