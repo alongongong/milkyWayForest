@@ -80,16 +80,27 @@ $(function(){
 					type: 'button',
 					value: '입력',
 					id: 'pwdBtn'+index
+				})).append($('<div>',{
+					class: 'qndPwdCheck'
 				}))).appendTo($('#qnaBoardTable tbody'));
 				
 				$('<tr>', {
 					class: 'contentHide'
 				}).append($('<td>', {
-					text: items.qnaContent
-				}))
+					colspan: '8',
+					text: items.qnaContent,
+					style: 'vertical-align: middle; text-align: center; padding: 50px'
+				})).appendTo($('#qnaBoardTable tbody'));
+				
 			
 				$('#pwdBtn'+index).click(function(){
-					
+					if(items.qnaPwd == $(this).prev().val()){
+						$('.pwdWriteShow').removeClass('pwdWriteShow').addClass('pwdWrite');
+						$(this).parent().parent().next().removeClass('contentHide').addClass('contentShow');
+					} else {
+						$('.qndPwdCheck').empty();
+						$('.qndPwdCheck').text('비밀번호가 일치하지 않습니다.');
+					}
 				});
 				
 			});

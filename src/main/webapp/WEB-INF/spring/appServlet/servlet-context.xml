@@ -24,6 +24,9 @@
 	<context:component-scan base-package="member.controller"/>
 	<context:component-scan base-package="notice.controller"/>
 	<context:component-scan base-package="findStore.controller"/>
+	<context:component-scan base-package="cart.controller"/>
+	<context:component-scan base-package="payment.controller"/>
+	
 	
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />
 	
