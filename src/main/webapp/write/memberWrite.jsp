@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="../css/writeAgreeForm.css">
 <script type="text/javascript" src="/milkyWayForest/js/date.js"></script>
 
-  <form id="memberWriteForm">
+  <form id="memberWriteForm" action="/milkyWayForest/write/writeOk" method="post">
     <ul id="memberWriteBox">
       <li id="memberWriteLi">
         <p id="memberWriteTitle">회원가입</p>
@@ -22,7 +22,7 @@
       <li id="blankSpace"></li>
       <li class="blankLi">
         <div class="labelName">
-          <p>＊ ID</p>
+          <p>ID *</p>
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteId" name="id" placeholder="ID">
@@ -32,7 +32,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>＊ 비밀번호</p>
+          <p>비밀번호 *</p>
         </div>
         <div class="writeInputText">
           <input type="password" id="memberWritePwd" name="pwd" placeholder="비밀번호">
@@ -41,7 +41,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>＊ 비밀번호 확인</p>
+          <p>비밀번호 확인 *</p>
         </div>
         <div class="writeInputText">
           <input type="password" id="memberWriteRePwd" placeholder="비밀번호 확인">
@@ -50,7 +50,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>＊ 이름</p>
+          <p>이름 *</p>
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteName" name="name">
@@ -59,11 +59,45 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>＊ 닉네임</p>
+          <p>닉네임 *</p>
         </div>
         <div class="writeInputText">
           <input type="text" id="memberWriteNick" name="nickname">
           <div id="nickNameDiv" style="width:20%; display:inline;"></div>
+        </div>
+      </li>
+      
+      <li class="blankLi">
+        <div class="labelName">
+          <p>성별 *</p>
+        </div>
+        <div class="writeInputText">
+          <input type="radio" name="gender" class="gender" value="남">남
+          <input type="radio" name="gender" class="gender" value="여">여
+        </div>
+      </li>
+      <li class="blankLi">
+        <div class="labelName">
+          <p>휴대폰 번호 *</p>
+        </div>
+        <div class="writeInputText">
+          <select id="writeTel1" name="tel1">
+              <option value="010">010</option>
+              <option value="011">011</option>
+              <option value="016">016</option>
+              <option value="017">017</option>
+              <option value="018">018</option>
+              <option value="019">019</option>
+          </select>-
+        <input type="text" id="writeTel2" name="tel2">-<input type="text" id="writeTel3" name="tel3">
+      </div>
+      </li>
+      <li class="blankLi">
+        <div class="labelName">
+          <p>생년월일 *</p>
+        </div>
+        <div class="writeInputText">
+    		<script type="text/javascript"> Today('null','null','null'); </script>
         </div>
       </li>
       <li class="blankLi">
@@ -87,39 +121,6 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>성별</p>
-        </div>
-        <div class="writeInputText">
-          <input type="radio" name="gender" class="gender" value="남">남
-          <input type="radio" name="gender" class="gender" value="여">여
-        </div>
-      </li>
-      <li class="blankLi">
-        <div class="labelName">
-          <p>휴대폰 번호</p>
-        </div>
-        <div class="writeInputText">
-          <select id="writeTel1" name="tel1">
-              <option value="010">010</option>
-              <option value="011">011</option>
-              <option value="016">016</option>
-              <option value="017">017</option>
-              <option value="018">018</option>
-              <option value="019">019</option>
-          </select>-
-        <input type="text" id="writeTel2" name="tel2">-<input type="text" id="writeTel3" name="tel3">
-      </div>
-      </li>
-      <li class="blankLi">
-        <div class="labelName">
-          <p>생년월일</p>
-        </div>
-        <div class="writeInputText">
-    		<script type="text/javascript"> Today('null','null','null'); </script>
-        </div>
-      </li>
-      <li class="blankLi">
-        <div class="labelName">
           <p>가입 경로</p>
         </div>
         <div class="writeInputText">
@@ -128,7 +129,7 @@
       </li>
       <li class="blankLi">
         <div class="labelName">
-          <p>＊ 이메일 주소</p>
+          <p>이메일 주소 *</p>
         </div>
         <div class="writeInputText">
           	<input type="text" id="memberWriteEmail" name="email1">

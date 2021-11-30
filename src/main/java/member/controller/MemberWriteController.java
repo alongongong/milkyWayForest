@@ -1,6 +1,7 @@
 package member.controller;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -39,6 +40,11 @@ public class MemberWriteController {
 		model.addAttribute("display", "write/memberWrite.jsp");
 		return "/index";
 	}
+//	@GetMapping(value="writeOk")
+//	public String writeOk(Model model) {
+//		model.addAttribute("display", "write/writeOk.jsp");
+//		return "/index";
+//	}
 	
 	@PostMapping("/writeEmailCheck")
 	@ResponseBody
@@ -100,11 +106,13 @@ public class MemberWriteController {
 			return memberDTO2.getId();
 	}
 	
-	@RequestMapping(value="/write", method=RequestMethod.POST)
-	@ResponseBody
-	public void write(@ModelAttribute MemberDTO memberDTO) {
+	@RequestMapping(value="/writeOk", method=RequestMethod.POST)
+	public String write(@ModelAttribute MemberDTO memberDTO, Model model) {
 		memberDTO.setPwd(bcryptPasswordEncoder.encode(memberDTO.getPwd()));
 		memberWriteService.write(memberDTO);
+		model.addAttribute("id", memberDTO.getId());
+		model.addAttribute("display", "write/writeOk.jsp");
+		return "/index";
 	}
 	
 }

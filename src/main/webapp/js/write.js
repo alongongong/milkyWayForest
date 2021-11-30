@@ -27,50 +27,65 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 	
 	if($('#memberWriteForm #memberWriteId').val() == ''){
 		$('#memberWriteForm #emailDiv').html('아이디 입력');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteId').focus();
 	}else if($('#memberWriteForm #memberWritePwd').val() == ''){
 		$('#memberWriteForm #emailDiv').html('비밀번호 입력');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if(!pwdForm.test(pwd)){
 		$('#memberWriteForm #emailDiv').html('잘못된 비밀번호 형식입니다.');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if($('#memberWriteForm #memberWritePwd').val() != $('#memberWriteRePwd').val()){
 		$('#memberWriteForm #emailDiv').html('비밀번호 틀림');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if($('#memberWriteForm #memberWriteName').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이름 입력');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteName').focus();
 	}else if(!nameForm.test(name)){
 		$('#memberWriteForm #emailDiv').html('잘못된 이름 형식입니다.');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteName').focus();
 	}else if($('#memberWriteForm #memberWriteNick').val() == ''){
 		$('#memberWriteForm #emailDiv').html('닉네임 입력');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteNick').focus();
 	}else if(!nicknameForm.test(nickname)){
 		$('#memberWriteForm #emailDiv').html('잘못된 닉네임 형식입니다.');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteNick').focus();
 	}else if(!telForm.test(tel)){
 		$('#memberWriteForm #emailDiv').html('잘못된 번호 형식입니다.');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if($('#memberWriteForm #memberWriteEmail').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if($('#memberWriteForm #memberWriteEmail1').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if($('#memberWriteForm #athntNmbr').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이메일 인증 해주세요');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}
 	else{
-		$.ajax({
-			url: '/milkyWayForest/write/write',
+	
+/*		$.ajax({
+			url: '/milkyWayForest/write/write',                url의 주소로 
 			type:'post',
 			data: $('#memberWriteForm').serialize(),
 			success: function(){
 				alert('회원 가입 등록');
-				location.href='/milkyWayForest/index.';
+				$('#memberWriteForm').submit();
 			},
 			error:function(err){
 				console.log(err);
 			}
-		});
+		}); */
+		$('#memberWriteForm').submit();
+	
 	}
 });
 
@@ -86,6 +101,7 @@ $('#memberWriteForm #memberWriteId').focusout(function(){
 		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if(!idForm.test(id)){
 		$('#memberWriteForm #emailDiv').html('잘못된 아이디 형식입니다');	
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteId').focus();	
 	}else{
 		$.ajax({
@@ -125,9 +141,11 @@ $('#memberWriteForm #athntEmail').click(function(){
 	
 	if(email == ''){
 		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
+		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteForm #memberWriteEmail').focus();
 	}else if(!emailForm.test(email)){
 		$('#memberWriteForm #emailDiv').html('잘못된 이메일 형식입니다');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}else{
 		$.ajax({
 			url:"/milkyWayForest/write/writeEmailCheck",
@@ -136,6 +154,7 @@ $('#memberWriteForm #athntEmail').click(function(){
 			success: function(data){
 				if(data != 'writeEmailCheck_non_exist'){
 					$('#memberWriteForm #emailDiv').html('이미 등록된 이메일입니다');
+					$('#memberWriteForm #emailDiv').css('color','red');
 					
 				}else{
 					$.ajax({
@@ -144,6 +163,7 @@ $('#memberWriteForm #athntEmail').click(function(){
 						data:{'email' : email},
 						success: function(data){
 							$('#memberWriteForm #emailDiv').html('인증번호가 발송되었습니다');
+							$('#memberWriteForm #emailDiv').css('color','green');
 							$('#memberWriteForm #athnt').show();
 							code = data;
 						},
@@ -167,8 +187,10 @@ $('#memberWriteForm #athBtn').click(function(){
 	
 	if(inputCode == ''){
 		$('#memberWriteForm #emailDiv').html('인증번호를 입력하세요');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if(inputCode != code){
 		$('#memberWriteForm #emailDiv').html('인증번호를 다시 확인해주세요');
+		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if(inputCode == code){
 		$('#memberWriteForm #emailDiv').html('인증되었습니다');
 		$('#memberWriteForm #emailDiv').css('color','green');

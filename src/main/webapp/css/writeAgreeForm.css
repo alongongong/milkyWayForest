@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* 약관동의 */ 
 #writeAgreeForm #kakaoWriteBtn{background-color:#003300;  cursor:pointer; width:30%; height:50px;border-radius:5px 5px 5px 5px; font-size:12pt; margin-bottom: 6%; background-color: yellow;  border-color:none; }
 #writeAgreeForm #simpleWrite {border: 1px solid #ddd;background-color: #fff; margin:0; padding:0; width:600px;height:50px; margin-bottom:20px; }
 #writeAgreeForm{width: 600px;margin: 0 auto; margin-top:20px;}
@@ -80,3 +81,13 @@
 #memberWriteForm #nickNameDiv{color:red; font-size: 8px;}
 #memberWriteForm #emailDiv{margin-left:80px;margin-top:10px;color:red; font-size: 8px;}
 #memberWriteForm #athDiv{color:red; font-size: 8px;}
+
+
+/* 회원가입 완료 */
+#writeOkForm{width: 600px;  margin: 0 auto; margin-top:20px;}
+#writeOkForm #writeOkBox{background-color: #fff; margin:0; padding:0 auto;border: 1px solid #ddd; width:600px; height:500px; padding-top:100px;}
+#writeOkForm #writeOkSubject{margin:0 auto;border-bottom: 1px solid #ddd; width:400px; text-align: center;font-size:40px;height:80px;}
+#writeOkForm #writeOkContent{border-bottom:1px solid #ddd; width:400px; margin:0 auto; height:150px; margin-top:30px; text-align:center;}
+#writeOkForm #writeOkBtn{ width:400px; margin:0 auto; margin-top:30px; text-align:center;}
+#writeOkForm #writeOkHomeBtn{width:150px; height:50px; background-color: white;margin-right:10px;}
+#writeOkForm #writeOkLoginBtn{width:150px; height:50px; background-color: black; color:white;margin-left:10px;}
