@@ -109,6 +109,14 @@ public class MemberWriteController {
 	@RequestMapping(value="/writeOk", method=RequestMethod.POST)
 	public String write(@ModelAttribute MemberDTO memberDTO, Model model) {
 		memberDTO.setPwd(bcryptPasswordEncoder.encode(memberDTO.getPwd()));
+		if(memberDTO.getIdPwdQuestion()=="false" || memberDTO.getIdPwdAnswer()=="") {
+	         memberDTO.setIdPwdQuestion("false");
+	         memberDTO.setIdPwdAnswer("false");
+	    }
+		
+		if(memberDTO.getWritePath()=="")
+			memberDTO.setWritePath("false");
+		
 		memberWriteService.write(memberDTO);
 		model.addAttribute("id", memberDTO.getId());
 		model.addAttribute("display", "write/writeOk.jsp");

@@ -215,25 +215,8 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/write.js"></script>
-<script type="text/javascript">
-/* $('#writeAgreeForm').ready(function(){
-	$('#writeAgreeForm .acptChck').each(function(){
-		$(this).prop('checked', false);
-	})
-	
-}); */
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
-/* window.onpageshow = function(event){
-	$("#writeAllAgreecheck:checkbox:checked").prop("checked",false);
-	$(".acptChck:checkbox:checked").prop("checked",false); */
-
-	
-	//$("input:checkbox[class='acptChck']:checked").attr("checked", "");
-/* $("input[type=checkbox][checked]").each(function() {
-	$(this).attr('checked', false); */
-/* }); */
-} 
-</script>
 
 
 

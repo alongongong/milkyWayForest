@@ -106,7 +106,7 @@
         </div>
         <div class="writeInputText">
           <select id="writeQuestion" name="idPwdQuestion">
-              <option selected>---질문을 선택하세요---</option>
+              <option value="false">---질문을 선택하세요---</option>
               <option value="추억의 장소">기억에 남는 추억의 장소는?</option>
               <option value="좌우명">자신의 인생 좌우명은?</option>
               <option value="보물">자신의 보물 1호는?</option>
@@ -116,7 +116,7 @@
               <option value="책">인상 깊게 읽은 책 이름은?</option>
               <option value="캐릭터">내가 좋아하는 캐릭터는?</option>
           </select>
-          <input type="text" id="writeAnwer" name="idPwdAnswer">
+          <input type="text" id="writeAnwer" name="idPwdAnswer" readonly>
         </div>
       </li>
       <li class="blankLi">

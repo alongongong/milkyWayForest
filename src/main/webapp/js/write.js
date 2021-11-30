@@ -63,15 +63,24 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 	}else if($('#memberWriteForm #memberWriteEmail').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
+	}else if($('#memberWriteForm .gender').val() == ''){
+		$('memberWriteForm #emailDiv').html('성별을 체크해주세요');
+	
 	}else if($('#memberWriteForm #memberWriteEmail1').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if($('#memberWriteForm #athntNmbr').val() == ''){
 		$('#memberWriteForm #emailDiv').html('이메일 인증 해주세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
-	}
-	else{
-	
+	}else{
+
+//		if($('#memberWriteForm #writeAnwer').val() == ''){
+//		
+//			$('#memberWriteForm #writeAnwer').val('false');
+//			$('#memberWriteForm #writeQuestion').val('false').prop('selected',true);
+//		}
+//		 if($('#memberWriteForm #joinPath').val() == ''){
+//			$('#memberWriteForm #joinPath').val('false');
 /*		$.ajax({
 			url: '/milkyWayForest/write/write',                url의 주소로 
 			type:'post',
@@ -85,7 +94,13 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 			}
 		}); */
 		$('#memberWriteForm').submit();
-	
+		}
+});
+$('#memberWriteForm #writeQuestion').change(function(){
+	if($("#memberWriteForm #writeQuestion option").index( $("#memberWriteForm #writeQuestion option:selected")) >= 1){
+		$('#writeAnwer').removeAttr('readonly');
+	}else{
+		$('#writeAnwer').attr('readonly','readonly');
 	}
 });
 
@@ -162,6 +177,9 @@ $('#memberWriteForm #athntEmail').click(function(){
 						type:"get",
 						data:{'email' : email},
 						success: function(data){
+							$('#memberWriteForm #athntNmbr').val("");
+							$('#memberWriteForm #athntNmbr').removeAttr('readonly');
+							$('#memberWriteForm #athBtn').removeAttr('disabled');
 							$('#memberWriteForm #emailDiv').html('인증번호가 발송되었습니다');
 							$('#memberWriteForm #emailDiv').css('color','green');
 							$('#memberWriteForm #athnt').show();
@@ -195,6 +213,8 @@ $('#memberWriteForm #athBtn').click(function(){
 		$('#memberWriteForm #emailDiv').html('인증되었습니다');
 		$('#memberWriteForm #emailDiv').css('color','green');
 		$('#memberWriteForm #memberWriteBtn').removeAttr('disabled','disabled');
+		$('#memberWriteForm #athBtn').attr('disabled','disabled');
+		$('#memberWriteForm #athntNmbr').attr('readonly','readonly');
 	}
 	
 });
@@ -240,5 +260,75 @@ window.onpageshow = function(event){
 	});
 };
 
+$('#writeAgreeForm #kakaoWriteBtn').click(function(){
+	Kakao.init('3587b0269dadf42ae93f816477db8cd8'); //발급받은 키 중 javascript키를 사용
+	console.log(Kakao.isInitialized()); // sdk초기화여부판단
+	
+	Kakao.Auth.login({
+		success: function (response) {
+      		//사용자 정보 가져오기
+        	Kakao.API.request({
+				url: '/v2/user/me', //계정 정보를 가져오는 request url
+	          	success: function (data) {
+	        		console.log(data)  
+	        		
+	        		//카카오 로그인 선택 동의 사항
+					var mm;
+					var dd;
+					var email1;
+					var email2;
+					var writePath = 'kakao';
+
+					if(!(data.kakao_account.hasOwnProperty("birthday"))){
+						mm = 0;
+						dd = 0;
+					
+					}else{
+						var birthday = data.kakao_account.birthday;
+						mm = birthday.substr(0,2);
+						dd = birthday.substr(2,2);
+						
+					}if(!(data.kakao_account.hasOwnProperty("email"))){
+						email1 = 'false';
+						email2 = 'false';
+						
+					}else{
+						var email = (data.kakao_account.email).split("@");
+						email1 = email[0];
+						email2 = email[1];
+					}
+
+	        		//세션에 카카오 계정 정보 저장
+	        		$.ajax({
+			       			url: "/milkyWayForest/login/kakaoLogin",
+							type: "post",
+			       			data: {'id' : data.id,
+			       				   'nickname' : data.properties.nickname,
+			       				   'mm' : mm,
+			       				   'dd' : dd,
+			       				   'email1' : email1,
+			       				   'email2' : email2,
+			       				   'writePath' : writePath},
+							success: function(){
+								location.href='/milkyWayForest/index.jsp';
+								
+							},
+							error: function(err){
+								console.log(err);
+							}
+					});
+						
+				},
+				fail: function (error) {
+				  console.log(error)
+				},
+			})
+		},
+		fail: function (error) {
+			console.log(error)
+		},
+	})
+	
+});
 
 
