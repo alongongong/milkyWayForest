@@ -49,26 +49,26 @@
 #memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(3){text-align:center; list-style:none; font-size:80%;}
 #memberWriteForm>#memberWriteBox>#blankSpace{list-style:none; height:100px;}
 #memberWriteForm>#memberWriteBox>li{list-style:none; height:35px; }
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteId{margin-top:12px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWritePwd{margin-top:8px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteRePwd{margin-top:8px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteName{margin-top:8px;height:20px;;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteNick{margin-top:8px;height:20px;width:50%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeQuestion{margin-top:8px;height:20px; width:65%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeAnwer{margin-top:10px;width:20%; height:20px; margin-left:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>.gender{margin-top:3%; margin-left:5%;}
-#memberWriteForm>#memberWriteBox>li>div>#writeTel1{width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeTel2{width:25%;height:20px;margin-top:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeTel3{width:25%;height:20px;margin-top:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail{width:20%; height:20px; margin-top:10px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px; }
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail1{width:30%;height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#joinPath{margin-top:4%;height:40%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#year{margin-top:10px;width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
-#memberWriteForm>#memberWriteBox>li>div>#month{width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
-#memberWriteForm>#memberWriteBox>li>div>#day{width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteId{margin-top:2px;height:20px;width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWritePwd{margin-top:2px;height:20px;width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteRePwd{margin-top:2px;height:20px;width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteName{margin-top:2px;height:20px; width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteNick{margin-top:2px;height:20px; width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>#writeQuestion{margin-top:2px;height:20px; width:65%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>#writeAnwer{margin-top:2px;width:20%; height:20px; margin-left:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
+#memberWriteForm>#memberWriteBox>li>div>.gender{margin-top:2px; margin-left:5%;}
+#memberWriteForm>#memberWriteBox>li>div>#writeTel1{margin-top:2px; width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
+#memberWriteForm>#memberWriteBox>li>div>#writeTel2{width:25%;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
+#memberWriteForm>#memberWriteBox>li>div>#writeTel3{width:25%;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail{width:20%; height:20px; margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px; }
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail1{width:30%;height:20px; margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
+#memberWriteForm>#memberWriteBox>li>div>#joinPath{margin-top:2px;height:40%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
 #memberWriteForm>#memberWriteBox>.blankLi>.labelName{ float:left; width:35%;height:100%;border-right:1px solid gray; text-align:left;}
-#memberWriteForm>#memberWriteBox>.blankLi>.labelName>p{ margin-top:7px; margin-bottom:0; height:80%;padding-left:50px;}
+#memberWriteForm>#memberWriteBox>.blankLi>.labelName>p{ margin-top:2px; height:80%;padding-left:50px;}
 #memberWriteForm>#memberWriteBox>.blankLi>.writeInputText{width:63%;float:right;height:100%; }
+#memberWriteForm #yy{width:80px;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
+#memberWriteForm #mm{width:80px;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
+#memberWriteForm #dd{width:80px;;height:20px;margin-top:2px;; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
 #memberWriteForm>#memberWriteBox>li>div>#memberWriteBtn{margin-top:60px;cursor:pointer; width:140px; height:50px;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black;}
 #memberWriteForm>#memberWriteBox>li>div>#memberWriteReset{cursor:pointer; width:140px; height:50px;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black;}
 #memberWriteForm #athnt{display:none;}
