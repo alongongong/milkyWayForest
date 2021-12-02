@@ -10,4 +10,6 @@ public interface MypageService {
 
 	public void mypageMyInfoUpdate(MemberDTO memberDTO);
 
+	public void mypageMyInfoDelete(MemberDTO memberDTO);
+
 }

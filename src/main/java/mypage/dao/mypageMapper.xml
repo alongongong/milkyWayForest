@@ -23,4 +23,8 @@
 							   idPwdAnswer=#{idPwdAnswer}
 		where id=#{id}
 	</update>
+	
+	<delete id="mypageMyInfoDelete" parameterType="String">
+		delete milkymember where id=#{id}
+	</delete>
 </mapper>

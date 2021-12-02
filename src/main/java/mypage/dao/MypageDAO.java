@@ -10,4 +10,6 @@ public interface MypageDAO {
 
 	public void mypageMyInfoUpdate(MemberDTO memberDTO);
 
+	public void mypageMyInfoDelete(MemberDTO memberDTO);
+
 }

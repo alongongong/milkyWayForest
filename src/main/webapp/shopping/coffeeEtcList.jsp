@@ -54,27 +54,36 @@ $(function(){
 
 			$.each(data, function(index,items) {
 				$('<div>') .append($('<div>', {
-					width: '300px',
+					width: '70%',
 					height: '300px',
+					style : 'margin: 10px;',
 					position: 'relative'
 					
 				}).append($('<img>', {
 					src: "/milkyWayForest/productImage/"+items.productImageName,
 					position: 'absolute',
 					width: '100%',
-					height: '100%'
+					height: '100%',
+					class: 'imgClick'
+					
+				})).append($('<input>', { 
+					type: 'hidden',
+					id: 'productCode',
+					value: items.productCode
 					
 				})))
 				.append($('<div>',{
-					width: '70%',
+					width: '50%',
 					align: 'center',
+					style : 'padding-bottom: 10px; margin: 5px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
 					text : items.productName 
 				}))
 				.append($('<div>',{
 					width: '50%',
-					text : items.productUnit
+					align: 'center',
+					style : 'margin: 5px; color: #555555; font-size: 15px; font-weight:bold;',
+					text : items.productUnit.toLocaleString()+" 원"
 				}))
-			
 				.appendTo($('#menuImgDiv1'));
 			});
 			

@@ -42,6 +42,13 @@ public class MypageController {
 		return "/index";
 	}
 	
+	//비밀번호 확인 창
+	@GetMapping(value="/mypagePwdForm2")
+	public String mypagePwdForm2(Model model) {
+		model.addAttribute("display", "mypage/mypagePwdForm2.jsp");
+		return "/index";
+	}
+	
 	//비밀번호 확인 
 	@PostMapping(value="/mypagePwdCheck")
 	@ResponseBody
@@ -114,7 +121,7 @@ public class MypageController {
 	//회원정보 수정
 	@PostMapping(value="/mypageMyInfoUpdate")
 	@ResponseBody
-	public void mypageMyInfoUpdate(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+	public void mypageMyInfoUpdate(@ModelAttribute MemberDTO memberDTO) {
 		//비밀번호 암호화
 		memberDTO.setPwd(passwordEncoder.encode(memberDTO.getPwd()));
 		
@@ -124,24 +131,22 @@ public class MypageController {
 		}else {	
 			memberDTO.setIdPwdQuestion("false");
 			memberDTO.setIdPwdAnswer("false");
-//		}else if(memberDTO.getIdPwdAnswer()=="") {
-//			memberDTO.setIdPwdQuestion("false");
-//			memberDTO.setIdPwdAnswer("false");
 		}
-		
-//		System.out.println(memberDTO.getId()); //세션 아이디값 null로 들어오는 거 ??
-//		System.out.println(memberDTO.getNickname());
-//		System.out.println(memberDTO.getPwd());
-//		System.out.println(memberDTO.getTel1());
-//		System.out.println(memberDTO.getEmail1());
+
 		System.out.println(memberDTO.getIdPwdQuestion());
 		System.out.println(memberDTO.getIdPwdAnswer());
-//		System.out.println(session.getAttribute("memId"));
-		
-//		memberDTO.setId((String) session.getAttribute("memId"));
-		
+
 		mypageService.mypageMyInfoUpdate(memberDTO);
 	}
 	
+	//회원정보 삭제
+	@PostMapping(value="/mypageMyInfoDelete")
+	@ResponseBody
+	public void mypageMyInfoDelete(@ModelAttribute MemberDTO memberDTO) {
+		//비밀번호 암호화
+		memberDTO.setPwd(passwordEncoder.encode(memberDTO.getPwd()));
+		
+		mypageService.mypageMyInfoDelete(memberDTO);
+	}
 
 }

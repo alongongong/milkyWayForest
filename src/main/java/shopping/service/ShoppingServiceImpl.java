@@ -107,6 +107,11 @@ public class ShoppingServiceImpl implements ShoppingService {
 	public List<ShoppingDTO> getShoppingDetail() {
 		return shoppingDAO.getShoppingDetail();
 	}
+
+	@Override
+	public ShoppingDTO clickImg(String productCode) {
+		return shoppingDAO.clickImg(productCode);
+	}
 	
 
 	
