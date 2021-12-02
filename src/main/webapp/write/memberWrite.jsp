@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" type="text/css" href="../css/writeAgreeForm.css">
-<script type="text/javascript" src="/milkyWayForest/js/date.js"></script>
+<!-- <script type="text/javascript" src="/milkyWayForest/js/date.js"></script> -->
 
   <form id="memberWriteForm" action="/milkyWayForest/write/writeOk" method="post">
     <ul id="memberWriteBox">
@@ -25,7 +25,7 @@
           <p>ID *</p>
         </div>
         <div class="writeInputText">
-          <input type="text" id="memberWriteId" name="id" placeholder="ID">
+          <input type="text" id="memberWriteId" name="id" placeholder="영문,숫자포함 5~10자">
           <input type="hidden" id="checkId" val="">
           <div id="idDiv" style="width:20%; display:inline;"></div>
         </div>
@@ -35,7 +35,7 @@
           <p>비밀번호 *</p>
         </div>
         <div class="writeInputText">
-          <input type="password" id="memberWritePwd" name="pwd" placeholder="비밀번호">
+          <input type="password" id="memberWritePwd" name="pwd" placeholder="영문,숫자,특수문자 포함 8~16자">
           <div id="pwdDiv" style="width:20%; display:inline;"></div>
         </div>  
       </li>
@@ -53,7 +53,7 @@
           <p>이름 *</p>
         </div>
         <div class="writeInputText">
-          <input type="text" id="memberWriteName" name="name">
+          <input type="text" id="memberWriteName" name="name" placeholder="한글만 적어주세요">
           <div id="nameDiv" style="width:20%; display:inline;"></div>
         </div>
       </li>
@@ -97,7 +97,9 @@
           <p>생년월일 *</p>
         </div>
         <div class="writeInputText">
-    		<script type="text/javascript"> Today('null','null','null'); </script>
+    		<input type="text" id="yy" name="yy" placeholder="ex) 1950">년
+    		<input type="text" id="mm" name="mm" placeholder= "ex) 01">월
+    		<input type="text" id="dd" name="dd" placeholder= "ex) 01">일
         </div>
       </li>
       <li class="blankLi">
@@ -106,7 +108,7 @@
         </div>
         <div class="writeInputText">
           <select id="writeQuestion" name="idPwdQuestion">
-              <option selected>---질문을 선택하세요---</option>
+              <option value="false">---질문을 선택하세요---</option>
               <option value="추억의 장소">기억에 남는 추억의 장소는?</option>
               <option value="좌우명">자신의 인생 좌우명은?</option>
               <option value="보물">자신의 보물 1호는?</option>
@@ -116,7 +118,7 @@
               <option value="책">인상 깊게 읽은 책 이름은?</option>
               <option value="캐릭터">내가 좋아하는 캐릭터는?</option>
           </select>
-          <input type="text" id="writeAnwer" name="idPwdAnswer">
+          <input type="text" id="writeAnwer" name="idPwdAnswer" readonly>
         </div>
       </li>
       <li class="blankLi">

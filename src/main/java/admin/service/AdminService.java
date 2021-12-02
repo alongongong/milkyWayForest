@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
+import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 
 public interface AdminService {
@@ -33,6 +34,12 @@ public interface AdminService {
 	public Object qnaCommentInsert(CommentDTO qnaBoardDTO);
 
 	public List<CommentDTO> getQnaCommentContent(int qnaCode);
+
+	public List<PaymentDTO> getDailyOrder();
+
+	public List<PaymentDTO> getOrderNShip();
+
+	public List<PaymentDTO> getOrderCancel();
 
 	
 

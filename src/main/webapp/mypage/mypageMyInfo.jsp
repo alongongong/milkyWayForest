@@ -25,25 +25,25 @@
 					<tr>
 						<td id="td-id">아이디 *</td>
 						<td>
-							<input type="text" id="id" name="id" value="${memId }" class="form-control bg-white border-0" disabled>
+							<input type="text" id="id" name="id" value="${memId }" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
 						<td>비밀번호 *</td>
 						<td>
-							<input type="password" id="pwd" name="pwd" class="form-control bg-white border">
+							<input type="password" id="pwd" name="pwd" class="form-control bg-white border" placeholder="영문,숫자,특수문자 포함 8~16자">
 						</td>
 					</tr>
 					<tr>
 						<td>비밀번호 확인 *</td>
 						<td>
-							<input type="password" id="repwd" class="form-control bg-white border">
+							<input type="password" id="repwd" class="form-control bg-white border" placeholder="비밀번호 확인">
 						</td>
 					</tr>
 					<tr>
 						<td>이름 *</td>
 						<td>
-							<input type="text" id="name" name="name" class="form-control bg-white border-0" disabled>
+							<input type="text" id="name" name="name" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -76,9 +76,7 @@
 					<tr>
 						<td>성별 *</td>
 						<td>
-							<div class="input-group-text bg-white border-0">
-								<input type="text" id="gender" name="gender" class="form-control bg-white border-0" disabled>							
-							</div>
+							<input type="text" id="gender" name="gender" class="form-control shadow-none bg-white border-0" readonly>
 						</td>
 					</tr>
 					<tr>
@@ -101,15 +99,15 @@
 						<td>생년월일 *</td>
 						<td>
 							<div id="birthday-input-wrapper" class="input-group mb-3">
-								<input type="text" id="yy" name="yy" class="form-control bg-white border-0" disabled>
+								<input type="text" id="yy" name="yy" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">년</span>
 								</div>
-								<input type="text" id="mm" name="mm" class="form-control bg-white border-0" disabled>
+								<input type="text" id="mm" name="mm" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">월</span>
 								</div>
-								<input type="text" id="dd" name="dd" class="form-control bg-white border-0" disabled>
+								<input type="text" id="dd" name="dd" class="form-control shadow-none bg-white border-0" readonly>
 								<div class="input-group-prepend">
 									<span class="input-group-text bg-white border-0">일</span>
 								</div>
@@ -144,7 +142,7 @@
 			
 			<div align="center" id="button-wrap">
 				<button type="button" id="Update-button" class="btn btn-info">회원정보수정</button>
-				<button type="button" id="Delete-button" class="btn btn-info">회원탈퇴</button>
+				<button type="button" id="Delete-button" class="btn btn-info" onclick="location.href='/milkyWayForest/mypage/mypagePwdForm2'">회원탈퇴</button>
 				<button type="reset" id="reset-button" class="btn btn-info">취소</button>
 			</div>
 		</div>
@@ -155,9 +153,8 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/mypage.js"></script>
-
 <script>
-//회원정보 불러오기
+//회원정보 불러오기 
 $('#mypageMyInfo').ready(function(){
 	$.ajax({
 		url: '/milkyWayForest/mypage/getMypageMyInfo',
@@ -202,154 +199,5 @@ $('#mypageMyInfo').ready(function(){
 			console.log(err);
 		}
 	});
-});
-
-//이메일 인증
-var code = '';
-
-$('#mypageMyInfo #email-send-button').click(function(){
-	$('#mypageMyInfo #result-div').empty();
-	
-	var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-	var email1 = $('#mypageMyInfo #email1').val();
-	var email2 = $('#mypageMyInfo #email2').val();
-	var email = email1+"@"+email2;
-
-	if(email1 =='') {
-		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
-		$('#mypageMyInfo #email1').focus();
-
-	}else if(email2 =='') {
-		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
-		$('#mypageMyInfo #email2').focus();
-
-	}else if(!emailForm.test(email)){
-		$('#mypageMyInfo #result-div').html('잘못된 이메일 형식입니다');
-		
-	}else{
-		//이메일 발송
-		$.ajax({
-   			url: "/milkyWayForest/mypage/mypageEmailSend",
-			type: "get",
-   			data: {'email' : email},
-			success: function(data){
-				$('#mypageMyInfo #emailNum').val('');
-				$('#mypageMyInfo #result-div').html('인증번호가 발송되었습니다');
-				$("#mypageMyInfo #emailNum").prop("disabled", false);
-				$("#mypageMyInfo #email-number-button").prop("disabled", false);
-				code = data;
-			},
-			error: function(err){
-				console.log(err);
-			}
-		});
-	}
-});
-
-//인증번호 확인
-$('#mypageMyInfo #email-number-button').click(function(){
-	$('#mypageMyInfo #result-div').empty();
-	
-	var inputCode = $('#mypageMyInfo #emailNum').val();
-	
-	if(inputCode == ''){
-		$('#mypageMyInfo #result-div').html('인증번호를 입력하세요');
-		
-	}else if(inputCode != code){
-		$('#mypageMyInfo #result-div').html('인증번호를 다시 확인해주세요');
-		
-	}else if(inputCode == code){
-		$('#mypageMyInfo #result-div').html('인증번호가 확인되었습니다');
-		$('#reEmail1').val($('#mypageMyInfo #email1').val());
-		$('#reEmail2').val($('#mypageMyInfo #email2').val());
-		$("#mypageMyInfo #emailNum").prop("disabled", true);
-		$("#mypageMyInfo #email-number-button").prop("disabled", true);
-	}
-});
-
-//회원정보수정
-$('#mypageMyInfo #Update-button').click(function(){
-	$('#mypageMyInfo #result-div').empty();
-	
-	//정규표현식
-	var pwdForm = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/; 
-	var nicknameForm = /^[\w\Wㄱ-ㅎㅏ-ㅣ가-힣]{2,20}$/;
-	var telForm = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-	var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-	
-	var pwd = $('#mypageMyInfo #pwd').val();
-	var repwd = $('#mypageMyInfo #repwd').val();
-	var nickname = $('#mypageMyInfo #nickname').val();
-	var tel1 = $('#mypageMyInfo #tel1').val();
-	var tel2 = $('#mypageMyInfo #tel2').val();
-	var tel3 = $('#mypageMyInfo #tel3').val();
-	var tel = tel1 + "-" +  tel2 + "-" + tel3;
-	var email1 = $('#mypageMyInfo #email1').val();
-	var email2 = $('#mypageMyInfo #email2').val();
-	var email = email1+"@"+email2;
-	var reEmail1 = $('#mypageMyInfo #reEmail1').val();
-	var reEmail2 = $('#mypageMyInfo #reEmail2').val();
-	
-	if(pwd == '') {
-		$('#mypageMyInfo #result-div').html('비밀번호를 입력하세요');
-		$('#mypageMyInfo #pwd').focus();
-		
-	}else if(!pwdForm.test(pwd)){
-		$('#mypageMyInfo #result-div').html('잘못된 비밀번호 형식입니다');
-		
-	}else if(repwd == '') {
-		$('#mypageMyInfo #result-div').html('비밀번호를 한번 더 입력하세요');
-		$('#mypageMyInfo #repwd').focus();
-		
-	}else if(pwd != repwd) {
-		$('#mypageMyInfo #result-div').html('비밀번호가 맞지 않습니다');
-	
-	}else if(nickname == '') {
-		$('#mypageMyInfo #result-div').html('닉네임을 입력하세요');
-		$('#mypageMyInfo #nickname').focus();
-		
-	}else if(!nicknameForm.test(nickname)){
-		$('#mypageMyInfo #result-div').html('잘못된 닉네임 형식입니다');
-
-	}else if(tel1 == '') {
-		$('#mypageMyInfo #result-div').html('휴대폰 번호를 입력하세요');
-		$('#mypageMyInfo #tel1').focus();
-		
-	}else if(tel2 == '') {
-		$('#mypageMyInfo #result-div').html('휴대폰 번호를 입력하세요');
-		$('#mypageMyInfo #tel2').focus();
-		
-	}else if(tel3 == '') {
-		$('#mypageMyInfo #result-div').html('휴대폰 번호를 입력하세요');
-		$('#mypageMyInfo #tel3').focus();
-		
-	}else if(!telForm.test(tel)){
-		$('#mypageMyInfo #result-div').html('잘못된 휴대폰 번호 형식입니다');
-		
-	}else if(email1 =='') {
-		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
-		$('#mypageMyInfo #email1').focus();
-
-	}else if(email2 =='') {
-		$('#mypageMyInfo #result-div').html('이메일을 입력하세요');
-		$('#mypageMyInfo #email2').focus();
-
-	}else if(!emailForm.test(email)){
-		$('#mypageMyInfo #result-div').html('잘못된 이메일 형식입니다');
-		
-	}else if(email1==reEmail1 && email2==reEmail2){
-		
-		$.ajax({
-			url: '/milkyWayForest/mypage/mypageMyInfoUpdate',
-			type: 'post',
-			data: $('#mypageMyInfo').serialize(),
-			success: function(){
-				//location.href='/milkyWayForest/login/loginForm';
-			},
-			error: function(err){
-				console.log(err);
-			}
-		});
-	}
 });
 </script>

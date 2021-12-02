@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
+import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -93,5 +94,20 @@ public class AdminDAOMybatis implements AdminDAO {
 	@Override
 	public List<CommentDTO> getQnaCommentContent(int qnaCode) {
 		return sqlSession.selectList("adminSQL.getQnaCommentContent", qnaCode);
+	}
+
+	@Override
+	public List<PaymentDTO> getDailyOrder() {
+		return sqlSession.selectList("adminSQL.getDailyOrder");
+	}
+
+	@Override
+	public List<PaymentDTO> getOrderNShip() {
+		return sqlSession.selectList("adminSQL.getOrderNShip");
+	}
+
+	@Override
+	public List<PaymentDTO> getOrderCancel() {
+		return sqlSession.selectList("adminSQL.getOrderCancel");
 	}
 }

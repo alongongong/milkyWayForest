@@ -30,4 +30,17 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/admin/getOrderCancel',
+		type: 'post',
+		success: function(data) {
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
+</script>

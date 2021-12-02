@@ -114,7 +114,7 @@
 				</ul><!-- 마이 페이지 -->
 				
 				<ul id="cart">
-					<li><a href="">장바구니</a></li>
+					<li><a href="/milkyWayForest/cart">장바구니</a></li>
 					<li><a href="">수량버튼</a></li>
 					<li><a href="">선택주문</a></li>
 					<li><a href="">선택삭제</a></li>
@@ -123,7 +123,7 @@
 				</ul><!-- 장바구니 -->
 				
 				<ul id="pay">
-					<li><a href="">결제페이지</a></li>
+					<li><a href="/milkyWayForest/payment">결제페이지</a></li>
 					<li><a href="">결제진행중</a></li>
 					<li><a href="">결제완료</a></li>
 				</ul>

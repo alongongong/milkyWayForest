@@ -89,4 +89,23 @@
 	<select id="getQnaCommentContent" parameterType="int" resultType="comment">
 		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
 	</select>
+	
+	<select id="getDailyOrder" resultType="payment">
+		select productcode, productname, payqty, id, deliveryinfo, paydate from milkypayment 
+		join milkypaymentoption using(paymentCode)
+		join milkyProductInfo using(productcode)
+		order by paymentcode
+	</select>
+	
+	<select id="getOrderNShip" resultType="payment">
+		select paymentcode, productname, deliveryinfo from milkypayment
+		join milkypaymentoption using(paymentcode)
+		join milkyProductInfo using(productcode)
+	</select>
+	
+	<select id="getOrderCancel" resultType="payment">
+		select paymentcode, productname, payqty, deliveryinfo from milkypayment
+		join milkypaymentOption using(paymentcode)
+		join milkyProductInfo using(productCode)
+	</select>
 </mapper>

@@ -35,9 +35,16 @@
 			</nav>
 		 	<!--				header 상단메뉴				-->
 				<ul class="spot">
-					<li><a href="/milkyWayForest/write/memberAgree"><i class="xi-user"></i><span>Sign In</span></a></li>
-					<li><a href="/milkyWayForest/login/loginForm">Login</a></li>
-					<li><a href="/milkyWayForest/mypage">My Page</a></li>
+					<c:if test="${memId == null }">
+						<li><a href="/milkyWayForest/write/memberAgree"><i class="xi-user"></i><span>Sign In</span></a></li>
+						<li><a href="/milkyWayForest/login/loginForm">Login</a></li>					
+					</c:if>
+					
+					<c:if test="${memId != null }">
+						<li><a href="/milkyWayForest/mypage">My Page</a></li>
+						<li><a href="/milkyWayForest/login/logout">Logout</a></li>
+					</c:if>
+				
 					<li><a href="#a">Customer Service &amp; Ideas</a></li>
 					<li><a href="#a"><span></span></i></a></li>
 					<li><a href="#a">search</a></li>

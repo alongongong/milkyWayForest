@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import admin.service.AdminService;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
+import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 
 @Controller
@@ -147,6 +148,7 @@ public class AdminController {
 	@PostMapping("/admin/pProductInsert")
 	@ResponseBody
 	public void pProductInsert(@ModelAttribute ProductDTO productDTO) {
+		System.out.println(productDTO.getProductCode());
 		adminService.pProductInsert(productDTO);
 	} // 상품입력
 	
@@ -214,5 +216,23 @@ public class AdminController {
 	@ResponseBody
 	public List<CommentDTO> getQnaCommentContent(@RequestParam int qnaCode) {
 		return adminService.getQnaCommentContent(qnaCode);
+	}
+	
+	@PostMapping("/admin/getDailyOrder")
+	@ResponseBody
+	public List<PaymentDTO> getDailyOrder() {
+		return adminService.getDailyOrder();
+	}
+	
+	@PostMapping("/admin/getOrderNShip")
+	@ResponseBody
+	public List<PaymentDTO> getOrderNShip() {
+		return adminService.getOrderNShip();
+	}
+	
+	@PostMapping("/admin/getOrderCancel")
+	@ResponseBody
+	public List<PaymentDTO> getOrderCancel() {
+		return adminService.getOrderCancel();
 	}
 }

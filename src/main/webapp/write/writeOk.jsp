@@ -11,8 +11,8 @@
 			<p>알차고 실속있는 서비스로 찾아뵙겠습니다.</p>
 		</div>
 		<div id="writeOkBtn">
-			<input type="button" id="writeOkHomeBtn" value="홈으로">
-			<input type="button" id="writeOkLoginBtn" value="로그인">
+			<input type="button" id="writeOkHomeBtn" value="홈으로" onclick="location.href='/milkyWayForest/admin'">
+			<input type="button" id="writeOkLoginBtn" value="로그인" onclick="location.href='/milkyWayForest/login/loginForm'">
 		</div>
 	</div>
 </form>

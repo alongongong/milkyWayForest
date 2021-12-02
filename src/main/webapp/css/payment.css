@@ -27,7 +27,7 @@
 #paymentForm #paymentTotal {
 	position: sticky;
 	border: 1px solid #999;
-	top: 30px;
+	margin-top: 37px;
 	padding: 30px 10px 10px 10px;
 }
 #paymentForm #paymentTotal p {
