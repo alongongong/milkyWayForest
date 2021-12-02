@@ -43,6 +43,8 @@ public interface ShoppingService {
 	public List<ShoppingDTO> getCoffeeEtcList();
 
 	public List<ShoppingDTO> getShoppingDetail();
+
+	public ShoppingDTO clickImg(String productCode);
 	
 	
 	

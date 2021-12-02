@@ -42,7 +42,7 @@
 	
 	<!-- beanNTea.jsp 목록  -->
 	<select id="getBeanNTeaList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
    	      where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -50,7 +50,7 @@
 	 </select>
 	
 	<select id="getBeanNTeaList2" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
    	      where (to_number(substr(productcode,2,3)) between 1 and 7)
@@ -187,7 +187,13 @@
     	from milkyproductinfo 
     	join milkyproductimage using(productcode)
     	join milkyproductdetail using(productcode)
-    	  where productcode='B001'
+    	where productcode=#{productCode}
    	</select>
+   	
+   	<!-- 쇼핑jsp에서 링크타고 상세페이지 이동 -->
+   	<select id="clickImg" parameterType="String" resultType="shopping">
+   		select * from milkyproductinfo where productCode=#{productCode}
+   	</select>
+   	
 
 </mapper>

@@ -9,7 +9,7 @@
 </head>
 <body>
 <form id="shoppingDetailForm" name="shoppingDetailForm">
-
+	<input type ="hidden" name="productCode" id="productCode" value ="${productCode}">
 	
 	<section id="content_box">
 		<h1>상품</h1>

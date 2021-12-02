@@ -109,6 +109,11 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 		return sqlSession.selectList("shoppingSQL.getShoppingDetail");
 	}
 
+	@Override
+	public ShoppingDTO clickImg(String productCode) {
+		return sqlSession.selectOne("shoppingSQL.clickImg", productCode);
+	}
+
 	
 
 }
