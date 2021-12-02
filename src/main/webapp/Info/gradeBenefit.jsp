@@ -14,8 +14,16 @@
 	<div id="container">
 		
 		<div class="grade_text1">
-			<div class="grade-top-text"><h1>등급 및 혜택</h1></div>
-			<ul class="smap"></ul> 
+				<div class="grade-top-text"><h1>등급 및 혜택</h1></div>
+					
+			<div id="top_text">
+				<div>
+					<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="">EunhaSoop Rewards</a> > 
+					<a href="">은하숲 리워드</a> >
+					<a href="">등급 및 혜택</a>
+				</div>
+			</div>
 		</div>
 	
 	<div class="grade_pic1">
@@ -65,9 +73,11 @@
 			<div class="info2_center">
 			<h3><strong>회원 등급별 상세 혜택 및 유의사항</strong></h3>
 			
-				<!-- 카드 -->
+			<!-- 카드 -->
 			<div id="cardList_wrap">
 				<div id="cardList">
+				
+				
 					<div id="1" class="item bg-white" style="op">
 						<div class="1_1pic" align="center" style="padding-top:2.5rem;">
 							<img src="/milkyWayForest/image/list_01_bg.png" alt="list_01">
@@ -98,7 +108,6 @@
 							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
 						</div>
 					</div>
-					
 					
 					<div id="3" class="item bg-white">
 						<div class="3_1pic" align="center" style="padding-top:1.9rem;">
@@ -157,8 +166,8 @@
 							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
 						</div>
 						<p class="6_text" align="center" style="padding-top:1rem;">
-							스타벅스 리저브™ 원두 구매 시, 스타벅스<br>
-							리저브™ 음료
+							스타벅스 리저브™ 원두 구매 시,<br> 
+							스타벅스 리저브™ 음료
 						</p>
 						<div align="center" style="padding-top:.5rem;">
 							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
@@ -253,10 +262,12 @@
 							<img src="/milkyWayForest/image/icon_level_02.png" alt="list_01">
 						</div>
 						<p class="12_text" align="center" style="padding-top:1.5rem;">
-							기능 설정 후 스타벅스 카드로 결제 시,<br>
-							현금영수증 자동 발행
+							기능 설정 후 스타벅스<br> 
+							카드로 결제 시, 현금영수증<br> 
+							자동 발행
 						</p>
 					</div>
+					
 				</div>
 			</div>
 

@@ -20,12 +20,12 @@
     		</div>
 		
 		<div id="top_banner_text">
-		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">은하숲 소개</a> > 
-			<a href="">은하숲</a>
+			<div>
+				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+				<a href="">은하숲 소개</a> > 
+				<a href="">은하숲</a>
+			</div>
 		</div>
-	</div>
 	<br>
 		</div>
 	</div>
