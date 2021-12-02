@@ -25,4 +25,10 @@ public class MypageServiceImpl implements MypageService {
 	public void mypageMyInfoUpdate(MemberDTO memberDTO) {
 		mypageDAO.mypageMyInfoUpdate(memberDTO);
 	}
+
+	@Override
+	public void mypageMyInfoDelete(MemberDTO memberDTO) {
+		mypageDAO.mypageMyInfoDelete(memberDTO);
+		
+	}
 }

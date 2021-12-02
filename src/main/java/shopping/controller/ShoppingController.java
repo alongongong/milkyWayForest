@@ -222,10 +222,15 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	@PostMapping(value="/shopping/getShoppingDetail")
 	@ResponseBody
 	public List<ShoppingDTO> getShoppingDetail() {
-		
 		//System.out.println(shoppingDTO.getProductCode());
 		return shoppingService.getShoppingDetail();
 	}
 	
+	//clickImg
+	@PostMapping(value="/shopping/clickImg")
+	@ResponseBody
+	public ShoppingDTO clickImg(@RequestParam String productCode) {
+		return shoppingService.clickImg(productCode);
+	}
 	
 }

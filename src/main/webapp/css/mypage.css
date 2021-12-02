@@ -93,45 +93,55 @@
 }
 
 /*********** 회원정보 비밀번호 확인 창 ***********/
-#mypagePwdForm #main-wrapper{
+#mypagePwdForm #main-wrapper,
+#mypagePwdForm2 #main-wrapper{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 }
-#mypagePwdForm #mypagePwd-wrapper{
+#mypagePwdForm #mypagePwd-wrapper,
+#mypagePwdForm2 #mypagePwd-wrapper{
 	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-#mypagePwdForm #mypagePwd-wrapper h2{
+#mypagePwdForm #mypagePwd-wrapper h2,
+#mypagePwdForm2 #mypagePwd-wrapper h2{
 	font-size: 20px;
 }
-#mypagePwdForm #mypagePwd-wrapper p{
+#mypagePwdForm #mypagePwd-wrapper p,
+#mypagePwdForm2 #mypagePwd-wrapper p{
 	font-size: 15px;
 	margin-top: 13px;
 	text-align: center;
 }
-#mypagePwdForm #mypagePwd-wrapper strong{
+#mypagePwdForm #mypagePwd-wrapper strong,
+#mypagePwdForm2 #mypagePwd-wrapper strong{
 	color: red;
 }
-#mypagePwdForm #mypagePwd-setting-wrapper{
+#mypagePwdForm #mypagePwd-setting-wrapper,
+#mypagePwdForm2 #mypagePwd-setting-wrapper{
 	margin-top: 60px;
 	padding: 30px;
 }
-#mypagePwdForm #mypagePwd-input-wrap {
+#mypagePwdForm #mypagePwd-input-wrap,
+#mypagePwdForm2 #mypagePwd-input-wrap {
 	margin: 20px 0;
 }
-#mypagePwdForm #mypagePwd-input-wrap input {
+#mypagePwdForm #mypagePwd-input-wrap input,
+#mypagePwdForm2 #mypagePwd-input-wrap input {
 	width: 465px;
 	height :48px;	
 }
-#mypagePwdForm #button-wrap button {
+#mypagePwdForm #button-wrap button,
+#mypagePwdForm2 #button-wrap button {
 	width: 230px;
 	height :48px;
 }
-#mypagePwdForm #result-div{
+#mypagePwdForm #result-div,
+#mypagePwdForm2 #result-div{
 	padding-top: 10px;
     font-size: 12px;
     color: red;

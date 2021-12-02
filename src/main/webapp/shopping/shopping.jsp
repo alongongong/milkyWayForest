@@ -72,12 +72,13 @@ $(function(){
 		dataType: 'json',
 		success : function(data) {
 	
-		// alert(JSON.stringify(data));
+		 alert(JSON.stringify(data));
 
 			$.each(data, function(index,items) {
 				$('<div>') .append($('<div>', {
-					width: '300px',
+					width: '70%',
 					height: '300px',
+					style : 'margin: 10px;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -85,28 +86,31 @@ $(function(){
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
-					class: 'imgss'
+					class: 'imgClick'
 					
 				})).append($('<input>', { 
 					type: 'hidden',
+					id: 'productCode',
 					value: items.productCode
 					
 				})))
 				.append($('<div>',{
 					width: '50%',
 					align: 'center',
-					
+					style : 'padding-bottom: 10px; margin: 5px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
 					text : items.productName 
 				}))
 				.append($('<div>',{
 					width: '50%',
-					text : items.productUnit
+					align: 'center',
+					style : 'margin: 5px; color: #555555; font-size: 15px; font-weight:bold;',
+					text : items.productUnit.toLocaleString()+" 원"
 				}))
 			
 				.appendTo($('#menuImgDiv1'));
 			});
 			
-			$('.imgss').click(function(){
+			$('.imgClick').click(function(){
 				location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+$(this).next().val();
 			});
 			
@@ -127,28 +131,42 @@ $(function(){
 	
 			$.each(data, function(index,items) {
 				$('<div>') .append($('<div>', {
-					width: '300px',
+					width: '70%',
 					height: '300px',
+					style : 'margin: 10px;',
 					position: 'relative'
 					
 				}).append($('<img>', {
 					src: "/milkyWayForest/productImage/"+items.productImageName,
 					position: 'absolute',
 					width: '100%',
-					height: '100%'
+					height: '100%',
+					class: 'imgClick'
+					
+				})).append($('<input>', { 
+					type: 'hidden',
+					id: 'productCode',
+					value: items.productCode
 					
 				})))
 				.append($('<div>',{
 					width: '50%',
 					align: 'center',
-					
+					style : 'padding-bottom: 10px; margin: 5px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
 					text : items.productName 
 				}))
 				.append($('<div>',{
 					width: '50%',
-					text : items.productUnit
+					align: 'center',
+					style : 'margin: 5px; color: #555555; font-size: 15px; font-weight:bold;',
+					text : items.productUnit.toLocaleString()+" 원"
 				}))
 				.appendTo($('#menuImgDiv2'));
+				
+			});
+			
+			$('.imgClick').click(function(){
+				location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+$(this).next().val();
 			});
 			
 		},
@@ -158,6 +176,26 @@ $(function(){
 	});	
 	
 });
+
+$(function(){
+	$('.imgClick').click(function(){
+		$.ajax({
+			url:'/milkyWayForest/shopping/clickImg',
+			type: 'post',
+			//data: 'poroductCode='+$('#shoppingForm #productCode').val();
+		    dataType: 'text',
+	
+			success: function(data) {
+				location.href="/milkyWayForest/shopping/shoppingDeail"+$('#productCode').val();
+			},
+			error: function(err){ 
+				console.log(err);
+			}
+			
+		});
+	});
+});
+
 </script>
 
 </body>

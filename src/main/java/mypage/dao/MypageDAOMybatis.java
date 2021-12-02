@@ -27,4 +27,10 @@ public class MypageDAOMybatis implements MypageDAO {
 	public void mypageMyInfoUpdate(MemberDTO memberDTO) {
 		sqlSession.update("mypageSQL.mypageMyInfoUpdate", memberDTO);
 	}
+
+	@Override
+	public void mypageMyInfoDelete(MemberDTO memberDTO) {
+		sqlSession.delete("mypageSQL.mypageMyInfoDelete", memberDTO);
+		
+	}
 }

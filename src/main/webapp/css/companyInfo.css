@@ -1,6 +1,9 @@
 @charset "UTF-8";
+/* @font-face { font-family:'NanumGothicWeb'; font-style:normal; font-weight:400; 
+src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.woff') format('woff');} */
 
-*{ margin: 0; padding: 0;  }
+@font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);}
+*{ margin: 0; padding: 0; }
 /* 배너사진*/
 #allDiv .top { position: relative; width: 100%;}
 #allDiv .top-text-box { position: absolute; bottom:1rem; 
@@ -76,7 +79,7 @@ font-style: oblique; font-size: 1.15rem; color:#00592D; }
 }
 #allDiv .nav_Info .bibi-chevron-up { right: 15px;  width: 12px; float: right;}
 
-#allDiv #noneDiv { font-family: Georgia, "Malgun Gothic", serif; }
+#allDiv #noneDiv { font-family: "Malgun Gothic", serif; }
 
 #allDiv .noneDiv li { margin-top: 1rem;}
 

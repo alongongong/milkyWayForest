@@ -1,12 +1,20 @@
 @charset "UTF-8";
-* {font-family: Georgia, "Malgun Gothic", serif;}
-body { margin: 0;  }
+/* @font-face { font-family:'NanumGothicWeb'; font-style:normal; font-weight:400; 
+src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.woff') format('woff');} */
+
+@font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);}
+
+body { margin: 0; }
 
 /* 전체DIV */
 #gradeBenefitForm #container { width: 78rem; margin: 0 auto;  }
 
 /* 등급 및 혜택 TEXT */
-#gradeBenefitForm .grade-top-text { margin : 2rem 0 3rem 0; font-size: 20px;}
+#gradeBenefitForm .grade-top-text { margin : 2rem 0 .5rem 0; font-size: 14px; font-style:bold; }
+#gradeBenefitForm #top_text { padding-bottom: 1rem; float: right; font-color:#222222; }
+#gradeBenefitForm #top_text a { font-size: 100%; text-decoration: none; 
+vertical-align: baseline;  background: transparent; cursor: pointer; }		
+#gradeBenefitForm a:link { color: #222; } a:visited { color: #222; } a:hover { color: #222; } a:active { color: #222; }
 
 /* 별별마다 pic1 */
 #gradeBenefitForm .grade_pic1 { margin : 0 0 2rem 0; }
@@ -22,7 +30,7 @@ body { margin: 0;  }
 /* */
 #gradeBenefitForm .info1_text { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 
-#gradeBenefitForm .info1_text li { margin-bottom: 7px; font-size: 20px; 
+#gradeBenefitForm .info1_text li { margin-bottom: 7px; font-size: 22px; 
 color: #666; line-height: 1.6; padding-left: 11px;}
 
 
@@ -60,7 +68,7 @@ color: #666; line-height: 1.6; padding-left: 11px;}
 	grid-template-rows: repeat(3, minmax(360px, auto));
 	grid-column-gap: 2%;
 	grid-row-gap: 2%;
-	padding-bottom: 7rem;
+	padding-bottom: 5rem;
 }
 #gradeBenefitForm #cardList #1 {
 	grid-column: 1;
