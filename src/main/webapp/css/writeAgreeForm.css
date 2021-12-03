@@ -20,7 +20,7 @@
 #writeAgreeForm>ul>li>div>#writeAgreeContent>p{font-size:15px;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent>ul>li{font-size:15px;list-style:none;}
 #writeAgreeForm>ul>li>div>#writeAgreeContent>ul{padding:0;}
-#writeAgreeForm>ul>li>div>ul>div>li{font-size:150%; font-weight:bold; color:skyblue; list-style:none;}
+#writeAgreeForm>ul>li>div>ul>div>#writeSubject{font-size:150%; width:600px;font-weight:bold; color:skyblue; list-style:none; border-bottom:1px solid gray;}
 #writeAgreeForm #writeAgreeImg{width:35%; height:90%; margin:0 auto; padding:3%}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
 #writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}

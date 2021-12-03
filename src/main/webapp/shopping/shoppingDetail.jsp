@@ -103,8 +103,8 @@
 							</a>
 							</div>
 						</li>
-						<li><a href="#a"><img id="img2" alt="B001"></a></li>
-						<li><a href="#a"><img id="img3"  alt="B001"></a></li>
+						<!-- <li><a href="#a"><img id="img2" alt="B001" ></a></li> 
+						<li><a href="#a"><img id="img3"  alt="B001"></a></li>  -->
 					</ul>
 			</div>
 			
@@ -123,6 +123,93 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/shopping.js"></script>
+<script type="text/javascript"> //온로드할때 바로 이 부분이 실행되어야 해서 디테일jsp로 옮겨줌
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/shopping/getShoppingDetail',  
+		type: 'post',
+		data: 'productCode=${productCode}', // 이걸 추가해주고 컨트롤러에 productCode를 리퀘스트파람으로 가져간다. 
+		dataType: 'json',  
+		success : function(data) {
+		
+			console.log(JSON.stringify(data));
+				
+		$.each(data, function(index,items) {		
+			$('#korsubjectSpan').text(items.productName);
+			$('#engsubjectSpan').text(items.productEngName);
+			$('#productSmallinfoSpan').text(items.productSmallInfo);
+			$('#productpriceSpan').text(items.productUnit);
+			$('#productOptionSpan2').text(items.productOption);
+			
+			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것
+				$('#bigImg').attr('src', '/milkyWayForest/productImage/'+items.productImageName);
+				$('#img1').attr('src', '/milkyWayForest/productImage/'+items.productImageName);
+			}
+			
+			else if(index==1) {  // 사진이 여러장일때만 li태그가 붙는다. 여러장이 아닐때는 else if 부분을 주석해야만 개발자도구에서 li태그가 붙는걸 확인할수 있다.
+				// 어펜드라는 속성은 항상 맨끝에 붙여주는 역할을 하기때문에 아래와 같이 ul태그 에 어펜드 li속성을 붙이면 
+				//자동으로 우리가 폼태그 안에 첫번째 li태그 밑에 두번째 li 태그로 생성되게 된다.
+				//어펜드로 하는 이유는 우리가 productImageName 이 올 때만 이미지를 붙여줄꺼라서(동적변환이 일어나게 하려고) 어펜드를 붙여준것.
+				//상품사진이 만약 1개만 있다면 이부분에는 사진이 안 붙을것.
+				
+				$('.imgList').append($('<li>').append($('<img>', { 
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					id: 'img2'
+				})));
+			
+			}
+			
+			 else if(index==2) {
+				$('.imgList').append($('<li>').append($('<img>' , { 
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					id: 'img3'
+				})));
+				
+			}
+			
+			 else if(index==3) {
+				$('.imgList').append($('<li>').append($('<img>' , { 
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					id: 'img4'
+				})));
+					
+			}
+			
+			 else if(index==4) {
+				$('.imgList').append($('<li>').append($('<img>' , { 
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					id: 'img5'
+				})));
+					
+			}
+			
+			 else if(index==5) {
+				$('.imgList').append($('<li>').append($('<img>' , { 
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					id: 'img6'
+				})));
+					
+			}
+			
+			 else if(index==6) {
+				$('.imgList').append($('<li>').append($('<img>' , { 
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					id: 'img7'
+				})));
+					
+			}
+			
+		});
+		
+	
+	
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+});
 
+</script>
 </body>
 </html>

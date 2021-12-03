@@ -104,8 +104,8 @@ public class ShoppingServiceImpl implements ShoppingService {
 	}
 
 	@Override
-	public List<ShoppingDTO> getShoppingDetail() {
-		return shoppingDAO.getShoppingDetail();
+	public List<ShoppingDTO> getShoppingDetail(String productCode) {  //함수를 만들때는 자료형을 꼭 써줘야하고
+		return shoppingDAO.getShoppingDetail(productCode);  //함수를 호출할떄는 변수명만 쓰면된다.
 	}
 
 	@Override

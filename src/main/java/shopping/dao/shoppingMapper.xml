@@ -6,13 +6,13 @@
 	
 	<!-- shopping.jsp 목록  -->
 	<select id="getShoppingList" resultType="shopping">
-	(select productName,category,productUnit,PRODUCTIMAGENAME
+	(select productcode,productName,category,productUnit,PRODUCTIMAGENAME
       from milkyproductinfo 
       join milkyproductimage using(productcode)
       where (to_number(substr(productcode,2,3)) between 1 and 4)
       and category= '원두')
      union
-    (select productName,category,productUnit,PRODUCTIMAGENAME
+    (select productcode,productName,category,productUnit,PRODUCTIMAGENAME
       from milkyproductinfo 
       join milkyproductimage using(productcode)
       where (to_number(substr(productcode,2,3)) between 1 and 4)
@@ -26,13 +26,13 @@
 		substr(2,3) : 2번째부터 시작해서 3글자를 가져와주세요.
 	-->
 	<select id="getShoppingList2" resultType="shopping">
-		(select productName,category,productUnit,PRODUCTIMAGENAME
+		(select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
    	      where (to_number(substr(productcode,2,3)) between 1 and 4)
      	  and category= '머그' and substr(PRODUCTIMAGENAME, 6,1)='1' )
 	     union
-	    (select productName,category,productUnit,PRODUCTIMAGENAME
+	    (select productcode,productName,category,productUnit,PRODUCTIMAGENAME
 	      from milkyproductinfo 
 	      join milkyproductimage using(productcode)
 	      where (to_number(substr(productcode,2,3)) between 1 and 4)
@@ -53,13 +53,13 @@
 		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
-   	      where (to_number(substr(productcode,2,3)) between 1 and 7)
+   	      where (to_number(substr(productcode,2,3)) between 1 and 8)
      	  and category= '티' 
 	 </select>
 	 
 	 <!-- beanList.jsp 목록  -->
 	<select id="getBeanList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
    	      where category= '원두' 
@@ -67,17 +67,16 @@
 	 
 	 <!-- teaList.jsp 목록  -->
 	<select id="getTeaList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
-   	       where (to_number(substr(productcode,2,3)) between 1 and 7)
-     	  and category= '티' 
-	 </select>
+   	      where category= '티' 
+     </select>
 	 
 	 
 	 <!-- product.jsp 목록  -->
 	<select id="getProductList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -85,7 +84,7 @@
 	</select>
 	
 	<select id="getProductList2" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -93,7 +92,7 @@
 	</select>
 	
 	<select id="getProductList3" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -101,7 +100,7 @@
 	</select>
 	
 	<select id="getProductList4" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -109,7 +108,7 @@
 	</select>
 	
 	<select id="getProductList5" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -117,7 +116,7 @@
 	</select>
 	
 	<select id="getProductList6" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 8)
@@ -125,7 +124,7 @@
 	</select>
 
 	<select id="getMugList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where category= '머그' and substr(PRODUCTIMAGENAME, 6,1)='1'
@@ -133,7 +132,7 @@
 	
 	<!-- 머그 -->
 	<select id="getGlassList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where (to_number(substr(productcode,2,3)) between 1 and 10)
@@ -142,7 +141,7 @@
 	
 	<!-- 플라스틱 -->
 	<select id="getPlasticTumblrList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where category= '플라스틱 텀블러' and substr(PRODUCTIMAGENAME, 6,1)='1'
@@ -150,7 +149,7 @@
 
 	<!-- 스테인리스 -->
 	<select id="getStainlessTumblrList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where category= '스테인리스 텀블러' and substr(PRODUCTIMAGENAME, 6,1)='1'
@@ -158,7 +157,7 @@
 	
 	<!-- 보온병 -->
 	<select id="getThermosList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where category= '보온병' and substr(PRODUCTIMAGENAME, 6,1)='1'
@@ -166,14 +165,14 @@
 	
 	<!-- 커피용품 -->
 	<select id="getCoffeeEtcList" resultType="shopping">
-		select productName,category,productUnit,PRODUCTIMAGENAME
+		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	 from milkyproductinfo 
     	 join milkyproductimage using(productcode)
    	     where category= '커피용품' and substr(PRODUCTIMAGENAME, 6,1)='1'
 	</select>
 
 	<!-- 쇼핑 상세페이지 -->
-	<select id="getShoppingDetail" resultType="shopping">
+	<select id="getShoppingDetail" parameterType="String" resultType="shopping">
 		select 
 			productcode,
 			productName,

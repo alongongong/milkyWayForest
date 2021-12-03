@@ -42,7 +42,7 @@ public interface ShoppingDAO {
 
 	public List<ShoppingDTO> getCoffeeEtcList();
 
-	public List<ShoppingDTO> getShoppingDetail();
+	public List<ShoppingDTO> getShoppingDetail(String productCode);
 
 	public ShoppingDTO clickImg(String productCode);
 }
