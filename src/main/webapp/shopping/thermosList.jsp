@@ -21,7 +21,6 @@
 		</div>
 		</div>
 		
-		
 			<div class="productGroup">
 			   <div>
 				<select>
@@ -38,7 +37,6 @@
 				<div id="menuImgDiv1">
 					<!-- 에이작스로 목록불러오기 -->
 				</div>
-		
 	</section>
 </form>
 
@@ -65,7 +63,7 @@ $(function(){
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
-					class: 'imgClick'
+					class: 'imgClick'+items.productCode
 					
 				})).append($('<input>', { 
 					type: 'hidden',
@@ -86,7 +84,26 @@ $(function(){
 					text : items.productUnit.toLocaleString()+" 원"
 				}))
 				.appendTo($('#menuImgDiv1'));
+				
+				//function
+				$('.imgClick'+items.productCode).click(function(){
+					$.ajax({
+						url:'/milkyWayForest/shopping/clickImg',
+						type: 'post',
+						data: 'productCode='+items.productCode,
+						dataType: 'text',
+						
+						success: function(data) {
+							//alert("성공");
+							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+						},
+						error: function(err){ 
+							console.log(err);
+						}
+
+				});
 			});
+		});//each
 			
 		},
 		error: function(err) {

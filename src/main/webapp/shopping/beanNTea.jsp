@@ -185,17 +185,17 @@ $(function(){
 						url:'/milkyWayForest/shopping/clickImg',
 						type: 'post',
 						data: 'productCode='+items.productCode,
-					  dataType: 'text',
+					    dataType: 'text',
 				
 						success: function(data) {
-							//alert("성공");
-							
-							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+						
+						//alert("성공");
+						location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+						
 						},
 						error: function(err){ 
 							console.log(err);
 						}
-						
 					});
 				});
 				

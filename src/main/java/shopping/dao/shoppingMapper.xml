@@ -70,7 +70,7 @@
 		select productcode,productName,category,productUnit,PRODUCTIMAGENAME
     	  from milkyproductinfo 
     	  join milkyproductimage using(productcode)
-   	      where and category= '티' 
+   	      where category= '티' 
      </select>
 	 
 	 
