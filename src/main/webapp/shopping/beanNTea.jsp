@@ -74,7 +74,8 @@ $(function(){
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
-					class: 'imgClick'
+					class: 'imgClick'+items.productCode
+				
 					
 				})).append($('<input>', { 
 					type: 'hidden',
@@ -96,7 +97,28 @@ $(function(){
 				}))
 			
 				.appendTo($('#menuImgDiv1'));
-			});
+				
+
+				$('.imgClick'+items.productCode).click(function(){
+					$.ajax({
+						url:'/milkyWayForest/shopping/clickImg',
+						type: 'post',
+						data: 'productCode='+items.productCode,
+					    dataType: 'text',
+				
+						success: function(data) {
+							//alert("성공");
+							
+							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+						},
+						error: function(err){ 
+							console.log(err);
+						}
+						
+					});
+				});
+				
+			});//each
 			
 		},
 		error: function(err) {
@@ -124,9 +146,12 @@ $(function(){
 					src: "/milkyWayForest/productImage/"+items.productImageName,
 					position: 'absolute',
 					width: '100%',
-					height: '100%',
-					class: 'imgClick'
-					
+					height: '100%',						
+					class: 'imgClick'+items.productCode  //문자열로 결합이 된다.사과딸기처럼  /이미지+프로덕트코드가 결합   String str = "사과";  >> str+"딸기"
+														//imgClickT001 이렇게 결합이 된다.  
+														//+items.productImageName 으로 class명에 붙여버리면 imgClickT001.png 가 되어버림. 그래서 +items.productCode 로 해준것.
+											// 우리는 지금 productCode 하나로 상세페이지를 왔다갔다 할꺼다. 그래서 아래 클릭 이벤트 걸때 클래스의 프로덕트코드에 해당하는 걸 눌렀을때 라는 표시로 
+											// class: 'imgClick'+items.productCode  클래스 속성을 길게 써준것.
 				})).append($('<input>', { 
 					type: 'hidden',
 					id: 'productCode',
@@ -148,17 +173,24 @@ $(function(){
 				.appendTo($('#menuImgDiv2'));
 				
 				
-				$('.imgClick').click(function(){
+				/* alert창을 눌렀을때 
+				사진이 여러개가 뜨지 않게 하려고 
+				$('.imgClick'+items.productCode).click(function(){ });	
+				이렇게 바꿔주고 class 명도 
+				class: 'imgClick'+items.productCode  이렇게 길게  바꿔줬다 */
+				
+				
+				$('.imgClick'+items.productCode).click(function(){  // 여기에 +프로덕트코드를 써주지 않으면 사진을 있는대로 카테고리에 해당하는걸 다 불러버리기 때문에 프로덕트코드를 써주는것.
 					$.ajax({
 						url:'/milkyWayForest/shopping/clickImg',
 						type: 'post',
 						data: 'productCode='+items.productCode,
-					   dataType: 'text',
+					  dataType: 'text',
 				
 						success: function(data) {
-							alert:("성공");
+							//alert("성공");
 							
-							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+$('#productCode').val();
+							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
 						},
 						error: function(err){ 
 							console.log(err);
@@ -168,15 +200,19 @@ $(function(){
 				});
 				
 				
-			});
+			});//each
 			
 		},
 		error: function(err) {
 			console.log(err);
 		}
-	});	
 	
+	
+	});
 });
+
+
+
 
 </script>
 

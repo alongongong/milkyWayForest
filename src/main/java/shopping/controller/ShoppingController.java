@@ -90,8 +90,9 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	}
 	
 	@GetMapping("/shopping/shoppingDetail")
-	public String shoppingDetail(Model model) {
+	public String shoppingDetail(@RequestParam String productCode,  Model model) {
 		model.addAttribute("display", "/shopping/shoppingDetail.jsp");
+		model.addAttribute("productCode", productCode);
 		return "/index";
 		
 	}
@@ -221,9 +222,11 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	//shoppingDetail.jsp  에이작스
 	@PostMapping(value="/shopping/getShoppingDetail")
 	@ResponseBody
-	public List<ShoppingDTO> getShoppingDetail() {
+	public List<ShoppingDTO> getShoppingDetail(@RequestParam String productCode) {  
+		//머그 같은 사진들은 productCode당 사진이 여러장이라서(앞,뒤,옆)그 같은 프로덕트에 해당하는 사진들을 모두 가져오기위해 List로 묶은것.
+		//(티같이 하나만 사진이 있었다면 List로 묶지 않아도 되었음)
 		//System.out.println(shoppingDTO.getProductCode());
-		return shoppingService.getShoppingDetail();
+		return shoppingService.getShoppingDetail(productCode);
 	}
 	
 	//clickImg

@@ -72,7 +72,7 @@ $(function(){
 		dataType: 'json',
 		success : function(data) {
 	
-		 alert(JSON.stringify(data));
+		 //alert(JSON.stringify(data));
 
 			$.each(data, function(index,items) {
 				$('<div>') .append($('<div>', {
@@ -86,7 +86,7 @@ $(function(){
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
-					class: 'imgClick'
+					class: 'imgClick'+items.productCode
 					
 				})).append($('<input>', { 
 					type: 'hidden',
@@ -108,11 +108,28 @@ $(function(){
 				}))
 			
 				.appendTo($('#menuImgDiv1'));
-			});
+				
+				 $('.imgClick'+items.productCode).click(function(){
+					$.ajax({
+						url:'/milkyWayForest/shopping/clickImg',
+						type: 'post',
+						data: 'productCode='+items.productCode,
+					    dataType: 'text',
+				
+						success: function(data) {
+							//alert("성공");
+							
+							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+						},
+						error: function(err){ 
+							console.log(err);
+						}
+						
+					});
+				});  
+				
+			});//each
 			
-			$('.imgClick').click(function(){
-				location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+$(this).next().val();
-			});
 			
 		},
 		error: function(err) {
@@ -141,7 +158,8 @@ $(function(){
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
-					class: 'imgClick'
+					class: 'imgClick'+items.productCode
+				
 					
 				})).append($('<input>', { 
 					type: 'hidden',
@@ -162,12 +180,27 @@ $(function(){
 					text : items.productUnit.toLocaleString()+" 원"
 				}))
 				.appendTo($('#menuImgDiv2'));
-				
-			});
 			
-			$('.imgClick').click(function(){
-				location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+$(this).next().val();
-			});
+				$('.imgClick'+items.productCode).click(function(){
+					$.ajax({
+						url:'/milkyWayForest/shopping/clickImg',
+						type: 'post',
+						data: 'productCode='+items.productCode,
+					    dataType: 'text',
+				
+						success: function(data) {
+							//alert("성공");
+							
+							location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+						},
+						error: function(err){ 
+							console.log(err);
+						}
+						
+					});
+				}); 
+				
+			});//each
 			
 		},
 		error: function(err) {
@@ -177,24 +210,6 @@ $(function(){
 	
 });
 
-$(function(){
-	$('.imgClick').click(function(){
-		$.ajax({
-			url:'/milkyWayForest/shopping/clickImg',
-			type: 'post',
-			//data: 'poroductCode='+$('#shoppingForm #productCode').val();
-		    dataType: 'text',
-	
-			success: function(data) {
-				location.href="/milkyWayForest/shopping/shoppingDeail"+$('#productCode').val();
-			},
-			error: function(err){ 
-				console.log(err);
-			}
-			
-		});
-	});
-});
 
 </script>
 
