@@ -29,4 +29,40 @@
 			<th>조회수</th>
 		</tr>
 	</table>
+	<br>
+	<div id="boardPagingDiv"></div>
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/notice/getNoticeBoard?pg='+${pg},
+		type: 'post',
+		success: function(data) {
+			//alert(JSON.stringify(data))
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					align: 'center',
+					text: items.noticeCode
+				})).append($('<td>').append($('<a>',{
+					text: items.noticeSubject,
+					href: '/milkyWayForest/notice/noticeView?noticeCode='+items.noticeCode+'&pg='+data.pg
+				}))).append($('<td>',{
+					text: items.noticeDate
+				})).append($('<td>',{
+					text: items.noticeHit
+				})).appendTo($('#noticeBoardTable'))
+			});	
+			
+			$('#boardPagingDiv').html(data.boardPaging);
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	})
+});
+
+function boardPaging(page){
+	location.href="/milkyWayForest/notice/noticeBoard?pg="+page;
+}
+</script>

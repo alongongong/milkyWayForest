@@ -21,4 +21,49 @@
 		 "qnadate" from milkyqna order by qnaCode desc) a)
 		  where rn between #{startNum} and #{endNum}
 	</select>
+	
+	<select id="getNoticeTotalA" resultType="int">
+		select count(*) from milkynotice
+	</select>
+	
+	<select id="getNoticeBoard" parameterType="java.util.Map" resultType="noticeBoard">
+		select * from (select rownum rn, a.* from
+			(select noticeCode, noticeSubject, id, noticeContent, noticeHit, 
+					to_char(noticeDate, 'yyyy-mm-dd') "noticeDate", imgName, category 
+				from milkynotice join (select * from milkynoticeimage where category='공지사항')
+				using(noticeCode) order by noticeCode desc) a)
+			where rn between #{startNum} and #{endNum}
+	</select>
+	
+	<select id="getNoticeView" parameterType="String" resultType="noticeBoard">
+		select noticeCode, noticeSubject, id, noticeContent, noticeHit,
+				to_char(noticeDate, 'yyyy-mm-dd') "noticeDate", imgName, category
+			from milkynotice join (select * from milkynoticeimage where category='공지사항')
+				using(noticeCode) where noticeCode=#{noticeCode} order by noticeCode desc
+	</select>
+	
+	<select id="getEventBoard" resultType="eventBoard">
+		select eventcode, eventsubject, id, eventstatus, eventhit, to_char(eventdate, 'yyyy-mm-dd') "eventDate", imgname, category
+		 from milkyevent 
+			join milkynoticeimage on(milkyevent.eventCode=milkynoticeimage.noticeCode) 
+			where substr(imgname,10,4)='main'
+	</select>
+	
+	<select id="getEventView" parameterType="String" resultType="eventBoard">
+		select eventcode, eventsubject, id, eventstatus, eventhit, to_char(eventdate, 'yyyy-mm-dd') "eventDate", imgname, category
+		 from milkyevent
+			join milkynoticeimage on(milkyevent.eventCode=milkynoticeimage.noticeCode)
+			where not(substr(imgname,10,4)='main') and eventCode=#{eventCode}
+	</select>
+	
+	<select id="getFaqTotalA" resultType="int">
+		select count(*) from milkyfaq
+	</select>
+	
+	<select id="getFaqBoard" parameterType="java.util.Map" resultType="faqBoard">
+		select * from (select rownum rn, a.* from 
+			(select faqcode, faqsubject, id, faqcontent, faqhit, to_char(faqdate, 'yyyy-mm-dd') "faqDate" from milkyfaq order by faqcode desc) a)
+			where rn between #{startNum} and #{endNum}
+			
+	</select>
 </mapper>

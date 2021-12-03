@@ -19,5 +19,11 @@
 		
 		<typeAlias type="payment.bean.PaymentDTO" alias="payment"/>
 
+		<typeAlias type="notice.bean.NoticeBoardDTO" alias="noticeBoard"/>
+
+		<typeAlias type="notice.bean.EventBoardDTO" alias="eventBoard"/>
+
+		<typeAlias type="notice.bean.FaqBoardDTO" alias="faqBoard"/>
+				
 	</typeAliases>
 </configuration>

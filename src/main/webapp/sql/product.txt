@@ -31,3 +31,21 @@ create table milkystock(
 
 
 create sequence milkyProductSeq nocache nocycle;
+
+
+create table milkyMenu(
+	menuCode varchar(10) primary key,	-- 메뉴코드
+	menuName varchar(100),	-- 메뉴이름
+	menuEngname varchar(50),-- 메뉴영문이름
+	menuImg	varchar(100),	-- 메뉴이미지 주소
+	menuKcal number,		-- 영양정보
+	menuFat number,
+	menuProtein number,
+	menuSodium number,
+    menuSugar number,
+	menuCaffeine number,
+	menuFactor varchar(150),	-- 알레르기요인
+	menuDetail varchar(500)	-- 상세설명
+);
+
+
