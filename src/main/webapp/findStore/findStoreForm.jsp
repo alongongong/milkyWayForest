@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/findStore.css">
 
 <div id="findStoreDiv">
-	<div id="storeList">1111</div>
+	<div id="storeList" style="overflow: hidden"></div>
 	<div id="storeMap"></div>
 </div>
 
@@ -90,79 +90,94 @@ $(function(){
 	
 	 
 	var location_name = '스타벅스';
-	var location_id = [];
-	var positions = [];
+	var location_id = new Array();
+	var positions = new Array();
+	var now_x = 37.4992856;
+	var now_y = 127.0285939;
 
 	$.ajax({
-		type: 'get',
-		url: 'https://dapi.kakao.com/v2/local/search/keyword.json',
-		headers: { 'Authorization': 'KakaoAK 983faebe014b975e78a41ddbea38de92' },
-		data: { 'query': location_name},
+		type: 'post',
+		url: '/milkyWayForest/findStore/getStore',
+		data: { 'now_x': now_x,
+				'now_y': now_y },
 		success: function(data){
-			console.log(JSON.stringify(data));
-			$.each(data.documents, function(index, items){
-				positions[index] = {title: items.id,
-									lating: new kakao.maps.LatLng(items.y, items.x)
-				}
-				location_id[index] = items.id;
-				console.log(items.x+"  "+items.y+"  "+items.id);
+			//console.log(JSON.stringify(data));
+			$.each(data, function(index, items){
+				var json = new Object();
+				json = {'title': items.storeName,
+						'latlng': new kakao.maps.LatLng(items.storeX, items.storeY)}
+				location_id[index] = items.storeName;
+				positions.push(json);
+				
+				$('<div>',{
+					style: 'border: 1px solid #999'
+				}).append($('<div>',{
+					text: items.storeName
+				}).append($('<p>',{
+					text: items.storeLocation
+				}))).appendTo($('#storeList'))
+				
 			});
+				console.log(location_id);
+				console.log(positions)
+				var mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
+				mapOption = {
+					center: new kakao.maps.LatLng(now_x, now_y), // 지도의 중심좌표
+					level: 4, // 지도의 확대 레벨
+					mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+				}; 
+				
 			
+				// 지도를 생성한다 
+				var map = new kakao.maps.Map(mapContainer, mapOption); 
+			
+				// 지도에 확대 축소 컨트롤을 생성한다
+				var zoomControl = new kakao.maps.ZoomControl();
+			
+				// 지도의 우측에 확대 축소 컨트롤을 추가한다
+				map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+			
+				// 마커의 이미지 주소
+				var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+			
+				var marker;
+				
+				// 지도에 마커를 생성하고 표시한다
+				$.each(positions, function(index, items){
+					console.log(items.latlng + "   "+items.title)
+					// 마커 이미지 크기
+					var imageSize = new kakao.maps.Size(24, 25);
+					
+					// 마커 이미지 생성
+					var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+					
+					// 마커 생성
+					marker = new kakao.maps.Marker({
+						map: map, // 마커를 표시할 지도
+						position: items.latlng, // 마커를 표시할 위치
+						title: items.title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시
+						image: markerImage // 마커 이미지
+					});
+				});
+				
+				// 마커 위에 표시할 인포윈도우를 생성한다
+				/* var infowindow = new kakao.maps.InfoWindow({
+					content : '<div style="padding:5px;">스타벅스 국기원사거리점</div>' // 인포윈도우에 표시할 내용
+				});
+				// 인포윈도우를 지도에 표시한다
+				infowindow.open(map, marker); */
+				
+				// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+				kakao.maps.event.addListener(marker, 'click', function() {
+					location.href="https://place.map.kakao.com/"+location_id;
+				});
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
 	
-	var mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
-	mapOption = {
-		center: new kakao.maps.LatLng(37.4992856,127.0285939), // 지도의 중심좌표
-		level: 4, // 지도의 확대 레벨
-		mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
-	}; 
-
-	// 지도를 생성한다 
-	var map = new kakao.maps.Map(mapContainer, mapOption); 
 	
-	// 지도에 확대 축소 컨트롤을 생성한다
-	var zoomControl = new kakao.maps.ZoomControl();
-	
-	// 지도의 우측에 확대 축소 컨트롤을 추가한다
-	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-	
-	// 마커의 이미지 주소
-	var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-
-	// 지도에 마커를 생성하고 표시한다
-	for(var i=0; i<positions.length; i++) {
-		// 마커 이미지 크기
-		var imageSize = new kakao.maps.Size(24, 25);
-		
-		// 마커 이미지 생성
-		var markerImange = new kakao.maps.MarkerImage(imageSrc, imageSize);
-		
-		// 마커 생성
-		var marker = new kakao.maps.Marker({
-			map: map, // 마커를 표시할 지도
-			position: positions[i].lating, // 마커를 표시할 위치
-			title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시
-			image: markerImage // 마커 이미지
-		});
-	}
-	
-	
-	// 마커 위에 표시할 인포윈도우를 생성한다
-	var infowindow = new kakao.maps.InfoWindow({
-		content : '<div style="padding:5px;">스타벅스 국기원사거리점</div>' // 인포윈도우에 표시할 내용
-	});
-	
-	// 인포윈도우를 지도에 표시한다
-	infowindow.open(map, marker);
-	
-	// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
-	kakao.maps.event.addListener(marker, 'click', function() {
-		location.href="https://place.map.kakao.com/"+location_id;
-	});
 
 });
 </script>

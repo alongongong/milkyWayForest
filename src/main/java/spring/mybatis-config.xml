@@ -25,5 +25,6 @@
 
 		<typeAlias type="notice.bean.FaqBoardDTO" alias="faqBoard"/>
 				
+		<typeAlias type="findStore.bean.FindStoreDTO" alias="findStore"/>
 	</typeAliases>
 </configuration>
