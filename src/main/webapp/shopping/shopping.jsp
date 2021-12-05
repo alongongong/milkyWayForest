@@ -28,8 +28,8 @@
 			 	<span id="menu2">
 			 	원두 / 차  &nbsp; &nbsp; &nbsp;
 			 	</span>
-				<a href="#menu2"> 원두</a>&nbsp; &nbsp;
-				<a href="#menu2"> 차</a>
+				<a href="/milkyWayForest/shopping/beanList"> 원두</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/teaList"> 차</a>
 			</li>
 			<br>
 			
@@ -78,7 +78,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -150,7 +150,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
