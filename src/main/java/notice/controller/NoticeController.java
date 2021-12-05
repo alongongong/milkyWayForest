@@ -3,6 +3,7 @@ package notice.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import notice.bean.EventBoardDTO;
+import notice.bean.FaqBoardDTO;
+import notice.bean.NoticeBoardDTO;
 import notice.service.NoticeService;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -32,7 +36,8 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/notice/noticeBoard")
-	public String noticeBoard(Model model) {
+	public String noticeBoard(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
 		model.addAttribute("display", "notice/noticeBoard.jsp");
 		return "/index";
 	}
@@ -44,13 +49,15 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/notice/faqBoard")
-	public String faqBoard(Model model) {
+	public String faqBoard(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
 		model.addAttribute("display", "notice/faqBoard.jsp");
 		return "/index";
 	}
 	
 	@GetMapping("/notice/eventView")
-	public String eventView(Model model) {
+	public String eventView(@RequestParam String eventCode, Model model) {
+		model.addAttribute("eventCode", eventCode);
 		model.addAttribute("display", "notice/eventView.jsp");
 		return "/index";
 	}
@@ -59,6 +66,15 @@ public class NoticeController {
 	public String qnaBoardWriteForm(Model model) {
 		model.addAttribute("display", "notice/qnaBoardWriteForm.jsp");
 		return "/index";
+	}
+	
+	@GetMapping("/notice/noticeView")
+	public String noticeView(@RequestParam String noticeCode, @RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("noticeCode", noticeCode);
+		model.addAttribute("display", "notice/noticeBoardView.jsp");
+		return "/index";
+		
 	}
 	
 	// ------------------------------------------------
@@ -111,5 +127,33 @@ public class NoticeController {
 		return noticeService.getQnaBoard(pg);
 	}
 	
+	@PostMapping("/notice/getNoticeBoard")
+	@ResponseBody
+	public JSONObject getNoticeBoard(@RequestParam int pg) {
+		return noticeService.getNoticeBoard(pg);
+	}
 	
+	@PostMapping("/notice/getNoticeView")
+	@ResponseBody
+	public NoticeBoardDTO getNoticeView(@RequestParam String noticeCode) {
+		return noticeService.getNoticeView(noticeCode);
+	}
+	
+	@PostMapping("/notice/getEventBoard")
+	@ResponseBody
+	public List<EventBoardDTO> getEventBoard() {
+		return noticeService.getEventBoard();
+	}
+	
+	@PostMapping("/notice/getEventView")
+	@ResponseBody
+	public List<EventBoardDTO> getEventView(@RequestParam String eventCode) {
+		return noticeService.getEventView(eventCode);
+	}
+	
+	@PostMapping("/notice/getFaqBoard")
+	@ResponseBody
+	public JSONObject getFaqBoard(@RequestParam int pg) {
+		return noticeService.getFaqBoard(pg);
+	}
 }

@@ -7,6 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import notice.bean.EventBoardDTO;
+import notice.bean.FaqBoardDTO;
+import notice.bean.NoticeBoardDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
 @Repository
@@ -28,6 +31,41 @@ public class NoticeDAOMybatis implements NoticeDAO {
 	@Override
 	public int getTotalA() {
 		return sqlSession.selectOne("noticeSQL.getTotalA");
+	}
+
+	@Override
+	public int getNoticeTotalA() {
+		return sqlSession.selectOne("noticeSQL.getNoticeTotalA");
+	}
+
+	@Override
+	public List<NoticeBoardDTO> getNoticeBoard(Map<String, Integer> map) {
+		return sqlSession.selectList("noticeSQL.getNoticeBoard", map);
+	}
+
+	@Override
+	public NoticeBoardDTO getNoticeView(String noticeCode) {
+		return sqlSession.selectOne("noticeSQL.getNoticeView", noticeCode);
+	}
+
+	@Override
+	public List<EventBoardDTO> getEventBoard() {
+		return sqlSession.selectList("noticeSQL.getEventBoard");
+	}
+
+	@Override
+	public List<EventBoardDTO> getEventView(String eventCode) {
+		return sqlSession.selectList("noticeSQL.getEventView", eventCode);
+	}
+
+	@Override
+	public int getFaqTotalA() {
+		return sqlSession.selectOne("noticeSQL.getFaqTotalA");
+	}
+
+	@Override
+	public List<FaqBoardDTO> getFaqBoard(Map<String, Integer> map) {
+		return sqlSession.selectList("noticeSQL.getFaqBoard", map);
 	}
 
 }

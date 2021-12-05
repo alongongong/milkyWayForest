@@ -1,9 +1,9 @@
 -- 공지사항
 create table milkyNotice (
   noticeCode number primary key,
-  noticeSubject varchar(50),
+  noticeSubject varchar(100),
   id varchar(15),
-  noticeContent varchar(1000),
+  noticeContent varchar(3000),
   noticeHit number default 0,
   noticeDate date default sysdate
 );
@@ -14,11 +14,19 @@ create sequence milkyNoticeSeq nocache nocycle;
 -- 이벤트
 create table milkyEvent (
   eventCode number primary key,
-  eventSubject varchar(50),
+  eventSubject varchar(100),
   id varchar(15),
-  eventContent varchar(1000),
-  eventeHit number default 0,
+  eventStatus varchar(10),
+  eventHit number default 0,
   eventDate date default sysdate
+);
+
+
+-- 게시판 이미지 이름 
+create table milkyNoticeImage (
+    noticeCode number,      -- 글번호
+    imgName varchar(30),    -- 이미지 파일명
+    category varchar(15)    -- 게시판 이름
 );
 
 
@@ -28,9 +36,9 @@ create sequence milkyEventSeq nocache nocycle;
 -- 자주 묻는 질문
 create table milkyFAQ (
   faqCode number primary key,
-  faqSubject varchar(50),
+  faqSubject varchar(300),
   id varchar(15),
-  faqContent varchar(1000),
+  faqContent varchar(1500),
   faqHit number default 0,
   faqDate date default sysdate
 );
@@ -84,3 +92,4 @@ create table milkyComment (
 );
 
 create sequence milkyCommentSeq nocache nocycle;
+
