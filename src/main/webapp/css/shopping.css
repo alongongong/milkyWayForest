@@ -868,7 +868,7 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	
 }
 
-#shoppingDetailForm .productView .shoppingDetailImg  {
+#shoppingDetailForm .productView .shoppingDetailImg ul {
 	left: 70px;
 	padding: 0;
 }
