@@ -2,7 +2,7 @@
 /* @font-face { font-family:'NanumGothicWeb'; font-style:normal; font-weight:400; 
 src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.woff') format('woff');} */
 
-@font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);}
+@font-face {font-family: MalgunGothic; src:url(font/MalgunGothic.eot);}
 *{ margin: 0; padding: 0; }
 /* 배너사진*/
 #allDiv .top { position: relative; width: 100%;}
