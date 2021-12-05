@@ -60,8 +60,8 @@
 						
 						<select class="shoppingSelect">
 							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
-							<option value="${productOption}"><span id="productOptionSpan2"></span></option>
-							<option value="${productOption}"><span id="productOptionSpan2"></span></option>
+							<!--  <option><span id="productOptionSpan2"></span></option>
+							<option><span id="productOptionSpan2"></span></option> -->
 						</select>
 						
 					</td>
@@ -103,8 +103,7 @@
 							</a>
 							</div>
 						</li>
-						<!-- <li><a href="#a"><img id="img2" alt="B001" ></a></li> 
-						<li><a href="#a"><img id="img3"  alt="B001"></a></li>  -->
+						<!-- 에이작스에서 li 추가해주기 사진이 있을때만 추가하는걸로 바꿔줌! -->
 					</ul>
 			</div>
 			
@@ -139,8 +138,8 @@ $(function(){
 			$('#engsubjectSpan').text(items.productEngName);
 			$('#productSmallinfoSpan').text(items.productSmallInfo);
 			$('#productpriceSpan').text(items.productUnit);
-			$('#productOptionSpan2').text(items.productOption);
-			$('#productOptionSpan2').text(items.productOption);
+			/* $('#productOptionSpan2').text(items.productOption);
+			$('#productOptionSpan2').text(items.productOption); */
 			
 			
 			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것
@@ -201,7 +200,11 @@ $(function(){
 					
 			}
 			
-		});
+			$('.shoppingSelect').append($('<option>' ,{text: items.productOption}));
+			
+			
+			
+		});//each
 		
 	
 	
