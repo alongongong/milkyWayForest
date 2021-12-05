@@ -6,6 +6,7 @@ import findStore.bean.FindStoreDTO;
 
 public interface FindStoreService {
 
-	List<FindStoreDTO> getStore(double now_x, double now_y);
+	public List<FindStoreDTO> getStore(double now_x, double now_y);
+
 
 }

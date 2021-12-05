@@ -12,4 +12,5 @@ public class FindStoreDTO {
 	private String storeLocation;
 	private String storeX;
 	private String storeY;
+	private String storeUrl;
 }

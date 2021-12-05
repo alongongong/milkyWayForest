@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>메뉴소개</title>
-<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/menuInfo.css">
-</head>
 
-<body>
+<link rel="stylesheet" type="text/css" href="/milkyWayForest/css/menuInfo.css">
+
 <form id="menuInfoForm" name="menuInfoForm">
 
 <h1> 메뉴소개 </h1>
@@ -55,5 +49,10 @@
 <br><br><br>
 
 </form>
-</body>
-</html>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+})
+</script>

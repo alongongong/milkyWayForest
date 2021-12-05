@@ -26,6 +26,7 @@
 	<context:component-scan base-package="findStore.controller"/>
 	<context:component-scan base-package="cart.controller"/>
 	<context:component-scan base-package="payment.controller"/>
+	<context:component-scan base-package="menuInfo.controller"/>
 	
 	
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />

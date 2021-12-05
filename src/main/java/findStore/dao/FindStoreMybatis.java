@@ -19,5 +19,5 @@ public class FindStoreMybatis implements FindStoreDAO {
 	public List<FindStoreDTO> getStore(Map<String, Double> map) {
 		return sqlSession.selectList("findStoreSQL.getStore", map);
 	}
-
+	
 }

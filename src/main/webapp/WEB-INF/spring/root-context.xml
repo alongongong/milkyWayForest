@@ -27,6 +27,8 @@
 	
 	<context:component-scan base-package="findStore.service" />
 	
+	<context:component-scan base-package="menuInfo.service" />
+	
 	
 	<context:component-scan base-package="product.dao" />
 	
@@ -46,4 +48,6 @@
 	
 	<context:component-scan base-package="findStore.dao" />
 
+	<context:component-scan base-package="menuInfo.dao" />
+	
 </beans>

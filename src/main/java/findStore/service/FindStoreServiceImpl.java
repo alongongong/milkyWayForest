@@ -25,4 +25,5 @@ public class FindStoreServiceImpl implements FindStoreService {
 		return findStoreDAO.getStore(map);
 	}
 
+
 }

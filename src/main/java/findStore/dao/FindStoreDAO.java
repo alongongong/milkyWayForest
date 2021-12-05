@@ -7,6 +7,7 @@ import findStore.bean.FindStoreDTO;
 
 public interface FindStoreDAO {
 
-	List<FindStoreDTO> getStore(Map<String, Double> map);
+	public List<FindStoreDTO> getStore(Map<String, Double> map);
+
 
 }

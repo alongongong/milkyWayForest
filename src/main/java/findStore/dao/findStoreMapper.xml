@@ -6,11 +6,11 @@
 <mapper namespace="findStoreSQL">
 	
 	<select id="getStore" parameterType="java.util.Map" resultType="findStore">
-		select storecode, storename, storelocation, storex, storey, distnace_wgs84(#{now_x}, #{now_y}, storeX, storeY) "distance" from milkyfindstore
-			where (storeX between (#{now_x}-0.05) and (#{now_x}+0.05))
-				and (storeY between (#{now_y}-0.05) and (#{now_y}+0.05))
-			order by 6
-	
+		select storecode, storename, storelocation, storex, storey, storeurl, 
+		distance_wgs84(#{now_x}, #{now_y}, storeX, storeY) "distance" from milkyfindstore
+			where (storeX between (#{now_x}-0.5) and (#{now_x}+0.5))
+				and (storeY between (#{now_y}-0.5) and (#{now_y}+0.5))
+			order by 7
 	</select>
-	
+
 </mapper>

@@ -30,4 +30,6 @@ public class FindStoreController {
 	public List<FindStoreDTO> getStore(@RequestParam double now_x, @RequestParam double now_y) {
 		return findStoreService.getStore(now_x, now_y);
 	}
+	
+
 }
