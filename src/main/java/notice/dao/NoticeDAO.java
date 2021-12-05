@@ -3,6 +3,8 @@ package notice.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
+
 import notice.bean.EventBoardDTO;
 import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
@@ -29,5 +31,7 @@ public interface NoticeDAO {
 	public int getFaqTotalA();
 
 	public List<FaqBoardDTO> getFaqBoard(Map<String, Integer> map);
+
+	public List<NoticeBoardDTO> noticeSearch(String search);
 
 }

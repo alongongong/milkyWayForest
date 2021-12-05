@@ -59,7 +59,21 @@ $(function(){
 		error: function(err) {
 			console.log(err);
 		}
-	})
+	});
+	
+	$('#noticeBoardSearchBtn').click(function(){
+		$.ajax({
+			url: '/milkyWayForest/notice/noticeSearch',
+			type: 'post',
+			data: 'search='+$('#noticeBoardSearch').val()+'&pg=${pg}',
+			success: function(data) {
+				alert(JSON.stringify(data));
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+	});
 });
 
 function boardPaging(page){

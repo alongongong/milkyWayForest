@@ -89,15 +89,13 @@
 		<div class="content">
 		  <div class="row">
 		    <div class="col-md-12">
-		     <div id="menuContainer">
-				<!-- 메인 Nav -->
-		    	<c:if test="${empty display }">
-		    		<jsp:include page="pAllMenu.jsp" />
-		    	</c:if>
-		    	<c:if test="${not empty display }">
-		    		<jsp:include page="${display }" />
-		    	</c:if>
-		     </div>
+			<!-- 메인 Nav -->
+	    	<c:if test="${empty display }">
+	    		<jsp:include page="pAllMenu.jsp" />
+	    	</c:if>
+	    	<c:if test="${not empty display }">
+	    		<jsp:include page="${display }" />
+	    	</c:if>
 		    </div>
 		  </div>
 		</div> 

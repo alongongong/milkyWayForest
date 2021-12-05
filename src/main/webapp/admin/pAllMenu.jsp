@@ -17,8 +17,9 @@
 	text-decoration: none;
 }
 </style>
-
-
+<div class="card">
+	<div class="card-body">
+		<div id="menuContainer">
 			<div id="mainNavMenu">
 				<ul id="companyInfo">
 					<li><a href="/milkyWayForest/info/componyInfo">회사소개</a></li>
@@ -128,4 +129,6 @@
 					<li><a href="">결제완료</a></li>
 				</ul>
 			</div>
-		
+		</div>
+	</div>
+</div>

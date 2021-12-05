@@ -25,4 +25,6 @@ public interface NoticeService {
 
 	public JSONObject getFaqBoard(int pg);
 
+	public JSONObject noticeSearch(String search);
+
 }
