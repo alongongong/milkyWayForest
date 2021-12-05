@@ -28,8 +28,8 @@
 			 	<span id="menu2">
 			 	원두 / 차  &nbsp; &nbsp; &nbsp;
 			 	</span>
-				<a href="#"> 원두</a>&nbsp; &nbsp;
-				<a href="#"> 차</a>
+				<a href="#menu2"> 원두</a>&nbsp; &nbsp;
+				<a href="#menu2"> 차</a>
 			</li>
 			<br>
 			
@@ -37,12 +37,12 @@
 				<span id="menu2">
 				상품  &nbsp; &nbsp;
 				</span>
-				<a href="#"> 머그</a>&nbsp; &nbsp;
-				<a href="#"> 글라스</a>&nbsp; &nbsp;
-				<a href="#"> 플라스틱 텀블러</a>&nbsp; &nbsp;
-				<a href="#"> 스테인리스 텀블러</a>&nbsp; &nbsp;
-				<a href="#"> 보온병</a>&nbsp; &nbsp;
-				<a href="#"> 커피용품</a>
+				<a href="/milkyWayForest/shopping/mugList"> 머그</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/glassList"> 글라스</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/plasticTumblrList"> 플라스틱 텀블러</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/stainlessTumblrList"> 스테인리스 텀블러</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/thermosList"> 보온병</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/coffeeEtcList"> 커피용품</a>
 			</li>
 		</ul>
 	</div>
