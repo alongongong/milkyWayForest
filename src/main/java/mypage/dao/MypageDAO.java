@@ -1,6 +1,10 @@
 package mypage.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import member.bean.MemberDTO;
+import qnaBoard.bean.QnaBoardDTO;
 
 public interface MypageDAO {
 
@@ -11,5 +15,11 @@ public interface MypageDAO {
 	public void mypageMyInfoUpdate(MemberDTO memberDTO);
 
 	public void mypageMyInfoDelete(MemberDTO memberDTO);
+
+	public int getTotalA();
+
+	public List<QnaBoardDTO> getMyQnaList(Map<String, String> map);
+
+	public QnaBoardDTO getMyQnaView(String qnaCode);
 
 }

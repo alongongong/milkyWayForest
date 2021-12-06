@@ -1,11 +1,15 @@
 package mypage.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import member.bean.MemberDTO;
+import qnaBoard.bean.QnaBoardDTO;
 
 @Repository 
 @Transactional
@@ -32,5 +36,20 @@ public class MypageDAOMybatis implements MypageDAO {
 	public void mypageMyInfoDelete(MemberDTO memberDTO) {
 		sqlSession.delete("mypageSQL.mypageMyInfoDelete", memberDTO);
 		
+	}
+
+	@Override
+	public int getTotalA() {
+		return sqlSession.selectOne("mypageSQL.getTotalA");
+	}
+
+	@Override
+	public List<QnaBoardDTO> getMyQnaList(Map<String, String> map) {
+		return sqlSession.selectList("mypageSQL.getMyQnaList", map);
+	}
+
+	@Override
+	public QnaBoardDTO getMyQnaView(String qnaCode) {
+		return sqlSession.selectOne("mypageSQL.getMyQnaView", qnaCode);
 	}
 }

@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 #mypageMain,
-#mypageMyInfo {
+#mypageMyInfo,
+#mypageMyPost,
+#mypageMyQnaView {
 	margin: 0;
 	padding: 0;
 }
@@ -55,7 +57,9 @@
 
 /*********** 마이페이지 메인 ***********/
 #mypageMain #main-wrapper,
-#mypageMyInfo #main-wrapper {
+#mypageMyInfo #main-wrapper,
+#mypageMyPost #main-wrapper,
+#mypageMyQnaView #main-wrapper {
 	display: grid;
 	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
 	grid-auto-columns: minmax(250px, auto); /* 열(column)의 배치 */
@@ -69,12 +73,16 @@
 	justify-content: stretch; /* 아이템 그룹 가로 정렬 */
 }
 #mypageMain #main-sideNav,
-#mypageMyInfo #main-sideNav {
+#mypageMyInfo #main-sideNav,
+#mypageMyPost #main-sideNav,
+#mypageMyQnaView #main-sideNav {
 	grid-column: 1;
 	grid-row: 1 / span 3;
 }
 #mypageMain #main-topNav,
-#mypageMyInfo #main-topNav {
+#mypageMyInfo #main-topNav,
+#mypageMyPost #main-topNav,
+#mypageMyQnaView #main-topNav {
 	grid-column: 2;
 	grid-row: 1;
 }
@@ -187,4 +195,79 @@
     color: red;
 	width: 465px;
 	height :10px;
+}
+
+/*********** 게시글 관리 ***********/
+#mypageMyPost #myQna-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageMyPost #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageMyPost #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageMyPost #myQnaTable td {
+	text-align: center;
+} 
+
+#mypageMyPost #myQnaPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+#mypageMyPost .qnaSubject:link { color: black; text-decoration: none; }
+#mypageMyPost .qnaSubject:visited { color: black; text-decoration: none; }
+#mypageMyPost .qnaSubject:hover { color: red; text-decoration: underline; }
+#mypageMyPost .qnaSubject:active { color: black; text-decoration: none; }
+
+/*********** 문의글 보기 ***********/
+#mypageMyQnaView #myQnaView-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageMyQnaView #qnaSubject {
+	border-top : 1px solid #222;
+	border-bottom : 1px solid #222;
+	font-size: 15pt;
+	font-weight: bold;
+	padding: 15px;
+	margin: 20px 0; 
+}
+#mypageMyQnaView #qnaDate {
+	font-size: 10pt;
+	font-weight: normal;
+	padding: 5px;
+	color: #999;
+	text-align: right;
+	margin: 0;
+}
+
+#mypageMyQnaView #qnaContent {
+	border-bottom : 1px solid #999;
+	margin: 20px 0;
+	padding: 50px 15px;
+	font-size: 10pt;
+}
+#mypageMyQnaView #qnaContent img {
+	margin: 50px 0 0 0;
+}
+#mypageMyQnaView #myQnaListBtnDiv {
+	text-align: right;
+}
+#mypageMyQnaView button {
+	margin-right: 10px;
+	padding: 8px 30px;
+	
 }
