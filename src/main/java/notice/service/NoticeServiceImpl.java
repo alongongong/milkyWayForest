@@ -145,4 +145,11 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		return json;
 	}
+
+	@Override
+	public JSONObject noticeSearch(String search) {
+		
+		List<NoticeBoardDTO> list = noticeDAO.noticeSearch(search);
+		return null;
+	}
 }

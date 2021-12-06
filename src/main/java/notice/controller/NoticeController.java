@@ -156,4 +156,10 @@ public class NoticeController {
 	public JSONObject getFaqBoard(@RequestParam int pg) {
 		return noticeService.getFaqBoard(pg);
 	}
+	
+	@PostMapping("/notice/noticeSearch")
+	@ResponseBody
+	public JSONObject noticeSearch(@RequestParam String search) {
+		return noticeService.noticeSearch(search);
+	}
 }

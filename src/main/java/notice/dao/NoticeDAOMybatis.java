@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -66,6 +67,11 @@ public class NoticeDAOMybatis implements NoticeDAO {
 	@Override
 	public List<FaqBoardDTO> getFaqBoard(Map<String, Integer> map) {
 		return sqlSession.selectList("noticeSQL.getFaqBoard", map);
+	}
+
+	@Override
+	public List<NoticeBoardDTO> noticeSearch(String search) {
+		return sqlSession.selectList("noticeSQL.noticeSearch", search);
 	}
 
 }
