@@ -46,4 +46,12 @@
 		from milkyQnA 
 		where qnaCode=#{qnaCode} order by qnaCode desc
 	</select>
+	
+	<update id="updateMyQnaView" parameterType="qnaBoard">
+		update milkyqna set qnaQuestionType=#{qnaQuestionType},
+							   qnaSubject=#{qnaSubject}, 
+							   qnaContent=#{qnaContent}
+		where qnaCode=#{qnaCode}
+	</update>
+
 </mapper>

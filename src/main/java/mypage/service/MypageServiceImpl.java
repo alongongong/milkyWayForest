@@ -83,4 +83,10 @@ public class MypageServiceImpl implements MypageService {
 		
 		return qnaBoardDTO;
 	}
+
+	@Override
+	public void updateMyQnaView(QnaBoardDTO qnaBoardDTO) {
+		mypageDAO.updateMyQnaView(qnaBoardDTO);
+	}
+
 }

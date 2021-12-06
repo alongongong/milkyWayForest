@@ -18,4 +18,6 @@ public interface MypageService {
 
 	public QnaBoardDTO getMyQnaView(String qnaCode);
 
+	public void updateMyQnaView(QnaBoardDTO qnaBoardDTO);
+
 }

@@ -22,4 +22,7 @@ public interface MypageDAO {
 
 	public QnaBoardDTO getMyQnaView(String qnaCode);
 
+	public void updateMyQnaView(QnaBoardDTO qnaBoardDTO);
+
+
 }

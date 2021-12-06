@@ -1,5 +1,9 @@
 package mypage.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
@@ -9,12 +13,14 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import member.bean.MemberDTO;
 import mypage.service.MypageService;
@@ -183,6 +189,27 @@ public class MypageController {
 	@ResponseBody
 	public QnaBoardDTO getMyQnaView(@RequestParam String qnaCode) {
 		return mypageService.getMyQnaView(qnaCode);
+	}
+	
+	//문의글 수정 창
+	@GetMapping("/updateMyQnaViewForm")
+	public String updateMyQnaViewForm(@RequestParam String qnaCode, @RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("qnaCode", qnaCode);
+		model.addAttribute("display", "mypage/updateMyQnaViewForm.jsp");
+		return "/index";
+	}
+	
+	//문의글 수정
+	@GetMapping("/updateMyQnaView")
+	@ResponseBody
+	public void qnaBoardWrite(@RequestParam int qnaCode,
+								@ModelAttribute QnaBoardDTO qnaBoardDTO) {
+
+		qnaBoardDTO.setQnaCode(qnaCode);
+
+		mypageService.updateMyQnaView(qnaBoardDTO);
+
 	}
 
 }

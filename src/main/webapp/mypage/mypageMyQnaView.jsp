@@ -13,13 +13,19 @@
 		<jsp:include page="mypageTopNav.jsp"/>	
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
+	<input type="hidden" id="qnaCode" name="qnaCode" value="${qnaCode }">
+	<input type="hidden" id="pg" name="pg" value="${pg }">
 	
 	<div id="myQnaView-wrapper" class="item">
 		<div id="myQnaView-state">		
 			<div id="qnaSubject">
 				<p id="qnaDate"></p>
 			</div>
-			<div id="qnaContent"></div>
+			<div id="qnaContent">
+				<img id="qnaImage1">
+				<img id="qnaImage2">
+			</div>
+			<div id="qnaComment"></div>
 			<div id="myQnaListBtnDiv">
 				<input type="button" class="btn btn-info" id="myQnaListBtn" value="목록">
 				<input type="button" class="btn btn-info" id="updateBtn" value="수정">				
@@ -40,26 +46,27 @@ $(function(){
 		type: 'post',
 		data: 'qnaCode=${qnaCode}',
 		success: function(data) {
-			$('#qnaSubject').text(data.qnaSubject);
+			$('#mypageMyQnaView #qnaSubject').html(data.qnaSubject);
 			$('<p>',{
 				text: data.qnaDate,
 				id: 'qnaDate'
-			}).appendTo($('#qnaSubject'));
-			$('#qnaContent').html(data.qnaContent);
+			}).appendTo($('#mypageMyQnaView #qnaSubject'));
+			$('#mypageMyQnaView #qnaContent').html(data.qnaContent);
 			
-			if(data.qnAImage1 != null) {
+			if(data.qnaImage1 != null) {
 				$('<p>').append($('<img>',{
-					src: '/milkyWayForest/image/'+data.qnAImage1,
-					alt: data.qnAImage1,
+					src: '/milkyWayForest/storage/'+data.qnaImage1,
+					alt: data.qnaImage1,
 					width: '100%'
-				})).appendTo($('#qnaContent'));
+				})).appendTo($('#mypageMyQnaView #qnaContent'));
 				
-			}else if(data.qnAImage2 != null) {
+			}
+			if(data.qnaImage2 != null) {
 				$('<p>').append($('<img>',{
-					src: '/milkyWayForest/image/'+data.qnAImage2,
-					alt: data.qnAImage2,
+					src: '/milkyWayForest/storage/'+data.qnaImage2,
+					alt: data.qnaImage2,
 					width: '100%'
-				})).appendTo($('#qnaContent'));
+				})).appendTo($('#mypageMyQnaView #qnaContent'));
 			}
 		},
 		error: function(err) {
@@ -67,8 +74,18 @@ $(function(){
 		}
 	});
 	
-	$('#myQnaListBtn').click(function(){
+	$('#mypageMyQnaView #myQnaListBtn').click(function(){
 		location.href='/milkyWayForest/mypage/mypageMyPost?pg=${pg}';
 	});
+	
+	$('#mypageMyQnaView #updateBtn').click(function(){
+		location.href='/milkyWayForest/mypage/updateMyQnaViewForm?qnaCode=${qnaCode}&pg=${pg}';
+	});
+	
+	$('#mypageMyQnaView #deleteBtn').click(function(){
+		location.href='/milkyWayForest/mypage/deleteMyQnaView?qnaCode=${qnaCode}&pg=${pg}';
+	});
+	
+	
 });
 </script>

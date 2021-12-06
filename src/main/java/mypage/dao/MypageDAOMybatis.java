@@ -52,4 +52,10 @@ public class MypageDAOMybatis implements MypageDAO {
 	public QnaBoardDTO getMyQnaView(String qnaCode) {
 		return sqlSession.selectOne("mypageSQL.getMyQnaView", qnaCode);
 	}
+
+	@Override
+	public void updateMyQnaView(QnaBoardDTO qnaBoardDTO) {
+		sqlSession.update("mypageSQL.updateMyQnaView", qnaBoardDTO);
+	}
+
 }
