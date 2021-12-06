@@ -70,7 +70,8 @@ public class LoginController {
 
 		session.setAttribute("memId", memberDTO.getId());
 		session.setAttribute("memNickname", memberDTO.getNickname());
-		System.out.println("LoginController 세션카카오아이디 저장 "+session.getAttribute("memId"));	
+		session.setAttribute("memWritePath", memberDTO.getWritePath());
+		System.out.println("LoginController 세션카카오아이디 저장 "+session.getAttribute("memId")+session.getAttribute("memWritePath"));	
 	}
 	
 	//아이디 찾기창
@@ -195,6 +196,14 @@ public class LoginController {
 		memberDTO.setPwd(passwordEncoder.encode(memberDTO.getPwd()));
 		
 		loginService.findPwdUpdate(memberDTO);
+	}
+	
+	//로그아웃
+	@GetMapping(value="/logout")
+	public String logout(HttpSession session) {	
+		//모든 세션 제거
+		session.invalidate();
+		return "/index";
 	}
 	
 }
