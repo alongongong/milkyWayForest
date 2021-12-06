@@ -208,7 +208,6 @@ $(function(){
 			$('.total b').append($('<span>', {text:(items.productUnit)*parseInt($('.length input').val())
 		    	})); 
 			}
-
 		});//each
 		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
@@ -259,9 +258,7 @@ $(function(){
 			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid silver');
 		});
-	
-	
-		},
+	},
 		error: function(err) {
 			console.log(err);
 		}

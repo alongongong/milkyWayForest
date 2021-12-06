@@ -1,6 +1,5 @@
 $(function(){
 
-
 	$('#plus').click(function(){
 		$('.length input').val(parseInt($('.length input').val())+1);
 	});
@@ -12,7 +11,6 @@ $(function(){
 			$('.length input').val(1);
 		}		
 	});
-
 });
 			
 
