@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -56,6 +57,16 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void updateMyQnaView(QnaBoardDTO qnaBoardDTO) {
 		sqlSession.update("mypageSQL.updateMyQnaView", qnaBoardDTO);
+	}
+
+	@Override
+	public List<CommentDTO> getMyQnaComment(int qnaCode) {
+		return sqlSession.selectList("mypageSQL.getMyQnaComment", qnaCode);
+	}
+
+	@Override
+	public void deleteMyQnaView(int qnaCode) {
+		sqlSession.delete("mypageSQL.deleteMyQnaView", qnaCode);
 	}
 
 }

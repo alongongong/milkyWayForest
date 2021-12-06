@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
 import mypage.dao.MypageDAO;
 import net.sf.json.JSONObject;
@@ -87,6 +88,16 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public void updateMyQnaView(QnaBoardDTO qnaBoardDTO) {
 		mypageDAO.updateMyQnaView(qnaBoardDTO);
+	}
+
+	@Override
+	public List<CommentDTO> getMyQnaComment(int qnaCode) {
+		return mypageDAO.getMyQnaComment(qnaCode);
+	}
+
+	@Override
+	public void deleteMyQnaView(int qnaCode) {
+		mypageDAO.deleteMyQnaView(qnaCode);
 	}
 
 }

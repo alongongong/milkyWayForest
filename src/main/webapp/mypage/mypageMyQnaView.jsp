@@ -25,7 +25,8 @@
 				<img id="qnaImage1">
 				<img id="qnaImage2">
 			</div>
-			<div id="qnaComment"></div>
+			<div id="qnaComment">
+			</div>
 			<div id="myQnaListBtnDiv">
 				<input type="button" class="btn btn-info" id="myQnaListBtn" value="목록">
 				<input type="button" class="btn btn-info" id="updateBtn" value="수정">				
@@ -41,6 +42,7 @@
 <script type="text/javascript" src="/milkyWayForest/js/mypage.js"></script>
 <script>
 $(function(){
+	//글내용 불러오기
 	$.ajax({
 		url: '/milkyWayForest/mypage/getMyQnaView',
 		type: 'post',
@@ -74,6 +76,32 @@ $(function(){
 		}
 	});
 	
+	//댓글 불러오기
+	$.ajax({
+		url: '/milkyWayForest/mypage/getMyQnaComment',
+		type: 'post',
+		data: 'qnaCode=${qnaCode}',
+		success: function(data) {
+			
+			$.each(data, function(index, items){
+				$('#mypageMyQnaView #qnaComment').append($('<p>',{
+					text: 'comments'
+				})).append($('<p>',{
+					class: 'commentContent'
+				}).append($('<span>', {
+					text: items.id,
+					style: 'margin: 0 10px;'
+				})).append($('<p>', {
+					text: items.commentContent
+				})));
+			});
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	
 	$('#mypageMyQnaView #myQnaListBtn').click(function(){
 		location.href='/milkyWayForest/mypage/mypageMyPost?pg=${pg}';
 	});
@@ -83,7 +111,19 @@ $(function(){
 	});
 	
 	$('#mypageMyQnaView #deleteBtn').click(function(){
-		location.href='/milkyWayForest/mypage/deleteMyQnaView?qnaCode=${qnaCode}&pg=${pg}';
+		if(confirm('삭제하시겠습니까?')){
+			$.ajax({
+				url: '/milkyWayForest/mypage/deleteMyQnaView?qnaCode=${qnaCode}',
+				type: 'get',
+				success: function(data) {
+					alert('글이 삭제되었습니다.');
+					location.href='/milkyWayForest/mypage/mypageMyPost?pg=1';
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		}
 	});
 	
 	

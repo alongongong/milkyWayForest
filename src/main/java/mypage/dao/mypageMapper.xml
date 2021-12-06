@@ -53,5 +53,13 @@
 							   qnaContent=#{qnaContent}
 		where qnaCode=#{qnaCode}
 	</update>
+	
+	<select id="getMyQnaComment" parameterType="int" resultType="comment">
+		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
+	</select>
+	
+	<delete id="deleteMyQnaView" parameterType="int">
+		delete milkyqna where qnaCode=#{qnaCode}
+	</delete>
 
 </mapper>

@@ -275,6 +275,14 @@
 	padding: 8px 30px;
 	
 }
+#mypageMyQnaView .commentContent {
+	background: #ddd;
+	height: 80px;
+	margin: 20px auto;
+	width: 100%;
+	border-radius: 7px;
+	padding: 10px 15px;
+}
 /*********** 문의글 수정 ***********/
 #updateMyQnaViewForm #myQnaView-wrapper{
 	grid-column: 2;
@@ -298,3 +306,4 @@
 #updateMyQnaViewForm #updateMyQnaViewTable textarea {
 	width: 100%;
 }
+
