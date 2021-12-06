@@ -37,3 +37,48 @@
 		</div>
 	</div>
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/cart/cartSelect',
+		type: 'post',
+		data: 'id=' + $('#id').val(),
+		dataType: 'json',
+		success: function(data) {
+			 console.log(JSON.stringify(data)); 
+			 
+			 $.each(data, function(index,items){
+				 $('<tr>').append($('<th>',{ 
+					 width: 25 
+				})
+				.append($('<input>', {
+					type:'checkbox'
+				
+				}))).append($('<th>' , {
+					text: items.productName 
+				})).append($('<th>', {
+					text: items.cartOption
+				})).append($('<th>', {
+					text: (items.productUnit*items.cartQty).toLocaleString()+" 원" 
+				})).append($('<th>', {
+					text: "2500원"
+				}))
+				.appendTo($('#cartTable')); 
+					 
+			 
+				 
+			});
+			
+		},
+		
+		error:function(err){
+			console.log(err);
+		}
+		
+	});
+	
+});
+
+
+</script>
