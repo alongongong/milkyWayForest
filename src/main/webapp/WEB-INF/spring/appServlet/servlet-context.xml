@@ -39,6 +39,8 @@
 	
 	<mvc:resources location="/image/" mapping="/image/**" />
 	
+	<mvc:resources location="/storage/" mapping="/storage/**" />
+	
 	<mvc:resources location="/productImage/" mapping="/productImage/**"/>
 	
 	<mvc:resources location="/noticeImg/" mapping="/noticeImg/**"/>
