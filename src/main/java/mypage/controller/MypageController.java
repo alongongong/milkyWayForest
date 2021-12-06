@@ -1,5 +1,7 @@
 package mypage.controller;
 
+import java.util.List;
+
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
@@ -184,5 +187,35 @@ public class MypageController {
 	public QnaBoardDTO getMyQnaView(@RequestParam String qnaCode) {
 		return mypageService.getMyQnaView(qnaCode);
 	}
+	
+	//문의글 수정 창
+	@GetMapping("/updateMyQnaViewForm")
+	public String updateMyQnaViewForm(@RequestParam String qnaCode, @RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("qnaCode", qnaCode);
+		model.addAttribute("display", "mypage/updateMyQnaViewForm.jsp");
+		return "/index";
+	}
+	
+	//문의글 수정
+	@GetMapping("/updateMyQnaView")
+	@ResponseBody
+	public void qnaBoardWrite(@RequestParam int qnaCode, @ModelAttribute QnaBoardDTO qnaBoardDTO) {
+		qnaBoardDTO.setQnaCode(qnaCode);
+		mypageService.updateMyQnaView(qnaBoardDTO);
+	}
 
+	//문의글 댓글 불러오기
+	@PostMapping("/getMyQnaComment")
+	@ResponseBody
+	public List<CommentDTO> getMyQnaComment(@RequestParam int qnaCode) {
+		return mypageService.getMyQnaComment(qnaCode);
+	}
+
+	//문의글 삭제
+	@GetMapping("/deleteMyQnaView")
+	@ResponseBody
+	public void deleteMyQnaView(@RequestParam int qnaCode) {
+		mypageService.deleteMyQnaView(qnaCode);
+	}
 }
