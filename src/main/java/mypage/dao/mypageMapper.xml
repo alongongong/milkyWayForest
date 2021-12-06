@@ -46,4 +46,20 @@
 		from milkyQnA 
 		where qnaCode=#{qnaCode} order by qnaCode desc
 	</select>
+	
+	<update id="updateMyQnaView" parameterType="qnaBoard">
+		update milkyqna set qnaQuestionType=#{qnaQuestionType},
+							   qnaSubject=#{qnaSubject}, 
+							   qnaContent=#{qnaContent}
+		where qnaCode=#{qnaCode}
+	</update>
+	
+	<select id="getMyQnaComment" parameterType="int" resultType="comment">
+		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
+	</select>
+	
+	<delete id="deleteMyQnaView" parameterType="int">
+		delete milkyqna where qnaCode=#{qnaCode}
+	</delete>
+
 </mapper>

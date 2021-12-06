@@ -212,6 +212,8 @@ $(function(){
 			})); //이걸 안 넣으면 1개일때의 가격이 안나옴
 		    	
 			}
+<<<<<<< HEAD
+=======
 
 			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
 			$('#plus').click(function(){
@@ -240,6 +242,7 @@ $(function(){
 			});//#minus
 			
 			
+>>>>>>> 266801698edb37786fc246a54f18d4ba18369c9d
 		});//each
 		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
@@ -290,8 +293,12 @@ $(function(){
 			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid silver');
 		});
+<<<<<<< HEAD
+	},
+=======
 	
 		},
+>>>>>>> 266801698edb37786fc246a54f18d4ba18369c9d
 		error: function(err) {
 			console.log(err);
 		}

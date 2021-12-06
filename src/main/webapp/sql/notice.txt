@@ -48,17 +48,17 @@ create sequence milkyFAQSeq nocache nocycle;
 
 -- 1대1문의
 create table milkyQnA (
-  qnACode number primary key,
+  qnaCode number primary key,
   qnaQuestionType varchar(20),
-  qnASubject varchar(50),
+  qnaSubject varchar(50),
   id varchar(15),
-  qnAContent varchar(800),
-  qnAPwd varchar(15),
-  qnAHit number default 0,
-  qnAImage1 varchar(20),
-  qnAImage2 varchar(20),
+  qnaContent varchar(800),
+  qnaPwd varchar(15),
+  qnaHit number default 0,
+  qnaImage1 varchar(20),
+  qnaImage2 varchar(20),
   qnaAnswerCheck varchar(15) default '답변 대기',
-  qnADate date default sysdate
+  qnaDate date default sysdate
 );
 
 create sequence milkyQnASeq nocache nocycle;
@@ -81,7 +81,7 @@ create sequence milkyReviewSeq nocache nocycle;
 -- 댓글
 create table milkyComment (
   commentCode number primary key,
-  qnACode number,
+  qnaCode number,
   id varchar(15),
   commentContent varchar(300),
   commentRef number default 0,
