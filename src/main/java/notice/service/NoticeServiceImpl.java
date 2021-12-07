@@ -121,7 +121,6 @@ public class NoticeServiceImpl implements NoticeService {
 		map.put("endNum", endNum);
 		
 		int faqTotalA = noticeDAO.getFaqTotalA();
-		int faqTotalP = (faqTotalA - 1) / 7 + 1;
 		
 		boardPaging.setCurrentPage(pg);
 		boardPaging.setPageBlock(7);
@@ -144,5 +143,10 @@ public class NoticeServiceImpl implements NoticeService {
 		json.put("boardPaging", boardPaging.getPagingHTML().toString());
 		
 		return json;
+	}
+
+	@Override
+	public List<NoticeBoardDTO> noticeSearch(String search) {
+		return noticeDAO.noticeSearch(search);
 	}
 }

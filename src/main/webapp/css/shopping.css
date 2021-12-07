@@ -1,55 +1,31 @@
 @charset "UTF-8";
+@font-face { font-family:'NanumGothicWeb'; font-style:normal; font-weight:400; 
+src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.woff') format('woff');}
+/* * { font: Avenir, Arial, georgia; color: #222222; } */
 
-/* 쇼핑 메뉴 */
+/* shopping */
 
-#shoppingForm h1 {
-	margin: 50px;
-}
+/* 쇼핑 top Menu */
+#shoppingForm #top { width: 80% margin: 0px auto; padding-top: .5rem; padding-bottom: .1rem; }
+#shoppingForm #top .title { font-size : 20px; font-style: "bold"
+position: absolute; bottom:1rem;  width: 100%; margin: 0 auto; 
+/* display:flex;    justify-content: space-between; */  }
+#shoppingForm #top .title h1 { width: 100%; margin: 0 auto; }
+
+#shoppingForm .Menubar { float: right; color: #777; }
+#shoppingForm .Menubar a { text-decoration: none; color: #777;}
+#shoppingForm .Menubar a:last-child { font-weight: bold; }
 
 /* 쇼핑 게시판 목록네비  */
-#shoppingForm #shoppingNav {  
-	margin-bottom: 90px;
-	margin-right: 110px;
-}
+#shoppingForm #shoppingMenu { border: 1px solid silver; padding : 20px;
+	margin: 50px auto; width: 80%; }
+#shoppingForm .shoppingMenuSubject { font-size : 20px; font-weight: bold; 
+	margin-left: 1rem; display:flex; justify-content: space-between;}
+#shoppingForm .border { margin: 0px auto; width: 97%; margin-bottom : .7em; border-bottom: 1px solid #A6A6A6; }
 
-#shoppingForm #shoppingNav div{
-	float: right;
-	color: #777;
-}
+#shoppingForm #shoppingMenu #menu2 { font-size : 18px; font-weight: bold; }
 
-#shoppingForm #shoppingNav a{
-	text-decoration: none;
-	color: #777;
-	
-}
-#shoppingForm #shoppingNav a:last-child {
-	font-weight: bold;
-	
-}
-
-#shoppingForm #shoppingMenu {
-	border: 1px solid silver;
-	padding : 20px;
-	margin: 50px auto;
-	/* margin-top: 100px;  */
-	width: 80%;
-}
-#shoppingForm #shoppingMenuSubject {
-	font-size : 20px;
-	font-weight: bold; 
-}
-
-#shoppingForm #shoppingMenu #menu2 {
-	font-size : 18px;
-	font-weight: bold; 
-	
-}
-
-#shoppingForm #shoppingMenu li {
-	list-style: none;
-	font-size : 17px;
-	
-}
+#shoppingForm #shoppingMenu li { list-style: none; font-size : 17px; }
 
 #shoppingForm #beanNTeaMenuDiv ,#shoppingForm #productMenuDiv{
 	background : #eee;
@@ -59,9 +35,7 @@
 	margin: 10px auto;
 	font-size : 20px;
 	font-weight: bold; 
-
-	/* 높이는 픽셀로 너비는 % 로 주는게 편함 */
-}  /* 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
+}  /* 높이는 픽셀로 너비는 % 로 주는게 편함, 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
 
 #shoppingForm #menuImgDiv1 {
 	display: grid;

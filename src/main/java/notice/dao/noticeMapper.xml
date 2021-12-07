@@ -66,4 +66,11 @@
 			where rn between #{startNum} and #{endNum}
 			
 	</select>
+	
+	<select id="noticeSearch" parameterType="String" resultType="noticeBoard">
+		select  noticeCode, noticeSubject, id, noticeContent, noticeHit,
+				to_char(noticeDate, 'yyyy-mm-dd') "noticeDate" from milkynotice 
+			where noticeSubject like '%'||#{search}||'%'
+			order by noticeCode desc
+	</select>
 </mapper>

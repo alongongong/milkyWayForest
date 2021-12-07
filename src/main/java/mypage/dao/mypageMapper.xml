@@ -27,4 +27,39 @@
 	<delete id="mypageMyInfoDelete" parameterType="String">
 		delete milkymember where id=#{id}
 	</delete>
+	
+	<select id="getTotalA" resultType="int">
+		select count(*) from milkyqna
+	</select>
+	
+	<select id="getMyQnaList" parameterType="java.util.Map" resultType="qnaBoard">
+		select * from (select rownum rn, a.* from 
+		(select qnacode, qnaquestiontype, qnasubject, id, qnacontent, qnapwd, qnahit, 
+		qnaimage1, qnaimage2, qnaanswercheck, to_char(qnadate, 'yyyy-mm-dd')
+		 "qnadate" from milkyqna order by qnaCode desc) a)
+		  where rn between #{startNum} and #{endNum} and id=#{id}
+	</select>
+	
+	<select id="getMyQnaView" parameterType="String" resultType="qnaBoard">
+		select qnaCode, qnaQuestionType, qnaSubject, id, qnaContent, qnaHit,
+				to_char(qnaDate, 'yyyy-mm-dd') "qnaDate", qnAImage1, qnAImage2, qnaAnswerCheck
+		from milkyQnA 
+		where qnaCode=#{qnaCode} order by qnaCode desc
+	</select>
+	
+	<update id="updateMyQnaView" parameterType="qnaBoard">
+		update milkyqna set qnaQuestionType=#{qnaQuestionType},
+							   qnaSubject=#{qnaSubject}, 
+							   qnaContent=#{qnaContent}
+		where qnaCode=#{qnaCode}
+	</update>
+	
+	<select id="getMyQnaComment" parameterType="int" resultType="comment">
+		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
+	</select>
+	
+	<delete id="deleteMyQnaView" parameterType="int">
+		delete milkyqna where qnaCode=#{qnaCode}
+	</delete>
+
 </mapper>

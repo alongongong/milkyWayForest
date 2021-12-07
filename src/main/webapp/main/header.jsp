@@ -41,10 +41,10 @@
 					</c:if>
 					
 					<c:if test="${memId != null }">
-						<li><a href="/milkyWayForest/mypage">My Page</a></li>
+						<li><a href="/milkyWayForest/mypage/mypageMain">My Page</a></li>
 						<li><a href="/milkyWayForest/login/logout">Logout</a></li>
 					</c:if>
-				
+
 					<li><a href="#a">Customer Service &amp; Ideas</a></li>
 					<li><a href="#a"><span></span></i></a></li>
 					<li><a href="#a">search</a></li>

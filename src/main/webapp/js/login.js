@@ -43,8 +43,8 @@ $('#loginForm #kakao-login-btn').click(function(){
         	Kakao.API.request({
 				url: '/v2/user/me', //계정 정보를 가져오는 request url
 	          	success: function (data) {
-	        		console.log(data)  
-	        		
+	        		console.log(data)
+	        			        		
 	        		//카카오 로그인 선택 동의 사항
 					var mm;
 					var dd;

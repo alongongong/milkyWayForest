@@ -8,7 +8,8 @@ create table milkyShipment(
     shipTel3 varchar(5),
     shipZipcode varchar(10),
     shipAddr1 varchar(50),
-    shipAddr2 varchar(50)
+    shipAddr2 varchar(50),
+    baseShip varchar(20)			-- 기본 배송지
 );
 
 create sequence milkyShipmentSeq nocache nocycle;

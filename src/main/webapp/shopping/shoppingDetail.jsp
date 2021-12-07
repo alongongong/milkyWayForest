@@ -58,10 +58,10 @@
 					<td>옵션</td>
 					<td>
 						
-						<select class="shoppingSelect">
+						<select class="shoppingSelect"  name="cartOption">
 							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
-							<option><span id="productOptionSpan2"></span></option>
-							<option><span id="productOptionSpan2"></span></option>
+							<!--  <option><span id="productOptionSpan2"></span></option>
+							<option><span id="productOptionSpan2"></span></option> -->
 						</select>
 						
 					</td>
@@ -71,7 +71,7 @@
 					<td>구매수량</td>
 					<td>
 						<div class="length">
-							<input type="text" value="1">  <!--마이너스 안들어가게 min -->
+							<input type="text" name="cartQty" value="1" readonly>  
 							<a href="#a" id="plus">증가</a>
 							<a href="#a" id="minus">감소</a>
 						</div>
@@ -85,9 +85,10 @@
 				</tr>
 				
 				<tr>
-					<td>가격</td>
+					<td>총가격</td>
 					<td class="total">
-					<b><span id="productTotalSpan"></span></b>원
+					<b></b>원
+					<!-- <b><span id="productTotalSpan"></span></b>원 -->
 					</td>
 				</tr>
 			</table>
@@ -103,8 +104,7 @@
 							</a>
 							</div>
 						</li>
-						<!-- <li><a href="#a"><img id="img2" alt="B001" ></a></li> 
-						<li><a href="#a"><img id="img3"  alt="B001"></a></li>  -->
+						<!-- 에이작스에서 li 추가해주기 사진이 있을때만 추가하는걸로 바꿔줌! -->
 					</ul>
 			</div>
 			
@@ -138,9 +138,13 @@ $(function(){
 			$('#korsubjectSpan').text(items.productName);
 			$('#engsubjectSpan').text(items.productEngName);
 			$('#productSmallinfoSpan').text(items.productSmallInfo);
-			$('#productpriceSpan').text(items.productUnit);
-			$('#productOptionSpan2').text(items.productOption);
+			$('#productpriceSpan').text(items.productUnit.toLocaleString())+" 원";
+			/* $('#productOptionSpan2').text(items.productOption);
+			$('#productOptionSpan2').text(items.productOption); */
+			/* $('#productTotalSpan').text((items.productUnit)*parseInt($('.length input').val())); */
+				
 			
+			//사진 나타나게 하기(인덱스별로 조정)
 			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것
 				$('#bigImg').attr('src', '/milkyWayForest/productImage/'+items.productImageName);
 				$('#img1').attr('src', '/milkyWayForest/productImage/'+items.productImageName);
@@ -199,17 +203,135 @@ $(function(){
 					
 			}
 			
-		});
+			//인덱스가 0번일때의 옵션과 총가격
+			if(index==0) {
+			$('.shoppingSelect').append($('<option>' ,{text: items.productOption, value:items.productOption })); //벨류가 실제로 넘겨주는값 텍스트는 눈에 보이는거
+			$('.total b').append($('<span>', {
+				id:'totalSpan',  
+				text:((items.productUnit)*parseInt($('.length input').val())).toLocaleString()
+			})); //이걸 안 넣으면 1개일때의 가격이 안나옴
+		    	
+			}
+
+
+			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
+			$('#plus').click(function(){
+				
+				if(index==0){  // 인덱스가 0번일때만 아래 항목들이 수행되게 해라
+					$('.length input').val(parseInt($('.length input').val())+1); // 이걸 인덱스 0번일때에 넣지 않고 바깥으로 빼면 사진의 갯수만큼 구매수량이 늘어나버림 
+					$('.total b span').remove();  // 스팬태그를 지우고 다시 시작해줘라(클릭할때마다!)
+					$('.total b').append($('<span>', {text:((items.productUnit)*parseInt($('.length input').val())).toLocaleString() //인덱스가 0번일때만 계산해줘라
+					})); 
+				} 
+			});//#plus
+			
+			//구매수량 줄어들때
+			$('#minus').click(function(){
+				
+				if(index==0) {
+					$('.length input').val(parseInt($('.length input').val())-1);
+						if($('.length input').val() < 1) {
+							$('.length input').val(1);
+						}
+					$('.total b span').remove();
+					$('.total b').append($('<span>', {text:((items.productUnit)*parseInt($('.length input').val())).toLocaleString()
+					}));
+					
+				}		
+			});//#minus
+			
+
+		});//each
 		
+		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
+			//alert('0');
+			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(0) img').prop("src"));
+			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid  #154520');
+			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
+		});
+		$('.shoppingDetailImg li:eq(1)').on("click", $('.shoppingDetailImg li:eq(1)'), function(){
+			//alert('1');
+			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(1) img').prop("src"));
+			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid  #154520');
+			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
+		});
+		$('.shoppingDetailImg li:eq(2)').on("click", $('.shoppingDetailImg li:eq(2)'), function(){
+			//alert('2');
+			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(2) img').prop("src"));
+			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid  #154520');
+			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
+		});
+		$('.shoppingDetailImg li:eq(3)').on("click", $('.shoppingDetailImg li:eq(3)'), function(){
+			//alert('2');
+			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(3) img').prop("src"));
+			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid  #154520');
+			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
+		});
+		$('.shoppingDetailImg li:eq(4)').on("click", $('.shoppingDetailImg li:eq(4)'), function(){
+			//alert('2');
+			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(4) img').prop("src"));
+			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid  #154520');
+			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
+		});
+		$('.shoppingDetailImg li:eq(5)').on("click", $('.shoppingDetailImg li:eq(5)'), function(){
+			//alert('2');
+			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(5) img').prop("src"));
+			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
+			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
+			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid silver');
+		});
+
 	
+
 	
 		},
+
 		error: function(err) {
 			console.log(err);
 		}
-	});	
-});
+	});	//getShoppingDetail 에이작스
+	
+
+	//장바구니 버튼 클릭시
+	$('#cartBtn').click(function(){
+		
+		$.ajax({
+			url: '/milkyWayForest/cart/cartInsert',
+			type: 'post',
+			data: $('#shoppingDetailForm').serialize(),
+			
+			success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
+				alert("장바구니 성공");
+				location.href= "/milkyWayForest/cart";
+			},
+
+			error: function(err) {
+				console.log(err);
+			
+			}
+
+		});
+	}); //#cartBtn
+	
+	
+	
+	
+}); //큰 function
+
+
 
 </script>
+
 </body>
 </html>

@@ -10,38 +10,25 @@
 
 <body>
 <form id="productForm" name="productForm">
-
-	
 <h1>상품</h1>
-
 	<div id="productNav">
 		<div>
 			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="">Menu</a> > 
-			<a href="">상품</a>
-			
+			<a href="">상품</a>	
 		</div>
 	</div>
-
-
 
 	<div id="productMenu">
 	<div id ="productMenuSubject">상품</div>
 	    <ul>
-            <!--  <li><a href="#">머그</a></li>
-             <li><a href="#">글라스</a></li>
-             <li><a href="#">클라스틱 텀블러</a></li>
-             <li><a href="#">스테인리스 텀블러</a></li>
-             <li><a href="#">보온병</a></li>
-             <li><a href="#">커피용품</a></li>  -->
-             
              <li>
-	             <a href="#">머그 </a>&nbsp; &nbsp;
-	             <a href="#">글라스</a> &nbsp; &nbsp;
-	             <a href="#">플라스틱 텀블러</a> &nbsp; &nbsp;
-	             <a href="#">스테인리스 텀블러</a> &nbsp; &nbsp;
-	             <a href="#">보온병</a> &nbsp; &nbsp;
-	             <a href="#">커피용품</a>&nbsp; &nbsp;
+	             <a href="/milkyWayForest/shopping/mugList">머그 </a>&nbsp; &nbsp;
+	             <a href="/milkyWayForest/shopping/glassList">글라스</a> &nbsp; &nbsp;
+	             <a href="/milkyWayForest/shopping/plasticTumblrList">플라스틱 텀블러</a> &nbsp; &nbsp;
+	             <a href="/milkyWayForest/shopping/stainlessTumblrList">스테인리스 텀블러</a> &nbsp; &nbsp;
+	             <a href="/milkyWayForest/shopping/thermosList">보온병</a> &nbsp; &nbsp;
+	             <a href="/milkyWayForest/shopping/coffeeEtcList">커피용품</a>&nbsp; &nbsp;
              </li>
              
 		</ul>
@@ -102,7 +89,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -172,7 +159,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -241,7 +228,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -310,7 +297,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -378,7 +365,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -448,7 +435,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px;',
+					style : 'margin: 10px; cursor:pointer;',
 					position: 'relative'
 					
 				}).append($('<img>', {

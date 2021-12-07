@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="menuInfoSQL">
+	
+	<select id="getDrink" resultType="menuInfo">
+		select * from milkymenu 
+			where (substr(menuCode,1,1)='C' or substr(menuCode,1,1)='T')
+				and (substr(menuCode,2,3) between 1 and 8)
+	</select>
+	
+	<select id="getFood" resultType="menuInfo">
+		select * from milkymenu 
+			where (substr(menuCode,1,1)='B' 
+					or substr(menuCode,1,1)='D' 
+					or substr(menuCode,1,1)='K' 
+					or substr(menuCode,1,1)='S')
+				and (substr(menuCode,2,3) between 3 and 6)		
+	</select>
+	
+	<select id="getTea" resultType="menuInfo">
+		select * from milkymenu 
+			where (substr(menuCode,1,1)='T')
+				and (substr(menuCode,2,3) between 1 and 16) 
+	</select>
+	
+	<select id="getCoffee" resultType="menuInfo">
+		select * from milkymenu 
+			where (substr(menuCode,1,1)='C')
+				and (substr(menuCode,2,3) between 1 and 16) 
+	</select>
+	
+	<select id="getMenuInfo" parameterType="java.util.Map" resultType="menuInfo">
+		select * from 
+			(select rownum rn, a.* from
+				(select * from milkymenu
+					where substr(menuCode,1,1)=#{menuCode}
+					order by menucode) a)
+			where rn between #{startNum} and #{endNum}
+	</select>
+	
+	<select id="getMenuTotalA" parameterType="String" resultType="int">
+		select count(*) from milkymenu where substr(menuCode,1,1)=#{menuCode}
+	</select>
+	
+	<select id="getFoodAll" parameterType="String" resultType="menuInfo">
+		select * from milkymenu 
+			where (substr(menuCode,1,1)=#{menuCode})
+				and (substr(menuCode,2,3) between 1 and 8) 
+	</select>
+	
+	<select id="getMenuDetail" parameterType="String" resultType="menuInfo">
+		select * from milkymenu where menucode=#{menuCode}
+	</select>
+	
+</mapper>

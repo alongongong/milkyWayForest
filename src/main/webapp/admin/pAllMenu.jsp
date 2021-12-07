@@ -17,8 +17,9 @@
 	text-decoration: none;
 }
 </style>
-
-
+<div class="card">
+	<div class="card-body">
+		<div id="menuContainer">
 			<div id="mainNavMenu">
 				<ul id="companyInfo">
 					<li><a href="/milkyWayForest/info/componyInfo">회사소개</a></li>
@@ -31,14 +32,14 @@
 					<li><a href="/milkyWayForest/menuInfo">메뉴소개</a></li>
 					
 					<li><a href="/milkyWayForest/menuInfo/drinkInfo">음료</a></li>
-					<li><a href="/milkyWayForest/menuInfo/teaInfo">차</a></li>
-					<li><a href="/milkyWayForest/menuInfo/coffeeInfo">커피</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=차&menuCode=T&pg=1">차</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=커피&menuCode=C&pg=1">커피</a></li>
 					
 					<li><a href="/milkyWayForest/menuInfo/foodInfo">푸드</a></li>
-					<li><a href="/milkyWayForest/menuInfo/cakeInfo">케익</a></li>
-					<li><a href="/milkyWayForest/menuInfo/breadInfo">브레드</a></li>
-					<li><a href="/milkyWayForest/menuInfo/saladInfo">샐러드</a></li>
-					<li><a href="/milkyWayForest/menuInfo/sandwirchInfo">샌드위치</a></li>	
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=케이크&menuCode=K&pg=1">케이크</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=브레드&menuCode=B&pg=1">브레드</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=샐러드&menuCode=D&pg=1">샐러드</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=샌드위치&menuCode=S&pg=1">샌드위치</a></li>	
 					
 					<li><a href="/milkyWayForest/menuInfo/menuDetail">메뉴소개 상세 페이지</a></li>
 				</ul><!-- 메뉴소개 -->
@@ -105,12 +106,12 @@
 					<li><a href="">등급/혜택</a></li>
 					<li><a href="">적립금/쿠폰</a></li>
 					<li><a href="">찜관리</a></li>
-					<li><a href="">게시글 관리</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyPost?pg=1">게시글 관리</a></li>
 					
-					<li><a href="">개인정보</a></li>
-					<li><a href="">정보수정</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyInfo">개인정보</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyInfoUpdate">정보수정</a></li>
 					<li><a href="">배송지 관리</a></li>
-					<li><a href="">탈퇴</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyInfoDelete">탈퇴</a></li>
 				</ul><!-- 마이 페이지 -->
 				
 				<ul id="cart">
@@ -128,4 +129,6 @@
 					<li><a href="">결제완료</a></li>
 				</ul>
 			</div>
-		
+		</div>
+	</div>
+</div>

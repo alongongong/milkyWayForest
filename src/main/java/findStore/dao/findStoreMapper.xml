@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="findStoreSQL">
+	
+	<select id="getStore" parameterType="java.util.Map" resultType="findStore">
+		select storecode, storename, storelocation, storex, storey, storeurl, 
+		distance_wgs84(#{now_x}, #{now_y}, storeX, storeY) "distance" from milkyfindstore
+			where (storeX between (#{now_x}-0.5) and (#{now_x}+0.5))
+				and (storeY between (#{now_y}-0.5) and (#{now_y}+0.5))
+			order by 7
+	</select>
+
+</mapper>
