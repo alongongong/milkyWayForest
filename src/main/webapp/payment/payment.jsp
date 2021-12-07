@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/payment.css">
 <form id="paymentForm">
@@ -151,7 +152,15 @@
 		</div> <!-- paymentStickyDiv -->
 
 	</div> <!-- paymentContainer -->
+	
 </form>
+
+<form id="cartCodeForm">
+	<c:forEach var="code" items="${cartCode }">
+		<input type="hidden" name="cartCode" value="${code}">
+	</c:forEach>
+</form>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
@@ -220,5 +229,45 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 	        }
 	    });
 	}
+});
+
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/payment/getPayment',
+		type: 'post',
+		data: $('#cartCodeForm').serialize(),
+		success: function(data) {
+			alert(JSON.stringify(data));
+			$.each(data.cartList, function(index, items) {
+				var totalPrice = items.productUnit*items.cartQty*(1-items.productRate/100);
+				$('<tr>').append($('<td>',{
+					text: items.productName,
+					colspan: '2'
+				})).append($('<td>',{
+					text: items.cartOption
+				})).append($('<td>',{
+					text: items.productUnit
+				})).append($('<td>',{
+					text: items.cartQty
+				})).append($('<td>',{
+					text: totalPrice
+				})).append($('<td>',{
+					text: totalPrice
+				})).appendTo($('#paymentProductTable'));
+			});
+			
+			$.each(data.memberList, function(index, items) {
+				$('#name').val(items.name);
+				$('#email1').val(items.email1);
+				$('#email2').val(items.email2);
+				$('#tel1').val(items.tel1);
+				$('#tel2').val(items.tel2);
+				$('#tel3').val(items.tel3);
+			});
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
 });
 </script>

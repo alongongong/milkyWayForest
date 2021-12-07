@@ -31,6 +31,7 @@
 	
 	<context:component-scan base-package="cart.service" />
 	
+	<context:component-scan base-package="payment.service" />
 	
 	
 	<context:component-scan base-package="product.dao" />
@@ -54,5 +55,7 @@
 	<context:component-scan base-package="menuInfo.dao" />
 	
 	<context:component-scan base-package="cart.dao" />
+	
+	<context:component-scan base-package="payment.dao" />
 	
 </beans>

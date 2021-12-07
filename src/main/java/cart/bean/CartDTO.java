@@ -13,5 +13,4 @@ public class CartDTO {
 	private int productUnit;
 	private int productRate;
 	
-	
 }
