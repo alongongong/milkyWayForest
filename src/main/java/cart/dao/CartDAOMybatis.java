@@ -1,6 +1,7 @@
 package cart.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class CartDAOMybatis implements CartDAO {
 	@Override
 	public List<CartDTO> cartSelect(String id) {
 		return sqlSession.selectList("cartSQL.cartSelect", id);
+	}
+
+	@Override
+	public void cartQty(Map<String, Integer> map) {
+	  sqlSession.update("cartSQL.cartQty", map);
 	}
 
 }
