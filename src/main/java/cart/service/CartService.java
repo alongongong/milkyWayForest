@@ -13,5 +13,9 @@ public interface CartService {
 	public List<CartDTO> cartSelect(String id);
 
 	public void cartQty(Map<String, Integer> map);
+
+	public void cartAllDelete(String id);
+
+	public void cartSelectDelete(String id);
 	
 }

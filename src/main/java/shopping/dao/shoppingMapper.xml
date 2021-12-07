@@ -194,5 +194,10 @@
    		select * from milkyproductinfo where productCode=#{productCode}
    	</select>
    	
+   	<!-- 장바구니 상품코드 확인 _ 몇개행이 출력됬는지 갯수를 세라 -->
+    <select id="productSelect" parameterType="java.util.Map" resultType="int">
+   		select count(*) from milkycart where id=#{id} and productCode=#{productCode}
+   	</select> 
+   	
 
 </mapper>

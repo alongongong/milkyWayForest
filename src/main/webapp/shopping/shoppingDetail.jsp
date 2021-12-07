@@ -305,24 +305,51 @@ $(function(){
 
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
-		
 		$.ajax({
-			url: '/milkyWayForest/cart/cartInsert',
+			url: '/milkyWayForest/shopping/productSelect',  
 			type: 'post',
-			data: $('#shoppingDetailForm').serialize(),
-			
-			success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
-				alert("장바구니 성공");
-				location.href= "/milkyWayForest/cart";
-			},
+			data: 'id=yun&productCode=${productCode}', //'id=${memId}',  
+			 
+			success : function(data) {  //알아서 자료형을 맞춰줌
+				console.log(JSON.stringify(data));
+				
+					
+					if(data !=0) {
+					alert("이미 장바구니에 있는 상품입니다.");
+				
+					}
+					else { 
+					
+						$.ajax({
+						url: '/milkyWayForest/cart/cartInsert',
+						type: 'post',
+						data: $('#shoppingDetailForm').serialize(),
+						
+						success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
+							alert("장바구니 성공");
+							location.href= "/milkyWayForest/cart";
+						},
+	
+						error: function(err) {
+							console.log(err);
+						
+							}
+						});
+					
+				 
+				}
+				
 
+			},
 			error: function(err) {
 				console.log(err);
-			
-			}
+			} 
+
 
 		});
-	}); //#cartBtn
+
+		
+	});//
 	
 	
 	

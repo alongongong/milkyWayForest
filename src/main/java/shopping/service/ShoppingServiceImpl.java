@@ -1,6 +1,8 @@
 package shopping.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -111,6 +113,19 @@ public class ShoppingServiceImpl implements ShoppingService {
 	@Override
 	public ShoppingDTO clickImg(String productCode) {
 		return shoppingDAO.clickImg(productCode);
+	}
+
+
+
+	@Override
+	public int productSelect(String id, String productCode) {
+		Map<String,String> map = new HashMap<String,String>();
+	
+		map.put("id", id);
+		map.put("productCode", productCode);
+		
+		
+		return shoppingDAO.productSelect(map);
 	}
 	
 

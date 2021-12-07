@@ -33,10 +33,18 @@
 		where id=#{id}
 	</select>
 
-	 <update id="cartQty" parameterType="java.util.Map">
+	<update id="cartQty" parameterType="java.util.Map">
 		update milkyCart set
 			cartQty=#{cartQty} where cartCode=#{cartCode}
 	</update> 
+	
+	<delete id="cartAllDelete" parameterType="String">
+		delete milkyCart where id=#{id}
+	</delete>
+	
+	<delete id="cartSelectDelete">
+		delete milkyCart where id=#{id}
+	</delete>
 
 
 </mapper>

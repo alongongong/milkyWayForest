@@ -15,6 +15,7 @@
 			
 			<input type ="hidden" name="id" id="id" value="${id}">
 			
+			
 			<table id="cartTable" class="table">
 				<tr>
 					<th width="25"><input type="checkbox" class="cartProductCheck"></th>
@@ -58,8 +59,11 @@ $(function(){
 					 width: 25 
 				})
 				.append($('<input>', {
-					type:'checkbox'
-				
+					type:'checkbox',
+					name: 'check',
+					class: 'check',
+					value: items.cartCode
+					
 				}))).append($('<th>' , {
 					text: items.productName 
 				
@@ -97,7 +101,7 @@ $(function(){
 				.appendTo($('#cartTable')); 
 			
 				 //수량디비(에이작스를 새로 만들기) 카트코드랑 상품수량 가져가서 수정해줘라
-			$('#plus'+index).click(function(){
+			$('#plus'+index).click(function(){  //인덱스를 안걸면 전체품목이 플러스가 되어버려서!
 				$('#qty'+index).val(parseInt($('#qty'+index).val())+1); 
 				$('#total'+index).text(((items.productUnit)*parseInt($('#qty'+index).val())).toLocaleString()+" 원");
 				$.ajax({
@@ -107,8 +111,6 @@ $(function(){
 						 
 					success: function() {
 						//alert("해보쟈");
-						
-						
 						
 					},
 					
@@ -135,9 +137,7 @@ $(function(){
 						 
 					success: function() {
 						//alert("해보쟈");
-						
-						
-						
+					
 					},
 					
 					error:function(err){
@@ -148,8 +148,6 @@ $(function(){
 				 
 			});	 
 			
-			
-			
 				 
 			});//each
 			
@@ -159,12 +157,78 @@ $(function(){
 			console.log(err);
 		}
 		
-	});
+	});//cartSelect_ajax(장바구니로 오면 바로 데이터 뿌리기)
 	
-	//전체상품삭제 
-	
-	
-});
+		//전체선택,해제
+		$('.cartProductCheck').click(function(){
+			if($('.cartProductCheck').prop("checked")) {
+				$('.check').prop("checked",true);
+				
+			}else{
+				$('.check').prop("checked", false);
+				
+			}	
+		});
+		
+		//전체상품 삭제
+		$('#cartAllDeleteBtn').click(function(){		
+		 	$.ajax({
+		 		url: '/milkyWayForest/cart/cartAllDelete',
+		 		type: 'post',
+				data: 'id=yun',
+				success: function() {
+					if(confirm("전체삭제 하시겠습니까?")==true){
+						location.href= "/milkyWayForest/cart";
+						
+					}else {
+						return;
+					}
+				 	
+					
+				},
+				
+				error:function(err){
+					console.log(err);
+				}	
+			});	 
+		});	
+
+		//선택되면 클래스를 바꿔라 애드클래스 리무브 클래스  클래스명이 추가되거나 지워지는것. 
+		//만약 체크안되어있었으면 기본적으로 체크가 안되어 있으면 클래스이름을unCheck 라고 주고
+		//체크되는순간 check 라고 클래스명을 바꿔라 라고 이걸 이프문
+		
+		
+		//선택삭제
+		$('#cartSelectDeleteBtn').click(function(){
+			var count =$('.check:checked').length;
+		
+			if(count==0)
+				alert('삭제 할 항목을 선택하세요');
+			else { 
+				if(confirm('정말 삭제하시겠습니까?') ==true) {
+					 $.ajax({
+						url: '/milkyWayForest/cart/cartSelectDelete',
+						type: 'post',
+						data: 'id=yun'+'&cartCode='+$('.check').val(),
+						success: function() {
+							alert("삭제 성공")
+						//	location.href= "/milkyWayForest/cart";
+						},
+						error:function(err){
+							console.log(err);
+						}	
+						
+						
+					});	  
+					}else {
+						return;
+					}
+				
+				  }
+				});
+			
+			
+});//큰 function
 
 
 </script>

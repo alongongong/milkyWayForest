@@ -1,6 +1,7 @@
 package shopping.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,6 +116,13 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 	public ShoppingDTO clickImg(String productCode) {
 		return sqlSession.selectOne("shoppingSQL.clickImg", productCode);
 	}
+
+	@Override
+	public int productSelect(Map<String, String> map) {
+		
+		return sqlSession.selectOne("shoppingSQL.productSelect",map);
+	}
+
 
 	
 
