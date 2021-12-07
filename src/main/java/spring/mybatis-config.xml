@@ -28,5 +28,7 @@
 		<typeAlias type="findStore.bean.FindStoreDTO" alias="findStore"/>
 		
 		<typeAlias type="menuInfo.bean.MenuInfoDTO" alias="menuInfo"/>
+		
+		<typeAlias type="cart.bean.CartDTO" alias="cart"/>
 	</typeAliases>
 </configuration>
