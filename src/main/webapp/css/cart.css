@@ -54,3 +54,27 @@
 	display: block;
 	clear: both;
 }
+#cartForm table .length a {
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	width: 20px;
+	height: 15px;
+	color: transparent;  /* 글자를 투명하게 가려주는것  */
+}
+#cartForm table .length a:nth-of-type(1) {
+	top: 0;
+	background :url("/milkyWayForest/image/ico_up.png")
+	no-repeat center;
+
+}
+
+#cartForm table .length a:nth-of-type(2) {
+	bottom: 0;
+	background :url("/milkyWayForest/image/ico_down.png")
+	no-repeat center;
+	border-top:1px solid #c6c6c6;
+}
+
+
+

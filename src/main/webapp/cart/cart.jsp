@@ -12,10 +12,14 @@
 				<li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
 			</ul>
 			<br>
+			
+			<input type ="hidden" name="id" id="id" value="${id}">
+			
 			<table id="cartTable" class="table">
 				<tr>
 					<th width="25"><input type="checkbox" class="cartProductCheck"></th>
 					<th>상품정보</th>
+					<th>구매수량</th>
 					<th>옵션</th>
 					<th>상품금액</th>
 					<th>배송비</th>
@@ -43,10 +47,11 @@ $(function(){
 	$.ajax({
 		url: '/milkyWayForest/cart/cartSelect',
 		type: 'post',
-		data: 'id=' + $('#id').val(),
+		data: 'id=yun',
 		dataType: 'json',
 		success: function(data) {
-			 console.log(JSON.stringify(data)); 
+			alert("떠라."); 
+			console.log(JSON.stringify(data)); 
 			 
 			 $.each(data, function(index,items){
 				 $('<tr>').append($('<th>',{ 
@@ -57,18 +62,96 @@ $(function(){
 				
 				}))).append($('<th>' , {
 					text: items.productName 
-				})).append($('<th>', {
+				
+				})).append($('<th>' 
+				
+					
+					).append($('<div>' , {
+						class: 'length',
+						style: 'position: relative; border: 1px solid  #ccc; width: 70px; height: 32px;'
+						
+					}) .append($('<input>', {
+					
+						type: 'text',
+						value: items.cartQty,
+						style: 'text-align:center; width: 47px; height: 29px; border: none; border-right:1px solid #c6c6c6;',
+						id:'qty'+index
+						
+						})).append($('<a>', {
+							id:'plus'+index
+							
+						})).append($('<a>' , {
+							id:'minus'+index
+						
+				})))).append($('<th>', {
 					text: items.cartOption
+					
 				})).append($('<th>', {
+					id: 'total'+index,
 					text: (items.productUnit*items.cartQty).toLocaleString()+" 원" 
+					
 				})).append($('<th>', {
 					text: "2500원"
+				
 				}))
 				.appendTo($('#cartTable')); 
-					 
-			 
+			
+				 //수량디비(에이작스를 새로 만들기) 카트코드랑 상품수량 가져가서 수정해줘라
+			$('#plus'+index).click(function(){
+				$('#qty'+index).val(parseInt($('#qty'+index).val())+1); 
+				$('#total'+index).text(((items.productUnit)*parseInt($('#qty'+index).val())).toLocaleString()+" 원");
+				$.ajax({
+			 		url: '/milkyWayForest/cart/cartQty',
+			 		type: 'post',
+					data:  'cartCode='+items.cartCode+'&cartQty='+$('#qty'+index).val(),  //주소  'cartCode=${cartCode}' 이러면 문자열로 넘어가버림
+						 
+					success: function() {
+						//alert("해보쟈");
+						
+						
+						
+					},
+					
+					error:function(err){
+						console.log(err);
+					}
+			 		
+			 	}); 
 				 
-			});
+			});	
+				 
+			$('#minus'+index).click(function(){
+				
+				$('#qty'+index).val(parseInt($('#qty'+index).val())-1);
+				if($('#qty'+index).val() < 1) {
+					$('#qty'+index).val(1);
+				}
+				$('#total'+index).text(((items.productUnit)*parseInt($('#qty'+index).val())).toLocaleString()+" 원");
+				
+				$.ajax({
+			 		url: '/milkyWayForest/cart/cartQty',
+			 		type: 'post',
+					data:  'cartCode='+items.cartCode+'&cartQty='+$('#qty'+index).val(),  //주소  'cartCode=${cartCode}' 이러면 문자열로 넘어가버림
+						 
+					success: function() {
+						//alert("해보쟈");
+						
+						
+						
+					},
+					
+					error:function(err){
+						console.log(err);
+					}
+			 		
+			 	}); 
+				 
+			});	 
+			
+			
+			
+				 
+			});//each
 			
 		},
 		
@@ -77,6 +160,9 @@ $(function(){
 		}
 		
 	});
+	
+	//전체상품삭제 
+	
 	
 });
 
