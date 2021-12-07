@@ -26,4 +26,5 @@ public class PaymentDTO {
 	private String payShipAddr1;
 	private String payShipAdde2;
 	private String payDate;
+	private String baseShip;
 }

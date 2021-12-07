@@ -5,6 +5,8 @@ import java.util.Map;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
 public interface MypageDAO {
@@ -28,6 +30,8 @@ public interface MypageDAO {
 	public List<CommentDTO> getMyQnaComment(int qnaCode);
 
 	public void deleteMyQnaView(int qnaCode);
+
+	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO);
 
 
 }
