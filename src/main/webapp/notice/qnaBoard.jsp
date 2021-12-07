@@ -44,6 +44,7 @@ $(function(){
 		url: '/milkyWayForest/notice/getQnaBoard?pg='+${pg},
 		type: 'post',
 		success: function(data){
+			// alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr>').append($('<td>').append($('<input>',{
 					type: 'checkbox',
@@ -75,7 +76,8 @@ $(function(){
 				}).append($('<input>',{
 					type: 'text',
 					placeholder: '비밀번호 입력',
-					style: 'margin-right: 5px;'
+					style: 'margin-right: 5px;',
+					class: 'pwdInput'
 				})).append($('<input>',{
 					type: 'button',
 					value: '입력',
@@ -84,43 +86,146 @@ $(function(){
 					class: 'qndPwdCheck'
 				}))).appendTo($('#qnaBoardTable tbody'));
 				
-				$('<tr>', {
+				if(items.qnaImage1 == null) {
+					$('<tr>', {
+						class: 'contentHide'
+					}).append($('<td>', {
+						colspan: '8',
+						text: items.qnaContent,
+						style: 'padding: 80px 80px 120px 80px;'
+					})).appendTo($('#qnaBoardTable tbody'));
+				} else if(items.qnaImage2 == null){
+					$('<tr>', {
+						class: 'contentHide'
+					}).append($('<td>', {
+						colspan: '8',
+						text: items.qnaContent,
+						style: 'padding: 80px 80px 120px 80px;'
+					}).append($('<div>',{
+						style: 'width: 30%; margin-top: 30px;'
+					}).append($('<img>',{
+						src: '/milkyWayForest/storage/'+items.qnaImage1,
+						style: 'margin: 20px; width: 40%;'
+					})))).appendTo($('#qnaBoardTable tbody'));
+				} else {
+					$('<tr>', {
+						class: 'contentHide'
+					}).append($('<td>', {
+						colspan: '8',
+						text: items.qnaContent,
+						style: 'padding: 80px 80px 120px 80px;'
+					}).append($('<div>',{
+						style: 'width: 30%; margin-top: 30px;'
+					}).append($('<img>',{
+						src: '/milkyWayForest/storage/'+items.qnaImage1,
+						style: 'margin: 20px; width: 40%;'
+					}).append($('<img>',{
+						src: '/milkyWayForest/storage/'+items.qnaImage2,
+						style: 'margin: 20px; width: 40%;'
+					}))))).appendTo($('#qnaBoardTable tbody'));
+				}
+				
+				$('<tr>',{
 					class: 'contentHide'
-				}).append($('<td>', {
-					colspan: '8',
+				}).append($('<td>',{
+					colspan: '6',
 					text: items.qnaContent,
-					style: 'vertical-align: middle; text-align: center; padding: 50px'
+					style: 'padding: 20px;',
+					class: 'pQnaContent'
 				})).appendTo($('#qnaBoardTable tbody'));
 				
+				$('<tr>',{
+					class: 'contentHide'
+				}).append($('<td>',{
+					colspan: '6',
+					style: 'padding: 10px 10px 20px 10px;',
+					class: 'pQnaContent'
+				}).append($('<div>',{
+					id: 'commentDiv'+index,
+					align: 'left',
+					background: '#ccc'
+				})).append($('<textarea>',{
+					type: 'text',
+					id: 'qnaComment'+index,
+					style: 'width: 80%; margin: 5px; height: 60px; vertical-align: middle'
+				})).append($('<input>',{
+					type: 'button',
+					value: '입력',
+					class: 'btn qnaCommentBtn',
+					id: 'commentInsertBtn'+index,
+					style: 'height: 60px;'
+				}))).appendTo($('#qnaBoardTable tbody'));
 			
+				
 				$('#pwdBtn'+index).click(function(){
+					$('.qndPwdCheck').text('');
 					if(items.qnaPwd == $(this).prev().val()){
 						$('.pwdWriteShow').removeClass('pwdWriteShow').addClass('pwdWrite');
 						$(this).parent().parent().next().removeClass('contentHide').addClass('contentShow');
+						$(this).parent().parent().next().next().removeClass('contentHide').addClass('contentShow');
 					} else {
 						$('.qndPwdCheck').empty();
-						$('.qndPwdCheck').text('비밀번호가 일치하지 않습니다.');
+						$(this).next().text('비밀번호가 일치하지 않습니다.');
 					}
 				});
+				
+				
+				
+				$.ajax({
+					url: '/milkyWayForest/notice/getQnaComment',
+					type: 'post',
+					data: 'qnaCode='+items.qnaCode,
+					success: function(data) {
+						$.each(data, function(index1, items){
+							$('#commentDiv'+index).append($('<p>',{
+								class: 'commentContent'
+							}).append($('<span>', {
+								text: items.id,
+								style: 'margin: 0 10px;'
+							})).append($('<input>',{
+								type: 'button',
+								value: '수정',
+								id: 'commentUpdataBtn'+index,
+								class: 'btn commentUpdateBtn'
+							})).append($('<input>',{
+								type: 'button',
+								value: '삭제',
+								id: 'commentDeleteBtn'+index,
+								class: 'btn commentDeleteBtn'
+							})).append($('<p>', {
+								text: items.commentContent
+							})));
+						});
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+				
 				
 			});
 			
 			$('.qnaSubject').click(function() {
+				$('.qndPwdCheck').text('');
+				$('.pwdInput').val('');
 				if($(this).parent().next().attr('class')=='pwdWrite') {
 					$('.pwdWriteShow').removeClass('pwdWriteShow').addClass('pwdWrite');
 					$(this).parent().next().removeClass('pwdWrite').addClass('pwdWriteShow');
+					$('.contentShow').removeClass('contentShow').addClass('contentHide');
 				} else {
 					$(this).parent().next().removeClass('pwdWriteShow').addClass('pwdWrite');
 				}
 			});
 			
+			$('#qnaBoardPaging').html(data.boardPaging);
 			
-			$('#qnaBoardPaging').html(data.boardPaging)
 		},
 		error: function(err) {
 			console.log(err);
 		}
 	});
+	
+	
 	
 	$('#qnaBoardWriteBtn').click(function(){
 		location.href="/milkyWayForest/notice/qnaBoardWriteForm";

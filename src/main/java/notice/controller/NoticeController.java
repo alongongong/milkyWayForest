@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
 import notice.bean.NoticeBoardDTO;
 import notice.service.NoticeService;
@@ -161,5 +162,11 @@ public class NoticeController {
 	@ResponseBody
 	public List<NoticeBoardDTO> noticeSearch(@RequestParam String search) {
 		return noticeService.noticeSearch(search);
+	}
+	
+	@PostMapping("/notice/getQnaComment")
+	@ResponseBody
+	public List<CommentDTO> getQnaComment(@RequestParam int qnaCode) {
+		return noticeService.getQnaComment(qnaCode);
 	}
 }

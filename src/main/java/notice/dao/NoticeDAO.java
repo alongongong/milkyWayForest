@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.json.simple.JSONObject;
 
+import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
 import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
@@ -33,5 +34,7 @@ public interface NoticeDAO {
 	public List<FaqBoardDTO> getFaqBoard(Map<String, Integer> map);
 
 	public List<NoticeBoardDTO> noticeSearch(String search);
+
+	public List<CommentDTO> getQnaComment(int qnaCode);
 
 }

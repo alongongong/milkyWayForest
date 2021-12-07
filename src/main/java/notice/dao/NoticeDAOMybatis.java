@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
 import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
@@ -72,6 +73,11 @@ public class NoticeDAOMybatis implements NoticeDAO {
 	@Override
 	public List<NoticeBoardDTO> noticeSearch(String search) {
 		return sqlSession.selectList("noticeSQL.noticeSearch", search);
+	}
+
+	@Override
+	public List<CommentDTO> getQnaComment(int qnaCode) {
+		return sqlSession.selectList("noticeSQL.getQnaComment", qnaCode);
 	}
 
 }
