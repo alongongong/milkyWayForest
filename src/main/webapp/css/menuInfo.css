@@ -1,6 +1,27 @@
 @charset "UTF-8";
 
+/* 공통 페이징 */
+#boardPagingDiv {
+width: 70%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+}
+#paging {
+	padding: 3px 8px;
+}
+
 /* 메뉴소개 */
+#menuInfoForm {
+	width: 70%;
+	margin: 0 auto;
+}
 
 #menuInfoForm h1 {
 	margin: 50px;
@@ -9,7 +30,7 @@
 /* 음료 게시판 목록네비  */
 #menuInfoForm #menuInfoNav {  
 	margin-bottom: 90px;
-	margin-right: 110px;
+	margin-right: 20px;
 }
 
 #menuInfoForm #menuInfoNav div{
@@ -31,7 +52,6 @@
 	border: 1px solid silver;
 	padding : 20px;
 	margin: 50px auto;
-	width: 80%;
 }
 #menuInfoForm #menuInfoMenuSubject {
 	
@@ -54,7 +74,6 @@
 
 #menuInfoForm #drinkInfoMenuDiv ,#menuInfoForm #foodInfoMenuDiv{
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 10px auto;
@@ -69,9 +88,20 @@
 #menuInfoForm #menuInfoMenu a:active { color: black; text-decoration: none; }
 
 
+#menuInfoForm #drinkMenuDiv, #menuInfoForm #foodMenuDiv {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	margin: 0 auto;
+	width: 102%;
+}
+
 
 /* 음료 메뉴 */
-
+#drinkInfoForm {
+	width: 70%;
+	margin: 0 auto;
+}
 #drinkInfoForm h1 {
 	margin: 50px;
 }
@@ -79,7 +109,6 @@
 /* 음료 게시판 목록네비  */
 #drinkInfoForm #drinkInfoNav {  
 	margin-bottom: 90px;
-	margin-right: 110px;
 }
 
 #drinkInfoForm #drinkInfoNav div{
@@ -101,7 +130,6 @@
 	border: 1px solid silver;
 	padding : 20px;
 	margin: 50px auto;
-	width: 80%;
 }
 #drinkInfoForm #drinkInfoMenuSubject {
 	
@@ -118,13 +146,11 @@
 
 #drinkInfoForm #teaInfoMenuDiv ,#drinkInfoForm #coffeeInfoMenuDiv{
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 10px auto;
 	font-size : 20px;
 	font-weight: bold; 
-
 } 
 
 #drinkInfoForm #drinkInfoMenu a:link { color: black; text-decoration: none; }
@@ -132,18 +158,27 @@
 #drinkInfoForm #drinkInfoMenu a:hover { color: darkgreen; text-decoration: underline; }
 #drinkInfoForm #drinkInfoMenu a:active { color: black; text-decoration: none; }
 
+#drinkInfoForm #teaMenuDiv, #drinkInfoForm #coffeeMenuDiv {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	margin: 0 auto;
+	width: 102%;
+}
 
 
 /* 푸드 메뉴 */
-
+#foodInfoForm {
+	width: 70%;
+	margin: 0 auto;
+}
 #foodInfoForm h1 {
 	margin: 50px;
 }
 
 /* 푸드 게시판 목록네비  */
-#foodInfoForm #foodInfooNav {  
+#foodInfoForm #foodInfoNav {  
 	margin-bottom: 90px;
-	margin-right: 110px;
 }
 
 #foodInfoForm #foodInfoNav div{
@@ -165,7 +200,6 @@
 	border: 1px solid silver;
 	padding : 20px;
 	margin: 50px auto;
-	width: 80%;
 }
 #foodInfoForm #foodInfoMenuSubject {
 	
@@ -185,7 +219,6 @@
 #foodInfoForm #saladInfoMenuDiv, 
 #foodInfoForm #sandwitchInfoMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 10px auto;
@@ -199,56 +232,64 @@
 #foodInfoForm #foodInfoMenu a:hover { color: darkgreen; text-decoration: underline; }
 #foodInfoForm #foodInfoMenu a:active { color: black; text-decoration: none; }
 
+#foodInfoForm #cakeMenuDiv, #foodInfoForm #breadMenuDiv,
+#foodInfoForm #saladMenuDiv, #foodInfoForm #sandwitchMenuDiv {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	margin: 0 auto;
+	width: 102%;
+}
 
-/* 차음료 메뉴 폼 */
-
-#teaInfoForm h1 {
+/* 전체음료 메뉴 폼 */
+#allMenuInfoForm {
+	width: 70%;
+	margin: 0 auto;
+}
+#allMenuInfoForm h1 {
 	margin: 50px;
 }
 
 /* 게시판 목록네비  */
-#teaInfoForm #teaInfoNav {  
+#allMenuInfoForm #allMenuInfoNav {  
 	margin-bottom: 90px;
-	margin-right: 110px;
 }
 
-#teaInfoForm #teaInfoNav div{
+#allMenuInfoForm #allMenuInfoNav div{
 	float: right;
 	color: #777;
 	
 }
 
-#teaInfoForm #teaInfoNav a{
+#allMenuInfoForm #allMenuInfoNav a{
 	text-decoration: none;
 	color: #777;
 	
 }
-#teaInfoForm #teaInfoNav a:last-child {
+#allMenuInfoForm #allMenuInfoNav a:last-child {
 	font-weight: bold;
 	
 }
 
 
-#teaInfoForm .productGroup {
+#allMenuInfoForm .productGroup {
 	margin-bottom: 180px;
-	margin-right: 110px;
+	margin-right: 20px;
 	
 }
 
-#teaInfoForm .productGroup div{
+#allMenuInfoForm .productGroup div{
 	float: right;
 	
 }
 
-#teaInfoForm .productGroup select {
+#allMenuInfoForm .productGroup select {
 	padding : 5px 10px;
 	
 }
 
-
-#teaInfoForm #teaInfoMenuDiv {
+#allMenuInfoForm #AllInfoMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
@@ -257,300 +298,34 @@
 }
 
 
-#teaInfoForm .productList1 li {
+#allMenuInfoForm .productList1 li {
 	list-style: none;
 	font-size : 18px;
 }
 
-#teaInfoForm .listDiv {
+#allMenuInfoForm .listDiv {
 	border : 1px solid red;
 	display: inline-block;
 	padding: 10px 30px 0 0;
-	margin-left : 180px ;
-	
+	margin-left : 180px ;	
 }
 
-/* 커피음료 메뉴 폼 */
-
-#coffeeInfoForm h1 {
-	margin: 50px;
-}
-
-/* 게시판 목록네비  */
-#coffeeInfoForm #coffeeInfoNav {  
-	margin-bottom: 90px;
-	margin-right: 110px;
-}
-
-#coffeeInfoForm #coffeeInfoNav div{
-	float: right;
-	color: #777;
-	
-}
-
-#coffeeInfoForm #coffeeInfoNav a{
-	text-decoration: none;
-	color: #777;
-	
-}
-#coffeeInfoForm #coffeeInfoNav a:last-child {
-	font-weight: bold;
-	
-}
-
-#coffeeInfoForm .productGroup {
-	margin-bottom: 180px;
-	margin-right: 110px;
-	
-}
-
-#coffeeInfoForm .productGroup div{
-	float: right;
-	
-}
-
-#coffeeInfoForm .productGroup select {
-	padding : 5px 10px;
-	
-}
-
-#coffeeInfoForm #coffeeInfoMenuDiv {
-	background : #eee;
-	width: 80%;
-	height: 25px;  
-	padding: 20px;
-	margin: 20px auto;
-	font-size : 20px;
-	font-weight: bold;
+#allMenuInfoForm #AllMenuDiv {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-column-gap: 2%;
+	margin: 0 auto;
+	width: 102%;
 }
 
 
-#coffeeInfoForm .productList1 li {
-	list-style: none;
-	font-size : 18px;
-	
-}
-
-#coffeeInfoForm .listDiv {
-	border : 1px solid red;
-	display: inline-block;
-	padding: 10px 30px 0 0;
-	margin-left : 180px ;
-	
-}
-
-/* 브레드 메뉴 폼 */
-
-#breadInfoForm h1 {
-	margin: 50px;
-}
-
-/* 게시판 목록네비  */
-#breadInfoForm #breadInfoNav {  
-	margin-bottom: 90px;
-	margin-right: 110px;
-}
-
-#breadInfoForm #breadInfoNav div{
-	float: right;
-	color: #777;
-	
-}
-
-#breadInfoForm #breadInfoNav a{
-	text-decoration: none;
-	color: #777;
-	
-}
-#breadInfoForm #breadInfoNav a:last-child {
-	font-weight: bold;
-	
-}
-
-#breadInfoForm .productGroup {
-	margin-bottom: 180px;
-	margin-right: 110px;
-	
-}
-
-#breadInfoForm .productGroup div{
-	float: right;
-	
-}
-
-#breadInfoForm .productGroup select {
-	padding : 5px 10px;
-	
-}
-
-#breadInfoForm #breadInfoMenuDiv {
-	background : #eee;
-	width: 80%;
-	height: 25px;  
-	padding: 20px;
-	margin: 20px auto;
-	font-size : 20px;
-	font-weight: bold;
-}
-
-
-#breadInfoForm .productList1 li {
-	list-style: none;
-	font-size : 18px;
-	
-}
-
-#breadInfoForm .listDiv {
-	border : 1px solid red;
-	display: inline-block;
-	padding: 10px 30px 0 0;
-	margin-left : 180px ;
-	
-}
-
-
-/* 샐러드 메뉴 폼 */
-
-#saladInfoForm h1 {
-	margin: 50px;
-}
-
-/* 게시판 목록네비  */
-#saladInfoForm #saladInfoNav {  
-	margin-bottom: 90px;
-	margin-right: 110px;
-}
-
-#saladInfoForm #saladInfoNav div{
-	float: right;
-	color: #777;
-	
-}
-
-#saladInfoForm #saladInfoNav a{
-	text-decoration: none;
-	color: #777;
-	
-}
-#saladInfoForm #saladInfoNav a:last-child {
-	font-weight: bold;
-	
-}
-
-#saladInfoForm .productGroup {
-	margin-bottom: 180px;
-	margin-right: 110px;
-	
-}
-
-#saladInfoForm .productGroup div{
-	float: right;
-	
-}
-
-#saladInfoForm .productGroup select {
-	padding : 5px 10px;
-	
-}
-
-#saladInfoForm #saladInfoMenuDiv {
-	background : #eee;
-	width: 80%;
-	height: 25px;  
-	padding: 20px;
-	margin: 20px auto;
-	font-size : 20px;
-	font-weight: bold;
-}
-
-
-#saladInfoForm .productList1 li {
-	list-style: none;
-	font-size : 18px;
-	
-}
-
-#saladInfoForm .listDiv {
-	border : 1px solid red;
-	display: inline-block;
-	padding: 10px 30px 0 0;
-	margin-left : 180px ;
-	
-}
-
-
-/* 샌드위치 메뉴 폼 */
-
-#sandwitchInfoForm h1 {
-	margin: 50px;
-}
-
-/* 게시판 목록네비  */
-#sandwitchInfoForm #sandwitchInfoNav {  
-	margin-bottom: 90px;
-	margin-right: 110px;
-}
-
-#sandwitchInfoForm #sandwitchInfoNav div{
-	float: right;
-	color: #777;
-	
-}
-
-#sandwitchInfoForm #sandwitchInfoNav a{
-	text-decoration: none;
-	color: #777;
-	
-}
-#sandwitchInfoForm #sandwitchInfoNav a:last-child {
-	font-weight: bold;
-	
-}
-
-#sandwitchInfoForm .productGroup {
-	margin-bottom: 180px;
-	margin-right: 110px;
-	
-}
-
-#sandwitchInfoForm .productGroup div{
-	float: right;
-	
-}
-
-#sandwitchInfoForm .productGroup select {
-	padding : 5px 10px;
-	
-}
-
-#sandwitchInfoForm #sandwitchInfoMenuDiv {
-	background : #eee;
-	width: 80%;
-	height: 25px;  
-	padding: 20px;
-	margin: 20px auto;
-	font-size : 20px;
-	font-weight: bold;
-}
-
-
-#sandwitchInfoForm .productList1 li {
-	list-style: none;
-	font-size : 18px;
-	
-}
-
-#sandwitchInfoForm .listDiv {
-	border : 1px solid red;
-	display: inline-block;
-	padding: 10px 30px 0 0;
-	margin-left : 180px ;
-	
-}
 
 
 /* 메뉴 상세페이지 */
-
+#menuDetailForm {
+	width: 65%;
+	margin: 0 auto;
+}
 #menuDetailForm h1 {
 	margin: 50px;
 }
@@ -560,7 +335,6 @@
 
 #menuDetailForm #menuDetailNav {  
 	margin-bottom: 90px;
-	margin-right: 110px;
 }
 
 #menuDetailForm #menuDetailNav div{
@@ -575,9 +349,106 @@
 }
 #menuDetailForm #menuDetailNav a:last-child {
 	font-weight: bold;
-	
 }
 
+
+/*-----------------------------------*/
+
+#menuDetailForm #menuDetailView {
+	display: grid;
+	grid-template-columns: 38% 57%;
+	grid-column-gap: 5%;
+	width: 100%;
+	margin:0 auto;
+}
+#menuDetailForm #menuImgDiv {
+	grid-column: 1 / 2;
+	grid-row: 1 / 5;
+}
+#menuDetailForm #menuImgDiv #bigImg {
+	width: 100%;
+}
+#menuDetailForm #menuEngName {
+	font-size: 10pt;
+	color: #555;
+	font-weight: normal;
+}
+#menuDetailForm #menuName {
+	border-bottom: 2px solid;
+	font-size: 20pt;
+	font-weight: bold;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+#menuDetailForm #menuDetail {
+	font-size: 11pt;
+	padding-bottom: 20px;
+}
+#menuDetailForm #menuNutri {
+	display: grid;
+	grid-template-columns: 51% 48%;
+	grid-column-gap: 1%;
+	margin: 20px 0;
+	font-weight: bold;
+}
+#menuDetailForm #menuNutri div {
+	font-size: 11pt;
+}
+#menuDetailForm #menuWeight {
+	grid-column: 1 / 3;
+	grid-row: 1 / 2;
+}
+#menuDetailForm #menuFactor {
+	grid-column: 1 / 3;
+	background: #ddd;
+}
+#menuDetailForm #menuImgDiv ul {
+	left: 70px;
+	padding: 0;
+	
+}
+#menuDetailForm #menuImgDiv li {
+	float:left;
+	list-style: none;
+	padding: 10px 10px 0 0;
+}
+#menuDetailForm #menuImgDiv li img {
+	border: 1px solid #154520;
+	width: 70px;
+	height: 70px;
+}
+#menuDetailForm #menuLeftInfo {
+	border-right: 1px dotted #aaa;
+	margin: 15px 0;
+	font-weight: normal;
+}
+#menuDetailForm #menuWeight {
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	margin: 15px 0;
+	padding: 20px 0;
+}
+#menuDetailForm #menuRightInfo {
+	margin: 15px 0;
+	font-weight: normal;
+}
+#menuDetailForm #menuFactor {
+	margin: 15px 0;
+	padding: 20px 10px;
+	font-weight: normal;
+}
+#menuDetailForm #menuLeftInfo #menuSugar1, #menuDetailForm #menuRightInfo #menuSodium1 {
+	padding: 10px 0;
+}
+#menuDetailForm #menuLeftInfo span {
+	float: right;
+	padding-right: 2%;
+}
+ #menuDetailForm #menuRightInfo span {
+ 	float: right;
+ }
+
+/*
 #menuDetailForm .productView {
 	position: relative;
 	padding: 0 0 0 600px ; 
@@ -650,11 +521,4 @@
 	
 }
 
-
-
-
-
-
-
-
-
+*/

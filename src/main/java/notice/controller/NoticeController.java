@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import notice.bean.EventBoardDTO;
-import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
 import notice.service.NoticeService;
 import qnaBoard.bean.QnaBoardDTO;
@@ -129,7 +128,8 @@ public class NoticeController {
 	
 	@PostMapping("/notice/getNoticeBoard")
 	@ResponseBody
-	public JSONObject getNoticeBoard(@RequestParam int pg) {
+	public JSONObject getNoticeBoard(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
 		return noticeService.getNoticeBoard(pg);
 	}
 	
@@ -159,7 +159,7 @@ public class NoticeController {
 	
 	@PostMapping("/notice/noticeSearch")
 	@ResponseBody
-	public JSONObject noticeSearch(@RequestParam String search) {
+	public List<NoticeBoardDTO> noticeSearch(@RequestParam String search) {
 		return noticeService.noticeSearch(search);
 	}
 }

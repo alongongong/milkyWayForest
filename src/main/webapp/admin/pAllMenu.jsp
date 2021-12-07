@@ -32,14 +32,14 @@
 					<li><a href="/milkyWayForest/menuInfo">메뉴소개</a></li>
 					
 					<li><a href="/milkyWayForest/menuInfo/drinkInfo">음료</a></li>
-					<li><a href="/milkyWayForest/menuInfo/teaInfo">차</a></li>
-					<li><a href="/milkyWayForest/menuInfo/coffeeInfo">커피</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=차&menuCode=T&pg=1">차</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=커피&menuCode=C&pg=1">커피</a></li>
 					
 					<li><a href="/milkyWayForest/menuInfo/foodInfo">푸드</a></li>
-					<li><a href="/milkyWayForest/menuInfo/cakeInfo">케익</a></li>
-					<li><a href="/milkyWayForest/menuInfo/breadInfo">브레드</a></li>
-					<li><a href="/milkyWayForest/menuInfo/saladInfo">샐러드</a></li>
-					<li><a href="/milkyWayForest/menuInfo/sandwirchInfo">샌드위치</a></li>	
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=케이크&menuCode=K&pg=1">케이크</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=브레드&menuCode=B&pg=1">브레드</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=샐러드&menuCode=D&pg=1">샐러드</a></li>
+					<li><a href="/milkyWayForest/menuInfo/menuInfo?category=샌드위치&menuCode=S&pg=1">샌드위치</a></li>	
 					
 					<li><a href="/milkyWayForest/menuInfo/menuDetail">메뉴소개 상세 페이지</a></li>
 				</ul><!-- 메뉴소개 -->

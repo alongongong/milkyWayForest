@@ -58,7 +58,7 @@
 					<td>옵션</td>
 					<td>
 						
-						<select class="shoppingSelect">
+						<select class="shoppingSelect"  name="cartOption">
 							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
 							<!--  <option><span id="productOptionSpan2"></span></option>
 							<option><span id="productOptionSpan2"></span></option> -->
@@ -71,7 +71,7 @@
 					<td>구매수량</td>
 					<td>
 						<div class="length">
-							<input type="text" value="1" readonly>  
+							<input type="text" name="cartQty" value="1" readonly>  
 							<a href="#a" id="plus">증가</a>
 							<a href="#a" id="minus">감소</a>
 						</div>
@@ -205,13 +205,14 @@ $(function(){
 			
 			//인덱스가 0번일때의 옵션과 총가격
 			if(index==0) {
-			$('.shoppingSelect').append($('<option>' ,{text: items.productOption}));
+			$('.shoppingSelect').append($('<option>' ,{text: items.productOption, value:items.productOption })); //벨류가 실제로 넘겨주는값 텍스트는 눈에 보이는거
 			$('.total b').append($('<span>', {
 				id:'totalSpan',  
 				text:((items.productUnit)*parseInt($('.length input').val())).toLocaleString()
 			})); //이걸 안 넣으면 1개일때의 가격이 안나옴
 		    	
 			}
+
 
 			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
 			$('#plus').click(function(){
@@ -239,7 +240,7 @@ $(function(){
 				}		
 			});//#minus
 			
-			
+
 		});//each
 		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
@@ -290,16 +291,45 @@ $(function(){
 			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid silver');
 		});
+
 	
-		
-		
+
 	
 		},
+
 		error: function(err) {
 			console.log(err);
 		}
-	});	
-});
+	});	//getShoppingDetail 에이작스
+	
+
+	//장바구니 버튼 클릭시
+	$('#cartBtn').click(function(){
+		
+		$.ajax({
+			url: '/milkyWayForest/cart/cartInsert',
+			type: 'post',
+			data: $('#shoppingDetailForm').serialize(),
+			
+			success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
+				alert("장바구니 성공");
+				location.href= "/milkyWayForest/cart/cart";
+			},
+
+			error: function(err) {
+				console.log(err);
+			
+			}
+
+		});
+	}); //#cartBtn
+	
+	
+	
+	
+}); //큰 function
+
+
 
 </script>
 

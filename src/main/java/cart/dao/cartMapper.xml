@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cartSQL">
+
+	<insert id="cartInsert" parameterType="cart">
+	insert into milkyCart  
+				(cartCode, 
+				 id, 
+				 productCode, 
+				 cartOption, 
+				 cartQty)  
+			 		values 
+						('cart001'||milkyCartSeq.nextval , 
+						 'yun',  
+						#{productCode},  
+						#{cartOption},  
+						#{cartQty})
+	</insert>
+	
+	<select id="cartSelect" parameterType="String" resultType="cart">
+		select
+			productName, 
+			productUnit,
+			id,
+			cartOption,
+			cartQty
+		from milkyCart
+		join milkyproductinfo using(productcode)
+		where id=#{id}
+	</select>
+
+</mapper>

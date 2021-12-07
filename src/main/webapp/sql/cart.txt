@@ -1,5 +1,5 @@
 create table milkyCart (
-  cartCode varchar(10) primary key,
+  cartCode varchar(20) primary key,
   id varchar(15),
   productCode number,
   cartOption varchar(30),
@@ -7,3 +7,5 @@ create table milkyCart (
 );
 
 create sequence milkyCartSeq nocache nocycle;
+
+-- cartcode : 'cart00'||milkycartseq.nextval

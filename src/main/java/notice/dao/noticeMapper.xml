@@ -68,10 +68,9 @@
 	</select>
 	
 	<select id="noticeSearch" parameterType="String" resultType="noticeBoard">
-		select noticeCode, noticeSubject, id, noticeContent, noticeHit, 
-					to_char(noticeDate, 'yyyy-mm-dd') "noticeDate", imgName, category 
-				from milkynotice join (select * from milkynoticeimage 
-				where category='공지사항' and noticeSubject like '%'||#{search}||'%')
-				using(noticeCode) order by noticeCode desc)
+		select  noticeCode, noticeSubject, id, noticeContent, noticeHit,
+				to_char(noticeDate, 'yyyy-mm-dd') "noticeDate" from milkynotice 
+			where noticeSubject like '%'||#{search}||'%'
+			order by noticeCode desc
 	</select>
 </mapper>

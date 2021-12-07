@@ -45,7 +45,8 @@ create table milkyMenu(
     menuSugar number,
 	menuCaffeine number,
 	menuFactor varchar(150),	-- 알레르기요인
-	menuDetail varchar(500)	-- 상세설명
+	menuDetail varchar(500),	-- 상세설명
+	menuCategory varchar(20)	-- 카테고리
 );
 
 
