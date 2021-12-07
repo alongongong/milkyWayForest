@@ -44,26 +44,30 @@ public class CartController {
 		return cartService.cartSelect(id);
 	}
 	
-	//장바구니 구매수량
-//	@PostMapping(value="/cart/cartQty")
-//	@ResponseBody
-//	public void cartQty(@RequestParam Map<String,Integer> map, ModelMap modelMap) {
-//		modelMap.put("cartCode", map.get("cartCode"));
-//		modelMap.put("cartQty", map.get("cartQty"));
-//		
-//		cartService.cartQty(modelMap);
-//	}
 	
 	//장바구니 구매수량
 	@PostMapping(value="/cart/cartQty")
 	@ResponseBody
 	public void cartQty(@RequestParam Map<String,Integer> map) {  //리퀘스트 파람이 자동으로 내가 보낸 카트코드와 구매수량(cartQty)을 받아온다 . 그래서 두개 객체를 따로 기재해줄 필요가 없다.
-		System.out.println( map );
+		//System.out.println( map );
 		
 		cartService.cartQty(map);
 		
 	}
 	
-	 
+	//전체선택삭제
+	@PostMapping(value="/cart/cartAllDelete")
+	@ResponseBody
+	public void cartAllDelete(@RequestParam String id) {
+		cartService.cartAllDelete(id);
+	}
 	
+	//선택삭제
+	@PostMapping(value="/cart/cartSelectDelete")
+	@ResponseBody
+	public void cartSelectDelete(@RequestParam String id) {
+		cartService.cartSelectDelete(id);
+		
+	}
+
 }

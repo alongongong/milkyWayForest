@@ -46,6 +46,7 @@ public interface ShoppingService {
 
 	public ShoppingDTO clickImg(String productCode);
 	
+	public int productSelect(String id, String productCode);
 	
 	
 	
