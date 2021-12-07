@@ -12,7 +12,7 @@
 <script>
 $(function(){
 	
-/* 
+ 
 	var location_name = '스타벅스';
 	var location_id = [];
 	var positions = [];
@@ -26,7 +26,28 @@ $(function(){
 	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 	 
 	
-	// 마커를 표시할 위치와 title 객체 배열입니다 
+	$.ajax({
+		type: 'get',
+		url: 'https://dapi.kakao.com/v2/local/search/keyword.json',
+		headers: { 'Authorization': 'KakaoAK 983faebe014b975e78a41ddbea38de92' },
+		data: { 'query': location_name},
+		success: function(data){
+			console.log(JSON.stringify(data));
+			$.each(data.documents, function(index, items){
+				positions[index] = {title: items.place_name,
+									latlng: new kakao.maps.LatLng(items.y, items.x)
+				}
+				location_id[index] = items.id;
+				console.log(positions[index].title+"  "+location_id[index]+"  "+positions[index].latlng);
+			});
+			
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+	
+/* 	// 마커를 표시할 위치와 title 객체 배열입니다 
 	var positions = [
 		{
 			title: '카카오', 
@@ -44,7 +65,7 @@ $(function(){
 			title: '근린공원',
 			latlng: new kakao.maps.LatLng(33.451393, 126.570738)
 		}
-	];
+	]; */
 	
 	// 마커 이미지의 이미지 주소입니다
 	var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
@@ -65,7 +86,7 @@ $(function(){
 			image : markerImage // 마커 이미지 
 		});
 	}
-		
+		/*
 	// 원(Circle)의 옵션으로 넣어준 반지름
 	var radius = 100;
 
@@ -86,8 +107,8 @@ $(function(){
 	    }
 	});
 	
-	 */
-	
+	*/
+/*	
 	 
 	var location_name = '스타벅스';
 	var location_id = [];
@@ -150,7 +171,7 @@ $(function(){
 		});
 	}
 	
-	
+	*/
 	// 마커 위에 표시할 인포윈도우를 생성한다
 	var infowindow = new kakao.maps.InfoWindow({
 		content : '<div style="padding:5px;">스타벅스 국기원사거리점</div>' // 인포윈도우에 표시할 내용
@@ -164,5 +185,6 @@ $(function(){
 		location.href="https://place.map.kakao.com/"+location_id;
 	});
 
+	
 });
 </script>
