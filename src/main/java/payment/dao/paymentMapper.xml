@@ -25,5 +25,30 @@
 		select * from milkymember where id=#{memId}
 	</select>
 	
+	<select id="getShipment" parameterType="String" resultType="shipment">
+		select * from milkyshipment where id=#{memId}
+	</select>
 	
+	<insert id="payment" parameterType="payment">
+		begin
+		
+		insert into milkypayment values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{id}, #{paymentMethod}, #{shipPay}, #{deliveryInfo}, sysdate,
+			#{paymentSavedMoney}, #{newSavedMoney}, #{paymentCoupon}
+		);
+		
+		insert into milkyPaymentOption values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{productCode}, #{productOption}, #{payQty}, #{payPrice}, #{payRate}
+		);
+		
+		insert into milkypaymentShip values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{payShipNickname}, #{payShipReceiver}, #{payShipTel1}, #{payShipTel2}, #{payShipTel3},
+			#{payShipZipcode}, #{payShipAddr1}, #{payShipAddr2}
+		);
+		
+		end;
+	</insert>
 </mapper>

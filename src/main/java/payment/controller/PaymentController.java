@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cart.bean.CartDTO;
+import payment.bean.PaymentDTO;
 import payment.service.PaymentService;
 
 @Controller
@@ -72,6 +73,13 @@ public class PaymentController {
 	@ResponseBody
 	public JSONObject getPayment(@RequestParam String[] cartCode, HttpSession session) {
 		return paymentService.getPayment(cartCode, session.getAttribute("memId")+"");
+	}
+	
+	@PostMapping("/payment/payment")
+	@ResponseBody
+	public void payment(@ModelAttribute PaymentDTO paymentDTO, HttpSession session) {
+		paymentDTO.setId(session.getAttribute("memId")+"");
+		paymentService.payment(paymentDTO);
 	}
 	
 }

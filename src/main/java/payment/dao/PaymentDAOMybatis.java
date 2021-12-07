@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import cart.bean.CartDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
+import payment.bean.PaymentDTO;
 
 @Repository
 public class PaymentDAOMybatis implements PaymentDAO {
@@ -34,6 +36,16 @@ public class PaymentDAOMybatis implements PaymentDAO {
 	@Override
 	public List<MemberDTO> getMember(String memId) {
 		return sqlSession.selectList("paymentSQL.getMember", memId);
+	}
+
+	@Override
+	public List<MypageShipmentDTO> getShipment(String memId) {
+		return sqlSession.selectList("paymentSQL.getShipment", memId);
+	}
+
+	@Override
+	public void payment(PaymentDTO paymentDTO) {
+		sqlSession.insert("paymentSQL.payment", paymentDTO);
 	}
 
 }
