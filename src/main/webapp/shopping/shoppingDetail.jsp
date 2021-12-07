@@ -313,7 +313,7 @@ $(function(){
 			
 			success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
 				alert("장바구니 성공");
-				location.href= "/milkyWayForest/cart/cart";
+				location.href= "/milkyWayForest/cart";
 			},
 
 			error: function(err) {

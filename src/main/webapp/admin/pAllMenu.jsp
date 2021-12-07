@@ -106,12 +106,12 @@
 					<li><a href="">등급/혜택</a></li>
 					<li><a href="">적립금/쿠폰</a></li>
 					<li><a href="">찜관리</a></li>
-					<li><a href="">게시글 관리</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyPost?pg=1">게시글 관리</a></li>
 					
-					<li><a href="">개인정보</a></li>
-					<li><a href="">정보수정</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyInfo">개인정보</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyInfoUpdate">정보수정</a></li>
 					<li><a href="">배송지 관리</a></li>
-					<li><a href="">탈퇴</a></li>
+					<li><a href="/milkyWayForest/mypage/mypageMyInfoDelete">탈퇴</a></li>
 				</ul><!-- 마이 페이지 -->
 				
 				<ul id="cart">

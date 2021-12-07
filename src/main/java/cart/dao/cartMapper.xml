@@ -12,7 +12,7 @@
 				 cartOption, 
 				 cartQty)  
 			 		values 
-						('cart001'||milkyCartSeq.nextval , 
+						('cart00100'||milkyCartSeq.nextval , 
 						 'yun',  
 						#{productCode},  
 						#{cartOption},  
@@ -25,10 +25,18 @@
 			productUnit,
 			id,
 			cartOption,
-			cartQty
+			cartQty,
+			productRate,
+			cartCode
 		from milkyCart
 		join milkyproductinfo using(productcode)
 		where id=#{id}
 	</select>
+
+	 <update id="cartQty" parameterType="java.util.Map">
+		update milkyCart set
+			cartQty=#{cartQty} where cartCode=#{cartCode}
+	</update> 
+
 
 </mapper>
