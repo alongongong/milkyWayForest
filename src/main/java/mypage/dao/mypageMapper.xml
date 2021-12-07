@@ -61,5 +61,9 @@
 	<delete id="deleteMyQnaView" parameterType="int">
 		delete milkyqna where qnaCode=#{qnaCode}
 	</delete>
+	
+	<insert id="mypageShpMngWrite" parameterType="shipment">
+		insert into milkyShipment values(milkyShipmentSeq.nextval, #{id}, #{shipNickname}, #{shipReceiver}, #{shipTel1}, #{shipTel2}, #{shipTel3}, #{shipZipcode}, #{shipAddr1}, #{shipAddr2}, #{baseShip})
+	</insert>
 
 </mapper>

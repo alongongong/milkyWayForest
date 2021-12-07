@@ -29,6 +29,8 @@
 		
 		<typeAlias type="menuInfo.bean.MenuInfoDTO" alias="menuInfo"/>
 		
+		<typeAlias type="mypage.bean.MypageShipmentDTO" alias="shipment"/>
+		
 		<typeAlias type="cart.bean.CartDTO" alias="cart"/>
 	</typeAliases>
 </configuration>

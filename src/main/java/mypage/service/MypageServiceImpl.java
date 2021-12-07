@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
 import mypage.dao.MypageDAO;
 import net.sf.json.JSONObject;
 import paging.BoardPaging;
@@ -98,6 +99,11 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public void deleteMyQnaView(int qnaCode) {
 		mypageDAO.deleteMyQnaView(qnaCode);
+	}
+
+	@Override
+	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO) {
+		mypageDAO.mypageShpMngWrite(mypageShipmentDTO);
 	}
 
 }

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
 import qnaBoard.bean.QnaBoardDTO;
@@ -33,6 +34,7 @@ public class MypageController {
 	private JavaMailSender mailSender;
 	@Autowired
     BCryptPasswordEncoder passwordEncoder;
+
 	
 	//마이페이지 메인 창
 	@GetMapping(value="/mypageMain")
@@ -217,5 +219,24 @@ public class MypageController {
 	@ResponseBody
 	public void deleteMyQnaView(@RequestParam int qnaCode) {
 		mypageService.deleteMyQnaView(qnaCode);
+	}
+	
+	//권영민
+	@GetMapping(value="/mypageShpMng")
+	public String mypageShpMng(Model model) {
+		model.addAttribute("display", "mypage/mypageShpMng.jsp");
+		return "/index";
+	}
+	
+	@PostMapping(value="/mypageShpMngWrite")
+	@ResponseBody
+	public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO,HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		
+		mypageShipmentDTO.setId(id);
+		if(mypageShipmentDTO.getBaseShip() != 1) {
+			mypageShipmentDTO.setBaseShip(0);
+		}
+		mypageService.mypageShpMngWrite(mypageShipmentDTO);
 	}
 }
