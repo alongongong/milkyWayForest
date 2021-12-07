@@ -49,7 +49,7 @@
 	    <a class="nav-link active alert-link" href="/milkyWayForest/mypage/mypagePwdForm">회원정보 변경/탈퇴</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link alert-link" href="#">배송지 관리</a>
+	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageShpMng">배송지 관리</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageMyPost?pg=1">게시글 관리</a>

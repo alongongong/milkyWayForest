@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
 @Repository 
@@ -67,6 +69,11 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void deleteMyQnaView(int qnaCode) {
 		sqlSession.delete("mypageSQL.deleteMyQnaView", qnaCode);
+	}
+
+	@Override
+	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.insert("mypageSQL.mypageShpMngWrite",mypageShipmentDTO);
 	}
 
 }
