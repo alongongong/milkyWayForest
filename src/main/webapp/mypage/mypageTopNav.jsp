@@ -5,10 +5,11 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <div id="topNav-wrapper">
+	<input type="hidden" id="id" value="${memId }">
+
 	<div id="myInfoBox-wrapper" class="item card">
 		<div class="row no-gutters">
 			<div id="myInfoPhoto" class="col-md-4">
-				<img src="/milkyWayForest/image/welcome.png" class="card-img rounded float-left" alt="회원등급이미지">
 			</div>
 			
 			<div id="myInfoDescript" class="col-md-8">
@@ -16,7 +17,7 @@
 					<h5 class="card-title">한눈에 내 정보 보기</h5>
 					<p class="card-text">안녕하세요. 저희 은하숲을 이용해주셔서 감사합니다.<br>
 						<strong>${memId }</strong>님은
-						<strong>${gradeName }</strong>등급입니다.
+						<strong id="memberGrade"></strong>등급입니다.
 					</p>
 				</div>
 			</div>
@@ -27,12 +28,12 @@
 		<ul class="list-group">
 			<li class="list-group-item list-group-item-action">
 				<span>사용가능한 쿠폰
-					<a href="#">0</a>장
+					<a href="#" id="coupon">0</a>장
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
 				<span>사용가능한 적립금
-					<a href="#">0</a>원
+					<a href="#" id="savedMoney"></a>원
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
@@ -48,3 +49,31 @@
 		</ul>
 	</div>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+//회원정보 불러오기 
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/mypage/getMypageMyInfo',
+		type: 'post',
+		data: {'id' : $('#id').val()},
+		success: function(data){
+			console.log(JSON.stringify(data));
+			
+			$('#memberGrade').html(data.memberGrade);	
+			$('#myInfoPhoto').append($('<img>',{
+				src: '/milkyWayForest/image/'+data.memberGrade+'.png',
+				alt: data.memberGrade,
+				class: 'card-img rounded float-left'
+			}));
+			$('#savedMoney').html(data.savedMoney);
+			
+			
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+</script>
