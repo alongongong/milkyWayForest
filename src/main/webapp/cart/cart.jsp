@@ -195,7 +195,22 @@ $(function(){
 
 		//선택되면 클래스를 바꿔라 애드클래스 리무브 클래스  클래스명이 추가되거나 지워지는것. 
 		//만약 체크안되어있었으면 기본적으로 체크가 안되어 있으면 클래스이름을unCheck 라고 주고
-		//체크되는순간 check 라고 클래스명을 바꿔라 라고 이걸 이프문
+		//체크되는순간 check 라고 클래스명을 바꿔라 라고 이걸 이프문 굳이 안걸어도 될듯
+		
+		/* $('input ').addClass$('<input>','.check');
+		$().removeClass(''); */
+		
+		$('.check').click(function(){
+			if($('.check').prop("checked")) {
+				$('.check').prop("checked",true);
+				
+			}else{
+				$('.check').prop("checked", false);
+				$('input .check').removeClass('.check');
+			}	
+		});
+		
+		
 		
 		
 		//선택삭제
