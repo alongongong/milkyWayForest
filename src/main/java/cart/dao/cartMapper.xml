@@ -42,8 +42,8 @@
 		delete milkyCart where id=#{id}
 	</delete>
 	
-	<delete id="cartSelectDelete">
-		delete milkyCart where id=#{id}
+	<delete id="cartSelectDelete" parameterType="java.util.Map">
+		delete milkyCart where id=#{id} and cartCode=#{cartCode}
 	</delete>
 
 

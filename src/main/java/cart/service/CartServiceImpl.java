@@ -38,8 +38,8 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public void cartSelectDelete(String id) {
-		cartDAO.cartSelectDelete(id);
+	public void cartSelectDelete(String id,String[] check) {
+		cartDAO.cartSelectDelete(id,check);
 		
 	}
 
