@@ -16,7 +16,6 @@ public class LoginDAOMybatis implements LoginDAO {
 	@Override
 	public MemberDTO login(MemberDTO memberDTO) {
 		return sqlSession.selectOne("loginSQL.login", memberDTO);
-		
 	}
 
 	@Override
@@ -42,6 +41,11 @@ public class LoginDAOMybatis implements LoginDAO {
 	@Override
 	public void kakaoWrite(MemberDTO memberDTO) {
 		sqlSession.insert("loginSQL.kakaoWrite", memberDTO);
+	}
+
+	@Override
+	public void loginTime(String id) {
+		sqlSession.update("loginSQL.loginTime", id);
 	}
 
 }

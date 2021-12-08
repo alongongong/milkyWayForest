@@ -180,7 +180,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
-//카카오페이 M은하숲11! https://smujihoon.tistory.com/103
 $('#paymentForm #paymentOrderBtn').click(function(){
 	$('#paymentDiv').empty();
 	if(!$('#name').val() || !$('#email1').val() || !$('#email2').val() || !$('#tel1').val() || !$('#tel2').val() || !$('#tel3').val()) {
@@ -201,19 +200,15 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 			}
 		});
 		
-		
-		
+		//카카오페이
 		if($('input:radio').eq(3).is(':checked')){
-			alert('sss');
-			
-			/* var amount = $('#paymentForm #totalPayPrice').val();
-			var email = $('#paymentForm #email1').val()+'@'+$('#paymentForm #email2').val();
+			var totalPayPrice = $('#paymentForm #totalPayPrice').val();
+			/* var email = $('#paymentForm #email1').val()+'@'+$('#paymentForm #email2').val();
 			var name = $('#paymentForm #name').val();
 			var tel = $('#paymentForm #tel1').val()+'-'+$('#paymentForm #tel2').val()+'-'+$('#paymentForm #tel3').val();
 			var addr = $('#paymentForm #payShipAddr1').val()+' '+$('#paymentForm #payShipAddr2').val();
-			var postcode = $('#paymentForm #payShipZipcode').val(); */
-	
-			
+			var postcode = $('#paymentForm #payShipZipcode').val() */;
+
 		    var IMP = window.IMP; // 생략가능
 		    IMP.init('imp48332369'); //가맹점 식별코드
 		    var msg;
@@ -222,50 +217,37 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		        pg : 'kakaopay',
 		        pay_method : 'card',
 		        merchant_uid : 'merchant_' + new Date().getTime(),
-		        name : '은하숲 결제',
-		        amount : 100,
-		        buyer_email : 'gildong@gmail.com',
-		        buyer_name : '홍길동',
-	        	buyer_tel : '010-1234-5678',
-	            buyer_addr : '서울특별시 강남구 삼성동',
-		        buyer_postcode : '12345'
-		    }, function(rsp) { //callback
-		        if ( rsp.success ) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
-		            //[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
-		            jQuery.ajax({
-		                url: "/milkyWayForest/payment/payComplete", //cross-domain error가 발생하지 않도록 주의해주세요
-		                type: 'POST',
-		                data: {
-		                    imp_uid : rsp.imp_uid,
-		                    merchant_uid: rsp.merchant_uid
-		                    //기타 필요한 데이터가 있으면 추가 전달
-		                }
-		            }).done(function(data) {
-		                //[2] 서버에서 REST API로 결제정보확인 및 서비스루틴이 정상적인 경우
-		                if ( everythings_fine ) {
-		                    msg = '결제가 완료되었습니다.';
-		                    msg += '\n고유ID : ' + rsp.imp_uid;
-		                    msg += '\n상점 거래ID : ' + rsp.merchant_uid;
-		                    msg += '\결제 금액 : ' + rsp.paid_amount;
-		                    msg += '카드 승인번호 : ' + rsp.apply_num;
-		                    
-		                    alert(msg);
-		                } else {
-		                    //[3] 아직 제대로 결제가 되지 않았습니다.
-		                    //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-		                }
-		            });//ajax
-		            //성공시 이동할 페이지
-		            location.href='/milkyWayForest/payment/paySuccess?msg='+msg;
+		        name : '은하숲 상품 결제', //결제창에서 보여질 이름
+		        amount : 100, //실제 결제되는 가격 totalPayPrice
+		        /* buyer_email : email,
+		        buyer_name : name,
+	        	buyer_tel : tel,
+	            buyer_addr : addr,
+		        buyer_postcode : postcode */
+		    }, function(rsp) {
+				console.log(rsp);
+		        
+		        if ( rsp.success ) { //결제 성공시
+		        	//DB
+		        
+	                msg = '결제가 완료되었습니다.';
+	                msg += '\n고유ID : ' + rsp.imp_uid;
+	                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+	                msg += '\n결제 금액 : ' + rsp.paid_amount;
+	                msg += '\n카드 승인번호 : ' + rsp.apply_num;
+
+	                alert(msg);
+	    	        location.href="/milkyWayForest/payment/paySuccess";
+
 		        } else { //결제 실패시
 		            msg = '결제에 실패하였습니다.';
-		            msg += '에러내용 : ' + rsp.error_msg;
-		            //실패시 이동할 페이지
-		            location.href="/milkyWayForest/payment/payFail";
+		            msg += '\n에러내용 : ' + rsp.error_msg;
+		            
 		            alert(msg);
 		        }
+
 		    });
-		}
+		}//카카오페이
 	}
 });
 
