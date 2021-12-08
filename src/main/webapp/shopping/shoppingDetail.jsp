@@ -351,7 +351,30 @@ $(function(){
 		
 	});//
 	
+	// 구매하기 버튼 눌렀을 때
+	$('#shoppingDetailForm #purchaseBtn').click(function(){
 	
+		if(${memId == null}) {
+			alert('로그인 해주세요');
+			location.href='/milkyWayForest/login/loginForm';
+		} else {
+			$.ajax({
+				url: '/milkyWayForest/payment/cartInsert',
+				type: 'post',
+				data: $('#shoppingDetailForm').serialize(),
+				success: function(data) {
+					alert(data);
+					location.href='/milkyWayForest/payment?cartCode='+data;
+				},
+				error: function(err) {
+					console.log(err);
+				}
+				
+			});
+		}
+	});
+
+
 	
 	
 }); //큰 function
