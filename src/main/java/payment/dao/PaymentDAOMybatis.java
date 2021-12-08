@@ -6,12 +6,14 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import cart.bean.CartDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MypageShipmentDTO;
 import payment.bean.PaymentDTO;
 
+@Transactional
 @Repository
 public class PaymentDAOMybatis implements PaymentDAO {
 	@Autowired

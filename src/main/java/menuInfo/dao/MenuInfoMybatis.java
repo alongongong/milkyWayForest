@@ -6,9 +6,11 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import menuInfo.bean.MenuInfoDTO;
 
+@Transactional
 @Repository
 public class MenuInfoMybatis implements MenuInfoDAO {
 	@Autowired
