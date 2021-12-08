@@ -193,7 +193,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 			type: 'post',
 			data: $('#paymentForm').serialize(),
 			success: function(data) {
-				alert(data);
+				alert(JSON.stringify(data));
 			},
 			error: function(err) {
 				console.log(err);

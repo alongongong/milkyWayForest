@@ -39,7 +39,8 @@ public class PaymentController {
 
 	@PostMapping("/payment/cartInsert")
 	@ResponseBody
-	public String cartInsert(@ModelAttribute CartDTO cartDTO) {
+	public String cartInsert(@ModelAttribute CartDTO cartDTO, HttpSession session) {
+		cartDTO.setId(session.getAttribute("memId")+"");
 		return paymentService.cartInsert(cartDTO);
 	}
 	

@@ -7,11 +7,11 @@
 	
 	<insert id="cartInsert" parameterType="cart">	
 		insert into milkycart values(
-			'cart00100'||milkycartseq.nextval, 'ara', #{productCode}, #{cartOption}, #{cartQty})
+			'cart00100'||milkycartseq.nextval, #{id}, #{productCode}, #{cartOption}, #{cartQty})
 	</insert>
 	
 	<select id="getCartCode" parameterType="cart" resultType="String">	
-		select cartCode from milkycart where id='ara' and productCode=#{productCode}
+		select cartCode from milkycart where id=#{id} and productCode=#{productCode}
 	</select>
 	
 	<select id="getPayment" parameterType="String" resultType="cart">
