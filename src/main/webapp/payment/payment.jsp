@@ -193,12 +193,9 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 			type: 'post',
 			data: $('#paymentForm').serialize(),
 			success: function(data) {
-<<<<<<< HEAD
 				alert(data);
 				paymentCode = data;
-=======
-				alert(JSON.stringify(data));
->>>>>>> 6a89c9cbad1c30bb3e46fc30ad902129ac9158d9
+
 			},
 			error: function(err) {
 				console.log(err);
