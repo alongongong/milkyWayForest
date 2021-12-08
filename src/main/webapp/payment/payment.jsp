@@ -266,6 +266,7 @@ $(function(){
 			var savedMoney = 0;
 			var memberGrade;
 			
+			// 주문자정보
 			$.each(data.memberList, function(index, items) {
 				$('#name').val(items.name);
 				$('#email1').val(items.email1);
@@ -291,6 +292,7 @@ $(function(){
 				});
 			});
 			
+			// 구매상품정보
 			$.each(data.cartList, function(index, items) {
 				var totalProductPrice = items.productUnit*items.cartQty*(1-items.productRate/100);
 				totalPrice += items.productUnit*items.cartQty;
@@ -307,6 +309,7 @@ $(function(){
 					value: items.productCode
 				})).append($('<input>',{
 					type: 'hidden',
+					name: 'cartCode',
 					value: items.cartCode
 				}))).append($('<td>',{
 					text: items.cartOption,
@@ -370,7 +373,7 @@ $(function(){
 			$('#newSavedMoney').val(savedMoney);
 			$('#totalPayPrice').text(allPrice.toLocaleString()+'원');
 			
-			
+			// 배송지정보
 			$.each(data.shipList, function(index, items) {
 				$('<option>',{
 					text: items.shipNickname,

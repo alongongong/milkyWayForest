@@ -52,11 +52,18 @@
 		end;
 	</insert>
 	
+	<update id="updateSavedMoney" parameterType="payment">
+		update milkymember set savedMoney = savedMoney+#{newSavedMoney}-#{paymentSavedMoney} where id=#{id}
+	</update>
+	
 	<delete id="payCartDelete" parameterType="String">
 		delete milkycart where cartcode=#{cartCode}
 	</delete>
 
 	<select id="getPaymentCode" resultType="String">
-		select paymentCode from milkypayment where paymentcode = 'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval
+		select paymentCode from milkypayment
+			where substr(paymentcode,13) 
+				in (select max(substr(paymentcode,13)) from milkypayment)
 	</select>
+	
 </mapper>
