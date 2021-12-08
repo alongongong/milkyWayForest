@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 
+import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
 import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
@@ -26,5 +27,7 @@ public interface NoticeService {
 	public JSONObject getFaqBoard(int pg);
 
 	public List<NoticeBoardDTO> noticeSearch(String search);
+
+	public List<CommentDTO> getQnaComment(int qnaCode);
 
 }

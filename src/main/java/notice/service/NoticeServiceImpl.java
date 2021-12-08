@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
 import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
@@ -148,5 +149,10 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public List<NoticeBoardDTO> noticeSearch(String search) {
 		return noticeDAO.noticeSearch(search);
+	}
+
+	@Override
+	public List<CommentDTO> getQnaComment(int qnaCode) {
+		return noticeDAO.getQnaComment(qnaCode);
 	}
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="paymentSQL">
+	
+	<insert id="cartInsert" parameterType="cart">	
+		insert into milkycart values(
+			'cart00100'||milkycartseq.nextval, 'ara', #{productCode}, #{cartOption}, #{cartQty})
+	</insert>
+	
+	<select id="getCartCode" parameterType="cart" resultType="String">	
+		select cartCode from milkycart where id='ara' and productCode=#{productCode}
+	</select>
+	
+	<select id="getPayment" parameterType="String" resultType="cart">
+		select cartCode, id, productCode, cartOption, cartQty, productName, productUnit, productRate
+			from milkycart
+			join milkyproductinfo using(productCode)
+		where cartcode=#{cartCode}
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="member">
+		select * from milkymember where id=#{memId}
+	</select>
+	
+	<select id="getShipment" parameterType="String" resultType="shipment">
+		select * from milkyshipment where id=#{memId}
+	</select>
+	
+	<insert id="payment" parameterType="payment">
+		begin
+		
+		insert into milkypayment values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{id}, #{paymentMethod}, #{shipPay}, #{deliveryInfo}, sysdate,
+			#{paymentSavedMoney}, #{newSavedMoney}, #{paymentCoupon}
+		);
+		
+		insert into milkyPaymentOption values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{productCode}, #{productOption}, #{payQty}, #{payPrice}, #{payRate}
+		);
+		
+		insert into milkypaymentShip values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{payShipNickname}, #{payShipReceiver}, #{payShipTel1}, #{payShipTel2}, #{payShipTel3},
+			#{payShipZipcode}, #{payShipAddr1}, #{payShipAddr2}
+		);
+		
+		end;
+	</insert>
+</mapper>

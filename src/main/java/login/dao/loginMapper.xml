@@ -7,6 +7,10 @@
 		select * from milkymember where id=#{id}
 	</select>
 	
+	<update id="loginTime" parameterType="String">
+		update milkymember set loginTime=sysdate where id=#{id}
+	</update>
+	
 	<insert id="kakaoWrite" parameterType="member">
 		BEGIN
 			insert into milkymember (id, nickname, mm, dd, email1, email2, writePath) 

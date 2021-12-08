@@ -16,4 +16,6 @@ public interface LoginService {
 
 	public void kakaoWrite(MemberDTO memberDTO);
 
+	public void loginTime(String id);
+
 }

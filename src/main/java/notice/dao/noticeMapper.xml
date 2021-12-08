@@ -73,4 +73,8 @@
 			where noticeSubject like '%'||#{search}||'%'
 			order by noticeCode desc
 	</select>
+	
+	<select id="getQnaComment" parameterType="int" resultType="comment">
+		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
+	</select>
 </mapper>
