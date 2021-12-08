@@ -46,8 +46,10 @@ public class PaymentDAOMybatis implements PaymentDAO {
 	}
 
 	@Override
-	public void payment(PaymentDTO paymentDTO) {
+	public String payment(PaymentDTO paymentDTO, String cartCode) {
 		sqlSession.insert("paymentSQL.payment", paymentDTO);
+		sqlSession.delete("paymentSQL.payCartDelete", cartCode);
+		return sqlSession.selectOne("paymentSQL.getPaymentCode");
 	}
 
 }

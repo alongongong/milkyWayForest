@@ -37,8 +37,8 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 
 	@Override
-	public void payment(PaymentDTO paymentDTO) {
-		paymentDAO.payment(paymentDTO);
+	public String payment(PaymentDTO paymentDTO, String cartCode) {
+		return paymentDAO.payment(paymentDTO, cartCode);
 	}
 
 }

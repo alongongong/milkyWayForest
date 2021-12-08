@@ -193,7 +193,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 			type: 'post',
 			data: $('#paymentForm').serialize(),
 			success: function(data) {
-				alert("성공");
+				alert(data);
 			},
 			error: function(err) {
 				console.log(err);
@@ -305,6 +305,9 @@ $(function(){
 					type: 'hidden',
 					name: 'productCode',
 					value: items.productCode
+				})).append($('<input>',{
+					type: 'hidden',
+					value: items.cartCode
 				}))).append($('<td>',{
 					text: items.cartOption,
 					align: 'center'

@@ -39,16 +39,24 @@
 		);
 		
 		insert into milkyPaymentOption values(
-			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
 			#{productCode}, #{productOption}, #{payQty}, #{payPrice}, #{payRate}
 		);
 		
 		insert into milkypaymentShip values(
-			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
 			#{payShipNickname}, #{payShipReceiver}, #{payShipTel1}, #{payShipTel2}, #{payShipTel3},
 			#{payShipZipcode}, #{payShipAddr1}, #{payShipAddr2}
 		);
-		
+				
 		end;
 	</insert>
+	
+	<delete id="payCartDelete" parameterType="String">
+		delete milkycart where cartcode=#{cartCode}
+	</delete>
+
+	<select id="getPaymentCode" resultType="String">
+		select paymentCode from milkypayment where paymentcode = 'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval
+	</select>
 </mapper>

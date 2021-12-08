@@ -17,6 +17,6 @@ public interface PaymentDAO {
 
 	public List<MypageShipmentDTO> getShipment(String memId);
 
-	public void payment(PaymentDTO paymentDTO);
+	public String payment(PaymentDTO paymentDTO, String cartCode);
 
 }

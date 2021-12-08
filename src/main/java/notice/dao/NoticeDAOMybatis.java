@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
@@ -14,6 +15,7 @@ import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
+@Transactional
 @Repository
 public class NoticeDAOMybatis implements NoticeDAO {
 	@Autowired
