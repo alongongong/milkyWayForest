@@ -57,7 +57,7 @@
 	</update>
 	
 	<delete id="payCartDelete" parameterType="String">
-		delete milkycart where cartcode=#{cartCode}
+		delete milkycart where cartcode=#{cartCode1}
 	</delete>
 
 	<select id="getPaymentCode" resultType="String">

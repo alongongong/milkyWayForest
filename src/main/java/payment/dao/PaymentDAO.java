@@ -19,8 +19,8 @@ public interface PaymentDAO {
 
 	public void payment(PaymentDTO paymentDTO);
 
-	public void payment1(PaymentDTO paymentDTO);
+	public void payment1(String[] cartCode);
 
-	public String payment2(String cartCode);
+	public String payment2();
 
 }
