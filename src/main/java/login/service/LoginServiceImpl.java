@@ -42,4 +42,9 @@ public class LoginServiceImpl implements LoginService{
 		
 	}
 
+	@Override
+	public void loginTime(String id) {
+		loginDAO.loginTime(id);
+	}
+
 }

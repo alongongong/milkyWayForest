@@ -50,7 +50,9 @@ public class LoginController {
 			
 		}else {
 			session.setAttribute("memId", memberDTO2.getId());
-			System.out.println("LoginController 세션아이디 저장 "+session.getAttribute("memId"));				
+			System.out.println("LoginController 세션아이디 저장 "+session.getAttribute("memId"));
+			
+			loginService.loginTime(memberDTO2.getId());
 			return memberDTO2.getId();			
 		}	
 	}
@@ -72,6 +74,8 @@ public class LoginController {
 		session.setAttribute("memNickname", memberDTO.getNickname());
 		session.setAttribute("memWritePath", memberDTO.getWritePath());
 		System.out.println("LoginController 세션카카오아이디 저장 "+session.getAttribute("memId")+session.getAttribute("memWritePath"));	
+		
+		loginService.loginTime(memberDTO.getId());
 	}
 	
 	//아이디 찾기창
