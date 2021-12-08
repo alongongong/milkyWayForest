@@ -15,6 +15,6 @@ public interface CartDAO {
 
 	public void cartAllDelete(String id);
 
-	public void cartSelectDelete(String id);
+	public void cartSelectDelete(String id,String[] check);
 
 }

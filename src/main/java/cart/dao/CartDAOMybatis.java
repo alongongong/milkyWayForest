@@ -1,5 +1,6 @@
 package cart.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,8 +40,19 @@ public class CartDAOMybatis implements CartDAO {
 	}
 
 	@Override
-	public void cartSelectDelete(String id) {
-		sqlSession.delete("cartSQL.cartSelectDelete", id);
+	public void cartSelectDelete(String id,String[] check ) {
+//		System.out.println(id);
+//		System.out.println(check[0]);
+//		System.out.println(check[1]);
+		
+		for(int i=0; i<check.length; i++) {
+			Map<String,String> map= new HashMap<String,String>();
+			map.put("id", id);
+			map.put("cartCode", check[i]);
+			sqlSession.delete("cartSQL.cartSelectDelete", map);  //체크하면서 카트코드를 들고오니까 포문이 체크한만큼 도는것,
+			
+		}
+		
 		
 	}
 

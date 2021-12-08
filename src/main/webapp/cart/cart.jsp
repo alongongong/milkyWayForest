@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/cart.css">
 <form id="cartForm">
+
 	<legend>장바구니</legend>
 	<br>
 	<div id="cartBody">
@@ -13,8 +14,8 @@
 			</ul>
 			<br>
 			
-			<input type ="hidden" name="id" id="id" value="${id}">
-			
+			<%-- <input type ="hidden" name="id" id="id" value="${id}"> --%>
+			<input type="hidden" name="id" value="yun">
 			
 			<table id="cartTable" class="table">
 				<tr>
@@ -27,7 +28,7 @@
 				</tr>
 			</table>
 			<input type="button" id="cartAllDeleteBtn" class="btn btn-outline-secondary" value="전체상품 삭제">
-			<input type="button" id="cartSelectDeleteBtn" class="btn btn-outline-secondary" value="선택상품 삭제">
+			<input type="submit" id="cartSelectDeleteBtn" class="btn btn-outline-secondary" value="선택상품 삭제">
 			<input type="button" id="cartSelectOrderBtn" class="btn btn-outline-success" value="선택상품 주문">
 		</div>
 		<div id="cartTotalDiv">
@@ -51,7 +52,7 @@ $(function(){
 		data: 'id=yun',
 		dataType: 'json',
 		success: function(data) {
-			alert("떠라."); 
+			//alert("떠라."); 
 			console.log(JSON.stringify(data)); 
 			 
 			 $.each(data, function(index,items){
@@ -161,14 +162,14 @@ $(function(){
 	
 		//전체선택,해제
 		$('.cartProductCheck').click(function(){
-			if($('.cartProductCheck').prop("checked")) {
+			if($('.cartProductCheck').prop("checked")) {  //체
 				$('.check').prop("checked",true);
 				
 			}else{
 				$('.check').prop("checked", false);
 				
 			}	
-		});
+		}); 
 		
 		//전체상품 삭제
 		$('#cartAllDeleteBtn').click(function(){		
@@ -200,23 +201,24 @@ $(function(){
 		/* $('input ').addClass$('<input>','.check');
 		$().removeClass(''); */
 		
-		$('.check').click(function(){
-			if($('.check').prop("checked")) {
-				$('.check').prop("checked",true);
-				
-			}else{
-				$('.check').prop("checked", false);
-				$('input .check').removeClass('.check');
-			}	
-		});
+
+		//$('input:checkbox:checked').addClass$('.check');
+		
+		//$('input:checkbox:not(:checked)').addClass$('.unCheck');
+			
+		//서브밋으로 넘겨라
+		 	
+			
+		
 		
 		
 		
 		
 		//선택삭제
-		$('#cartSelectDeleteBtn').click(function(){
+		$('#cartForm').submit(function(){  //폼.서브밋
 			var count =$('.check:checked').length;
-		
+				alert(count);
+			
 			if(count==0)
 				alert('삭제 할 항목을 선택하세요');
 			else { 
@@ -224,7 +226,7 @@ $(function(){
 					 $.ajax({
 						url: '/milkyWayForest/cart/cartSelectDelete',
 						type: 'post',
-						data: 'id=yun'+'&cartCode='+$('.check').val(),
+						data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.()대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
 						success: function() {
 							alert("삭제 성공")
 						//	location.href= "/milkyWayForest/cart";

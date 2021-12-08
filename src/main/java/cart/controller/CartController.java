@@ -65,8 +65,11 @@ public class CartController {
 	//선택삭제
 	@PostMapping(value="/cart/cartSelectDelete")
 	@ResponseBody
-	public void cartSelectDelete(@RequestParam String id) {
-		cartService.cartSelectDelete(id);
+	public void cartSelectDelete(@RequestParam String id,@RequestParam String[] check) {  //2개가 오니까 배열로 받아온다(3개면 3개로)  id=yun&check=~~22&check=~~23
+//		System.out.println(id);
+//		System.out.println(check[0]);
+//		System.out.println(check[1]);
+		cartService.cartSelectDelete(id,check);
 		
 	}
 
