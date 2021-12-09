@@ -91,7 +91,7 @@
 	</select>
 	
 	<select id="getDailyOrder" resultType="payment">
-		select productcode, productname, payqty, id, deliveryinfo, paydate from milkypayment 
+		select paymentCode, productcode, productname, payqty, id, deliveryinfo, paydate from milkypayment 
 		join milkypaymentoption using(paymentCode)
 		join milkyProductInfo using(productcode)
 		order by paymentcode

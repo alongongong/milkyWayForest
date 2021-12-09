@@ -28,5 +28,6 @@ public class PaymentDTO {
 	private String payShipZipcode;
 	private String payShipAddr1;
 	private String payShipAddr2;
+	private String shipMemo;
 	private String payDate;
 }
