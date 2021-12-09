@@ -2,7 +2,7 @@
 
 /* 공통 페이징 */
 #boardPagingDiv {
-width: 70%;
+	width: 70%;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -19,7 +19,7 @@ width: 70%;
 
 /* 메뉴소개 */
 #menuInfoForm {
-	width: 70%;
+	width: 65%;
 	margin: 0 auto;
 }
 
@@ -99,7 +99,7 @@ width: 70%;
 
 /* 음료 메뉴 */
 #drinkInfoForm {
-	width: 70%;
+	width: 65%;
 	margin: 0 auto;
 }
 #drinkInfoForm h1 {
@@ -169,7 +169,7 @@ width: 70%;
 
 /* 푸드 메뉴 */
 #foodInfoForm {
-	width: 70%;
+	width: 65%;
 	margin: 0 auto;
 }
 #foodInfoForm h1 {
@@ -243,7 +243,7 @@ width: 70%;
 
 /* 전체음료 메뉴 폼 */
 #allMenuInfoForm {
-	width: 70%;
+	width: 65%;
 	margin: 0 auto;
 }
 #allMenuInfoForm h1 {

@@ -3,7 +3,8 @@
 /* rem 반응형웹에서 쓴다 '%'같은 개념 */
 /* * { margin : 0; padding : 0; } */
  
-* { font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum; }
+/* * { font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum; } */
+* {font-family: 맑은고딕, Malgun Gothic, dotum, gulim, sans-serif;}
 body { margin : 0; padding : 0; height: 3000px;}
 
 html { font-size: 18px; }

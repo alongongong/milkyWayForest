@@ -4,10 +4,15 @@ src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.wo
 /* * { font: Avenir, Arial, georgia; color: #222222; } */
 
 /* shopping */
+#shoppingForm {
+	width: 65%;
+	margin: 0px auto;
+	font-size: 14px;
+}
 
 /* 쇼핑 top Menu */
-#shoppingForm #top { width: 80% margin: 0px auto; padding-top: .5rem; padding-bottom: .1rem; }
-#shoppingForm #top .title { font-size : 20px; font-style: "bold"
+#shoppingForm #top { padding-top: .5rem; padding-bottom: .1rem; }
+#shoppingForm #top .title { font-size : 18px; font-style: "bold"
 position: absolute; bottom:1rem;  width: 100%; margin: 0 auto; 
 /* display:flex;    justify-content: space-between; */  }
 #shoppingForm #top .title h1 { width: 100%; margin: 0 auto; }
@@ -18,22 +23,21 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 /* 쇼핑 게시판 목록네비  */
 #shoppingForm #shoppingMenu { border: 1px solid silver; padding : 20px;
-	margin: 50px auto; width: 80%; }
-#shoppingForm .shoppingMenuSubject { font-size : 20px; font-weight: bold; 
+	margin: 50px auto;}
+#shoppingForm .shoppingMenuSubject { font-size : 18px; font-weight: bold; 
 	margin-left: 1rem; display:flex; justify-content: space-between;}
 #shoppingForm .border { margin: 0px auto; width: 97%; margin-bottom : .7em; border-bottom: 1px solid #A6A6A6; }
 
-#shoppingForm #shoppingMenu #menu2 { font-size : 18px; font-weight: bold; }
+#shoppingForm #shoppingMenu #menu2 { font-size : 16px; font-weight: bold; }
 
-#shoppingForm #shoppingMenu li { list-style: none; font-size : 17px; }
+#shoppingForm #shoppingMenu li { list-style: none; font-size : 14px; }
 
 #shoppingForm #beanNTeaMenuDiv ,#shoppingForm #productMenuDiv{
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 10px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 }  /* 높이는 픽셀로 너비는 % 로 주는게 편함, 패딩으로 픽셀을 주기  스타일안에서 줄때는 단위를 꼭쓰기 */
 
@@ -41,7 +45,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 }
 
 
@@ -49,7 +54,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
@@ -62,7 +68,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 
 /* 원두/차 메뉴 */
-
+#beanNTeaForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #beanNTeaForm h1 {
 	margin: 50px;
 }
@@ -94,28 +103,26 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	padding : 20px;
 	margin: 50px auto;
 	/* margin-top: 100px;  */
-	width: 80%;
 }
 #beanNTeaForm #beanNTeaMenuSubject {
 	
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 	
 }
 
 #beanNTeaForm #beanNTeaMenu li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 	
 }
 
 #beanNTeaForm #beanMenuDiv ,#beanNTeaForm #teaMenuDiv{
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 10px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 	
 	
@@ -131,7 +138,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
@@ -139,14 +147,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 
 /* 상품 메뉴 */
-
+#productForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #productForm h1 {
 	margin: 50px;
 	
@@ -178,18 +190,17 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	border: 1px solid silver;
 	padding : 20px;
 	margin: 50px auto;
-	width: 80%;
 }
 
 #productForm #productMenuSubject {
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 	
 }
 #productForm #productMenu li {
 	
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 
@@ -200,11 +211,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 #productForm #thermosMenuDiv, 
 #productForm #coffeEtcMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 50px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 }
 
@@ -217,7 +227,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
@@ -225,15 +236,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
-	
+	margin: 0 auto;
+	width: 102%;
 }
 
 #productForm #menuImgDiv3{
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
@@ -241,7 +253,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
@@ -249,7 +262,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
@@ -257,13 +271,17 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 /* 원두리스트 메뉴 폼 */
-
+#beanListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #beanListForm h1 {
 	margin: 50px;
 }
@@ -311,30 +329,33 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #beanListForm #beanMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #beanListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 	
 }
 #beanListForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 
 /* 차 리스트 메뉴 */
-
+#teaListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #teaListForm h1 {
 	margin: 50px;
 }
@@ -381,28 +402,32 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #teaListForm #teaMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 
 #teaListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 #teaListForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 /* 머그 리스트 메뉴 */
+#mugListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #mugListForm h1 {
 	margin: 50px;
 }
@@ -450,16 +475,15 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #mugListForm #mugMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #mugListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 	
 }
 
@@ -467,12 +491,17 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 /* 글라스 리스트 메뉴 */
+#glassListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #glassListForm h1 {
 	margin: 50px;
 }
@@ -516,16 +545,15 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #glassListForm #glassMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #glassListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 	
 }
 
@@ -533,12 +561,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 /* 플라스틱텀블러 리스트 메뉴 */
-
+#plasticTumblrListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #plasticTumblrListForm h1 {
 	margin: 50px;
 }
@@ -583,29 +615,32 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #plasticTumblrListForm #plasticTumblrMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #plasticTumblrListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 #plasticTumblrListForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 /* 스테인리스텀블러 리스트 메뉴 */
-
+#stainlissTumblrListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #stainlessTumblrListForm h1 {
 	margin: 50px;
 }
@@ -650,28 +685,31 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #stainlessTumblrListForm #stainlessTumblrMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #stainlessTumblrListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 #stainlessTumblrListForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 /* 보온병 리스트 메뉴 */
-
+#thermosListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #thermosListForm h1 {
 	margin: 50px;
 }
@@ -714,29 +752,32 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #thermosListForm #thermosMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #thermosListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 #thermosListForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 /* 커피용품 리스트 메뉴 */
-
+#coffeeEtcListForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #coffeeEtcListForm h1 {
 	margin: 50px;
 }
@@ -780,29 +821,32 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #coffeeEtcListForm #coffeeEtcMenuDiv {
 	background : #eee;
-	width: 80%;
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 #coffeeEtcListForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 #coffeeEtcListForm #menuImgDiv1 {
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	margin-left: 30px;
+	margin: 0 auto;
+	width: 102%;
 	
 }
 
 
 /* 쇼핑 상세페이지 */
-
+#shoppingDetailForm {
+	width: 65%;
+	margin: 0px auto;
+}
 #shoppingDetailForm h1 {
 	margin: 50px;
 }
