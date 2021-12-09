@@ -77,7 +77,7 @@
 			<div id="cardList_wrap">
 				<div id="cardList">
 				
-				
+					<!--  버튼1 -->
 					<div id="1" class="item bg-white" style="op">
 						<div class="1_1pic" align="center" style="padding-top:2.5rem;">
 							<img src="/milkyWayForest/image/list_01_bg.png" alt="list_01">
@@ -89,8 +89,25 @@
 							골드회원 적립금 5%
 						</p>
 						<div align="center" style="padding-top:1rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<button type="button" class="btn btn-outline-secondary" id="button1_open" data-toggle="modal" data-target="#modal1">자세히 보기</button>
 						</div>
+					</div>
+	
+					<!-- 버튼1 모달영역  -->
+					<div class="button1_modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h4 class="modal-title" id="myModalLabel">모달 타이틀</h4>
+						      </div>
+						      <div class="modal-body">
+						        내용
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-outline-secondary" id="closeModalBtn">닫기</button>
+						     </div>
+						   </div>
+					  	</div>
 					</div>
 					
 					
@@ -305,31 +322,17 @@ $(function(){
 	});	
 });
 
-/* <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+// 모달 버튼에 이벤트를 건다.
+$('#button1_open').on('click', function(){
+  $('#modal1').modal('show');
+	console.log("click open");
+});
+// 모달 안의 취소 버튼에 이벤트를 건다.
+$('#closeModalBtn').on('click', function(){
+  $('#modal1').modal('hide');
+	console.log("click close");
+});
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> */
 </script>
 </body> 
 </html>
