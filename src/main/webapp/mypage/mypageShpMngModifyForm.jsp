@@ -3,7 +3,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- <link rel="stylesheet" href="/milkyWayForest/css/mypage.css"> -->
 
-<form id="mypageShpMngWriteForm" action="/milkyWayForest/mypage/mypageShpMngWrite" method="post">
+<form id="mypageShpMngModifyForm" action="/milkyWayForest/mypage/mypageShpMngWrite" method="post">
+<input type="hidden" name="shipCode" id="shipCode" value="${requestScope.shipCode }">
 	<div id="myBasicInfo-wrapper" class="item">
 		<div id="myBasicInfo-title" class="navbar navbar-light alert-info"style="text-align: center">
 			<span class="navbar-brand mb-0 h1" style="text-align: center">배송지 관리</span>
@@ -69,8 +70,8 @@
 			<div id="result-div"></div>
 			
 			<div align="center" id="button-wrap" style="padding-top:70px;">
-				<button type="button" id="closeBtn" class="btn btn-info" onclick="javascript:window.close(); return false;">닫기</button>
-				<button type="button" id="saveBtn" class="btn btn-info">저장</button>
+				<button type="button" id="modifyCloseBtn" class="btn btn-info" onclick="javascript:window.close(); return false;">닫기</button>
+				<button type="button" id="modifySaveBtn" class="btn btn-info">저장</button>
 				
 			</div>
 		</div>
@@ -168,7 +169,52 @@ $('#mypageShpMngWriteForm #saveBtn').click(function(){
 	//opener.parent.location.reload();
 	//window.close(); 
 	}
-	
+});
+$('#mypageShpMngModifyForm').ready(function(){
+	$.ajax({
+		url:'/milkyWayForest/mypage/getShpMngModify',
+		type:'post',
+		data:{'shipCode' : $('#mypageShpMngModifyForm #shipCode').val()},
+		datatype:'json',
+		success: function(data){
+			console.log(JSON.stringify(data));
+			
+			if(data.shipNickname != null){
+				$('#shipNickname').val(data.shipNickname);
+			}
+			if(data.shipReceiver != null){
+				$('#shipReceiver').val(data.shipReceiver);
+			}
+			if(data.shipZipcode != null){
+				$('#shipZipcode').val(data.shipZipcode);
+				$('#shipAddr1').val(data.shipAddr1);
+				$('#shipAddr2').val(data.shipAddr2);		
+			}
+			if(data.shipTel1 != null){
+				$('#shipTel1').val(data.shipTel1);
+				$('#shipTel2').val(data.shipTel2);
+				$('#shipTel3').val(data.shipTel3);
+			}
+		},
+		error:function(Err){
+			console.log(err);
+		}
+	});
+});
 
+$('#mypageShpMngModifyForm #modifySaveBtn').click(function(){
+	$.ajax({
+		url: '/milkyWayForest/mypage/updateShpMng?shipCode=${shipCode}',
+		type: 'get',
+		data: $('#mypageShpMngModifyForm').serialize(),
+		success: function(data) {
+			alert('글이 수정되었습니다.');
+			opener.parent.location.reload();
+			window.close();
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
 });
 </script>

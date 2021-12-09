@@ -2,6 +2,7 @@
 
 #mypageMain,
 #mypageMyInfo,
+#mypageShpMngListForm, /* 배송지관리 */
 #mypageMyPost,
 #mypageMyQnaView,
 #updateMyQnaViewForm {
@@ -59,6 +60,7 @@
 /*********** 마이페이지 메인 ***********/
 #mypageMain #main-wrapper,
 #mypageMyInfo #main-wrapper,
+#mypageShpMngListForm #main-wrapper, /* 배송지관리 */
 #mypageMyPost #main-wrapper,
 #mypageMyQnaView #main-wrapper,
 #updateMyQnaViewForm #main-wrapper,
@@ -78,6 +80,7 @@
 }
 #mypageMain #main-sideNav,
 #mypageMyInfo #main-sideNav,
+#mypageShpMngListForm #main-sideNav, /* 배송지관리 */
 #mypageMyPost #main-sideNav,
 #mypageMyQnaView #main-sideNav,
 #updateMyQnaViewForm #main-sideNav,
@@ -88,6 +91,7 @@
 }
 #mypageMain #main-topNav,
 #mypageMyInfo #main-topNav,
+#mypageShpMngListForm #main-topNav, /* 배송지관리 */
 #mypageMyPost #main-topNav,
 #mypageMyQnaView #main-topNav,
 #updateMyQnaViewForm #main-topNav,

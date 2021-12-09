@@ -121,5 +121,32 @@ public class MypageDAOMybatis implements MypageDAO {
 	public ShoppingDTO getShoppingDTO(String paymentCode) {
 		return sqlSession.selectOne("mypageSQL.getShoppingList3", paymentCode);
 	}
+	@Override
+	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.insert("mypageSQL.mypageShpMngWrite1",mypageShipmentDTO);
+		
+	}
+
+	@Override
+	public List<MypageShipmentDTO> getShpMngList(String id) {
+		return sqlSession.selectList("mypageSQL.getShpMngList", id);
+	}
+
+	@Override
+	public MypageShipmentDTO getShpMngModify(String shipCode) {
+		return sqlSession.selectOne("mypageSQL.getShpMngModify", shipCode);
+	}
+
+	@Override
+	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.update("mypageSQL.updateShpMng", mypageShipmentDTO);
+		
+	}
+
+	@Override
+	public void deleteShpMng(String shipCode) {
+		sqlSession.delete("mypageSQL.deleteShpMng", shipCode);
+		
+	}
 
 }

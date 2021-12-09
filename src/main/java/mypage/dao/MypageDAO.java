@@ -51,5 +51,15 @@ public interface MypageDAO {
 	public PaymentDTO getPaymentDTO(String paymentCode);
 
 	public ShoppingDTO getShoppingDTO(String paymentCode);
+	
+	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO);
+
+	public List<MypageShipmentDTO> getShpMngList(String id);
+
+	public MypageShipmentDTO getShpMngModify(String shipCode);
+
+	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO);
+
+	public void deleteShpMng(String shipCode);
 
 }
