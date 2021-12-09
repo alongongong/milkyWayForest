@@ -10,6 +10,7 @@ public class PaymentDTO {
 	private String paymentCode;
 	private String id;
 	private String productCode;
+	private String productName;
 	private String productOption;
 	private int paymentSavedMoney;
 	private int newSavedMoney;
