@@ -77,4 +77,9 @@ public class PaymentDAOMybatis implements PaymentDAO {
 			sqlSession.insert("paymentSQL.payment2", paymentDTO);
 		}
 	}
+
+	@Override
+	public void UpdateMemberGrade(String id) {
+		
+	}
 }

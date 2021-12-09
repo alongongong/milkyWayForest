@@ -41,8 +41,8 @@ public class PaymentServiceImpl implements PaymentService {
 		paymentDAO.payment(paymentDTO);
 		paymentDAO.payment3(paymentDTO, cartCode);
 		paymentDAO.payment1(cartCode);
+		paymentDAO.UpdateMemberGrade(paymentDTO.getId());
 		return paymentDAO.payment2();
-
 	}
 
 }
