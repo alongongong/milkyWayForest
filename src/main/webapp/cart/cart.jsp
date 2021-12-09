@@ -14,8 +14,8 @@
 			</ul>
 			<br>
 			
-			<%-- <input type ="hidden" name="id" id="id" value="${id}"> --%>
-			<input type="hidden" name="id"  id="id" value="yun">
+			<%--  <input type ="hidden" name="id" id="id" value="${memid}">  --%>
+			<!-- <input type="hidden" name="id"  id="id" value="yun"> -->
 			
 			<table id="cartTable" class="table">
 				<tr>
@@ -57,7 +57,7 @@ $(function(){
 	$.ajax({
 		url: '/milkyWayForest/cart/cartSelect',
 		type: 'post',
-		data: 'id=yun',
+		
 		dataType: 'json',
 		success: function(data) {
 			//alert("떠라."); 
@@ -112,7 +112,7 @@ $(function(){
 				}))
 				.appendTo($('#cartTable')); 
 			
-				 //수량디비(에이작스를 새로 만들기) 카트코드랑 상품수량 가져가서 수정해줘라
+			//수량디비(에이작스를 새로 만들기) 카트코드랑 상품수량 가져가서 수정해줘라
 			$('#plus'+index).click(function(){  //인덱스를 안걸면 전체품목이 플러스가 되어버려서!
 				$('#qty'+index).val(parseInt($('#qty'+index).val())+1); 
 				$('#total'+index).text(((items.productUnit)*parseInt($('#qty'+index).val())).toLocaleString()+" 원");
@@ -132,7 +132,7 @@ $(function(){
 			 		
 			 	}); 
 				 
-			});	
+			});	//plus
 				 
 			$('#minus'+index).click(function(){
 				
@@ -158,11 +158,11 @@ $(function(){
 			 		
 			 	}); 
 				 
-			});	 
+			});	//minus 
 			
 			
 			//스티키 안에 채우기(위에 var 로 0 줌)
-/* 			var totalProductPrice = items.productUnit*items.cartQty*(1-itmes.productRate/100);  //itmes.productRate 가 안먹는듯
+		/* 	var totalProductPrice = items.productUnit*items.cartQty*(1-itmes.productRate/100);  //itmes.productRate 가 안먹는듯
 				totalPrice += items.productUnit*items.cartQty;
 				totalSalePrice += items.productUnit*items.cartQty*items.productRate;  //itmes.productRate 가 안먹는듯
 				allPrice += totalProductPrice;
@@ -184,7 +184,7 @@ $(function(){
 			$('#totalPayPrice').text(allPrice.toLocaleString()+'원'); */
 
 				 
-			});//each
+			});//each 
 			
 		},
 		
@@ -205,75 +205,17 @@ $(function(){
 			}	
 		}); 
 	
-		//선택해제시 맨위 체크반스 체크 해제
-	/* 	(시도1)
-		$('.cartProductCheck').on('click','.check',function(){
-			$('.cartProductCheck').prop('checked',false);
-
-		}); */
-		
-		
-		/* (시도2)
-		$('.checkboxGroup').on('click','input:not(.cartProductCheck)',function() {
-			var isChecked=true;
-
-			$('.checkboxGroup input:not(.cartProductCheck)').each(function(){
-				isChecked = isChecked&&$(this).is(':checked');
-
-			});
+		//선택해제시 맨위 체크박스 체크 해제
+		$(document).on('click', '.check', function(){  //on은 나중에 들어오는 체크박스 때문에 그래서 온으로 써주는것.
+			//alert("11");
 			
-			$('.cartProductCheck').prop('checked',isChecked);
-			}); */
-		
-	/* 	(시도3)	
-		var checkAll = document.querySelector('.cartProductCheck');
-		var checkOne =	document.querySelectorAll('.check');
-			
-			for(var i=0; i<checkOne.length; i++) {
-				checkOne[i].onclick = function(){
-					if(this.checked == false) {
-						checkAll.checked =false;
-					}
-				} 
-			} */
-		
-	/* (시도4)
-		
-		var checkAll = document.querySelector('.cartProductCheck');
-		var checkOne =	document.querySelectorAll('.check');	
-			
-		$('.check').click(function(){
-		for(var i=0; i<checkOne.length; i++) {
-			if(checkOne[i].checked==false) {
-				checkAll.checked=false;
-			}
-		}	
-		});	 */
-		
-	/* (시도5)
-		$('.checkboxGroup').on('click','.check',function() {
-			 var checked = $(this).is(":checked");
-
-			if (!checked) { 
-				$('..cartProductCheck').prop('checked',false);
-
-			}
-
-		}); */
-		
-		
-/* 	$('.check').click(function(){
-			if(!$('.check').prop('checked'))
-				$('.checkboxGroup').prop('checked',false)
-
-		}); */
-		
-		$('.checkboxGroup').change(function(){
-			if(!$('.check').prop('checked'))
-				$('.checkboxGroup').prop('checked',false)
-
+			if(!$('.check').is(':checked'))  //체크박스가 선택해제인지 알아보는게 is, ! 부정하는것. 폴스가 오면 이프문이 거짓으로 인식하니까 그래서 느낌표로 바꾼것.
+				$('.cartProductCheck').prop('checked',false); 
+			// 이프문에 조건은 트루가 되어야 수행을 하는데
+			// 내가 체크박스를 체크해제 하면 조건이 false 가 되어버리는데 그러면 그 폴스가 된게 참이되어야만 if문 아래에 있는
+			//$('.cartProductCheck').prop('checked',false);  문장을 수행할수 있음
+			//그래서 이프문을 위와같이 참으로 만들고 그런 다음 .cartProductCheck 에 체크드를 해제하라 라는 문장이 완성됨
 		}); 
-		
 		
 		
 		//전체상품 삭제
@@ -281,7 +223,7 @@ $(function(){
 		 	$.ajax({
 		 		url: '/milkyWayForest/cart/cartAllDelete',
 		 		type: 'post',
-				data: 'id=yun',
+				
 				success: function() {
 					if(confirm("전체삭제 하시겠습니까?")==true){
 						location.href= "/milkyWayForest/cart";
@@ -336,10 +278,36 @@ $(function(){
 				});
 		
 		//계속쇼핑하기 버튼
-		$('#shoppingBtn').click(function(){
+		$('#cartForm #shoppingBtn').click(function(){
 			location.href='/milkyWayForest/';
 			
 		});	
+		
+		
+		// 구매하기 버튼 눌렀을 때
+	/* 	$('#cartForm #cartAllOrderBtn').click(function(){
+		
+			if(${memId == null}) {
+				alert('로그인 해주세요');
+				location.href='/milkyWayForest/login/loginForm';
+			} else {
+				$.ajax({
+					url: '/milkyWayForest/payment/cartInsert',
+					type: 'post',
+					data: $('#cartForm').serialize(),
+					success: function(data) {
+						alert(data);
+						location.href='/milkyWayForest/payment?cartCode='+data;
+					},
+					error: function(err) {
+						console.log(err);
+					}
+					
+				});
+			}
+		});
+ */
+		
 			
 });//큰 function
 

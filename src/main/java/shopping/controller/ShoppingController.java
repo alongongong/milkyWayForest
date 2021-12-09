@@ -2,6 +2,8 @@ package shopping.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -240,10 +242,8 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 	//장바구니 상품코드 확인
 	@PostMapping(value="/shopping/productSelect")
 	@ResponseBody
-	public int productSelect(@RequestParam String id, @RequestParam String productCode) {
-		
-		
-		return shoppingService.productSelect(id,productCode);
+	public int productSelect(HttpSession session, @RequestParam String productCode) {
+		return shoppingService.productSelect(session.getAttribute("memId")+"", productCode);
 	}
 	
 	

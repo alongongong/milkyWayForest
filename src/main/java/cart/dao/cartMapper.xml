@@ -13,7 +13,7 @@
 				 cartQty)  
 			 		values 
 						('cart00100'||milkyCartSeq.nextval , 
-						 'yun',  
+						 #{id},  
 						#{productCode},  
 						#{cartOption},  
 						#{cartQty})
