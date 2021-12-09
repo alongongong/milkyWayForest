@@ -187,13 +187,15 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 	} else if(!$('#payShipNickname').val() || !$('#payShipReceiver').val() || !$('#payShipTel1').val() || !$('#payShipTel2').val() || !$('#payShipTel3').val() || !$('#payShipZipcode').val() || !$('#payShipAddr1').val() || !$('#payShipAddr2').val()) {
 		$('#paymentDiv').text('배송지 정보를 입력해주세요.');
 	} else {
-		
+		var paymentCode;
 		$.ajax({
 			url: '/milkyWayForest/payment/payment',
 			type: 'post',
 			data: $('#paymentForm').serialize(),
 			success: function(data) {
 				alert(data);
+				paymentCode = data;
+
 			},
 			error: function(err) {
 				console.log(err);
@@ -237,7 +239,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 	                msg += '\n카드 승인번호 : ' + rsp.apply_num;
 
 	                alert(msg);
-	    	        location.href="/milkyWayForest/payment/paySuccess";
+	    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
 
 		        } else { //결제 실패시
 		            msg = '결제에 실패하였습니다.';
@@ -266,6 +268,7 @@ $(function(){
 			var savedMoney = 0;
 			var memberGrade;
 			
+			// 주문자정보
 			$.each(data.memberList, function(index, items) {
 				$('#name').val(items.name);
 				$('#email1').val(items.email1);
@@ -291,11 +294,14 @@ $(function(){
 				});
 			});
 			
+			// 구매상품정보
 			$.each(data.cartList, function(index, items) {
 				var totalProductPrice = items.productUnit*items.cartQty*(1-items.productRate/100);
 				totalPrice += items.productUnit*items.cartQty;
 				totalSalePrice += items.productUnit*items.cartQty*items.productRate;
 				allPrice += totalProductPrice;
+				
+				alert(items.cartCode)
 				
 				$('<tr>').append($('<td>',{
 					text: items.productName,
@@ -307,6 +313,7 @@ $(function(){
 					value: items.productCode
 				})).append($('<input>',{
 					type: 'hidden',
+					name: 'cartCode',
 					value: items.cartCode
 				}))).append($('<td>',{
 					text: items.cartOption,
@@ -370,7 +377,7 @@ $(function(){
 			$('#newSavedMoney').val(savedMoney);
 			$('#totalPayPrice').text(allPrice.toLocaleString()+'원');
 			
-			
+			// 배송지정보
 			$.each(data.shipList, function(index, items) {
 				$('<option>',{
 					text: items.shipNickname,

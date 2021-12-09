@@ -11,6 +11,6 @@ public interface PaymentService {
 
 	public JSONObject getPayment(String[] cartCode, String memId);
 
-	public String payment(PaymentDTO paymentDTO, String cartCode);
+	public String payment(PaymentDTO paymentDTO, String[] cartCode);
 
 }

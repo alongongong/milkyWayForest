@@ -7,11 +7,11 @@
 	
 	<insert id="cartInsert" parameterType="cart">	
 		insert into milkycart values(
-			'cart00100'||milkycartseq.nextval, 'ara', #{productCode}, #{cartOption}, #{cartQty})
+			'cart00100'||milkycartseq.nextval, #{id}, #{productCode}, #{cartOption}, #{cartQty})
 	</insert>
 	
 	<select id="getCartCode" parameterType="cart" resultType="String">	
-		select cartCode from milkycart where id='ara' and productCode=#{productCode}
+		select cartCode from milkycart where id=#{id} and productCode=#{productCode}
 	</select>
 	
 	<select id="getPayment" parameterType="String" resultType="cart">
@@ -52,11 +52,18 @@
 		end;
 	</insert>
 	
+	<update id="updateSavedMoney" parameterType="payment">
+		update milkymember set savedMoney = savedMoney+#{newSavedMoney}-#{paymentSavedMoney} where id=#{id}
+	</update>
+	
 	<delete id="payCartDelete" parameterType="String">
-		delete milkycart where cartcode=#{cartCode}
+		delete milkycart where cartcode=#{cartCode1}
 	</delete>
 
 	<select id="getPaymentCode" resultType="String">
-		select paymentCode from milkypayment where paymentcode = 'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval
+		select paymentCode from milkypayment
+			where substr(paymentcode,13) 
+				in (select max(substr(paymentcode,13)) from milkypayment)
 	</select>
+	
 </mapper>
