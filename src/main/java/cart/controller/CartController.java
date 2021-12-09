@@ -65,7 +65,7 @@ public class CartController {
 	//선택삭제
 	@PostMapping(value="/cart/cartSelectDelete")
 	@ResponseBody
-	public void cartSelectDelete(@RequestParam String id,@RequestParam String[] check) {  //2개가 오니까 배열로 받아온다(3개면 3개로)  id=yun&check=~~22&check=~~23
+	public void cartSelectDelete(@RequestParam String id,@RequestParam String[] check) {  //우리가 체크한 항목이 2개면 2개가 오니까 배열로 받아온다(3개면 3개로)  이런식으로 시리얼라즈로 주소값으로 넘어옴.>id=yun&check=~~22&check=~~23
 //		System.out.println(id);
 //		System.out.println(check[0]);
 //		System.out.println(check[1]);

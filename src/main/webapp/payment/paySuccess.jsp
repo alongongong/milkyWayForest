@@ -34,9 +34,9 @@
 		<div id="paymentInfoDiv">
 			<h2>결제완료</h2>
 			<h3>구매가 정상적으로 완료되었습니다.</h3>
-			<p>주문번호<span id="paymentCode"></span></p><br>
-			<p>적립금<span id="savedMoney"></span></p><br>
-			<p>총 결제금액<span id="totalPayPrice"></span></p>
+			<p>주문번호<br><span id="paymentCode"></span></p>
+			<p>적립금<br><span id="savedMoney"></span></p>
+			<p>총 결제금액<br><span id="totalPayPrice"></span></p>
 			
 			<div id="buttonWrap">
 				<input type="button" id="homeBtn" class="btn btn-info" value="메인화면으로">
@@ -47,6 +47,21 @@
 </form>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+$(function(){
+	$.ajax({
+		url: '/milkyWayForest/payment/getPayInfo',
+		type: 'post',
+		data: 'paymentCode=${paymentCode}',
+		success: function(data) {
+			$('#paymentCode').text('${paymentCode}');
+			$('#savedMoney').text(data.newSavedMoney.toLocaleString()+" 원");
+			$('#totalPayPrice').text(data.payPrice.toLocaleString()+" 원");
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+});
 $('#paySuccess #homeBtn').click(function(){
 	location.href='/milkyWayForest/index.jsp';
 });

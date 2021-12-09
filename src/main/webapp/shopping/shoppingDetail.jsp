@@ -246,55 +246,40 @@ $(function(){
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
 			//alert('0');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(0) img').prop("src"));
+			$('.shoppingDetailImg li:not(0) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(1)').on("click", $('.shoppingDetailImg li:eq(1)'), function(){
 			//alert('1');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(1) img').prop("src"));
+			$('.shoppingDetailImg li:not(1) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(2)').on("click", $('.shoppingDetailImg li:eq(2)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(2) img').prop("src"));
+			$('.shoppingDetailImg li:not(2) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(3)').on("click", $('.shoppingDetailImg li:eq(3)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(3) img').prop("src"));
+			$('.shoppingDetailImg li:not(3) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(4)').on("click", $('.shoppingDetailImg li:eq(4)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(4) img').prop("src"));
+			$('.shoppingDetailImg li:not(4) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(5)').on("click", $('.shoppingDetailImg li:eq(5)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(5) img').prop("src"));
+			$('.shoppingDetailImg li:not(5) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid silver');
 		});
 
-	
-
-	
 		},
 
 		error: function(err) {
@@ -363,7 +348,7 @@ $(function(){
 				type: 'post',
 				data: $('#shoppingDetailForm').serialize(),
 				success: function(data) {
-					alert(data);
+					// alert(data);
 					location.href='/milkyWayForest/payment?cartCode='+data;
 				},
 				error: function(err) {
