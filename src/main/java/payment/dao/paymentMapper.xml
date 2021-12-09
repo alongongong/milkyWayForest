@@ -51,6 +51,10 @@
 		select * from milkycart where cartcode=#{cartCode}
 	</select>
 	
+	<select id="getProductInfo2" parameterType="String" resultType="product">
+		select * from milkyproductinfo where productcode=#{productCode}
+	</select>
+	
 	<insert id="payment2" parameterType="payment">
 		insert into milkyPaymentOption values(
 			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
@@ -72,7 +76,7 @@
 				in (select max(substr(paymentcode,13)) from milkypayment)
 	</select>
 	
-	<select id="getMemberGrade" parameterType="String">
+	<select id="getMemberGrade" parameterType="String" resultType="int">
 		select sum(payprice*payqty*(100-payrate)/100) from milkypaymentoption
 			join milkypayment using(paymentcode) where id=#{id}
 	</select>
@@ -80,4 +84,11 @@
 	<update id="updateMemberGrade" parameterType="java.util.Map">
 		update milkymember set membergrade=#{grade} where id=#{id}
 	</update>
+	
+	<select id="getPayInfo" parameterType="String" resultType="payment">
+		select sum(newsavedmoney) "newsavedmoney", sum(payqty*payprice*(100-payrate)/100) "payprice" 
+			from milkypayment 
+			join milkypaymentoption using(paymentcode) where paymentcode=#{paymentCode}
+			group by paymentcode
+	</select>
 </mapper>

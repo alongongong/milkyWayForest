@@ -14,6 +14,7 @@ import cart.bean.CartDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MypageShipmentDTO;
 import payment.bean.PaymentDTO;
+import product.bean.ProductDTO;
 
 @Transactional
 @Repository
@@ -69,12 +70,13 @@ public class PaymentDAOMybatis implements PaymentDAO {
 	public void payment3(PaymentDTO paymentDTO, String[] cartCode) {
 		for(int i=0; i<cartCode.length; i++) {
 			CartDTO cartDTO = sqlSession.selectOne("paymentSQL.getProductInfo", cartCode[i]);
+			ProductDTO productDTO = sqlSession.selectOne("paymentSQL.getProductInfo2", cartDTO.getProductCode());
 
 			paymentDTO.setProductCode(cartDTO.getProductCode());
 			paymentDTO.setProductOption(cartDTO.getCartOption());
 			paymentDTO.setPayQty(cartDTO.getCartQty());
-			paymentDTO.setPayPrice(cartDTO.getProductUnit());
-			paymentDTO.setPayRate(cartDTO.getProductRate());
+			paymentDTO.setPayPrice(productDTO.getProductUnit());
+			paymentDTO.setPayRate(productDTO.getProductRate());
 			
 			sqlSession.insert("paymentSQL.payment2", paymentDTO);
 		}
@@ -96,5 +98,10 @@ public class PaymentDAOMybatis implements PaymentDAO {
 			sqlSession.update("paymentSQL.updateMemberGrade", map);
 		}
 		
+	}
+
+	@Override
+	public PaymentDTO getPayInfo(String paymentCode) {
+		return sqlSession.selectOne("paymentSQL.getPayInfo", paymentCode);
 	}
 }

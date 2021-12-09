@@ -45,4 +45,9 @@ public class PaymentServiceImpl implements PaymentService {
 		return paymentDAO.payment2();
 	}
 
+	@Override
+	public PaymentDTO getPayInfo(String paymentCode) {
+		return paymentDAO.getPayInfo(paymentCode);
+	}
+
 }

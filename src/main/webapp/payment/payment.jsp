@@ -188,19 +188,6 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		$('#paymentDiv').text('배송지 정보를 입력해주세요.');
 	} else {
 		var paymentCode;
-		$.ajax({
-			url: '/milkyWayForest/payment/payment',
-			type: 'post',
-			data: $('#paymentForm').serialize(),
-			success: function(data) {
-				alert(data);
-				paymentCode = data;
-
-			},
-			error: function(err) {
-				console.log(err);
-			}
-		});
 		
 		//카카오페이
 		if($('input:radio').eq(3).is(':checked')){
@@ -231,7 +218,20 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		        
 		        if ( rsp.success ) { //결제 성공시
 		        	//DB
-		        
+		        	$.ajax({
+						url: '/milkyWayForest/payment/payment',
+						type: 'post',
+						data: $('#paymentForm').serialize(),
+						success: function(data) {
+							alert(data);
+							paymentCode = data;
+			
+						},
+						error: function(err) {
+							console.log(err);
+						}
+					});
+		        	
 	                msg = '결제가 완료되었습니다.';
 	                msg += '\n고유ID : ' + rsp.imp_uid;
 	                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
@@ -250,6 +250,23 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 
 		    });
 		}//카카오페이
+		else { // 나머지 결제수단
+			$.ajax({
+				url: '/milkyWayForest/payment/payment',
+				type: 'post',
+				data: $('#paymentForm').serialize(),
+				success: function(data) {
+					alert(data);
+					paymentCode = data;
+					
+					location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
+
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		}
 	}
 });
 
@@ -260,7 +277,7 @@ $(function(){
 		type: 'post',
 		data: $('#cartCodeForm').serialize(),
 		success: function(data) {
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			
 			var totalPrice = 0;
 			var totalSalePrice = 0;
@@ -301,7 +318,7 @@ $(function(){
 				totalSalePrice += items.productUnit*items.cartQty*items.productRate;
 				allPrice += totalProductPrice;
 				
-				alert(items.cartCode)
+				//alert(items.cartCode)
 				
 				$('<tr>').append($('<td>',{
 					text: items.productName,

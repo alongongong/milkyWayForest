@@ -27,4 +27,6 @@ public interface PaymentDAO {
 
 	public void UpdateMemberGrade(String id);
 
+	public PaymentDTO getPayInfo(String paymentCode);
+
 }
