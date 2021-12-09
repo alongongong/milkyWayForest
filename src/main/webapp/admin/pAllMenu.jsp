@@ -21,6 +21,9 @@
 	<div class="card-body">
 		<div id="menuContainer">
 			<div id="mainNavMenu">
+				<ul id="main">
+					<li><a href="/milkyWayForest">메인페이지</a></li>
+				</ul>
 				<ul id="companyInfo">
 					<li><a href="/milkyWayForest/info/componyInfo">회사소개</a></li>
 					
