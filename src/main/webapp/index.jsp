@@ -12,9 +12,12 @@
 	<jsp:include page="main/header.jsp"/>
 </header>
 	<div id="bodySection">
-	     <c:if test="${not empty display }">
-	         <jsp:include page="${display }" />
-	     </c:if>
+		<c:if test="${empty display }">
+			<jsp:include page="main/body.jsp"/>
+		</c:if>
+	    <c:if test="${not empty display }">
+	        <jsp:include page="${display }"/>
+	    </c:if>
 	</div>
 	
 	<!-- Channel Plugin Scripts -->

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+* {box-sizing: border-box;}
+html, body, section, div, button
+input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, sans-serif; }
+
+<!-- 우측 스크롤 nav -->
+.fullpage-nav {
+	display: flex;
+	position: fixed;
+	z-index: 10;
+	width: 23px;
+	height: 190px;
+	top: 50%;
+	right: 74px;
+	margin-top: -95px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.fullpage-nav-current, .fullpage-nav-total {
+    display: block;
+    color: #000;
+    text-align: center;
+    line-height: 1.1;
+    font-family: "Mark Pro";
+    font-size: 18px;
+    font-weight: 700;
+}
+.fullpage-nav-progress {
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 2px;
+    height: 120px;
+    margin: 16px 0;
+    background-color: rgba(120,120,120,.2);
+}
+
+
+
+

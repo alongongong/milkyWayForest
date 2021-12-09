@@ -4,13 +4,14 @@
 /* * { margin : 0; padding : 0; } */
  
 * { font-family: 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum; }
+ 
 body { margin : 0; padding : 0; height: 3000px;}
 
 html { font-size: 18px; }
 body { font-size: 13pt; }
 a { text-decoration-line: none; }
 ul { list-style:none; }
-header { background-color : #f6f5ef;  position: sticky; top: 0; z-index: 99;}
+header { background-color : rgba(245,246,239,.4);  position: sticky; top: 0; z-index: 99;}
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */
