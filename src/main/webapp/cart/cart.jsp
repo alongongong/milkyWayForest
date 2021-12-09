@@ -284,31 +284,28 @@ $(function(){
 		});	
 		
 		
-		// 구매하기 버튼 눌렀을 때
-		$('#cartForm #cartAllOrderBtn').click(function(){
-		
-			if(${memId == null}) {
-				alert('로그인 해주세요');
-				location.href='/milkyWayForest/login/loginForm';
+		// 전체상품 주문하기
+		$('#cartAllOrderBtn').click(function(){
+			$('.check').prop('checked', 'true');
+			if($('.check:checked').length == 0) {
+				alert('장바구니에 주문할 상품이 없습니다.');
 			} else {
-				$.ajax({
-					url: '/milkyWayForest/payment/cartInsert',
-					type: 'post',
-					data: $('#cartForm').serialize(),
-					success: function(data) {
-						alert(data);
-						location.href='/milkyWayForest/payment?cartCode='+data;
-					},
-					error: function(err) {
-						console.log(err);
-					}
-					
-				});
+				$('.check').attr('name','cartCode');
+				$('#cartForm').attr('action', '/milkyWayForest/payment').submit();
+			}
+		});
+		
+		// 선택상품 주문하기
+		$('#cartSelectOrderBtn').click(function(){
+			if($('.check:checked').length == 0) {
+				alert('선택된 상품이 없습니다. 상품을 선택해주세요.');
+			} else {
+				$('.check').attr('name','cartCode');
+				$('#cartForm').attr('action', '/milkyWayForest/payment').submit();
 			}
 		});
 
-		
-			
+
 });//큰 function
 
 
