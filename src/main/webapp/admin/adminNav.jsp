@@ -55,6 +55,9 @@
           <li class="menu">상담 관리</li>
           <li class="navMenu" id="6">
             <a href="/milkyWayForest/admin/talk?dataNum=6">
+         <!--  	<div class="channelTalk">
+            	<a href="https://desk.channel.io/#/channels/71259/team_chats/groups/117229">
+            	</div> -->
               <i class="nc-icon nc-chat-33"></i>
               <p>상담 관리</p>
             </a>
