@@ -15,7 +15,7 @@
 			<br>
 			
 			<%-- <input type ="hidden" name="id" id="id" value="${id}"> --%>
-			<input type="hidden" name="id" value="yun">
+			<input type="hidden" name="id"  id="id" value="yun">
 			
 			<table id="cartTable" class="table">
 				<tr>
@@ -24,23 +24,31 @@
 					<th>구매수량</th>
 					<th>옵션</th>
 					<th>상품금액</th>
-					<th>배송비</th>
+					
 				</tr>
 			</table>
 			<input type="button" id="cartAllDeleteBtn" class="btn btn-outline-secondary" value="전체상품 삭제">
 			<input type="submit" id="cartSelectDeleteBtn" class="btn btn-outline-secondary" value="선택상품 삭제">
 			<input type="button" id="cartSelectOrderBtn" class="btn btn-outline-success" value="선택상품 주문">
 		</div>
-		<div id="cartTotalDiv">
+		<div id="cartTotalDiv" class="cartTotal">
 			<div id="cartOrderDetail">
-				상품금액, 할인예상금액, 배송비
+				<!-- 상품금액, 할인예상금액, 배송비 -->
+				총 상품금액 <span id="totalProductPrice"></span><br>
+				총 할인금액 <span id="totalSalePrice"></span><br>
+				배송비 <span id="shipPay"></span>
+					<input type="hidden" id="shipPay1" name="shipPay"><br>
+				<!-- 배송비<span id="shipPay"></span> -->
+			</div> <!-- cartOrderDetail -->
+			<div id="cartOrderTotal"> 
+			
+				<p>결제예상금액<span id="totalPayPrice"></span></p>
+			
 			</div>
-			<div id="cartOrderTotal">
-				결제예상금액
-			</div>
-			<input type="button" id="cartAllOrderBtn" class="btn btn-danger" value="주문하기">
-			<input type="button" id="shoppingBtn" class="btn btn-outline-secondary" value="계속 쇼핑하기"><br>
-		</div>
+				<input type="button" id="cartAllOrderBtn" class="btn btn-danger" value="주문하기">
+				<input type="button" id="shoppingBtn" class="btn btn-outline-secondary" value="계속 쇼핑하기"><br>
+			
+		</div> <!-- cartTotalDiv -->
 	</div>
 </form>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -54,10 +62,16 @@ $(function(){
 		success: function(data) {
 			//alert("떠라."); 
 			console.log(JSON.stringify(data)); 
+			
+			var totalPrice = 0;
+			var totalSalePrice = 0;
+			var allPrice = 0;
+			var shipPay = 0;
 			 
 			 $.each(data, function(index,items){
 				 $('<tr>').append($('<th>',{ 
-					 width: 25 
+					 width: 25,
+					 class: 'checkboxGroup'
 				})
 				.append($('<input>', {
 					type:'checkbox',
@@ -95,9 +109,6 @@ $(function(){
 					id: 'total'+index,
 					text: (items.productUnit*items.cartQty).toLocaleString()+" 원" 
 					
-				})).append($('<th>', {
-					text: "2500원"
-				
 				}))
 				.appendTo($('#cartTable')); 
 			
@@ -149,6 +160,29 @@ $(function(){
 				 
 			});	 
 			
+			
+			//스티키 안에 채우기(위에 var 로 0 줌)
+/* 			var totalProductPrice = items.productUnit*items.cartQty*(1-itmes.productRate/100);  //itmes.productRate 가 안먹는듯
+				totalPrice += items.productUnit*items.cartQty;
+				totalSalePrice += items.productUnit*items.cartQty*items.productRate;  //itmes.productRate 가 안먹는듯
+				allPrice += totalProductPrice;
+
+			var shipPay = 0;
+
+			$('#totalProductPrice').text(totalPrice.toLocaleString()+'원');
+			$('#totalSalePrice').text(totalSalePrice.toLocaleString()+'원');
+			if((totalPrice-totalSalePrice) >= 50000) {
+				$('#shipPay').text('0원');
+			} else {
+				$('#shipPay').text('2,500원')
+				shipPay += 2500;
+			}
+
+			allPrice += shipPay;
+			$('#shipPay1').val(shipPay);
+			$('#newSavedMoney').val(savedMoney);
+			$('#totalPayPrice').text(allPrice.toLocaleString()+'원'); */
+
 				 
 			});//each
 			
@@ -170,6 +204,77 @@ $(function(){
 				
 			}	
 		}); 
+	
+		//선택해제시 맨위 체크반스 체크 해제
+	/* 	(시도1)
+		$('.cartProductCheck').on('click','.check',function(){
+			$('.cartProductCheck').prop('checked',false);
+
+		}); */
+		
+		
+		/* (시도2)
+		$('.checkboxGroup').on('click','input:not(.cartProductCheck)',function() {
+			var isChecked=true;
+
+			$('.checkboxGroup input:not(.cartProductCheck)').each(function(){
+				isChecked = isChecked&&$(this).is(':checked');
+
+			});
+			
+			$('.cartProductCheck').prop('checked',isChecked);
+			}); */
+		
+	/* 	(시도3)	
+		var checkAll = document.querySelector('.cartProductCheck');
+		var checkOne =	document.querySelectorAll('.check');
+			
+			for(var i=0; i<checkOne.length; i++) {
+				checkOne[i].onclick = function(){
+					if(this.checked == false) {
+						checkAll.checked =false;
+					}
+				} 
+			} */
+		
+	/* (시도4)
+		
+		var checkAll = document.querySelector('.cartProductCheck');
+		var checkOne =	document.querySelectorAll('.check');	
+			
+		$('.check').click(function(){
+		for(var i=0; i<checkOne.length; i++) {
+			if(checkOne[i].checked==false) {
+				checkAll.checked=false;
+			}
+		}	
+		});	 */
+		
+	/* (시도5)
+		$('.checkboxGroup').on('click','.check',function() {
+			 var checked = $(this).is(":checked");
+
+			if (!checked) { 
+				$('..cartProductCheck').prop('checked',false);
+
+			}
+
+		}); */
+		
+		
+/* 	$('.check').click(function(){
+			if(!$('.check').prop('checked'))
+				$('.checkboxGroup').prop('checked',false)
+
+		}); */
+		
+		$('.checkboxGroup').change(function(){
+			if(!$('.check').prop('checked'))
+				$('.checkboxGroup').prop('checked',false)
+
+		}); 
+		
+		
 		
 		//전체상품 삭제
 		$('#cartAllDeleteBtn').click(function(){		
@@ -193,53 +298,50 @@ $(function(){
 				}	
 			});	 
 		});	
-
-		//선택되면 클래스를 바꿔라 애드클래스 리무브 클래스  클래스명이 추가되거나 지워지는것. 
-		//만약 체크안되어있었으면 기본적으로 체크가 안되어 있으면 클래스이름을unCheck 라고 주고
-		//체크되는순간 check 라고 클래스명을 바꿔라 라고 이걸 이프문 굳이 안걸어도 될듯
-		
-		/* $('input ').addClass$('<input>','.check');
-		$().removeClass(''); */
-		
-
-		//$('input:checkbox:checked').addClass$('.check');
-		
-		//$('input:checkbox:not(:checked)').addClass$('.unCheck');
-			
-		//서브밋으로 넘겨라
-
-		
-		
+	
 		//선택삭제
 		$('#cartSelectDeleteBtn').click(function(){
-			$('#cartForm').submit(function(){  //폼.서브밋
-				var count =$('.check:checked').length;
-					alert(count);
-				
-				if(count==0)
-					alert('삭제 할 항목을 선택하세요');
-				else { 
-					if(confirm('정말 삭제하시겠습니까?') ==true) {
-						 $.ajax({
-							url: '/milkyWayForest/cart/cartSelectDelete',
-							type: 'post',
-							data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.()대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
-							success: function() {
-								alert("삭제 성공")
-							//	location.href= "/milkyWayForest/cart";
-							},
-							error:function(err){
-								console.log(err);
-							}	
+		$('#cartForm').submit(function(){  //폼.서브밋
+			var count =$('.check:checked').length;
+				alert(count);
+			
+			if(count==0)
+				alert('삭제 할 항목을 선택하세요');
+			else { 
+				if(confirm('정말 삭제하시겠습니까?') ==true) {
+					 $.ajax({
+						url: '/milkyWayForest/cart/cartSelectDelete',
+						type: 'post',
+						data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
+						success: function() {
+							alert("삭제 성공")
+							console.log(JSON.stringify(data)); 
 							
-						});	  
+							
+							
+						
+						},
+						error:function(err){
+							console.log(err);
+						}	
+						
+						
+					});	  
+
 					}else {
 						return;
 					}
-				
+
 				}
 			});
 		});
+		
+		//계속쇼핑하기 버튼
+		$('#shoppingBtn').click(function(){
+			location.href='/milkyWayForest/';
+			
+		});	
+
 			
 		
 		// 전체상품 주문하기
