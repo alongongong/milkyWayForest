@@ -4,7 +4,9 @@ import java.util.List;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
 import net.sf.json.JSONObject;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
 public interface MypageService {
@@ -26,5 +28,23 @@ public interface MypageService {
 	public List<CommentDTO> getMyQnaComment(int qnaCode);
 
 	public void deleteMyQnaView(int qnaCode);
+
+	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO);
+
+	public JSONObject getPaymentInfo(String id);
+
+	public JSONObject getOrderList(String id, int pg);
+
+	public JSONObject getMyOrderInfo(String paymentCode);
+	
+	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO);
+
+	public List<MypageShipmentDTO> getShpMngList(String id);
+
+	public MypageShipmentDTO getShpMngModify(String shipCode);
+
+	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO);
+
+	public void deleteShpMng(String shipCode);
 
 }

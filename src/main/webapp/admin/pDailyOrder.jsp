@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <form id="pDailyOrderForm">
 <div class="card" id="pDailyOrderFDiv">
   <div class="card-header">
@@ -37,7 +38,26 @@ $(function(){
 		url: '/milkyWayForest/admin/getDailyOrder',
 		type: 'post',
 		success: function(data) {
-			alert(JSON.stringify(data));
+			$.each(data, function(index, items){
+				$('<tr>').append($('<td>',{
+					text: items.paymentCode,
+					align: 'center'
+				})).append($('<td>',{
+					text: items.productName
+				})).append($('<td>',{
+					text: items.payQty,
+					align: 'center'
+				})).append($('<td>',{
+					text: items.id,
+					align: 'center'
+				})).append($('<td>',{
+					text: items.deliveryInfo,
+					align: 'center'
+				})).append($('<td>',{
+					text: items.payDate,
+					align: 'center'
+				})).appendTo($('#pDailyOrderTable tbody'));
+			});
 		},
 		error: function(err) {
 			console.log(err);

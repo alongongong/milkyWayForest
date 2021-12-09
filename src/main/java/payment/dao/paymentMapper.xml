@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="paymentSQL">
+	
+	<insert id="cartInsert" parameterType="cart">	
+		insert into milkycart values(
+			'cart00100'||milkycartseq.nextval, #{id}, #{productCode}, #{cartOption}, #{cartQty})
+	</insert>
+	
+	<select id="getCartCode" parameterType="cart" resultType="String">	
+		select cartCode from milkycart where id=#{id} and productCode=#{productCode}
+	</select>
+	
+	<select id="getPayment" parameterType="String" resultType="cart">
+		select cartCode, id, productCode, cartOption, cartQty, productName, productUnit, productRate
+			from milkycart
+			join milkyproductinfo using(productCode)
+		where cartcode=#{cartCode}
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="member">
+		select * from milkymember where id=#{memId}
+	</select>
+	
+	<select id="getShipment" parameterType="String" resultType="shipment">
+		select * from milkyshipment where id=#{memId}
+	</select>
+	
+	<insert id="payment" parameterType="payment">
+		begin
+		
+		insert into milkypayment values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
+			#{id}, #{paymentMethod}, #{shipPay}, '결제완료', sysdate,
+			#{paymentSavedMoney}, #{newSavedMoney}, #{paymentCoupon}, #{shipMemo}
+		);
+		
+		insert into milkypaymentShip values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
+			#{payShipNickname}, #{payShipReceiver}, #{payShipTel1}, #{payShipTel2}, #{payShipTel3},
+			#{payShipZipcode}, #{payShipAddr1}, #{payShipAddr2}
+		);
+				
+		end;
+	</insert>
+	
+	<select id="getProductInfo" parameterType="String" resultType="cart">
+		select * from milkycart where cartcode=#{cartCode}
+	</select>
+	
+	<select id="getProductInfo2" parameterType="String" resultType="product">
+		select * from milkyproductinfo where productcode=#{productCode}
+	</select>
+	
+	<insert id="payment2" parameterType="payment">
+		insert into milkyPaymentOption values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
+			#{productCode}, #{productOption}, #{payQty}, #{payPrice}, #{payRate}
+		)
+	</insert>
+	
+	<update id="updateSavedMoney" parameterType="payment">
+		update milkymember set savedMoney = savedMoney+#{newSavedMoney}-#{paymentSavedMoney} where id=#{id}
+	</update>
+	
+	<delete id="payCartDelete" parameterType="String">
+		delete milkycart where cartcode=#{cartCode1}
+	</delete>
+
+	<select id="getPaymentCode" resultType="String">
+		select paymentCode from milkypayment
+			where substr(paymentcode,13) 
+				in (select max(substr(paymentcode,13)) from milkypayment)
+	</select>
+	
+	<select id="getMemberGrade" parameterType="String" resultType="int">
+		select sum(payprice*payqty*(100-payrate)/100) from milkypaymentoption
+			join milkypayment using(paymentcode) where id=#{id}
+	</select>
+	
+	<update id="updateMemberGrade" parameterType="java.util.Map">
+		update milkymember set membergrade=#{grade} where id=#{id}
+	</update>
+	
+	<select id="getPayInfo" parameterType="String" resultType="payment">
+		select sum(newsavedmoney) "newsavedmoney", sum(payqty*payprice*(100-payrate)/100) "payprice" 
+			from milkypayment 
+			join milkypaymentoption using(paymentcode) where paymentcode=#{paymentCode}
+			group by paymentcode
+	</select>
+</mapper>

@@ -2,6 +2,8 @@ package shopping.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -229,11 +231,42 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 		return shoppingService.getShoppingDetail(productCode);
 	}
 	
-	//clickImg
+	//clickImg (이미지 클릭했을때 프로덕트코드 셀렉트해서 가져가기)
 	@PostMapping(value="/shopping/clickImg")
 	@ResponseBody
 	public ShoppingDTO clickImg(@RequestParam String productCode) {
 		return shoppingService.clickImg(productCode);
 	}
 	
+	
+	//장바구니 상품코드 확인
+	@PostMapping(value="/shopping/productSelect")
+	@ResponseBody
+	public int productSelect(HttpSession session, @RequestParam String productCode) {
+		return shoppingService.productSelect(session.getAttribute("memId")+"", productCode);
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ShoppingDTO;
 
 @Repository 
 @Transactional
@@ -40,8 +43,8 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 
 	@Override
-	public int getTotalA() {
-		return sqlSession.selectOne("mypageSQL.getTotalA");
+	public int getQnaTotalA(String id) {
+		return sqlSession.selectOne("mypageSQL.getQnaTotalA", id);
 	}
 
 	@Override
@@ -67,6 +70,83 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void deleteMyQnaView(int qnaCode) {
 		sqlSession.delete("mypageSQL.deleteMyQnaView", qnaCode);
+	}
+
+	@Override
+	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.insert("mypageSQL.mypageShpMngWrite",mypageShipmentDTO);
+	}
+	
+	@Override
+	public List<PaymentDTO> getPaymentList(String id) {
+		return sqlSession.selectList("mypageSQL.getPaymentList", id);
+	}
+	
+	@Override
+	public List<ShoppingDTO> getShoppingList(String id) {
+		return sqlSession.selectList("mypageSQL.getShoppingList", id);
+	}
+
+	@Override
+	public int countCoupon(String id) {
+		return sqlSession.selectOne("mypageSQL.countCoupon", id);
+	}
+
+	@Override
+	public int countPayment(String id) {
+		return sqlSession.selectOne("mypageSQL.countPayment", id);
+	}
+	
+	@Override
+	public int getOrderTotalA(String id) {
+		return sqlSession.selectOne("mypageSQL.getOrderTotalA", id);
+	}
+	
+	@Override
+	public List<PaymentDTO> getPaymentList2(Map<String, String> map) {
+		return sqlSession.selectList("mypageSQL.getPaymentList", map);
+	}
+	
+	@Override
+	public List<ShoppingDTO> getShoppingList2(Map<String, String> map) {
+		return sqlSession.selectList("mypageSQL.getShoppingList", map);
+	}
+
+	@Override
+	public PaymentDTO getPaymentDTO(String paymentCode) {
+		return sqlSession.selectOne("mypageSQL.getPaymentList3", paymentCode);
+	}
+
+	@Override
+	public ShoppingDTO getShoppingDTO(String paymentCode) {
+		return sqlSession.selectOne("mypageSQL.getShoppingList3", paymentCode);
+	}
+	@Override
+	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.insert("mypageSQL.mypageShpMngWrite1",mypageShipmentDTO);
+		
+	}
+
+	@Override
+	public List<MypageShipmentDTO> getShpMngList(String id) {
+		return sqlSession.selectList("mypageSQL.getShpMngList", id);
+	}
+
+	@Override
+	public MypageShipmentDTO getShpMngModify(String shipCode) {
+		return sqlSession.selectOne("mypageSQL.getShpMngModify", shipCode);
+	}
+
+	@Override
+	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.update("mypageSQL.updateShpMng", mypageShipmentDTO);
+		
+	}
+
+	@Override
+	public void deleteShpMng(String shipCode) {
+		sqlSession.delete("mypageSQL.deleteShpMng", shipCode);
+		
 	}
 
 }

@@ -16,4 +16,6 @@ public interface LoginDAO {
 
 	public void kakaoWrite(MemberDTO memberDTO);
 
+	public void loginTime(String id);
+
 }

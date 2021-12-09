@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MypageShipmentDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
 @Controller
@@ -33,6 +35,7 @@ public class MypageController {
 	private JavaMailSender mailSender;
 	@Autowired
     BCryptPasswordEncoder passwordEncoder;
+
 	
 	//마이페이지 메인 창
 	@GetMapping(value="/mypageMain")
@@ -217,5 +220,102 @@ public class MypageController {
 	@ResponseBody
 	public void deleteMyQnaView(@RequestParam int qnaCode) {
 		mypageService.deleteMyQnaView(qnaCode);
+	}
+	
+	//권영민
+		@GetMapping(value="/mypageShpMng")
+		public String mypageShpMng(Model model) {
+			model.addAttribute("display", "mypage/mypageShpMng.jsp");
+			return "/index";
+		}
+		
+		@PostMapping(value="/mypageShpMngWrite")
+		@ResponseBody
+		public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO,HttpSession session) {
+			String id = (String) session.getAttribute("memId");
+			
+			mypageShipmentDTO.setId(id);
+			if(mypageShipmentDTO.getBaseShip() != 1) {
+				mypageShipmentDTO.setBaseShip(0);
+				mypageService.mypageShpMngWrite(mypageShipmentDTO);
+			}else if(mypageShipmentDTO.getBaseShip() == 1) {
+				mypageService.mypageShpMngWrite1(mypageShipmentDTO);
+			}	
+		}
+
+	//배송상품 주문정보 불러오기
+	@PostMapping("/getPaymentInfo")
+	@ResponseBody
+	public JSONObject getPaymentInfo(HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getPaymentInfo(id);
+	}
+	
+	//전체 주문내역 창
+	@GetMapping("/mypageOrderList")
+	public String mypageOrderList(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("display", "mypage/mypageOrderList.jsp");
+		return "/index";
+	}
+	
+	//전체 주문내역 불러오기
+	@PostMapping("/getOrderList")
+	@ResponseBody
+	public JSONObject getOrderList(@RequestParam int pg, HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getOrderList(id, pg);
+	}
+	
+	//주문내역 상세 페이지
+	@GetMapping("/MyOrderView")
+	public String MyOrderView(@RequestParam String paymentCode, @RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("paymentCode", paymentCode);
+		model.addAttribute("display", "mypage/mypageMyOrderView.jsp");
+		return "/index";
+	}
+	
+	//주문내역 상세내용 불러오기
+	@PostMapping("/getMyOrderInfo")
+	@ResponseBody
+	public JSONObject getMyOrderInfo(@RequestParam String paymentCode) {
+		return mypageService.getMyOrderInfo(paymentCode);
+	}
+	@PostMapping(value="/getShpMngList")
+	@ResponseBody
+	public List<MypageShipmentDTO> getShpMngList(HttpSession session){
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getShpMngList(id);
+		
+	}
+	
+	@PostMapping(value="/getShpMngModify")
+	@ResponseBody
+	public MypageShipmentDTO getShpMngModify(@RequestParam String shipCode) {
+		return mypageService.getShpMngModify(shipCode);
+	}
+	
+	@GetMapping(value="/mypageShpMngModifyForm")
+	public String mypageShpMngModifyForm(@RequestParam String shipCode, Model model) {
+		model.addAttribute("shipCode", shipCode);
+		return "/mypage/mypageShpMngModifyForm";
+	}
+	
+	@GetMapping(value="/mypageShpMngWriteForm")
+	public String mypageShpMngWriteForm() {
+		return "/mypage/mypageShpMngWriteForm";
+	}
+	
+	@GetMapping(value="/updateShpMng")
+	@ResponseBody
+	public void updateShpMng(@RequestParam int shipCode, @ModelAttribute MypageShipmentDTO mypageShipmentDTO) {
+		mypageShipmentDTO.setShipCode(shipCode);
+		mypageService.updateShpMng(mypageShipmentDTO);
+	}
+	@GetMapping(value="/deleteShpMng")
+	@ResponseBody
+	public void deleteShpMng(@RequestParam String shipCode) {
+		mypageService.deleteShpMng(shipCode);
 	}
 }

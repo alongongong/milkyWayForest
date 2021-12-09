@@ -104,7 +104,6 @@ $(function(){
 					success: function(data) {
 						
 						$.each(data, function(index1, items){
-							console.log(index+" "+ index1+" "+items.commentContent)
 							$('#commentDiv'+index).append($('<p>',{
 								class: 'commentContent'
 							}).append($('<span>', {

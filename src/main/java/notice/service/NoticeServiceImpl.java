@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import comment.bean.CommentDTO;
 import notice.bean.EventBoardDTO;
 import notice.bean.FaqBoardDTO;
 import notice.bean.NoticeBoardDTO;
@@ -121,7 +122,6 @@ public class NoticeServiceImpl implements NoticeService {
 		map.put("endNum", endNum);
 		
 		int faqTotalA = noticeDAO.getFaqTotalA();
-		int faqTotalP = (faqTotalA - 1) / 7 + 1;
 		
 		boardPaging.setCurrentPage(pg);
 		boardPaging.setPageBlock(7);
@@ -147,9 +147,12 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public JSONObject noticeSearch(String search) {
-		
-		List<NoticeBoardDTO> list = noticeDAO.noticeSearch(search);
-		return null;
+	public List<NoticeBoardDTO> noticeSearch(String search) {
+		return noticeDAO.noticeSearch(search);
+	}
+
+	@Override
+	public List<CommentDTO> getQnaComment(int qnaCode) {
+		return noticeDAO.getQnaComment(qnaCode);
 	}
 }

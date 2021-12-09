@@ -31,10 +31,14 @@ $(function(){
 			$('#noticeContent').html(data.noticeContent);
 			
 			if(data.imgName != null) {
-				$('<p>').append($('<img>',{
+				$('<p>',{
+					align: 'center',
+					style: 'margin-top: 20px;'
+				}).append($('<img>',{
 					src: '/milkyWayForest/noticeImg/'+data.imgName,
 					alt: data.imgName,
-					width: '100%'
+					width: '70%',
+					align: 'center'
 				})).appendTo($('#noticeContent'));
 			}
 		},

@@ -4,7 +4,11 @@ create table milkyPayment (
   paymentMethod varchar(20),			-- 결제수단
   shipPay number,						-- 배송비
   deliveryInfo varchar(30),				-- 배송메모
-  payDate date default sysdate			-- 결제일자
+  payDate date default sysdate,			-- 결제일자
+  paymentSavedMoney number,				-- 사용적립금
+  newSavedMoney number,					-- 구매적립금
+  paymentCoupon	varchar(50),			-- 사용쿠폰
+  shipMemo varchar(300)
 );
 
 create sequence milkyPaymentSeq start with 10000 nocache nocycle;

@@ -58,7 +58,7 @@
 					<td>옵션</td>
 					<td>
 						
-						<select class="shoppingSelect">
+						<select class="shoppingSelect"  name="cartOption">
 							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
 							<!--  <option><span id="productOptionSpan2"></span></option>
 							<option><span id="productOptionSpan2"></span></option> -->
@@ -71,7 +71,7 @@
 					<td>구매수량</td>
 					<td>
 						<div class="length">
-							<input type="text" value="1" readonly>  
+							<input type="text" name="cartQty" value="1" readonly>  
 							<a href="#a" id="plus">증가</a>
 							<a href="#a" id="minus">감소</a>
 						</div>
@@ -205,13 +205,17 @@ $(function(){
 			
 			//인덱스가 0번일때의 옵션과 총가격
 			if(index==0) {
-			$('.shoppingSelect').append($('<option>' ,{text: items.productOption}));
+			$('.shoppingSelect').append($('<option>' ,{text: items.productOption, value:items.productOption })); //벨류가 실제로 넘겨주는값 텍스트는 눈에 보이는거
 			$('.total b').append($('<span>', {
 				id:'totalSpan',  
 				text:((items.productUnit)*parseInt($('.length input').val())).toLocaleString()
 			})); //이걸 안 넣으면 1개일때의 가격이 안나옴
 		    	
 			}
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 
 			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
 			$('#plus').click(function(){
@@ -239,56 +243,49 @@ $(function(){
 				}		
 			});//#minus
 			
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 		});//each
 		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
 			//alert('0');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(0) img').prop("src"));
+			$('.shoppingDetailImg li:not(0) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(1)').on("click", $('.shoppingDetailImg li:eq(1)'), function(){
 			//alert('1');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(1) img').prop("src"));
+			$('.shoppingDetailImg li:not(1) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(2)').on("click", $('.shoppingDetailImg li:eq(2)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(2) img').prop("src"));
+			$('.shoppingDetailImg li:not(2) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(3)').on("click", $('.shoppingDetailImg li:eq(3)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(3) img').prop("src"));
+			$('.shoppingDetailImg li:not(3) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(4)').on("click", $('.shoppingDetailImg li:eq(4)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(4) img').prop("src"));
+			$('.shoppingDetailImg li:not(4) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
 		});
 		$('.shoppingDetailImg li:eq(5)').on("click", $('.shoppingDetailImg li:eq(5)'), function(){
 			//alert('2');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(5) img').prop("src"));
+			$('.shoppingDetailImg li:not(5) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
-			$('.shoppingDetailImg li:eq(0) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(1) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(2) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(3) img').css('border', '1px solid silver');
-			$('.shoppingDetailImg li:eq(4) img').css('border', '1px solid silver');
 		});
+<<<<<<< HEAD
 	},
 		},
 		error: function(err) {
@@ -296,6 +293,102 @@ $(function(){
 		}
 	});	
 });
+=======
+
+		},
+
+		error: function(err) {
+			console.log(err);
+		}
+	});	//getShoppingDetail 에이작스
+	
+
+	//장바구니 버튼 클릭시
+	$('#cartBtn').click(function(){
+		if(${memId==null}) {
+			alert('로그인 해주세요');
+		location.href="/milkyWayForest/login/loginForm";
+		
+		}else{
+		
+		$.ajax({
+			url: '/milkyWayForest/shopping/productSelect',  
+			type: 'post',
+			data: 'productCode=${productCode}', //'id=${memId}',  
+			 
+			success : function(data) {  //알아서 자료형을 맞춰줌
+				console.log(JSON.stringify(data));
+				
+					
+					if(data !=0) {
+					alert("이미 장바구니에 있는 상품입니다.");
+				
+					}
+					else { 
+					
+						$.ajax({
+						url: '/milkyWayForest/cart/cartInsert',
+						type: 'post',
+						data: $('#shoppingDetailForm').serialize(),
+						
+						success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
+							if(confirm("장바구니로 이동하시겠습니까?")){
+							location.href= "/milkyWayForest/cart";
+							}
+						},
+	
+						error: function(err) {
+							console.log(err);
+						
+							}
+						});
+					
+				 
+				}
+				
+
+			},
+			error: function(err) {
+				console.log(err);
+			} 
+
+
+		});
+		}
+		
+	});//
+	
+	// 구매하기 버튼 눌렀을 때
+	$('#shoppingDetailForm #purchaseBtn').click(function(){
+	
+		if(${memId == null}) {
+			alert('로그인 해주세요');
+			location.href='/milkyWayForest/login/loginForm';
+		} else {
+			$.ajax({
+				url: '/milkyWayForest/payment/cartInsert',
+				type: 'post',
+				data: $('#shoppingDetailForm').serialize(),
+				success: function(data) {
+					// alert(data);
+					location.href='/milkyWayForest/payment?cartCode='+data;
+				},
+				error: function(err) {
+					console.log(err);
+				}
+				
+			});
+		}
+	});
+
+
+	
+	
+}); //큰 function
+
+
+
+>>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 </script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 #mypageMain,
 #mypageMyInfo,
+#mypageShpMngListForm, /* 배송지관리 */
 #mypageMyPost,
 #mypageMyQnaView,
 #updateMyQnaViewForm {
@@ -59,9 +60,12 @@
 /*********** 마이페이지 메인 ***********/
 #mypageMain #main-wrapper,
 #mypageMyInfo #main-wrapper,
+#mypageShpMngListForm #main-wrapper, /* 배송지관리 */
 #mypageMyPost #main-wrapper,
 #mypageMyQnaView #main-wrapper,
-#updateMyQnaViewForm #main-wrapper{
+#updateMyQnaViewForm #main-wrapper,
+#mypageOrderList #main-wrapper,
+#myOrderView #main-wrapper{
 	display: grid;
 	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
 	grid-auto-columns: minmax(250px, auto); /* 열(column)의 배치 */
@@ -76,17 +80,23 @@
 }
 #mypageMain #main-sideNav,
 #mypageMyInfo #main-sideNav,
+#mypageShpMngListForm #main-sideNav, /* 배송지관리 */
 #mypageMyPost #main-sideNav,
 #mypageMyQnaView #main-sideNav,
-#updateMyQnaViewForm #main-sideNav {
+#updateMyQnaViewForm #main-sideNav,
+#mypageOrderList #main-sideNav,
+#myOrderView #main-sideNav {
 	grid-column: 1;
 	grid-row: 1 / span 3;
 }
 #mypageMain #main-topNav,
 #mypageMyInfo #main-topNav,
+#mypageShpMngListForm #main-topNav, /* 배송지관리 */
 #mypageMyPost #main-topNav,
 #mypageMyQnaView #main-topNav,
-#updateMyQnaViewForm #main-topNav {
+#updateMyQnaViewForm #main-topNav,
+#mypageOrderList #main-topNav,
+#myOrderView #main-topNav  {
 	grid-column: 2;
 	grid-row: 1;
 }
@@ -103,6 +113,10 @@
 	width: 820px;
 	/* padding-left: 15px; */
 }
+#mypageMain .orderSubject:link { color: black; text-decoration: none; }
+#mypageMain .orderSubject:visited { color: black; text-decoration: none; }
+#mypageMain .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageMain .orderSubject:active { color: black; text-decoration: none; }
 
 /*********** 회원정보 비밀번호 확인 창 ***********/
 #mypagePwdForm #main-wrapper,
@@ -283,6 +297,7 @@
 	border-radius: 7px;
 	padding: 10px 15px;
 }
+
 /*********** 문의글 수정 ***********/
 #updateMyQnaViewForm #myQnaView-wrapper{
 	grid-column: 2;
@@ -307,3 +322,39 @@
 	width: 100%;
 }
 
+/*********** 전체주문내역 창 ***********/
+#mypageOrderList #myPayment-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageOrderList #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageOrderList #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageOrderList #myOrderPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+#mypageOrderList .orderSubject:link { color: black; text-decoration: none; }
+#mypageOrderList .orderSubject:visited { color: black; text-decoration: none; }
+#mypageOrderList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageOrderList .orderSubject:active { color: black; text-decoration: none; }
+
+/*********** 주문상세내역 창 ***********/
+#myOrderView #myOrderView-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
