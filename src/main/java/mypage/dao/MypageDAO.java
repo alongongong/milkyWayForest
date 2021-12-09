@@ -35,8 +35,6 @@ public interface MypageDAO {
 	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO);
 
 	public List<PaymentDTO> getPaymentList(String id);
-
-	public List<ShoppingDTO> getShoppingList(String id);
 	
 	public int countCoupon(String id);
 
@@ -46,11 +44,7 @@ public interface MypageDAO {
 
 	public List<PaymentDTO> getPaymentList2(Map<String, String> map);
 
-	public List<ShoppingDTO> getShoppingList2(Map<String, String> map);
-
-	public PaymentDTO getPaymentDTO(String paymentCode);
-
-	public ShoppingDTO getShoppingDTO(String paymentCode);
+	public PaymentDTO getMyOrderInfo(String paymentCode);
 	
 	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO);
 

@@ -35,7 +35,7 @@ public interface MypageService {
 
 	public JSONObject getOrderList(String id, int pg);
 
-	public JSONObject getMyOrderInfo(String paymentCode);
+	public PaymentDTO getMyOrderInfo(String paymentCode);
 	
 	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO);
 

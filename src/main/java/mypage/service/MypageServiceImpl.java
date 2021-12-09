@@ -111,13 +111,11 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public JSONObject getPaymentInfo(String id) {
 		List<PaymentDTO> paymentList = mypageDAO.getPaymentList(id);
-		List<ShoppingDTO> shoppingList = mypageDAO.getShoppingList(id);
 		int countCoupon = mypageDAO.countCoupon(id);
 		int countPayment = mypageDAO.countPayment(id);
 		
 		JSONObject json = new JSONObject();
 		json.put("paymentList", paymentList);
-		json.put("shoppingList", shoppingList);
 		json.put("countCoupon", countCoupon);
 		json.put("countPayment", countPayment);
 		
@@ -144,14 +142,11 @@ public class MypageServiceImpl implements MypageService {
 		boardPaging.makePagingHTML();
 
 		List<PaymentDTO> paymentList = mypageDAO.getPaymentList2(map);
-//		List<ShoppingDTO> shoppingList = mypageDAO.getShoppingList(id);
-		List<ShoppingDTO> shoppingList = mypageDAO.getShoppingList2(map);
 		int countCoupon = mypageDAO.countCoupon(id);
 		int countPayment = mypageDAO.countPayment(id);
 		
 		JSONObject json = new JSONObject();
 		json.put("paymentList", paymentList);
-		json.put("shoppingList", shoppingList);
 		json.put("countCoupon", countCoupon);
 		json.put("countPayment", countPayment);
 		json.put("boardPaging", boardPaging.getPagingHTML().toString());
@@ -161,15 +156,8 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public JSONObject getMyOrderInfo(String paymentCode) {
-		PaymentDTO paymentDTO = mypageDAO.getPaymentDTO(paymentCode);
-//		ShoppingDTO shoppingDTO = mypageDAO.getShoppingDTO(paymentCode);
-		
-		JSONObject json = new JSONObject();
-		json.put("paymentDTO", paymentDTO);
-//		json.put("shoppingDTO", shoppingDTO);
-		
-		return json;
+	public PaymentDTO getMyOrderInfo(String paymentCode) {
+		return mypageDAO.getMyOrderInfo(paymentCode);
 	}
 	
 	@Override

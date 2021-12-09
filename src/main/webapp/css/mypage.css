@@ -358,3 +358,7 @@
 	width: 820px;
 	margin-top: 60px;
 }
+#myOrderView #buttonWrap{
+	text-align: end;
+	margin-bottom: 20px;
+}
