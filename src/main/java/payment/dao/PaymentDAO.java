@@ -23,4 +23,10 @@ public interface PaymentDAO {
 
 	public String payment2();
 
+	public void payment3(PaymentDTO paymentDTO, String[] cartCode);
+
+	public void UpdateMemberGrade(String id);
+
+	public PaymentDTO getPayInfo(String paymentCode);
+
 }

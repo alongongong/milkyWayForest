@@ -32,7 +32,8 @@ public class PaymentController {
 
 	//결제 성공 페이지
 	@GetMapping("/payment/paySuccess")
-	public String paySuccess(Model model) {
+	public String paySuccess(@RequestParam String paymentCode, Model model) {
+		model.addAttribute("paymentCode", paymentCode);
 		model.addAttribute("display", "payment/paySuccess.jsp");
 		return "/index";
 	}
@@ -53,9 +54,13 @@ public class PaymentController {
 	@PostMapping("/payment/payment")
 	@ResponseBody
 	public String payment(@ModelAttribute PaymentDTO paymentDTO, @RequestParam String[] cartCode, HttpSession session) {
-		System.out.println(cartCode);
 		paymentDTO.setId(session.getAttribute("memId")+"");
 		return paymentService.payment(paymentDTO, cartCode);
 	}
 	
+	@PostMapping("/payment/getPayInfo")
+	@ResponseBody
+	public PaymentDTO getPayInfo(@RequestParam String paymentCode) {
+		return paymentService.getPayInfo(paymentCode);
+	}
 }

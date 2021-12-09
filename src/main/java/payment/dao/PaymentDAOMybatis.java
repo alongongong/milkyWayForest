@@ -1,7 +1,9 @@
 package payment.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import cart.bean.CartDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MypageShipmentDTO;
 import payment.bean.PaymentDTO;
+import product.bean.ProductDTO;
 
 @Transactional
 @Repository
@@ -47,15 +50,12 @@ public class PaymentDAOMybatis implements PaymentDAO {
 
 	@Override
 	public void payment(PaymentDTO paymentDTO) {
-		System.out.println("1");
 		sqlSession.insert("paymentSQL.payment", paymentDTO);
-		System.out.println("2");
 		sqlSession.update("paymentSQL.updateSavedMoney", paymentDTO);
 	}
 
 	@Override
 	public void payment1(String[] cartCode) {
-		System.out.println("3");
 		for(String cartCode1 : cartCode) {
 			sqlSession.delete("paymentSQL.payCartDelete", cartCode1);
 		}
@@ -63,7 +63,45 @@ public class PaymentDAOMybatis implements PaymentDAO {
 
 	@Override
 	public String payment2() {
-		System.out.println("4");
 		return sqlSession.selectOne("paymentSQL.getPaymentCode");
+	}
+
+	@Override
+	public void payment3(PaymentDTO paymentDTO, String[] cartCode) {
+		for(int i=0; i<cartCode.length; i++) {
+			CartDTO cartDTO = sqlSession.selectOne("paymentSQL.getProductInfo", cartCode[i]);
+			ProductDTO productDTO = sqlSession.selectOne("paymentSQL.getProductInfo2", cartDTO.getProductCode());
+
+			paymentDTO.setProductCode(cartDTO.getProductCode());
+			paymentDTO.setProductOption(cartDTO.getCartOption());
+			paymentDTO.setPayQty(cartDTO.getCartQty());
+			paymentDTO.setPayPrice(productDTO.getProductUnit());
+			paymentDTO.setPayRate(productDTO.getProductRate());
+			
+			sqlSession.insert("paymentSQL.payment2", paymentDTO);
+		}
+	}
+
+	@Override
+	public void UpdateMemberGrade(String id) {
+		// 전체 주문 금액
+		int totalPayMoney = sqlSession.selectOne("paymentSQL.getMemberGrade", id);
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		
+		if(totalPayMoney >= 70000) {
+			map.put("grade", "green");
+			sqlSession.update("paymentSQL.updateMemberGrade", map);
+		} else if(totalPayMoney >= 150000) {
+			map.put("grade", "gold");
+			sqlSession.update("paymentSQL.updateMemberGrade", map);
+		}
+		
+	}
+
+	@Override
+	public PaymentDTO getPayInfo(String paymentCode) {
+		return sqlSession.selectOne("paymentSQL.getPayInfo", paymentCode);
 	}
 }

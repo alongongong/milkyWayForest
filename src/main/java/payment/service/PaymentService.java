@@ -13,4 +13,6 @@ public interface PaymentService {
 
 	public String payment(PaymentDTO paymentDTO, String[] cartCode);
 
+	public PaymentDTO getPayInfo(String paymentCode);
+
 }

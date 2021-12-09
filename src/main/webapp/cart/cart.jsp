@@ -16,6 +16,7 @@
 			
 			<%--  <input type ="hidden" name="id" id="id" value="${memid}">  --%>
 			<!-- <input type="hidden" name="id"  id="id" value="yun"> -->
+			<input type="hidden" id="newSavedMoney" name="newSavedMoney">
 			
 			<table id="cartTable" class="table">
 				<tr>
@@ -38,7 +39,7 @@
 				총 할인금액 <span id="totalSalePrice"></span><br>
 				배송비 <span id="shipPay"></span>
 					<input type="hidden" id="shipPay1" name="shipPay"><br>
-				<!-- 배송비<span id="shipPay"></span> -->
+			
 			</div> <!-- cartOrderDetail -->
 			<div id="cartOrderTotal"> 
 			

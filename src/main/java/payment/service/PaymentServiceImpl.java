@@ -39,9 +39,15 @@ public class PaymentServiceImpl implements PaymentService {
 	@Override
 	public String payment(PaymentDTO paymentDTO, String[] cartCode) {
 		paymentDAO.payment(paymentDTO);
+		paymentDAO.payment3(paymentDTO, cartCode);
 		paymentDAO.payment1(cartCode);
+		paymentDAO.UpdateMemberGrade(paymentDTO.getId());
 		return paymentDAO.payment2();
+	}
 
+	@Override
+	public PaymentDTO getPayInfo(String paymentCode) {
+		return paymentDAO.getPayInfo(paymentCode);
 	}
 
 }
