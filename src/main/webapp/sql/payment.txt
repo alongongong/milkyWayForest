@@ -7,7 +7,8 @@ create table milkyPayment (
   payDate date default sysdate,			-- 결제일자
   paymentSavedMoney number,				-- 사용적립금
   newSavedMoney number,					-- 구매적립금
-  paymentCoupon	varchar(50)				-- 사용쿠폰
+  paymentCoupon	varchar(50),			-- 사용쿠폰
+  shipMemo varchar(300)
 );
 
 create sequence milkyPaymentSeq start with 10000 nocache nocycle;
