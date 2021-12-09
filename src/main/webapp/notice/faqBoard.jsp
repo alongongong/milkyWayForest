@@ -13,6 +13,14 @@
 		</div>
 	</div>
 	<br>
+	<div id="faqBoardSearchDiv">
+		<div>
+			<input type="text" id="faqBoardSearch" placeholder="검색어를 입력해 주세요." size="35">
+			<input type="button" id="faqBoardSearchBtn" class="btn" value="검색">
+		</div>
+	</div>
+	<br>
+	<br>
 	<table id="faqBoardTable" class="table">
 		<tr>
 			<th width="120" style="text-align:center;">글번호</th>

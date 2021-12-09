@@ -14,9 +14,9 @@
 		
 		<div id="coffeeEtcListNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a> > 
-			<a href="">상품</a> > 
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/shopping">Shopping</a> > 
+			<a href="/milkyWayForest/shopping/product">상품</a> > 
 			<a href="">커피용품</a>
 		</div>
 		</div>

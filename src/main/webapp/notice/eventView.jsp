@@ -45,7 +45,8 @@ $(function(){
 				}
 				$('<img>',{
 					src: '/milkyWayForest/noticeImg/'+items.imgName,
-					alt: '이미지'+index
+					alt: '이미지'+index,
+					style: 'margin: 0 auto;'
 				}).appendTo($('#eventViewContent > div'));
 			});
 		},

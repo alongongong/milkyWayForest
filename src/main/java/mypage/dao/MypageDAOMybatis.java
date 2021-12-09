@@ -81,11 +81,6 @@ public class MypageDAOMybatis implements MypageDAO {
 	public List<PaymentDTO> getPaymentList(String id) {
 		return sqlSession.selectList("mypageSQL.getPaymentList", id);
 	}
-	
-	@Override
-	public List<ShoppingDTO> getShoppingList(String id) {
-		return sqlSession.selectList("mypageSQL.getShoppingList", id);
-	}
 
 	@Override
 	public int countCoupon(String id) {
@@ -108,18 +103,36 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 	
 	@Override
-	public List<ShoppingDTO> getShoppingList2(Map<String, String> map) {
-		return sqlSession.selectList("mypageSQL.getShoppingList", map);
+	public PaymentDTO getMyOrderInfo(String paymentCode) {
+		return sqlSession.selectOne("mypageSQL.getMyOrderInfo", paymentCode);
 	}
 
 	@Override
-	public PaymentDTO getPaymentDTO(String paymentCode) {
-		return sqlSession.selectOne("mypageSQL.getPaymentList3", paymentCode);
+	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.insert("mypageSQL.mypageShpMngWrite1",mypageShipmentDTO);
+		
 	}
 
 	@Override
-	public ShoppingDTO getShoppingDTO(String paymentCode) {
-		return sqlSession.selectOne("mypageSQL.getShoppingList3", paymentCode);
+	public List<MypageShipmentDTO> getShpMngList(String id) {
+		return sqlSession.selectList("mypageSQL.getShpMngList", id);
+	}
+
+	@Override
+	public MypageShipmentDTO getShpMngModify(String shipCode) {
+		return sqlSession.selectOne("mypageSQL.getShpMngModify", shipCode);
+	}
+
+	@Override
+	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO) {
+		sqlSession.update("mypageSQL.updateShpMng", mypageShipmentDTO);
+		
+	}
+
+	@Override
+	public void deleteShpMng(String shipCode) {
+		sqlSession.delete("mypageSQL.deleteShpMng", shipCode);
+		
 	}
 
 }

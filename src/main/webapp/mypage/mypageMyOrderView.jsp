@@ -13,23 +13,33 @@
 		<jsp:include page="mypageTopNav.jsp"/>	
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
-	<input type="hidden" id="paymentCode" name="paymentCode" value="${paymentCode }+''">
+	<input type="hidden" id="paymentCode" name="paymentCode" value="${paymentCode }">
 	<input type="hidden" id="pg" name="pg" value="${pg }">
 	
 	<div id="myOrderView-wrapper" class="item">
 		<div id="myOrderView1">
+			<div id="buttonWrap">
+				<input type="button" id="reorderBtn" class="btn btn-info" value="재주문">
+				<input type="button" id="orderCancleBtn" class="btn btn-info" value="주문취소">
+			</div>
 			<div class="navbar navbar-light alert-info">
 				<span class="navbar-brand mb-0 h1">주문 상세정보</span>			
 			</div>
 			<div>
-				<span>주문일자 <strong id="payDate"></strong></span>
-				<span>주문번호 <strong id="paymentCode"></strong></span>
+				<table class="table table-bordered">
+					<tr>
+						<td>주문일자</td>
+						<td id="payDate"></td>
+						<td>주문번호</td>
+						<td id="paymentCode"></td>
+					</tr>
+				</table>
 			</div>
 			<div>
-				<table class="table">
+				<table class="table table-bordered">
 					<tr>
-						<td scope="col">상품주문번호</td>
-						<td scope="col">상품정보</td>
+						<td scope="col">상품번호</td>
+						<td scope="col">상품이름</td>
 						<td scope="col">상품금액(수량)</td>
 						<td scope="col">배송비</td>
 						<td scope="col">진행상태</td>
@@ -38,11 +48,11 @@
 						<td id="productCode"></td>
 						<td id="productName"></td>
 						<td>
-							<span id="payPrice"></span><br>
-							<span id="payQty"></span>
+							<span id="payPrice"></span>원<br>
+							<span id="payQty"></span>개
 						</td>
 						<td id="shipPay"></td>
-						<td id=""></td>
+						<td id="deliveryInfo"></td>
 					</tr>
 				</table>
 			</div>
@@ -54,10 +64,28 @@
 			</div>
 			
 			<div id="paymentTotal">
-				<span>총 상품금액<strong id="totalProductPrice"></strong></span><br>
-				<span>총 할인금액<strong id="totalSalePrice"></strong></span><br>
-				<span>배송비<strong id="shipPay"></strong></span><br>
-				<span>총 결제금액<strong id="totalPayPrice"></strong></span>
+				<table class="table table-bordered">
+					<tr>
+						<td>총 상품금액</td>
+						<td id="totalProductPrice"></td>
+					</tr>
+					<tr>
+						<td>총 할인금액</td>
+						<td id="totalSalePrice"></td>
+					</tr>
+					<tr>
+						<td>배송비</td>
+						<td id="shipPay"></td>
+					</tr>
+					<tr>
+						<td>총 결제금액</td>
+						<td id="totalPayPrice"></td>
+					</tr>
+					<tr>
+						<td>적립금</td>
+						<td id="savedMoney"></td>
+					</tr>
+				</table>
 			</div>
 		</div>
 		
@@ -66,7 +94,7 @@
 				<span class="navbar-brand mb-0 h1">배송지 정보</span>			
 			</div>
 			<div>
-				<table class="table">
+				<table class="table table-bordered">
 					<tr>
 						<td>수령인</td>
 						<td id="payShipReceiver"></td>
@@ -84,7 +112,7 @@
 					</tr>
 					<tr>
 						<td>배송메모</td>
-						<td id="deliveryInfo"></td>
+						<td id="shipMemo"></td>
 					</tr>
 				</table>
 			</div>
@@ -103,33 +131,39 @@ $(function(){
 		type: 'post',
 		success: function(data){
 			console.log(JSON.stringify(data));
-			if(data.paymentDTO != ''){
-				$('#myOrderView1 #payDate').html(data.paymentDTO.payDate);
-				$('#myOrderView1 #paymentCode').html(data.paymentDTO.paymentCode);
-				$('#myOrderView1 #productCode').html(data.paymentDTO.productCode);
-				$('#myOrderView1 #payPrice').html(data.paymentDTO.payDate);
-				$('#myOrderView1 #payQty').html(data.paymentDTO.payQty);
-				$('#myOrderView1 #shipPay').html(data.paymentDTO.shipPay);
+			if(data != ''){
+				$('#myOrderView1 #payDate').html(data.payDate);
+				$('#myOrderView1 #paymentCode').html(data.paymentCode);
+				$('#myOrderView1 #productCode').html(data.productCode);
+				$('#myOrderView1 #productName').html(data.productName);
+				$('#myOrderView1 #payPrice').html(data.payPrice);
+				$('#myOrderView1 #payQty').html(data.payQty);
+				$('#myOrderView1 #shipPay').html(data.shipPay);
+				$('#myOrderView1 #deliveryInfo').html(data.deliveryInfo);
 				
-				var payQty = data.paymentDTO.payQty*1;
-				var payPrice = data.paymentDTO.payPrice*1;
-				var payRate = data.paymentDTO.payRate*1;
-				var salePrice = payQty*payPrice*(payRate/100);
-				var paidTotal = payQty*payPrice*(1-payRate/100);
+				var payQty = data.payQty*1;
+				var payPrice = data.payPrice*1;
+				var payRate = data.payRate*1;
+				var shipPay = data.shipPay*1;
 				
-				$('#myOrderView2 #totalProductPrice').html(payQty*payPrice);
-				$('#myOrderView2 #totalSalePrice').html(salePrice);
-				$('#myOrderView2 #shipPay').html(data.paymentDTO.shipPay);
-				$('#myOrderView2 #totalPayPrice').html(paidTotal);
+				var totalProductPrice = payQty*payPrice;
+				var totalSalePrice = payQty*payPrice*payRate/100;
+				var totalPayPrice = payQty*payPrice*(1-payRate/100) + shipPay;
 				
-				var payShipTel = data.paymentDTO.payShipTel1+"-"+data.paymentDTO.payShipTel2+"-"+data.paymentDTO.payShipTel3;
-				var payShipAddr = data.paymentDTO.payShipAddr1+" "+data.paymentDTO.payShipAddr2
+				$('#myOrderView2 #totalProductPrice').html(totalProductPrice);
+				$('#myOrderView2 #totalSalePrice').html(totalSalePrice);
+				$('#myOrderView2 #shipPay').html(data.shipPay);
+				$('#myOrderView2 #totalPayPrice').html(totalPayPrice);
+				$('#myOrderView2 #savedMoney').html(data.paymentSavedMoney);
 				
-				$('#myOrderView3 #payShipReceiver').html(data.paymentDTO.payShipReceiver);
+				var payShipTel = data.payShipTel1+"-"+data.payShipTel2+"-"+data.payShipTel3;
+				var payShipAddr = data.payShipAddr1+" "+data.payShipAddr2
+				
+				$('#myOrderView3 #payShipReceiver').html(data.payShipReceiver);
 				$('#myOrderView3 #payShipTel').html(payShipTel);
-				$('#myOrderView3 #payShipZipcode').html(data.paymentDTO.payShipReceiver);
+				$('#myOrderView3 #payShipZipcode').html(data.payShipReceiver);
 				$('#myOrderView3 #payShipAddr').html(payShipAddr);
-				$('#myOrderView3 #deliveryInfo').html(data.paymentDTO.deliveryInfo);
+				$('#myOrderView3 #shipMemo').html(data.shipMemo);
 			}	
 
 		},

@@ -13,8 +13,8 @@
 <h1>상품</h1>
 	<div id="productNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a> > 
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/shopping">Shopping</a> > 
 			<a href="">상품</a>	
 		</div>
 	</div>

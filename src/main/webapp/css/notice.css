@@ -1,9 +1,10 @@
 @charset "UTF-8";
 /* 게시판 공통 사항 */
 #eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #qnaBoardForm {
-	width: 70%;	
+	width: 60%;	
 	margin: 0 auto;
 	padding: 0;
+	font-size: 14px;
 }
 #eventBoardForm legend, #noticeBoardViewForm legend, #eventViewForm legend, #faqBoardForm legend, #noticeBoardForm legend, #qnaBoardForm legend {
 	font-size: 23pt;
@@ -74,7 +75,7 @@ width: 70%;
 
 /* 공지사항 글내용 */
 #noticeBoardViewForm {
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
 }
 #noticeBoardViewForm #noticeSubject {
@@ -122,12 +123,11 @@ width: 70%;
 
 #eventBoardForm #eventBoardNowBody, #eventBoardForm #eventBoardEndBody {
 	display: grid;
-	/* grid-template-row: minmax(100px, auto); */
 	grid-template-columns: 23% 23% 23% 23%;
-	column-gap: 2%;
+	grid-column-gap: 2%;
 	row-gap: 3%;
-	margin-top: 20px;
 	width: 102%;
+	margin: 20px auto;
 }
 #eventBoardForm .endEventA {
 	overflow: hidden;
@@ -173,7 +173,7 @@ width: 70%;
 	font-weight: normal;
 }
 #eventViewForm #eventViewTable td {
-	padding: 30px 10px;
+	padding: 30px 0;
 }
 #eventViewForm #eventViewContent img {
 	width: 100%;
@@ -195,7 +195,7 @@ width: 70%;
 
 /* 문의 게시판 */
 #qnaBoardWriteDiv {
-	width: 80%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -259,4 +259,25 @@ width: 70%;
 }
 #faqBoardForm .faqContent {
 	visibility: visible;
+}
+#faqBoardForm #faqBoardSearchDiv {
+	background: #eee;
+	height: 80px;
+}
+#faqBoardForm #faqBoardSearchDiv div {
+	float: right;
+	padding-right: 30px;
+	margin-top: 20px;
+}
+#faqBoardForm #faqBoardSearchDiv #faqBoardSearch {
+	border: 1px solid #aaa;
+	height: 40px;
+	margin-right: 5px;
+}
+#faqBoardForm #faqBoardSearchDiv #faqBoardSearchBtn {
+	height: 40px;
+	padding: 5px 20px;
+	margin-bottom: 5px;
+	background: #154520;
+	color: white;
 }

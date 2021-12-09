@@ -61,12 +61,22 @@ $(function(){
 		success: function(data){
 			console.log(JSON.stringify(data));
 			$('#memberGrade').html(data.memberGrade);	
-			$('#myInfoPhoto').append($('<img>',{
-				src: '/milkyWayForest/image/'+data.memberGrade+'.png',
-				alt: data.memberGrade,
-				class: 'card-img rounded float-left'
-			}));
 			
+			if(data.memberGrade == 'welcome'){
+				$('#myInfoPhoto').append($('<img>',{
+					alt: data.memberGrade,
+					class: 'card-img rounded float-left',
+					src: '/milkyWayForest/image/'+data.memberGrade+'.png'
+				}));
+				
+			}else{
+				$('#myInfoPhoto').append($('<img>',{
+					alt: data.memberGrade,
+					class: 'card-img rounded float-left',
+					src: '/milkyWayForest/image/'+data.memberGrade+'.PNG'
+				}));
+			}
+
 			var savedMoney = data.savedMoney.toLocaleString();
 			$('#savedMoney').html(savedMoney);
 		},

@@ -31,4 +31,5 @@ public class PaymentDTO {
 	private String payShipAddr2;
 	private String shipMemo;
 	private String payDate;
+	private String productImageName;
 }
