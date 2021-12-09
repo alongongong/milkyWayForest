@@ -72,4 +72,12 @@
 				in (select max(substr(paymentcode,13)) from milkypayment)
 	</select>
 	
+	<select id="getMemberGrade" parameterType="String">
+		select sum(payprice*payqty*(100-payrate)/100) from milkypaymentoption
+			join milkypayment using(paymentcode) where id=#{id}
+	</select>
+	
+	<update id="updateMemberGrade" parameterType="java.util.Map">
+		update milkymember set membergrade=#{grade} where id=#{id}
+	</update>
 </mapper>

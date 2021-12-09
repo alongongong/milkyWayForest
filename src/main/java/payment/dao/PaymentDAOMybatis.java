@@ -1,7 +1,9 @@
 package payment.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +82,19 @@ public class PaymentDAOMybatis implements PaymentDAO {
 
 	@Override
 	public void UpdateMemberGrade(String id) {
+		// 전체 주문 금액
+		int totalPayMoney = sqlSession.selectOne("paymentSQL.getMemberGrade", id);
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		
+		if(totalPayMoney >= 70000) {
+			map.put("grade", "green");
+			sqlSession.update("paymentSQL.updateMemberGrade", map);
+		} else if(totalPayMoney >= 150000) {
+			map.put("grade", "gold");
+			sqlSession.update("paymentSQL.updateMemberGrade", map);
+		}
 		
 	}
 }
