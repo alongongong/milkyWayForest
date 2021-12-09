@@ -13,7 +13,7 @@
 	    <a class="nav-link active alert-link" href="#">주문/배송조회</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link alert-link" href="#">전체 주문내역</a>
+	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageOrderList?pg=1">전체 주문내역</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link alert-link" href="#">주문취소/교환/반품내역</a>

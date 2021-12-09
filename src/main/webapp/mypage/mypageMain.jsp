@@ -36,15 +36,14 @@
 	
 	<div id="myPayment-wrapper" class="item">
 		<div id="myPayment-title" class="navbar navbar-light alert-info">
-			<span class="navbar-brand mb-0 h1">배송상품 주문정보 (6개월 내 최근 3건)</span>
+			<span class="navbar-brand mb-0 h1">배송상품 주문정보 (최근 3건)</span>
 		</div>
 		
 		<div id="myPayment-state">
-			<table class="table table-bordered">
+			<table class="table table-bordered" id="myPaymentTable">
 				<thead>
 					<tr>
 						<td scope="col">주문번호</td>
-						<td scope="col">이미지</td>
 						<td scope="col">상품정보</td>
 						<td scope="col">수량</td>
 						<td scope="col">상품금액</td>
@@ -61,3 +60,66 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	//배송상품 주문정보
+	$.ajax({
+		url: '/milkyWayForest/mypage/getPaymentInfo',
+		type: 'post',
+		success: function(data){
+			console.log(JSON.stringify(data));
+			if(data.paymentList == ''){
+				$('<tr>').append($('<td>',{
+					text: '주문정보가 존재하지 않습니다',
+					colspan: '7',
+					align: 'center'
+				})).appendTo($('#myPaymentTable'));
+				
+			}else{
+				$.each(data.paymentList, function(index, items) {
+					if(index <3){
+						$('<tr>').append($('<td>',{
+						}).append($('<a>',{
+							id: 'paymentCode',
+							text: items.paymentCode,
+							class: 'orderSubject',
+							//href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode+'&pg='+data.pg
+							
+						}))).append($('<td>',{
+							id: 'productCode',
+							text: items.productCode
+							
+						})).append($('<td>',{
+							id: 'payQty',
+							text: items.payQty.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'payPrice',
+							text: items.payPrice.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'shipPay',
+							text: items.shipPay.toLocaleString()
+							
+						})).append($('<td>',{
+							id: '',
+							text: ''
+							
+						})).append($('<td>',{
+							id: '',
+							text: ''
+						})).appendTo($('#myPaymentTable'));
+						
+					}
+					
+				});
+				
+			}//if
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+</script>

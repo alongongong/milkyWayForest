@@ -23,6 +23,7 @@ import member.bean.MemberDTO;
 import mypage.bean.MypageShipmentDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
 @Controller
@@ -230,7 +231,7 @@ public class MypageController {
 	
 	@PostMapping(value="/mypageShpMngWrite")
 	@ResponseBody
-	public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO,HttpSession session) {
+	public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO, HttpSession session) {
 		String id = (String) session.getAttribute("memId");
 		
 		mypageShipmentDTO.setId(id);
@@ -238,5 +239,45 @@ public class MypageController {
 			mypageShipmentDTO.setBaseShip(0);
 		}
 		mypageService.mypageShpMngWrite(mypageShipmentDTO);
+	}
+
+	//배송상품 주문정보 불러오기
+	@PostMapping("/getPaymentInfo")
+	@ResponseBody
+	public JSONObject getPaymentInfo(HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getPaymentInfo(id);
+	}
+	
+	//전체 주문내역 창
+	@GetMapping("/mypageOrderList")
+	public String mypageOrderList(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("display", "mypage/mypageOrderList.jsp");
+		return "/index";
+	}
+	
+	//전체 주문내역 불러오기
+	@PostMapping("/getOrderList")
+	@ResponseBody
+	public JSONObject getOrderList(@RequestParam int pg, HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getOrderList(id, pg);
+	}
+	
+	//주문내역 상세 페이지
+	@GetMapping("/MyOrderView")
+	public String MyOrderView(@RequestParam String paymentCode, @RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("paymentCode", paymentCode);
+		model.addAttribute("display", "mypage/mypageMyOrderView.jsp");
+		return "/index";
+	}
+	
+	//주문내역 상세내용 불러오기
+	@PostMapping("/getMyOrderInfo")
+	@ResponseBody
+	public JSONObject getMyOrderInfo(@RequestParam String paymentCode) {
+		return mypageService.getMyOrderInfo(paymentCode);
 	}
 }
