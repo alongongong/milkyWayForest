@@ -1,22 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>보온병</title>
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
-</head>
-<body>
 <form id="thermosListForm" name="thermosListForm">
 	<section id="content_box">
 		<h1>보온병 전체상품</h1>
 		
 		<div id="thermosListNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a> > 
-			<a href="">상품</a> > 
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/shopping">Shopping</a> > 
+			<a href="/milkyWayForest/shopping/product">상품</a> > 
 			<a href="">보온병</a>
 		</div>
 		</div>

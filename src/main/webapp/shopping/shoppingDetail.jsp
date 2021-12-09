@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>상세페이지</title>
 <link rel="stylesheet" href="/milkyWayForest/css/shopping.css">
-</head>
-<body>
+
 <form id="shoppingDetailForm" name="shoppingDetailForm">
 	<input type ="hidden" name="productCode" id="productCode" value ="${productCode}">
 	
@@ -16,41 +10,56 @@
 		
 		<div id="shoppingDetailNav">
 			<div>
-				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-				<a href="">Menu</a> > 
-				<a href="">원두/차</a> > 
+				<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+				<a href="/milkyWayForest/shopping">Shopping</a> > 
+				<a href="/milkyWayForest/shopping/beanNTea">원두/차</a> > 
 				<a href="">원두</a>
 			</div>
 		</div>
-		
-		
+
 	<div class="productView">
-			<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
+		
+		<div class="shoppingDetailImg items">
+			<img alt="B001" id="bigImg">
+			<ul class="imgList">
+				<li class="on">
+					<div class="imgListBorder">
+					<a href="#a">
+					<img id="img1" alt="B001">
+					</a>
+					</div>
+				</li>
+				<!-- 에이작스에서 li 추가해주기 사진이 있을때만 추가하는걸로 바꿔줌! -->
+			</ul>
+		</div>
+		
+		<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
+		<div id="detailTableDiv" class="items">
 			<table id="detailTable">
 			
 				<tr>
-					<td id="productKorName" colspan="2">
-					<span id="korsubjectSpan"></span>
+					<td id="productKorName" colspan="2" style="padding-top: 0;">
+						<span id="korsubjectSpan"></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td id="productEngName" colspan="2">
-					<span id="engsubjectSpan"></span>
+						<span id="engsubjectSpan"></span>
 					</td>
 				</tr>
 				
 				
 				<tr>
-					<td colspan="2">
-					<span id="productSmallinfoSpan"></span>
+					<td colspan="2" style="padding: 20px 0;">
+						<span id="productSmallinfoSpan"></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td>가격</td>
 					<td class="price">
-					<b><span id="productpriceSpan"></span></b>원
+						<b><span id="productpriceSpan"></span></b>원
 					</td>
 				</tr>
 				
@@ -59,7 +68,7 @@
 					<td>
 						
 						<select class="shoppingSelect"  name="cartOption">
-							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
+							<option> ------------------ 옵션 ------------------ &nbsp; </option>
 							<!--  <option><span id="productOptionSpan2"></span></option>
 							<option><span id="productOptionSpan2"></span></option> -->
 						</select>
@@ -92,29 +101,15 @@
 					</td>
 				</tr>
 			</table>
+		</div>
 		
-				
-			<div class="shoppingDetailImg">
-				<img alt="B001" id="bigImg">
-					<ul class="imgList">
-						<li class="on">
-							<div class="imgListBorder">
-							<a href="#a">
-							<img id="img1" alt="B001">
-							</a>
-							</div>
-						</li>
-						<!-- 에이작스에서 li 추가해주기 사진이 있을때만 추가하는걸로 바꿔줌! -->
-					</ul>
-			</div>
-			
-			<div class="btnDiv">
-				<input type="button" id="wishListBtn" value="찜하기"> 
-				<input type="button" id="cartBtn" value="장바구니"> 
-				<input type="button" id="purchaseBtn" value="구매하기">
-					<!-- <a href="#a">장바구니</a>
-					<a href="#a">구매하기</a> -->
-			</div>
+		<div class="btnDiv items">
+			<input type="button" id="wishListBtn" value="찜하기"> 
+			<input type="button" id="cartBtn" value="장바구니"> 
+			<input type="button" id="purchaseBtn" value="구매하기">
+				<!-- <a href="#a">장바구니</a>
+				<a href="#a">구매하기</a> -->
+		</div>
 			
 	</div>
 	
@@ -126,7 +121,6 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/milkyWayForest/js/shopping.js"></script>
 <script type="text/javascript"> //온로드할때 바로 이 부분이 실행되어야 해서 디테일jsp로 옮겨줌
 $(function(){
 	$.ajax({
@@ -216,10 +210,6 @@ $(function(){
 			})); //이걸 안 넣으면 1개일때의 가격이 안나옴
 		    	
 			}
-<<<<<<< HEAD
-=======
-
->>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 
 			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
 			$('#plus').click(function(){
@@ -247,10 +237,7 @@ $(function(){
 				}		
 			});//#minus
 			
-<<<<<<< HEAD
-=======
 
->>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 		});//each
 		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
@@ -289,15 +276,6 @@ $(function(){
 			$('.shoppingDetailImg li:not(5) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
 		});
-<<<<<<< HEAD
-	},
-		},
-		error: function(err) {
-			console.log(err);
-		}
-	});	
-});
-=======
 
 		},
 
@@ -309,21 +287,23 @@ $(function(){
 
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
-		if(${memId==null}) {
+		if($('.shoppingSelect option:eq(0)')) {
+			alert('상품 옵션을 선택해주세요.');
+		} else if(${memId==null}) {
 			alert('로그인 해주세요');
 		location.href="/milkyWayForest/login/loginForm";
 		
 		}else{
 		
-		$.ajax({
-			url: '/milkyWayForest/shopping/productSelect',  
-			type: 'post',
-			data: 'productCode=${productCode}', //'id=${memId}',  
-			 
-			success : function(data) {  //알아서 자료형을 맞춰줌
-				console.log(JSON.stringify(data));
-				
+			$.ajax({
+				url: '/milkyWayForest/shopping/productSelect',  
+				type: 'post',
+				data: 'productCode=${productCode}', //'id=${memId}',  
+				 
+				success : function(data) {  //알아서 자료형을 맞춰줌
+					console.log(JSON.stringify(data));
 					
+						
 					if(data !=0) {
 					alert("이미 장바구니에 있는 상품입니다.");
 				
@@ -346,53 +326,62 @@ $(function(){
 						
 							}
 						});
-					
-				 
-				}
-				
-
-			},
-			error: function(err) {
-				console.log(err);
-			} 
-
-
-		});
+	
+					}
+	
+				},
+				error: function(err) {
+					console.log(err);
+				} 
+	
+			});
 		}
 		
 	});//
 	
 	// 구매하기 버튼 눌렀을 때
 	$('#shoppingDetailForm #purchaseBtn').click(function(){
-	
-		if(${memId == null}) {
+		if($('.shoppingSelect option:eq(0)')) {
+			alert('상품 옵션을 선택해주세요.');
+		} else if(${memId == null}) {
 			alert('로그인 해주세요');
 			location.href='/milkyWayForest/login/loginForm';
 		} else {
 			$.ajax({
-				url: '/milkyWayForest/payment/cartInsert',
+				url: '/milkyWayForest/shopping/productSelect',  
 				type: 'post',
-				data: $('#shoppingDetailForm').serialize(),
-				success: function(data) {
-					// alert(data);
-					location.href='/milkyWayForest/payment?cartCode='+data;
+				data: 'productCode=${productCode}', //'id=${memId}',  
+				 
+				success : function(data) {  //알아서 자료형을 맞춰줌
+
+					if(data !=0) {
+					alert("이미 장바구니에 있는 상품입니다.");
+				
+					}
+					else { 
+						$.ajax({
+							url: '/milkyWayForest/payment/cartInsert',
+							type: 'post',
+							data: $('#shoppingDetailForm').serialize(),
+							success: function(data) {
+								// alert(data);
+								location.href='/milkyWayForest/payment?cartCode='+data;
+							},
+							error: function(err) {
+								console.log(err);
+							}
+						});
+						
+					}
 				},
 				error: function(err) {
 					console.log(err);
 				}
-				
 			});
 		}
 	});
 
 
-	
-	
 }); //큰 function
 
-
-
->>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 </script>
-</body>
-</html>

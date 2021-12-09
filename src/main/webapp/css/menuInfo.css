@@ -19,7 +19,7 @@
 
 /* 메뉴소개 */
 #menuInfoForm {
-	width: 65%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -30,7 +30,6 @@
 /* 음료 게시판 목록네비  */
 #menuInfoForm #menuInfoNav {  
 	margin-bottom: 90px;
-	margin-right: 20px;
 }
 
 #menuInfoForm #menuInfoNav div{
@@ -41,6 +40,7 @@
 #menuInfoForm #menuInfoNav a{
 	text-decoration: none;
 	color: #777;
+	font-size: 14px;
 	
 }
 #menuInfoForm #menuInfoNav a:last-child {
@@ -54,21 +54,19 @@
 	margin: 50px auto;
 }
 #menuInfoForm #menuInfoMenuSubject {
-	
-	font-size : 20px;
+	font-size :18px;
 	font-weight: bold; 
-	
 }
 
 #menuInfoForm #menuInfoMenu #menu2 {
-	font-size : 18px;
+	font-size : 16px;
 	font-weight: bold; 
 	
 }
 
 #menuInfoForm #menuInfoMenu li {
 	list-style: none;
-	font-size : 17px;
+	font-size : 14px;
 	
 }
 
@@ -76,8 +74,8 @@
 	background : #eee;
 	height: 25px;  
 	padding: 20px;
-	margin: 10px auto;
-	font-size : 20px;
+	margin: 20px auto;
+	font-size : 18px;
 	font-weight: bold; 
 
 } 
@@ -99,7 +97,7 @@
 
 /* 음료 메뉴 */
 #drinkInfoForm {
-	width: 65%;
+	width: 60%;
 	margin: 0 auto;
 }
 #drinkInfoForm h1 {
@@ -119,6 +117,7 @@
 #drinkInfoForm #drinkInfoNav a{
 	text-decoration: none;
 	color: #777;
+	font-size: 14px;
 	
 }
 #drinkInfoForm #drinkInfoNav a:last-child {
@@ -133,14 +132,14 @@
 }
 #drinkInfoForm #drinkInfoMenuSubject {
 	
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 	
 }
 
 #drinkInfoForm #drinkInfoMenu li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 	
 }
 
@@ -148,8 +147,8 @@
 	background : #eee;
 	height: 25px;  
 	padding: 20px;
-	margin: 10px auto;
-	font-size : 20px;
+	margin: 20px auto;
+	font-size : 18px;
 	font-weight: bold; 
 } 
 
@@ -169,7 +168,7 @@
 
 /* 푸드 메뉴 */
 #foodInfoForm {
-	width: 65%;
+	width: 60%;
 	margin: 0 auto;
 }
 #foodInfoForm h1 {
@@ -189,6 +188,7 @@
 #foodInfoForm #foodInfoNav a{
 	text-decoration: none;
 	color: #777;
+	font-size: 14px;
 	
 }
 #foodInfoForm #foodInfoNav a:last-child {
@@ -203,14 +203,14 @@
 }
 #foodInfoForm #foodInfoMenuSubject {
 	
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold; 
 	
 }
 
 #foodInfoForm #foodInfoMenu li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 	
 }
 
@@ -221,8 +221,8 @@
 	background : #eee;
 	height: 25px;  
 	padding: 20px;
-	margin: 10px auto;
-	font-size : 20px;
+	margin: 20px auto;
+	font-size : 18px;
 	font-weight: bold; 
 
 } 
@@ -243,7 +243,7 @@
 
 /* 전체음료 메뉴 폼 */
 #allMenuInfoForm {
-	width: 65%;
+	width: 60%;
 	margin: 0 auto;
 }
 #allMenuInfoForm h1 {
@@ -264,6 +264,7 @@
 #allMenuInfoForm #allMenuInfoNav a{
 	text-decoration: none;
 	color: #777;
+	font-size: 14px;
 	
 }
 #allMenuInfoForm #allMenuInfoNav a:last-child {
@@ -293,14 +294,14 @@
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
-	font-size : 20px;
+	font-size : 18px;
 	font-weight: bold;
 }
 
 
 #allMenuInfoForm .productList1 li {
 	list-style: none;
-	font-size : 18px;
+	font-size : 14px;
 }
 
 #allMenuInfoForm .listDiv {
@@ -323,7 +324,7 @@
 
 /* 메뉴 상세페이지 */
 #menuDetailForm {
-	width: 65%;
+	width: 60%;
 	margin: 0 auto;
 }
 #menuDetailForm h1 {
@@ -345,6 +346,7 @@
 #menuDetailForm #menuDetailNav a{
 	text-decoration: none;
 	color: #777;
+	font-size: 14px;
 	
 }
 #menuDetailForm #menuDetailNav a:last-child {
@@ -356,7 +358,7 @@
 
 #menuDetailForm #menuDetailView {
 	display: grid;
-	grid-template-columns: 38% 57%;
+	grid-template-columns: 43% 52%;
 	grid-column-gap: 5%;
 	width: 100%;
 	margin:0 auto;
@@ -366,7 +368,8 @@
 	grid-row: 1 / 5;
 }
 #menuDetailForm #menuImgDiv #bigImg {
-	width: 100%;
+	width: 95%;
+	margin: 0 auto;
 }
 #menuDetailForm #menuEngName {
 	font-size: 10pt;
@@ -377,7 +380,7 @@
 	border-bottom: 2px solid;
 	font-size: 20pt;
 	font-weight: bold;
-	padding: 10px;
+	padding-bottom: 10px;
 	margin-bottom: 30px;
 }
 #menuDetailForm #menuDetail {
