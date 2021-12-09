@@ -269,8 +269,7 @@ public class MypageController {
 	
 	//주문내역 상세 페이지
 	@GetMapping("/MyOrderView")
-	public String MyOrderView(@RequestParam String paymentCode, @RequestParam int pg, Model model) {
-		model.addAttribute("pg", pg);
+	public String MyOrderView(@RequestParam String paymentCode, Model model) {
 		model.addAttribute("paymentCode", paymentCode);
 		model.addAttribute("display", "mypage/mypageMyOrderView.jsp");
 		return "/index";
@@ -279,9 +278,10 @@ public class MypageController {
 	//주문내역 상세내용 불러오기
 	@PostMapping("/getMyOrderInfo")
 	@ResponseBody
-	public JSONObject getMyOrderInfo(@RequestParam String paymentCode) {
+	public PaymentDTO getMyOrderInfo(@RequestParam String paymentCode) {
 		return mypageService.getMyOrderInfo(paymentCode);
 	}
+	
 	@PostMapping(value="/getShpMngList")
 	@ResponseBody
 	public List<MypageShipmentDTO> getShpMngList(HttpSession session){

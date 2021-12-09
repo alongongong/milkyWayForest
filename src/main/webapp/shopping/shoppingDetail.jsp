@@ -117,7 +117,11 @@
 			</div>
 			
 	</div>
-		
+	
+	<div id="DetailInfoDiv">
+		<div id="productDetailInfoDiv"></div>
+	</div>	
+	
 	</section>
 </form>
 
@@ -142,7 +146,7 @@ $(function(){
 			/* $('#productOptionSpan2').text(items.productOption);
 			$('#productOptionSpan2').text(items.productOption); */
 			/* $('#productTotalSpan').text((items.productUnit)*parseInt($('.length input').val())); */
-				
+			$('#productDetailInfoDiv').text(items.productDetailInfo);	
 			
 			//사진 나타나게 하기(인덱스별로 조정)
 			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것

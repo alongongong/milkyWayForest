@@ -67,21 +67,15 @@
 	</insert>
 	
 	<select id="getPaymentList" parameterType="String" resultType="payment">
-		select paymentCode, id, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney,
-		newSavedMoney, paymentCoupon, productCode, productOption, payQty, payPrice, payRate
-			from milkyPayment
-			join milkyPaymentOption using(paymentCode)
+		select paymentCode, id, paymentMethod, shipPay, deliveryInfo, payDate, 
+		    paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo, 
+		    productCode, b.productOption, b.payQty, b.payPrice, b.payRate,
+		    c.productName, c.category
+		from milkyPayment 
+		join milkyPaymentOption b using(paymentCode)
+		join milkyProductInfo c using(productCode)
 		where id=#{id}
 		order by paymentCode desc
-	</select>
-	
-	<select id="getShoppingList" parameterType="String" resultType="shopping">
-		select paymentCode, productCode, productImageName
-		    from milkyPayment
-		    join milkyPaymentOption using(paymentCode)
-		    join milkyProductImage using(productCode)
-		where id=#{id}
-		order by paymentCode desc, productImageName asc
 	</select>
 	
 	<select id="countCoupon" parameterType="String" resultType="int">
@@ -98,33 +92,27 @@
 	
 	<select id="getPaymentList2" parameterType="java.util.Map" resultType="payment">
 		select * from (select rownum rn, tt.* from
-		    (select paymentCode, id, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney,
-		        newSavedMoney, paymentCoupon, productCode, productOption, payQty, payPrice, payRate
-		    from milkyPayment
-		    join milkyPaymentOption using(paymentCode)
-		    where id='lily11'
-		    order by paymentCode desc) tt)
+		    (select paymentCode, id, paymentMethod, shipPay, deliveryInfo, payDate, 
+			    paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo, 
+			    productCode, b.productOption, b.payQty, b.payPrice, b.payRate,
+			    c.productName, c.category
+			from milkyPayment 
+			join milkyPaymentOption b using(paymentCode)
+			join milkyProductInfo c using(productCode)
+			where id=#{id}
+			order by paymentCode desc) tt)
 		where rn between #{startNum} and #{endNum} and id=#{id}
 	</select>
-	
-	<select id="getShoppingList2" parameterType="java.util.Map" resultType="shopping">
-		select * from (select rownum rn, tt.* from
-		    (select paymentCode, productCode, productImageName
-		        from milkyPayment
-		        join milkyPaymentOption using(paymentCode)
-		        join milkyProductImage using(productCode)
-		    where id=#{id}
-		    order by paymentCode desc, productImageName asc) tt)
-		where rn between #{startNum} and #{endNum} and id=#{id}
-	</select>
-	
-	<select id="getPaymentDTO" parameterType="String" resultType="payment">
-		select paymentCode, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney, newSavedMoney, paymentCoupon,
-		    productCode, productOption, payQty, payPrice, payRate,
-		    payShipNickname, payShipReceiver, payShipTel1, payShipTel2, payShipTel3, payShipZipcode, payShipAddr1, payShipAddr2
+
+	<select id="getMyOrderInfo" parameterType="String" resultType="payment">
+		select paymentCode, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo,
+		    productCode, a.productOption, a.payQty, a.payPrice, a.payRate,
+		    b.payShipNickname, b.payShipReceiver, b.payShipTel1, b.payShipTel2, b.payShipTel3, b.payShipZipcode, b.payShipAddr1, b.payShipAddr2,
+		    c.productName, c.category
 		from milkyPayment 
-		join milkyPaymentOption using(paymentCode)
-		join milkyPaymentShip using(paymentCode)
+		join milkyPaymentOption a using(paymentCode)
+		join milkyPaymentShip b using(paymentCode)
+		join milkyProductInfo c using(productCode)
 		where paymentCode=#{paymentCode}
 	</select>
 	

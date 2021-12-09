@@ -180,6 +180,8 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
+var amount = 0;
+
 $('#paymentForm #paymentOrderBtn').click(function(){
 	$('#paymentDiv').empty();
 	if(!$('#name').val() || !$('#email1').val() || !$('#email2').val() || !$('#tel1').val() || !$('#tel2').val() || !$('#tel3').val()) {
@@ -191,8 +193,8 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		
 		//카카오페이
 		if($('input:radio').eq(3).is(':checked')){
-			var totalPayPrice = $('#paymentForm #totalPayPrice').val();
-			/* var email = $('#paymentForm #email1').val()+'@'+$('#paymentForm #email2').val();
+			/* var totalPayPrice = $('#paymentForm #totalPayPrice').val();
+			var email = $('#paymentForm #email1').val()+'@'+$('#paymentForm #email2').val();
 			var name = $('#paymentForm #name').val();
 			var tel = $('#paymentForm #tel1').val()+'-'+$('#paymentForm #tel2').val()+'-'+$('#paymentForm #tel3').val();
 			var addr = $('#paymentForm #payShipAddr1').val()+' '+$('#paymentForm #payShipAddr2').val();
@@ -207,7 +209,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		        pay_method : 'card',
 		        merchant_uid : 'merchant_' + new Date().getTime(),
 		        name : '은하숲 상품 결제', //결제창에서 보여질 이름
-		        amount : 100, //실제 결제되는 가격 totalPayPrice
+		        amount : amount, //실제 결제되는 가격
 		        /* buyer_email : email,
 		        buyer_name : name,
 	        	buyer_tel : tel,
@@ -390,6 +392,8 @@ $(function(){
 			}
 			
 			allPrice += shipPay;
+			amount = allPrice;
+			
 			$('#shipPay1').val(shipPay);
 			$('#newSavedMoney').val(savedMoney);
 			$('#totalPayPrice').text(allPrice.toLocaleString()+'원');
