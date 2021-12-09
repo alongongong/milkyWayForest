@@ -13,7 +13,7 @@
 				 cartQty)  
 			 		values 
 						('cart00100'||milkyCartSeq.nextval , 
-						 'yun',  
+						 #{id},  
 						#{productCode},  
 						#{cartOption},  
 						#{cartQty})
@@ -21,6 +21,7 @@
 	
 	<select id="cartSelect" parameterType="String" resultType="cart">
 		select
+			productCode,
 			productName, 
 			productUnit,
 			id,

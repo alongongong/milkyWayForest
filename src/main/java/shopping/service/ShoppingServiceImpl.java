@@ -118,10 +118,10 @@ public class ShoppingServiceImpl implements ShoppingService {
 
 
 	@Override
-	public int productSelect(String id, String productCode) {
+	public int productSelect(String memId, String productCode) {
 		Map<String,String> map = new HashMap<String,String>();
 	
-		map.put("id", id);
+		map.put("id", memId);
 		map.put("productCode", productCode);
 		
 		

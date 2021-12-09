@@ -24,8 +24,8 @@ public class CartDAOMybatis implements CartDAO {
 	}
 
 	@Override
-	public List<CartDTO> cartSelect(String id) {
-		return sqlSession.selectList("cartSQL.cartSelect", id);
+	public List<CartDTO> cartSelect(String memId) {
+		return sqlSession.selectList("cartSQL.cartSelect", memId);
 	}
 
 	@Override
@@ -34,20 +34,20 @@ public class CartDAOMybatis implements CartDAO {
 	}
 
 	@Override
-	public void cartAllDelete(String id) {
-		sqlSession.delete("cartSQL.cartAllDelete", id);
+	public void cartAllDelete(String memId) {
+		sqlSession.delete("cartSQL.cartAllDelete", memId);
 		
 	}
 
 	@Override
-	public void cartSelectDelete(String id,String[] check ) {
+	public void cartSelectDelete(String memId,String[] check ) {
 //		System.out.println(id);
 //		System.out.println(check[0]);
 //		System.out.println(check[1]);
 		
 		for(int i=0; i<check.length; i++) {
 			Map<String,String> map= new HashMap<String,String>();
-			map.put("id", id);
+			map.put("id", memId);
 			map.put("cartCode", check[i]);
 			sqlSession.delete("cartSQL.cartSelectDelete", map);  //체크하면서 카트코드를 들고오니까 포문이 체크한만큼 도는것,
 			

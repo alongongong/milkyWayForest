@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <form id="pOrderCancelForm">
 <div class="card" id="pOrderCancelDiv">
   <div class="card-header">
@@ -36,7 +37,24 @@ $(function(){
 		url: '/milkyWayForest/admin/getOrderCancel',
 		type: 'post',
 		success: function(data) {
-			
+			$.each(data, function(index, items){
+				$('<tr>').append($('<td>',{
+					text: items.paymentCode,
+					align: 'center'
+				})).append($('<td>',{
+					text: items.productName
+				})).append($('<td>',{
+					text: items.payQty,
+					align: 'center'
+				})).append($('<td>',{
+					text: items.deliveryInfo,
+					align: 'center'
+				})).append($('<td>').append($('<input>',{
+					type: 'button',
+					value: '',
+					align: 'center'
+				}))).appendTo($('#pOrderCancelTable tbody'));
+			});
 		},
 		error: function(err) {
 			console.log(err);

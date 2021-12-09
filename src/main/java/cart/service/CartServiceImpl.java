@@ -22,8 +22,8 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public List<CartDTO> cartSelect(String id) {
-		return cartDAO.cartSelect(id);
+	public List<CartDTO> cartSelect(String memId) {
+		return cartDAO.cartSelect(memId);
 	}
 
 	@Override
@@ -32,14 +32,14 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public void cartAllDelete(String id) {
-		cartDAO.cartAllDelete(id);
+	public void cartAllDelete(String memId) {
+		cartDAO.cartAllDelete(memId);
 		
 	}
 
 	@Override
-	public void cartSelectDelete(String id,String[] check) {
-		cartDAO.cartSelectDelete(id,check);
+	public void cartSelectDelete(String memId,String[] check) {
+		cartDAO.cartSelectDelete(memId,check);
 		
 	}
 

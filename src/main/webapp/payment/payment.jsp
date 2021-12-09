@@ -102,7 +102,7 @@
 				<tr>
 					<th>배송 메모</th>
 					<td>
-						<textarea cols="50" rows="5" name="deliveryInfo"></textarea>
+						<textarea cols="50" rows="5" name="shipMemo"></textarea>
 					</td>
 				</tr>
 			</table>

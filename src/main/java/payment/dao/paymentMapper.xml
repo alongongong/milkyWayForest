@@ -34,8 +34,8 @@
 		
 		insert into milkypayment values(
 			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.nextval,
-			#{id}, #{paymentMethod}, #{shipPay}, #{deliveryInfo}, sysdate,
-			#{paymentSavedMoney}, #{newSavedMoney}, #{paymentCoupon}
+			#{id}, #{paymentMethod}, #{shipPay}, '결제완료', sysdate,
+			#{paymentSavedMoney}, #{newSavedMoney}, #{paymentCoupon}, #{shipMemo}
 		);
 		
 		insert into milkypaymentShip values(

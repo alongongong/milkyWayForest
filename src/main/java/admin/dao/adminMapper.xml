@@ -91,21 +91,25 @@
 	</select>
 	
 	<select id="getDailyOrder" resultType="payment">
-		select productcode, productname, payqty, id, deliveryinfo, paydate from milkypayment 
+		select paymentCode, productcode, productname, payqty, id, deliveryinfo, paydate from milkypayment 
 		join milkypaymentoption using(paymentCode)
 		join milkyProductInfo using(productcode)
-		order by paymentcode
+		order by paydate desc, deliveryinfo
 	</select>
 	
 	<select id="getOrderNShip" resultType="payment">
-		select paymentcode, productname, deliveryinfo from milkypayment
+		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentoption using(paymentcode)
 		join milkyProductInfo using(productcode)
+		where deliveryinfo='결제완료' or deliveryinfo='배송준비중'
+		order by paydate desc, deliveryInfo
 	</select>
 	
 	<select id="getOrderCancel" resultType="payment">
 		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentOption using(paymentcode)
 		join milkyProductInfo using(productCode)
+		where deliveryinfo='취소' or deliveryinfo='교환' or deliveryinfo='반품'
+		order by paydate desc, deliveryInfo
 	</select>
 </mapper>

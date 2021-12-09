@@ -290,10 +290,16 @@ $(function(){
 
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
+		if(${memId==null}) {
+			alert('로그인 해주세요');
+		location.href="/milkyWayForest/login/loginForm";
+		
+		}else{
+		
 		$.ajax({
 			url: '/milkyWayForest/shopping/productSelect',  
 			type: 'post',
-			data: 'id=yun&productCode=${productCode}', //'id=${memId}',  
+			data: 'productCode=${productCode}', //'id=${memId}',  
 			 
 			success : function(data) {  //알아서 자료형을 맞춰줌
 				console.log(JSON.stringify(data));
@@ -311,8 +317,9 @@ $(function(){
 						data: $('#shoppingDetailForm').serialize(),
 						
 						success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
-							alert("장바구니 성공");
+							if(confirm("장바구니로 이동하시겠습니까?")){
 							location.href= "/milkyWayForest/cart";
+							}
 						},
 	
 						error: function(err) {
@@ -332,7 +339,7 @@ $(function(){
 
 
 		});
-
+		}
 		
 	});//
 	
