@@ -363,7 +363,7 @@ $(function(){
 				type: 'post',
 				data: $('#shoppingDetailForm').serialize(),
 				success: function(data) {
-					alert(data);
+					// alert(data);
 					location.href='/milkyWayForest/payment?cartCode='+data;
 				},
 				error: function(err) {

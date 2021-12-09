@@ -207,44 +207,62 @@ $(function(){
 		//$('input:checkbox:not(:checked)').addClass$('.unCheck');
 			
 		//서브밋으로 넘겨라
-		 	
-			
-		
-		
-		
+
 		
 		
 		//선택삭제
-		$('#cartForm').submit(function(){  //폼.서브밋
-			var count =$('.check:checked').length;
-				alert(count);
-			
-			if(count==0)
-				alert('삭제 할 항목을 선택하세요');
-			else { 
-				if(confirm('정말 삭제하시겠습니까?') ==true) {
-					 $.ajax({
-						url: '/milkyWayForest/cart/cartSelectDelete',
-						type: 'post',
-						data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.()대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
-						success: function() {
-							alert("삭제 성공")
-						//	location.href= "/milkyWayForest/cart";
-						},
-						error:function(err){
-							console.log(err);
-						}	
-						
-						
-					});	  
+		$('#cartSelectDeleteBtn').click(function(){
+			$('#cartForm').submit(function(){  //폼.서브밋
+				var count =$('.check:checked').length;
+					alert(count);
+				
+				if(count==0)
+					alert('삭제 할 항목을 선택하세요');
+				else { 
+					if(confirm('정말 삭제하시겠습니까?') ==true) {
+						 $.ajax({
+							url: '/milkyWayForest/cart/cartSelectDelete',
+							type: 'post',
+							data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.()대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
+							success: function() {
+								alert("삭제 성공")
+							//	location.href= "/milkyWayForest/cart";
+							},
+							error:function(err){
+								console.log(err);
+							}	
+							
+						});	  
 					}else {
 						return;
 					}
 				
-				  }
-				});
+				}
+			});
+		});
 			
-			
+		
+		// 전체상품 주문하기
+		$('#cartAllOrderBtn').click(function(){
+			$('.check').prop('checked', 'true');
+			if($('.check:checked').length == 0) {
+				alert('장바구니에 주문할 상품이 없습니다.');
+			} else {
+				$('.check').attr('name','cartCode');
+				$('#cartForm').attr('action', '/milkyWayForest/payment').submit();
+			}
+		});
+		
+		// 선택상품 주문하기
+		$('#cartSelectOrderBtn').click(function(){
+			if($('.check:checked').length == 0) {
+				alert('선택된 상품이 없습니다. 상품을 선택해주세요.');
+			} else {
+				$('.check').attr('name','cartCode');
+				$('#cartForm').attr('action', '/milkyWayForest/payment').submit();
+			}
+		});
+		
 });//큰 function
 
 

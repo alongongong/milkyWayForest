@@ -38,11 +38,6 @@
 			#{paymentSavedMoney}, #{newSavedMoney}, #{paymentCoupon}
 		);
 		
-		insert into milkyPaymentOption values(
-			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
-			#{productCode}, #{productOption}, #{payQty}, #{payPrice}, #{payRate}
-		);
-		
 		insert into milkypaymentShip values(
 			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
 			#{payShipNickname}, #{payShipReceiver}, #{payShipTel1}, #{payShipTel2}, #{payShipTel3},
@@ -50,6 +45,17 @@
 		);
 				
 		end;
+	</insert>
+	
+	<select id="getProductInfo" parameterType="String" resultType="cart">
+		select * from milkycart where cartcode=#{cartCode}
+	</select>
+	
+	<insert id="payment2" parameterType="payment">
+		insert into milkyPaymentOption values(
+			'M'||to_char(sysdate,'yyyymmdd')||'-100'||milkypaymentseq.currval,
+			#{productCode}, #{productOption}, #{payQty}, #{payPrice}, #{payRate}
+		)
 	</insert>
 	
 	<update id="updateSavedMoney" parameterType="payment">

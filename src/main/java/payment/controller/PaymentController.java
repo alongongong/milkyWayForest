@@ -53,7 +53,6 @@ public class PaymentController {
 	@PostMapping("/payment/payment")
 	@ResponseBody
 	public String payment(@ModelAttribute PaymentDTO paymentDTO, @RequestParam String[] cartCode, HttpSession session) {
-		System.out.println(cartCode);
 		paymentDTO.setId(session.getAttribute("memId")+"");
 		return paymentService.payment(paymentDTO, cartCode);
 	}

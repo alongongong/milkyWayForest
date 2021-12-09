@@ -47,15 +47,12 @@ public class PaymentDAOMybatis implements PaymentDAO {
 
 	@Override
 	public void payment(PaymentDTO paymentDTO) {
-		System.out.println("1");
 		sqlSession.insert("paymentSQL.payment", paymentDTO);
-		System.out.println("2");
 		sqlSession.update("paymentSQL.updateSavedMoney", paymentDTO);
 	}
 
 	@Override
 	public void payment1(String[] cartCode) {
-		System.out.println("3");
 		for(String cartCode1 : cartCode) {
 			sqlSession.delete("paymentSQL.payCartDelete", cartCode1);
 		}
@@ -63,7 +60,21 @@ public class PaymentDAOMybatis implements PaymentDAO {
 
 	@Override
 	public String payment2() {
-		System.out.println("4");
 		return sqlSession.selectOne("paymentSQL.getPaymentCode");
+	}
+
+	@Override
+	public void payment3(PaymentDTO paymentDTO, String[] cartCode) {
+		for(int i=0; i<cartCode.length; i++) {
+			CartDTO cartDTO = sqlSession.selectOne("paymentSQL.getProductInfo", cartCode[i]);
+
+			paymentDTO.setProductCode(cartDTO.getProductCode());
+			paymentDTO.setProductOption(cartDTO.getCartOption());
+			paymentDTO.setPayQty(cartDTO.getCartQty());
+			paymentDTO.setPayPrice(cartDTO.getProductUnit());
+			paymentDTO.setPayRate(cartDTO.getProductRate());
+			
+			sqlSession.insert("paymentSQL.payment2", paymentDTO);
+		}
 	}
 }
