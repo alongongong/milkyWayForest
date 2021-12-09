@@ -21,6 +21,7 @@
 	
 	<select id="cartSelect" parameterType="String" resultType="cart">
 		select
+			productCode,
 			productName, 
 			productUnit,
 			id,

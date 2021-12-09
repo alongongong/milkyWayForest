@@ -162,8 +162,11 @@ $(function(){
 			});	//minus 
 			
 			
+			$('input').prop('readonly', true);
+
+		
 			//스티키 안에 채우기(위에 var 로 0 줌)
-		/* 	var totalProductPrice = items.productUnit*items.cartQty*(1-itmes.productRate/100);  //itmes.productRate 가 안먹는듯
+		/*   	var totalProductPrice = items.productUnit*items.cartQty*(1-itmes.productRate/100);  //itmes.productRate 가 안먹는듯
 				totalPrice += items.productUnit*items.cartQty;
 				totalSalePrice += items.productUnit*items.cartQty*items.productRate;  //itmes.productRate 가 안먹는듯
 				allPrice += totalProductPrice;
@@ -181,8 +184,7 @@ $(function(){
 
 			allPrice += shipPay;
 			$('#shipPay1').val(shipPay);
-			$('#newSavedMoney').val(savedMoney);
-			$('#totalPayPrice').text(allPrice.toLocaleString()+'원'); */
+			$('#totalPayPrice').text(allPrice.toLocaleString()+'원');  */ 
 
 				 
 			});//each 
@@ -230,10 +232,10 @@ $(function(){
 						location.href= "/milkyWayForest/cart";
 						
 					}else {
+					
 						return;
 					}
 				 	
-					
 				},
 				
 				error:function(err){
@@ -260,18 +262,15 @@ $(function(){
 						success: function() {
 							alert("삭제 성공")
 							console.log(JSON.stringify(data)); 
-							
-							
-							
 						
 						},
 						error:function(err){
 							console.log(err);
 						}	
 						
-						
 					});	  
-					}else {
+				}else {
+						
 						return;
 					}
 				
@@ -286,7 +285,7 @@ $(function(){
 		
 		
 		// 구매하기 버튼 눌렀을 때
-	/* 	$('#cartForm #cartAllOrderBtn').click(function(){
+		$('#cartForm #cartAllOrderBtn').click(function(){
 		
 			if(${memId == null}) {
 				alert('로그인 해주세요');
@@ -307,7 +306,7 @@ $(function(){
 				});
 			}
 		});
- */
+
 		
 			
 });//큰 function
