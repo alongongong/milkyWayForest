@@ -13,7 +13,9 @@ import mypage.bean.MypageShipmentDTO;
 import mypage.dao.MypageDAO;
 import net.sf.json.JSONObject;
 import paging.BoardPaging;
+import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ShoppingDTO;
 
 @Service
 public class MypageServiceImpl implements MypageService {
@@ -53,7 +55,7 @@ public class MypageServiceImpl implements MypageService {
 		map.put("startNum", startNum+"");
 		map.put("endNum", endNum+"");
 		
-		int totalA = mypageDAO.getTotalA();
+		int totalA = mypageDAO.getQnaTotalA(id);
 		int totalP = (totalA - 1) / 10 + 1;
 		
 		boardPaging.setCurrentPage(pg);
@@ -105,5 +107,70 @@ public class MypageServiceImpl implements MypageService {
 	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO) {
 		mypageDAO.mypageShpMngWrite(mypageShipmentDTO);
 	}
+
+	@Override
+	public JSONObject getPaymentInfo(String id) {
+		List<PaymentDTO> paymentList = mypageDAO.getPaymentList(id);
+		List<ShoppingDTO> shoppingList = mypageDAO.getShoppingList(id);
+		int countCoupon = mypageDAO.countCoupon(id);
+		int countPayment = mypageDAO.countPayment(id);
+		
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+		json.put("shoppingList", shoppingList);
+		json.put("countCoupon", countCoupon);
+		json.put("countPayment", countPayment);
+		
+		return json;
+	}
+	
+	@Override
+	public JSONObject getOrderList(String id, int pg) {
+		int endNum = pg * 10;
+		int startNum = endNum - 9;
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("startNum", startNum+"");
+		map.put("endNum", endNum+"");
+		
+		int totalA = mypageDAO.getOrderTotalA(id);
+		int totalP = (totalA - 1) / 10 + 1;
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(10);
+		boardPaging.setPageSize(10);
+		boardPaging.setTotalA(totalA);
+		boardPaging.makePagingHTML();
+
+		List<PaymentDTO> paymentList = mypageDAO.getPaymentList2(map);
+//		List<ShoppingDTO> shoppingList = mypageDAO.getShoppingList(id);
+		List<ShoppingDTO> shoppingList = mypageDAO.getShoppingList2(map);
+		int countCoupon = mypageDAO.countCoupon(id);
+		int countPayment = mypageDAO.countPayment(id);
+		
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+		json.put("shoppingList", shoppingList);
+		json.put("countCoupon", countCoupon);
+		json.put("countPayment", countPayment);
+		json.put("boardPaging", boardPaging.getPagingHTML().toString());
+		json.put("pg", pg);
+		
+		return json;
+	}
+
+	@Override
+	public JSONObject getMyOrderInfo(String paymentCode) {
+		PaymentDTO paymentDTO = mypageDAO.getPaymentDTO(paymentCode);
+//		ShoppingDTO shoppingDTO = mypageDAO.getShoppingDTO(paymentCode);
+		
+		JSONObject json = new JSONObject();
+		json.put("paymentDTO", paymentDTO);
+//		json.put("shoppingDTO", shoppingDTO);
+		
+		return json;
+	}
+
 
 }

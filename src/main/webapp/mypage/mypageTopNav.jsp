@@ -28,7 +28,7 @@
 		<ul class="list-group">
 			<li class="list-group-item list-group-item-action">
 				<span>사용가능한 쿠폰
-					<a href="#" id="coupon">0</a>장
+					<a href="#" id="countCoupon"></a>장
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
@@ -38,12 +38,12 @@
 			</li>
 			<li class="list-group-item list-group-item-action">
 				<span>총 주문 횟수
-					<a href="#">0</a>회
+					<a href="#" id="countPayment"></a>회
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
 				<span>총 주문 금액
-					<a href="#">0</a>원
+					<a href="#" id="paidTotal"></a>원
 				</span>
 			</li>
 		</ul>
@@ -60,20 +60,54 @@ $(function(){
 		data: {'id' : $('#id').val()},
 		success: function(data){
 			console.log(JSON.stringify(data));
-			
 			$('#memberGrade').html(data.memberGrade);	
 			$('#myInfoPhoto').append($('<img>',{
 				src: '/milkyWayForest/image/'+data.memberGrade+'.png',
 				alt: data.memberGrade,
 				class: 'card-img rounded float-left'
 			}));
-			$('#savedMoney').html(data.savedMoney);
 			
+			var savedMoney = data.savedMoney.toLocaleString();
+			$('#savedMoney').html(savedMoney);
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+	
+	$.ajax({
+		url: '/milkyWayForest/mypage/getPaymentInfo',
+		type: 'post',
+		success: function(data){
+			console.log(JSON.stringify(data));
+			$('#countCoupon').html(data.countCoupon);
+			$('#countPayment').html(data.countPayment);	
+			
+			var paidTotal;
+			
+			if(data.paymentList == ''){
+				$('#paidTotal').html('0');
+				
+			}else{
+				$.each(data.paymentList, function(index, items) {
+					console.log(items.payPrice);
+					var payQty = items.payQty*1;
+					var payPrice = items.payPrice*1;
+					var payRate = items.payRate*1;
+					
+					paidTotal = payQty*payPrice*(1-payRate/100);
+				});
+				
+				paidTotal = paidTotal.toLocaleString();
+				$('#paidTotal').html(paidTotal);
+			}
+
 			
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
+
 });
 </script>
