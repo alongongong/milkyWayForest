@@ -117,7 +117,11 @@
 			</div>
 			
 	</div>
-		
+	
+	<div id="DetailInfoDiv">
+		<div id="productDetailInfoDiv"></div>
+	</div>	
+	
 	</section>
 </form>
 
@@ -142,7 +146,7 @@ $(function(){
 			/* $('#productOptionSpan2').text(items.productOption);
 			$('#productOptionSpan2').text(items.productOption); */
 			/* $('#productTotalSpan').text((items.productUnit)*parseInt($('.length input').val())); */
-				
+			$('#productDetailInfoDiv').text(items.productDetailInfo);	
 			
 			//사진 나타나게 하기(인덱스별로 조정)
 			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것
@@ -212,7 +216,10 @@ $(function(){
 			})); //이걸 안 넣으면 1개일때의 가격이 안나옴
 		    	
 			}
+<<<<<<< HEAD
+=======
 
+>>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 
 			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
 			$('#plus').click(function(){
@@ -240,7 +247,10 @@ $(function(){
 				}		
 			});//#minus
 			
+<<<<<<< HEAD
+=======
 
+>>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 		});//each
 		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
@@ -279,6 +289,15 @@ $(function(){
 			$('.shoppingDetailImg li:not(5) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
 		});
+<<<<<<< HEAD
+	},
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});	
+});
+=======
 
 		},
 
@@ -373,7 +392,7 @@ $(function(){
 
 
 
+>>>>>>> dd434ac05124e911fd86e218d0eee3ef89ac7ef3
 </script>
-
 </body>
 </html>

@@ -1016,4 +1016,19 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	font-weight: bold;
 		
 }	
+#shoppingDetailForm #DetailInfoDiv {
+	width: 800px;
+	margin: auto;
+}
+
+
+#shoppingDetailForm #productDetailInfoDiv {
+	width: 100%;
+	margin: 100px auto;
+	padding-top: 60px;
+	/* margin-left: 30px; */
+	font-size: 13px;
+	border-top: 1px solid gainsboro;
+}
+
 	

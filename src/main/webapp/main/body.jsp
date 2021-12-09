@@ -7,6 +7,5 @@
 <meta charset="UTF-8">
 </head>
 <body>
-바디
 </body>
 </html>
