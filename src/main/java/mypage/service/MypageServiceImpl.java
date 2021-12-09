@@ -171,6 +171,32 @@ public class MypageServiceImpl implements MypageService {
 		
 		return json;
 	}
+	
+	@Override
+	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO) {
+		mypageDAO.mypageShpMngWrite1(mypageShipmentDTO);
+	}
+
+	@Override
+	public List<MypageShipmentDTO> getShpMngList(String id) {
+		return mypageDAO.getShpMngList(id);
+	}
+
+	@Override
+	public MypageShipmentDTO getShpMngModify(String shipCode) {
+		return mypageDAO.getShpMngModify(shipCode);
+	}
+
+	@Override
+	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO) {
+		mypageDAO.updateShpMng(mypageShipmentDTO);
+	}
+
+	@Override
+	public void deleteShpMng(String shipCode) {
+		mypageDAO.deleteShpMng(shipCode);
+		
+	}
 
 
 }

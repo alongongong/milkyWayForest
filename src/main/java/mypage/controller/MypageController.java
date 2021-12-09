@@ -223,23 +223,25 @@ public class MypageController {
 	}
 	
 	//권영민
-	@GetMapping(value="/mypageShpMng")
-	public String mypageShpMng(Model model) {
-		model.addAttribute("display", "mypage/mypageShpMng.jsp");
-		return "/index";
-	}
-	
-	@PostMapping(value="/mypageShpMngWrite")
-	@ResponseBody
-	public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO, HttpSession session) {
-		String id = (String) session.getAttribute("memId");
-		
-		mypageShipmentDTO.setId(id);
-		if(mypageShipmentDTO.getBaseShip() != 1) {
-			mypageShipmentDTO.setBaseShip(0);
+		@GetMapping(value="/mypageShpMng")
+		public String mypageShpMng(Model model) {
+			model.addAttribute("display", "mypage/mypageShpMng.jsp");
+			return "/index";
 		}
-		mypageService.mypageShpMngWrite(mypageShipmentDTO);
-	}
+		
+		@PostMapping(value="/mypageShpMngWrite")
+		@ResponseBody
+		public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO,HttpSession session) {
+			String id = (String) session.getAttribute("memId");
+			
+			mypageShipmentDTO.setId(id);
+			if(mypageShipmentDTO.getBaseShip() != 1) {
+				mypageShipmentDTO.setBaseShip(0);
+				mypageService.mypageShpMngWrite(mypageShipmentDTO);
+			}else if(mypageShipmentDTO.getBaseShip() == 1) {
+				mypageService.mypageShpMngWrite1(mypageShipmentDTO);
+			}	
+		}
 
 	//배송상품 주문정보 불러오기
 	@PostMapping("/getPaymentInfo")
@@ -279,5 +281,41 @@ public class MypageController {
 	@ResponseBody
 	public JSONObject getMyOrderInfo(@RequestParam String paymentCode) {
 		return mypageService.getMyOrderInfo(paymentCode);
+	}
+	@PostMapping(value="/getShpMngList")
+	@ResponseBody
+	public List<MypageShipmentDTO> getShpMngList(HttpSession session){
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getShpMngList(id);
+		
+	}
+	
+	@PostMapping(value="/getShpMngModify")
+	@ResponseBody
+	public MypageShipmentDTO getShpMngModify(@RequestParam String shipCode) {
+		return mypageService.getShpMngModify(shipCode);
+	}
+	
+	@GetMapping(value="/mypageShpMngModifyForm")
+	public String mypageShpMngModifyForm(@RequestParam String shipCode, Model model) {
+		model.addAttribute("shipCode", shipCode);
+		return "/mypage/mypageShpMngModifyForm";
+	}
+	
+	@GetMapping(value="/mypageShpMngWriteForm")
+	public String mypageShpMngWriteForm() {
+		return "/mypage/mypageShpMngWriteForm";
+	}
+	
+	@GetMapping(value="/updateShpMng")
+	@ResponseBody
+	public void updateShpMng(@RequestParam int shipCode, @ModelAttribute MypageShipmentDTO mypageShipmentDTO) {
+		mypageShipmentDTO.setShipCode(shipCode);
+		mypageService.updateShpMng(mypageShipmentDTO);
+	}
+	@GetMapping(value="/deleteShpMng")
+	@ResponseBody
+	public void deleteShpMng(@RequestParam String shipCode) {
+		mypageService.deleteShpMng(shipCode);
 	}
 }

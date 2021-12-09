@@ -127,4 +127,38 @@
 		join milkyPaymentShip using(paymentCode)
 		where paymentCode=#{paymentCode}
 	</select>
+	
+	<insert id="mypageShpMngWrite1" parameterType="shipment">
+	BEGIN
+		update milkyShipment set baseShip = 0 where id=#{id};
+		insert into milkyShipment values(milkyShipmentSeq.nextval, #{id}, #{shipNickname}, #{shipReceiver}, #{shipTel1}, #{shipTel2}, #{shipTel3}, #{shipZipcode}, #{shipAddr1}, #{shipAddr2}, #{baseShip});
+	END;
+	</insert>
+	
+	<select id="getShpMngList" parameterType="String" resultType="shipment">
+		select * from milkyShipment where id=#{id}
+	</select>
+	
+	<select id="getShpMngModify" parameterType="String" resultType="shipment">
+		select * from milkyShipment where shipCode=#{shipCode}
+	</select>
+	
+	<update id="updateShpMng" parameterType="shipment">
+		update milkyShipment set   shipNickname=#{shipNickname},
+								   shipReceiver=#{shipReceiver}, 
+								   shipTel1=#{shipTel1},
+								   shipTel2=#{shipTel2},
+								   shipTel3=#{shipTel3},
+								   shipZipcode=#{shipZipcode},
+								   shipAddr1=#{shipAddr1},
+								   shipAddr2=#{shipAddr2},
+								   baseShip=#{baseShip}
+		where shipCode=#{shipCode}
+	</update>
+	
+	<delete id="deleteShpMng" parameterType="String">
+		delete milkyShipment where shipCode=#{shipCode}
+	</delete>
+
+
 </mapper>
