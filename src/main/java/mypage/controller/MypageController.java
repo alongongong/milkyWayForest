@@ -297,6 +297,13 @@ public class MypageController {
 	public void updateMyOrderCancel(@ModelAttribute PaymentDTO paymentDTO) {
 		mypageService.updateMyOrderCancel(paymentDTO);
 	}
+	
+	//주문취소내역 불러오기
+	@PostMapping("/getMyOrderCancelInfo")
+	@ResponseBody
+	public PaymentDTO getMyOrderCancelInfo(@RequestParam String paymentCode) {
+		return mypageService.getMyOrderCancelInfo(paymentCode);
+	}
 
 	//주문취소/교환/반품 내역 창
 	@GetMapping("/mypageCancelList")

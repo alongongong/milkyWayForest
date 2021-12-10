@@ -168,28 +168,6 @@ $(function(){
 				$('#myOrderView1 #shipPay').html(data.shipPay);
 				$('#myOrderView1 #deliveryInfo').html(data.deliveryInfo);
 				
-				if(data.deliveryInfo=='취소'){
-					$('#orderChangeDiv').show();
-					$('#orderChangeTitle').html('주문취소');
-					$('#orderChangeReason').html('주문취소사유');
-					$('#reason').html(data.reason);
-					$('#detailReason').html(data.detailReason);
-					
-				}else if(data.deliveryInfo=='교환'){
-					$('#orderChangeDiv').show();
-					$('#orderChangeTitle').html('교환신청');
-					$('#orderChangeReason').html('교환사유');
-					$('#reason').html(data.reason);
-					$('#detailReason').html(data.detailReason);
-					
-				}else if(data.deliveryInfo=='반품'){
-					$('#orderChangeDiv').show();
-					$('#orderChangeTitle').html('반품신청');
-					$('#orderChangeReason').html('반품사유');
-					$('#reason').html(data.reason);
-					$('#detailReason').html(data.detailReason);
-				}
-
 				var payQty = data.payQty*1;
 				var payPrice = data.payPrice*1;
 				var payRate = data.payRate*1;
@@ -213,6 +191,45 @@ $(function(){
 				$('#myOrderView3 #payShipZipcode').html(data.payShipReceiver);
 				$('#myOrderView3 #payShipAddr').html(payShipAddr);
 				$('#myOrderView3 #shipMemo').html(data.shipMemo);
+			}	
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+$(function(){
+	//취소 교환 반품 사유
+	$.ajax({
+		url: '/milkyWayForest/mypage/getMyOrderCancelInfo',
+		type: 'post',
+		data: 'paymentCode='+$('#paymentCode').val(),
+		success: function(data){
+			//console.log(JSON.stringify(data));
+			if(data != ''){
+				if(data.deliveryInfo=='취소'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('주문취소');
+					$('#orderChangeReason').html('주문취소사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+					
+				}else if(data.deliveryInfo=='교환'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('교환신청');
+					$('#orderChangeReason').html('교환사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+					
+				}else if(data.deliveryInfo=='반품'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('반품신청');
+					$('#orderChangeReason').html('반품사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+				}
 			}	
 
 		},

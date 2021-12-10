@@ -282,5 +282,16 @@ public class MypageServiceImpl implements MypageService {
 		return mypageDAO.getMypageRating(id);
 	}
 
+	@Override
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode) {
+		PaymentDTO paymentDTO = mypageDAO.getMyOrderCancelInfo(paymentCode);
+		
+		if(paymentDTO.getDetailReason() != null) {
+			paymentDTO.setDetailReason(paymentDTO.getDetailReason().replace("\n", "<br>"));
+		}
+		
+		return paymentDTO;
+	}
+
 
 }
