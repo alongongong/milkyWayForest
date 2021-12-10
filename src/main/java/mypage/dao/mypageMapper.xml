@@ -227,4 +227,10 @@
 			update milkyPayment set deliveryInfo='취소' where paymentCode=#{paymentCode};
 		end;
 	</update>
+	
+	<select id="getMypageRating" parameterType="String" resultType="mypage.bean.MemberRatingDTO">
+		select * 
+		from milkymember e, milkygradeinfo d
+		where id=#{id} and e.membergrade = d.gradename
+	</select>
 </mapper>

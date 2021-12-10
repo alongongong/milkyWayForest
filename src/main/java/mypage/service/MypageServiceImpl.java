@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
 import mypage.dao.MypageDAO;
 import net.sf.json.JSONObject;
 import paging.BoardPaging;
 import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
-import shopping.bean.ShoppingDTO;
 
 @Service
 public class MypageServiceImpl implements MypageService {
@@ -275,6 +275,11 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public void updateMyOrderCancel(PaymentDTO paymentDTO) {
 		mypageDAO.updateMyOrderCancel(paymentDTO);
+	}
+	
+	@Override
+	public MemberRatingDTO getMypageRating(String id) {
+		return mypageDAO.getMypageRating(id);
 	}
 
 

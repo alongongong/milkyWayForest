@@ -31,6 +31,8 @@
 		
 		<typeAlias type="mypage.bean.MypageShipmentDTO" alias="shipment"/>
 		
+		<typeAlias type="mypage.bean.MemberRatingDTO" alias="rating"/>
+		
 		<typeAlias type="cart.bean.CartDTO" alias="cart"/>
 	</typeAliases>
 </configuration>

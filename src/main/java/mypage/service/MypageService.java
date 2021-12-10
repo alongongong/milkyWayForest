@@ -4,6 +4,7 @@ import java.util.List;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
 import net.sf.json.JSONObject;
 import payment.bean.PaymentDTO;
@@ -53,5 +54,6 @@ public interface MypageService {
 
 	public void updateMyOrderCancel(PaymentDTO paymentDTO);
 
+	public MemberRatingDTO getMypageRating(String id);
 
 }
