@@ -63,7 +63,7 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public JSONObject getNoticeBoard(int pg) {
 		int endNum = pg * 7;
-		int startNum = pg - 6;
+		int startNum = endNum - 6;
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("endNum", endNum);

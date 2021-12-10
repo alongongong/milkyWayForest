@@ -14,7 +14,7 @@
 		</div>
 		</div>
 		
-		
+		<!-- 
 		<div class="productGroup">
 			<div>
 			<select>
@@ -25,7 +25,7 @@
 			</select>
 			</div>
 		</div>
-	
+		-->
 		<div id="stainlessTumblrMenuDiv">스테인리스 텀블러</div>
 		<!-- 상품배열 -->
 		<div id="menuImgDiv1">

@@ -28,7 +28,7 @@
 			<br>
 			
 			<li>
-				<span id="menu2">
+				<span id="menu2" style="padding-right: 10px;">
 				<a href="/milkyWayForest/menuInfo/foodInfo">푸드</a>  &nbsp; &nbsp;
 				</span>
 				<a href="/milkyWayForest/menuInfo/menuInfo?category=케이크&menuCode=K&pg=1"> 케익</a>&nbsp; &nbsp;
@@ -40,7 +40,6 @@
 		</ul>
 	</div>
 
-	<br><br><br>
 
 <div id="drinkInfoMenuDiv">음료</div>
 <div id="drinkMenuDiv"></div>

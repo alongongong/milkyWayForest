@@ -34,9 +34,6 @@
 		</ul>
 	</div>
 
-
-<br><br><br>
-
 <div id="beanMenuDiv">원두</div>
 <div id="menuImgDiv1">
 <!-- 에이작스로 목록불러오기 -->

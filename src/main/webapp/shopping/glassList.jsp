@@ -21,7 +21,7 @@
 		</div>
 		</div>
 		
-		
+		<!-- 
 		<div class="productGroup">
 			<div>
 			<select>
@@ -32,12 +32,12 @@
 			</select>
 			</div>
 		</div>
-		
-			<div id="glassMenuDiv">글라스</div>
-			<!-- 상품배열 -->
-				<div id="menuImgDiv1">
-					<!-- 에이작스로 목록불러오기 -->
-				</div>
+		 -->
+		<div id="glassMenuDiv">글라스</div>
+		<!-- 상품배열 -->
+		<div id="menuImgDiv1">
+			<!-- 에이작스로 목록불러오기 -->
+		</div>
 		
 	</section>
 </form>

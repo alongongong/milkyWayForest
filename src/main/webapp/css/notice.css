@@ -1,16 +1,17 @@
 @charset "UTF-8";
 /* 게시판 공통 사항 */
-#eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #qnaBoardForm {
+#eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #noticeBoardViewForm, #qnaBoardForm {
 	width: 60%;	
-	margin: 0 auto;
+	margin: 40px auto;
 	padding: 0;
 	font-size: 14px;
 }
 #eventBoardForm legend, #noticeBoardViewForm legend, #eventViewForm legend, #faqBoardForm legend, #noticeBoardForm legend, #qnaBoardForm legend {
 	font-size: 23pt;
+	font-weight: bold;
 }
 #boardPagingDiv {
-width: 70%;
+	width: 70%;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -27,21 +28,22 @@ width: 70%;
 
 
 /* 게시판 위치 표시 */
-#eventBoardNav, #noticeBoardNav, #eventViewBoardNav, #faqBoardNav, #qnaBoardNav {
+#eventBoardNav, #noticeBoardNav, #noticeBoardViewNav, #eventViewBoardNav, #faqBoardNav, #qnaBoardNav {
 	margin-bottom: 30px;
 }
-#eventBoardNav div, #eventViewBoardNav div, #noticeBoardNav div, #faqBoardNav div, #qnaBoardNav div {
+#eventBoardNav div, #eventViewBoardNav div, #noticeBoardNav div, #noticeBoardViewNav div, #faqBoardNav div, #qnaBoardNav div {
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
-#eventBoardNav a, #noticeBoardNav a, #eventViewBoardNav a, #faqBoardNav a, #qnaBoardNav a {
+#eventBoardNav a, #noticeBoardNav a, #noticeBoardViewNav a, #eventViewBoardNav a, #faqBoardNav a, #qnaBoardNav a {
 	text-decoration: none;
 	color: #777;
 }
 /* #eventBoardNav a img, #noticeBoardNav a img, #eventViewBoardNav a img, #faqBoardNav a img, #qnaBoardNav a img {
 	margin-bottom: 5px;
 } */
-#eventBoardNav a:last-child, #noticeBoardNav a:last-child, #eventViewBoardNav a:last-child, #faqBoardNav a:last-child, #qnaBoardNav a:last-child {
+#eventBoardNav a:last-child, #noticeBoardNav a:last-child, #noticeBoardViewNav a:last-child, #eventViewBoardNav a:last-child, #faqBoardNav a:last-child, #qnaBoardNav a:last-child {
 	font-weight: bold;
 }
 
@@ -68,22 +70,23 @@ width: 70%;
 	margin-bottom: 5px;
 	background: #154520;
 	color: white;
+	font-size: 14px;
+	font-weight: bold;
 }
 #noticeBoardForm #noticeBoardTable th {
 	text-align: center;
 }
 
 /* 공지사항 글내용 */
-#noticeBoardViewForm {
-	width: 60%;
-	margin: 0 auto;
+#noticeBoardViewForm #noticeBoardViewDiv {
+	margin-top: 50px;
 }
 #noticeBoardViewForm #noticeSubject {
 	border-top : 1px solid #222;
 	border-bottom : 1px solid #222;
 	font-size: 15pt;
 	font-weight: bold;
-	padding: 15px;
+	padding: 30px 15px;
 	margin: 20px 0; 
 }
 #noticeBoardViewForm #noticeDate {
@@ -91,8 +94,9 @@ width: 70%;
 	font-weight: normal;
 	padding: 5px;
 	color: #999;
-	text-align: right;
-	margin: 0;
+	float: right;
+	margin-top: 10px;
+	display: inline-block;
 }
 
 #noticeBoardViewForm #noticeContent {
@@ -108,9 +112,7 @@ width: 70%;
 	text-align: right;
 }
 #noticeListBtnDiv #noticeListBtn {
-	margin-right: 10px;
 	padding: 8px 30px;
-	
 }
 
 /* 이벤트 리스트 */
@@ -184,29 +186,35 @@ width: 70%;
 } 
 #eventViewForm #eventListBtn {
 	padding: 8px 30px;
-	margin-right: 10px;
 	float: right;
 }
 #eventViewForm:after {
 	content: '';
 	clear: both;
+	display: block;
 }
 
 
 /* 문의 게시판 */
 #qnaBoardWriteDiv {
-	width: 60%;
-	margin: 0 auto;
+	width: 50%;
+	margin: 40px auto;
+	font-size: 14px;
 }
 
 #qnaBoardWriteDiv #qnaBoardWriteInfo {
-	margin: 40px;
 	padding: 40px;
-	border: 1px solid gold;
+	border: 2px solid #154520;
 }
 
 #qnaBoardWriteDiv #qnaBoardWriteTable {
-	margin: 90px 0 30px 0;
+	margin: 60px 0 30px 0;
+}
+
+#qnaBoardWriteDiv #qnaBoardWriteTable th, 
+#qnaBoardWriteDiv #qnaBoardWriteTable td {
+	vertical-align: middle;
+	padding: 15px 10px 10px 20px;
 }
 
 #qnaBoardWriteDiv #qnaBoardWriteTable input,
@@ -220,6 +228,53 @@ width: 70%;
 
 #qnaBoardWriteDiv #qnaBoardWriteTable textarea {
 	width: 85%;
+}
+#qnaBoardWriteDiv #qnaBoardWriteTable .filebox .upload-name {
+	display: inline-block;
+	padding: 0 10px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	vertical-align: bottom;
+	width: 73%;
+	margin: 0;
+}
+#qnaBoardWriteDiv .filebox label {
+	display: inline-block;
+	padding: 5px 15px;
+	background: white;
+	border: 1px solid #154520;
+	color: #154520;
+	font-size: 9pt;
+	vertical-align: middle;
+	margin: 0;
+}
+#qnaBoardWriteDiv .filebox #qnaAttachedFile {
+	width: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	margin: 0;
+}
+#qnaBoardWriteDiv #qnaBoardWriteCheck {
+	font-size: 9pt;
+	color: #143420;
+	font-weight: bold;
+}
+#qnaBoardWriteDiv #qnaWriteBtn {
+	color: white;
+	background: #154520;
+}
+#qnaBoardWriteDiv #CancelBtn {
+	border: 1px solid #154520; 
+	color: #154520;
+	font-weight: bold;
+}
+#qnaBoardWriteDiv #myQnaList,
+#qnaBoardWriteDiv #qnaWriteBtn,
+#qnaBoardWriteDiv #CancelBtn {
+	font-size: 14px;
+	padding: 10px 30px;
 }
 #qnaBoardForm #qnaBoardPaging {
 	width: 70%;
@@ -248,7 +303,21 @@ width: 70%;
 	font-size: 8pt;
 	margin-top: 10px;
 }
-
+#qnaBoardForm #qnaBoardWriteBtn {
+	background: #154520;
+	color: white;
+	padding: 7px 20px;
+	font-size: 14px;
+	font-weight: bold;
+}
+#qnaBoardForm .pwbWriteBtn {
+	background: #154520;
+	color: white;
+	padding: 5px 20px;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
 
 /* 자주 묻는 질문 */
 #faqBoardForm .faqSubject:hover {
@@ -276,8 +345,10 @@ width: 70%;
 }
 #faqBoardForm #faqBoardSearchDiv #faqBoardSearchBtn {
 	height: 40px;
-	padding: 5px 20px;
 	margin-bottom: 5px;
 	background: #154520;
 	color: white;
+	padding: 7px 20px;
+	font-size: 14px;
+	font-weight: bold;
 }

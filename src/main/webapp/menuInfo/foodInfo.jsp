@@ -17,8 +17,7 @@
 		
 			<div id ="foodInfoMenu">
 			<div id ="foodInfoMenuSubject">푸드</div>
-			<br>
-				<ul>
+				<ul style="display:inline-block">
 		            <li>
 						<a href="/milkyWayForest/menuInfo/menuInfo?category=케이크&menuCode=K&pg=1">케이크</a>&nbsp; &nbsp;
 		         	    <a href="/milkyWayForest/menuInfo/menuInfo?category=브레드&menuCode=B&pg=1">브레드</a>&nbsp; &nbsp;
@@ -27,9 +26,7 @@
 					</li>
 				</ul>
 			</div>
-		
-		
-		<br><br><br>
+
 		
 		<div id="cakeInfoMenuDiv">케이크</div>
 		<div id="cakeMenuDiv"></div>

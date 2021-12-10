@@ -6,7 +6,7 @@ src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.wo
 /* shopping */
 #shoppingForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
 
 /* 쇼핑 top Menu */
@@ -16,8 +16,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* display:flex;    justify-content: space-between; */  }
 #shoppingForm #top .title h1 { width: 100%; margin: 0 auto; }
 
-#shoppingForm .Menubar { float: right; color: #777; }
-#shoppingForm .Menubar a { text-decoration: none; color: #777;}
+#shoppingForm .Menubar { float: right; color: #777; margin-top: 10px;}
+#shoppingForm .Menubar a { text-decoration: none; color: #777; font-size: 14px;}
 #shoppingForm .Menubar a:last-child { font-weight: bold; }
 
 /* 쇼핑 게시판 목록네비  */
@@ -71,12 +71,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 원두/차 메뉴 */
 #beanNTeaForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
-#beanNTeaForm h1 {
-	margin: 50px;
-}
-
 
 /* 원두/차 게시판 목록네비  */
 #beanNTeaForm #beanNTeaNav {  
@@ -158,21 +154,17 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 상품 메뉴 */
 #productForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
-#productForm h1 {
-	margin: 50px;
-	
-}
-
 /*  상품 > 게시판 목록네비  */
 #productForm #productNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #productForm #productNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #productForm #productNav a{
@@ -281,20 +273,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 원두리스트 메뉴 폼 */
 #beanListForm {
 	width: 60%;
-	margin: 0px auto;
-}
-#beanListForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 게시판 목록네비  */
 #beanListForm #beanListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #beanListForm #beanListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 	
 }
 
@@ -355,21 +345,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 차 리스트 메뉴 */
 #teaListForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
-#teaListForm h1 {
-	margin: 50px;
-}
-
 
 /* 차 리스트 게시판 목록네비  */
 #teaListForm #teaListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #teaListForm #teaListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #teaListForm #teaListNav a{
@@ -427,21 +414,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 머그 리스트 메뉴 */
 #mugListForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
-#mugListForm h1 {
-	margin: 50px;
-}
-
 
 /* 머그 리스트 게시판 목록네비  */
 #mugListForm #mugListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #mugListForm #mugListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #mugListForm #mugListNav a{
@@ -501,20 +485,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 글라스 리스트 메뉴 */
 #glassListForm {
 	width: 60%;
-	margin: 0px auto;
-}
-#glassListForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 글라스 리스트 게시판 목록네비  */
 #glassListForm #glassListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #glassListForm #glassListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #glassListForm #glassListNav a{
@@ -570,20 +552,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 플라스틱텀블러 리스트 메뉴 */
 #plasticTumblrListForm {
 	width: 60%;
-	margin: 0px auto;
-}
-#plasticTumblrListForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 플라스틱 텀블러 리스트 게시판 목록네비  */
 #plasticTumblrListForm #plasticTumblrListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #plasticTumblrListForm #plasticTumblrListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #plasticTumblrListForm #plasticTumblrListNav a{
@@ -640,21 +620,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 스테인리스텀블러 리스트 메뉴 */
 #stainlessTumblrListForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
-#stainlessTumblrListForm h1 {
-	margin: 50px;
-}
-
 
 /* 스테인리스 텀블러 리스트 게시판 목록네비  */
 #stainlessTumblrListForm #stainlessTumblrListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #stainlessTumblrListForm #stainlessTumblrListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #stainlessTumblrListForm #stainlessTumblrListNav a{
@@ -709,20 +686,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 보온병 리스트 메뉴 */
 #thermosListForm {
 	width: 60%;
-	margin: 0px auto;
-}
-#thermosListForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 보온병 리스트 게시판 목록네비  */
 #thermosListForm #thermosListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #thermosListForm #thermosListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #thermosListForm #thermosListNav a{
@@ -777,20 +752,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 커피용품 리스트 메뉴 */
 #coffeeEtcListForm {
 	width: 60%;
-	margin: 0px auto;
-}
-#coffeeEtcListForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 커피용품 리스트 게시판 목록네비  */
 #coffeeEtcListForm #coffeeEtcListNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #coffeeEtcListForm #coffeeEtcListNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #coffeeEtcListForm #coffeeEtcListNav a{
@@ -846,22 +819,22 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 쇼핑 상세페이지 */
 #shoppingDetailForm {
 	width: 60%;
-	margin: 0px auto;
+	margin: 40px auto;
 }
 #shoppingDetailForm h1 {
-	margin: 50px 0;
+	padding-left: 12px;
 }
-
 
 /* 게시판 목록네비  */
 
 #shoppingDetailForm #shoppingDetailNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #shoppingDetailForm #shoppingDetailNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #shoppingDetailForm #shoppingDetailNav a{
