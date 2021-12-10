@@ -81,11 +81,6 @@ public class MypageDAOMybatis implements MypageDAO {
 	public List<PaymentDTO> getPaymentList(String id) {
 		return sqlSession.selectList("mypageSQL.getPaymentList", id);
 	}
-	
-	@Override
-	public List<ShoppingDTO> getShoppingList(String id) {
-		return sqlSession.selectList("mypageSQL.getShoppingList", id);
-	}
 
 	@Override
 	public int countCoupon(String id) {
@@ -108,19 +103,10 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 	
 	@Override
-	public List<ShoppingDTO> getShoppingList2(Map<String, String> map) {
-		return sqlSession.selectList("mypageSQL.getShoppingList", map);
+	public PaymentDTO getMyOrderInfo(String paymentCode) {
+		return sqlSession.selectOne("mypageSQL.getMyOrderInfo", paymentCode);
 	}
 
-	@Override
-	public PaymentDTO getPaymentDTO(String paymentCode) {
-		return sqlSession.selectOne("mypageSQL.getPaymentList3", paymentCode);
-	}
-
-	@Override
-	public ShoppingDTO getShoppingDTO(String paymentCode) {
-		return sqlSession.selectOne("mypageSQL.getShoppingList3", paymentCode);
-	}
 	@Override
 	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO) {
 		sqlSession.insert("mypageSQL.mypageShpMngWrite1",mypageShipmentDTO);

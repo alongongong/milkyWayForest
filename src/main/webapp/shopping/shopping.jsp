@@ -1,19 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
-</head>
-<body>
 <form id="shoppingForm" name="shoppingForm">
 	<div id="top">
 		<div class="title">
 			<h1>쇼핑</h1>
 		</div>
 		<div class="Menubar" float="right";>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="">Menu</a>  
 		</div>
 	</div>
@@ -33,7 +27,7 @@
 		
 		<div class="border"></div>
 		
-		<ul>
+		<ul style="padding-left: 19px">
             <li>
 			 	<span id="menu2">원두 / 차  &nbsp; &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/beanList">원두</a>&nbsp; &nbsp;
@@ -42,7 +36,7 @@
 			<br>
 			
 			<li>
-				<span id="menu2">상품  &nbsp; &nbsp;</span>
+				<span id="menu2" style="padding-right: 46px;">상품  &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/mugList"> 머그</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/glassList"> 글라스</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/plasticTumblrList"> 플라스틱 텀블러</a>&nbsp; &nbsp;
@@ -204,5 +198,3 @@ $(function(){
 	});	
 });
 </script>
-</body>
-</html>

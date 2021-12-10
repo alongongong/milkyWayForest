@@ -44,12 +44,11 @@
 				<thead>
 					<tr>
 						<td scope="col">주문번호</td>
-						<td scope="col">상품정보</td>
+						<td scope="col">상품이름</td>
 						<td scope="col">수량</td>
 						<td scope="col">상품금액</td>
 						<td scope="col">배송비</td>
 						<td scope="col">주문처리상태</td>
-						<td scope="col">취소/교환/반품</td>
 					</tr>
 				</thead>
 			</table>
@@ -71,7 +70,7 @@ $(function(){
 			if(data.paymentList == ''){
 				$('<tr>').append($('<td>',{
 					text: '주문정보가 존재하지 않습니다',
-					colspan: '7',
+					colspan: '6',
 					align: 'center'
 				})).appendTo($('#myPaymentTable'));
 				
@@ -83,11 +82,11 @@ $(function(){
 							id: 'paymentCode',
 							text: items.paymentCode,
 							class: 'orderSubject',
-							//href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode+'&pg='+data.pg
+							href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode
 							
 						}))).append($('<td>',{
-							id: 'productCode',
-							text: items.productCode
+							id: 'productName',
+							text: items.productName
 							
 						})).append($('<td>',{
 							id: 'payQty',
@@ -102,12 +101,9 @@ $(function(){
 							text: items.shipPay.toLocaleString()
 							
 						})).append($('<td>',{
-							id: '',
-							text: ''
+							id: 'deliveryInfo',
+							text: items.deliveryInfo
 							
-						})).append($('<td>',{
-							id: '',
-							text: ''
 						})).appendTo($('#myPaymentTable'));
 						
 					}

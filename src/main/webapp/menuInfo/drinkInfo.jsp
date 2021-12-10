@@ -54,7 +54,7 @@ $(function(){
 				}).append($('<div>',{
 					width: '70%',
 					height: '300px',
-					style: 'margin: 10px; cursor: pointer;',
+					style: 'cursor: pointer;',
 					position: 'relative'
 				}).append($('<img>',{
 					src: items.menuImg,
@@ -93,7 +93,7 @@ $(function(){
 				}).append($('<div>',{
 					width: '70%',
 					height: '300px',
-					style: 'margin: 10px; cursor: pointer;',
+					style: 'cursor: pointer;',
 					position: 'relative'
 				}).append($('<img>',{
 					src: items.menuImg,

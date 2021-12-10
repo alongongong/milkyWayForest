@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>상세페이지</title>
 <link rel="stylesheet" href="/milkyWayForest/css/shopping.css">
-</head>
-<body>
+
 <form id="shoppingDetailForm" name="shoppingDetailForm">
 	<input type ="hidden" name="productCode" id="productCode" value ="${productCode}">
 	
@@ -16,41 +10,56 @@
 		
 		<div id="shoppingDetailNav">
 			<div>
-				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-				<a href="">Menu</a> > 
-				<a href="">원두/차</a> > 
+				<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+				<a href="/milkyWayForest/shopping">Shopping</a> > 
+				<a href="/milkyWayForest/shopping/beanNTea">원두/차</a> > 
 				<a href="">원두</a>
 			</div>
 		</div>
-		
-		
+
 	<div class="productView">
-			<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
+		
+		<div class="shoppingDetailImg items">
+			<img alt="B001" id="bigImg">
+			<ul class="imgList">
+				<li class="on">
+					<div class="imgListBorder">
+					<a href="#a">
+					<img id="img1" alt="B001">
+					</a>
+					</div>
+				</li>
+				<!-- 에이작스에서 li 추가해주기 사진이 있을때만 추가하는걸로 바꿔줌! -->
+			</ul>
+		</div>
+		
+		<!-- 테이블로 상품이름 및 용량 가격 옵션 등 넣기  -->
+		<div id="detailTableDiv" class="items">
 			<table id="detailTable">
 			
 				<tr>
-					<td id="productKorName" colspan="2">
-					<span id="korsubjectSpan"></span>
+					<td id="productKorName" colspan="2" style="padding-top: 0;">
+						<span id="korsubjectSpan"></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td id="productEngName" colspan="2">
-					<span id="engsubjectSpan"></span>
+						<span id="engsubjectSpan"></span>
 					</td>
 				</tr>
 				
 				
 				<tr>
-					<td colspan="2">
-					<span id="productSmallinfoSpan"></span>
+					<td colspan="2" style="padding: 20px 0;">
+						<span id="productSmallinfoSpan"></span>
 					</td>
 				</tr>
 				
 				<tr>
 					<td>가격</td>
 					<td class="price">
-					<b><span id="productpriceSpan"></span></b>원
+						<b><span id="productpriceSpan"></span></b>원
 					</td>
 				</tr>
 				
@@ -59,7 +68,7 @@
 					<td>
 						
 						<select class="shoppingSelect"  name="cartOption">
-							<option>&nbsp; ------------ 옵션 ------------ &nbsp; </option>
+							<option> ------------------ 옵션 ------------------ &nbsp; </option>
 							<!--  <option><span id="productOptionSpan2"></span></option>
 							<option><span id="productOptionSpan2"></span></option> -->
 						</select>
@@ -92,29 +101,15 @@
 					</td>
 				</tr>
 			</table>
+		</div>
 		
-				
-			<div class="shoppingDetailImg">
-				<img alt="B001" id="bigImg">
-					<ul class="imgList">
-						<li class="on">
-							<div class="imgListBorder">
-							<a href="#a">
-							<img id="img1" alt="B001">
-							</a>
-							</div>
-						</li>
-						<!-- 에이작스에서 li 추가해주기 사진이 있을때만 추가하는걸로 바꿔줌! -->
-					</ul>
-			</div>
-			
-			<div class="btnDiv">
-				<input type="button" id="wishListBtn" value="찜하기"> 
-				<input type="button" id="cartBtn" value="장바구니"> 
-				<input type="button" id="purchaseBtn" value="구매하기">
-					<!-- <a href="#a">장바구니</a>
-					<a href="#a">구매하기</a> -->
-			</div>
+		<div class="btnDiv items">
+			<input type="button" id="wishListBtn" value="찜하기"> 
+			<input type="button" id="cartBtn" value="장바구니"> 
+			<input type="button" id="purchaseBtn" value="구매하기">
+				<!-- <a href="#a">장바구니</a>
+				<a href="#a">구매하기</a> -->
+		</div>
 			
 	</div>
 	
@@ -282,7 +277,11 @@ $(function(){
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(5) img').prop("src"));
 			$('.shoppingDetailImg li:not(5) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
+
 		}); //li:eq(5)
+
+		});
+
 
  
 		}, //getShoppingDetail success
@@ -295,21 +294,23 @@ $(function(){
 
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
-		if(${memId==null}) {
+		if($('.shoppingSelect option:eq(0)')) {
+			alert('상품 옵션을 선택해주세요.');
+		} else if(${memId==null}) {
 			alert('로그인 해주세요');
 		location.href="/milkyWayForest/login/loginForm";
 		
 		}else{
 		
-		$.ajax({
-			url: '/milkyWayForest/shopping/productSelect',  
-			type: 'post',
-			data: 'productCode=${productCode}', //'id=${memId}',  
-			 
-			success : function(data) {  //알아서 자료형을 맞춰줌
-				console.log(JSON.stringify(data));
-				
+			$.ajax({
+				url: '/milkyWayForest/shopping/productSelect',  
+				type: 'post',
+				data: 'productCode=${productCode}', //'id=${memId}',  
+				 
+				success : function(data) {  //알아서 자료형을 맞춰줌
+					console.log(JSON.stringify(data));
 					
+						
 					if(data !=0) {
 					alert("이미 장바구니에 있는 상품입니다.");
 				
@@ -331,6 +332,7 @@ $(function(){
 							console.log(err);
 						
 							}
+
 						});//cartInsert
 					}
 			},
@@ -339,38 +341,66 @@ $(function(){
 			} 
 		}); //productSelect 에이작스
 		} //cartBtn else 끝
+
+						});
+	
+					}
+	
+				},
+				error: function(err) {
+					console.log(err);
+				} 
+	
+			});
+		}
+
 		
 	});//cartBtn click 펑션
 	
 	// 구매하기 버튼 눌렀을 때
 	$('#shoppingDetailForm #purchaseBtn').click(function(){
-	
-		if(${memId == null}) {
+		if($('.shoppingSelect option:eq(0)')) {
+			alert('상품 옵션을 선택해주세요.');
+		} else if(${memId == null}) {
 			alert('로그인 해주세요');
 			location.href='/milkyWayForest/login/loginForm';
 		} else {
 			$.ajax({
-				url: '/milkyWayForest/payment/cartInsert',
+				url: '/milkyWayForest/shopping/productSelect',  
 				type: 'post',
-				data: $('#shoppingDetailForm').serialize(),
-				success: function(data) {
-					// alert(data);
-					location.href='/milkyWayForest/payment?cartCode='+data;
+				data: 'productCode=${productCode}', //'id=${memId}',  
+				 
+				success : function(data) {  //알아서 자료형을 맞춰줌
+
+					if(data !=0) {
+					alert("이미 장바구니에 있는 상품입니다.");
+				
+					}
+					else { 
+						$.ajax({
+							url: '/milkyWayForest/payment/cartInsert',
+							type: 'post',
+							data: $('#shoppingDetailForm').serialize(),
+							success: function(data) {
+								// alert(data);
+								location.href='/milkyWayForest/payment?cartCode='+data;
+							},
+							error: function(err) {
+								console.log(err);
+							}
+						});
+						
+					}
 				},
 				error: function(err) {
 					console.log(err);
 				}
-				
 			});
 		}
 	});
 
 
-	
-	
 }); //큰 function
 
 
 </script>
-</body>
-</html>
