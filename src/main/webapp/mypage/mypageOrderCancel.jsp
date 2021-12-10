@@ -125,7 +125,7 @@ $(function(){
 
 $('#myOrderCancel #myOrderCancelBtn').click(function(){
 	$.ajax({
-		url: '/milkyWayForest/mypage/updateMyOrderCancel?paymentCode=${paymentCode}',
+		url: '/milkyWayForest/mypage/updateMyOrderCancel',
 		type: 'post',
 		data: $('#myOrderCancel').serialize(),
 		success: function(data) {

@@ -129,17 +129,18 @@
 $(function(){
 	//배송상품 주문정보
 	$.ajax({
-		url: '/milkyWayForest/mypage/getMyOrderInfo?paymentCode='+$('#paymentCode').val(),
+		url: '/milkyWayForest/mypage/getMyOrderInfo',
 		type: 'post',
+		data: 'paymentCode='+$('#paymentCode').val(),
 		success: function(data){
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
 			if(data != ''){
 				if(data.deliveryInfo=='입금대기중' || data.deliveryInfo=='결제완료' || data.deliveryInfo=='배송준비중' || data.deliveryInfo=='배송중'){
-					$('#myOrderView1 #orderCancleBtn').show();
+					$('#orderCancleBtn').show();
 
 				}else if(data.deliveryInfo=='배송완료'){
-					$('#myOrderView1 #orderExchangeBtn').show();
-					$('#myOrderView1 #orderReturnBtn').show();
+					$('#orderExchangeBtn').show();
+					$('#orderReturnBtn').show();
 				}
 
 				$('#myOrderView1 #payDate').html(data.payDate);
