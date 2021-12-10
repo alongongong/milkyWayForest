@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
-<form id="mypageOrderList">
+<form id="mypageShipmentList">
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -16,7 +16,7 @@
 
 	<div id="myPayment-wrapper" class="item">
 		<div id="myPayment-title" class="navbar navbar-light alert-info">
-			<span class="navbar-brand mb-0 h1">전체 주문내역</span>
+			<span class="navbar-brand mb-0 h1">주문취소/교환/반품 내역</span>
 		</div>
 		
 		<div id="myPayment-state">
@@ -48,7 +48,7 @@ $(function(){
 	
 	//배송상품 주문정보
 	$.ajax({
-		url: '/milkyWayForest/mypage/getOrderList?pg='+${pg},
+		url: '/milkyWayForest/mypage/getShipmentList?pg='+${pg},
 		type: 'post',
 		success: function(data){
 			console.log(JSON.stringify(data));
@@ -61,61 +61,40 @@ $(function(){
 				
 			}else{
 				$.each(data.paymentList, function(index, items) {
-					$('<tr>').append($('<td>',{
-					}).append($('<a>',{
-						id: 'paymentCode',
-						text: items.paymentCode,
-						class: 'orderSubject',
-						href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode
-						
-					}))).append($('<td>',{
-						id: 'productName',
-						text: items.productName
-						
-					})).append($('<td>',{
-						id: 'payQty',
-						text: items.payQty.toLocaleString()
-						
-					})).append($('<td>',{
-						id: 'payPrice',
-						text: items.payPrice.toLocaleString()
-						
-					})).append($('<td>',{
-						id: 'shipPay',
-						text: items.shipPay.toLocaleString()
-						
-					})).append($('<td>',{
-						id: 'deliveryInfo',
-						text: items.deliveryInfo
-						
-					})).appendTo($('#myPaymentTable tbody'));
 					
+					if(items.deliveryInfo=='입금대기중' || items.deliveryInfo=='결제완료' || items.deliveryInfo=='배송준비중' || items.deliveryInfo=='배송중' || items.deliveryInfo=='배송완료'){
+						$('<tr>').append($('<td>',{
+						}).append($('<a>',{
+							id: 'paymentCode',
+							text: items.paymentCode,
+							class: 'orderSubject',
+							href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode
+							
+						}))).append($('<td>',{
+							id: 'productName',
+							text: items.productName
+							
+						})).append($('<td>',{
+							id: 'payQty',
+							text: items.payQty.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'payPrice',
+							text: items.payPrice.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'shipPay',
+							text: items.shipPay.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'deliveryInfo',
+							text: items.deliveryInfo
+							
+						})).appendTo($('#myPaymentTable tbody'));
+					}
+
 				});
 				
-				/* $.each(data.shoppingList, function(index, items) {
-					var firstLetter = items.productImageName.substr(0,1).toLowerCase();
-					
-					if(firstLetter == 'c' || firstLetter == 't'){
-						$('#productImageName'+index).append($('<img>', {
-							src: "/milkyWayForest/productImage/"+items.productImageName,
-							alt: items.productImageName,
-							position: 'absolute',
-							width: '100px',
-							height: '100px'
-						}));						
-					}else{
-						var substr = items.productImageName.substr(0,5)+'1.png';
-						
-						$('#productImageName'+index).append($('<img>', {
-							src: "/milkyWayForest/productImage/"+substr,
-							alt: items.productImageName,
-							position: 'absolute',
-							width: '100px',
-							height: '100px'
-						}));	
-					}
-				}); */
-	
 			}//if
 			
 			$('#myOrderPagingDiv').html(data.boardPaging);
@@ -128,6 +107,6 @@ $(function(){
 });
 
 function boardPaging(page){
-	location.href="/milkyWayForest/mypage/mypageOrderList?pg="+page;
+	location.href="/milkyWayForest/mypage/mypageShipmentList?pg="+page;
 }
 </script>

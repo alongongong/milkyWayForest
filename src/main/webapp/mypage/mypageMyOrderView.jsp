@@ -10,7 +10,7 @@
 	</div>
 
 	<div id="main-topNav" class="item">
-		<jsp:include page="mypageTopNav.jsp"/>	
+		<jsp:include page="mypageTopNav.jsp"/>
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
 	<input type="hidden" id="paymentCode" name="paymentCode" value="${paymentCode }">
@@ -21,6 +21,8 @@
 			<div id="buttonWrap">
 				<input type="button" id="reorderBtn" class="btn btn-info" value="재주문">
 				<input type="button" id="orderCancleBtn" class="btn btn-info" value="주문취소">
+				<input type="button" id="orderExchangeBtn" class="btn btn-info" value="교환신청">
+				<input type="button" id="orderReturnBtn" class="btn btn-info" value="반품신청">
 			</div>
 			<div class="navbar navbar-light alert-info">
 				<span class="navbar-brand mb-0 h1">주문 상세정보</span>			
@@ -132,6 +134,14 @@ $(function(){
 		success: function(data){
 			console.log(JSON.stringify(data));
 			if(data != ''){
+				if(data.deliveryInfo=='입금대기중' || data.deliveryInfo=='결제완료' || data.deliveryInfo=='배송준비중' || data.deliveryInfo=='배송중'){
+					$('#myOrderView #orderCancleBtn').show();
+
+				}else if(data.deliveryInfo=='배송완료'){
+					$('#myOrderView #orderExchangeBtn').show();
+					$('#myOrderView #orderReturnBtn').show();
+				}
+
 				$('#myOrderView1 #payDate').html(data.payDate);
 				$('#myOrderView1 #paymentCode').html(data.paymentCode);
 				$('#myOrderView1 #productCode').html(data.productCode);
@@ -154,7 +164,7 @@ $(function(){
 				$('#myOrderView2 #totalSalePrice').html(totalSalePrice);
 				$('#myOrderView2 #shipPay').html(data.shipPay);
 				$('#myOrderView2 #totalPayPrice').html(totalPayPrice);
-				$('#myOrderView2 #savedMoney').html(data.paymentSavedMoney);
+				$('#myOrderView2 #savedMoney').html(data.newSavedMoney);
 				
 				var payShipTel = data.payShipTel1+"-"+data.payShipTel2+"-"+data.payShipTel3;
 				var payShipAddr = data.payShipAddr1+" "+data.payShipAddr2
@@ -171,5 +181,18 @@ $(function(){
 			console.log(err);
 		}
 	});
+});
+
+$('#myOrderView #reorderBtn').click(function(){
+	location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
+});
+$('#myOrderView #orderCancleBtn').click(function(){
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
+});
+$('#myOrderView #orderExchangeBtn').click(function(){
+	location.href='/milkyWayForest/mypage/myOrderExchange?paymentCode='+$('#paymentCode').val();
+});
+$('#myOrderView #orderReturnBtn').click(function(){
+	location.href='/milkyWayForest/mypage/myOrderReturn?paymentCode='+$('#paymentCode').val();
 });
 </script>

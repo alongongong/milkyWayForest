@@ -10,13 +10,13 @@
 	    <a class="nav-link disabled text-dark" href="#" tabindex="-1" aria-disabled="true">나의 쇼핑 내역</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active alert-link" href="#">주문/배송조회</a>
-	  </li>
-	  <li class="nav-item">
 	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageOrderList?pg=1">전체 주문내역</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link alert-link" href="#">주문취소/교환/반품내역</a>
+	    <a class="nav-link active alert-link" href="/milkyWayForest/mypage/mypageShipmentList?pg=1">주문/배송조회</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageCancelList?pg=1">주문취소/교환/반품내역</a>
 	  </li>
 	  
 	  <li class="nav-item alert-info">
