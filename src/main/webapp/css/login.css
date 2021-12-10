@@ -11,6 +11,12 @@
 }
 
 /*********************** 로그인 창 ***********************/
+#loginForm #headerBackground {
+	height: 120px;
+	background: #e5e5e5;
+	position: sticky;
+	top: 0;
+}
 #loginForm #main-container {
 	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
 	background-size: 100%;
@@ -153,12 +159,12 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height: 700px;
+	height: 840px;
 }
 
 /*** section ***/
 #findIdForm section {
-	padding: 80px 0;
+	padding: 190px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -168,11 +174,14 @@
 #findIdForm #findId-select-wrap h3 {
 	text-align: center;
 }
-#findIdForm #findId-select-wrap p, 
-#findIdForm #findId-question-wrap p, 
-#findIdForm #findId-email-wrap p {
+#findIdForm #findId-select-wrap p {
 	font-size: 14px;
 	margin-top: 10px;
+	text-align: center;
+}
+#findIdForm #findId-email-wrap p {
+	font-size: 14px;
+	margin: 5px 0 10px 0;
 	text-align: center;
 }
 #findIdForm #findId-select-wrap ul {
@@ -196,7 +205,6 @@
 	font-weight: bold;
 }
 #findIdForm #findId-select-wrap ul li button span{
-	padding-left: 20px;
 	font-size: 15px;
 }
 
@@ -270,9 +278,20 @@
 	font-weight: bold;
 	text-align: left;
 }
-
+#findIdForm #checkEmailInput {
+	display: none;
+}
 #findIdForm #check-email-button-wrap button, 
-#findIdForm #check-number-button-wrap button, 
+#findIdForm #check-number-button-wrap button {
+	width: 465px;
+	height :48px;
+	margin: 20px 0;
+	font-size: 16px;
+	font-weight: bold;
+	background: #f6f5ef;
+	color: white;
+	box-shadow: none;
+}
 #findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;

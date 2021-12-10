@@ -12,13 +12,22 @@ font-family:MalgunGothic; src:url(font/MalgunGothic.eot);
 white-space: pre;
 margin: 1em 0;
 }
+
+#gradeBenefitForm {
+	margin-top: 160px;
+}
+#gradeBenefitForm h1 {
+	font-size: 38px;
+	font-weight: bold;
+}
+
 /* 전체DIV */
 #gradeBenefitForm #container { width: 78rem; margin: 0 auto;  }
 
 /* 등급 및 혜택 TEXT */
 #gradeBenefitForm .grade-top-text { margin : 2rem 0 .5rem 0; font-size: 14px; font-style:bold; }
-#gradeBenefitForm #top_text { padding-bottom: 1rem; float: right; font-color:#222222; }
-#gradeBenefitForm #top_text a { font-size: 100%; text-decoration: none; 
+#gradeBenefitForm #top_text { padding-bottom: 1rem; float: right; font-color:#222222; font-size: 14px;}
+#gradeBenefitForm #top_text a { font-size: 100%; text-decoration: none; font-size: 14px;
 vertical-align: baseline;  background: transparent; cursor: pointer; }		
 #gradeBenefitForm a:link { color: #222; } a:visited { color: #222; } a:hover { color: #222; } a:active { color: #222; }
 
@@ -36,7 +45,7 @@ vertical-align: baseline;  background: transparent; cursor: pointer; }
 /* */
 #gradeBenefitForm .info1_text { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 
-#gradeBenefitForm .info1_text li { margin-bottom: 7px; font-size: 22px; 
+#gradeBenefitForm .info1_text li { margin-bottom: 7px; font-size: 14px; 
 color: #666; line-height: 1.6; padding-left: 11px;}
 
 

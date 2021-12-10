@@ -18,10 +18,10 @@
 					
 			<div id="top_text">
 				<div>
-					<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-					<a href="">EunhaSoop Rewards</a> > 
-					<a href="">은하숲 리워드</a> >
-					<a href="">등급 및 혜택</a>
+					<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="/milkyWayForest/info/gradeBenefitInfo">EunhaSoop Rewards</a> > 
+					<a href="/milkyWayForest/info/gradeBenefitInfo">은하숲 리워드</a> >
+					<a href="/milkyWayForest/info/gradeBenefitInfo" style="font-weight:bold;">등급 및 혜택</a>
 				</div>
 			</div>
 		</div>
