@@ -144,7 +144,7 @@ public class MypageDAOMybatis implements MypageDAO {
 	
 	@Override
 	public List<PaymentDTO> getPaymentList2(Map<String, String> map) {
-		return sqlSession.selectList("mypageSQL.getPaymentList", map);
+		return sqlSession.selectList("mypageSQL.getPaymentList2", map);
 	}
 	
 	@Override
@@ -165,7 +165,6 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO) {
 		sqlSession.insert("mypageSQL.mypageShpMngWrite1",mypageShipmentDTO);
-		
 	}
 
 	@Override
@@ -181,13 +180,11 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO) {
 		sqlSession.update("mypageSQL.updateShpMng", mypageShipmentDTO);
-		
 	}
 
 	@Override
 	public void deleteShpMng(String shipCode) {
 		sqlSession.delete("mypageSQL.deleteShpMng", shipCode);
-		
 	}
 
 	@Override
