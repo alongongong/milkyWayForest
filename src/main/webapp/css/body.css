@@ -21,7 +21,7 @@ html, body {
 }
 #wrapper, #fullPage, .slider, .slider li {
 	height: 100%;
-	widht: 100%;
+	width: 100%;
 }
 
 <!-- 슬라이드 -->

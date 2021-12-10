@@ -21,10 +21,10 @@ ul { list-style:none; }
 
 /*header 하단메뉴*/
 #Allheader header > div .menu {  font-size: 1rem; float: left; 
-font-weight:bold; padding: 1rem 0 0 4rem; }
+font-weight:bold; padding: 16px 0 0 4rem; }
 #Allheader header > div nav > ul > li { float: right; }
-#Allheader header > div nav > ul > li > a { display: block; padding: .75rem 1.7rem 0; height: .4rem; 
-font-size: .9rem; color:#444; line-height: 100%;}
+#Allheader header > div nav > ul > li > a { display: block; padding: 12px 1.7rem 0; height: .4rem; 
+font-size: .9rem; color:rgba(245,246,239,.5); line-height: 100%;}
 
 /*header 상단메뉴*/
 #Allheader header > div .spot {  padding: 1.5rem 12rem 0 0; }
