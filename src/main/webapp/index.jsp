@@ -64,6 +64,7 @@
 </script>
 	<!-- End Channel Plugin -->
 </body>
+</div>
 <footer>
 	<jsp:include page="main/footer.jsp" />
 </footer>
