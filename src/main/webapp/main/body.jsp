@@ -25,21 +25,40 @@
 	
 	<!-- 전체영역 -->
 	<div id="fullPage">
+	
 	<!--  첫번째 메인사진 -->
 	<div id="" style="overflow-y; width:100%; height:100%";>
 	 	<img src="/milkyWayForest/image/mainpic1.jpg" alt="mainpic1.jpg" 
 		style="width: 100%; height: 100%;  top: 0; position:absolute;">
 	</div>
-
-		<!-- 우측 스크롤 -->
-		<div class = fullpage-nav">
-			<span class="fullpage-nav-current">01</span>
-			<span class="fullpage-nav-progress">
-				<em class="fullpage-nav-progress-active" style="height: 16.6667%;">
-				</em>
-			</span>
-			<span class=fullpage-nave-total>03</span>
-		</div>
+	
+	<!--  슬라이드 -->
+	<div class="slider">
+	    <input type="radio" name="slide" id="slide1" checked>
+	    <input type="radio" name="slide" id="slide2">
+	<ul id="imgholder" class="imgs">
+        <li><img src="/milkyWayForest/image/mainpic1.jpg" alt="mainpic1.jpg" 
+		style="width: 100%; height: 100%;  top: 0; position:relative;">
+		</li>
+        <li><img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" 
+		style="width: 100%; height: 100%;  top: 0; position:relative;">
+        </li>  
+	</ul> 
+	<div class="bullets">
+       	<label for="slide1">&nbsp;</label>
+       	 <label for="slide2">&nbsp;</label>
+	</div>	
+	</div>
+	
+	<!-- 우측 스크롤 -->
+	<div class = fullpage-nav">
+		<span class="fullpage-nav-current">01</span>
+		<span class="fullpage-nav-progress">
+			<em class="fullpage-nav-progress-active" style="height: 16.6667%;">
+			</em>
+		</span>
+		<span class=fullpage-nave-total>03</span>
+	</div>
 	
 	</div>
 </div>

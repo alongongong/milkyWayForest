@@ -1,18 +1,18 @@
 @charset "UTF-8";
-/* @font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);} */
- 
- * { font-family: "Mark Pro","Noto Sans KR","Apple SD Gothic Neo",sans-serif; }
+
+/* @font-face { font-family: "Mark Pro","Noto Sans KR","Apple SD Gothic Neo",sans-serif; }*/
+@font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);}
 
 body { margin : 0; padding : 0; height: 3000px;}
 #Allheader html { font-size: 18px; }
 #Allheader body { font-size: 13pt; }
 a { text-decoration-line: none; }
 ul { list-style:none; }
-header { background-color : rgba(255,255,255,0.5);  position: sticky; top: 0; z-index: 99;}
+#headerSection { background-color : rgba(255,255,255,0.5);  position: sticky; top: 0; height: 120px;  z-index: 99;}
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */
-#Allheader header > div {  margin: 0 auto; padding: 1.5rem 0 0rem 6rem ; height: 120px; } 
+#Allheader header > div {  margin: 0 auto; padding: 24px 0 0 100px ; } 
 /* header > div { position: relative; width: 69rem; margin: 0 auto; }  */
 #Allheader header > div:after { content: ""; display: block; clear: both; }
 
@@ -20,11 +20,11 @@ header { background-color : rgba(255,255,255,0.5);  position: sticky; top: 0; z-
 #Allheader header > div h1 { float: left; padding: 1.5rem 0 0.1rems; margin: auto 0; }
 
 /*header 하단메뉴*/
-#Allheader header > div .menu {  font-size: 1rem; float: left; padding: 1rem 0 0 4rem; }
+#Allheader header > div .menu {  font-size: 1rem; float: left; 
+font-weight:bold; padding: 1rem 0 0 4rem; }
 #Allheader header > div nav > ul > li { float: right; }
 #Allheader header > div nav > ul > li > a { display: block; padding: .75rem 1.7rem 0; height: .4rem; 
-font-size: .9rem; color:#000000; line-height: 100%;
-font-family:"Mark Pro","Noto Sans KR","Apple SD Gothic Neo",sans-serif; }
+font-size: .9rem; color:#444; line-height: 100%;}
 
 /*header 상단메뉴*/
 #Allheader header > div .spot {  padding: 1.5rem 12rem 0 0; }
