@@ -8,7 +8,7 @@ body { margin : 0; padding : 0; height: 3000px;}
 #Allheader body { font-size: 13pt; }
 a { text-decoration-line: none; }
 ul { list-style:none; }
-#headerSection { background-color : rgba(255,255,255,0.5);  position: sticky; top: 0; height: 120px;  z-index: 99;}
+#headerSection { background-color : rgba(255,255,255,0.5);  position: fixed; top: 0; width:100%; height: 120px;  z-index: 99;}
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */

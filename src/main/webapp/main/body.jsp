@@ -27,10 +27,10 @@
 	<div id="fullPage">
 	
 	<!--  첫번째 메인사진 -->
-	<div id="" style="overflow-y; width:100%; height:100%";>
+	<!-- <div id="" style="overflow-y; width:100%; height:100%";>
 	 	<img src="/milkyWayForest/image/mainpic1.jpg" alt="mainpic1.jpg" 
 		style="width: 100%; height: 100%;  top: 0; position:absolute;">
-	</div>
+	</div> -->
 	
 	<!--  슬라이드 -->
 	<div class="slider">

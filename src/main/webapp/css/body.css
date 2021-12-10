@@ -3,6 +3,26 @@
 * {box-sizing: border-box;}
 html, body, section, div, button
 input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, sans-serif; }
+html, body {
+	width: 100%;
+	height: 100%;
+}
+#headerHeader {
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#bodySection {
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#wrapper, #fullPage, .slider, .slider li {
+	height: 100%;
+	widht: 100%;
+}
 
 <!-- 슬라이드 -->
 .slider{

@@ -9,9 +9,10 @@
  <link rel="shortcut icon" href="/milkyWayForest/image/SoopIcon2.png">
 </head>
 <body>
-<div id="headerSection">
-	<jsp:include page="main/header.jsp"/>
-</div>
+<div id="headerHeader">
+	<div id="headerSection">
+		<jsp:include page="main/header.jsp"/>
+	</div>
 	<div id="bodySection">
 		<c:if test="${empty display }">
 			<jsp:include page="main/body.jsp"/>
@@ -20,8 +21,10 @@
 	        <jsp:include page="${display }"/>
 	    </c:if>
 	</div>
-	
-	<!-- Channel Plugin Scripts -->
+</div>
+
+
+<!-- Channel Plugin Scripts -->
 <script>
   (function() {
     var w = window;
@@ -64,7 +67,6 @@
 </script>
 	<!-- End Channel Plugin -->
 </body>
-</div>
 <footer>
 	<jsp:include page="main/footer.jsp" />
 </footer>
