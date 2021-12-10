@@ -133,7 +133,9 @@ $('#findIdForm').ready(function(){
 	//질문으로 찾기
 	$('#findIdForm #select-question-button').click(function(){
 		$('#findIdForm #findId-question-wrap').show();
-		$('#findIdForm #findId-email-wrap').hide();		
+		$('#findIdForm #findId-email-wrap').hide();	
+		$('.selectBtn').removeClass('selectBtn');
+		$(this).parent().addClass('selectBtn');
 	});
 	
 	$('#findIdForm #findId-button1').click(function(){
@@ -176,7 +178,9 @@ $('#findIdForm').ready(function(){
 	//이메일로 찾기
 	$('#findIdForm #select-email-button').click(function(){
 		$('#findIdForm #findId-question-wrap').hide();
-		$('#findIdForm #findId-email-wrap').show();
+		$('#findIdForm #findId-email-wrap').show();	
+		$('.selectBtn').removeClass('selectBtn');
+		$(this).parent().addClass('selectBtn');
 	});
 	
 	var code = '';
