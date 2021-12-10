@@ -378,7 +378,8 @@
 }
 #myOrderView #buttonWrap #orderCancleBtn,
 #myOrderView #buttonWrap #orderExchangeBtn,
-#myOrderView #buttonWrap #orderReturnBtn{
+#myOrderView #buttonWrap #orderReturnBtn,
+#myOrderView #orderChangeDiv{
 	display: none;
 }
 

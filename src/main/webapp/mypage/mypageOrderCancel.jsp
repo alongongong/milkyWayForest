@@ -56,10 +56,10 @@
 	
 		<table id="myOrderCancelTable" class="table">
 			<tr>
-				<td>취소사유</td>
+				<td>취소/교환/반품 사유</td>
 				<td>
-					<select id="cancelQuestionType" name="cancelQuestionType">
-						<option>취소사유 선택</option>
+					<select id="reason" name="reason">
+						<option>사유 선택</option>
 						<option value="구매의사취소">구매의사취소</option>
 						<option value="색상 및 사이즈 변경">색상 및 사이즈 변경</option>
 						<option value="다른 상품 잘못 주문">다른 상품 잘못 주문</option>
@@ -78,7 +78,7 @@
 			<tr>
 				<td>상세사유</td>
 				<td>
-					<textarea id="qnaContent" name="qnaContent" rows="17"></textarea>
+					<textarea id="detailReason" name="detailReason" rows="17"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -129,7 +129,7 @@ $('#myOrderCancel #myOrderCancelBtn').click(function(){
 		type: 'post',
 		data: $('#myOrderCancel').serialize(),
 		success: function(data) {
-			alert('주문이 취소되었습니다.');
+			alert('고객님의 요청이 접수되었습니다.');
 			location.href='/milkyWayForest/mypage/mypageCancelList?pg=1';
 		},
 		error: function(err) {

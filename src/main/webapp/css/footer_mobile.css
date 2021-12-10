@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+@media (max-width: 767px) {
+#footerBody #footer {
+	text-align: left;
+	
+}	
+	
+#footerBody .footerInfo li{
+	display:block;
+	margin-bottom: 6px;
+	transition: all .3s all .3s cubic-bezier(0.16, 0.04, 0.03, 0.95);
+}

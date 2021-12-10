@@ -52,9 +52,8 @@ public interface MypageService {
 
 	public void deleteShpMng(String shipCode);
 
-	public void updateMyOrderCancel(String paymentCode);
-	
-	public MemberRatingDTO getMypageRating(String id);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO);
 
+	public MemberRatingDTO getMypageRating(String id);
 
 }

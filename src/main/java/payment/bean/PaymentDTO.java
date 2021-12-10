@@ -32,4 +32,6 @@ public class PaymentDTO {
 	private String shipMemo;
 	private String payDate;
 	private String productImageName;
+	private String reason;
+	private String detailReason;
 }
