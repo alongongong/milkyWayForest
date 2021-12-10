@@ -70,7 +70,7 @@
 				</ul><!-- 매장찾기 -->
 				
 				<ul id="notice">
-					<li><a href="/milkyWayForest/notice">공지사항</a></li>
+					<li><a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
 					
 					<li><a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
 					<li><a href="/milkyWayForest/notice/eventBoard">이벤트</a></li>

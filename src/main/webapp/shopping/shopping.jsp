@@ -6,7 +6,7 @@
 		<div class="title">
 			<h1>쇼핑</h1>
 		</div>
-		<div class="Menubar" float="right";>
+		<div class="Menubar">
 			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="">Menu</a>  
 		</div>
@@ -15,14 +15,14 @@
 	<div id ="shoppingMenu">
 		<p class="shoppingMenuSubject">
 			분류보기
-		<div class="down_up_button">
-			<span class="list_up" style="float: right;">
-				<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
-			</span>
-			<span class="list_down" style="display: none; float: right;">
-				<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
-			</span>
-		</div>
+			<div class="down_up_button">
+				<span class="list_up" style="float: right;">
+					<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
+				</span>
+				<span class="list_down" style="display: none; float: right;">
+					<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
+				</span>
+			</div>
 		</p>
 		
 		<div class="border"></div>
@@ -47,7 +47,6 @@
 		</ul>
 	</div>
 
-	<br><br><br>
 
 <div id="beanNTeaMenuDiv">원두 / 차</div>
 <div id="menuImgDiv1">

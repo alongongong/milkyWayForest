@@ -25,9 +25,6 @@
 				</ul>
 			</div>
 		
-		
-		<br><br><br>
-		
 		<div id="teaInfoMenuDiv">차</div>
 		<div id="teaMenuDiv"></div>
 		<br><br><br>

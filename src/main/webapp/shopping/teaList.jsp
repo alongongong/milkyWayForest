@@ -14,23 +14,23 @@
 		</div>
 		</div>
 		
-		
-			<div class="productGroup">
-				<div>
-					<select>
-						<option>상세분류</option>
-						<option>신규출시된 메뉴</option>
-						<option>시즌 한정상품</option>
-						<option>판매완료된 상품</option>
-					</select>
-				</div>
+		<!-- 
+		<div class="productGroup">
+			<div>
+				<select>
+					<option>상세분류</option>
+					<option>신규출시된 메뉴</option>
+					<option>시즌 한정상품</option>
+					<option>판매완료된 상품</option>
+				</select>
 			</div>
-		
-			<div id="teaMenuDiv">차</div>
-			<!-- 상품배열 -->
-			<div id="menuImgDiv1">
-				<!-- 에이작스로 목록불러오기 -->
-			</div>
+		</div>
+		 -->
+		<div id="teaMenuDiv">차</div>
+		<!-- 상품배열 -->
+		<div id="menuImgDiv1">
+			<!-- 에이작스로 목록불러오기 -->
+		</div>
 		
 	</section>
 </form>
