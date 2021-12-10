@@ -37,6 +37,10 @@ public interface MypageService {
 
 	public PaymentDTO getMyOrderInfo(String paymentCode);
 	
+	public JSONObject getCancelList(String id, int pg);
+
+	public JSONObject getShipmentList(String id, int pg);
+	
 	public void mypageShpMngWrite1(MypageShipmentDTO mypageShipmentDTO);
 
 	public List<MypageShipmentDTO> getShpMngList(String id);
@@ -46,5 +50,8 @@ public interface MypageService {
 	public void updateShpMng(MypageShipmentDTO mypageShipmentDTO);
 
 	public void deleteShpMng(String shipCode);
+
+	public void updateMyOrderCancel(String paymentCode);
+
 
 }

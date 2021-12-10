@@ -93,7 +93,7 @@ $(function(){
 			$('#countCoupon').html(data.countCoupon);
 			$('#countPayment').html(data.countPayment);	
 			
-			var paidTotal;
+			var paidTotal=0;
 			
 			if(data.paymentList == ''){
 				$('#paidTotal').html('0');
@@ -105,7 +105,7 @@ $(function(){
 					var payPrice = items.payPrice*1;
 					var payRate = items.payRate*1;
 					
-					paidTotal = payQty*payPrice*(1-payRate/100);
+					paidTotal += payQty*payPrice*(1-payRate/100);
 				});
 				
 				paidTotal = paidTotal.toLocaleString();

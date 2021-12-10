@@ -7,9 +7,8 @@
 	<br>
 	<div id="noticeBoardNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">notice</a> > 
-			<a href="">공지사항</a>
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a>
 		</div>
 	</div>
 	<br>
@@ -24,10 +23,10 @@
 	<table id="noticeBoardTable" class="table">
 		<thead>
 			<tr>
-				<th>NO</th>
+				<th width="100">NO</th>
 				<th>제목</th>
-				<th>날짜</th>
-				<th>조회수</th>
+				<th width="200">날짜</th>
+				<th width="150">조회수</th>
 			</tr>
 		</thead>
 		<tbody></tbody>
@@ -43,13 +42,15 @@ $(function(){
 		type: 'post',
 		success: function(data) {
 			//alert(JSON.stringify(data))
+			$('#noticeBoardTable tbody').empty();
 			$.each(data.list, function(index, items){
 				$('<tr>').append($('<td>',{
 					align: 'center',
 					text: items.noticeCode
 				})).append($('<td>').append($('<a>',{
 					text: items.noticeSubject,
-					href: '/milkyWayForest/notice/noticeView?noticeCode='+items.noticeCode+'&pg='+data.pg
+					href: '/milkyWayForest/notice/noticeView?noticeCode='+items.noticeCode+'&pg='+data.pg,
+					style: 'padding-left: 10px;'
 				}))).append($('<td>',{
 					text: items.noticeDate,
 					align: 'center'

@@ -90,11 +90,11 @@ public class PaymentDAOMybatis implements PaymentDAO {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		
-		if(totalPayMoney >= 70000) {
-			map.put("grade", "green");
-			sqlSession.update("paymentSQL.updateMemberGrade", map);
-		} else if(totalPayMoney >= 150000) {
+		if(totalPayMoney >= 150000) {
 			map.put("grade", "gold");
+			sqlSession.update("paymentSQL.updateMemberGrade", map);
+		} else if(totalPayMoney >= 70000) {
+			map.put("grade", "green");
 			sqlSession.update("paymentSQL.updateMemberGrade", map);
 		}
 		

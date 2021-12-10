@@ -5,7 +5,12 @@
 #mypageShpMngListForm, /* 배송지관리 */
 #mypageMyPost,
 #mypageMyQnaView,
-#updateMyQnaViewForm {
+#updateMyQnaViewForm,
+#mypageOrderList,
+#myOrderView,
+#mypageCancelList,
+#mypageShipmentList,
+#myOrderCancel {
 	margin: 0;
 	padding: 0;
 }
@@ -65,7 +70,10 @@
 #mypageMyQnaView #main-wrapper,
 #updateMyQnaViewForm #main-wrapper,
 #mypageOrderList #main-wrapper,
-#myOrderView #main-wrapper{
+#myOrderView #main-wrapper,
+#mypageCancelList #main-wrapper,
+#mypageShipmentList #main-wrapper,
+#myOrderCancel #main-wrapper{
 	display: grid;
 	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
 	grid-auto-columns: minmax(250px, auto); /* 열(column)의 배치 */
@@ -85,7 +93,10 @@
 #mypageMyQnaView #main-sideNav,
 #updateMyQnaViewForm #main-sideNav,
 #mypageOrderList #main-sideNav,
-#myOrderView #main-sideNav {
+#myOrderView #main-sideNav,
+#mypageCancelList #main-sideNav,
+#mypageShipmentList #main-sideNav,
+#myOrderCancel #main-sideNav {
 	grid-column: 1;
 	grid-row: 1 / span 3;
 }
@@ -96,7 +107,10 @@
 #mypageMyQnaView #main-topNav,
 #updateMyQnaViewForm #main-topNav,
 #mypageOrderList #main-topNav,
-#myOrderView #main-topNav  {
+#myOrderView #main-topNav,
+#mypageCancelList #main-topNav,
+#mypageShipmentList #main-topNav,
+#myOrderCancel #main-topNav  {
 	grid-column: 2;
 	grid-row: 1;
 }
@@ -361,4 +375,91 @@
 #myOrderView #buttonWrap{
 	text-align: end;
 	margin-bottom: 20px;
+}
+#myOrderView #buttonWrap #orderCancleBtn,
+#myOrderView #buttonWrap #orderExchangeBtn,
+#myOrderView #buttonWrap #orderReturnBtn{
+	display: none;
+}
+
+/*********** 주문취소/교환/반품내역 창 ***********/
+#mypageCancelList #myPayment-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageCancelList #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageCancelList #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageCancelList #myOrderPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+#mypageCancelList .orderSubject:link { color: black; text-decoration: none; }
+#mypageCancelList .orderSubject:visited { color: black; text-decoration: none; }
+#mypageCancelList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageCancelList .orderSubject:active { color: black; text-decoration: none; }
+
+/*********** 주문/배송조회 창 ***********/
+#mypageShipmentList #myPayment-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageShipmentList #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: blue;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageShipmentList #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageShipmentList #myOrderPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+#mypageShipmentList .orderSubject:link { color: black; text-decoration: none; }
+#mypageShipmentList .orderSubject:visited { color: black; text-decoration: none; }
+#mypageShipmentList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageShipmentList .orderSubject:active { color: black; text-decoration: none; }
+
+/*********** 주문 취소신청 창 ***********/
+#myOrderCancel #myOrderCancel-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#myOrderCancel #myOrderCancelTable {
+	margin: 90px 0 30px 0;
+}
+
+#myOrderCancel #myOrderCancelTable input,
+#myOrderCancel #myOrderCancelTable select {
+	width: 100%;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid #999;
+	vertical-align: bottom;
+}
+
+#myOrderCancel #myOrderCancelTable textarea {
+	width: 100%;
 }

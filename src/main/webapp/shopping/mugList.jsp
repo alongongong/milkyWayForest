@@ -17,27 +17,27 @@
 			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="/milkyWayForest/shopping">Shipping</a> > 
 			<a href="/milkyWayForest/shopping/product">상품</a> > 
-			<a href="">머그</a>
+			<a href="/milkyWayForest/shopping/mugList">머그</a>
 		</div>
 		</div>
 		
-		
-			<div class="productGroup">
-				<div>
-					<select>
-						<option>상세분류</option>
-						<option>신규출시된 메뉴</option>
-						<option>시즌 한정상품</option>
-						<option>판매완료된 상품</option>
-					</select>
-				</div>
+		<!-- 
+		<div class="productGroup">
+			<div>
+				<select>
+					<option>상세분류</option>
+					<option>신규출시된 메뉴</option>
+					<option>시즌 한정상품</option>
+					<option>판매완료된 상품</option>
+				</select>
 			</div>
-		
-			<div id="mugMenuDiv">머그</div>
-				<!-- 상품배열 -->
-				<div id="menuImgDiv1">
-					<!-- 에이작스로 목록불러오기 -->
-				</div>
+		</div>
+		 -->
+		<div id="mugMenuDiv">머그</div>
+		<!-- 상품배열 -->
+		<div id="menuImgDiv1">
+			<!-- 에이작스로 목록불러오기 -->
+		</div>
 		
 	</section>
 </form>

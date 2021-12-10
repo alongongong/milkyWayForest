@@ -36,7 +36,22 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
     margin: 16px 0;
     background-color: rgba(120,120,120,.2);
 }
-
+.swiper-pagination-wrap {
+    display: -moz-flex;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    width: 240px;
+    height: 56px;
+    margin-left: -120px;
+    border-radius: 56px;
+    bottom: 32px;
+    background: rgba(0,0,0,.6) !important;
+    align-items: center;
+    justify-content: center;
+    transform: translate(0, 0);
+}
 
 
 

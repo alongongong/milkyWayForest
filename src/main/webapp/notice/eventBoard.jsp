@@ -7,9 +7,8 @@
 	<br>
 	<div id="eventBoardNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">notice</a> > 
-			<a href="">이벤트</a>
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/notice/eventBoard">이벤트</a>
 		</div>
 	</div>
 	<br>

@@ -20,7 +20,8 @@
 				<a href="">${smallMenu }</a>
 			</div>
 		</div>
-		
+		<br>
+		<!-- 
 		<div class="productGroup">
 			<div>
 			<select>
@@ -31,7 +32,7 @@
 			</select>
 			</div>
 		</div>
-			
+		 -->	
 		<div id="AllInfoMenuDiv">${smallMenu }</div>
 		
 		<div id="AllMenuDiv"></div>
