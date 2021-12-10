@@ -19,7 +19,7 @@
 			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="/milkyWayForest/shopping">Shopping</a> > 
 			<a href="/milkyWayForest/shopping/beanNTea">원두/차</a> > 
-			<a href="">원두</a>
+			<a href="/milkyWayForest/shopping/beanList">원두</a>
 		</div>
 		</div>
 		<!-- 	

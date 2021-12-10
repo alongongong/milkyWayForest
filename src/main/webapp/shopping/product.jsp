@@ -15,12 +15,12 @@
 		<div>
 			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 			<a href="/milkyWayForest/shopping">Shopping</a> > 
-			<a href="">상품</a>	
+			<a href="/milkyWayForest/shopping/product">상품</a>	
 		</div>
 	</div>
 
 	<div id="productMenu">
-	<div id ="productMenuSubject">상품</div>
+		<div id ="productMenuSubject">상품</div>
 	    <ul>
              <li>
 	             <a href="/milkyWayForest/shopping/mugList">머그 </a>&nbsp; &nbsp;

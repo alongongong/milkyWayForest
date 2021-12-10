@@ -53,6 +53,7 @@
 #menuInfoForm #menuInfoMenuSubject {
 	font-size :18px;
 	font-weight: bold; 
+	padding-left: 20px;
 }
 
 #menuInfoForm #menuInfoMenu #menu2 {
@@ -64,7 +65,7 @@
 #menuInfoForm #menuInfoMenu li {
 	list-style: none;
 	font-size : 14px;
-	
+	margin: 10px 0;
 }
 
 #menuInfoForm #drinkInfoMenuDiv ,#menuInfoForm #foodInfoMenuDiv{
@@ -126,12 +127,15 @@
 	margin: 50px auto;
 }
 #drinkInfoForm #drinkInfoMenuSubject {
-	
+	display: inline-block;
 	font-size : 18px;
 	font-weight: bold; 
-	
+	padding-left: 20px;
 }
 
+#drinkInfoForm #drinkInfoMenu ul {
+	display: inline-block;
+}
 #drinkInfoForm #drinkInfoMenu li {
 	list-style: none;
 	font-size : 14px;
@@ -198,6 +202,7 @@
 	font-size : 18px;
 	font-weight: bold; 
 	display: inline-block;
+	padding-left: 20px;
 }
 
 #foodInfoForm #foodInfoMenu li {

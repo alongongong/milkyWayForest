@@ -15,8 +15,7 @@
 	</div>
 
 	<div id ="menuInfoMenu">
-	<div id ="menuInfoMenuSubject"> 쇼핑 </div>
-	<br>
+	<div id ="menuInfoMenuSubject"> 메뉴 </div>
 		<ul>
             <li>
 			 	<span id="menu2">
@@ -25,7 +24,6 @@
 				<a href="/milkyWayForest/menuInfo/menuInfo?category=차&menuCode=T&pg=1">차</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/menuInfo/menuInfo?category=커피&menuCode=C&pg=1"> 커피</a>
 			</li>
-			<br>
 			
 			<li>
 				<span id="menu2" style="padding-right: 10px;">
