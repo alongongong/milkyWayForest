@@ -68,7 +68,7 @@
 					<td>
 						
 						<select class="shoppingSelect"  name="cartOption">
-							<option> ------------------ 옵션 ------------------ &nbsp; </option>
+							<option value="0"> ---------------- 옵션 ---------------- &nbsp; </option>
 							<!--  <option><span id="productOptionSpan2"></span></option>
 							<option><span id="productOptionSpan2"></span></option> -->
 						</select>
@@ -290,11 +290,11 @@ $(function(){
 
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
-		if($('.shoppingSelect option:eq(0)')) {
+		if($('.shoppingSelect').val()=='0') {
 			alert('상품 옵션을 선택해주세요.');
 		} else if(${memId==null}) {
 			alert('로그인 해주세요');
-		location.href="/milkyWayForest/login/loginForm";
+			location.href="/milkyWayForest/login/loginForm";
 		
 		}else{
 		
@@ -308,7 +308,7 @@ $(function(){
 					
 						
 					if(data !=0) {
-					alert("이미 장바구니에 있는 상품입니다.");
+						alert("이미 장바구니에 있는 상품입니다.");
 				
 					}
 					else { 
@@ -320,7 +320,7 @@ $(function(){
 						
 						success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
 							if(confirm("장바구니로 이동하시겠습니까?")){
-							location.href= "/milkyWayForest/cart";
+								location.href= "/milkyWayForest/cart";
 							}
 						},
 	
@@ -342,7 +342,7 @@ $(function(){
 	
 	// 구매하기 버튼 눌렀을 때
 	$('#shoppingDetailForm #purchaseBtn').click(function(){
-		if($('.shoppingSelect option:eq(0)')) {
+		if($('.shoppingSelect').val()=='0') {
 			alert('상품 옵션을 선택해주세요.');
 		} else if(${memId == null}) {
 			alert('로그인 해주세요');
@@ -356,8 +356,7 @@ $(function(){
 				success : function(data) {  //알아서 자료형을 맞춰줌
 
 					if(data !=0) {
-					alert("이미 장바구니에 있는 상품입니다.");
-				
+						alert("이미 장바구니에 있는 상품입니다.");			
 					}
 					else { 
 						$.ajax({
