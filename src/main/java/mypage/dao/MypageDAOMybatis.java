@@ -91,6 +91,51 @@ public class MypageDAOMybatis implements MypageDAO {
 	public int countPayment(String id) {
 		return sqlSession.selectOne("mypageSQL.countPayment", id);
 	}
+
+	@Override
+	public int countPending(String id) {
+		return sqlSession.selectOne("mypageSQL.countPending", id);
+	}
+
+	@Override
+	public int countFinished(String id) {
+		return sqlSession.selectOne("mypageSQL.countFinished", id);
+	}
+
+	@Override
+	public int countProcessing(String id) {
+		return sqlSession.selectOne("mypageSQL.countProcessing", id);
+	}
+
+	@Override
+	public int countShipping(String id) {
+		return sqlSession.selectOne("mypageSQL.countShipping", id);
+	}
+
+	@Override
+	public int countShipped(String id) {
+		return sqlSession.selectOne("mypageSQL.countShipped", id);
+	}
+
+	@Override
+	public int countCancel(String id) {
+		return sqlSession.selectOne("mypageSQL.countCancel", id);
+	}
+
+	@Override
+	public int countExchange(String id) {
+		return sqlSession.selectOne("mypageSQL.countExchange", id);
+	}
+
+	@Override
+	public int countReturn(String id) {
+		return sqlSession.selectOne("mypageSQL.countReturn", id);
+	}
+
+	@Override
+	public int countRefund(String id) {
+		return sqlSession.selectOne("mypageSQL.countRefund", id);
+	}
 	
 	@Override
 	public int getOrderTotalA(String id) {
@@ -105,6 +150,16 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public PaymentDTO getMyOrderInfo(String paymentCode) {
 		return sqlSession.selectOne("mypageSQL.getMyOrderInfo", paymentCode);
+	}
+
+	@Override
+	public int getCancelTotalA(String id) {
+		return sqlSession.selectOne("mypageSQL.getCancelTotalA", id);
+	}
+	
+	@Override
+	public int getShipmentTotalA(String id) {
+		return sqlSession.selectOne("mypageSQL.getShipmentTotalA", id);
 	}
 
 	@Override
@@ -133,6 +188,11 @@ public class MypageDAOMybatis implements MypageDAO {
 	public void deleteShpMng(String shipCode) {
 		sqlSession.delete("mypageSQL.deleteShpMng", shipCode);
 		
+	}
+
+	@Override
+	public void updateMyOrderCancel(String paymentCode) {
+		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentCode);
 	}
 
 }
