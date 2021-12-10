@@ -280,10 +280,6 @@ $(function(){
 
 		}); //li:eq(5)
 
-		});
-
-
- 
 		}, //getShoppingDetail success
 
 		error: function(err) {
@@ -331,31 +327,18 @@ $(function(){
 						error: function(err) {
 							console.log(err);
 						
-							}
-
-						});//cartInsert
-					}
-			},
-			error: function(err) {
-				console.log(err);
-			} 
-		}); //productSelect 에이작스
-		} //cartBtn else 끝
-
-						});
+						} 
+						}); //productSelect 에이작스
+			
+					} //cartBtn else 끝
+			
+				},	//success (cart/cartInsert)
+			
+			});	//shopping/productSelect 에이작스	
 	
-					}
+		}// option:eq(0) else			
 	
-				},
-				error: function(err) {
-					console.log(err);
-				} 
-	
-			});
-		}
-
-		
-	});//cartBtn click 펑션
+	}); //cartBtn click 펑션
 	
 	// 구매하기 버튼 눌렀을 때
 	$('#shoppingDetailForm #purchaseBtn').click(function(){
@@ -388,16 +371,16 @@ $(function(){
 							error: function(err) {
 								console.log(err);
 							}
-						});
+						}); // /payment/cartInsert 에이작스
 						
-					}
+					} // data !=0 else
 				},
 				error: function(err) {
 					console.log(err);
 				}
-			});
+			}); // /shopping/productSelect 에이작스
 		}
-	});
+	}); // purchaseBtn 클릭시
 
 
 }); //큰 function
