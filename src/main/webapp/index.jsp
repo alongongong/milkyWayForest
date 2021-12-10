@@ -9,9 +9,9 @@
  <link rel="shortcut icon" href="/milkyWayForest/image/SoopIcon2.png">
 </head>
 <body>
-<header>
+<div id="headerSection">
 	<jsp:include page="main/header.jsp"/>
-</header>
+</div>
 	<div id="bodySection">
 		<c:if test="${empty display }">
 			<jsp:include page="main/body.jsp"/>
