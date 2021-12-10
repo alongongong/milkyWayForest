@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/login.css">
 
 <form name="loginForm" id="loginForm">
 <div id="main-container">
+	<h1>로그인</h1>
 	<div id="main-wrap">
+		<div id="welcomdeLogin">
+			<span>Welcome! </span> 은하숲에 오신 것을 환영합니다.
+		</div>
 		<section id="login-input-wrap">
-			<h2>ID 로그인</h2>
 			<div id="id-input-wrap">	
 				<input type="text" id="id-input" name="id" placeholder="아이디"></input>
 			</div>
@@ -14,38 +18,37 @@
 				<input type="password" id="pwd-input" name="pwd" placeholder="비밀번호"></input>
 			</div>
 			<div id="login-button-wrap">
-				<button type="button" id="login-button" type="button">로그인</button>
+				<button type="button" id="login-button"  class="btn">로그인</button>
 			</div>
-			<div id="result-div"></div>
 		</section>
 		
 		<section id="easy-login-wrap">
-			<h2>간편 로그인</h2>
 			<ul>
 				<li>
-					<button type="button" id="kakao-login-btn">
+					<button type="button" id="kakao-login-btn" class="btn">
 						<img src="/milkyWayForest/image/kakao.png" alt="kakao">
-						<span>카카오로 로그인</span>
+						<span>카카오 로그인</span>
 					</button>
 				</li>
 				<%-- <li>
 					<button id="naver-login-btn">
 						<img src="/milkyWayForest/image/naver.png" alt="naver">
-						<span>네이버로 로그인</span>
+						<span>네이버 로그인</span>
 					</button>
 				</li>
 				<li>
 					<button>
 						<img src="/milkyWayForest/image/google.png" alt="google">
-						<span>구글로 로그인</span>
+						<span>구글 로그인</span>
 					</button>
 				</li> --%>
 			</ul>
-			<p id="find-write">
-				<a href="/milkyWayForest/login/findId">아이디 찾기</a> | 
-				<a href="/milkyWayForest/login/findPwd">비밀번호 찾기</a> | 
-				<a href="/milkyWayForest/write/memberWrite">회원가입</a> | 
-			</p>
+			<div id="result-div"> </div>
+			<div id="find-write">
+				<p><a href="/milkyWayForest/login/findId">아이디 찾기</a></p> | 
+				<p><a href="/milkyWayForest/login/findPwd">비밀번호 찾기</a></p> | 
+				<p><a href="/milkyWayForest/write/memberWrite">회원가입</a></p>
+			</div>
 		</section>
 	</div>
 </div>
