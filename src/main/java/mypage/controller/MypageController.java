@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
@@ -364,5 +365,16 @@ public class MypageController {
 	@ResponseBody
 	public void deleteShpMng(@RequestParam String shipCode) {
 		mypageService.deleteShpMng(shipCode);
+	}
+	@GetMapping(value="/mypageRating")
+	public String mypageRating(Model model) {
+		model.addAttribute("display", "mypage/mypageRating.jsp");
+		return "/index";
+	}
+	
+	@PostMapping(value="/getMypageRating")
+	@ResponseBody
+	public MemberRatingDTO getMypageRating(String id) {
+		return mypageService.getMypageRating(id);
 	}
 }

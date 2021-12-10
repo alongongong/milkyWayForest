@@ -93,23 +93,6 @@
 						</div>
 					</div>
 	
-					<!-- 버튼1 모달영역  -->
-					<div class="button1_modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						  <div class="modal-dialog" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h4 class="modal-title" id="myModalLabel">모달 타이틀</h4>
-						      </div>
-						      <div class="modal-body">
-						        내용
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-outline-secondary" id="closeModalBtn">닫기</button>
-						     </div>
-						   </div>
-					  	</div>
-					</div>
-					
 					
 					<div id="2" class="item bg-white">
 						<div class="2_1pic" align="center" style="padding-top:3.5rem;">
@@ -286,11 +269,9 @@
 							카드로 결제 시, 현금영수증<br> 
 							자동 발행
 						</p>
-					</div>
-					
+					</div>	
 				</div>
-			</div>
-
+				</div>
 			</div>
 		</article>
 	</section>
@@ -321,18 +302,6 @@ $(function(){
 		}
 	});	
 });
-
-// 모달 버튼에 이벤트를 건다.
-$('#button1_open').on('click', function(){
-  $('#modal1').modal('show');
-	console.log("click open");
-});
-// 모달 안의 취소 버튼에 이벤트를 건다.
-$('#closeModalBtn').on('click', function(){
-  $('#modal1').modal('hide');
-	console.log("click close");
-});
-
 </script>
 </body> 
 </html>

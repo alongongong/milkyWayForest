@@ -11,29 +11,44 @@
 }
 
 /*********************** 로그인 창 ***********************/
-#loginForm {
-	min-height: 750px;
-}
 #loginForm #main-container {
-	background-image: url("/milkyWayForest/image/login_bg.jpg");
-	height: 100%;
+	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
+	background-size: 100%;
+	padding: 90px 0 110px 0;
+	-webkit-background-size: cover;
+	width: 100%;
+}
+#loginForm #main-container h1 {
+	text-align: center; 
+	margin-top: 0;
+	color: white;
+	margin-bottom: 40px;
 }
 #loginForm #main-wrap{
-	width:35%;
-	min-width: 500px;
-	display:flex;
-	flex-direction:column;
-	align-items:center;
+	width: 515px;
+	height: 100%;
+	text-align: center;
 	margin: auto;
 	background: white;
-	
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	padding: 10px 0;
+}
+#loginForm #main-wrap #welcomdeLogin {
+	font-size: 16px;
+	text-align: center;
+	padding: 20px 0 30px 0;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 25px;
+}
+#loginForm #main-wrap #welcomdeLogin span {
+	color: #006633;
+	font-weight: bold;
 }
 #loginForm #login-input-wrap, 
 #loginForm #easy-login-wrap{
-	padding-top: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 #loginForm #login-input-wrap h2, 
 #loginForm #easy-login-wrap h2{
@@ -45,7 +60,8 @@
 	height :48px;
 	border: solid 1px gray;
 	background: white;
-	margin-top: 13px;
+	margin: 10px auto 0 auto;
+    border-radius: 3px;
 }
 #loginForm #id-input-wrap input, 
 #loginForm #pwd-input-wrap input{
@@ -54,6 +70,7 @@
     font-size: 14px;
     padding-left: 10px;
     height: 45px;
+    border-radius: 3px;
 }
 #loginForm #id-input-wrap input:focus, 
 #loginForm #pwd-input-wrap input:focus{
@@ -62,102 +79,121 @@
 #loginForm #result-div{
 	padding-top: 10px;
     font-size: 12px;
-    color: red;
-	width: 465px;
-	height :10px;
+    color: #777;
+	width: 92%;
+	height :35px;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: left;
 }
 
 
 #loginForm #login-button-wrap {
-	padding-top: 13px;
+	padding-top: 25px;
 }
 #loginForm #login-button-wrap button{
 	width: 465px;
-	height :48px;
-	font-size: 18px;
-	background: dargray;
-	color: black;
-	border: solid 1px black;
+	height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 #loginForm #easy-login-wrap ul{
-	padding-top:25px;
 	list-style: none;
 	width: 465px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-left: 0px;
-}
-#loginForm #easy-login-wrap ul li{
-	padding-bottom: 10px;
+	margin: 10px auto 5px auto;
 }
 #loginForm #easy-login-wrap ul li button{
 	width: 465px;
-	height: 56px;
-	border: solid 1px gray;
-	text-align: left;
-	background: white;
+	height: 50px;
+	border: solid 1px #3B1E1E;
+	color: white;
+	background: #3B1E1E;
+    border-radius: 3px;
+    cursor: pointer;
 }
 #loginForm #easy-login-wrap ul li button img{
-	padding-left: 15px;
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
 }
 
 #loginForm #easy-login-wrap ul li button span{
-	padding-left: 20px;
-	font-size: 18px;
+	padding-left: 5px;
+	font-size: 16px;
+    font-weight: bold;
 }
-#loginForm #easy-login-wrap p{
-	color: black;
-	font-size: 14px;
-	padding-top: 10px;
-
+#loginForm #easy-login-wrap #find-write {
+	font-size: 16px;
+	width: 95%;
+	margin: 0 auto;
+	color: #ccc;
 }
-#loginForm #easy-login-wrap p a{
+#loginForm #easy-login-wrap #find-write p {
+	width: 31%;
+	display: inline-block;
+}
+#loginForm #easy-login-wrap #find-write a{
 	text-decoration: none;
+	color: #555;
 }
 
 
 /*********************** 아이디 찾기 창 ***********************/
-#findIdForm #main-container{
+#findIdForm #main-container {
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	height: 700px;
 }
 
 /*** section ***/
-#findIdForm section{
-	padding-top: 50px;
+#findIdForm section {
+	padding: 80px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
 /***** 아이디 찾는 방법 선택 *****/
-#findIdForm #findId-select-wrap h2{
-	font-size: 20px;
+#findIdForm #findId-select-wrap h3 {
+	text-align: center;
 }
 #findIdForm #findId-select-wrap p, 
 #findIdForm #findId-question-wrap p, 
-#findIdForm #findId-email-wrap p{
-	font-size: 15px;
-	margin-top: 1em;
+#findIdForm #findId-email-wrap p {
+	font-size: 14px;
+	margin-top: 10px;
+	text-align: center;
 }
-#findIdForm #findId-select-wrap ul{
+#findIdForm #findId-select-wrap ul {
 	list-style: none;
 	width: 465px;
+}
+#findIdForm #findId-select-wrap ul li {
+	border-bottom: solid 1px gray;
 }
 #findIdForm #findId-select-wrap ul li button{
 	width: 230px;
 	height: 56px;
-	border: solid 1px gray;
-	text-align: left;
+	outline: none;
+	border: 0;
 	background: white;
-	display: block;
-	float: left;
+}
+#findIdForm #findId-select-wrap ul li.selectBtn {
+	border-bottom: 3px solid #006633;
+}
+#findIdForm #findId-select-wrap ul li.selectBtn span{
+	font-weight: bold;
 }
 #findIdForm #findId-select-wrap ul li button span{
 	padding-left: 20px;
@@ -166,35 +202,35 @@
 
 #findIdForm #findId-question-wrap, 
 #findIdForm #findId-email-wrap{
-	padding-top: 60px;
+	padding-top: 40px;
 	flex-direction: column;
 	align-items: center;
 }
 
-#findIdForm #findId-email-wrap{
+#findIdForm #findId-email-wrap {
 	display: none;
 }
 
 #findIdForm #findId-question-wrap select{
-	width: 99%;
+	width: 465px;
 	height:48px;
-	text-align: center;
 	display: block;
 	font-size: 15px;
 	color: black;
 	border: solid 1px gray;
 	background: white;
-	margin: 5px auto;
+	margin: 10px auto;
 	padding: 5px 0;
-	margin-bottom: 13px;
+	border-radius: 3px;
 }
 #findIdForm #findId-question-input-wrap, 
 #findIdForm #findId-email-input-wrap, 
 #findIdForm #check-email-input-wrap{
 	width: 465px;
-	height :48px;
-	border: solid 1px gray;
+	height: 48px;
+	border: 1px solid gray;
 	background: white;
+	border-radius: 3px;
 }
 #findIdForm #findId-question-input-wrap input, 
 #findIdForm #check-email-input-wrap input{
@@ -206,12 +242,10 @@
 }
 #findIdForm #findId-email-input-wrap input{
 	border: none;
-    width: 220px;
+    width: 218px;
     font-size: 14px;
     padding-left: 10px;
     height: 45px;
-    display: inline-block;
-    float: left;
 }
 #findIdForm #findId-email-input-wrap span{
 	display: inline-block;
@@ -229,9 +263,12 @@
 #findIdForm #result3-div{
 	padding-top: 10px;
     font-size: 12px;
-    color: red;
-	width: 465px;
 	height :10px;
+    color: #777;
+	height :35px;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: left;
 }
 
 #findIdForm #check-email-button-wrap button, 
@@ -239,11 +276,12 @@
 #findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;
-	font-size: 18px;
-	background: dargray;
-	color: black;
-	border: solid 1px black;
-	margin-top: 13px;
+	margin-top: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
 }
 
 /*********************** 아이디 찾기 결과 창 ***********************/

@@ -23,7 +23,7 @@
 	    <a class="nav-link disabled text-dark" href="#" tabindex="-1" aria-disabled="true">나의 혜택 관리</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link alert-link" href="#">등급/혜택</a>
+	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageRating">등급/혜택</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link alert-link" href="#">적립금/쿠폰</a>

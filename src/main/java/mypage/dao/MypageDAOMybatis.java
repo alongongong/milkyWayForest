@@ -10,10 +10,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
 import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
-import shopping.bean.ShoppingDTO;
 
 @Repository 
 @Transactional
@@ -190,6 +190,11 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void updateMyOrderCancel(String paymentCode) {
 		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentCode);
+	}
+	
+	@Override
+	public MemberRatingDTO getMypageRating(String id) {
+		return sqlSession.selectOne("mypageSQL.getMypageRating", id);
 	}
 
 }
