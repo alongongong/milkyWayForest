@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>은하숲커피|EunhaSOOP Coffee</title>
+<title>은하숲</title>
+ <link rel="shortcut icon" href="/milkyWayForest/image/SoopIcon2.png">
 </head>
 <body>
 <header>
