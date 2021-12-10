@@ -5,10 +5,10 @@ import java.util.Map;
 
 import comment.bean.CommentDTO;
 import member.bean.MemberDTO;
+import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
 import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
-import shopping.bean.ShoppingDTO;
 
 public interface MypageDAO {
 
@@ -79,6 +79,8 @@ public interface MypageDAO {
 	public void deleteShpMng(String shipCode);
 
 	public void updateMyOrderCancel(String paymentCode);
+	
+	public MemberRatingDTO getMypageRating(String id);
 
 
 
