@@ -232,7 +232,7 @@
 		where id=#{id} and e.membergrade = d.gradename
 	</select>
 	
-	<select id="getMyOrderInfo" parameterType="String" resultType="payment">
+	<select id="getMyOrderCancelInfo" parameterType="String" resultType="payment">
 		select paymentCode, reason, detailreason from milkyOrderCancel
 		where paymentCode=#{paymentCode}
 	</select>

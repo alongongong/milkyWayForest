@@ -240,7 +240,7 @@ $(function(){
 });
 
 $('#myOrderView1 #reorderBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
+	//location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
 });
 $('#myOrderView1 #orderCancleBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
