@@ -86,6 +86,69 @@
 		select count(*) from milkyPayment where id=#{id}
 	</select>
 	
+	<select id="countPending" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='입금대기중' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countFinished" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='결제완료' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countProcessing" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='배송준비중' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countShipping" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='배송중' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countShipped" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='배송완료' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countCancel" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='취소' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countExchange" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='교환' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countReturn" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='반품' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
+	<select id="countRefund" parameterType="String" resultType="int">
+		select count(*) from milkyPayment 
+		where id=#{id} and deliveryInfo='환불' and payDate 
+		BETWEEN TRUNC(ADD_MONTHS(sysdate,-2)+1) - TO_CHAR(TO_DATE(sysdate),'DD') 
+		AND TRUNC(LAST_DAY(sysdate)) +0.99999421
+	</select>
+	
 	<select id="getOrderTotalA" parameterType="String" resultType="int">
 		select count(*) from milkyPayment where id=#{id}
 	</select>
@@ -114,6 +177,14 @@
 		join milkyPaymentShip b using(paymentCode)
 		join milkyProductInfo c using(productCode)
 		where paymentCode=#{paymentCode}
+	</select>
+	
+	<select id="getCancelTotalA" parameterType="String" resultType="int">
+		select count(*) from milkyPayment where id=#{id} and deliveryInfo in('취소', '교환', '반품', '환불')
+	</select>
+	
+	<select id="getShipmentTotalA" parameterType="String" resultType="int">
+		select count(*) from milkyPayment where id=#{id} and deliveryInfo in('입금대기중', '결제완료', '배송준비중', '배송중', '배송완료')
 	</select>
 	
 	<insert id="mypageShpMngWrite1" parameterType="shipment">

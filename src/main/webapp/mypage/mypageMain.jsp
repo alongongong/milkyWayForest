@@ -22,7 +22,7 @@
 		<div id="myShipment-state">
 			<table class="table table-bordered">
 				<thead>
-					<tr>
+					<tr align="center">
 						<td scope="col">입금대기중</td>
 						<td scope="col">결제완료</td>
 						<td scope="col">배송준비중</td>
@@ -30,6 +30,15 @@
 						<td scope="col">배송완료</td>
 					</tr>
 				</thead>
+				<tbody>
+					<tr align="center">
+						<td><a href="#" id="countPending"></a></td>
+						<td><a href="#" id="countFinished"></a></td>
+						<td><a href="#" id="countProcessing"></a></td>
+						<td><a href="#" id="countShipping"></a></td>
+						<td><a href="#" id="countShipped"></a></td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 	</div><!-- 나의 주문처리 현황 -->
@@ -67,6 +76,12 @@ $(function(){
 		type: 'post',
 		success: function(data){
 			console.log(JSON.stringify(data));
+			$('#countPending').html(data.countPending);
+			$('#countFinished').html(data.countFinished);
+			$('#countProcessing').html(data.countProcessing);
+			$('#countShipping').html(data.countShipping);
+			$('#countShipped').html(data.countShipped);
+
 			if(data.paymentList == ''){
 				$('<tr>').append($('<td>',{
 					text: '주문정보가 존재하지 않습니다',

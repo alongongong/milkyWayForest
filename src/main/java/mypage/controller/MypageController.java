@@ -282,6 +282,46 @@ public class MypageController {
 		return mypageService.getMyOrderInfo(paymentCode);
 	}
 	
+	//주문 취소 창
+	@GetMapping("/myOrderCancel")
+	public String myOrderCancel(@RequestParam String paymentCode, Model model) {
+		model.addAttribute("paymentCode", paymentCode);
+		model.addAttribute("display", "mypage/mypageOrderCancel.jsp");
+		return "/index";
+	}
+	
+	//주문취소/교환/반품 내역 창
+	@GetMapping("/mypageCancelList")
+	public String mypageCancelList(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("display", "mypage/mypageCancelList.jsp");
+		return "/index";
+	}
+	
+	//전체 취소/교환/반품내역 불러오기
+	@PostMapping("/getCancelList")
+	@ResponseBody
+	public JSONObject getCancelList(@RequestParam int pg, HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getCancelList(id, pg);
+	}
+	
+	//주문/배송조회 창
+	@GetMapping("/mypageShipmentList")
+	public String mypageShipmentList(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("display", "mypage/mypageShipmentList.jsp");
+		return "/index";
+	}
+	
+	//전체 주문배송내역 불러오기
+	@PostMapping("/getShipmentList")
+	@ResponseBody
+	public JSONObject getShipmentList(@RequestParam int pg, HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getShipmentList(id, pg);
+	}
+	
 	@PostMapping(value="/getShpMngList")
 	@ResponseBody
 	public List<MypageShipmentDTO> getShpMngList(HttpSession session){
