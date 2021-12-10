@@ -6,37 +6,36 @@
 		<div class="title">
 			<h1>쇼핑</h1>
 		</div>
-		<div class="Menubar" float="right";>
+		<div class="Menubar">
 			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">Menu</a>  
+			<a href="/milkyWayForest/shopping">Shopping</a>  
 		</div>
 	</div>
 
 	<div id ="shoppingMenu">
 		<p class="shoppingMenuSubject">
 			분류보기
-		<div class="down_up_button">
-			<span class="list_up" style="float: right;">
-				<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
-			</span>
-			<span class="list_down" style="display: none; float: right;">
-				<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
-			</span>
-		</div>
+			<div class="down_up_button">
+				<span class="list_up" style="float: right;">
+					<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
+				</span>
+				<span class="list_down" style="display: none; float: right;">
+					<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
+				</span>
+			</div>
 		</p>
 		
 		<div class="border"></div>
 		
 		<ul style="padding-left: 19px">
             <li>
-			 	<span id="menu2">원두 / 차  &nbsp; &nbsp; &nbsp;</span>
+			 	<span id="menu2"><a href="/milkyWayForest/shopping/beanNTea">원두 / 차 </a> &nbsp; &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/beanList">원두</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/teaList">차</a>
 			</li>
-			<br>
 			
 			<li>
-				<span id="menu2" style="padding-right: 46px;">상품  &nbsp; &nbsp;</span>
+				<span id="menu2" style="padding-right: 46px;"><a href="/milkyWayForest/shopping/product">상품 </a> &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/mugList"> 머그</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/glassList"> 글라스</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/plasticTumblrList"> 플라스틱 텀블러</a>&nbsp; &nbsp;
@@ -47,7 +46,6 @@
 		</ul>
 	</div>
 
-	<br><br><br>
 
 <div id="beanNTeaMenuDiv">원두 / 차</div>
 <div id="menuImgDiv1">

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/body.css">
 
 <div id="wrapper">
-	<!--  header css 수정하기 -->
+<!-- 	header css 수정하기 
 	<div id="container" class="fullpage-wrapper" style="height: 100%; position: relavtive;
 	touch-action: none; top: 0px;">
 		<section class="main-section" data-anchor="visual" style="height: 938px;">
@@ -21,14 +21,14 @@
 				</div>
 			</div>
 		</section>
-	</div>
+	</div> -->
 	
 	<!-- 전체영역 -->
 	<div id="fullPage">
 	<!--  첫번째 메인사진 -->
 	<div id="" style="overflow-y; width:100%; height:100%";>
-		<img src="/milkyWayForest/image/mainpic1.jpg" alt="mainpic1.jpg" 
-		style="width:100%; height:110%; top: -120px; position: relative;">
+	 	<img src="/milkyWayForest/image/mainpic1.jpg" alt="mainpic1.jpg" 
+		style="width: 100%; height: 100%;  top: 0; position:absolute;">
 	</div>
 
 		<!-- 우측 스크롤 -->

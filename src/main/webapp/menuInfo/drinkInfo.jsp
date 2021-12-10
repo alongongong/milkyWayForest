@@ -15,8 +15,7 @@
 			</div>
 		
 			<div id ="drinkInfoMenu">
-			<div id ="drinkInfoMenuSubject">음료</div>
-			<br>
+				<div id ="drinkInfoMenuSubject">음료</div>
 				<ul>
 		            <li>
 						<a href="/milkyWayForest/menuInfo/menuInfo?category=차&menuCode=T&pg=1">차</a>&nbsp; &nbsp;
@@ -24,9 +23,6 @@
 					</li>
 				</ul>
 			</div>
-		
-		
-		<br><br><br>
 		
 		<div id="teaInfoMenuDiv">차</div>
 		<div id="teaMenuDiv"></div>

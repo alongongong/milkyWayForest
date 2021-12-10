@@ -20,21 +20,18 @@
 /* 메뉴소개 */
 #menuInfoForm {
 	width: 60%;
-	margin: 0 auto;
-}
-
-#menuInfoForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 음료 게시판 목록네비  */
 #menuInfoForm #menuInfoNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #menuInfoForm #menuInfoNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #menuInfoForm #menuInfoNav a{
@@ -56,6 +53,7 @@
 #menuInfoForm #menuInfoMenuSubject {
 	font-size :18px;
 	font-weight: bold; 
+	padding-left: 20px;
 }
 
 #menuInfoForm #menuInfoMenu #menu2 {
@@ -67,7 +65,7 @@
 #menuInfoForm #menuInfoMenu li {
 	list-style: none;
 	font-size : 14px;
-	
+	margin: 10px 0;
 }
 
 #menuInfoForm #drinkInfoMenuDiv ,#menuInfoForm #foodInfoMenuDiv{
@@ -98,20 +96,18 @@
 /* 음료 메뉴 */
 #drinkInfoForm {
 	width: 60%;
-	margin: 0 auto;
-}
-#drinkInfoForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 음료 게시판 목록네비  */
 #drinkInfoForm #drinkInfoNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #drinkInfoForm #drinkInfoNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #drinkInfoForm #drinkInfoNav a{
@@ -131,12 +127,15 @@
 	margin: 50px auto;
 }
 #drinkInfoForm #drinkInfoMenuSubject {
-	
+	display: inline-block;
 	font-size : 18px;
 	font-weight: bold; 
-	
+	padding-left: 20px;
 }
 
+#drinkInfoForm #drinkInfoMenu ul {
+	display: inline-block;
+}
 #drinkInfoForm #drinkInfoMenu li {
 	list-style: none;
 	font-size : 14px;
@@ -169,20 +168,18 @@
 /* 푸드 메뉴 */
 #foodInfoForm {
 	width: 60%;
-	margin: 0 auto;
-}
-#foodInfoForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 푸드 게시판 목록네비  */
 #foodInfoForm #foodInfoNav {  
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 }
 
 #foodInfoForm #foodInfoNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #foodInfoForm #foodInfoNav a{
@@ -202,10 +199,10 @@
 	margin: 50px auto;
 }
 #foodInfoForm #foodInfoMenuSubject {
-	
 	font-size : 18px;
 	font-weight: bold; 
-	
+	display: inline-block;
+	padding-left: 20px;
 }
 
 #foodInfoForm #foodInfoMenu li {
@@ -244,20 +241,18 @@
 /* 전체음료 메뉴 폼 */
 #allMenuInfoForm {
 	width: 60%;
-	margin: 0 auto;
-}
-#allMenuInfoForm h1 {
-	margin: 50px;
+	margin: 40px auto;
 }
 
 /* 게시판 목록네비  */
 #allMenuInfoForm #allMenuInfoNav {  
-	margin-bottom: 90px;
+	margin-bottom: 60px;
 }
 
 #allMenuInfoForm #allMenuInfoNav div{
 	float: right;
 	color: #777;
+	margin-top: 20px;
 	
 }
 
@@ -294,6 +289,7 @@
 	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
+	margin-top: 0;
 	font-size : 18px;
 	font-weight: bold;
 }
@@ -325,22 +321,19 @@
 /* 메뉴 상세페이지 */
 #menuDetailForm {
 	width: 60%;
-	margin: 0 auto;
+	margin: 40px auto;
 }
-#menuDetailForm h1 {
-	margin: 50px;
-}
-
 
 /* 게시판 목록네비  */
 
 #menuDetailForm #menuDetailNav {  
-	margin-bottom: 90px;
+	margin-bottom: 60px;
 }
 
 #menuDetailForm #menuDetailNav div{
 	float: right;
 	color: #777;
+	margin-top: 10px;
 }
 
 #menuDetailForm #menuDetailNav a{
@@ -450,78 +443,3 @@
  #menuDetailForm #menuRightInfo span {
  	float: right;
  }
-
-/*
-#menuDetailForm .productView {
-	position: relative;
-	padding: 0 0 0 600px ; 
-	width: 950px;
-	box-sizing: border-box; 
-	margin: 0 auto;
-}
-
-#menuDetailForm .productView #productKorName {
-	font-size: 24px;
-}
-
-#menuDetailForm .productView #productEngName {
-	font-size: 24px;
-	border-bottom: 1px solid black;
-	padding : 0 0 20px 0;
-	
-	
-}
-
-#menuDetailForm .productView .menuDetailImg {
-	position:absolute;
-	left: 70px;
-	top: 20px;
-}
-#menuDetailForm .productView .menuDetailImg > img {
-	border: 1px solid silver;
-	width: 370px;
-	height: 380px;
-}
-
-#menuDetailForm .productView .menuDetailImg li:after {
-	content:"";
-	display: block;
-	clear:both;
-	
-}
-
-#menuDetailForm .productView .menuDetailImg ul {
-	left: 70px;
-	padding: 0;
-	
-}
-
-#menuDetailForm .productView .menuDetailImg li {
-	float:left;
-	list-style: none;
-	padding: 10px 10px 0 0;
-}
-
-#menuDetailForm .productView .menuDetailImg li.on img {
-	border-color:  #154520;
-}
-
-#menuDetailForm .productView .menuDetailImg li img {
-	border: 1px solid silver;
-	width: 70px;
-	height: 70px;
-}
-
-#menuDetailForm #detailTable {
-	width: 400px;
-	
-}
-
-#menuDetailForm table td {
-	padding: 12px 0; 
-	font-size: 14px;
-	color: black;
-	
-}
-
-*/

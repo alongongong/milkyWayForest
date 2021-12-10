@@ -7,9 +7,8 @@
 	<br>
 	<div id="faqBoardNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">notice</a> > 
-			<a href="">자주 묻는 질문</a>
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/notice/faqBoard?pg=1">자주 묻는 질문</a>
 		</div>
 	</div>
 	<br>

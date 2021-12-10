@@ -22,7 +22,7 @@
 		<div id="menuContainer">
 			<div id="mainNavMenu">
 				<ul id="main">
-					<li><a href="/milkyWayForest">메인페이지</a></li>
+					<li><a href="/milkyWayForest/">메인페이지</a></li>
 				</ul>
 				<ul id="companyInfo">
 					<li><a href="/milkyWayForest/info/componyInfo">회사소개</a></li>
@@ -70,7 +70,7 @@
 				</ul><!-- 매장찾기 -->
 				
 				<ul id="notice">
-					<li><a href="/milkyWayForest/notice">공지사항</a></li>
+					<li><a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
 					
 					<li><a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
 					<li><a href="/milkyWayForest/notice/eventBoard">이벤트</a></li>

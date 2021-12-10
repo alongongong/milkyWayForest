@@ -16,10 +16,10 @@
 		action="/milkyWayForest/notice/qnaBoardWrite">
 		<table id="qnaBoardWriteTable" class="table">
 			<tr>
-				<td width="200px">문의 유형</td>
+				<th width="200px">문의 유형</td>
 				<td>
 					<select id="qnaQuestionType" name="qnaQuestionType">
-						<option>문의 유형</option>
+						<option value="0">문의 유형</option>
 						<option value="상품 문의">상품 문의</option>
 						<option value="배송 문의">배송 문의</option>
 						<option value="취소 문의">취소 문의</option>
@@ -30,42 +30,49 @@
 				</td>
 			</tr>
 			<tr>
-				<td>제목</td>
+				<th>제목</th>
 				<td>
 					<input type="text" id="qnaSubject" name="qnaSubject">
 				</td>
 			</tr>
 			<tr>
-				<td>내용</td>
+				<th>내용</th>
 				<td>
 					<textarea id="qnaContent" name="qnaContent" rows="17"></textarea>
 				</td>
 			</tr>
 			<tr>
-				<td>글 비밀번호</td>
+				<th>글 비밀번호</th>
 				<td>
 					<input type="password" id="qnaPwd" name="qnaPwd">
 				</td>
 			</tr>
 			<tr>
-				<td>이미지 첨부파일1</td>
-				<td>
-					<input type="file" name="img">
+				<th>이미지 첨부파일1</th>
+				<td class="filebox">
+					<label class="btn" for="qnaAttachedFile">파일찾기</label>
+					<input type="file" id="qnaAttachedFile" name="img" onchange="qnaAttachedFileName()">
+					<input class="upload-name" id="upload-name" placeholder="파일 첨부" size="62">
 				</td>
 			</tr>
 			<tr>
-				<td>이미지 첨부파일2</td>
-				<td>
-					<input type="file" name="img">
+				<th>이미지 첨부파일2</th>
+				<td class="filebox">
+					<label class="btn" for="qnaAttachedFile">파일찾기</label>
+					<input type="file" id="qnaAttachedFile" name="img" onchange="qnaAttachedFileName()">
+					<input class="upload-name" id="upload-name" placeholder="파일 첨부" size="62">
 				</td>
 			</tr>
 			<tr>
-				<td> </td>
+				<td>
+					<div id="qnaBoardWriteCheck"> &emsp;</div>
+				</td>
 				<td></td>
 			</tr>
 		</table>
+		
 		<div id="qnaBoardBtnDiv" align="center">
-			<input type="button" value=" 글쓰기 " id="qnaWriteBtn" class="btn btn-warning">
+			<input type="button" value=" 글쓰기 " id="qnaWriteBtn" class="btn">
 			<input type="button" value=" 취소 " id="CancelBtn" class="btn btn-outline-secondary">
 		</div>
 	</form>

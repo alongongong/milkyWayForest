@@ -34,3 +34,9 @@ create table milkyPaymentShip (
   payShipAddr1 varchar(50),
   payShipAddr2 varchar(50)
 );
+
+create table milkyOrderCancel (
+  paymentCode varchar(20),
+  reason varchar(100),					-- 취소, 교환, 반품 
+  detailReason varchar(1000)			-- 상세 사유
+);

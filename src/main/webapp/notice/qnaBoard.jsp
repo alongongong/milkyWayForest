@@ -7,9 +7,8 @@
 	<br>
 	<div id="qnaBoardNav">
 		<div>
-			<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="">notice</a> > 
-			<a href="">Q&A</a>
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/notice/qnaBoard?pg=1">Q&A</a>
 		</div>
 	</div>
 	<br>
@@ -31,7 +30,7 @@
 		<tbody></tbody>
 	</table>
 	<div id="qndBoardBtnDiv">
-		<input type="button" id="qnaBoardWriteBtn" value="글쓰기">
+		<input type="button" id="qnaBoardWriteBtn" class="btn" value="글쓰기">
 	</div>
 	<div id="qnaBoardPaging"></div>
 </form>
@@ -72,16 +71,17 @@ $(function(){
 					class: 'pwdWrite'
 				}).append($('<td>',{
 					colspan: '8',
-					style: 'vertical-align: middle; text-align: center; padding: 60px'
+					style: 'vertical-align: middle; text-align: center; padding: 60px;'
 				}).append($('<input>',{
 					type: 'text',
 					placeholder: '비밀번호 입력',
-					style: 'margin-right: 5px;',
+					style: 'margin-right: 5px; padding: 3px; outline: none;',
 					class: 'pwdInput'
 				})).append($('<input>',{
 					type: 'button',
 					value: '입력',
-					id: 'pwdBtn'+index
+					id: 'pwdBtn'+index,
+					class: 'btn pwbWriteBtn'
 				})).append($('<div>',{
 					class: 'qndPwdCheck'
 				}))).appendTo($('#qnaBoardTable tbody'));

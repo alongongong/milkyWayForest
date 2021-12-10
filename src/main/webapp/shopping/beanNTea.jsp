@@ -24,18 +24,14 @@
 	</div>
 
 	<div id ="beanNTeaMenu">
-	<div id ="beanNTeaMenuSubject">원두 / 차</div>
-	<br>
+		<div id ="beanNTeaMenuSubject">원두 / 차</div>
 		<ul>
             <li>
-				<a href="#">원두</a>&nbsp; &nbsp;
-         	    <a href="#">차</a>&nbsp; &nbsp;
+				<a href="/milkyWayForest/shopping/beanList">원두</a>&nbsp; &nbsp;
+         	    <a href="/milkyWayForest/shopping/teaList">차</a>&nbsp; &nbsp;
 			</li>
 		</ul>
 	</div>
-
-
-<br><br><br>
 
 <div id="beanMenuDiv">원두</div>
 <div id="menuImgDiv1">
