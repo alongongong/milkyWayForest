@@ -68,7 +68,7 @@
 					<td>
 						
 						<select class="shoppingSelect"  name="cartOption">
-							<option> ------------------ 옵션 ------------------ &nbsp; </option>
+							<option value="0"> ---------------- 옵션 ---------------- &nbsp; </option>
 							<!--  <option><span id="productOptionSpan2"></span></option>
 							<option><span id="productOptionSpan2"></span></option> -->
 						</select>
@@ -121,6 +121,7 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script type="text/javascript"> //온로드할때 바로 이 부분이 실행되어야 해서 디테일jsp로 옮겨줌
 $(function(){
 	$.ajax({
@@ -211,6 +212,7 @@ $(function(){
 		    	
 			}
 
+
 			//구매수량 늘어날때      수량 상품코드 장바구니 에 가져간다.(결제금액은 가져갈 필요 없다.) 장바구니 버튼을 눌렀을떄 에이작스를 실행해서 로케이션뒤에 장바구니코드를 붙여준다.
 			$('#plus').click(function(){
 				
@@ -275,9 +277,10 @@ $(function(){
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(5) img').prop("src"));
 			$('.shoppingDetailImg li:not(5) img').css('border', '1px solid silver');
 			$('.shoppingDetailImg li:eq(5) img').css('border', '1px solid  #154520');
-		});
 
-		},
+		}); //li:eq(5)
+
+		}, //getShoppingDetail success
 
 		error: function(err) {
 			console.log(err);
@@ -287,11 +290,11 @@ $(function(){
 
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
-		if($('.shoppingSelect option:eq(0)')) {
+		if($('.shoppingSelect').val()=='0') {
 			alert('상품 옵션을 선택해주세요.');
 		} else if(${memId==null}) {
 			alert('로그인 해주세요');
-		location.href="/milkyWayForest/login/loginForm";
+			location.href="/milkyWayForest/login/loginForm";
 		
 		}else{
 		
@@ -305,7 +308,7 @@ $(function(){
 					
 						
 					if(data !=0) {
-					alert("이미 장바구니에 있는 상품입니다.");
+						alert("이미 장바구니에 있는 상품입니다.");
 				
 					}
 					else { 
@@ -317,31 +320,29 @@ $(function(){
 						
 						success : function() {  //에이작스는 성공만하면 success 를 수행할수 있음 따라서 받아오는 데이터 타입이 없어도 됨. 바로 카트.jsp 로 넘겨준다.  
 							if(confirm("장바구니로 이동하시겠습니까?")){
-							location.href= "/milkyWayForest/cart";
+								location.href= "/milkyWayForest/cart";
 							}
 						},
 	
 						error: function(err) {
 							console.log(err);
 						
-							}
-						});
+						} 
+						}); //productSelect 에이작스
+			
+					} //cartBtn else 끝
+			
+				},	//success (cart/cartInsert)
+			
+			});	//shopping/productSelect 에이작스	
 	
-					}
+		}// option:eq(0) else			
 	
-				},
-				error: function(err) {
-					console.log(err);
-				} 
-	
-			});
-		}
-		
-	});//
+	}); //cartBtn click 펑션
 	
 	// 구매하기 버튼 눌렀을 때
 	$('#shoppingDetailForm #purchaseBtn').click(function(){
-		if($('.shoppingSelect option:eq(0)')) {
+		if($('.shoppingSelect').val()=='0') {
 			alert('상품 옵션을 선택해주세요.');
 		} else if(${memId == null}) {
 			alert('로그인 해주세요');
@@ -355,8 +356,7 @@ $(function(){
 				success : function(data) {  //알아서 자료형을 맞춰줌
 
 					if(data !=0) {
-					alert("이미 장바구니에 있는 상품입니다.");
-				
+						alert("이미 장바구니에 있는 상품입니다.");			
 					}
 					else { 
 						$.ajax({
@@ -370,18 +370,19 @@ $(function(){
 							error: function(err) {
 								console.log(err);
 							}
-						});
+						}); // /payment/cartInsert 에이작스
 						
-					}
+					} // data !=0 else
 				},
 				error: function(err) {
 					console.log(err);
 				}
-			});
+			}); // /shopping/productSelect 에이작스
 		}
-	});
+	}); // purchaseBtn 클릭시
 
 
 }); //큰 function
+
 
 </script>

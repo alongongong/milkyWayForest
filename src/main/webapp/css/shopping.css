@@ -1026,7 +1026,8 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	no-repeat right 6px center;
 	appearance: none;
 	text-align: center; 
-	
+	outline: none;
+	height: 25px;
 }
 
 #shoppingDetailForm .productView .btnDiv {
