@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#footerBody {
+	margin: 0;
+	padding: 0; 
+}
+
+#footerBody #footer {
+	margin: 0;
+	text-align: center;
+	/* background: aliceblue; */
+	background: black;
+}
+#footerBody .footerGroup ul {
+	margin: .4rem;;
+	
+}
+
+#footerBody .footerGroup li {
+	display: inline;
+	/* padding: 0 7px 0 10px; */
+	/* white-space: nowrap; */
+	  
+}
+/* 글자와글자사이는 rem %  쓰는게 좋고 
+전체 div 잡은거는 width에 50% 이런식으로 
+정렬방식을 align:center, 
+ */
+
+#footerBody .footerMenu {
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+    padding-top: 1.5rem; 
+	
+}
+#footerBody .footerInfo {
+	font-size: 12px;
+	color: silver;
+	padding-top: .2rem;
+	
+}
+#footerBody .footerCopy{
+	font-size: 12px;
+	color: silver;
+	padding-top: .2rem;
+	
+}
+
+#footerBody .footerMenu a:link { color: white; text-decoration: none; }
+#footerBody .footerMenu a:visited { color: white; text-decoration: none; }
+#footerBody .footerMenu a:hover { color: #f5ce3e; text-decoration: underline; }
+#footerBody .footerMenu a:active { color: white; text-decoration: none; }
+
