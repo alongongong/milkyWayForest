@@ -319,27 +319,26 @@
 }
 #findIdResultForm #findIdResult-wrap{
 	padding-top: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 #findIdResultForm #findIdResult-wrap h2{
 	font-weight: bold;
 	font-size: 28px;
+	margin-bottom: 10px;
 }
 
 #findIdResultForm #findIdResult-wrap p{
 	font-size: 14px;
-	padding-top: 10px;
-
+	margin-top: 5px;
 }
 #findIdResultForm #id-wrap{
 	font-size: 20px;
-	margin: 60px auto;
+	font-weight: bold;
+	margin: 40px auto;
 }
 
 #findIdResultForm #id-wrap #id-result{
-	border: 1px solid;
+	border: 1px solid #154520;
 	width: 465px;
 	height: 120px;
 	text-align: center;
@@ -348,15 +347,20 @@
 }
 
 #findIdResultForm #find-write{
-	color: black;
-	font-size: 14px;
-	padding-top: 10px;
+	font-size: 16px;
+	width: 95%;
+	margin: 20px auto;
+	color: #ccc;
 
 }
-#findIdResultForm #find-write a{
+#findIdResultForm #find-write p {
+	width: 31%;
+	display: inline-block;
+}	
+#findIdResultForm #find-write p a {
 	text-decoration: none;
+	color: #555;
 }
-
 /*********************** 비밀번호 찾기 창 ************************/
 #findPwdForm1 #main-container, 
 #findPwdForm2 #main-container, 
