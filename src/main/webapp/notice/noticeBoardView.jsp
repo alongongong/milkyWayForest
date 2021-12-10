@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="noticeBoardViewForm">
 	<legend>공지사항</legend><br>
+	<div id="noticeBoardViewNav">
+		<div>
+			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+			<a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a>
+		</div>
+	</div>
 	<div id="noticeBoardViewDiv">
 		<div id="noticeSubject">
 			<p id="noticeDate"></p>
@@ -30,14 +36,25 @@ $(function(){
 			}).appendTo($('#noticeSubject'));
 			$('#noticeContent').html(data.noticeContent);
 			
-			if(data.imgName != null) {
+			if(data.imgName != null && data.noticeContent != null) {
 				$('<p>',{
 					align: 'center',
 					style: 'margin-top: 20px;'
 				}).append($('<img>',{
 					src: '/milkyWayForest/noticeImg/'+data.imgName,
 					alt: data.imgName,
-					width: '70%',
+					width: '60%',
+					align: 'center'
+				})).appendTo($('#noticeContent'));
+			} else if (data.imgName != null && data.noticeContent == null) {
+				$('#noticeContent').css('padding', '0');
+				$('<p>',{
+					align: 'center',
+					style: 'margin-top: 0; padding-top: 0;'
+				}).append($('<img>',{
+					src: '/milkyWayForest/noticeImg/'+data.imgName,
+					alt: data.imgName,
+					width: '90%',
 					align: 'center'
 				})).appendTo($('#noticeContent'));
 			}
