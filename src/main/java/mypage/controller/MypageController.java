@@ -294,8 +294,8 @@ public class MypageController {
 	//주문 취소 DB 업데이트
 	@PostMapping("/updateMyOrderCancel")
 	@ResponseBody
-	public void updateMyOrderCancel(@RequestParam String paymentCode) {
-		mypageService.updateMyOrderCancel(paymentCode);
+	public void updateMyOrderCancel(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderCancel(paymentDTO);
 	}
 
 	//주문취소/교환/반품 내역 창

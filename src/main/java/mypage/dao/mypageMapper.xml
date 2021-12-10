@@ -171,11 +171,13 @@
 		select paymentCode, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo,
 		    productCode, a.productOption, a.payQty, a.payPrice, a.payRate,
 		    b.payShipNickname, b.payShipReceiver, b.payShipTel1, b.payShipTel2, b.payShipTel3, b.payShipZipcode, b.payShipAddr1, b.payShipAddr2,
-		    c.productName, c.category
+		    c.productName, c.category,
+		    d.reason, d.detailreason
 		from milkyPayment 
 		join milkyPaymentOption a using(paymentCode)
 		join milkyPaymentShip b using(paymentCode)
 		join milkyProductInfo c using(productCode)
+		join milkyOrderCancel d using(paymentCode)
 		where paymentCode=#{paymentCode}
 	</select>
 	
@@ -219,8 +221,11 @@
 		delete milkyShipment where shipCode=#{shipCode}
 	</delete>
 
-	<update id="updateMyOrderCancel" parameterType="String">
-		update milkyPayment set deliveryInfo='취소' where paymentCode=#{paymentCode}
+	<update id="updateMyOrderCancel" parameterType="payment">
+		begin
+			insert into milkyOrderCancel values(#{paymentCode}, #{reason}, #{detailReason});
+			update milkyPayment set deliveryInfo='취소' where paymentCode=#{paymentCode};
+		end;
 	</update>
 	
 	<select id="getMypageRating" parameterType="String" resultType="mypage.bean.MemberRatingDTO">

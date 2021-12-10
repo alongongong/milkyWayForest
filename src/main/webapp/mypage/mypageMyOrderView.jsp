@@ -58,6 +58,21 @@
 					</tr>
 				</table>
 			</div>
+			<div id="orderChangeDiv">
+				<div class="navbar navbar-light alert-info">
+					<span id="orderChangeTitle" class="navbar-brand mb-0 h1"></span>			
+				</div>
+				<table class="table table-bordered">
+					<tr>
+						<td id="orderChangeReason"></td>
+						<td id="reason"></td>
+					</tr>
+					<tr>
+						<td>상세사유</td>
+						<td id="detailReason"></td>
+					</tr>
+				</table>
+			</div>
 		</div>
 		
 		<div id="myOrderView2">
@@ -119,6 +134,7 @@
 				</table>
 			</div>
 		</div>
+		<div id="myOrderView4"></div>
 	</div>
 	
 </div><!-- main-wrapper -->
@@ -142,7 +158,7 @@ $(function(){
 					$('#orderExchangeBtn').show();
 					$('#orderReturnBtn').show();
 				}
-
+				
 				$('#myOrderView1 #payDate').html(data.payDate);
 				$('#myOrderView1 #paymentCode').html(data.paymentCode);
 				$('#myOrderView1 #productCode').html(data.productCode);
@@ -152,6 +168,28 @@ $(function(){
 				$('#myOrderView1 #shipPay').html(data.shipPay);
 				$('#myOrderView1 #deliveryInfo').html(data.deliveryInfo);
 				
+				if(data.deliveryInfo=='취소'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('주문취소');
+					$('#orderChangeReason').html('주문취소사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+					
+				}else if(data.deliveryInfo=='교환'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('교환신청');
+					$('#orderChangeReason').html('교환사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+					
+				}else if(data.deliveryInfo=='반품'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('반품신청');
+					$('#orderChangeReason').html('반품사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+				}
+
 				var payQty = data.payQty*1;
 				var payPrice = data.payPrice*1;
 				var payRate = data.payRate*1;
@@ -191,9 +229,9 @@ $('#myOrderView1 #orderCancleBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
 });
 $('#myOrderView1 #orderExchangeBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderExchange?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
 });
 $('#myOrderView1 #orderReturnBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderReturn?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
 });
 </script>

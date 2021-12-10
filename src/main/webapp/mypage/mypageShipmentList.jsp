@@ -16,7 +16,7 @@
 
 	<div id="myPayment-wrapper" class="item">
 		<div id="myPayment-title" class="navbar navbar-light alert-info">
-			<span class="navbar-brand mb-0 h1">주문취소/교환/반품 내역</span>
+			<span class="navbar-brand mb-0 h1">주문/배송조회</span>
 		</div>
 		
 		<div id="myPayment-state">
