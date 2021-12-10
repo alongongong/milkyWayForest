@@ -51,13 +51,14 @@ $(function(){
 		url: '/milkyWayForest/mypage/getOrderList?pg='+${pg},
 		type: 'post',
 		success: function(data){
-			console.log(JSON.stringify(data));
+			//console.log(JSON.stringify(data));
+
 			if(data.paymentList == ''){
 				$('<tr>').append($('<td>',{
 					text: '주문정보가 존재하지 않습니다',
 					colspan: '6',
 					align: 'center'
-				})).appendTo($('#myPaymentTable'));
+				})).appendTo($('#myPaymentTable tbody'));
 				
 			}else{
 				$.each(data.paymentList, function(index, items) {
@@ -115,11 +116,10 @@ $(function(){
 						}));	
 					}
 				}); */
+
+				$('#myOrderPagingDiv').html(data.boardPaging);
 	
 			}//if
-			
-			$('#myOrderPagingDiv').html(data.boardPaging);
-
 		},
 		error: function(err){
 			console.log(err);

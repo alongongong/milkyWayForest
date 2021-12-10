@@ -135,11 +135,11 @@ $(function(){
 			console.log(JSON.stringify(data));
 			if(data != ''){
 				if(data.deliveryInfo=='입금대기중' || data.deliveryInfo=='결제완료' || data.deliveryInfo=='배송준비중' || data.deliveryInfo=='배송중'){
-					$('#myOrderView #orderCancleBtn').show();
+					$('#myOrderView1 #orderCancleBtn').show();
 
 				}else if(data.deliveryInfo=='배송완료'){
-					$('#myOrderView #orderExchangeBtn').show();
-					$('#myOrderView #orderReturnBtn').show();
+					$('#myOrderView1 #orderExchangeBtn').show();
+					$('#myOrderView1 #orderReturnBtn').show();
 				}
 
 				$('#myOrderView1 #payDate').html(data.payDate);
@@ -183,16 +183,16 @@ $(function(){
 	});
 });
 
-$('#myOrderView #reorderBtn').click(function(){
+$('#myOrderView1 #reorderBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
 });
-$('#myOrderView #orderCancleBtn').click(function(){
+$('#myOrderView1 #orderCancleBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
 });
-$('#myOrderView #orderExchangeBtn').click(function(){
+$('#myOrderView1 #orderExchangeBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myOrderExchange?paymentCode='+$('#paymentCode').val();
 });
-$('#myOrderView #orderReturnBtn').click(function(){
+$('#myOrderView1 #orderReturnBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myOrderReturn?paymentCode='+$('#paymentCode').val();
 });
 </script>
