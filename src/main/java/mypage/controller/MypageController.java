@@ -222,26 +222,26 @@ public class MypageController {
 		mypageService.deleteMyQnaView(qnaCode);
 	}
 	
-	//권영민
-		@GetMapping(value="/mypageShpMng")
-		public String mypageShpMng(Model model) {
-			model.addAttribute("display", "mypage/mypageShpMng.jsp");
-			return "/index";
-		}
+	//배송지 관리
+	@GetMapping(value="/mypageShpMng")
+	public String mypageShpMng(Model model) {
+		model.addAttribute("display", "mypage/mypageShpMng.jsp");
+		return "/index";
+	}
+	
+	@PostMapping(value="/mypageShpMngWrite")
+	@ResponseBody
+	public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO,HttpSession session) {
+		String id = (String) session.getAttribute("memId");
 		
-		@PostMapping(value="/mypageShpMngWrite")
-		@ResponseBody
-		public void mypageShpMngWrite(@ModelAttribute MypageShipmentDTO mypageShipmentDTO,HttpSession session) {
-			String id = (String) session.getAttribute("memId");
-			
-			mypageShipmentDTO.setId(id);
-			if(mypageShipmentDTO.getBaseShip() != 1) {
-				mypageShipmentDTO.setBaseShip(0);
-				mypageService.mypageShpMngWrite(mypageShipmentDTO);
-			}else if(mypageShipmentDTO.getBaseShip() == 1) {
-				mypageService.mypageShpMngWrite1(mypageShipmentDTO);
-			}	
-		}
+		mypageShipmentDTO.setId(id);
+		if(mypageShipmentDTO.getBaseShip() != 1) {
+			mypageShipmentDTO.setBaseShip(0);
+			mypageService.mypageShpMngWrite(mypageShipmentDTO);
+		}else if(mypageShipmentDTO.getBaseShip() == 1) {
+			mypageService.mypageShpMngWrite1(mypageShipmentDTO);
+		}	
+	}
 
 	//배송상품 주문정보 불러오기
 	@PostMapping("/getPaymentInfo")
@@ -282,7 +282,7 @@ public class MypageController {
 		return mypageService.getMyOrderInfo(paymentCode);
 	}
 	
-	//주문 취소 창
+	//주문 취소 신청 창
 	@GetMapping("/myOrderCancel")
 	public String myOrderCancel(@RequestParam String paymentCode, Model model) {
 		model.addAttribute("paymentCode", paymentCode);
@@ -290,6 +290,13 @@ public class MypageController {
 		return "/index";
 	}
 	
+	//주문 취소 DB 업데이트
+	@PostMapping("/updateMyOrderCancel")
+	@ResponseBody
+	public void updateMyOrderCancel(@RequestParam String paymentCode) {
+		mypageService.updateMyOrderCancel(paymentCode);
+	}
+
 	//주문취소/교환/반품 내역 창
 	@GetMapping("/mypageCancelList")
 	public String mypageCancelList(@RequestParam int pg, Model model) {

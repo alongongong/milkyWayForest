@@ -219,5 +219,7 @@
 		delete milkyShipment where shipCode=#{shipCode}
 	</delete>
 
-
+	<update id="updateMyOrderCancel" parameterType="String">
+		update milkyPayment set deliveryInfo='취소' where paymentCode=#{paymentCode}
+	</update>
 </mapper>

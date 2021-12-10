@@ -78,6 +78,8 @@ public interface MypageDAO {
 
 	public void deleteShpMng(String shipCode);
 
+	public void updateMyOrderCancel(String paymentCode);
+
 
 
 

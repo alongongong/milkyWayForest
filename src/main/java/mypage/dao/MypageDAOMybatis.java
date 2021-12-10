@@ -190,4 +190,9 @@ public class MypageDAOMybatis implements MypageDAO {
 		
 	}
 
+	@Override
+	public void updateMyOrderCancel(String paymentCode) {
+		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentCode);
+	}
+
 }

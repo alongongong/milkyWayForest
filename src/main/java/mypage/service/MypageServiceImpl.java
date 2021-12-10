@@ -272,5 +272,10 @@ public class MypageServiceImpl implements MypageService {
 		
 	}
 
+	@Override
+	public void updateMyOrderCancel(String paymentCode) {
+		mypageDAO.updateMyOrderCancel(paymentCode);
+	}
+
 
 }

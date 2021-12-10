@@ -9,7 +9,8 @@
 #mypageOrderList,
 #myOrderView,
 #mypageCancelList,
-#mypageShipmentList {
+#mypageShipmentList,
+#myOrderCancel {
 	margin: 0;
 	padding: 0;
 }
@@ -71,7 +72,8 @@
 #mypageOrderList #main-wrapper,
 #myOrderView #main-wrapper,
 #mypageCancelList #main-wrapper,
-#mypageShipmentList #main-wrapper{
+#mypageShipmentList #main-wrapper,
+#myOrderCancel #main-wrapper{
 	display: grid;
 	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
 	grid-auto-columns: minmax(250px, auto); /* 열(column)의 배치 */
@@ -93,7 +95,8 @@
 #mypageOrderList #main-sideNav,
 #myOrderView #main-sideNav,
 #mypageCancelList #main-sideNav,
-#mypageShipmentList #main-sideNav {
+#mypageShipmentList #main-sideNav,
+#myOrderCancel #main-sideNav {
 	grid-column: 1;
 	grid-row: 1 / span 3;
 }
@@ -106,7 +109,8 @@
 #mypageOrderList #main-topNav,
 #myOrderView #main-topNav,
 #mypageCancelList #main-topNav,
-#mypageShipmentList #main-topNav  {
+#mypageShipmentList #main-topNav,
+#myOrderCancel #main-topNav  {
 	grid-column: 2;
 	grid-row: 1;
 }
@@ -435,3 +439,27 @@
 #mypageShipmentList .orderSubject:visited { color: black; text-decoration: none; }
 #mypageShipmentList .orderSubject:hover { color: red; text-decoration: underline; }
 #mypageShipmentList .orderSubject:active { color: black; text-decoration: none; }
+
+/*********** 주문 취소신청 창 ***********/
+#myOrderCancel #myOrderCancel-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#myOrderCancel #myOrderCancelTable {
+	margin: 90px 0 30px 0;
+}
+
+#myOrderCancel #myOrderCancelTable input,
+#myOrderCancel #myOrderCancelTable select {
+	width: 100%;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid #999;
+	vertical-align: bottom;
+}
+
+#myOrderCancel #myOrderCancelTable textarea {
+	width: 100%;
+}

@@ -51,5 +51,7 @@ public interface MypageService {
 
 	public void deleteShpMng(String shipCode);
 
+	public void updateMyOrderCancel(String paymentCode);
+
 
 }
