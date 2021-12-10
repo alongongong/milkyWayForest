@@ -82,4 +82,6 @@ public interface MypageDAO {
 
 	public MemberRatingDTO getMypageRating(String id);
 
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
+
 }

@@ -196,4 +196,9 @@ public class MypageDAOMybatis implements MypageDAO {
 		return sqlSession.selectOne("mypageSQL.getMypageRating", id);
 	}
 
+	@Override
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode) {
+		return sqlSession.selectOne("mypageSQL.getMyOrderCancelInfo", paymentCode);
+	}
+
 }

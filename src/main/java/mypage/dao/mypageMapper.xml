@@ -171,13 +171,11 @@
 		select paymentCode, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo,
 		    productCode, a.productOption, a.payQty, a.payPrice, a.payRate,
 		    b.payShipNickname, b.payShipReceiver, b.payShipTel1, b.payShipTel2, b.payShipTel3, b.payShipZipcode, b.payShipAddr1, b.payShipAddr2,
-		    c.productName, c.category,
-		    d.reason, d.detailreason
+		    c.productName, c.category
 		from milkyPayment 
 		join milkyPaymentOption a using(paymentCode)
 		join milkyPaymentShip b using(paymentCode)
 		join milkyProductInfo c using(productCode)
-		join milkyOrderCancel d using(paymentCode)
 		where paymentCode=#{paymentCode}
 	</select>
 	
@@ -232,5 +230,10 @@
 		select * 
 		from milkymember e, milkygradeinfo d
 		where id=#{id} and e.membergrade = d.gradename
+	</select>
+	
+	<select id="getMyOrderInfo" parameterType="String" resultType="payment">
+		select paymentCode, reason, detailreason from milkyOrderCancel
+		where paymentCode=#{paymentCode}
 	</select>
 </mapper>
