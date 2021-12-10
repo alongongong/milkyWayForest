@@ -51,14 +51,14 @@
 	</div>
 	
 	<!-- 우측 스크롤 -->
-	<div class = fullpage-nav">
+<!-- 	<div class = fullpage-nav">
 		<span class="fullpage-nav-current">01</span>
 		<span class="fullpage-nav-progress">
 			<em class="fullpage-nav-progress-active" style="height: 16.6667%;">
 			</em>
 		</span>
 		<span class=fullpage-nave-total>03</span>
-	</div>
+	</div> -->
 	
 	</div>
 </div>
