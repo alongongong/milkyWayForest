@@ -39,7 +39,6 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void mypageMyInfoDelete(MemberDTO memberDTO) {
 		sqlSession.delete("mypageSQL.mypageMyInfoDelete", memberDTO);
-		
 	}
 
 	@Override
@@ -188,8 +187,8 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 
 	@Override
-	public void updateMyOrderCancel(String paymentCode) {
-		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentCode);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO) {
+		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentDTO);
 	}
 
 }
