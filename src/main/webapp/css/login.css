@@ -11,11 +11,22 @@
 }
 
 /*********************** 로그인 창 ***********************/
-#loginForm #main-container{
-	width:100%;
+#loginForm {
+	min-height: 750px;
+}
+#loginForm #main-container {
+	background-image: url("/milkyWayForest/image/login_bg.jpg");
+	height: 100%;
+}
+#loginForm #main-wrap{
+	width:35%;
+	min-width: 500px;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	margin: auto;
+	background: white;
+	
 }
 #loginForm #login-input-wrap, 
 #loginForm #easy-login-wrap{
