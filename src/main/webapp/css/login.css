@@ -11,6 +11,12 @@
 }
 
 /*********************** 로그인 창 ***********************/
+#loginForm #headerBackground {
+	height: 120px;
+	background: #f6f5ef;
+	position: sticky;
+	top: 0;
+}
 #loginForm #main-container {
 	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
 	background-size: 100%;
@@ -23,6 +29,8 @@
 	margin-top: 0;
 	color: white;
 	margin-bottom: 40px;
+	font-size: 38px;
+	font-weight: bold;
 }
 #loginForm #main-wrap{
 	width: 515px;
@@ -153,12 +161,12 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height: 700px;
+	height: 840px;
 }
 
 /*** section ***/
 #findIdForm section {
-	padding: 80px 0;
+	padding: 190px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -167,12 +175,17 @@
 /***** 아이디 찾는 방법 선택 *****/
 #findIdForm #findId-select-wrap h3 {
 	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
 }
-#findIdForm #findId-select-wrap p, 
-#findIdForm #findId-question-wrap p, 
-#findIdForm #findId-email-wrap p {
+#findIdForm #findId-select-wrap p {
 	font-size: 14px;
 	margin-top: 10px;
+	text-align: center;
+}
+#findIdForm #findId-email-wrap p {
+	font-size: 14px;
+	margin: 5px 0 10px 0;
 	text-align: center;
 }
 #findIdForm #findId-select-wrap ul {
@@ -196,7 +209,6 @@
 	font-weight: bold;
 }
 #findIdForm #findId-select-wrap ul li button span{
-	padding-left: 20px;
 	font-size: 15px;
 }
 
@@ -270,9 +282,20 @@
 	font-weight: bold;
 	text-align: left;
 }
-
+#findIdForm .checkEmailInputHide {
+	display: none;
+}
 #findIdForm #check-email-button-wrap button, 
-#findIdForm #check-number-button-wrap button, 
+#findIdForm #check-number-button-wrap button {
+	width: 465px;
+	height :48px;
+	margin: 20px 0;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
+}
 #findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;
@@ -285,6 +308,9 @@
 }
 
 /*********************** 아이디 찾기 결과 창 ***********************/
+#findIdResultForm {
+	margin: 160px auto 50px auto;
+}
 #findIdResultForm #main-container{
 	width:100%;
 	display:flex;
@@ -298,7 +324,8 @@
 	align-items: center;
 }
 #findIdResultForm #findIdResult-wrap h2{
-	font-size: 20px;
+	font-weight: bold;
+	font-size: 28px;
 }
 
 #findIdResultForm #findIdResult-wrap p{

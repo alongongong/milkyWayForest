@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/login.css">
 
 <form name="loginForm" id="loginForm">
+<div id="headerBackground"> </div>
 <div id="main-container">
 	<h1>로그인</h1>
 	<div id="main-wrap">

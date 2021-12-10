@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/milkyWayForest/css/companyInfo.css">
-</head>
+
 
 <div id="allDiv">
 
@@ -21,16 +18,15 @@
 		
 		<div id="top_banner_text">
 			<div>
-				<a href=""><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-				<a href="">은하숲 소개</a> > 
-				<a href="">은하숲</a>
+				<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+				<a href="/milkyWayForest/info/componyInfo">은하숲 소개</a> > 
+				<a href="/milkyWayForest/info/componyInfo" style="font-weight: bold;">은하숲</a>
 			</div>
 		</div>
 	<br>
 		</div>
 	</div>
-		
-	<body>
+
 	<div id="companyInfo">
 		<div id="leftDiv">
 			<div class="pic1">
@@ -124,5 +120,3 @@
 		</div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/milkyWayForest/js/Info.js"></script>
-</body> 
-</html>

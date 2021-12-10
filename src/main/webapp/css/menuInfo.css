@@ -20,7 +20,11 @@
 /* 메뉴소개 */
 #menuInfoForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 160px auto 60px auto;
+}
+#menuInfoForm h1 {
+	font-size: 38px;
+	font-weight: bold;
 }
 
 /* 음료 게시판 목록네비  */
@@ -96,7 +100,11 @@
 /* 음료 메뉴 */
 #drinkInfoForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 160px auto 60px auto;
+}
+#drinkInfoForm h1 {
+	font-size: 38px;
+	font-weight: bold;
 }
 
 /* 음료 게시판 목록네비  */
@@ -168,7 +176,11 @@
 /* 푸드 메뉴 */
 #foodInfoForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 160px auto 60px auto;
+}
+#foodInfoForm h1 {
+	font-size: 38px;
+	font-weight: bold;
 }
 
 /* 푸드 게시판 목록네비  */
@@ -241,8 +253,13 @@
 /* 전체음료 메뉴 폼 */
 #allMenuInfoForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 160px auto 60px auto;
 }
+#allMenuInfoForm h1 {
+	font-size: 38px;
+	font-weight: bold;
+}
+
 
 /* 게시판 목록네비  */
 #allMenuInfoForm #allMenuInfoNav {  
@@ -321,7 +338,11 @@
 /* 메뉴 상세페이지 */
 #menuDetailForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 160px auto 60px auto;
+}
+#menuDetailForm h1 {
+	font-size: 38px;
+	font-weight: bold;
 }
 
 /* 게시판 목록네비  */
