@@ -5,7 +5,12 @@ src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.wo
 @font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);}
 
 body { margin: 0; }
-
+pre {
+display: block;
+font-family:MalgunGothic; src:url(font/MalgunGothic.eot);
+white-space: pre;
+margin: 1em 0;
+}
 /* 전체DIV */
 #gradeBenefitForm #container { width: 78rem; margin: 0 auto;  }
 

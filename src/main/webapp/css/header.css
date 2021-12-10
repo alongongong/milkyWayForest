@@ -1,7 +1,6 @@
 @charset "UTF-8";
-/* @font-face {font-family:MalgunGothic; src:url(font/MalgunGothic.eot);} */
- 
- * { font-family: "Mark Pro","Noto Sans KR","Apple SD Gothic Neo",sans-serif; }
+
+/* @font-face { font-family: "Mark Pro","Noto Sans KR","Apple SD Gothic Neo",sans-serif; }*/
 
 body { margin : 0; padding : 0; height: 3000px;}
 #Allheader html { font-size: 18px; }
