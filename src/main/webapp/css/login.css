@@ -20,7 +20,7 @@
 #loginForm #main-container {
 	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
 	background-size: 100%;
-	padding: 90px 0 110px 0;
+	padding: 160px 0 180px 0;
 	-webkit-background-size: cover;
 	width: 100%;
 }
@@ -161,15 +161,15 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height: 840px;
 }
 
 /*** section ***/
 #findIdForm section {
-	padding: 190px 0;
+	margin: 251px auto 180px auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 558px;
 }
 
 /***** 아이디 찾는 방법 선택 *****/
@@ -309,13 +309,14 @@
 
 /*********************** 아이디 찾기 결과 창 ***********************/
 #findIdResultForm {
-	margin: 160px auto 50px auto;
+	margin: 331px auto 258px auto;
 }
 #findIdResultForm #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	height: 400px;
 }
 #findIdResultForm #findIdResult-wrap{
 	padding-top: 50px;
@@ -363,7 +364,7 @@
 }
 /*********************** 비밀번호 찾기 창 ************************/
 #findPwdForm1, #findPwdForm2, #findPwdForm3 {
-	margin: 160px auto 50px auto;
+	margin: 261px auto 170px auto;
 }
 
 #findPwdForm1 #main-container, 
@@ -373,6 +374,7 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	height: 558px;
 }
 #findPwdForm1 section, 
 #findPwdForm2 section, 
