@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
+#writeAgreeForm, #memberWriteForm, #writeOkForm {
+	margin: 160px auto 60px auto;
+	width: 600px;
+}
+
 /* 약관동의 */ 
 #writeAgreeForm #kakaoWriteBtn{background-color:#003300;  cursor:pointer; width:30%; height:50px;border-radius:5px 5px 5px 5px; font-size:12pt; margin-bottom: 6%; background-color: yellow;  border-color:none; }
 #writeAgreeForm #simpleWrite {border: 1px solid #ddd;background-color: #fff; margin:0; padding:0; width:600px;height:50px; margin-bottom:20px; }
-#writeAgreeForm{width: 600px;margin: 0 auto; margin-top:20px;}
 #writeAgreeForm>ul.writeAgreeBox{border: 1px solid #ddd;background-color: #fff; margin:0; padding:0; width:600px; }
 #writeAgreeForm>ul,#writeAgreeForm>ul>li>ul>li{list-style: none}
 #writeAgreeForm>ul>.check01{width:100%; margin:0 auto;}
@@ -36,7 +40,6 @@
 
 
 /* 회원가입폼 */
-#memberWriteForm{width: 600px;  margin: 0 auto; margin-top:20px;}
 #memberWriteForm>#memberWriteBox{background-color: #fff; margin:0; padding:0;border: 1px solid #ddd; width:600px;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi{list-style:none; height:80px;}
 #memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:200%;}
@@ -84,7 +87,6 @@
 
 
 /* 회원가입 완료 */
-#writeOkForm{width: 600px;  margin: 0 auto; margin-top:20px;}
 #writeOkForm #writeOkBox{background-color: #fff; margin:0; padding:0 auto;border: 1px solid #ddd; width:600px; height:500px; padding-top:100px;}
 #writeOkForm #writeOkSubject{margin:0 auto;border-bottom: 1px solid #ddd; width:400px; text-align: center;font-size:40px;height:80px;}
 #writeOkForm #writeOkContent{border-bottom:1px solid #ddd; width:400px; margin:0 auto; height:150px; margin-top:30px; text-align:center;}

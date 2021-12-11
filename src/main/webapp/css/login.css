@@ -362,6 +362,10 @@
 	color: #555;
 }
 /*********************** 비밀번호 찾기 창 ************************/
+#findPwdForm1, #findPwdForm2, #findPwdForm3 {
+	margin: 160px auto 50px auto;
+}
+
 #findPwdForm1 #main-container, 
 #findPwdForm2 #main-container, 
 #findPwdForm3 #main-container{
@@ -381,12 +385,13 @@
 #findPwdForm1 section h2, 
 #findPwdForm2 section h2, 
 #findPwdForm3 section h2{
-	font-size: 20px;
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: 10px;
 }
 #findPwdForm1 #findPwd-input-wrap, 
 #findPwdForm2 #findPwd-input-wrap,
 #findPwdForm3 #findPwd-setting-wrap{
-	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
@@ -394,8 +399,8 @@
 #findPwdForm1 #findPwd-input-wrap p, 
 #findPwdForm2 #findPwd-input-wrap p, 
 #findPwdForm3 #findPwd-setting-wrap p{
-	font-size: 15px;
-	margin-top: 13px;
+	font-size: 14px;
+	text-align: center;
 }
 #findPwdForm1 #findPwd-id-input-wrap, 
 #findPwdForm2 #findPwd-email-input-wrap, 
@@ -405,14 +410,13 @@
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
+	border-radius: 3px;
 	background: white;
+	margin-top: 20px;
+	margin-bottom: 5px;	
 }
-#findPwdForm1 #findPwd-id-input-wrap, 
-#findPwdForm2 #findPwd-email-input-wrap, 
-#findPwdForm2 #check-number-input-wrap, 
-#findPwdForm3 #findPwd-pwd-input-wrap, 
 #findPwdForm3 #findPwd-repwd-input-wrap{
-	margin-bottom: 10px;	
+	margin-top: 5px;
 }
 
 #findPwdForm1 #findPwd-id-input-wrap input, 
@@ -452,16 +456,17 @@
 #findPwdForm3 #result-div{
 	padding-top: 10px;
     font-size: 12px;
-    color: red;
-	width: 465px;
+    width: 465px;
 	height :10px;
+	color: #777;
+	height :35px;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: left;
 }
-
-#findPwdForm1 #check-id-button-wrap, 
-#findPwdForm2 #check-email-button-wrap, 
-#findPwdForm2 #check-number-button-wrap, 
-#findPwdForm3 #findPwd-button-wrap {
-	/* padding: 13px 0; */
+ 
+#findPwdForm2 #check-number-input-wrap { 
+	margin-top: 40px;
 }
 #findPwdForm1 #check-id-button-wrap button, 
 #findPwdForm2 #check-email-button-wrap button, 
@@ -469,13 +474,19 @@
 #findPwdForm3 #findPwd-button-wrap button{
 	width: 465px;
 	height :48px;
-	font-size: 18px;
 	background: dargray;
-	color: black;
-	border: solid 1px black;
+	margin-top: 15px;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
 }
 #findPwdForm2 #check-email-button-wrap button{
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+}
+#findPwdForm2 .checkEmailNumberHide {
+	display: none;
 }
 
 /*********************** 비밀번호 찾기 결과 창 ***********************/
