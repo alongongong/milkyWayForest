@@ -36,7 +36,7 @@ public interface MypageService {
 
 	public JSONObject getOrderList(String id, int pg);
 
-	public PaymentDTO getMyOrderInfo(String paymentCode);
+	public JSONObject getMyOrderInfo(String paymentCode);
 	
 	public JSONObject getCancelList(String id, int pg);
 
@@ -52,9 +52,16 @@ public interface MypageService {
 
 	public void deleteShpMng(String shipCode);
 
-	public void updateMyOrderCancel(String paymentCode);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO);
 	
+	public void updateMyOrderExchange(PaymentDTO paymentDTO);
+	
+	public void updateMyOrderReturn(PaymentDTO paymentDTO);
+
 	public MemberRatingDTO getMypageRating(String id);
 
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
+
+	public List<PaymentDTO> getProductImageNameList(String paymentCode);
 
 }

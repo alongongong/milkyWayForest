@@ -22,7 +22,7 @@
 				</div>
 
 				<div id="findPwd-button-wrap">
-					<button type="button" id="findPwd-button">비밀번호 재설정</button>
+					<button type="button" id="findPwd-button" class="btn">비밀번호 재설정</button>
 				</div>	
 				<div id="result-div"></div>
 			</div>

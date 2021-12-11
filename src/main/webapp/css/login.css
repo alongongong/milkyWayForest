@@ -11,10 +11,16 @@
 }
 
 /*********************** 로그인 창 ***********************/
+#loginForm #headerBackground {
+	height: 120px;
+	background: #f6f5ef;
+	position: sticky;
+	top: 0;
+}
 #loginForm #main-container {
 	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
 	background-size: 100%;
-	padding: 90px 0 110px 0;
+	padding: 160px 0 180px 0;
 	-webkit-background-size: cover;
 	width: 100%;
 }
@@ -23,6 +29,8 @@
 	margin-top: 0;
 	color: white;
 	margin-bottom: 40px;
+	font-size: 38px;
+	font-weight: bold;
 }
 #loginForm #main-wrap{
 	width: 515px;
@@ -153,26 +161,31 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height: 700px;
 }
 
 /*** section ***/
 #findIdForm section {
-	padding: 80px 0;
+	margin: 251px auto 180px auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 558px;
 }
 
 /***** 아이디 찾는 방법 선택 *****/
 #findIdForm #findId-select-wrap h3 {
 	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
 }
-#findIdForm #findId-select-wrap p, 
-#findIdForm #findId-question-wrap p, 
-#findIdForm #findId-email-wrap p {
+#findIdForm #findId-select-wrap p {
 	font-size: 14px;
 	margin-top: 10px;
+	text-align: center;
+}
+#findIdForm #findId-email-wrap p {
+	font-size: 14px;
+	margin: 5px 0 10px 0;
 	text-align: center;
 }
 #findIdForm #findId-select-wrap ul {
@@ -196,7 +209,6 @@
 	font-weight: bold;
 }
 #findIdForm #findId-select-wrap ul li button span{
-	padding-left: 20px;
 	font-size: 15px;
 }
 
@@ -270,9 +282,20 @@
 	font-weight: bold;
 	text-align: left;
 }
-
+#findIdForm .checkEmailInputHide {
+	display: none;
+}
 #findIdForm #check-email-button-wrap button, 
-#findIdForm #check-number-button-wrap button, 
+#findIdForm #check-number-button-wrap button {
+	width: 465px;
+	height :48px;
+	margin: 20px 0;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
+}
 #findIdForm #findId-button-wrap button{
 	width: 465px;
 	height :48px;
@@ -285,34 +308,38 @@
 }
 
 /*********************** 아이디 찾기 결과 창 ***********************/
-#findIdResultForm #main-container{
+ #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 }
+#findIdResultForm section {
+	height: 400px;
+	margin: 321px auto 268px auto;	
+}
 #findIdResultForm #findIdResult-wrap{
 	padding-top: 50px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 #findIdResultForm #findIdResult-wrap h2{
-	font-size: 20px;
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: 10px;
 }
 
 #findIdResultForm #findIdResult-wrap p{
 	font-size: 14px;
-	padding-top: 10px;
-
+	margin-top: 5px;
 }
 #findIdResultForm #id-wrap{
 	font-size: 20px;
-	margin: 60px auto;
+	font-weight: bold;
+	margin: 40px auto;
 }
 
 #findIdResultForm #id-wrap #id-result{
-	border: 1px solid;
+	border: 1px solid #154520;
 	width: 465px;
 	height: 120px;
 	text-align: center;
@@ -321,15 +348,20 @@
 }
 
 #findIdResultForm #find-write{
-	color: black;
-	font-size: 14px;
-	padding-top: 10px;
+	font-size: 16px;
+	width: 95%;
+	margin: 20px auto;
+	color: #ccc;
 
 }
-#findIdResultForm #find-write a{
+#findIdResultForm #find-write p {
+	width: 31%;
+	display: inline-block;
+}	
+#findIdResultForm #find-write p a {
 	text-decoration: none;
+	color: #555;
 }
-
 /*********************** 비밀번호 찾기 창 ************************/
 #findPwdForm1 #main-container, 
 #findPwdForm2 #main-container, 
@@ -346,16 +378,19 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 558px;
+	margin: 261px auto 170px auto;
 }
 #findPwdForm1 section h2, 
 #findPwdForm2 section h2, 
 #findPwdForm3 section h2{
-	font-size: 20px;
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: 10px;
 }
 #findPwdForm1 #findPwd-input-wrap, 
 #findPwdForm2 #findPwd-input-wrap,
 #findPwdForm3 #findPwd-setting-wrap{
-	padding-top: 60px;
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
@@ -363,8 +398,8 @@
 #findPwdForm1 #findPwd-input-wrap p, 
 #findPwdForm2 #findPwd-input-wrap p, 
 #findPwdForm3 #findPwd-setting-wrap p{
-	font-size: 15px;
-	margin-top: 13px;
+	font-size: 14px;
+	text-align: center;
 }
 #findPwdForm1 #findPwd-id-input-wrap, 
 #findPwdForm2 #findPwd-email-input-wrap, 
@@ -374,14 +409,13 @@
 	width: 465px;
 	height :48px;
 	border: solid 1px gray;
+	border-radius: 3px;
 	background: white;
+	margin-top: 20px;
+	margin-bottom: 5px;	
 }
-#findPwdForm1 #findPwd-id-input-wrap, 
-#findPwdForm2 #findPwd-email-input-wrap, 
-#findPwdForm2 #check-number-input-wrap, 
-#findPwdForm3 #findPwd-pwd-input-wrap, 
 #findPwdForm3 #findPwd-repwd-input-wrap{
-	margin-bottom: 10px;	
+	margin-top: 5px;
 }
 
 #findPwdForm1 #findPwd-id-input-wrap input, 
@@ -421,16 +455,17 @@
 #findPwdForm3 #result-div{
 	padding-top: 10px;
     font-size: 12px;
-    color: red;
-	width: 465px;
+    width: 465px;
 	height :10px;
+	color: #777;
+	height :35px;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: left;
 }
-
-#findPwdForm1 #check-id-button-wrap, 
-#findPwdForm2 #check-email-button-wrap, 
-#findPwdForm2 #check-number-button-wrap, 
-#findPwdForm3 #findPwd-button-wrap {
-	/* padding: 13px 0; */
+ 
+#findPwdForm2 #check-number-input-wrap { 
+	margin-top: 40px;
 }
 #findPwdForm1 #check-id-button-wrap button, 
 #findPwdForm2 #check-email-button-wrap button, 
@@ -438,13 +473,19 @@
 #findPwdForm3 #findPwd-button-wrap button{
 	width: 465px;
 	height :48px;
-	font-size: 18px;
 	background: dargray;
-	color: black;
-	border: solid 1px black;
+	margin-top: 15px;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
 }
 #findPwdForm2 #check-email-button-wrap button{
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+}
+#findPwdForm2 .checkEmailNumberHide {
+	display: none;
 }
 
 /*********************** 비밀번호 찾기 결과 창 ***********************/

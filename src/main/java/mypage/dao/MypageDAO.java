@@ -62,7 +62,7 @@ public interface MypageDAO {
 
 	public List<PaymentDTO> getPaymentList2(Map<String, String> map);
 
-	public PaymentDTO getMyOrderInfo(String paymentCode);
+	public List<PaymentDTO> getMyOrderInfo(String paymentCode);
 	
 	public int getCancelTotalA(String id);
 
@@ -78,11 +78,16 @@ public interface MypageDAO {
 
 	public void deleteShpMng(String shipCode);
 
-	public void updateMyOrderCancel(String paymentCode);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO);
 	
+	public void updateMyOrderExchange(PaymentDTO paymentDTO);
+	
+	public void updateMyOrderReturn(PaymentDTO paymentDTO);
+
 	public MemberRatingDTO getMypageRating(String id);
 
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
 
-
+	public List<PaymentDTO> getProductImageNameList(String paymentCode);
 
 }

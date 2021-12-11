@@ -279,14 +279,15 @@ public class MypageController {
 	//주문내역 상세내용 불러오기
 	@PostMapping("/getMyOrderInfo")
 	@ResponseBody
-	public PaymentDTO getMyOrderInfo(@RequestParam String paymentCode) {
+	public JSONObject getMyOrderInfo(@RequestParam String paymentCode) {
 		return mypageService.getMyOrderInfo(paymentCode);
 	}
 	
 	//주문 취소 신청 창
 	@GetMapping("/myOrderCancel")
-	public String myOrderCancel(@RequestParam String paymentCode, Model model) {
+	public String myOrderCancel(@RequestParam String paymentCode, @RequestParam String request, Model model) {
 		model.addAttribute("paymentCode", paymentCode);
+		model.addAttribute("request", request);
 		model.addAttribute("display", "mypage/mypageOrderCancel.jsp");
 		return "/index";
 	}
@@ -294,8 +295,29 @@ public class MypageController {
 	//주문 취소 DB 업데이트
 	@PostMapping("/updateMyOrderCancel")
 	@ResponseBody
-	public void updateMyOrderCancel(@RequestParam String paymentCode) {
-		mypageService.updateMyOrderCancel(paymentCode);
+	public void updateMyOrderCancel(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderCancel(paymentDTO);
+	}
+	
+	//주문 교환 DB 업데이트
+	@PostMapping("/updateMyOrderExchange")
+	@ResponseBody
+	public void updateMyOrderExchange(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderExchange(paymentDTO);
+	}
+	
+	//주문 반품 DB 업데이트
+	@PostMapping("/updateMyOrderReturn")
+	@ResponseBody
+	public void updateMyOrderReturn(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderReturn(paymentDTO);
+	}
+	
+	//주문취소내역 불러오기
+	@PostMapping("/getMyOrderCancelInfo")
+	@ResponseBody
+	public PaymentDTO getMyOrderCancelInfo(@RequestParam String paymentCode) {
+		return mypageService.getMyOrderCancelInfo(paymentCode);
 	}
 
 	//주문취소/교환/반품 내역 창
@@ -376,5 +398,20 @@ public class MypageController {
 	@ResponseBody
 	public MemberRatingDTO getMypageRating(String id) {
 		return mypageService.getMypageRating(id);
+	}
+	
+	//사진 불러오기
+	@PostMapping("/getProductImageNameList")
+	@ResponseBody
+	public List<PaymentDTO> getProductImageNameList(@RequestParam String paymentCode) {
+		return mypageService.getProductImageNameList(paymentCode);
+	}
+	
+	//재주문 창
+	@GetMapping("/myreorder")
+	public String myreorder(@RequestParam String paymentCode, Model model) {
+		model.addAttribute("paymentCode", paymentCode);
+		model.addAttribute("display", "mypage/myreorder.jsp");
+		return "/index";
 	}
 }

@@ -28,10 +28,12 @@
 			cartOption,
 			cartQty,
 			productRate,
-			cartCode
+			cartCode,
+			productImageName
 		from milkyCart
 		join milkyproductinfo using(productcode)
-		where id=#{id}
+		join milkyproductImage using(productcode)
+		where id=#{id} and substr(productImagename,5,2) in('.j', '_1', '.p')
 	</select>
 
 	<update id="cartQty" parameterType="java.util.Map">

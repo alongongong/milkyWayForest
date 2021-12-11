@@ -34,10 +34,10 @@
 					<li><a href="/milkyWayForest/info/componyInfo">EUNHASOOP</a></li>
 				</ul>
 			</nav>
-		 	<!--				header 상단메뉴				-->
+		 	<!--				header 로그인메뉴				-->
 				<ul class="spot">
 					<c:if test="${memId == null }">
-						<li><a href="/milkyWayForest/write/memberAgree"><i class="xi-user"></i><span>Sign In</span></a></li>
+						<li><a href="/milkyWayForest/write/memberAgree"><i class="xi-user"></i><span>Sign Up</span></a></li>
 						<li><a href="/milkyWayForest/login/loginForm">Login</a></li>					
 					</c:if>
 					

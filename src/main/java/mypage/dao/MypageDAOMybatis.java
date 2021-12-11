@@ -39,7 +39,6 @@ public class MypageDAOMybatis implements MypageDAO {
 	@Override
 	public void mypageMyInfoDelete(MemberDTO memberDTO) {
 		sqlSession.delete("mypageSQL.mypageMyInfoDelete", memberDTO);
-		
 	}
 
 	@Override
@@ -148,8 +147,8 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 	
 	@Override
-	public PaymentDTO getMyOrderInfo(String paymentCode) {
-		return sqlSession.selectOne("mypageSQL.getMyOrderInfo", paymentCode);
+	public List<PaymentDTO> getMyOrderInfo(String paymentCode) {
+		return sqlSession.selectList("mypageSQL.getMyOrderInfo", paymentCode);
 	}
 
 	@Override
@@ -188,13 +187,42 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 
 	@Override
-	public void updateMyOrderCancel(String paymentCode) {
-		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentCode);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO) {
+		sqlSession.update("mypageSQL.updateMyOrderCancel", paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderExchange(PaymentDTO paymentDTO) {
+		sqlSession.update("mypageSQL.updateMyOrderExchange", paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderReturn(PaymentDTO paymentDTO) {
+		sqlSession.update("mypageSQL.updateMyOrderReturn", paymentDTO);
 	}
 	
 	@Override
 	public MemberRatingDTO getMypageRating(String id) {
 		return sqlSession.selectOne("mypageSQL.getMypageRating", id);
+	}
+
+	@Override
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode) {
+		PaymentDTO paymentDTO = sqlSession.selectOne("mypageSQL.getMyOrderCancelInfo", paymentCode);
+		
+		if(paymentDTO == null) {
+			PaymentDTO paymentDTO2 = new PaymentDTO();
+			paymentDTO2.setDeliveryInfo("false");
+			
+			return paymentDTO2;
+		}
+
+		return paymentDTO;	
+	}
+
+	@Override
+	public List<PaymentDTO> getProductImageNameList(String paymentCode) {
+		return sqlSession.selectList("mypageSQL.getProductImageNameList", paymentCode);
 	}
 
 }

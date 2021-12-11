@@ -12,11 +12,11 @@
 				<div id="id-result">${id }</div>
 			</div>
 
-			<p id="find-write">
-				<a href="/milkyWayForest/login/loginForm">로그인</a> | 
-				<a href="/milkyWayForest/login/findPwd">비밀번호 찾기</a> | 
-				<a href="/milkyWayForest/write/memberWrite">회원가입</a>
-			</p>
+			<div id="find-write">
+				<p><a href="/milkyWayForest/login/loginForm">로그인</a></p> | 
+				<p><a href="/milkyWayForest/login/findPwd">비밀번호 찾기</a></p> | 
+				<p><a href="/milkyWayForest/write/memberWrite">회원가입</a></p>
+			</div>
 		</section>
 	</div>
 </div>

@@ -132,6 +132,9 @@ $('#findIdForm').ready(function(){
 	
 	//질문으로 찾기
 	$('#findIdForm #select-question-button').click(function(){
+		$('#findIdForm #result1-div').empty();
+		$('.form-select').val($('.form-select option:eq(0)').val());
+		$('#findId-question-input').val('');
 		$('#findIdForm #findId-question-wrap').show();
 		$('#findIdForm #findId-email-wrap').hide();	
 		$('.selectBtn').removeClass('selectBtn');
@@ -181,6 +184,10 @@ $('#findIdForm').ready(function(){
 		$('#findIdForm #findId-email-wrap').show();	
 		$('.selectBtn').removeClass('selectBtn');
 		$(this).parent().addClass('selectBtn');
+		$('#findId-email-input1').val('');
+		$('#findId-email-input2').val('');
+		$('#findIdForm #result2-div').empty();
+		$('#checkEmailInput').addClass('checkEmailInputHide');
 	});
 	
 	var code = '';
@@ -189,6 +196,7 @@ $('#findIdForm').ready(function(){
 	//인증번호 받기 https://kimvampa.tistory.com/105?category=771727 참고
 	$('#findIdForm #check-email-button').click(function(){
 		$('#findIdForm #result2-div').empty();
+		$('#findIdForm #check-email-input').val('');
 		
 		var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; //정규표현식
 		var email1 = $('#findIdForm #findId-email-input1').val();
@@ -216,12 +224,12 @@ $('#findIdForm').ready(function(){
 					//alert(data);
 					
 					if(data == 'loginEmailCheck_non_exist'){
-						$('#findIdForm #result2-div').html('본인 확인 이메일 주소를 정확히 입력하세요');
+						$('#findIdForm #result2-div').html('이메일 주소를 정확히 입력하세요');
 					
 					}else{
 						id = data;
 						//alert('디비 등록된 이메일? '+data);
-					
+						$('#findIdForm .checkEmailInputHide').removeClass('checkEmailInputHide');
 						//이메일 발송
 						$.ajax({
 			       			url: "/milkyWayForest/login/loginEmailSend",
@@ -334,11 +342,13 @@ $('#findPwdForm2 #check-email-button').click(function(){
 					//alert(data);
 					
 					if(data == 'loginEmailCheck_non_exist'){
-						$('#findPwdForm2 #result-div').html('본인 확인 이메일 주소를 정확히 입력하세요');
+						$('#findPwdForm2 #result-div').html('이메일 주소를 정확히 입력하세요');
 					
 					}else{
 						id = data;
 						//alert('디비 등록된 이메일? '+data);
+						
+						$('#checkEmailNumber').removeClass('checkEmailNumberHide');
 					
 						//이메일 발송
 						$.ajax({

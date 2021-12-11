@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/writeAgreeForm.css">
 <form action="" id="writeAgreeForm">
+	<h1>회원가입</h1>
 	<ul id="simpleWrite">
-		<li><input type="button" id="kakaoWriteBtn" value="카카오 회원가입"></li>
+		<li><input type="button" class="btn" id="kakaoWriteBtn" value="카카오 회원가입"></li>
 	</ul>
 	<ul class="writeAgreeBox">
 		<li class="writeAgreeCheckBox check01">
 			<div>
 				<ul class="writeAgreeFix">
 					<li align="center">
-						<img id="writeAgreeImg" src="/milkyWayForest/image/starbucksStaff.JPG">
+						<img id="writeAgreeImg" src="https://image.istarbucks.co.kr/common/img/util/mem/icon_find_sally.png">
 					</li>
             	</ul>
 			</div>
@@ -788,7 +789,7 @@
 				</ul>
 				<div>
 					<ul>
-						<li align="center"><input type="button" disabled="disabled" id="writeAgreeBtn1" value="동의"></li>
+						<li align="center"><input type="button" class="btn" disabled="disabled" id="writeAgreeBtn1" value="동의"></li>
 					</ul>
 				</div>
 			</div>

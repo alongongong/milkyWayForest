@@ -176,8 +176,13 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public PaymentDTO getMyOrderInfo(String paymentCode) {
-		return mypageDAO.getMyOrderInfo(paymentCode);
+	public JSONObject getMyOrderInfo(String paymentCode) {
+		List<PaymentDTO> paymentList = mypageDAO.getMyOrderInfo(paymentCode);
+
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+
+		return json;
 	}
 	
 	@Override
@@ -273,13 +278,39 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public void updateMyOrderCancel(String paymentCode) {
-		mypageDAO.updateMyOrderCancel(paymentCode);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderCancel(paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderExchange(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderExchange(paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderReturn(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderReturn(paymentDTO);
 	}
 	
 	@Override
 	public MemberRatingDTO getMypageRating(String id) {
 		return mypageDAO.getMypageRating(id);
+	}
+
+	@Override
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode) {
+		PaymentDTO paymentDTO = mypageDAO.getMyOrderCancelInfo(paymentCode);
+		
+		if(paymentDTO.getDetailReason() != null) {
+			paymentDTO.setDetailReason(paymentDTO.getDetailReason().replace("\n", "<br>"));
+		}
+		
+		return paymentDTO;
+	}
+
+	@Override
+	public List<PaymentDTO> getProductImageNameList(String paymentCode) {
+		return mypageDAO.getProductImageNameList(paymentCode);
 	}
 
 

@@ -3,25 +3,29 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="eventViewForm">
-	<legend>이벤트</legend>
-	<br>
-	<div id="eventViewBoardNav">
-		<div>
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/notice/eventBoard">이벤트</a>
-		</div>
+	<div id="eventViewFormDiv">
+		<section>
+			<legend>이벤트</legend>
+			<br>
+			<div id="eventViewBoardNav">
+				<div>
+					<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="/milkyWayForest/notice/eventBoard">이벤트</a>
+				</div>
+			</div>
+			<br>
+			<table id="eventViewTable">
+				<tr>
+					<th id="eventViewSubject"></th>
+				</tr>
+				<tr>
+					<td id="eventViewContent"></td>
+				</tr>
+			</table>
+			<br>
+			<input type="button" id="eventListBtn" class="btn btn-secondary" value="목록">
+		</section>
 	</div>
-	<br>
-	<table id="eventViewTable">
-		<tr>
-			<th id="eventViewSubject"></th>
-		</tr>
-		<tr>
-			<td id="eventViewContent"></td>
-		</tr>
-	</table>
-	<br>
-	<input type="button" id="eventListBtn" class="btn btn-secondary" value="목록">
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>

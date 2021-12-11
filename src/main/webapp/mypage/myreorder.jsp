@@ -59,7 +59,7 @@
 				<tr>
 					<td colspan="2">
 						<select id="shipSelect">
-							<option style="text-align:center;"> ---------- 배송지를 선택해주세요 ---------- </option>
+							<option> ----배송지를 선택해주세요---- </option>
 						</select>
 					</td>
 				</tr>
@@ -94,7 +94,7 @@
 					<th>수령지 주소</th>
 					<td>
 						<input type="text" id="payShipZipcode" name="payShipZipcode" readonly>
-						<input type="button" class="btn" id="payShipZipcodeBtn" value="우편번호 검색"><br>
+						<input type="button" class="btn btn-outline-secondary" id="payShipZipcodeBtn" value="우편번호 검색"><br>
 						<input type="text" id="payShipAddr1" name="payShipAddr1" readonly><br>
 						<input type="text" id="payShipAddr2" name="payShipAddr2">
 					</td>
@@ -102,7 +102,7 @@
 				<tr>
 					<th>배송 메모</th>
 					<td>
-						<textarea id="shipMemo" name="shipMemo"></textarea>
+						<textarea cols="50" rows="5" name="shipMemo"></textarea>
 					</td>
 				</tr>
 			</table>
@@ -123,7 +123,7 @@
 					<th>할인쿠폰</th>
 					<td>
 						<select id="paymentCoupon" name="paymentCoupon">
-							<option style="text-align: center;"> ---------- 쿠폰을 선택해주세요 ---------- </option>
+							<option> ----쿠폰을 선택해주세요----</option>
 						</select>
 						<div id="haveCouponDiv"> 보유 쿠폰수 : 
 							<span id="haveCoupon"></span> 장

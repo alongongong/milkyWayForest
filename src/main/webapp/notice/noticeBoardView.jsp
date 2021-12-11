@@ -3,21 +3,25 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="noticeBoardViewForm">
-	<legend>공지사항</legend><br>
-	<div id="noticeBoardViewNav">
-		<div>
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a>
-		</div>
-	</div>
-	<div id="noticeBoardViewDiv">
-		<div id="noticeSubject">
-			<p id="noticeDate"></p>
-		</div>
-		<div id="noticeContent"></div>
-		<div id="noticeListBtnDiv">
-			<input type="button" class="btn btn-secondary" id="noticeListBtn" value="목록">
-		</div>
+	<div id="noticeBoardViewFormDiv">
+		<section>
+			<legend>공지사항</legend><br>
+			<div id="noticeBoardViewNav">
+				<div>
+					<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a>
+				</div>
+			</div>
+			<div id="noticeBoardViewDiv">
+				<div id="noticeSubject">
+					<p id="noticeDate"></p>
+				</div>
+				<div id="noticeContent"></div>
+				<div id="noticeListBtnDiv">
+					<input type="button" class="btn btn-secondary" id="noticeListBtn" value="목록">
+				</div>
+			</div>
+		</section>
 	</div>
 </form>
 
