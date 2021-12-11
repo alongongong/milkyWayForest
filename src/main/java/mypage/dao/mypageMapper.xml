@@ -226,6 +226,20 @@
 		end;
 	</update>
 	
+	<update id="updateMyOrderExchange" parameterType="payment">
+		begin
+			insert into milkyOrderCancel values(#{paymentCode}, #{reason}, #{detailReason});
+			update milkyPayment set deliveryInfo='교환' where paymentCode=#{paymentCode};
+		end;
+	</update>
+	
+	<update id="updateMyOrderReturn" parameterType="payment">
+		begin
+			insert into milkyOrderCancel values(#{paymentCode}, #{reason}, #{detailReason});
+			update milkyPayment set deliveryInfo='반품' where paymentCode=#{paymentCode};
+		end;
+	</update>
+	
 	<select id="getMypageRating" parameterType="String" resultType="mypage.bean.MemberRatingDTO">
 		select * 
 		from milkymember e, milkygradeinfo d
@@ -233,7 +247,17 @@
 	</select>
 	
 	<select id="getMyOrderCancelInfo" parameterType="String" resultType="payment">
-		select paymentCode, reason, detailreason from milkyOrderCancel
+		select paymentCode, reason, detailReason, deliveryInfo
+		from milkyOrderCancel
+		join milkyPayment a using(paymentCode)
 		where paymentCode=#{paymentCode}
+	</select>
+	
+	<select id="getProductImageNameList" parameterType="String" resultType="payment">
+		select paymentCode, productCode, productImageName
+		from milkyPaymentOption
+		join milkyProductImage using(productCode)
+		where paymentCode=#{paymentCode}
+		order by productImageName asc
 	</select>
 </mapper>

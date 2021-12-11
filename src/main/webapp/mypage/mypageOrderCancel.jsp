@@ -15,6 +15,7 @@
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
 	<input type="hidden" id="paymentCode" name="paymentCode" value="${paymentCode }">
+	<input type="hidden" id="request" name="request" value="${request }">
 	
 	<div id="myOrderCancel-wrapper" class="item">
 		<div id="myOrderView1">
@@ -105,15 +106,19 @@ $(function(){
 		type: 'post',
 		success: function(data){
 			console.log(JSON.stringify(data));
-			if(data != ''){
-				$('#myOrderView1 #payDate').html(data.payDate);
-				$('#myOrderView1 #paymentCode').html(data.paymentCode);
-				$('#myOrderView1 #productCode').html(data.productCode);
-				$('#myOrderView1 #productName').html(data.productName);
-				$('#myOrderView1 #payPrice').html(data.payPrice);
-				$('#myOrderView1 #payQty').html(data.payQty);
-				$('#myOrderView1 #shipPay').html(data.shipPay);
-				$('#myOrderView1 #deliveryInfo').html(data.deliveryInfo);
+			if(data.paymentList != ''){
+				$.each(data.paymentList, function(index, items) {
+					$('#myOrderView1 #payDate').html(items.payDate);
+					$('#myOrderView1 #paymentCode').html(items.paymentCode);
+					$('#myOrderView1 #productCode').html(items.productCode);
+					$('#myOrderView1 #productName').html(items.productName);
+					$('#myOrderView1 #payPrice').html(items.payPrice);
+					$('#myOrderView1 #payQty').html(items.payQty);
+					$('#myOrderView1 #shipPay').html(items.shipPay);
+					$('#myOrderView1 #deliveryInfo').html(items.deliveryInfo);
+					
+				});
+				
 			}	
 
 		},
@@ -124,17 +129,49 @@ $(function(){
 });
 
 $('#myOrderCancel #myOrderCancelBtn').click(function(){
-	$.ajax({
-		url: '/milkyWayForest/mypage/updateMyOrderCancel',
-		type: 'post',
-		data: $('#myOrderCancel').serialize(),
-		success: function(data) {
-			alert('고객님의 요청이 접수되었습니다.');
-			location.href='/milkyWayForest/mypage/mypageCancelList?pg=1';
-		},
-		error: function(err) {
-			console.log(err);
-		}
-	});
+	if($('#request').val()=='취소'){
+		$.ajax({
+			url: '/milkyWayForest/mypage/updateMyOrderCancel',
+			type: 'post',
+			data: $('#myOrderCancel').serialize(),
+			success: function(data) {
+				alert('고객님의 요청이 접수되었습니다.');
+				location.href='/milkyWayForest/mypage/mypageCancelList?pg=1';
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+		
+	}else if($('#request').val()=='교환'){
+		$.ajax({
+			url: '/milkyWayForest/mypage/updateMyOrderExchange',
+			type: 'post',
+			data: $('#myOrderCancel').serialize(),
+			success: function(data) {
+				alert('고객님의 요청이 접수되었습니다.');
+				location.href='/milkyWayForest/mypage/mypageCancelList?pg=1';
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+		
+	}else if($('#request').val()=='반품'){
+		$.ajax({
+			url: '/milkyWayForest/mypage/updateMyOrderReturn',
+			type: 'post',
+			data: $('#myOrderCancel').serialize(),
+			success: function(data) {
+				alert('고객님의 요청이 접수되었습니다.');
+				location.href='/milkyWayForest/mypage/mypageCancelList?pg=1';
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+		
+	}
+
 });
 </script>
