@@ -28,8 +28,6 @@
 	    </c:if>
 	</div>
 </div>
-
-
 <!-- Channel Plugin Scripts -->
 <script>
   (function() {

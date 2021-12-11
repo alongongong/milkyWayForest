@@ -14,7 +14,6 @@
     opacity .7s, visibility .7s;
   opacity: 0;
   visibility: hidden;
-  z-index: 98;
 }
 #back-to-top::after {
   content: "\f077";
