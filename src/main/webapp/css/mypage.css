@@ -382,6 +382,10 @@
 #myOrderView #orderChangeDiv{
 	display: none;
 }
+#myOrderView #productImageName{
+	width: 100px;
+	height: 100px;
+}
 
 /*********** 주문취소/교환/반품내역 창 ***********/
 #mypageCancelList #myPayment-wrapper{
