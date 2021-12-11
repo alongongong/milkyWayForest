@@ -3,36 +3,40 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="qnaBoardForm">
-	<legend>Q&A</legend>
-	<br>
-	<div id="qnaBoardNav">
-		<div>
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/notice/qnaBoard?pg=1">Q&A</a>
-		</div>
+	<div id="qnaBoardFormDiv">
+		<section>
+			<legend>Q&A</legend>
+			<br>
+			<div id="qnaBoardNav">
+				<div>
+					<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="/milkyWayForest/notice/qnaBoard?pg=1">Q&A</a>
+				</div>
+			</div>
+			<br>
+			<table id="qnaBoardTable" class="table">
+				<thead>
+					<tr>
+						<th>
+							<input type="checkbox" id="allQnaCheck">
+						</th>
+						<th>글번호</th>
+						<th>말머리</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일자</th>
+						<th>조회수</th>
+						<th>답변여부</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<div id="qndBoardBtnDiv">
+				<input type="button" id="qnaBoardWriteBtn" class="btn" value="글쓰기">
+			</div>
+			<div id="qnaBoardPaging"></div>
+		</section>
 	</div>
-	<br>
-	<table id="qnaBoardTable" class="table">
-		<thead>
-			<tr>
-				<th>
-					<input type="checkbox" id="allQnaCheck">
-				</th>
-				<th>글번호</th>
-				<th>말머리</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>작성일자</th>
-				<th>조회수</th>
-				<th>답변여부</th>
-			</tr>
-		</thead>
-		<tbody></tbody>
-	</table>
-	<div id="qndBoardBtnDiv">
-		<input type="button" id="qnaBoardWriteBtn" class="btn" value="글쓰기">
-	</div>
-	<div id="qnaBoardPaging"></div>
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -308,15 +308,15 @@
 }
 
 /*********************** 아이디 찾기 결과 창 ***********************/
-#findIdResultForm {
-	margin: 331px auto 258px auto;
-}
-#findIdResultForm #main-container{
+ #main-container{
 	width:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+}
+#findIdResultForm section {
 	height: 400px;
+	margin: 321px auto 268px auto;	
 }
 #findIdResultForm #findIdResult-wrap{
 	padding-top: 50px;
@@ -363,10 +363,6 @@
 	color: #555;
 }
 /*********************** 비밀번호 찾기 창 ************************/
-#findPwdForm1, #findPwdForm2, #findPwdForm3 {
-	margin: 261px auto 170px auto;
-}
-
 #findPwdForm1 #main-container, 
 #findPwdForm2 #main-container, 
 #findPwdForm3 #main-container{
@@ -374,7 +370,6 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height: 558px;
 }
 #findPwdForm1 section, 
 #findPwdForm2 section, 
@@ -383,6 +378,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 558px;
+	margin: 261px auto 170px auto;
 }
 #findPwdForm1 section h2, 
 #findPwdForm2 section h2, 

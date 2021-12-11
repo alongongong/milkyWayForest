@@ -3,36 +3,40 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="noticeBoardForm">
-	<legend>공지사항</legend>
-	<br>
-	<div id="noticeBoardNav">
-		<div>
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a>
-		</div>
+	<div id="noticeBoardFormDiv">
+		<section>
+			<legend>공지사항</legend>
+			<br>
+			<div id="noticeBoardNav">
+				<div>
+					<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a>
+				</div>
+			</div>
+			<br>
+			<div id="noticeBoardSearchDiv">
+				<div>
+					<input type="text" id="noticeBoardSearch" placeholder="검색어를 입력해 주세요." size="35">
+					<input type="button" id="noticeBoardSearchBtn" class="btn" value="검색">
+				</div>
+			</div>
+			<br>
+			<br>
+			<table id="noticeBoardTable" class="table">
+				<thead>
+					<tr>
+						<th width="100">NO</th>
+						<th>제목</th>
+						<th width="200">날짜</th>
+						<th width="150">조회수</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<br>
+			<div id="boardPagingDiv"></div>
+		</section>
 	</div>
-	<br>
-	<div id="noticeBoardSearchDiv">
-		<div>
-			<input type="text" id="noticeBoardSearch" placeholder="검색어를 입력해 주세요." size="35">
-			<input type="button" id="noticeBoardSearchBtn" class="btn" value="검색">
-		</div>
-	</div>
-	<br>
-	<br>
-	<table id="noticeBoardTable" class="table">
-		<thead>
-			<tr>
-				<th width="100">NO</th>
-				<th>제목</th>
-				<th width="200">날짜</th>
-				<th width="150">조회수</th>
-			</tr>
-		</thead>
-		<tbody></tbody>
-	</table>
-	<br>
-	<div id="boardPagingDiv"></div>
 </form>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">

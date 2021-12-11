@@ -3,31 +3,35 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="faqBoardForm">
-	<legend>자주 묻는 질문</legend>
-	<br>
-	<div id="faqBoardNav">
-		<div>
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/notice/faqBoard?pg=1">자주 묻는 질문</a>
-		</div>
+	<div id="faqBoardFormDiv">
+		<section>
+			<legend>자주 묻는 질문</legend>
+			<br>
+			<div id="faqBoardNav">
+				<div>
+					<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+					<a href="/milkyWayForest/notice/faqBoard?pg=1">자주 묻는 질문</a>
+				</div>
+			</div>
+			<br>
+			<div id="faqBoardSearchDiv">
+				<div>
+					<input type="text" id="faqBoardSearch" placeholder="검색어를 입력해 주세요." size="35">
+					<input type="button" id="faqBoardSearchBtn" class="btn" value="검색">
+				</div>
+			</div>
+			<br>
+			<br>
+			<table id="faqBoardTable" class="table">
+				<tr>
+					<th width="120" style="text-align:center;">글번호</th>
+					<th>제목</th>
+				</tr>
+			</table>
+			<br>
+			<div id="boardPagingDiv"></div>
+		</section>
 	</div>
-	<br>
-	<div id="faqBoardSearchDiv">
-		<div>
-			<input type="text" id="faqBoardSearch" placeholder="검색어를 입력해 주세요." size="35">
-			<input type="button" id="faqBoardSearchBtn" class="btn" value="검색">
-		</div>
-	</div>
-	<br>
-	<br>
-	<table id="faqBoardTable" class="table">
-		<tr>
-			<th width="120" style="text-align:center;">글번호</th>
-			<th>제목</th>
-		</tr>
-	</table>
-	<br>
-	<div id="boardPagingDiv"></div>
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -1,10 +1,22 @@
 @charset "UTF-8";
 /* 게시판 공통 사항 */
 #eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #noticeBoardViewForm, #qnaBoardForm {
-	width: 60%;	
-	margin: 190px auto 124px;
+	margin: 0;
 	padding: 0;
+}
+#eventBoardFormDiv, #eventViewFormDiv, #faqBoardFormDiv, 
+#qnaBoardWriteDiv, #qnaBoardFormDiv, #noticeBoardViewFormDiv,
+#noticeBoardFormDiv {
+	width: 60%;	
 	font-size: 14px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+#eventBoardFormDiv section, #eventViewFormDiv section, #faqBoardFormDiv section, 
+#qnaBoardWriteDiv section, #qnaBoardFormDiv section, #noticeBoardViewFormDiv section,
+#noticeBoardFormDiv section {
+	margin: 190px 0 124px 0;
 }
 #eventBoardForm legend, #noticeBoardViewForm legend, #eventViewForm legend, #faqBoardForm legend, #noticeBoardForm legend, #qnaBoardForm legend {
 	font-size: 23pt;

@@ -339,7 +339,11 @@
 /* 메뉴 상세페이지 */
 #menuDetailForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 0 auto;
+	display: flex;
+}
+#menuDetailForm section {
+	margin: 160px 0 120px 0;
 }
 #menuDetailForm h1 {
 	font-size: 38px;
