@@ -63,6 +63,15 @@
 			<img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" 
 			style="width: 100%; height: 100%;  top: 0;">
 		</section>
+		
+		<section class="section">
+			<img src="/milkyWayForest/image/main_alist_pc.jpg" alt="main_alist_pc.jpg" 
+			style="width: 100%; height: 100%;  top: 0;">
+		</section>
+		
+		<section class="section fp-auto-height">
+			<jsp:include page="/main/footer.jsp"/>
+		</section>
 	</div>
 		
 </div>
