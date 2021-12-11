@@ -21,10 +21,11 @@
 
 <body id="footerBody">
 	<footer id="footer">
+		
 		<div class="container">
-			<!-- <div class="row"> --> 
-				
+			<!--  <div class="row">  -->
 				<div class="footerGroup">
+				
 				
 				<!-- footerMenu -->
 					<div class="footerMenu">
@@ -54,10 +55,11 @@
 					    <span>&ensp; All Rights Reserved.</span>
 					</div>  <!-- footerCopy -->
 				<br><br>
-				</div> <!-- footerGroup -->
 				
-		<!-- 	</div>  row  -->
+				</div> <!-- footerGroup -->
+		 <!--	</div>  row  --> 
 		</div>  <!-- container -->
+	
 	</footer> <!-- footer -->
 	<!-- //footer -->
 </body>

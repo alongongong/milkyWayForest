@@ -5,6 +5,7 @@
 	padding: 0; 
 	width: 100%;
 	height: 100%;
+	transition: all .3s all .3s cubic-bezier(0.16, 0.04, 0.03, 0.95);
 }
 
 #footerBody #footer {
@@ -74,4 +75,3 @@
 #footerBody .footerMenu a:visited { color: white; text-decoration: none; }
 #footerBody .footerMenu a:hover { color: #f5ce3e; text-decoration: underline; }
 #footerBody .footerMenu a:active { color: white; text-decoration: none; }
-
