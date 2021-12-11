@@ -20,9 +20,7 @@
 	</div>
 	<br>
 	<br>
-	
-	<table id="eventBoardTable" class="table">
-	</table>
+
 	<br><br>
 	<div id="eventBoardEndDiv">
 		<div>종료 이벤트</div>
@@ -31,8 +29,6 @@
 		<!-- ajax로 append -->
 	</div>
 	<br><br>
-	<table id="eventBoardTable" class="table">
-	</table>
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -52,7 +48,8 @@ $(function(){
 						width: '100%'
 					})))).append($('<div>',{
 						text: items.eventSubject,
-						align: 'center'
+						align: 'center',
+						style: 'margin-top: 10px;'
 					}).append($('<p>',{
 						id: 'eventDate',
 						text: items.eventDate
@@ -73,7 +70,8 @@ $(function(){
 						width: '100%'
 					})))).append($('<div>',{
 						text: items.eventSubject,
-						align: 'center'
+						align: 'center',
+						style: 'margin-top: 10px;'
 					}).append($('<p>',{
 						id: 'eventDate',
 						text: items.eventDate

@@ -2,7 +2,7 @@
 /* 게시판 공통 사항 */
 #eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #noticeBoardViewForm, #qnaBoardForm {
 	width: 60%;	
-	margin: 40px auto;
+	margin: 190px auto 124px;
 	padding: 0;
 	font-size: 14px;
 }
@@ -127,7 +127,7 @@
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
 	grid-column-gap: 2%;
-	row-gap: 3%;
+	row-gap: 1%;
 	width: 102%;
 	margin: 20px auto;
 }

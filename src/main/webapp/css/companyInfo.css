@@ -76,7 +76,7 @@ font-style: oblique; font-size: 1.15rem; color:#00592D; }
 #allDiv #rightDiv > a  { color: #444; display: block;
 	position: relative; width: 175px; }	
 #allDiv #rightDiv .nav_Info {
-	display: block; padding: 20px 15px 20px 15px; font-size: 18px;
+	display: block; padding: 20px 15px 4px 15px; font-size: 18px;
 }
 
 #allDiv .nav_Info .bibi-chevron-down { right: 15px;  width: 12px; }

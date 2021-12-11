@@ -17,10 +17,15 @@
 	padding: 3px 8px;
 }
 
+#menuInfoForm ul, #drinkInfoForm ul, #foodInfoForm ul,
+#allMenuInfoForm ul, #menuDetailForm ul {
+	margin: 10px;
+}
+
 /* 메뉴소개 */
 #menuInfoForm {
 	width: 60%;
-	margin: 160px auto 60px auto;
+	margin: 160px auto 80px auto;
 }
 #menuInfoForm h1 {
 	font-size: 38px;
@@ -74,7 +79,6 @@
 
 #menuInfoForm #drinkInfoMenuDiv ,#menuInfoForm #foodInfoMenuDiv{
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -100,7 +104,7 @@
 /* 음료 메뉴 */
 #drinkInfoForm {
 	width: 60%;
-	margin: 160px auto 60px auto;
+	margin: 160px auto 80px auto;
 }
 #drinkInfoForm h1 {
 	font-size: 38px;
@@ -152,7 +156,6 @@
 
 #drinkInfoForm #teaInfoMenuDiv ,#drinkInfoForm #coffeeInfoMenuDiv{
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -176,7 +179,7 @@
 /* 푸드 메뉴 */
 #foodInfoForm {
 	width: 60%;
-	margin: 160px auto 60px auto;
+	margin: 160px auto 80px auto;
 }
 #foodInfoForm h1 {
 	font-size: 38px;
@@ -228,7 +231,6 @@
 #foodInfoForm #saladInfoMenuDiv, 
 #foodInfoForm #sandwitchInfoMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -253,7 +255,7 @@
 /* 전체음료 메뉴 폼 */
 #allMenuInfoForm {
 	width: 60%;
-	margin: 160px auto 60px auto;
+	margin: 160px auto 80px auto;
 }
 #allMenuInfoForm h1 {
 	font-size: 38px;
@@ -303,7 +305,6 @@
 
 #allMenuInfoForm #AllInfoMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	margin-top: 0;
@@ -338,7 +339,7 @@
 /* 메뉴 상세페이지 */
 #menuDetailForm {
 	width: 60%;
-	margin: 160px auto 60px auto;
+	margin: 160px auto 80px auto;
 }
 #menuDetailForm h1 {
 	font-size: 38px;

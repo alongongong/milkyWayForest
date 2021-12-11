@@ -110,7 +110,7 @@
 						</a>
 						<ul id="noneDiv" style="display:none; padding-left:18px;">
 							<li><a href="/milkyWayForest/info/componyInfo">은하숲</a></li>
-							<li style="padding-top:5px; padding-bottom:20px;">
+							<li style="padding-top:5px; padding-bottom:6px;">
 								<a href="/milkyWayForest/info/gradeBenefitInfo">등급 및 혜택</a>
 							</li>
 						</ul>
