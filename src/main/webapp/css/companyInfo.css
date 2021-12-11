@@ -42,7 +42,7 @@ color:#00592D; }
 /* second_block */
 #allDiv .second_block { position:relative; padding: 2rem 0 2rem 0; }
 #allDiv .second_block p { display: inline-block; }
-#allDiv .second_block .text3 { vertical-align: 5em; margin : 0 0 0 8rem; 
+#allDiv .second_block .text3 { vertical-align: -3em; margin : 0 0 0 9rem; 
 font-style: oblique; font-size: 1.15rem; color:#00592D; }
 
 /* 동그라미 사진*/

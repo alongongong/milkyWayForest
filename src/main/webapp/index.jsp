@@ -86,7 +86,6 @@ $(function(){
   });
 });
 </script>
-	<!-- End Channel Plugin -->
 </body>
 <footer>
 	<jsp:include page="main/footer.jsp" />
