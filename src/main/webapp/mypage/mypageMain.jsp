@@ -133,4 +133,69 @@ $(function(){
 		}
 	});
 });
+
+/* $(function(){
+	//배송상품 주문정보
+	$.ajax({
+		url: '/milkyWayForest/mypage/getPaymentInfo',
+		type: 'post',
+		success: function(data){
+			console.log(JSON.stringify(data));
+			$('#countPending').html(data.countPending);
+			$('#countFinished').html(data.countFinished);
+			$('#countProcessing').html(data.countProcessing);
+			$('#countShipping').html(data.countShipping);
+			$('#countShipped').html(data.countShipped);
+
+			if(data.paymentList == ''){
+				$('<tr>').append($('<td>',{
+					text: '주문정보가 존재하지 않습니다',
+					colspan: '6',
+					align: 'center'
+				})).appendTo($('#myPaymentTable'));
+				
+			}else{
+				$.each(data.paymentList, function(index, items) {
+					if(index <3){
+						$('<tr>').append($('<td>',{
+						}).append($('<a>',{
+							id: 'paymentCode',
+							text: items.paymentCode,
+							class: 'orderSubject',
+							href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode
+							
+						}))).append($('<td>',{
+							id: 'productName',
+							text: items.productName
+							
+						})).append($('<td>',{
+							id: 'payQty',
+							text: items.payQty.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'payPrice',
+							text: items.payPrice.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'shipPay',
+							text: items.shipPay.toLocaleString()
+							
+						})).append($('<td>',{
+							id: 'deliveryInfo',
+							text: items.deliveryInfo
+							
+						})).appendTo($('#myPaymentTable'));
+						
+					}
+					
+				});
+				
+			}//if
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+}); */
 </script>

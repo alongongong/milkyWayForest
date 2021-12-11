@@ -176,8 +176,13 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public PaymentDTO getMyOrderInfo(String paymentCode) {
-		return mypageDAO.getMyOrderInfo(paymentCode);
+	public JSONObject getMyOrderInfo(String paymentCode) {
+		List<PaymentDTO> paymentList = mypageDAO.getMyOrderInfo(paymentCode);
+
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+
+		return json;
 	}
 	
 	@Override
@@ -278,6 +283,16 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	@Override
+	public void updateMyOrderExchange(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderExchange(paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderReturn(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderReturn(paymentDTO);
+	}
+	
+	@Override
 	public MemberRatingDTO getMypageRating(String id) {
 		return mypageDAO.getMypageRating(id);
 	}
@@ -291,6 +306,11 @@ public class MypageServiceImpl implements MypageService {
 		}
 		
 		return paymentDTO;
+	}
+
+	@Override
+	public List<PaymentDTO> getProductImageNameList(String paymentCode) {
+		return mypageDAO.getProductImageNameList(paymentCode);
 	}
 
 

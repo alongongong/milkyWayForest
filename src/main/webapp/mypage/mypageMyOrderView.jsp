@@ -30,9 +30,9 @@
 			<div>
 				<table class="table table-bordered">
 					<tr>
-						<td>주문일자</td>
+						<th>주문일자</th>
 						<td id="payDate"></td>
-						<td>주문번호</td>
+						<th>주문번호</th>
 						<td id="paymentCode"></td>
 					</tr>
 				</table>
@@ -40,14 +40,16 @@
 			<div>
 				<table class="table table-bordered">
 					<tr>
-						<td scope="col">상품번호</td>
-						<td scope="col">상품이름</td>
-						<td scope="col">상품금액(수량)</td>
-						<td scope="col">배송비</td>
-						<td scope="col">진행상태</td>
+						<th scope="col">상품번호</th>
+						<th scope="col">상품사진</th>
+						<th scope="col">상품이름</th>
+						<th scope="col">상품금액(수량)</th>
+						<th scope="col">배송비</th>
+						<th scope="col">진행상태</th>
 					</tr>
 					<tr>
 						<td id="productCode"></td>
+						<td><img id="productImageName"></td>
 						<td id="productName"></td>
 						<td>
 							<span id="payPrice"></span>원<br>
@@ -64,11 +66,11 @@
 				</div>
 				<table class="table table-bordered">
 					<tr>
-						<td id="orderChangeReason"></td>
+						<th id="orderChangeReason"></th>
 						<td id="reason"></td>
 					</tr>
 					<tr>
-						<td>상세사유</td>
+						<th>상세사유</th>
 						<td id="detailReason"></td>
 					</tr>
 				</table>
@@ -83,23 +85,23 @@
 			<div id="paymentTotal">
 				<table class="table table-bordered">
 					<tr>
-						<td>총 상품금액</td>
+						<th>총 상품금액</th>
 						<td id="totalProductPrice"></td>
 					</tr>
 					<tr>
-						<td>총 할인금액</td>
+						<th>총 할인금액</th>
 						<td id="totalSalePrice"></td>
 					</tr>
 					<tr>
-						<td>배송비</td>
+						<th>배송비</th>
 						<td id="shipPay"></td>
 					</tr>
 					<tr>
-						<td>총 결제금액</td>
+						<th>총 결제금액</th>
 						<td id="totalPayPrice"></td>
 					</tr>
 					<tr>
-						<td>적립금</td>
+						<th>적립금</th>
 						<td id="savedMoney"></td>
 					</tr>
 				</table>
@@ -113,22 +115,22 @@
 			<div>
 				<table class="table table-bordered">
 					<tr>
-						<td>수령인</td>
+						<th>수령인</th>
 						<td id="payShipReceiver"></td>
 					</tr>
 					<tr>
-						<td>연락처</td>
+						<th>연락처</th>
 						<td id="payShipTel"></td>
 					</tr>
 					<tr>
-						<td>배송지</td>
+						<th>배송지</th>
 						<td>
 							우편번호<span id="payShipZipcode"></span><br>
 							주소<span id="payShipAddr"></span>
 						</td>
 					</tr>
 					<tr>
-						<td>배송메모</td>
+						<th>배송메모</th>
 						<td id="shipMemo"></td>
 					</tr>
 				</table>
@@ -149,49 +151,74 @@ $(function(){
 		type: 'post',
 		data: 'paymentCode='+$('#paymentCode').val(),
 		success: function(data){
+			//alert(JSON.stringify(data));
 			//console.log(JSON.stringify(data));
-			if(data != ''){
-				if(data.deliveryInfo=='입금대기중' || data.deliveryInfo=='결제완료' || data.deliveryInfo=='배송준비중' || data.deliveryInfo=='배송중'){
-					$('#orderCancleBtn').show();
+			if(data.paymentList != ''){
+				$.each(data.paymentList, function(index, items) {
+					if(items.deliveryInfo=='입금대기중' || items.deliveryInfo=='결제완료' || items.deliveryInfo=='배송준비중' || items.deliveryInfo=='배송중'){
+						$('#orderCancleBtn').show();
+	
+					}else if(items.deliveryInfo=='배송완료'){
+						$('#orderExchangeBtn').show();
+						$('#orderReturnBtn').show();
+					}
+					
+					$('#myOrderView1 #payDate').html(items.payDate);
+					$('#myOrderView1 #paymentCode').html(items.paymentCode);
+					$('#myOrderView1 #productCode').html(items.productCode);
+					$('#myOrderView1 #productName').html(items.productName);
+					$('#myOrderView1 #payPrice').html(items.payPrice);
+					$('#myOrderView1 #payQty').html(items.payQty);
+					$('#myOrderView1 #shipPay').html(items.shipPay);
+					$('#myOrderView1 #deliveryInfo').html(items.deliveryInfo);
+					
+					var payQty = items.payQty*1;
+					var payPrice = items.payPrice*1;
+					var payRate = items.payRate*1;
+					var shipPay = items.shipPay*1;
+					
+					var totalProductPrice = payQty*payPrice;
+					var totalSalePrice = payQty*payPrice*payRate/100;
+					var totalPayPrice = payQty*payPrice*(1-payRate/100) + shipPay;
+					
+					$('#myOrderView2 #totalProductPrice').html(totalProductPrice);
+					$('#myOrderView2 #totalSalePrice').html(totalSalePrice);
+					$('#myOrderView2 #shipPay').html(items.shipPay);
+					$('#myOrderView2 #totalPayPrice').html(totalPayPrice);
+					$('#myOrderView2 #savedMoney').html(items.newSavedMoney);
+					
+					var payShipTel = items.payShipTel1+"-"+items.payShipTel2+"-"+items.payShipTel3;
+					var payShipAddr = items.payShipAddr1+" "+items.payShipAddr2
+					
+					$('#myOrderView3 #payShipReceiver').html(items.payShipReceiver);
+					$('#myOrderView3 #payShipTel').html(payShipTel);
+					$('#myOrderView3 #payShipZipcode').html(items.payShipReceiver);
+					$('#myOrderView3 #payShipAddr').html(payShipAddr);
+					$('#myOrderView3 #shipMemo').html(items.shipMemo);
+					
+				});
 
-				}else if(data.deliveryInfo=='배송완료'){
-					$('#orderExchangeBtn').show();
-					$('#orderReturnBtn').show();
-				}
-				
-				$('#myOrderView1 #payDate').html(data.payDate);
-				$('#myOrderView1 #paymentCode').html(data.paymentCode);
-				$('#myOrderView1 #productCode').html(data.productCode);
-				$('#myOrderView1 #productName').html(data.productName);
-				$('#myOrderView1 #payPrice').html(data.payPrice);
-				$('#myOrderView1 #payQty').html(data.payQty);
-				$('#myOrderView1 #shipPay').html(data.shipPay);
-				$('#myOrderView1 #deliveryInfo').html(data.deliveryInfo);
-				
-				var payQty = data.payQty*1;
-				var payPrice = data.payPrice*1;
-				var payRate = data.payRate*1;
-				var shipPay = data.shipPay*1;
-				
-				var totalProductPrice = payQty*payPrice;
-				var totalSalePrice = payQty*payPrice*payRate/100;
-				var totalPayPrice = payQty*payPrice*(1-payRate/100) + shipPay;
-				
-				$('#myOrderView2 #totalProductPrice').html(totalProductPrice);
-				$('#myOrderView2 #totalSalePrice').html(totalSalePrice);
-				$('#myOrderView2 #shipPay').html(data.shipPay);
-				$('#myOrderView2 #totalPayPrice').html(totalPayPrice);
-				$('#myOrderView2 #savedMoney').html(data.newSavedMoney);
-				
-				var payShipTel = data.payShipTel1+"-"+data.payShipTel2+"-"+data.payShipTel3;
-				var payShipAddr = data.payShipAddr1+" "+data.payShipAddr2
-				
-				$('#myOrderView3 #payShipReceiver').html(data.payShipReceiver);
-				$('#myOrderView3 #payShipTel').html(payShipTel);
-				$('#myOrderView3 #payShipZipcode').html(data.payShipReceiver);
-				$('#myOrderView3 #payShipAddr').html(payShipAddr);
-				$('#myOrderView3 #shipMemo').html(data.shipMemo);
-			}	
+			}//if	
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+	
+	//사진
+	$.ajax({
+		url: '/milkyWayForest/mypage/getProductImageNameList',
+		type: 'post',
+		data: 'paymentCode='+$('#paymentCode').val(),
+		success: function(data){
+			//console.log(JSON.stringify(data));
+			
+			$.each(data, function(index, items) {
+				if(index==0){
+					$('#productImageName').attr('src', '/milkyWayForest/productImage/'+items.productImageName);
+				}	
+			});
 
 		},
 		error: function(err){
@@ -208,7 +235,7 @@ $(function(){
 		data: 'paymentCode='+$('#paymentCode').val(),
 		success: function(data){
 			//console.log(JSON.stringify(data));
-			if(data != ''){
+			if(data.deliveryInfo != 'false'){
 				if(data.deliveryInfo=='취소'){
 					$('#orderChangeDiv').show();
 					$('#orderChangeTitle').html('주문취소');
@@ -230,7 +257,7 @@ $(function(){
 					$('#reason').html(data.reason);
 					$('#detailReason').html(data.detailReason);
 				}
-			}	
+			}
 
 		},
 		error: function(err){
@@ -240,15 +267,15 @@ $(function(){
 });
 
 $('#myOrderView1 #reorderBtn').click(function(){
-	//location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
 });
 $('#myOrderView1 #orderCancleBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=취소';
 });
 $('#myOrderView1 #orderExchangeBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=교환';
 });
 $('#myOrderView1 #orderReturnBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=반품';
 });
 </script>
