@@ -9,13 +9,13 @@
 		<section>
 			<h2>비밀번호 찾기</h2>
 			<div id="findPwd-input-wrap">
-				<p>비밀번호를 찾고자 하는 아이디를 입력하세요</p>
+				<p>아이디를 입력하세요</p>
 				<div id="findPwd-id-input-wrap">
 					<input type="text" id="id" name="id" placeholder="은하숲 아이디">
 				</div>
 
 				<div id="check-id-button-wrap">
-					<button type="button" id="check-id-button">다음</button>
+					<button type="button" id="check-id-button" class="btn">다음</button>
 				</div>
 				<div id="result-div"></div>
 			</div>

@@ -342,11 +342,13 @@ $('#findPwdForm2 #check-email-button').click(function(){
 					//alert(data);
 					
 					if(data == 'loginEmailCheck_non_exist'){
-						$('#findPwdForm2 #result-div').html('본인 확인 이메일 주소를 정확히 입력하세요');
+						$('#findPwdForm2 #result-div').html('이메일 주소를 정확히 입력하세요');
 					
 					}else{
 						id = data;
 						//alert('디비 등록된 이메일? '+data);
+						
+						$('#checkEmailNumber').removeClass('checkEmailNumberHide');
 					
 						//이메일 발송
 						$.ajax({
