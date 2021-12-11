@@ -6,6 +6,7 @@
 	<ul id="simpleWrite">
 		<li><input type="button" id="kakaoWriteBtn" value="카카오 회원가입"></li>
 	</ul>
+	<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 	<ul class="writeAgreeBox">
 		<li class="writeAgreeCheckBox check01">
 			<div>

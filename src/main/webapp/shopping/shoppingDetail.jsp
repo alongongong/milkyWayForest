@@ -242,6 +242,7 @@ $(function(){
 
 		});//each
 		
+		
 		$('.shoppingDetailImg li:eq(0)').on("click", $('.shoppingDetailImg li:eq(0)'), function(){
 			//alert('0');
 			$('#bigImg').prop("src", $('.shoppingDetailImg li:eq(0) img').prop("src"));
@@ -288,6 +289,7 @@ $(function(){
 	});	//getShoppingDetail 에이작스
 	
 
+	
 	//장바구니 버튼 클릭시
 	$('#cartBtn').click(function(){
 		if($('.shoppingSelect').val()=='0') {
@@ -308,8 +310,9 @@ $(function(){
 					
 						
 					if(data !=0) {
-						alert("이미 장바구니에 있는 상품입니다.");
-				
+						if(confirm("이미 장바구니에 있는 상품입니다. 장바구니로 이동하시겠습니까?")){
+							location.href= "/milkyWayForest/cart";
+						}
 					}
 					else { 
 					
@@ -356,7 +359,9 @@ $(function(){
 				success : function(data) {  //알아서 자료형을 맞춰줌
 
 					if(data !=0) {
-						alert("이미 장바구니에 있는 상품입니다.");			
+						if(confirm("이미 장바구니에 있는 상품입니다. 장바구니로 이동하시겠습니까?")) {
+							location.href="/milkyWayForest/cart";
+						}			
 					}
 					else { 
 						$.ajax({

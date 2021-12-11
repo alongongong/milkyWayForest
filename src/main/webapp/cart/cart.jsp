@@ -20,9 +20,9 @@
 			
 			<table id="cartTable" class="table">
 				<tr>
-					<th width="25"><input type="checkbox" class="cartProductCheck"></th>
-					<th width="450">상품정보</th>
-					<th>구매수량</th>
+					<th width="50"><input type="checkbox" class="cartProductCheck"></th>
+					<th width="500" colspan="2" style="padding-right: 40px;">상품정보</th>
+					<th style="text-align: left;">구매수량</th>
 					<th>옵션</th>
 					<th width="200">상품금액</th>
 					
@@ -46,8 +46,8 @@
 				<p>결제예상금액<span id="totalPayPrice"></span></p>
 			
 			</div>
-				<input type="button" id="cartAllOrderBtn" class="btn btn-danger" value="주문하기">
-				<input type="button" id="shoppingBtn" class="btn btn-outline-secondary" value="계속 쇼핑하기"><br>
+				<input type="button" id="cartAllOrderBtn" class="btn" value="전체상품 주문하기">
+				<input type="button" id="shoppingBtn" class="btn" value="계속 쇼핑하기"><br>
 			
 		</div> <!-- cartTotalDiv -->
 	</div>
@@ -68,11 +68,23 @@ $(function(){
 			var totalSalePrice = 0;
 			var allPrice = 0;
 			
+			if(data.length == 0) {
+				$('<tr>').append($('<td>',{
+					colspan: '6',
+					text: '장바구니가 비어있습니다! 상품을 담아주세요.',
+					align: 'center',
+					style: 'font-size:14px; padding: 57px;'
+				})).appendTo($('#cartTable'));
+				$('<tr>').append($('<td>',{
+					colspan: '6',
+					html:'&emsp;'
+				})).appendTo($('#cartTable'));
+			}
 			 
 			 $.each(data, function(index,items){
-				 $('<tr>').append($('<th>',{ 
-					 width: 25,
-					 class: 'checkboxGroup'
+				 $('<tr>').append($('<td>',{ 
+					 class: 'checkboxGroup',
+					 align: 'center'
 				})
 				.append($('<input>', {
 					type:'checkbox',
@@ -80,12 +92,16 @@ $(function(){
 					class: 'check',
 					value: items.cartCode
 					
-				}))).append($('<th>' , {
+				}))).append($('<td>', {
+					style: 'width: 70px; padding: 0 10px 0 30px;'
+				}).append($('<img>',{
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					style: 'height: 70px; margin: 0;'
+				}))).append($('<td>' , {
 					text: items.productName 
 				
-				})).append($('<th>' 
+				})).append($('<td>' 
 				
-					
 					).append($('<div>' , {
 						class: 'length',
 						style: 'position: relative; border: 1px solid  #ccc; width: 70px; height: 32px;'
@@ -103,12 +119,14 @@ $(function(){
 						})).append($('<a>' , {
 							id:'minus'+index
 						
-				})))).append($('<th>', {
-					text: items.cartOption
+				})))).append($('<td>', {
+					text: items.cartOption,
+					align: 'center'
 					
-				})).append($('<th>', {
+				})).append($('<td>', {
 					id: 'total'+index,
-					text: (items.productUnit*items.cartQty).toLocaleString()+" 원" 
+					text: (items.productUnit*items.cartQty).toLocaleString()+" 원",
+					align: 'center'
 					
 				}))
 				.appendTo($('#cartTable')); 
@@ -199,6 +217,13 @@ $(function(){
 			
 				
 			});//each 
+			
+			if(data.length != 0) {
+				$('<tr>').append($('<td>',{
+					colspan: '6',
+					html: '&emsp;'
+				})).appendTo($('#cartTable'));
+			}
 			
 			 var shipPay = 0;
 
@@ -322,7 +347,7 @@ $(function(){
 		$('#cartSelectDeleteBtn').click(function(){
 			$('#cartForm').submit(function(){  //폼.서브밋
 				var count =$('.check:checked').length;
-					alert(count);
+					//alert(count);
 				
 				if(count==0)
 					alert('삭제 할 항목을 선택하세요');
@@ -333,7 +358,7 @@ $(function(){
 							type: 'post',
 							data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
 							success: function() {
-								alert("삭제 성공")
+								alert("삭제제되었습니다.")
 								console.log(JSON.stringify(data)); 
 							
 							},
