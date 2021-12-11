@@ -114,3 +114,66 @@
 	font-size: 18px;
 	font-weight: bold;
 }
+
+#paymentForm #ordererTable #name, #paymentForm #paymentShipTable #payShipNickname,
+#paymentForm #paymentShipTable #payShipReceiver, #paymentForm #paymentSaleSelectTable #paymentSavedMoney, 
+#paymentForm #paymentShipTable #payShipAddr1, #paymentForm #paymentShipTable #payShipAddr2 {
+	width: 500px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #ordererTable #email1, #paymentForm #ordererTable #email2 {
+	width: 239px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #ordererTable #tel1, #paymentForm #ordererTable #tel2,
+#paymentForm #ordererTable #tel3, #paymentForm #paymentShipTable #payShipTel1,
+#paymentForm #paymentShipTable #payShipTel2, #paymentForm #paymentShipTable #payShipTel3 {
+	width: 156px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentShipTable #shipSelect {
+	width: 700px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentSaleSelectTable #paymentCoupon {
+	width: 500px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentShipTable #payShipZipcode {
+	width: 350px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentShipTable #payShipZipcodeBtn {
+	width: 145px;
+	height: 35px;
+	border: 1px solid #154520;
+	color: #154520;
+	font-size: 14px;
+	font-weight: bold;
+	box-shadow: none;
+}
+#paymentForm #paymentShipTable #shipMemo {
+	width: 500px;
+	height: 125px;
+	resize: none;
+	outline: none;
+	border: 1px solid #777;
+}
