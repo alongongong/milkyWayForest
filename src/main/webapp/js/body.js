@@ -2,7 +2,9 @@ $(function() {
 	$('#fullpage').fullpage({
 		//options here
 		autoScrolling:true,
-		scrollHorizontally: true
+		scrollHorizontally: true,
+		navigation:true,
+		navigation:'right'
 	});
 });
 //좌우슬라이딩
