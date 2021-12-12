@@ -33,6 +33,8 @@ public interface MypageService {
 	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO);
 
 	public JSONObject getPaymentInfo(String id);
+	
+	public JSONObject getMainPaymentInfo(String id);
 
 	public JSONObject getOrderList(String id, int pg);
 
@@ -62,6 +64,6 @@ public interface MypageService {
 
 	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
 
-	public List<PaymentDTO> getProductImageNameList(String paymentCode);
+	public JSONObject getMyReorderInfo(String paymentCode, String id);
 
 }

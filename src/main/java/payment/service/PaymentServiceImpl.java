@@ -50,4 +50,14 @@ public class PaymentServiceImpl implements PaymentService {
 		return paymentDAO.getPayInfo(paymentCode);
 	}
 
+//	@Override
+//	public String reorder(PaymentDTO paymentDTO, String paymentCode) {
+//		
+//		
+//		paymentDAO.payment(paymentDTO);
+//		paymentDAO.payment4(paymentDTO, paymentCode);
+//		paymentDAO.UpdateMemberGrade(paymentDTO.getId());
+//		return paymentDAO.payment2();
+//	}
+
 }

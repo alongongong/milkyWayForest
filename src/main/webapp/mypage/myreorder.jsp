@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/payment.css">
 <form id="paymentForm">
+	<input type="hidden" id="paymentCode" name="paymentCode" value="${paymentCode }">
+
 	<legend>주문/결제</legend>
 	<br>
 	<div id="paymentContainer">
@@ -171,11 +173,11 @@
 	
 </form>
 
-<form id="cartCodeForm">
+<%-- <form id="cartCodeForm">
 	<c:forEach var="code" items="${cartCode }">
 		<input type="hidden" name="cartCode" value="${code}">
 	</c:forEach>
-</form>
+</form> --%>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
@@ -189,7 +191,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 	} else if(!$('#payShipNickname').val() || !$('#payShipReceiver').val() || !$('#payShipTel1').val() || !$('#payShipTel2').val() || !$('#payShipTel3').val() || !$('#payShipZipcode').val() || !$('#payShipAddr1').val() || !$('#payShipAddr2').val()) {
 		$('#paymentDiv').text('배송지 정보를 입력해주세요.');
 	} else {
-		var paymentCode;
+		var newPaymentCode;
 		
 		//카카오페이
 		if($('input:radio').eq(3).is(':checked')){
@@ -221,12 +223,12 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		        if ( rsp.success ) { //결제 성공시
 		        	//DB
 		        	$.ajax({
-						url: '/milkyWayForest/payment/payment',
+						url: '/milkyWayForest/payment/reorder',
 						type: 'post',
 						data: $('#paymentForm').serialize(),
 						success: function(data) {
 							alert(data);
-							paymentCode = data;
+							newPaymentCode = data;
 			
 						},
 						error: function(err) {
@@ -241,7 +243,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 	                msg += '\n카드 승인번호 : ' + rsp.apply_num;
 
 	                alert(msg);
-	    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
+	    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+newPaymentCode;
 
 		        } else { //결제 실패시
 		            msg = '결제에 실패하였습니다.';
@@ -254,14 +256,14 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		}//카카오페이
 		else { // 나머지 결제수단
 			$.ajax({
-				url: '/milkyWayForest/payment/payment',
+				url: '/milkyWayForest/payment/reorder',
 				type: 'post',
 				data: $('#paymentForm').serialize(),
 				success: function(data) {
 					alert(data);
-					paymentCode = data;
+					newPaymentCode = data;
 					
-					location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
+					location.href="/milkyWayForest/payment/paySuccess?paymentCode="+newPaymentCode;
 
 				},
 				error: function(err) {
@@ -275,11 +277,12 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 $(function(){
 	
 	$.ajax({
-		url: '/milkyWayForest/payment/getPayment',
+		url: '/milkyWayForest/mypage/getMyReorderInfo',
 		type: 'post',
-		data: $('#cartCodeForm').serialize(),
+		data: 'paymentCode='+$('#paymentCode').val(),
 		success: function(data) {
-			//alert(JSON.stringify(data));
+			alert(JSON.stringify(data));
+			alert(JSON.stringify(data.memberDTO));
 			
 			var totalPrice = 0;
 			var totalSalePrice = 0;
@@ -288,36 +291,34 @@ $(function(){
 			var memberGrade;
 			
 			// 주문자정보
-			$.each(data.memberList, function(index, items) {
-				$('#name').val(items.name);
-				$('#email1').val(items.email1);
-				$('#email2').val(items.email2);
-				$('#tel1').val(items.tel1);
-				$('#tel2').val(items.tel2);
-				$('#tel3').val(items.tel3);
-				$('#haveSavedMoney').text(items.savedMoney.toLocaleString());
-				memberGrade = items.memberGrade;
-				if(items.coupon != null) {
-					$('<option>',{
-						text: items.couponName,
-						value: items.couponName
-					}).appendTo($('#paymentCoupon'));
-				} else {
-					$('#haveCoupon').text('0');
+			$('#name').val(data.memberDTO.name);
+			$('#email1').val(data.memberDTO.email1);
+			$('#email2').val(data.memberDTO.email2);
+			$('#tel1').val(data.memberDTO.tel1);
+			$('#tel2').val(data.memberDTO.tel2);
+			$('#tel3').val(data.memberDTO.tel3);
+			$('#haveSavedMoney').text(data.memberDTO.savedMoney.toLocaleString());
+			memberGrade = data.memberDTO.memberGrade;
+			if(data.memberDTO.coupon != null) {
+				$('<option>',{
+					text: data.memberDTO.couponName,
+					value: data.memberDTO.couponName
+				}).appendTo($('#paymentCoupon'));
+			} else {
+				$('#haveCoupon').text('0');
+			}
+			
+			$('#paymentSavedMoney').change(function(){
+				if($('#paymentSavedMoney').val() > data.memberDTO.savedMoney) {
+					$('#paymentSavedMoney').val(data.memberDTO.savedMoney);
 				}
-				
-				$('#paymentSavedMoney').change(function(){
-					if($('#paymentSavedMoney').val() > items.savedMoney) {
-						$('#paymentSavedMoney').val(items.savedMoney);
-					}
-				});
 			});
 			
 			// 구매상품정보
-			$.each(data.cartList, function(index, items) {
-				var totalProductPrice = items.productUnit*items.cartQty*(1-items.productRate/100);
-				totalPrice += items.productUnit*items.cartQty;
-				totalSalePrice += items.productUnit*items.cartQty*items.productRate;
+			$.each(data.paymentList, function(index, items) {
+				var totalProductPrice = items.payPrice*items.payQty*(1-items.payRate/100);
+				totalPrice += items.payPrice*items.payQty;
+				totalSalePrice += items.payPrice*items.payQty*items.payRate;
 				allPrice += totalProductPrice;
 				
 				//alert(items.cartCode)
@@ -335,33 +336,33 @@ $(function(){
 					value: items.productCode
 				})).append($('<input>',{
 					type: 'hidden',
-					name: 'cartCode',
-					value: items.cartCode
+					name: 'cartCode'/* ,
+					value: items.cartCode */
 				}))).append($('<td>',{
-					text: items.cartOption,
+					text: items.productOption,
 					align: 'center'
 				}).append($('<input>',{
 					type: 'hidden',
-					name: 'productOption',
-					value: items.cartOption
+					name: 'productOption'/* ,
+					value: items.cartOption */
 				}))).append($('<td>',{
-					text: items.productUnit.toLocaleString()+'원',
+					text: items.payPrice.toLocaleString()+'원',
 					align: 'center'
 				}).append($('<input>',{
 					type: 'hidden',
 					name: 'payPrice',
-					value: items.productUnit
+					value: items.payPrice
 				}))).append($('<td>',{
-					text: items.cartQty+'개',
+					text: items.payQty+'개',
 					align: 'center'
 				}).append($('<input>',{
 					type: 'hidden',
 					name: 'payQty',
-					value: items.cartQty
+					value: items.payQty
 				})).append($('<input>',{
 					type:'hidden',
 					name: 'payRate',
-					value: items.productRate
+					value: items.payRate
 				}))).append($('<td>',{
 					text: totalProductPrice.toLocaleString()+'원',
 					align: 'center'

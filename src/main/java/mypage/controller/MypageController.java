@@ -245,6 +245,14 @@ public class MypageController {
 	}
 
 	//배송상품 주문정보 불러오기
+	@PostMapping("/getMainPaymentInfo")
+	@ResponseBody
+	public JSONObject getMainPaymentInfo(HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getMainPaymentInfo(id);
+	}
+		
+	//배송상품 주문정보 불러오기
 	@PostMapping("/getPaymentInfo")
 	@ResponseBody
 	public JSONObject getPaymentInfo(HttpSession session) {
@@ -400,13 +408,6 @@ public class MypageController {
 		return mypageService.getMypageRating(id);
 	}
 	
-	//사진 불러오기
-	@PostMapping("/getProductImageNameList")
-	@ResponseBody
-	public List<PaymentDTO> getProductImageNameList(@RequestParam String paymentCode) {
-		return mypageService.getProductImageNameList(paymentCode);
-	}
-	
 	//재주문 창
 	@GetMapping("/myreorder")
 	public String myreorder(@RequestParam String paymentCode, Model model) {
@@ -414,4 +415,13 @@ public class MypageController {
 		model.addAttribute("display", "mypage/myreorder.jsp");
 		return "/index";
 	}
+	
+	//재주문 정보
+	@PostMapping("/getMyReorderInfo")
+	@ResponseBody
+	public JSONObject getMyReorderInfo(@RequestParam String paymentCode, HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getMyReorderInfo(paymentCode, id);
+	}
+	
 }

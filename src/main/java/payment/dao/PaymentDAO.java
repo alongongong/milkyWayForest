@@ -29,4 +29,6 @@ public interface PaymentDAO {
 
 	public PaymentDTO getPayInfo(String paymentCode);
 
+	public void payment4(PaymentDTO paymentDTO, String[] paymentCode);
+
 }

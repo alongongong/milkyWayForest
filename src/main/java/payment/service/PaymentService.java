@@ -15,4 +15,6 @@ public interface PaymentService {
 
 	public PaymentDTO getPayInfo(String paymentCode);
 
+//	public String reorder(PaymentDTO paymentDTO, String paymentCode);
+
 }

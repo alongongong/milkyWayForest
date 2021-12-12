@@ -33,23 +33,14 @@
 				</table>
 			</div>
 			<div>
-				<table class="table table-bordered">
+				<table class="table table-bordered" id="productInfoTable">
 					<tr>
-						<td scope="col">상품번호</td>
-						<td scope="col">상품이름</td>
-						<td scope="col">상품금액(수량)</td>
-						<td scope="col">배송비</td>
-						<td scope="col">진행상태</td>
-					</tr>
-					<tr>
-						<td id="productCode"></td>
-						<td id="productName"></td>
-						<td>
-							<span id="payPrice"></span>원<br>
-							<span id="payQty"></span>개
-						</td>
-						<td id="shipPay"></td>
-						<td id="deliveryInfo"></td>
+						<th scope="col">상품번호</th>
+						<th scope="col">상품사진</th>
+						<th scope="col">상품이름</th>
+						<th scope="col">상품금액(수량)</th>
+						<th scope="col">배송비</th>
+						<th scope="col">진행상태</th>
 					</tr>
 				</table>
 			</div>
@@ -110,14 +101,28 @@ $(function(){
 				$.each(data.paymentList, function(index, items) {
 					$('#myOrderView1 #payDate').html(items.payDate);
 					$('#myOrderView1 #paymentCode').html(items.paymentCode);
-					$('#myOrderView1 #productCode').html(items.productCode);
-					$('#myOrderView1 #productName').html(items.productName);
-					$('#myOrderView1 #payPrice').html(items.payPrice);
-					$('#myOrderView1 #payQty').html(items.payQty);
-					$('#myOrderView1 #shipPay').html(items.shipPay);
-					$('#myOrderView1 #deliveryInfo').html(items.deliveryInfo);
+
+					$('<tr>').append($('<td>',{
+						text: items.productCode
+					})).append($('<td>',{}).append($('<img>',{
+						id: 'productImageName'+index,
+						src: '/milkyWayForest/productImage/'+items.productImageName,
+						width: '100px',
+						heigiht: '100px'
+					}))).append($('<td>',{
+						text: items.productName
+					})).append($('<td>',{
+						text: items.payPrice+' ('+items.payQty+'개)'
+					})).append($('<td>',{
+						text: items.shipPay
+					})).append($('<td>',{
+						text: items.deliveryInfo
+					})).appendTo($('#productInfoTable'));
 					
 				});
+				
+				$('#productInfoTable').rowspan(4);
+				$('#productInfoTable').rowspan(5);
 				
 			}	
 
@@ -174,4 +179,60 @@ $('#myOrderCancel #myOrderCancelBtn').click(function(){
 	}
 
 });
+
+$.fn.colspan = function(rowIdx) {
+	return this.each(function(){
+		
+		var that;
+		$('tr', this).filter(":eq("+rowIdx+")").each(function(row) {
+			$(this).find('th').filter(':visible').each(function(col) {
+				if ($(this).html() == $(that).html()) {
+					colspan = $(that).attr("colSpan") || 1;
+					colspan = Number(colspan)+1;
+					
+					$(that).attr("colSpan",colspan);
+					$(this).hide(); // .remove();
+				} else {
+					that = this;
+				}
+				
+				// set the that if not already set
+				that = (that == null) ? this : that;
+				
+			});
+		});
+	});
+};
+$.fn.rowspan = function(colIdx, isStats) {       
+	return this.each(function(){      
+		var that;     
+		$('tr', this).each(function(row) {      
+			$('td:eq('+colIdx+')', this).filter(':visible').each(function(col) {
+				
+				if ($(this).html() == $(that).html()
+					&& (!isStats 
+							|| isStats && $(this).prev().html() == $(that).prev().html()
+							)
+					) {            
+					rowspan = $(that).attr("rowspan") || 1;
+					rowspan = Number(rowspan)+1;
+
+					$(that).attr("rowspan",rowspan);
+					
+					// do your action for the colspan cell here            
+					$(this).hide();
+					
+					//$(this).remove(); 
+					// do your action for the old cell here
+					
+				} else {            
+					that = this;         
+				}          
+				
+				// set the that if not already set
+				that = (that == null) ? this : that;      
+			});     
+		});    
+	});  
+}; 
 </script>
