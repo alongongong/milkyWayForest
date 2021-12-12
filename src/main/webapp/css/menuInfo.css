@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-#headerSection {
-	background: rgba(253,248,235,0.5);
-}
-
-
 /* 공통 페이징 */
 #boardPagingDiv {
 	width: 70%;
@@ -30,10 +25,10 @@
 /* 메뉴소개 */
 #menuInfoForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #menuInfoForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -109,10 +104,10 @@
 /* 음료 메뉴 */
 #drinkInfoForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #drinkInfoForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -184,10 +179,10 @@
 /* 푸드 메뉴 */
 #foodInfoForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #foodInfoForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -260,10 +255,10 @@
 /* 전체음료 메뉴 폼 */
 #allMenuInfoForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #allMenuInfoForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -351,7 +346,7 @@
 	margin: 160px 0 120px 0;
 }
 #menuDetailForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 

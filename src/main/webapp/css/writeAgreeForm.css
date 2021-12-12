@@ -1,12 +1,7 @@
 @charset "UTF-8";
 
-#headerSection {
-	background: rgba(253,248,235,0.5);
-}
-
-
 #writeAgreeForm, #memberWriteForm, #writeOkForm {
-	margin: 160px auto 120px auto;
+	margin: 120px auto 120px auto;
 	width: 650px;
 }
 

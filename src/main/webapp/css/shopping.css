@@ -3,18 +3,13 @@
 src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.woff') format('woff');}
 /* * { font: Avenir, Arial, georgia; color: #222222; } */
 
-#headerSection {
-	background: rgba(253,248,235,0.5);
-}
-
-
 /* shopping */
 #shoppingForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #shoppingForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 #shoppingForm ul, #beanNTeaForm ul, #productForm ul,
@@ -85,10 +80,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 원두/차 메뉴 */
 #beanNTeaForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #beanNTeaForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -177,10 +172,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 상품 메뉴 */
 #productForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #productForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -304,10 +299,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 원두리스트 메뉴 폼 */
 #beanListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #beanListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -379,10 +374,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 차 리스트 메뉴 */
 #teaListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #teaListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -451,10 +446,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 머그 리스트 메뉴 */
 #mugListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #mugListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -525,10 +520,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 글라스 리스트 메뉴 */
 #glassListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #glassListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -596,10 +591,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 플라스틱텀블러 리스트 메뉴 */
 #plasticTumblrListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #plasticTumblrListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -667,10 +662,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 스테인리스텀블러 리스트 메뉴 */
 #stainlessTumblrListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #stainlessTumblrListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -737,10 +732,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 보온병 리스트 메뉴 */
 #thermosListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #thermosListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -806,10 +801,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 커피용품 리스트 메뉴 */
 #coffeeEtcListForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #coffeeEtcListForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 
@@ -876,10 +871,10 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 쇼핑 상세페이지 */
 #shoppingDetailForm {
 	width: 60%;
-	margin: 160px auto 80px auto;
+	margin: 120px auto 80px auto;
 }
 #shoppingDetailForm h1 {
-	font-size: 38px;
+	font-size: 35px;
 	font-weight: bold;
 }
 

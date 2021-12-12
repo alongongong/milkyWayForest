@@ -1,13 +1,8 @@
 @charset "UTF-8";
 
-#headerSection {
-	background: rgba(253,248,235,0.5);
-}
-
-
 #cartForm {
 	width: 70%;
-	margin: 160px auto 100px;
+	margin: 120px auto 100px;
 }
 #cartForm legend {
 	font-size: 28px;
