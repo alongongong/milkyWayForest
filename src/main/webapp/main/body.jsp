@@ -5,8 +5,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/body.css">
+<link rel="stylesheet" href="/milkyWayForest/css/thirdScroll.css">
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/jquery.fullPage.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <body>
 <!-- 전체영역 -->
 <div id="fullPage">
@@ -31,8 +32,8 @@
 		<section class="section">
 			<div class="second_section_text">
 			<h1>Pick Your Favorite</h1>
-	
-			<h2 style="text-align:left;  white-space:pre-line; word-break: break-all;">
+
+			<h2 style="white-space:pre-line;">
 			다양한 메뉴를 은하숲에서 즐겨보세요<br>
          	은하숲만의 특별함을 경험할수 있는 최상의 음료<br>
           	은하숲 커피와 완벽한 어울림을 자랑하는 푸드<br>
@@ -43,8 +44,20 @@
 		</section>
 		
 		<section class="section">
-			<img src="/milkyWayForest/image/main_alist_pc.jpg" alt="main_alist_pc.jpg" 
-			style="width: 100%; height: 100%;  top: 0;">
+			<div class="container2">
+			  <div class="row beans">
+			  </div>
+			  <div class="row grinder">
+			  </div>
+			  <div class="row grinder_bottom">
+			  </div>
+			  <div class="row v60">
+			  </div>
+			  <div class="row drip">
+			  </div>
+			  <div class="row cup">
+			  </div>
+			</div>
 		</section>
 		
 		<section class="section fp-auto-height">

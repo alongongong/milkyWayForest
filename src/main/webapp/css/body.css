@@ -20,6 +20,10 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	height: 100%;
 }
 /* 글자 애니메이션 */
+.second_section_text {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 6rem 0 0 6rem;
+}
 .second_section_text h1 {
    animation: showText 2s;
    animation-fill-mode: both;
@@ -28,12 +32,12 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 .second_section_text h1{
 	font-size: 5rem;
 	font-weight: bold;
-	font-style: oblique;
 	color: floralwhite;
-	padding: 9rem 0 0rem 2rem;
 }
 .second_section_text h2{
-	
+	font-size: 1.2rem;
+	font-style: normal;
+	color: floralwhite;
 }
 .second_section_text h2 {
    animation: showText2 2s;
