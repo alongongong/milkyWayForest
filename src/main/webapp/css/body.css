@@ -9,10 +9,54 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	top: 0;
 	width: 100%;
 	height: 100%;
+	background-size: cover;
+    background-attachment: fixed;
+    background-image: url("/milkyWayForest/image/mainImage2.jpg");
 }
 #bodySection {
 	position: relative;
 	top: 0;
 	width: 100%;
 	height: 100%;
+}
+/* 글자 애니메이션 */
+.second_section_text h1 {
+   animation: showText 2s;
+   animation-fill-mode: both;
+   animation-delay: 2.5s;
+}
+.second_section_text h1{
+	font-size: 5rem;
+	font-weight: bold;
+	font-style: oblique;
+	color: floralwhite;
+	padding: 9rem 0 0rem 2rem;
+}
+.second_section_text h2{
+	
+}
+.second_section_text h2 {
+   animation: showText2 2s;
+   animation-fill-mode: both;
+   animation-delay: 3s;
+}
+@keyframes showText {
+     0% {
+      opacity:0;
+      transform:translateX(-550%);
+     }
+     100% {
+      opacity:1;
+      transform:translateX(5%);
+     }
+}
+@keyframes showText2 {
+     0% {
+      opacity:0;
+      transform:translateX(-550%);
+     }
+     100% {
+      opacity:1;
+      transform:translateX(5%);
+     }
 }
