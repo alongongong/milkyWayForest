@@ -112,7 +112,7 @@ $(function(){
 						aa.show();
 						
 						$('.infoWindow').click(function(){
-							location.href=items.storeUrl;
+							window.open(items.storeUrl);
 						})
 					});
 					
