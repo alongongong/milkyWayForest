@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+#headerSection {
+	background: rgba(253,248,235,0.5);
+}
+
+
 /* 게시판 공통 사항 */
 #eventBoardForm, #eventViewForm, #faqBoardForm, #noticeBoardForm, #noticeBoardViewForm, #qnaBoardForm {
 	margin: 0;

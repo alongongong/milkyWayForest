@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+#headerSection {
+	background: rgba(253,248,235,0.5);
+}
+
+
 #paymentForm {
 	width: 70%;
 	margin: 160px auto 200px;

@@ -4,9 +4,6 @@
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/writeAgreeForm.css">
 <form action="" id="writeAgreeForm">
 	<h1>회원가입</h1>
-	<ul id="simpleWrite">
-		<li><input type="button" class="btn" id="kakaoWriteBtn" value="카카오 회원가입"></li>
-	</ul>
 	<ul class="writeAgreeBox">
 		<li class="writeAgreeCheckBox check01">
 			<div>
@@ -789,7 +786,9 @@
 				</ul>
 				<div>
 					<ul>
-						<li align="center"><input type="button" class="btn" disabled="disabled" id="writeAgreeBtn1" value="동의"></li>
+						<li align="center"><input type="button" class="btn" disabled="disabled" id="writeAgreeBtn1" value="동의">
+										   <input type="button" class="btn" id="kakaoWriteBtn" value="카카오 회원가입">
+						</li>
 					</ul>
 				</div>
 			</div>
