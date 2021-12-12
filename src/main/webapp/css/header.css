@@ -23,6 +23,18 @@ ul { list-style:none; }
 /* 로고 */
 #Allheader header > div h1 { float: left; padding: 1.5rem 0 0.1rems; margin: auto 0; }
 
+/* 전체 스크롤 */
+body::-webkit-scrollbar {
+   width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+   background-color: #666;
+   border-radius: 5px;
+}
+body::-webkit-scrollbar-track {
+   background-color: #ccc;
+}
+
 /*header 하단메뉴*/
 #Allheader header > div .menu {  font-size: 1rem; float: left; 
 font-weight:bold; padding: 16px 0 0 4rem; }
