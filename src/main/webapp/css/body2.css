@@ -38,7 +38,7 @@ div:nth-child(1) {  /* :nth-child(1) 속성을 안쓰면 안나타나는거 같�
 	
 }
 
-[data-trigger] { /* 속성선택자.데이터 트리거라는 속성이 있는.  데이터 트리거라는 속성이 있는  */
+/* [data-trigger] { 속성선택자.데이터 트리거라는 속성이 있는.  데이터 트리거라는 속성이 있는 
 	opacity: 0;
 	position:relative;
 	top:20px;
@@ -48,7 +48,7 @@ div:nth-child(1) {  /* :nth-child(1) 속성을 안쓰면 안나타나는거 같�
 	opacity: 1;
 	top: 0;
 }
-
+ */
 
 
 
@@ -62,7 +62,8 @@ div:nth-child(1) {  /* :nth-child(1) 속성을 안쓰면 안나타나는거 같�
 
 
 /* 애니메이션  동시에 나타나는거 */
-/* div:nth-child(1) h2 { 
+
+div:nth-child(1) h2 { 
 	animation: showText 2s;
 	animation-fill-mode: forwards;
 	animation-delay:0.2s;
@@ -86,7 +87,7 @@ div:nth-child(1) {  /* :nth-child(1) 속성을 안쓰면 안나타나는거 같�
 
 }
 
-애니메이션  동시에 나타나는거
+/* 애니메이션  동시에 나타나는거 */
 div:nth-child(1) p {
 	margin-top: 5%;
 	margin-left: 30%;
@@ -158,7 +159,7 @@ div:nth-child(1) p {
 	   transform:translateX(-10%);
 	  
 	  }
-} */
+} 
 
 
 
