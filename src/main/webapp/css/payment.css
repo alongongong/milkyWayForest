@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+#headerSection {
+	background: rgba(253,248,235,0.5);
+}
+
+
 #paymentForm {
 	width: 70%;
 	margin: 160px auto 200px;
@@ -9,9 +15,11 @@
 }
 #paymentForm table th {
 	vertical-align: middle;
+	font-size: 14px;
 }
 #paymentForm table td {
 	vertical-align: middle;
+	font-size: 14px;
 }
 #paymentForm #paymentContainer {
 	display: grid;
@@ -37,7 +45,7 @@
 #paymentForm #paymentTotal {
 	position: sticky;
 	border: 1px solid #999;
-	margin-top: 60px;
+	margin-top: 63px;
 	padding: 30px 15px 5px 15px;
 	top: 120px;
 	font-size: 14px;
@@ -89,6 +97,7 @@
 }
 #paymentForm #paymentMethod li {
 	list-style: none;
+	font-size: 14px;
 }
 #paymentForm #haveSavedMoneyDiv, #paymentForm #haveCouponDiv {
 	display: inline-block;

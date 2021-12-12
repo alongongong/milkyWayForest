@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/writeAgreeForm.css">
 <form id="writeOkForm">
 	<div id="writeOkBox">
@@ -11,8 +11,8 @@
 			<p>알차고 실속있는 서비스로 찾아뵙겠습니다.</p>
 		</div>
 		<div id="writeOkBtn">
-			<input type="button" id="writeOkHomeBtn" value="홈으로" onclick="location.href='/milkyWayForest/admin'">
-			<input type="button" id="writeOkLoginBtn" value="로그인" onclick="location.href='/milkyWayForest/login/loginForm'">
+			<input type="button" id="writeOkHomeBtn" class="btn" value="홈으로" onclick="location.href='/milkyWayForest/admin'">
+			<input type="button" id="writeOkLoginBtn" class="btn" value="로그인" onclick="location.href='/milkyWayForest/login/loginForm'">
 		</div>
 	</div>
 </form>

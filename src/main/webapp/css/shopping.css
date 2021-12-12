@@ -3,6 +3,11 @@
 src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.woff') format('woff');}
 /* * { font: Avenir, Arial, georgia; color: #222222; } */
 
+#headerSection {
+	background: rgba(253,248,235,0.5);
+}
+
+
 /* shopping */
 #shoppingForm {
 	width: 60%;

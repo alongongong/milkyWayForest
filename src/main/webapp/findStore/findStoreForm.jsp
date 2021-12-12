@@ -3,7 +3,10 @@
 <link rel="stylesheet" href="/milkyWayForest/css/findStore.css">
 
 <div id="findStoreDiv">
-	<div id="storeList"></div>
+	<div id="storeList">
+		<div id="storeFindSubject">매장찾기</div>
+		<div id="storeListBorder"></div>
+	</div>
 	<div id="storeMap"></div>
 
 </div>
@@ -17,6 +20,23 @@ $(function(){
 	let now_x = 37.4992856;
 	let now_y = 127.0285939;
 	let aa;
+
+	let mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
+	mapOption = {
+		center: new kakao.maps.LatLng(now_x, now_y), // 지도의 중심좌표
+		level: 4, // 지도의 확대 레벨
+		mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+	}; 
+	
+
+	// 지도를 생성한다 
+	let map = new kakao.maps.Map(mapContainer, mapOption); 
+
+	// 지도에 확대 축소 컨트롤을 생성한다
+	let zoomControl = new kakao.maps.ZoomControl();
+
+	// 지도의 우측에 확대 축소 컨트롤을 추가한다
+	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 	$.ajax({
 		type: 'post',
@@ -34,39 +54,32 @@ $(function(){
 
 				
 				$('<div>',{
-					class: 'storeList'
+					class: 'storeList',
+					id: 'storeList'+index
 				}).append($('<div>',{
 					text: '스타벅스 '+items.storeName+'점',
 					class: 'storeName',
 					id: 'storeName'+index
-				})).append($('<p>',{
-					text: items.storeLocation
-				})).appendTo($('#storeList'))
+				})).append($('<div>',{
+					text: items.storeLocation,
+					class: 'storeLocation'
+				})).append($('<div>',{
+					class: 'storePin'
+				}).append($('<img>',{
+					src: '//image.istarbucks.co.kr/common/img/store/pin/pin_general.png',
+					width: '35px',
+					height: '55px',
+					id: 'storePin'+index
+				}))).appendTo($('#storeListBorder'))
 				
 			});
 
-				let mapContainer = document.getElementById('storeMap'), // 지도를 표시할 div 
-				mapOption = {
-					center: new kakao.maps.LatLng(now_x, now_y), // 지도의 중심좌표
-					level: 4, // 지도의 확대 레벨
-					mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
-				}; 
-				
-			
-				// 지도를 생성한다 
-				let map = new kakao.maps.Map(mapContainer, mapOption); 
-			
-				// 지도에 확대 축소 컨트롤을 생성한다
-				let zoomControl = new kakao.maps.ZoomControl();
-			
-				// 지도의 우측에 확대 축소 컨트롤을 추가한다
-				map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 			
 				// 마커의 이미지 주소
-				let imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+				let imageSrc = "//image.istarbucks.co.kr/common/img/store/pin/pin_general.png"; 
 				
 				// 마커 이미지 크기
-				let imageSize = new kakao.maps.Size(24, 25);
+				let imageSize = new kakao.maps.Size(35, 55);
 				
 				// 마커 이미지 생성
 				let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
@@ -74,7 +87,6 @@ $(function(){
 				// 지도에 마커를 생성하고 표시한다
 				$.each(positions, function(index, items){
 
-					
 					// 마커 생성
 					let marker = new kakao.maps.Marker({
 						map: map, // 마커를 표시할 지도
@@ -104,7 +116,7 @@ $(function(){
 						})
 					});
 					
-					$('#findStoreDiv').on('click', '#storeName'+index, function() {
+					$('#findStoreDiv').on('click', '#storeList'+index, function() {
 						infowindow.open(map, marker);
 						if(aa) {
 							aa.hide();
@@ -113,10 +125,10 @@ $(function(){
 						aa.show();
 						
 						$('.infoWindow').click(function(){
-							location.href=items.storeUrl;
+							window.open(items.storeUrl);
 						})
 					});
-
+					
 				});
 	
 				/* // 인포윈도우를 지도에 표시한다

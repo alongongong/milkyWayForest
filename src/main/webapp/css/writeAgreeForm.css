@@ -1,137 +1,672 @@
 @charset "UTF-8";
 
+#headerSection {
+	background: rgba(253,248,235,0.5);
+}
+
+
 #writeAgreeForm, #memberWriteForm, #writeOkForm {
-	margin: 160px auto 60px auto;
+	margin: 160px auto 120px auto;
 	width: 650px;
 }
 
-/* 약관동의 */ 
+/* 약관동의 */
 #writeAgreeForm h1 {
 	font-size: 35px;
 	font-weight: bold;
 	text-align: center;
-	margin-bottom: 40px; 
+	margin-bottom: 40px;
 }
-#writeAgreeForm #simpleWrite {
-	margin:0; 
-	padding:0; 
+
+#writeAgreeForm>ul.writeAgreeBox {
+	margin: 0;
+	padding: 0;
 	width: 100%;
-	height:48px; 
-	margin-bottom:15px; 
 }
-#writeAgreeForm #kakaoWriteBtn{
+
+#writeAgreeForm>ul, #writeAgreeForm>ul>li>ul>li {
+	list-style: none
+}
+
+#writeAgreeForm>ul>.check01 {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#writeAgreeForm>ul>.check03 {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#writeAgreeForm>ul>li>.writeAgreeFix {
+	margin: 0;
+	padding: 0;
+}
+
+#writeAgreeForm>.writeAgreeCheckBox, .writeAgreeCheckBox>ul {
+	position: relative;
+	padding: 0;
+}
+
+#writeAgreeForm>.writeAgreeCheckBox>ul>li {
+	float: left;
+}
+
+#writeAgreeForm .check06>.writeAgreeFix>li {
+	font-size: 14px;
+	font-weight: normal !important;
+	color: black !important;
+	list-style: disc !important;
+	margin-left: 20px !important;
+}
+#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:first-child, #writeAllAgreeLabel {
+	margin: 30px 0 20px;
+	color: #888;
+	font-weight: 900;
+}
+#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:first-child span {
+	color: #106030;
+}
+
+#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:nth-child(2) {
+	position: absolute;
+	top: 58%;
+	right: 0;
+	margin-top: -12px;
+}
+
+#writeAgreeForm #writeAgreeContent {
+	background: #f7f7f7;
+	box-sizing: border-box;
+	color: #666 !important;
+	width: 100%;
+	height: 160px;
+}
+
+#writeAgreeForm #writeAgreeContent {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	overflow-y: scroll;
+}
+
+#writeAgreeForm	#writeAgreeContent {
+	padding: 2%;
+	margin: 0 auto;
+}
+
+#writeAgreeForm>ul>li>div>#writeAgreeContent>p:first-child {
+	font-size: 16px;
+	text-align: center;
+	color: #106030;
+	font-weight: 900;
+}
+
+#writeAgreeForm>ul>li>div>#writeAgreeContent>p {
+	font-size: 14px;
+}
+
+#writeAgreeForm>ul>li>div>#writeAgreeContent>ul>li {
+	font-size: 14px;
+	list-style: none;
+}
+
+#writeAgreeForm>ul>li>div>#writeAgreeContent>ul {
+	padding: 0;
+}
+
+#writeAgreeForm>ul>li>div>ul>div>#writeSubject {
+	font-size: 20px;
+	width: 100%;
+	font-weight: bold;
+	color: #154520;
+	list-style: none;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #aaa;
+}
+
+#writeAgreeForm #writeAgreeImg {
+	width: 35%;
+	height: 90%;
+	margin: 30px auto 0;
+	padding: 3%;
+}
+
+#writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix {
+	margin: 0;
+	padding: 0;
+}
+
+#writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li {
+	list-style: none;
+	height: 28%
+}
+
+#writeAgreeForm>ul>.check08>div>#writeAgreenotes {
+	padding-left: 0;
+}
+
+#writeAgreeForm>ul>.check08>div>#writeAgreenotes>li {
+	font-size: 14px;
+	list-style: disc;
+	margin-right: 10%;
+	margin-left: 20px;
+}
+
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li>#writeAgreeBtn1 {
+	background-color: #154520;
 	cursor: pointer;
-	width: 100%;
+	width: 250px;
+	height: 48px;
+	font-size: 15px;
+	color: white;
+	font-weight: bold;
+}
+
+#writeAgreeForm #kakaoWriteBtn {
+	cursor: pointer;
+	width: 250px;
 	height: 48px;
 	font-size: 14px;
 	font-weight: bold;
 	background-color: #FAE100;
 	color: #333;
 }
-#writeAgreeForm>ul.writeAgreeBox{
-	border: 1px solid #ddd;
-	margin:0; 
-	padding:0; 
-	width:100%; 
-}
-#writeAgreeForm>ul,#writeAgreeForm>ul>li>ul>li{list-style: none}
-#writeAgreeForm>ul>.check01{width:100%; margin:0 auto;}
-#writeAgreeForm>ul>.check03{width:100%; margin:0 auto;}
-#writeAgreeForm>ul>li>.writeAgreeFix{
-	margin:0;
-	padding:0;
-}
-#writeAgreeForm>.writeAgreeCheckBox,.writeAgreeCheckBox>ul{position: relative; padding:0;}
-#writeAgreeForm>.writeAgreeCheckBox>ul>li{float: left;}
-#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:first-child{margin: 20px;color: #888;font-weight: 900;}
-#writeAgreeForm>ul>.writeAgreeCheckBox>ul>li:nth-child(2){position: absolute;top: 58%;right: 5%;margin-top: -12px;}
-#writeAgreeForm #writeAgreeContent{background:#f7f7f7; box-sizing:border-box; color:#666 !important; width:95%; height:160px;}
-#writeAgreeForm #writeAgreeContent{border:1px solid #ddd; border-radius:3px;margin-bottom:20px;overflow-y:scroll;}
-#writeAgreeForm	#writeAgreeContent{padding:2%; margin:0 auto;}
-#writeAgreeForm>ul>li>div>#writeAgreeContent>p:first-child{font-size:17px; text-align:center; color:green; font-weight:900;}
-#writeAgreeForm>ul>li>div>#writeAgreeContent>p{font-size:15px;}
-#writeAgreeForm>ul>li>div>#writeAgreeContent>ul>li{font-size:15px;list-style:none;}
-#writeAgreeForm>ul>li>div>#writeAgreeContent>ul{padding:0;}
-#writeAgreeForm>ul>li>div>ul>div>#writeSubject {
-	font-size:20px; 
-	width:100%;
-	font-weight:bold; 
-	color:#154520; 
-	list-style:none; 
-	padding-bottom: 30px; 
-	margin-bottom: 20px;
-	border-bottom:1px solid #ddd;
-}
-#writeAgreeForm #writeAgreeImg {
-	width: 35%;
-	height: 90%;
-	margin: 30px auto 0; 
-	padding: 3%;
-}
-#writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix{margin:0; padding:0;}
-#writeAgreeForm>.writeAgreeBox>.check01>div>.writeAgreeFix>li{list-style:none; height:28%}
-#writeAgreeForm>ul>.check08>div>#writeAgreenotes>li{font-size:15px; list-style: disc; margin-right:10%;}
-#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li>#writeAgreeBtn1{background-color:#154520;  cursor:pointer; width:40%; height: 48px;border-radius: 3px;font-size:15px; color: white; font-weight: bold;}
-#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li{list-style:none;}
-#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul{padding:0;}
-#writeAgreeForm #writeAllAgreecheck{margin-left:85%;}
-#writeAgreeForm input[type=checkbox] {display:none;}
-#writeAgreeForm input[type=checkbox] + label {cursor: pointer; padding-left: 20px; background-repeat: no-repeat;background-image: url('/milkyWayForest/image/check1.PNG'); background-size:20px;}
-#writeAgreeForm input[type=checkbox]:checked + label {background-image: url('/milkyWayForest/image/check2.PNG');background-size:20px;}
-#writeAgreeForm input[type=checkbox]:disabled + label {background-image: url('/milkyWayForest/image/check1.PNG');background-size:20px;}
 
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul>li {
+	list-style: none;
+}
+
+#writeAgreeForm>.writeAgreeBox>.check08>div>div>ul {
+	padding: 0;
+}
+
+#writeAgreeForm #writeAllAgreecheck {
+	margin-left: 85%;
+}
+
+#writeAgreeForm input[type=checkbox] {
+	display: none;
+}
+
+#writeAgreeForm input[type=checkbox]+label {
+	cursor: pointer;
+	margin-left: 20px;
+	background-repeat: no-repeat;
+	background-image: url('/milkyWayForest/image/check1.PNG');
+	background-size: 20px;
+	width: 20px;
+	height: 25px;
+	vertical-align: -webkit-baseline-middle;
+}
+
+#writeAgreeForm input[type=checkbox]:checked+label {
+	background-image: url('/milkyWayForest/image/check2.PNG');
+	background-size: 20px;
+}
+
+#writeAgreeForm input[type=checkbox]:disabled+label {
+	background-image: url('/milkyWayForest/image/check1.PNG');
+	background-size: 20px;
+}
 
 /* 회원가입폼 */
-#memberWriteForm>#memberWriteBox{background-color: #fff; margin:0; padding:0;border: 1px solid #ddd; width:600px;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi{list-style:none; height:80px;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle{text-align:center; padding-top:4%; font-size:200%;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitleContent{text-align:center;font-size:160%;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>div>#image1{text-align:center;}
-#memberWriteForm>#memberWriteBox>#memberWriteLi>ul{padding:0;}
-#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(1){text-align:center;font-size:160%; list-style:none;}
-#memberWriteForm>#memberWriteBox>#memberWriteContent>ul{padding:0;}
-#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(2){text-align:center; list-style:none; font-size:100%;}
-#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(3){text-align:center; list-style:none; font-size:80%;}
-#memberWriteForm>#memberWriteBox>#blankSpace{list-style:none; height:100px;}
-#memberWriteForm>#memberWriteBox>li{list-style:none; height:35px; }
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteId{margin-top:2px;height:20px;width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWritePwd{margin-top:2px;height:20px;width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteRePwd{margin-top:2px;height:20px;width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteName{margin-top:2px;height:20px; width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteNick{margin-top:2px;height:20px; width:250px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none; padding:0;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeQuestion{margin-top:2px;height:20px; width:65%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeAnwer{margin-top:2px;width:20%; height:20px; margin-left:4%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>li>div>.gender{margin-top:2px; margin-left:5%;}
-#memberWriteForm>#memberWriteBox>li>div>#writeTel1{margin-top:2px; width:17%; height:20px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeTel2{width:25%;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#writeTel3{width:25%;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail{width:20%; height:20px; margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px; }
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail1{width:30%;height:20px; margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#joinPath{margin-top:2px;height:40%; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:10px;}
-#memberWriteForm>#memberWriteBox>.blankLi>.labelName{ float:left; width:35%;height:100%;border-right:1px solid gray; text-align:left;}
-#memberWriteForm>#memberWriteBox>.blankLi>.labelName>p{ margin-top:2px; height:80%;padding-left:50px;}
-#memberWriteForm>#memberWriteBox>.blankLi>.writeInputText{width:63%;float:right;height:100%; }
-#memberWriteForm #yy{width:80px;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm #mm{width:80px;height:20px;margin-top:2px; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm #dd{width:80px;;height:20px;margin-top:2px;; border-left:0; border-right:0; border-top:0; border-bottom-color:darkslategrey; outline:none;font-size:12pt; padding-left:5px;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteBtn{margin-top:60px;cursor:pointer; width:140px; height:50px;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black;}
-#memberWriteForm>#memberWriteBox>li>div>#memberWriteReset{cursor:pointer; width:140px; height:50px;border-radius:40px 40px 40px 40px; font-size:20pt; margin-bottom: 6%; background-color: white; border:1; border-color: black;}
-#memberWriteForm #athnt{display:none;}
-#memberWriteForm #athntNmbr{width:60px;}
-#memberWriteForm #athBtn{width:40px;}
-#memberWriteForm #idDiv{color:red; font-size: 8px;}
-#memberWriteForm #pwdDiv{color:red; font-size: 8px;}
-#memberWriteForm #pwdReDiv{color:red; font-size: 8px;}
-#memberWriteForm #nameDiv{color:red; font-size: 8px;}
-#memberWriteForm #nickNameDiv{color:red; font-size: 8px;}
-#memberWriteForm #emailDiv{margin-left:80px;margin-top:10px;color:red; font-size: 8px;}
-#memberWriteForm #athDiv{color:red; font-size: 8px;}
+#memberWriteForm>#memberWriteBox {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	width: 650px;
+}
 
+#memberWriteForm>#memberWriteBox>#memberWriteLi {
+	list-style: none;
+	height: 80px;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitle {
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteLi>#memberWriteTitleContent
+	{
+	text-align: center;
+	font-size: 160%;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteLi>div>#image1 {
+	text-align: center;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteLi>ul {
+	padding: 0;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(1)
+	{
+	font-size: 20px;
+	width: 100%;
+	font-weight: bold;
+	color: #154520;
+	list-style: none;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul {
+	padding: 0;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(2)
+	{
+	text-align: center;
+	list-style: none;
+	font-size: 16px;
+}
+
+#memberWriteForm>#memberWriteBox>#memberWriteContent>ul>li:nth-child(3)
+	{
+	text-align: center;
+	list-style: none;
+	font-size: 12px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #aaa;
+}
+
+#memberWriteForm>#memberWriteBox>#blankSpace {
+	list-style: none;
+	height: 150px;
+}
+
+#memberWriteForm>#memberWriteBox>li {
+	list-style: none;
+	height: 50px;
+}
+
+#memberWriteForm #memberWriteBox .blankLi p {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#memberWriteForm #memberWriteBox .blankLi p span {
+	color: red;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteId {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWritePwd {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteRePwd {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteName {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteNick {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#writeQuestion {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#writeAnwer {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>.gender {
+	margin-top: 17px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#writeTel1 {
+	margin-top: 2px;
+	height: 35px;
+	width: 140px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#writeTel2 {
+	margin-top: 2px;
+	height: 35px;
+	width: 140px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#writeTel3 {
+	margin-top: 2px;
+	height: 35px;
+	width: 140px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail {
+	margin-top: 2px;
+	height: 35px;
+	width: 140px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteEmail1 {
+	margin-top: 2px;
+	height: 35px;
+	width: 140px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+#memberWriteForm>#memberWriteBox #athntEmail {
+	width: 140px;
+	height: 35px;
+	border: 1px solid #154520;
+	color: #154520;
+	font-size: 14px;
+	font-weight: bold;
+	box-shadow: none;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#joinPath {
+	margin-top: 2px;
+	height: 35px;
+	width: 450px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+#memberWriteForm>#memberWriteBox>.blankLi>.labelName {
+	display: inline-block;
+	width: 180px;
+	text-align: left;
+}
+
+#memberWriteForm>#memberWriteBox>.blankLi>.labelName>p {
+	margin-top: 15px;
+	padding-left: 20px;
+}
+
+#memberWriteForm>#memberWriteBox>.blankLi>.writeInputText {
+	width: 470px;
+	float: right;
+	height: 100%;
+}
+
+#memberWriteForm #yy {
+	margin-top: 2px;
+	height: 35px;
+	width: 131px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm #mm {
+	margin-top: 2px;
+	height: 35px;
+	width: 131px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm #dd {
+	margin-top: 2px;
+	height: 35px;
+	width: 131px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteBtn {
+	margin-top: 20px;
+	cursor: pointer;
+	width: 200px;
+	height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
+}
+
+#memberWriteForm>#memberWriteBox>li>div>#memberWriteReset {
+	margin-top: 20px;
+	cursor: pointer;
+	width: 200px;
+	height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #154520;
+	border: 1px solid #154520;
+	box-shadow: none;
+}
+
+#memberWriteForm .athntHide {
+	display: none;
+}
+
+#memberWriteForm #athntNmbr {
+	margin-top: 2px;
+	height: 35px;
+	width: 300px;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	padding: 0;
+	font-size: 14px;
+	padding-left: 5px;
+}
+
+#memberWriteForm #athBtn {
+	width: 140px;
+	height: 35px;
+	border: 1px solid #154520;
+	color: #154520;
+	font-size: 14px;
+	font-weight: bold;
+	box-shadow: none;
+}
+
+#memberWriteForm #idDiv {
+	color: red;
+	font-size: 8px;
+}
+
+#memberWriteForm #pwdDiv {
+	color: red;
+	font-size: 8px;
+}
+
+#memberWriteForm #pwdReDiv {
+	color: red;
+	font-size: 8px;
+}
+
+#memberWriteForm #nameDiv {
+	color: red;
+	font-size: 8px;
+}
+
+#memberWriteForm #nickNameDiv {
+	color: red;
+	font-size: 8px;
+}
+
+#memberWriteForm #emailDiv {
+	margin-left: 20px;
+	margin-top: 10px;
+	font-size: 12px;
+    color: #777;
+    font-weight: bold;
+}
+
+#memberWriteForm #athDiv {
+	margin-left: 20px;
+	margin-top: 10px;
+	font-size: 12px;
+    color: #777;
+    font-weight: bold;
+}
 
 /* 회원가입 완료 */
-#writeOkForm #writeOkBox{background-color: #fff; margin:0; padding:0 auto;border: 1px solid #ddd; width:600px; height:500px; padding-top:100px;}
-#writeOkForm #writeOkSubject{margin:0 auto;border-bottom: 1px solid #ddd; width:400px; text-align: center;font-size:40px;height:80px;}
-#writeOkForm #writeOkContent{border-bottom:1px solid #ddd; width:400px; margin:0 auto; height:150px; margin-top:30px; text-align:center;}
-#writeOkForm #writeOkBtn{ width:400px; margin:0 auto; margin-top:30px; text-align:center;}
-#writeOkForm #writeOkHomeBtn{width:150px; height:50px; background-color: white;margin-right:10px;}
-#writeOkForm #writeOkLoginBtn{width:150px; height:50px; background-color: black; color:white;margin-left:10px;}
+#writeOkForm #writeOkBox {
+	background-color: #fff;
+	margin: 0;
+	padding: 0 auto;
+	border: 1px solid #ddd;
+	width: 600px;
+	height: 500px;
+	padding-top: 100px;
+}
+
+#writeOkForm #writeOkSubject {
+	margin: 0 auto;
+	border-bottom: 1px solid #ddd;
+	width: 400px;
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+	height: 80px;
+}
+
+#writeOkForm #writeOkContent {
+	border-bottom: 1px solid #ddd;
+	width: 400px;
+	margin: 0 auto;
+	height: 150px;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+
+#writeOkForm #writeOkBtn {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+}
+
+#writeOkForm #writeOkHomeBtn {
+	margin-top: 10px;
+	width: 180px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	color: #154520;
+	border: 1px solid #154520;
+	box-shadow: none;
+}
+
+#writeOkForm #writeOkLoginBtn {
+	margin-top: 10px;
+	width: 180px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
+}

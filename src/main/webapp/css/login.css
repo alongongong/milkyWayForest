@@ -9,6 +9,16 @@
 	margin:0;
 	padding:0;
 }
+#loginForm ul,
+#findIdForm ul,
+#findIdResultForm ul,
+#findPwdForm1 ul, 
+#findPwdForm2 ul, 
+#findPwdForm3 ul,
+#findPwdResultForm ul {
+	margin:0;
+	padding:0;
+}
 
 /*********************** 로그인 창 ***********************/
 #loginForm #headerBackground {
@@ -20,7 +30,7 @@
 #loginForm #main-container {
 	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
 	background-size: 100%;
-	padding: 160px 0 180px 0;
+	padding: 130px 0 140px 0;
 	-webkit-background-size: cover;
 	width: 100%;
 }
@@ -165,7 +175,7 @@
 
 /*** section ***/
 #findIdForm section {
-	margin: 251px auto 180px auto;
+	margin: 231px auto 130px auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -316,7 +326,7 @@
 }
 #findIdResultForm section {
 	height: 400px;
-	margin: 321px auto 268px auto;	
+	margin: 271px auto 238px auto;	
 }
 #findIdResultForm #findIdResult-wrap{
 	padding-top: 50px;
@@ -379,7 +389,7 @@
 	flex-direction: column;
 	align-items: center;
 	height: 558px;
-	margin: 261px auto 170px auto;
+	margin: 241px auto 120px auto;
 }
 #findPwdForm1 section h2, 
 #findPwdForm2 section h2, 
