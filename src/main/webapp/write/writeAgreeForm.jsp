@@ -24,8 +24,8 @@
 						<li id="writeSubject" style="text-align:center;">회원가입 약관동의 단계입니다.</li>
              		</div>
              		<div>
-               			<li align="right" style="padding-right:30px;">
-							전체동의<input type="checkbox" id="writeAllAgreecheck" class="acptChck" >
+               			<li align="right">
+							<label for="writeAllAgreecheck" id="writeAllAgreeLabel">전체동의</label><input type="checkbox" id="writeAllAgreecheck" class="acptChck" >
 							<label for="writeAllAgreecheck"></label>
                			</li>
 					</div>
@@ -34,7 +34,7 @@
 		</li>
         <li class="writeAgreeCheckBox check03">
 			<ul class="writeAgreeFix">
-				<li>홈페이지 이용약관 동의(필수)</li>
+				<li>홈페이지 이용약관 동의 <span>(필수)</span></li>
 				<li class="checkBtn">
 					<input type="checkbox" id="writeCheck1" name="acptChck1" class="acptChck" name="chk">
                     <label for="writeCheck1"></label>
@@ -42,12 +42,12 @@
             </ul>
 			<div id="writeAgreeContentbox">
 				<div id="writeAgreeContent">
-					<p>(주)스타벅스커피 코리아는 고객님을 보호합니다.</p><br>
-	                <p>본 약관은 (주)스타벅스커피 코리아의 홈페이지 서비스의 이용과 관련하여 필요한 사항을 규정합니다.</p><br>
+					<p>(주)은하숲은 고객님을 보호합니다.</p><br>
+	                <p>본 약관은 (주)은하숲의 홈페이지 서비스의 이용과 관련하여 필요한 사항을 규정합니다.</p><br>
 	                <p>제1장 총칙</p><br>
 	                <p>제 1 조 목적</p><br>
 	                <ul>
-						<li>1. (주)스타벅스커피 코리아(이하 '회사'라고 합니다)에서 운영하는 홈페이지(https://www.starbucks.co.kr/, 이하 “홈페이지”라고 합니다)는 아래와 같은 약관에 동의하는 이용자들에게 제공되는 인터넷서비스로, 본 약관은 이용자와 회사 사이에 본 홈페이지 이용에 관한 권리 및 의무를 규정하는 것을 목적으로 합니다.</li><br>
+						<li>1. (주)은하숲(이하 '회사'라고 합니다)에서 운영하는 홈페이지(https://www.starbucks.co.kr/, 이하 “홈페이지”라고 합니다)는 아래와 같은 약관에 동의하는 이용자들에게 제공되는 인터넷서비스로, 본 약관은 이용자와 회사 사이에 본 홈페이지 이용에 관한 권리 및 의무를 규정하는 것을 목적으로 합니다.</li><br>
 						<li>2. 홈페이지의 모든 자료는 Starbucks Corporation 및 자회사, 계열사 혹은 Starbucks Corporation에 의해 자격을 취득한 기타 이해 관계자에 의한 저작권, 등록의장, 등록상표 또는 기타 지적소유권으로 보호되고 있습니다.</li><br>
 						<li>3. 본 홈페이지에 포함된 자료는 이용자에게 정보 제공을 위한 목적으로만 제공됩니다. 이용자는 본 홈페이지의 내용에 대하여 어떤 방법으로도 배포, 출판, 전송, 변경, 전시, 모방작품의 창조 혹은 개발할 수 없습니다. 이용자는 회사의 권한을 보호하여야 하고, 본 홈페이지의 자료를 허가 없이 유용할 수 없습니다. 허가 없이 본 홈페이지의 내용을 유용하는 경우에 회사와 Starbucks Corporation은 이용자에게 법적, 재정적으로 가능한 기타 추가적인 배상을 청구할 수 있습니다.</li><br>
 						<li>4. 이용자가 제출하는 자료의 내용에 대한 책임은 전적으로 이용자에게 있습니다. 이용자가 제출하는 자료에 불법, 중상모략, 비난 혹은 비도덕적인 내용이 포함되어서는 안됩니다. 이용자는 본 홈페이지에 저작권, 등록상표권, 사생활권 혹은 기타 사적 권리 혹은 소유권을 포함하는 제3자의 권리를 침해하는 어떤 자료도 게시하여서는 안됩니다.</li><br>
@@ -710,7 +710,7 @@
 		</li>
         <li class="writeAgreeCheckBox check04">
 			<ul class="writeAgreeFix">
-				<li>개인정보 수집 및 이용동의 (필수)</li>
+				<li>개인정보 수집 및 이용동의 <span>(필수)</span></li>
 				<li>
                     <input type="checkbox" id="writeCheck2" name="acptChck1" class="acptChck" name="chk">
                     <label for="writeCheck2"></label>
@@ -718,7 +718,7 @@
             </ul>
             <div>
 				<div id="writeAgreeContent">
-    				<p>본인은 (주)스타벅스커피코리아(이하 ‘회사’라 합니다)가 제공하는 회원 서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하는 것에 동의합니다.</p><br>
+    				<p>본인은 (주)은하숲(이하 ‘회사’라 합니다)가 제공하는 회원 서비스(이하 ‘서비스’라 합니다)를 이용하기 위해, 다음과 같이 ‘회사’가 본인의 개인정보를 수집/이용하는 것에 동의합니다.</p><br>
     				<p>※ 귀하께서는 개인정보 수집·이용에 대한 동의를 거부하실 수 있으나, 동의를 거부하실 경우 회원가입, 서비스 이용 등을 하실 수 없습니다.</p><br>
     				<ul>
     					<li>1. 개인정보 항목·목적·보유기간</li>
@@ -764,7 +764,7 @@
         </li>
         <li class="writeAgreeCheckBox check05">
             <ul class="writeAgreeFix">
-                <li>이벤트 등 프로모션 알림 메일 수신동의(선택)</li>
+                <li>이벤트 등 프로모션 알림 메일 수신동의 <span>(선택)</span></li>
                 <li class="">
                     <input type="checkbox" id="writeCheck3"class="acptChck" name="chk">
                     <label for="writeCheck3"></label>
@@ -785,7 +785,7 @@
 			<div>
 				<ul id="writeAgreenotes">
 					<li>타인의 개인정보를 도용하여 가입할 경우 향후 적발 시 서비스 이용제한 및 법적 제재를 받으실 수 있습니다.</p>
-					<li>스타벅스커피 코리아의 공식 홈페이지는 Internet Explorer 9.0이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.</p><br><br>
+					<li>(주)은하숲의 공식 홈페이지는 Internet Explorer 9.0이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.</p><br><br>
 				</ul>
 				<div>
 					<ul>
