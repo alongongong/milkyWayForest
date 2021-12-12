@@ -45,6 +45,18 @@
 		
 		<section class="section">
 			<div class="Allcontainer">
+				<div class="text_container">
+					<h1>은하숲을 가까이에서 경험해보세요</h1>
+		
+					<h3>고객님과 가장 가까이 있는 매장을 찾아보세요!</h3>
+	         		
+	         		<h4 style="white-space:pre-line;">
+	         		차별화된 커피 경험을 누릴 수 있는 <strong>은하숲</strong><br>
+		         	다양한 방법으로 편리하게 즐길 수 있는 <strong>은하숲</strong><br>
+		          	함께해서 더 따뜻할 수 있는 지역사회 소통 공간 <strong>은하숲</strong><br>
+	         		</h4>
+				</div>
+			         		
 				<div class="container2">
 				  <div class="row beans">
 				  </div>
