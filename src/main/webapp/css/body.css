@@ -19,6 +19,55 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	width: 100%;
 	height: 100%;
 }
+
+/* 이미지 자동슬라이드 */
+.sildeDiv {
+	position: relative; 
+	width: 100%; 
+	height: 100%; 
+	margin:0 auto; 
+	padding:0; 
+	overflow: hidden; 
+	text-align: center;
+}
+.sildeDiv ul {
+	position: absolute; 
+	margin: 0px; 
+	padding:0; 
+	list-style: none; 
+}
+.sildeDiv ul li {
+	float: left; 
+	width: 100vw; 
+	height: 100vh; 
+	margin:0; 
+	padding:0;
+}
+
+/* 도트 슬라이드 */
+#dotDiv {
+	position: absolute;
+	bottom: 30px;
+	display: inline-block;
+}
+.dotSpan {
+	height: 4px;
+	width: 4px;
+	margin: 0 5px 3px 5px;
+	background-color: #999;
+	border-radius: 50%;
+	display: inline-block;
+	transition: all 2s ease;
+}
+
+.activeSpan {
+	margin-bottom: 0;
+	height: 11px;
+	width: 11px;
+	background-color: #333;
+}
+
+/* 두번째 페이지 */
 .text_container {
 	font-family: 'Noto Sans KR', sans-serif;
 	position: absolute ;
@@ -61,11 +110,11 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	font-family: 'Noto Sans KR', sans-serif;
 	padding: 6rem 0 0 6rem;
 }
-.second_section_text h1 {
+/* .second_section_text h1 {
    animation: showText 2s;
    animation-fill-mode: both;
    animation-delay: 2.5s;
-}
+} */
 .second_section_text h1{
 	font-size: 5rem;
 	font-weight: bold;
@@ -76,7 +125,7 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	font-style: normal;
 	color: floralwhite;
 }
-.second_section_text h2 {
+/* .second_section_text h2 {
    animation: showText2 2s;
    animation-fill-mode: both;
    animation-delay: 3s;
@@ -100,4 +149,4 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
       opacity:1;
       transform:translateX(5%);
      }
-}
+} */

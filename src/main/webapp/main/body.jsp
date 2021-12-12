@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="/milkyWayForest/css/thirdScroll.css">
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/jquery.fullPage.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<style type="text/css">
+.section {  width:100%; height:100%; position:relative; color:#ffffff; font-size:24pt; }
+.section .second_section_text { position:relative; top:26%; transform:translate(-47%, -50%); opacity:0;}  
+.fp-completely .second_section_text { animation:fade_in .5s  .2s forwards;  }
+
+@keyframes fade_in {
+	0% { opacity:0; left:40%;}
+	100% { opacity:1; left:50%;} 
+}
+</style>
 <body>
 <!-- 전체영역 -->
 <div id="fullPage">
@@ -15,7 +25,29 @@
 	<!-- FullPage -->
 	<div id="fullpage">
 		<section class="section" style="background-attachment: fixed;">
-			<div class="slide">
+			<div class="sildeDiv">
+				<ul>
+					<li>
+						<img src="/milkyWayForest/image/main1_Image.jpg" alt="mainpic1.jpg" 
+						style="width: 110vw; height: 100vh;  top: 0;">
+					</li>
+					<li>
+						<img src="/milkyWayForest/image/mainImage3.jpg" alt="mainImage3.jpg" 
+						style="width: 100vw; height: 100vh;  top: 0;">
+					</li>
+					<li>
+						<img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" 
+						style="width: 100vw; height: 100vh;  top: 0;">
+					</li>
+				</ul>
+				<div id="dotDiv" style="text-align:center">
+					<span class="dotSpan"></span> 
+					<span class="dotSpan"></span> 
+					<span class="dotSpan"></span> 
+				</div>
+			</div>
+		
+			<!-- <div class="slide">
 				<img src="/milkyWayForest/image/main1_Image.jpg" alt="mainpic1.jpg" 
 				style="width: 110vw; height: 100vh;  top: 0;">
 			</div>
@@ -23,10 +55,10 @@
 				<img src="/milkyWayForest/image/mainImage3.jpg" alt="mainImage3.jpg" 
 				style="width: 100vw; height: 100vh;  top: 0;">
 			</div>
-				<div class="slide">
+			<div class="slide">
 				<img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" 
 				style="width: 100%; height: 100%;  top: 0;">
-			</div>
+			</div> -->
 		</section>
 		
 		<section class="section">
@@ -83,6 +115,7 @@
 <script src="/milkyWayForest/js/jquery.fullPage.js"></script>
 <script src="/milkyWayForest/js/body.js"></script>
 <script type="text/javascript">
+
 </script>
 </body>
 </html>
