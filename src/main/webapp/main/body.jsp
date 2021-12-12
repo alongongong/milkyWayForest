@@ -16,12 +16,12 @@
 	<div id="fullpage">
 		<section class="section" style="background-attachment: fixed;">
 			<div class="slide">
-				<img src="/milkyWayForest/image/mainpic1.jpg" alt="mainpic1.jpg" 
-				style="width: 100%; height: 100%;  top: 0;">
+				<img src="/milkyWayForest/image/main1_Image.jpg" alt="mainpic1.jpg" 
+				style="width: 110vw; height: 100vh;  top: 0;">
 			</div>
 			<div class="slide">
 				<img src="/milkyWayForest/image/mainImage3.jpg" alt="mainImage3.jpg" 
-				style="width: 100%; height: 100%;  top: 0;">
+				style="width: 100vw; height: 100vh;  top: 0;">
 			</div>
 				<div class="slide">
 				<img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" 
@@ -31,32 +31,34 @@
 		
 		<section class="section">
 			<div class="second_section_text">
-			<h1>Pick Your Favorite</h1>
-
-			<h2 style="white-space:pre-line;">
-			다양한 메뉴를 은하숲에서 즐겨보세요<br>
-         	은하숲만의 특별함을 경험할수 있는 최상의 음료<br>
-          	은하숲 커피와 완벽한 어울림을 자랑하는 푸드<br>
-         	다양한 시도와 디자인으로 가치를 더하는 상품<br>
-         	소중한 사람에게 은하숲 상품들로 마음을 전하세요<br>
-         	</h2>
+				<h1>Pick Your Favorite</h1>
+	
+				<h2 style="white-space:pre-line;">
+				다양한 메뉴를 은하숲에서 즐겨보세요<br>
+	         	은하숲만의 특별함을 경험할수 있는 최상의 음료<br>
+	          	은하숲 커피와 완벽한 어울림을 자랑하는 푸드<br>
+	         	다양한 시도와 디자인으로 가치를 더하는 상품<br>
+	         	소중한 사람에게 은하숲 상품들로 마음을 전하세요<br>
+         		</h2>
 			</div>
 		</section>
 		
 		<section class="section">
-			<div class="container2">
-			  <div class="row beans">
-			  </div>
-			  <div class="row grinder">
-			  </div>
-			  <div class="row grinder_bottom">
-			  </div>
-			  <div class="row v60">
-			  </div>
-			  <div class="row drip">
-			  </div>
-			  <div class="row cup">
-			  </div>
+			<div class="Allcontainer">
+				<div class="container2">
+				  <div class="row beans">
+				  </div>
+				  <div class="row grinder">
+				  </div>
+				  <div class="row grinder_bottom">
+				  </div>
+				  <div class="row v60">
+				  </div>
+				  <div class="row drip">
+				  </div>
+				  <div class="row cup">
+				  </div>
+				</div>
 			</div>
 		</section>
 		
