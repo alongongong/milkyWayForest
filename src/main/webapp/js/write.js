@@ -29,11 +29,11 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 	var pwd = $('#memberWriteForm #memberWritePwd').val();
 	
 	if($('#memberWriteForm #memberWriteId').val() == ''){
-		$('#memberWriteForm #emailDiv').html('아이디 입력');
+		$('#memberWriteForm #emailDiv').html('아이디를 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteId').focus();
 	}else if($('#memberWriteForm #memberWritePwd').val() == ''){
-		$('#memberWriteForm #emailDiv').html('비밀번호 입력');
+		$('#memberWriteForm #emailDiv').html('비밀번호를 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if(!pwdForm.test(pwd)){
@@ -41,11 +41,11 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if($('#memberWriteForm #memberWritePwd').val() != $('#memberWriteRePwd').val()){
-		$('#memberWriteForm #emailDiv').html('비밀번호 틀림');
+		$('#memberWriteForm #emailDiv').html('동일한 비밀번호를 입력하세요.');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if($('#memberWriteForm #memberWriteName').val() == ''){
-		$('#memberWriteForm #emailDiv').html('이름 입력');
+		$('#memberWriteForm #emailDiv').html('이름를 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteName').focus();
 	}else if(!nameForm.test(name)){
@@ -53,7 +53,7 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteName').focus();
 	}else if($('#memberWriteForm #memberWriteNick').val() == ''){
-		$('#memberWriteForm #emailDiv').html('닉네임 입력');
+		$('#memberWriteForm #emailDiv').html('닉네임를 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteNick').focus();
 	}else if(!nicknameForm.test(nickname)){
@@ -61,7 +61,7 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteNick').focus();
 	}else if($('input[name=gender]:radio:checked').length < 1){
-		$('#memberWriteForm #emailDiv').html('성별을 선택해 주세요');
+		$('#memberWriteForm #emailDiv').html('성별을 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if(!telForm.test(tel)){
 		$('#memberWriteForm #emailDiv').html('잘못된 번호 형식입니다.');
@@ -70,15 +70,15 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#memberWriteForm #emailDiv').html('잘못된 생년월일 형식입니다.');
 		$('#memberWriteForm #emailDiv').css('color', 'red');
 	}else if($('#memberWriteForm #memberWriteEmail').val() == ''){
-		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
+		$('#memberWriteForm #emailDiv').html('이메일을 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if($('#memberWriteForm .gender').val() == ''){
-		$('memberWriteForm #emailDiv').html('성별을 체크해주세요');
+		$('memberWriteForm #emailDiv').html('성별을 체크하세요');
 	}else if($('#memberWriteForm #memberWriteEmail1').val() == ''){
-		$('#memberWriteForm #emailDiv').html('이메일을 입력해주세요');
+		$('#memberWriteForm #emailDiv').html('이메일을 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 	}else if($('#memberWriteForm #athntNmbr').val() == ''){
-		$('#memberWriteForm #emailDiv').html('이메일 인증 해주세요');
+		$('#memberWriteForm #emailDiv').html('이메일을 인증하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 	}else{
 
@@ -156,7 +156,7 @@ $('#memberWriteForm #memberWriteId').focusout(function(){
 
 //이메일 유효성 검사 및 발송
 $('#memberWriteForm #athntEmail').click(function(){
-	
+	$('#memberWriteForm #emailDiv').html('');
 	var emailForm = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var email1 = $('#memberWriteForm #memberWriteEmail').val();
 	var email2 = $('#memberWriteForm #memberWriteEmail1').val();
@@ -180,17 +180,17 @@ $('#memberWriteForm #athntEmail').click(function(){
 					$('#memberWriteForm #emailDiv').css('color','red');
 					
 				}else{
+					$('#memberWriteForm #athntNmbr').val("");
+					$('#memberWriteForm #athntNmbr').removeAttr('readonly');
+					$('#memberWriteForm #athBtn').removeAttr('disabled');
+					$('#memberWriteForm .athntHide').removeClass('athntHide');
 					$.ajax({
 						url: "/milkyWayForest/write/writeEmailSend",
 						type:"get",
 						data:{'email' : email},
 						success: function(data){
-							$('#memberWriteForm #athntNmbr').val("");
-							$('#memberWriteForm #athntNmbr').removeAttr('readonly');
-							$('#memberWriteForm #athBtn').removeAttr('disabled');
 							$('#memberWriteForm #emailDiv').html('인증번호가 발송되었습니다');
 							$('#memberWriteForm #emailDiv').css('color','green');
-							$('#memberWriteForm #athnt').show();
 							code = data;
 						},
 						error: function(err){

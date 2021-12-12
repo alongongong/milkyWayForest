@@ -2,14 +2,10 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 <form id="shoppingForm" name="shoppingForm">
-	<div id="top">
-		<div class="title">
-			<h1>쇼핑</h1>
-		</div>
-		<div class="Menubar">
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/shopping">Shopping</a>  
-		</div>
+	<h1>쇼핑</h1>
+	<div class="Menubar">
+		<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+		<a href="/milkyWayForest/shopping">Shopping</a>  
 	</div>
 
 	<div id ="shoppingMenu">
