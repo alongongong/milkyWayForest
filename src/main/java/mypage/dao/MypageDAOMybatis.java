@@ -77,6 +77,11 @@ public class MypageDAOMybatis implements MypageDAO {
 	}
 	
 	@Override
+	public List<PaymentDTO> getMainPaymentInfo(String id) {
+		return sqlSession.selectList("mypageSQL.getMainPaymentInfo", id);
+	}
+	
+	@Override
 	public List<PaymentDTO> getPaymentList(String id) {
 		return sqlSession.selectList("mypageSQL.getPaymentList", id);
 	}
@@ -218,11 +223,6 @@ public class MypageDAOMybatis implements MypageDAO {
 		}
 
 		return paymentDTO;	
-	}
-
-	@Override
-	public List<PaymentDTO> getProductImageNameList(String paymentCode) {
-		return sqlSession.selectList("mypageSQL.getProductImageNameList", paymentCode);
 	}
 
 }

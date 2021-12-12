@@ -12,7 +12,7 @@ body { margin : 0; padding : 0; height: 3000px;}
 #Allheader body { font-size: 13pt; }
 a { text-decoration-line: none; }
 ul { list-style:none; }
-#headerSection { background-color : rgba(255,255,255,0.5);  position: fixed; top: 0; width:100%; height: 120px;  z-index: 99;}
+#headerSection { background-color : rgba(255,255,255,0.5); overflow: hidden; position: fixed; top: 0; width:100%; height: 120px; z-index: 99;}
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */
@@ -23,9 +23,21 @@ ul { list-style:none; }
 /* 로고 */
 #Allheader header > div h1 { float: left; padding: 1.5rem 0 0.1rems; margin: auto 0; }
 
+/* 전체 스크롤 */
+body::-webkit-scrollbar {
+   width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+   background-color: #666;
+   border-radius: 5px;
+}
+body::-webkit-scrollbar-track {
+   background-color: #ccc;
+}
+
 /*header 하단메뉴*/
 #Allheader header > div .menu {  font-size: 1rem; float: left; 
-font-weight:bold; padding: 16px 0 0 4rem; }
+font-weight:bold; padding: 16px 0 10px 4rem; height: 95px;}
 #Allheader header > div nav > ul > li { float: right; }
 #Allheader header > div nav > ul > li > a { display: block; padding: 12px 1.7rem 0; height: .4rem; 
 font-size: .9rem; color:#444; line-height: 100%;}
@@ -34,8 +46,40 @@ font-size: .9rem; color:#444; line-height: 100%;}
 #Allheader header > div .spot {  padding: 1.5rem 12rem 0 0; }
 #Allheader header > div .spot li { float:right; position: relative; }
 #Allheader header > div .spot li a { padding: 0 .5rem; font-size: .7rem; color:#333; 
-line-height: 100%; }
+line-height: 100%; text-align: left;}
 
+
+/* header hover */
+#Allheader header > div .menu ul, #Allheader header > div .menu li {
+	padding: 0;
+	margin: 0;
+}
+#Allheader header > div .menu .middleMenu {
+	padding-left: 1.7rem;
+	margin-top: 20px;
+}
+#Allheader header > div .menu .middleMenu li {
+	margin: 15px 0;	
+}
+#Allheader header > div .menu .smallMenu li {
+	margin: 4px 0;
+}
+#Allheader header > div .menu .middleMenu li a {
+	font-size: 1rem;
+	color: #444;
+	transition: font-size 0.5s;
+}
+#Allheader header > div .menu .smallMenu li a {
+	font-size: .8rem;
+	color: #777;
+	transition: font-size 0.5s;
+}
+#Allheader header > div .menu > li:first-child {
+	height: 95px;
+}
+#Allheader header > div nav > ul > li > a {
+	margin-bottom : 70px;
+}
 /* /*header 상단메뉴 미니바
 #Allheader header > div .spot li ~ li a:after { content: ""; position: absolute; left: 0; top: 50%; 
 width: 1px; height: .6rem; background: #e5e5e5; transform: translateY(-25%); }

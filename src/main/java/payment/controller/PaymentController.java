@@ -63,4 +63,11 @@ public class PaymentController {
 	public PaymentDTO getPayInfo(@RequestParam String paymentCode) {
 		return paymentService.getPayInfo(paymentCode);
 	}
+	
+//	@PostMapping("/payment/reorder")
+//	@ResponseBody
+//	public String reorder(@ModelAttribute PaymentDTO paymentDTO, @RequestParam String paymentCode, HttpSession session) {
+//		paymentDTO.setId(session.getAttribute("memId")+"");
+//		return paymentService.reorder(paymentDTO, paymentCode);
+//	}
 }

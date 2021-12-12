@@ -9,10 +9,95 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	top: 0;
 	width: 100%;
 	height: 100%;
+	background-size: cover;
+    background-attachment: fixed;
+    background-image: url("/milkyWayForest/image/mainImage2.jpg");
 }
 #bodySection {
 	position: relative;
 	top: 0;
 	width: 100%;
 	height: 100%;
+}
+.text_container {
+	font-family: 'Noto Sans KR', sans-serif;
+	position: absolute ;
+	padding: 22.5rem 0 0 19.5rem;
+}
+.text_container h1{
+	display: inline-block;
+	opacity: 1;
+	line-height: 1;
+	color: #000;
+	font-size: 35px;
+	font-weight: 800;
+	margin-bottom: 15px;
+}
+.text_container h3 {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+}
+.text_container h4{
+	display: block;
+    font-size: 25px;
+    font-weight: 400;
+    color: #333;
+}
+.text_container h1:after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 15px 0 0 5px;
+    background-color: #d50037;
+}
+
+
+/* 2번째 스크롤 글자 애니메이션 */
+.second_section_text {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 6rem 0 0 6rem;
+}
+.second_section_text h1 {
+   animation: showText 2s;
+   animation-fill-mode: both;
+   animation-delay: 2.5s;
+}
+.second_section_text h1{
+	font-size: 5rem;
+	font-weight: bold;
+	color: floralwhite;
+}
+.second_section_text h2{
+	font-size: 1.2rem;
+	font-style: normal;
+	color: floralwhite;
+}
+.second_section_text h2 {
+   animation: showText2 2s;
+   animation-fill-mode: both;
+   animation-delay: 3s;
+}
+@keyframes showText {
+     0% {
+      opacity:0;
+      transform:translateX(-550%);
+     }
+     100% {
+      opacity:1;
+      transform:translateX(5%);
+     }
+}
+@keyframes showText2 {
+     0% {
+      opacity:0;
+      transform:translateX(-550%);
+     }
+     100% {
+      opacity:1;
+      transform:translateX(5%);
+     }
 }
