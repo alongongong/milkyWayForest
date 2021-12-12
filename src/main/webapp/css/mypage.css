@@ -132,6 +132,10 @@
 #mypageMain .orderSubject:hover { color: red; text-decoration: underline; }
 #mypageMain .orderSubject:active { color: black; text-decoration: none; }
 
+#mypageMain table td {
+	vertical-align: middle;
+}
+
 /*********** 회원정보 비밀번호 확인 창 ***********/
 #mypagePwdForm #main-wrapper,
 #mypagePwdForm2 #main-wrapper{
@@ -365,6 +369,10 @@
 #mypageOrderList .orderSubject:hover { color: red; text-decoration: underline; }
 #mypageOrderList .orderSubject:active { color: black; text-decoration: none; }
 
+#mypageOrderList table td {
+	vertical-align: middle;
+}
+
 /*********** 주문상세내역 창 ***********/
 #myOrderView #myOrderView-wrapper{
 	grid-column: 2;
@@ -385,6 +393,10 @@
 #myOrderView #productImageName{
 	width: 100px;
 	height: 100px;
+}
+
+#myOrderView table td {
+	vertical-align: middle;
 }
 
 /*********** 주문취소/교환/반품내역 창 ***********/
@@ -416,6 +428,10 @@
 #mypageCancelList .orderSubject:hover { color: red; text-decoration: underline; }
 #mypageCancelList .orderSubject:active { color: black; text-decoration: none; }
 
+#mypageCancelList table td {
+	vertical-align: middle;
+}
+
 /*********** 주문/배송조회 창 ***********/
 #mypageShipmentList #myPayment-wrapper{
 	grid-column: 2;
@@ -445,6 +461,10 @@
 #mypageShipmentList .orderSubject:hover { color: red; text-decoration: underline; }
 #mypageShipmentList .orderSubject:active { color: black; text-decoration: none; }
 
+#mypageShipmentList table td {
+	vertical-align: middle;
+}
+
 /*********** 주문 취소신청 창 ***********/
 #myOrderCancel #myOrderCancel-wrapper{
 	grid-column: 2;
@@ -467,4 +487,8 @@
 
 #myOrderCancel #myOrderCancelTable textarea {
 	width: 100%;
+}
+
+#myOrderCancel table td {
+	vertical-align: middle;
 }

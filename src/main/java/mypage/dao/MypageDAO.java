@@ -34,6 +34,8 @@ public interface MypageDAO {
 
 	public void mypageShpMngWrite(MypageShipmentDTO mypageShipmentDTO);
 
+	public List<PaymentDTO> getMainPaymentInfo(String id);
+	
 	public List<PaymentDTO> getPaymentList(String id);
 	
 	public int countCoupon(String id);
@@ -87,7 +89,5 @@ public interface MypageDAO {
 	public MemberRatingDTO getMypageRating(String id);
 
 	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
-
-	public List<PaymentDTO> getProductImageNameList(String paymentCode);
 
 }

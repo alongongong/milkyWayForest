@@ -82,6 +82,13 @@ public class PaymentDAOMybatis implements PaymentDAO {
 		}
 	}
 
+//	@Override
+//	public void payment4(PaymentDTO paymentDTO) {
+//		
+//		System.out.println(paymentDTO.getProductCode());
+//		sqlSession.insert("paymentSQL.payment2", paymentDTO);
+//	}
+
 	@Override
 	public void UpdateMemberGrade(String id) {
 		// 전체 주문 금액
@@ -104,4 +111,11 @@ public class PaymentDAOMybatis implements PaymentDAO {
 	public PaymentDTO getPayInfo(String paymentCode) {
 		return sqlSession.selectOne("paymentSQL.getPayInfo", paymentCode);
 	}
+
+	@Override
+	public void payment4(PaymentDTO paymentDTO, String[] paymentCode) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

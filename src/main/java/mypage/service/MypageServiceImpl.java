@@ -109,6 +109,40 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
+	public JSONObject getMainPaymentInfo(String id) {
+		List<PaymentDTO> paymentList = mypageDAO.getMainPaymentInfo(id);
+		int countCoupon = mypageDAO.countCoupon(id);
+		int countPayment = mypageDAO.countPayment(id);
+		
+		int countPending = mypageDAO.countPending(id);
+		int countFinished = mypageDAO.countFinished(id);
+		int countProcessing = mypageDAO.countProcessing(id);
+		int countShipping = mypageDAO.countShipping(id);
+		int countShipped = mypageDAO.countShipped(id);
+		int countCancel = mypageDAO.countCancel(id);
+		int countExchange = mypageDAO.countExchange(id);
+		int countReturn = mypageDAO.countReturn(id);
+		int countRefund = mypageDAO.countRefund(id);
+		
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+		json.put("countCoupon", countCoupon);
+		json.put("countPayment", countPayment);
+		
+		json.put("countPending", countPending);
+		json.put("countFinished", countFinished);
+		json.put("countProcessing", countProcessing);
+		json.put("countShipping", countShipping);
+		json.put("countShipped", countShipped);
+		json.put("countCancel", countCancel);
+		json.put("countExchange", countExchange);
+		json.put("countReturn", countReturn);
+		json.put("countRefund", countRefund);
+		
+		return json;
+	}
+	
+	@Override
 	public JSONObject getPaymentInfo(String id) {
 		List<PaymentDTO> paymentList = mypageDAO.getPaymentList(id);
 		int countCoupon = mypageDAO.countCoupon(id);
@@ -309,9 +343,17 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public List<PaymentDTO> getProductImageNameList(String paymentCode) {
-		return mypageDAO.getProductImageNameList(paymentCode);
-	}
+	public JSONObject getMyReorderInfo(String paymentCode, String id) {
+		List<PaymentDTO> paymentList = mypageDAO.getMyOrderInfo(paymentCode);
+		MemberDTO memberDTO = mypageDAO.getMypageMyInfo(id);
+		List<MypageShipmentDTO> shipList = mypageDAO.getShpMngList(id); 
+		
+		JSONObject json = new JSONObject();
+		if(paymentList != null) json.put("paymentList", paymentList);
+		if(memberDTO != null) json.put("memberDTO", memberDTO);
+		if(shipList != null) json.put("shipList", shipList);
 
+		return json;
+	}
 
 }

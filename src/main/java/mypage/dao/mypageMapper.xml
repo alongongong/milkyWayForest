@@ -66,6 +66,21 @@
 		insert into milkyShipment values(milkyShipmentSeq.nextval, #{id}, #{shipNickname}, #{shipReceiver}, #{shipTel1}, #{shipTel2}, #{shipTel3}, #{shipZipcode}, #{shipAddr1}, #{shipAddr2}, #{baseShip})
 	</insert>
 	
+	<select id="getMainPaymentInfo" parameterType="String" resultType="payment">
+		select paymentCode, id, paymentMethod, shipPay, deliveryInfo, payDate, 
+		    paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo, 
+		    productCode, b.productOption, b.payQty, b.payPrice, b.payRate,
+		    c.productName, c.category
+		from milkyPayment 
+		join milkyPaymentOption b using(paymentCode)
+		join milkyProductInfo c using(productCode)
+		where substr(paymentcode, -4) in (select substr(paymentCode, -4) from 
+		    (select rownum rn, paymentcode 
+		    from (select paymentCode from milkypayment where id=#{id} order by paymentcode desc)) 
+		    where rn between 1 and 3)
+		order by paymentcode desc
+	</select>
+	
 	<select id="getPaymentList" parameterType="String" resultType="payment">
 		select paymentCode, id, paymentMethod, shipPay, deliveryInfo, payDate, 
 		    paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo, 
@@ -171,12 +186,15 @@
 		select paymentCode, paymentMethod, shipPay, deliveryInfo, payDate, paymentSavedMoney, newSavedMoney, paymentCoupon, shipMemo,
 		    productCode, a.productOption, a.payQty, a.payPrice, a.payRate,
 		    b.payShipNickname, b.payShipReceiver, b.payShipTel1, b.payShipTel2, b.payShipTel3, b.payShipZipcode, b.payShipAddr1, b.payShipAddr2,
-		    c.productName, c.category
+		    c.productName, c.category,
+		    d.productImageName
 		from milkyPayment 
 		join milkyPaymentOption a using(paymentCode)
 		join milkyPaymentShip b using(paymentCode)
 		join milkyProductInfo c using(productCode)
-		where paymentCode=#{paymentCode}
+		join milkyProductImage d using(productCode)
+		where paymentCode=#{paymentCode} and substr(productImagename,5,2) in('.j', '_1', '.p')
+		order by productCode asc
 	</select>
 	
 	<select id="getCancelTotalA" parameterType="String" resultType="int">
@@ -252,12 +270,5 @@
 		join milkyPayment a using(paymentCode)
 		where paymentCode=#{paymentCode}
 	</select>
-	
-	<select id="getProductImageNameList" parameterType="String" resultType="payment">
-		select paymentCode, productCode, productImageName
-		from milkyPaymentOption
-		join milkyProductImage using(productCode)
-		where paymentCode=#{paymentCode}
-		order by productImageName asc
-	</select>
+
 </mapper>
