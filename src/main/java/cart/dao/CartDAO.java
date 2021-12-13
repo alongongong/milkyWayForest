@@ -8,7 +8,7 @@ import cart.bean.CartDTO;
 public interface CartDAO {
 
 	public void cartInsert(CartDTO cartDTO);
-
+	
 	public List<CartDTO> cartSelect(String memId);  
 	
 	public void cartQty(Map<String, Integer> map);

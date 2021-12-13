@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="mypageMyQnaView">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -28,9 +29,9 @@
 			<div id="qnaComment">
 			</div>
 			<div id="myQnaListBtnDiv">
-				<input type="button" class="btn btn-info" id="myQnaListBtn" value="목록">
-				<input type="button" class="btn btn-info" id="updateBtn" value="수정">				
-				<input type="button" class="btn btn-info" id="deleteBtn" value="삭제">
+				<input type="button" class="btn" id="myQnaListBtn" value="목록">
+				<input type="button" class="btn" id="updateBtn" value="수정">				
+				<input type="button" class="btn" id="deleteBtn" value="삭제">
 			</div>
 		</div>
 	</div>

@@ -2,7 +2,9 @@
 
 #mypageMain,
 #mypageMyInfo,
-#mypageShpMngListForm, /* 배송지관리 */
+#mypageShpMngListForm,
+#mypageShpMngModifyForm,
+#mypageShpMngWriteForm,
 #mypageMyPost,
 #mypageMyQnaView,
 #updateMyQnaViewForm,
@@ -10,11 +12,50 @@
 #myOrderView,
 #mypageCancelList,
 #mypageShipmentList,
-#myOrderCancel {
-	margin: 0;
-	padding: 0;
+#myOrderCancel,
+#mypagePwdForm,
+#mypagePwdForm2 {
+	margin: 120px auto 80px auto;
 }
+#mypageMain #h1Div,
+#mypageMyInfo #h1Div,
+#mypageShpMngListForm #h1Div,
+#mypageShpMngModifyForm #h1Div,
+#mypageShpMngWriteForm #h1Div,
+#mypageMyPost #h1Div,
+#mypageMyQnaView #h1Div,
+#updateMyQnaViewForm #h1Div,
+#mypageOrderList #h1Div,
+#myOrderView #h1Div,
+#mypageCancelList #h1Div,
+#mypageShipmentList #h1Div,
+#myOrderCancel #h1Div {
+	width: 58%;
+	margin: 0 auto;
+}
+
+
 /*********** 디폴트 설정 ***********/
+#sideNav-wrapper .sideNavTitle {
+	background : #eee;
+	font-size : 16px;
+	font-weight: bold; 
+}
+#mypageMain .navbar-light,
+#mypageOrderList #myPayment-title,
+#mypageShipmentList #myPayment-title,
+#mypageCancelList #myPayment-title,
+#myOrderView .navbar-light,
+#myOrderCancel .navbar-light,
+#mypageMyInfo .navbar-light,
+#mypageMyPost .navbar-light {
+	background : #eee;
+	font-size : 18px;
+	font-weight: bold;
+	padding: 16px;
+}
+
+
 #topNav-wrapper {
 	display: grid;
 	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
@@ -127,12 +168,20 @@
 	width: 820px;
 	/* padding-left: 15px; */
 }
+#mypageMain #myShipment-wrapper{
+	margin-top: 60px;
+}
 #mypageMain .orderSubject:link { color: black; text-decoration: none; }
 #mypageMain .orderSubject:visited { color: black; text-decoration: none; }
-#mypageMain .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageMain .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageMain .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageMain table td {
+#mypageMain table td,
+#mypageOrderList table td,
+#myOrderView table td,
+#mypageCancelList table td,
+#mypageShipmentList table td,
+#myOrderCancel table td {
 	vertical-align: middle;
 }
 
@@ -140,6 +189,7 @@
 #mypagePwdForm #main-wrapper,
 #mypagePwdForm2 #main-wrapper{
 	width:100%;
+	height:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -153,7 +203,9 @@
 }
 #mypagePwdForm #mypagePwd-wrapper h2,
 #mypagePwdForm2 #mypagePwd-wrapper h2{
-	font-size: 20px;
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
 }
 #mypagePwdForm #mypagePwd-wrapper p,
 #mypagePwdForm2 #mypagePwd-wrapper p{
@@ -243,7 +295,7 @@
 #mypageMyPost #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -263,7 +315,7 @@
 
 #mypageMyPost .qnaSubject:link { color: black; text-decoration: none; }
 #mypageMyPost .qnaSubject:visited { color: black; text-decoration: none; }
-#mypageMyPost .qnaSubject:hover { color: red; text-decoration: underline; }
+#mypageMyPost .qnaSubject:hover { color: #154520; text-decoration: underline; }
 #mypageMyPost .qnaSubject:active { color: black; text-decoration: none; }
 
 /*********** 문의글 보기 ***********/
@@ -350,7 +402,7 @@
 #mypageOrderList #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -366,23 +418,32 @@
 
 #mypageOrderList .orderSubject:link { color: black; text-decoration: none; }
 #mypageOrderList .orderSubject:visited { color: black; text-decoration: none; }
-#mypageOrderList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageOrderList .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageOrderList .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageOrderList table td {
-	vertical-align: middle;
-}
 
 /*********** 주문상세내역 창 ***********/
 #myOrderView #myOrderView-wrapper{
 	grid-column: 2;
 	grid-row: 2;
 	width: 820px;
-	margin-top: 60px;
+	margin-top: 40px;
 }
 #myOrderView #buttonWrap{
 	text-align: end;
 	margin-bottom: 20px;
+}
+#myOrderView .btn,
+#myOrderCancel .btn,
+#mypagePwdForm .btn,
+#mypagePwdForm2 .btn,
+#mypageMyInfo .btn,
+#mypageMyQnaView .btn {
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
 }
 #myOrderView #buttonWrap #orderCancleBtn,
 #myOrderView #buttonWrap #orderExchangeBtn,
@@ -394,9 +455,8 @@
 	width: 100px;
 	height: 100px;
 }
-
-#myOrderView table td {
-	vertical-align: middle;
+#myOrderView #cartInsertListTable{
+	display: hidden;
 }
 
 /*********** 주문취소/교환/반품내역 창 ***********/
@@ -409,7 +469,7 @@
 #mypageCancelList #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -425,12 +485,9 @@
 
 #mypageCancelList .orderSubject:link { color: black; text-decoration: none; }
 #mypageCancelList .orderSubject:visited { color: black; text-decoration: none; }
-#mypageCancelList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageCancelList .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageCancelList .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageCancelList table td {
-	vertical-align: middle;
-}
 
 /*********** 주문/배송조회 창 ***********/
 #mypageShipmentList #myPayment-wrapper{
@@ -442,7 +499,7 @@
 #mypageShipmentList #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -458,12 +515,10 @@
 
 #mypageShipmentList .orderSubject:link { color: black; text-decoration: none; }
 #mypageShipmentList .orderSubject:visited { color: black; text-decoration: none; }
-#mypageShipmentList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageShipmentList .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageShipmentList .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageShipmentList table td {
-	vertical-align: middle;
-}
+
 
 /*********** 주문 취소신청 창 ***********/
 #myOrderCancel #myOrderCancel-wrapper{
@@ -489,6 +544,3 @@
 	width: 100%;
 }
 
-#myOrderCancel table td {
-	vertical-align: middle;
-}
