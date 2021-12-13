@@ -38,7 +38,7 @@
 					<tr>
 						<th scope="col">상품번호</th>
 						<th scope="col">상품사진</th>
-						<th scope="col">상품이름</th>
+						<th scope="col" width="200px;">상품이름</th>
 						<th scope="col">상품금액(수량)</th>
 						<th scope="col">배송비</th>
 						<th scope="col">진행상태</th>

@@ -33,11 +33,11 @@
 				</thead>
 				<tbody>
 					<tr align="center">
-						<td><a href="#" id="countPending"></a></td>
-						<td><a href="#" id="countFinished"></a></td>
-						<td><a href="#" id="countProcessing"></a></td>
-						<td><a href="#" id="countShipping"></a></td>
-						<td><a href="#" id="countShipped"></a></td>
+						<td><a href="/milkyWayForest/mypage/mypageShipmentList?pg=1" id="countPending"></a></td>
+						<td><a href="/milkyWayForest/mypage/mypageShipmentList?pg=1" id="countFinished"></a></td>
+						<td><a href="/milkyWayForest/mypage/mypageShipmentList?pg=1" id="countProcessing"></a></td>
+						<td><a href="/milkyWayForest/mypage/mypageShipmentList?pg=1" id="countShipping"></a></td>
+						<td><a href="/milkyWayForest/mypage/mypageShipmentList?pg=1" id="countShipped"></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -53,7 +53,7 @@
 			<table class="table border-bottom" id="myPaymentTable">
 				<thead>
 					<tr>
-						<th scope="col">주문번호</th>
+						<th scope="col" width="130px;">주문번호</th>
 						<th scope="col">상품이름</th>
 						<th scope="col">수량</th>
 						<th scope="col">상품금액</th>

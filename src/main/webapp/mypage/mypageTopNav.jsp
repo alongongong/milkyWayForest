@@ -17,7 +17,7 @@
 					<h5 class="card-title">한눈에 내 정보 보기</h5>
 					<p class="card-text">안녕하세요. 저희 은하숲을 이용해주셔서 감사합니다.<br>
 						<strong>${memId }</strong>님은
-						<strong id="memberGrade"></strong>등급입니다.
+						<a class="topnavATag" href="/milkyWayForest/mypage/mypageRating"><strong id="memberGrade"></strong></a>등급입니다.
 					</p>
 				</div>
 			</div>
@@ -28,22 +28,22 @@
 		<ul class="list-group">
 			<li class="list-group-item list-group-item-action">
 				<span>사용가능한 쿠폰
-					<a href="#" id="countCoupon"></a>장
+					<a href="/milkyWayForest/mypage/mypageCoupon" id="countCoupon"></a>장
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
 				<span>사용가능한 적립금
-					<a href="#" id="savedMoney"></a>원
+					<a href="/milkyWayForest/mypage/mypageCpnPnts?pg=1" id="savedMoney"></a>원
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
 				<span>총 주문 횟수
-					<a href="#" id="countPayment"></a>회
+					<a href="/milkyWayForest/mypage/mypageOrderList?pg=1" id="countPayment"></a>회
 				</span>
 			</li>
 			<li class="list-group-item list-group-item-action">
 				<span>총 주문 금액
-					<a href="#" id="paidTotal"></a>원
+					<a href="/milkyWayForest/mypage/mypageOrderList?pg=1" id="paidTotal"></a>원
 				</span>
 			</li>
 		</ul>
