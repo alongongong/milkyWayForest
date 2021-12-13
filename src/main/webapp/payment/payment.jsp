@@ -198,7 +198,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		var addr = $('#paymentForm #payShipAddr1').val()+' '+$('#paymentForm #payShipAddr2').val();
 		var postcode = $('#paymentForm #payShipZipcode').val();
 		
-		//카카오페이 https://wogus789789.tistory.com/m/178
+		//카카오페이 https://wogus789789.tistory.com/m/178 https://wondongho.tistory.com/189
 		if($('input:radio').eq(3).is(':checked')){
 		    var IMP = window.IMP; // 생략가능
 		    IMP.init('imp48332369'); //가맹점 식별코드
@@ -227,22 +227,21 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 						success: function(data) {
 							alert(data);
 							paymentCode = data;
+							
+							msg = '결제가 완료되었습니다.';
+			                msg += '\n고유ID : ' + rsp.imp_uid;
+			                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+			                msg += '\n결제 금액 : ' + rsp.paid_amount;
+			                msg += '\n카드 승인번호 : ' + rsp.apply_num;
+
+			                alert(msg);
+			    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
 			
 						},
 						error: function(err) {
 							console.log(err);
 						}
 					});
-		        	
-	                msg = '결제가 완료되었습니다.';
-	                msg += '\n고유ID : ' + rsp.imp_uid;
-	                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
-	                msg += '\n결제 금액 : ' + rsp.paid_amount;
-	                msg += '\n카드 승인번호 : ' + rsp.apply_num;
-
-	                alert(msg);
-	    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
-
 		        } else { //결제 실패시
 		            msg = '결제에 실패하였습니다.';
 		            msg += '\n에러내용 : ' + rsp.error_msg;
@@ -280,22 +279,21 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 						success: function(data) {
 							alert(data);
 							paymentCode = data;
+							
+							msg = '결제가 완료되었습니다.';
+			                msg += '\n고유ID : ' + rsp.imp_uid;
+			                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+			                msg += '\n결제 금액 : ' + rsp.paid_amount;
+			                msg += '\n카드 승인번호 : ' + rsp.apply_num;
+
+			                alert(msg);
+			    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
 			
 						},
 						error: function(err) {
 							console.log(err);
 						}
 					});
-		        	
-	                msg = '결제가 완료되었습니다.';
-	                msg += '\n고유ID : ' + rsp.imp_uid;
-	                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
-	                msg += '\n결제 금액 : ' + rsp.paid_amount;
-	                msg += '\n카드 승인번호 : ' + rsp.apply_num;
-
-	                alert(msg);
-	    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
-
 		        } else { //결제 실패시
 		            msg = '결제에 실패하였습니다.';
 		            msg += '\n에러내용 : ' + rsp.error_msg;
