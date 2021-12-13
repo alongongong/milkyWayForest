@@ -41,6 +41,8 @@ public interface AdminService {
 
 	public List<PaymentDTO> getOrderCancel();
 
+	public void shipBtn(String paymentCode, String deliveryInfo);
+
 	
 
 }

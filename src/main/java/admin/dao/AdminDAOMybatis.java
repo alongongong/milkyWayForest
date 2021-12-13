@@ -110,4 +110,11 @@ public class AdminDAOMybatis implements AdminDAO {
 	public List<PaymentDTO> getOrderCancel() {
 		return sqlSession.selectList("adminSQL.getOrderCancel");
 	}
+
+	@Override
+	public void shipBtn(Map<String, String> map) {
+		sqlSession.update("adminSQL.shipBtn", map);
+	}
+
+
 }

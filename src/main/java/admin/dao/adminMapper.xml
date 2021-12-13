@@ -101,7 +101,7 @@
 		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentoption using(paymentcode)
 		join milkyProductInfo using(productcode)
-		where deliveryinfo='결제완료' or deliveryinfo='배송준비중'
+		where deliveryinfo like'결제%' or deliveryinfo like '배송%'
 		order by paydate desc, deliveryInfo
 	</select>
 	
@@ -109,7 +109,12 @@
 		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentOption using(paymentcode)
 		join milkyProductInfo using(productCode)
-		where deliveryinfo='취소' or deliveryinfo='교환' or deliveryinfo='반품'
+		where deliveryinfo like '취소%' or deliveryinfo like '교환%' or deliveryinfo like '반품%'
 		order by paydate desc, deliveryInfo
 	</select>
+	
+	<update id="shipBtn" parameterType="java.util.Map">
+		update milkypayment set deliveryinfo=#{deliveryInfo} where paymentCode=#{paymentCode}
+	</update>
+
 </mapper>

@@ -24,7 +24,7 @@
 		
 			<nav>
 				<ul class="menu">
-					<li><a href="">NOTICE</a>
+					<li><a href="javascript:void(0);" style="text-decoration: none; cursor: default;">NOTICE</a>
 						<ul class="middleMenu">
 							<li><a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
 							<li><a href="/milkyWayForest/notice/eventBoard">이벤트</a></li>
@@ -71,7 +71,7 @@
 						</ul>
 					</li>
 					<li><a href="/milkyWayForest/findStore">STORE</a></li>
-					<li><a href="">EUNHASOOP</a>
+					<li><a href="javascript:void(0);" style="text-decoration: none; cursor: default;">EUNHASOOP</a>
 						<ul class="middleMenu">
 							<li><a href="/milkyWayForest/info/componyInfo">은하숲 소개</a></li>
 							<li><a href="/milkyWayForest/info/gradeBenefitInfo">등급 혜택 안내</a></li>

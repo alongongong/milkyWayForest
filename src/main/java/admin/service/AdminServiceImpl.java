@@ -155,4 +155,13 @@ public class AdminServiceImpl implements AdminService {
 		return adminDAO.getOrderCancel();
 	}
 
+	@Override
+	public void shipBtn(String paymentCode, String deliveryInfo) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("paymentCode", paymentCode);
+		map.put("deliveryInfo", deliveryInfo);
+		adminDAO.shipBtn(map);
+		
+	}
+
 }

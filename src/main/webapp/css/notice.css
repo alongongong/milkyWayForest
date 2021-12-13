@@ -294,6 +294,9 @@
 	text-align: center;
 	margin: 0 auto;
 }
+#qnaBoardForm #qnaBoardTable th {
+	text-align: center;
+}
 #qnaBoardTable .qnaSubject:hover {
 	color: blue;
 	text-decoration: underline;

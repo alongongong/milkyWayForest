@@ -16,7 +16,7 @@
           <th>주문번호</th>
           <th>상품명</th>
           <th>수량</th>
-          <th>배송현황</th>
+          <th>처리현황</th>
           <th>버튼</th>
         </thead>
         <tbody>
@@ -37,23 +37,115 @@ $(function(){
 		url: '/milkyWayForest/admin/getOrderCancel',
 		type: 'post',
 		success: function(data) {
+			var paymentCode;
+			var count = 0;
 			$.each(data, function(index, items){
-				$('<tr>').append($('<td>',{
-					text: items.paymentCode,
-					align: 'center'
-				})).append($('<td>',{
-					text: items.productName
-				})).append($('<td>',{
-					text: items.payQty,
-					align: 'center'
-				})).append($('<td>',{
-					text: items.deliveryInfo,
-					align: 'center'
-				})).append($('<td>').append($('<input>',{
-					type: 'button',
-					value: '',
-					align: 'center'
-				}))).appendTo($('#pOrderCancelTable tbody'));
+				if(paymentCode == items.paymentCode) {
+					count++;
+					paymentCode = items.paymentCode;
+					
+					$('#paymentCode'+(index-count)).attr('rowspan', count+1);
+					$('#cancelBtn'+(index-count)).attr('rowspan', count+1);
+
+					$('<tr>').append($('<td>',{
+						text: items.productName
+					})).append($('<td>',{
+						text: items.payQty,
+						align: 'center'
+					})).append($('<td>',{
+						text: items.deliveryInfo,
+						align: 'center'
+					})).appendTo($('#pOrderCancelTable tbody'));
+					
+				} else {
+					count = 0;
+					paymentCode = items.paymentCode;
+					$('<tr>').append($('<td>',{
+						text: items.paymentCode,
+						align: 'center',
+						id: 'paymentCode'+index
+					})).append($('<td>',{
+						text: items.productName
+					})).append($('<td>',{
+						text: items.payQty,
+						align: 'center'
+					})).append($('<td>',{
+						text: items.deliveryInfo,
+						align: 'center'
+					})).append($('<td>',{
+						align: 'center',
+						id: 'cancelBtn'+index
+					})).appendTo($('#pOrderCancelTable tbody'));
+					
+				}
+				
+				if(items.deliveryInfo == '취소') {
+					$('<input>',{
+						class: 'cancelBtn',
+						type: 'button',
+						value: '취소처리'
+					}).appendTo($('#cancelBtn'+index));
+				} else if(items.deliveryInfo == '교환') {
+					$('<input>',{
+						class: 'tradeBtn',
+						type: 'button',
+						value: '교환처리'
+					}).appendTo($('#cancelBtn'+index));
+				} else if(items.deliveryInfo == '반품') {
+					$('<input>',{
+						class: 'returnBtn',
+						type: 'button',
+						value: '반품처리'
+					}).appendTo($('#cancelBtn'+index));					
+				}
+				
+			});
+			$('.cancelBtn').click(function(){
+				var paymentCode = $(this).parents('tr').find('td:eq(0)').text();
+				var deliveryInfo = '취소완료';
+				$.ajax({
+					url: '/milkyWayForest/admin/shipBtn',
+					type: 'post',
+					data: 'paymentCode='+paymentCode+'&deliveryInfo='+deliveryInfo,
+					success: function(data) {
+						location.href='/milkyWayForest/admin/orderCancel?dataNum=9';
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+			});
+			
+			$('.tradeBtn').click(function(){
+				var paymentCode = $(this).parents('tr').find('td:eq(0)').text();
+				var deliveryInfo = '교환완료';
+				$.ajax({
+					url: '/milkyWayForest/admin/shipBtn',
+					type: 'post',
+					data: 'paymentCode='+paymentCode+'&deliveryInfo='+deliveryInfo,
+					success: function(data) {
+						location.href='/milkyWayForest/admin/orderCancel?dataNum=9';
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+			});
+			
+			$('.returnBtn').click(function(){
+				var paymentCode = $(this).parents('tr').find('td:eq(0)').text();
+				var deliveryInfo = '반품완료';
+				$.ajax({
+					url: '/milkyWayForest/admin/shipBtn',
+					type: 'post',
+					data: 'paymentCode='+paymentCode+'&deliveryInfo='+deliveryInfo,
+					success: function(data) {
+						location.href='/milkyWayForest/admin/orderCancel?dataNum=9';
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
 			});
 		},
 		error: function(err) {
