@@ -20,7 +20,9 @@
 	<div class="productView">
 		
 		<div class="shoppingDetailImg items">
-			<img alt="B001" id="bigImg">
+			<div id="shoppingDetailBigImg">
+				<img alt="B001" id="bigImg" class="imgClick">
+			</div>
 			<ul class="imgList">
 				<li class="on">
 					<div class="imgListBorder">
