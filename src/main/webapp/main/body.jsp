@@ -11,7 +11,8 @@
 <style type="text/css">
 .section {  width:100%; height:100%; position:relative; color:#ffffff; font-size:24pt; }
 .section .second_section_text { position:relative; top:26%; transform:translate(-47%, -50%); opacity:0;}  
-.fp-completely .second_section_text { animation:fade_in .5s  .2s forwards;  }
+.fp-completely .second_section_text, .fp-completely .text_container { animation:fade_in .5s  .2s forwards;  }
+
 
 @keyframes fade_in {
 	0% { opacity:0; left:40%;}
