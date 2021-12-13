@@ -101,7 +101,7 @@ $(function(){
 				
 			});
 			$('.cancelBtn').click(function(){
-				var paymentCode = $(this).parents('tr').find('td:eq(0)').text;
+				var paymentCode = $(this).parents('tr').find('td:eq(0)').text();
 				var deliveryInfo = '취소완료';
 				$.ajax({
 					url: '/milkyWayForest/admin/shipBtn',
@@ -117,7 +117,7 @@ $(function(){
 			});
 			
 			$('.tradeBtn').click(function(){
-				var paymentCode = $(this).parents('tr').find('td:eq(0)').text;
+				var paymentCode = $(this).parents('tr').find('td:eq(0)').text();
 				var deliveryInfo = '교환완료';
 				$.ajax({
 					url: '/milkyWayForest/admin/shipBtn',

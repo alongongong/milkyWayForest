@@ -119,6 +119,10 @@
 		<div id="productDetailInfoDiv"></div>
 	</div>	
 	
+	<div id="reviewDiv">
+		<table id="reviewTable"></table>
+	</div>
+	
 	</section>
 </form>
 

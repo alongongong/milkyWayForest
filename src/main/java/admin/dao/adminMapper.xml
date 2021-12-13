@@ -101,7 +101,7 @@
 		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentoption using(paymentcode)
 		join milkyProductInfo using(productcode)
-		where deliveryinfo='결제완료' or deliveryinfo='배송준비중'
+		where deliveryinfo like'결제%' or deliveryinfo like '배송%'
 		order by paydate desc, deliveryInfo
 	</select>
 	
