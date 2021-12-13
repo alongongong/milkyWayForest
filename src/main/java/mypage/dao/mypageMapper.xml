@@ -263,7 +263,26 @@
 		from milkymember e, milkygradeinfo d
 		where id=#{id} and e.membergrade = d.gradename
 	</select>
+
+	<select id="getMemberdate" parameterType="member" resultType="member">
+		select id, to_char(writeDate,'yyyy-mm-dd')writeDate from milkymember where id=#{id}
+	</select>
 	
+	<select id="getPaymentSaveMoneyList" parameterType="java.util.Map" resultType="payment">
+		select * from (select rownum rn, a.*from
+		(select paymentcode, id, to_char(paydate,'yyyy-mm-dd') paydate,
+		paymentsavedmoney, newsavedmoney from milkypayment where id=#{id} order by paydate desc) a)
+		where rn between #{startNum} and #{endNum} and id=#{id}
+	</select>
+	
+	<select id="getPointTotalA" parameterType="String" resultType="int">
+		select count(*) from milkypayment where id=#{id}
+	</select>
+	
+	<select id="getCouponList" parameterType="String" resultType="memberCoupon">
+		select * from milkyMemberBenefit where id=#{id}
+	</select>
+
 	<select id="getMyOrderCancelInfo" parameterType="String" resultType="payment">
 		select paymentCode, reason, detailReason, deliveryInfo
 		from milkyOrderCancel
