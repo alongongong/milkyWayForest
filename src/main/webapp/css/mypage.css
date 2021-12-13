@@ -3,8 +3,6 @@
 #mypageMain,
 #mypageMyInfo,
 #mypageShpMngListForm,
-#mypageShpMngModifyForm,
-#mypageShpMngWriteForm,
 #mypageMyPost,
 #mypageMyQnaView,
 #updateMyQnaViewForm,
@@ -20,8 +18,6 @@
 #mypageMain #h1Div,
 #mypageMyInfo #h1Div,
 #mypageShpMngListForm #h1Div,
-#mypageShpMngModifyForm #h1Div,
-#mypageShpMngWriteForm #h1Div,
 #mypageMyPost #h1Div,
 #mypageMyQnaView #h1Div,
 #updateMyQnaViewForm #h1Div,
@@ -48,7 +44,10 @@
 #myOrderView .navbar-light,
 #myOrderCancel .navbar-light,
 #mypageMyInfo .navbar-light,
-#mypageMyPost .navbar-light {
+#mypageMyPost .navbar-light,
+#mypageShpMngListForm .navbar-light,
+#mypageShpMngModifyForm .navbar-light,
+#mypageShpMngWriteForm .navbar-light {
 	background : #eee;
 	font-size : 18px;
 	font-weight: bold;
@@ -102,6 +101,10 @@
 	margin-top: -1px;
 }
 
+#topNav-wrapper .topnavATag:link { color: black; text-decoration: none; }
+#topNav-wrapper .topnavATag:visited { color: black; text-decoration: none; }
+#topNav-wrapper .topnavATag:hover { color: #154520; text-decoration: underline; }
+#topNav-wrapper .topnavATag:active { color: black; text-decoration: none; }
 
 /*********** 마이페이지 메인 ***********/
 #mypageMain #main-wrapper,
@@ -176,6 +179,7 @@
 #mypageMain .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageMain .orderSubject:active { color: black; text-decoration: none; }
 
+
 #mypageMain table td,
 #mypageOrderList table td,
 #myOrderView table td,
@@ -200,6 +204,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 160px;
 }
 #mypagePwdForm #mypagePwd-wrapper h2,
 #mypagePwdForm2 #mypagePwd-wrapper h2{
@@ -427,24 +432,41 @@
 	grid-column: 2;
 	grid-row: 2;
 	width: 820px;
-	margin-top: 40px;
+	margin-top: 16px;
 }
 #myOrderView #buttonWrap{
 	text-align: end;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 #myOrderView .btn,
 #myOrderCancel .btn,
 #mypagePwdForm .btn,
 #mypagePwdForm2 .btn,
 #mypageMyInfo .btn,
-#mypageMyQnaView .btn {
+#mypageMyQnaView .btn,
+#mypageShpMngModifyForm .btn,
+#mypageShpMngWriteForm .btn{
 	background: #154520;
     color: white;
     padding: 7px 20px;
     font-size: 14px;
     font-weight: bold;
 }
+#mypageShpMngListForm #buttonWrap{
+	margin-bottom: 10px;
+}
+#mypageShpMngListForm .btn {
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-inline-style: none;
+    margin-right: 5px;
+}
+
+
+
 #myOrderView #buttonWrap #orderCancleBtn,
 #myOrderView #buttonWrap #orderExchangeBtn,
 #myOrderView #buttonWrap #orderReturnBtn,
@@ -544,3 +566,34 @@
 	width: 100%;
 }
 
+/*********** 적립금, 쿠폰 창 ***********/
+#mypageShpMngListForm #mypageShpMn-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageShpMngListForm #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: #106030;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageShpMngListForm #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageShpMngListForm #mypagePointPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+/*********** 배송지 관리 창 ***********/
+#mypageShpMngListForm #myPayment-state{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 16px;
+}

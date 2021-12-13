@@ -24,7 +24,7 @@
 			<table class="table border-bottom" id="myPaymentTable">
 				<thead>
 					<tr>
-						<th scope="col">주문번호</th>
+						<th scope="col" width="130px;">주문번호</th>
 						<th scope="col">상품정보</th>
 						<th scope="col">수량</th>
 						<th scope="col">상품금액</th>
