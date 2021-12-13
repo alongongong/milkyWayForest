@@ -115,6 +115,12 @@
 			
 	</div>
 	
+	
+	<div id="detailBottom">
+		<div id="detailInfoName"><span>상품정보</span></div>
+		<div id="detailReviewName"><span>상품후기</span></div>
+	</div>
+	
 	<div id="DetailInfoDiv">
 		<div id="productDetailInfoDiv"></div>
 	</div>	
