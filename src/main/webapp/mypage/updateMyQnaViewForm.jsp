@@ -57,8 +57,8 @@
 			</tr>
 		</table>
 		<div id="updateMyQnaViewBtnDiv" align="center">
-			<input type="button" value=" 글수정 " id="updateMyQnaBtn" class="btn btn-warning">
-			<input type="button" value=" 취소 " id="cancelBtn" onclick="history.back()" class="btn btn-outline-secondary">
+			<input type="button" value=" 글수정 " id="updateMyQnaBtn" class="btn">
+			<input type="button" value=" 취소 " id="cancelBtn" onclick="history.back()" class="btn">
 		</div>
 	</div>
 	
