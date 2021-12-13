@@ -404,7 +404,19 @@ $(function(){
 		type: 'post',
 		data: 'productCode=${productCode}',
 		success: function(data) {
-			alert(JSON.stringify(data));
+			// alert(JSON.stringify(data));
+			
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					text: items.reviewLike 
+				})).append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.reviewContent
+				})).append($('<td>',{
+					text: items.reviewDate
+				})).appendTo($('#reviewTable'));
+			});
 		},
 		error: function(err) {
 			console.log(err);

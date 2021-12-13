@@ -204,6 +204,11 @@
    	</select>
 
 	<select id="getReview" parameterType="java.util.Map" resultType="review">
-		select * from (select rownum rn, a.* from (select * from milkyreview where productCode=#{productCode}) a) where rn between #{startNum} and #{endNum} 
+		select * from 
+			(select rownum rn, a.*  
+				from (select reviewcode, productcode, reviewlike, id,
+				reviewcontent, to_char(reviewdate, 'yyyy-mm-dd')
+			from milkyreview where productCode=#{productCode} order by reviewcode desc) a)
+			where rn between #{startNum} and #{endNum} 
 	</select>
 </mapper>

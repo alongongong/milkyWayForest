@@ -997,11 +997,11 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	color: black;
 }
 
-#shoppingDetailForm table tr:nth-of-type(3) ~ tr td:first-child {
+#shoppingDetailForm #detailTable tr:nth-of-type(3) ~ tr td:first-child {
 	border-right: 1px dotted #ccc;
 	width: 25%;
 }
-#shoppingDetailForm table tr:nth-of-type(3) ~ tr td:last-child {
+#shoppingDetailForm #detailTable tr:nth-of-type(3) ~ tr td:last-child {
 	padding-left: 30px;
 }
 
