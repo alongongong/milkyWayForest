@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import comment.bean.CommentDTO;
+import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
@@ -81,6 +82,18 @@ public interface MypageDAO {
 	public void updateMyOrderCancel(String paymentCode);
 	
 	public MemberRatingDTO getMypageRating(String id);
+
+	public MemberDTO getMemberdate(String id);
+
+	public int getPointTotalA(String id);
+
+	public List<PaymentDTO> getPaymentSaveMoneyList(Map<String, String> map);
+
+	public List<MemberCouponDTO> getCouponList(String id);
+
+	
+	
+	
 
 
 

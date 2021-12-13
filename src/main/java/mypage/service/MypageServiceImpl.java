@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import comment.bean.CommentDTO;
+import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
@@ -281,6 +282,49 @@ public class MypageServiceImpl implements MypageService {
 	public MemberRatingDTO getMypageRating(String id) {
 		return mypageDAO.getMypageRating(id);
 	}
+
+	@Override
+	public MemberDTO getMemberdate(String id) {
+		return mypageDAO.getMemberdate(id);
+	}
+
+	@Override
+	public JSONObject getPaymentSaveMoneyList(String id, int pg) {
+		int endNum = pg * 10;
+		int startNum = endNum - 9;
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("startNum", startNum+"");
+		map.put("endNum", endNum+"");
+		
+		int totalA = mypageDAO.getPointTotalA(id);
+		int totalP = (totalA - 1) / 10+1;
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(10);
+		boardPaging.setPageSize(10);
+		boardPaging.setTotalA(totalA);
+		boardPaging.makePagingHTML();
+		
+		List<PaymentDTO> list = mypageDAO.getPaymentSaveMoneyList(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(list != null) {
+			json.put("list", list);
+			json.put("mypageCpnpntsPaging", boardPaging.getPagingHTML().toString());
+			json.put("pg", pg);
+			json.put("totalP", totalP);
+		}
+		return json;
+	}
+
+	@Override
+	public List<MemberCouponDTO> getCouponList(String id) {
+		return mypageDAO.getCouponList(id);
+	}
+
 
 
 }

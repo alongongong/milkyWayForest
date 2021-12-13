@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import comment.bean.CommentDTO;
+import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
@@ -196,5 +197,31 @@ public class MypageDAOMybatis implements MypageDAO {
 	public MemberRatingDTO getMypageRating(String id) {
 		return sqlSession.selectOne("mypageSQL.getMypageRating", id);
 	}
+
+	@Override
+	public MemberDTO getMemberdate(String id) {
+		return sqlSession.selectOne("mypageSQL.getMemberdate", id);
+	}
+
+	@Override
+	public int getPointTotalA(String id) {
+		return sqlSession.selectOne("mypageSQL.getPointTotalA", id);
+	}
+
+	@Override
+	public List<PaymentDTO> getPaymentSaveMoneyList(Map<String, String> map) {
+		return sqlSession.selectList("mypageSQL.getPaymentSaveMoneyList", map);
+	}
+
+	@Override
+	public List<MemberCouponDTO> getCouponList(String id) {
+		return sqlSession.selectList("mypageSQL.getCouponList", id);
+	}
+
+	
+
+	
+
+
 
 }

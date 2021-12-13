@@ -3,6 +3,7 @@ package mypage.service;
 import java.util.List;
 
 import comment.bean.CommentDTO;
+import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
@@ -55,6 +56,14 @@ public interface MypageService {
 	public void updateMyOrderCancel(String paymentCode);
 	
 	public MemberRatingDTO getMypageRating(String id);
+
+	public MemberDTO getMemberdate(String id);
+
+	public JSONObject getPaymentSaveMoneyList(String id, int pg);
+
+	public List<MemberCouponDTO> getCouponList(String id);
+
+	
 
 
 }
