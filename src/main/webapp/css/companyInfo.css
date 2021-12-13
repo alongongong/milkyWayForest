@@ -4,14 +4,22 @@ src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.wo
 
 @font-face {font-family: MalgunGothic; src:url(font/MalgunGothic.eot);}
 *{ margin: 0; padding: 0; }
+#allDiv {
+	margin-top: 120px;
+}
+#allDiv h1 {
+	font-size: 38px;
+	font-weight: bold;
+}
+
 /* 배너사진*/
 #allDiv .top { position: relative; width: 100%;}
 #allDiv .top-text-box { position: absolute; bottom:1rem; 
 /* display:flex;    justify-content: space-between; */ width: 100%; margin: 0 auto; }
 
 #allDiv .Eunha h1 { color:white; width: 78rem; margin: 0 auto; }
-#allDiv #top_banner_text { color:white; text-align : right; width: 78rem; margin: 0 auto; }
-#allDiv #top_banner_text a { color:white; }
+#allDiv #top_banner_text { color:white; text-align : right; width: 78rem; margin: 0 auto; font-size: 14px;}
+#allDiv #top_banner_text a { color:white; font-size: 14px;}
 
 /* 전체 가운데 정렬 */
 #allDiv #companyInfo { display: flex; width: 78rem; margin: 0 auto; }
@@ -34,7 +42,7 @@ color:#00592D; }
 /* second_block */
 #allDiv .second_block { position:relative; padding: 2rem 0 2rem 0; }
 #allDiv .second_block p { display: inline-block; }
-#allDiv .second_block .text3 { vertical-align: 5em; margin : 0 0 0 8rem; 
+#allDiv .second_block .text3 { vertical-align: -3em; margin : 0 0 0 9rem; 
 font-style: oblique; font-size: 1.15rem; color:#00592D; }
 
 /* 동그라미 사진*/
@@ -68,7 +76,7 @@ font-style: oblique; font-size: 1.15rem; color:#00592D; }
 #allDiv #rightDiv > a  { color: #444; display: block;
 	position: relative; width: 175px; }	
 #allDiv #rightDiv .nav_Info {
-	display: block; padding: 20px 15px 20px 15px; font-size: 18px;
+	display: block; padding: 20px 15px 4px 15px; font-size: 18px;
 }
 
 #allDiv .nav_Info .bibi-chevron-down { right: 15px;  width: 12px; }
@@ -79,7 +87,7 @@ font-style: oblique; font-size: 1.15rem; color:#00592D; }
 }
 #allDiv .nav_Info .bibi-chevron-up { right: 15px;  width: 12px; float: right;}
 
-#allDiv #noneDiv { font-family: "Malgun Gothic", serif; }
+#allDiv #noneDiv { font-family: "Malgun Gothic", serif; border-top: 1px solid #ccc; padding-top: 20px;}
 
 #allDiv .noneDiv li { margin-top: 1rem;}
 

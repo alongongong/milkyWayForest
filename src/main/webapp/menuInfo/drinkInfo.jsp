@@ -61,16 +61,16 @@ $(function(){
 					type: 'hidden',
 					id: 'menuCode'+index,
 					value: items.menuCode
-				})))).append($('<div>',{
+				}))))).append($('<div>',{
 					width: '50%',
 					align: 'center',
-					style : 'padding-bottom: 10px; margin: 5px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
+					style : 'padding-bottom: 10px; margin-top: 15px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
 					text: items.menuName
 				})).append($('<div>',{
 					text: items.menuEngName,
 					align: 'center',
-					style: 'margin: 5px 5px 20px 5px; color: #999; font-size: 9pt'
-				}))).appendTo($('#teaMenuDiv'));
+					style: 'margin: 5px 5px 40px 5px; color: #999; font-size: 9pt'
+				})).appendTo($('#teaMenuDiv'));
 			});
 		},
 		error: function(err) {
@@ -100,16 +100,16 @@ $(function(){
 					type: 'hidden',
 					id: 'menuCode'+index,
 					value: items.menuCode
-				})))).append($('<div>',{
+				}))))).append($('<div>',{
 					width: '50%',
 					align: 'center',
-					style : 'padding-bottom: 10px; margin: 5px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
+					style : 'padding-bottom: 10px; margin-top: 15px; color: black; border-bottom: 1px solid gainsboro; font-size: 15px;',
 					text: items.menuName
 				})).append($('<div>',{
 					text: items.menuEngName,
 					align: 'center',
-					style: 'margin: 5px 5px 20px 5px; color: #999; font-size: 9pt'
-				}))).appendTo($('#coffeeMenuDiv'));
+					style: 'margin: 5px 5px 40px 5px; color: #999; font-size: 9pt'
+				})).appendTo($('#coffeeMenuDiv'));
 			});
 		},
 		error: function(err) {

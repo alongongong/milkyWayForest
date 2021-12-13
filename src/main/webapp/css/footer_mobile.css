@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+
+
+
+@media (max-width: 767px) {
+#footerBody {
+	-webkit-font-smoothing: antialiased;
+	text-rendering:optimizeLegibility;
+	transition: all .3s all .3s cubic-bezier(0.16, 0.04, 0.03, 0.95);
+}
+	
+#footerBody #footer {
+	text-align: left;
+	
+}
+
+#footerBody .footerMenu {	
+	font-size: 12px;
+	display: inli
+}	
+	
+#footerBody .footerInfo li{
+	display:block;
+	margin-bottom: 6px;
+	font-size: 9px;
+
+}
+
+#footerBody .footerCopy {
+	font-size: 9px;
+	display:block;
+}
+
+
+}/* @media (max-width: 767px) */

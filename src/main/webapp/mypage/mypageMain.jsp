@@ -72,7 +72,7 @@
 $(function(){
 	//배송상품 주문정보
 	$.ajax({
-		url: '/milkyWayForest/mypage/getPaymentInfo',
+		url: '/milkyWayForest/mypage/getMainPaymentInfo',
 		type: 'post',
 		success: function(data){
 			console.log(JSON.stringify(data));
@@ -91,46 +91,100 @@ $(function(){
 				
 			}else{
 				$.each(data.paymentList, function(index, items) {
-					if(index <3){
-						$('<tr>').append($('<td>',{
-						}).append($('<a>',{
-							id: 'paymentCode',
-							text: items.paymentCode,
-							class: 'orderSubject',
-							href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode
-							
-						}))).append($('<td>',{
-							id: 'productName',
-							text: items.productName
-							
-						})).append($('<td>',{
-							id: 'payQty',
-							text: items.payQty.toLocaleString()
-							
-						})).append($('<td>',{
-							id: 'payPrice',
-							text: items.payPrice.toLocaleString()
-							
-						})).append($('<td>',{
-							id: 'shipPay',
-							text: items.shipPay.toLocaleString()
-							
-						})).append($('<td>',{
-							id: 'deliveryInfo',
-							text: items.deliveryInfo
-							
-						})).appendTo($('#myPaymentTable'));
+					$('<tr>').append($('<td>',{
+					}).append($('<a>',{
+						id: 'paymentCode',
+						text: items.paymentCode,
+						class: 'orderSubject',
+						href: '/milkyWayForest/mypage/MyOrderView?paymentCode='+items.paymentCode
 						
-					}
-					
+					}))).append($('<td>',{
+						id: 'productName',
+						text: items.productName
+						
+					})).append($('<td>',{
+						id: 'payQty',
+						text: items.payQty.toLocaleString()
+						
+					})).append($('<td>',{
+						id: 'payPrice',
+						text: items.payPrice.toLocaleString()
+						
+					})).append($('<td>',{
+						id: 'shipPay',
+						text: items.shipPay.toLocaleString()
+						
+					})).append($('<td>',{
+						id: 'deliveryInfo',
+						text: items.deliveryInfo
+						
+					})).appendTo($('#myPaymentTable'));
 				});
 				
-			}//if
+				$('#myPaymentTable').rowspan(0);
 
+			}
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
 });
+
+$.fn.colspan = function(rowIdx) {
+	return this.each(function(){
+		
+		var that;
+		$('tr', this).filter(":eq("+rowIdx+")").each(function(row) {
+			$(this).find('th').filter(':visible').each(function(col) {
+				if ($(this).html() == $(that).html()) {
+					colspan = $(that).attr("colSpan") || 1;
+					colspan = Number(colspan)+1;
+					
+					$(that).attr("colSpan",colspan);
+					$(this).hide(); // .remove();
+				} else {
+					that = this;
+				}
+				
+				// set the that if not already set
+				that = (that == null) ? this : that;
+				
+			});
+		});
+	});
+};
+$.fn.rowspan = function(colIdx, isStats) {       
+	return this.each(function(){      
+		var that;     
+		$('tr', this).each(function(row) {      
+			$('td:eq('+colIdx+')', this).filter(':visible').each(function(col) {
+				
+				if ($(this).html() == $(that).html()
+					&& (!isStats 
+							|| isStats && $(this).prev().html() == $(that).prev().html()
+							)
+					) {            
+					rowspan = $(that).attr("rowspan") || 1;
+					rowspan = Number(rowspan)+1;
+
+					$(that).attr("rowspan",rowspan);
+					
+					// do your action for the colspan cell here            
+					$(this).hide();
+					
+					//$(this).remove(); 
+					// do your action for the old cell here
+					
+				} else {            
+					that = this;         
+				}          
+				
+				// set the that if not already set
+				that = (that == null) ? this : that;      
+			});     
+		});    
+	});  
+}; 
+
 </script>

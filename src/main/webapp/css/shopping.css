@@ -6,9 +6,19 @@ src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.wo
 /* shopping */
 #shoppingForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
 }
-
+#shoppingForm h1 {
+	font-size: 35px;
+	font-weight: bold;
+}
+#shoppingForm ul, #beanNTeaForm ul, #productForm ul,
+#beanListForm ul, #teaListForm ul, #mugListForm ul, 
+#glassListForm ul, #plasticTumblrListForm ul, 
+#stainlessTumblrListForm ul, #thermosListForm ul, 
+#coffeeEtcListForm ul, #shoppingDetailForm ul {
+	margin: 10px;
+}
 /* 쇼핑 top Menu */
 #shoppingForm #top { padding-top: .5rem; padding-bottom: .1rem; }
 #shoppingForm #top .title { font-size : 18px; font-style: "bold"
@@ -34,8 +44,7 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 #shoppingForm #shoppingMenu li { list-style: none; font-size : 14px; padding: 10px 0; }
 
 #shoppingForm #beanNTeaMenuDiv ,#shoppingForm #productMenuDiv{
-	background : #eee;
-	height: 25px;  
+	background : #eee; 
 	padding: 20px;
 	margin: 10px auto;
 	font-size : 18px;
@@ -71,17 +80,23 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 원두/차 메뉴 */
 #beanNTeaForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
 }
+#beanNTeaForm h1 {
+	font-size: 35px;
+	font-weight: bold;
+}
+
 
 /* 원두/차 게시판 목록네비  */
 #beanNTeaForm #beanNTeaNav {  
-	margin-bottom: 90px;
+	margin-bottom: 65px;
 }
 
 #beanNTeaForm #beanNTeaNav div{
 	float: right;
 	color: #777;
+	margin-top: 20px;
 }
 
 #beanNTeaForm #beanNTeaNav a{
@@ -120,7 +135,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #beanNTeaForm #beanMenuDiv ,#beanNTeaForm #teaMenuDiv{
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 10px auto;
 	font-size : 18px;
@@ -158,11 +172,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 상품 메뉴 */
 #productForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
 }
+#productForm h1 {
+	font-size: 35px;
+	font-weight: bold;
+}
+
 /*  상품 > 게시판 목록네비  */
 #productForm #productNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #productForm #productNav div{
@@ -212,7 +231,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 #productForm #thermosMenuDiv, 
 #productForm #coffeEtcMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 50px auto;
 	font-size : 18px;
@@ -281,12 +299,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 원두리스트 메뉴 폼 */
 #beanListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#beanListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 게시판 목록네비  */
 #beanListForm #beanListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #beanListForm #beanListNav div{
@@ -328,7 +350,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #beanListForm #beanMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -353,12 +374,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 차 리스트 메뉴 */
 #teaListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#teaListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 차 리스트 게시판 목록네비  */
 #teaListForm #teaListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #teaListForm #teaListNav div{
@@ -398,7 +423,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #teaListForm #teaMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -422,12 +446,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 머그 리스트 메뉴 */
 #mugListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#mugListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 머그 리스트 게시판 목록네비  */
 #mugListForm #mugListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #mugListForm #mugListNav div{
@@ -468,7 +496,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #mugListForm #mugMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -493,12 +520,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 글라스 리스트 메뉴 */
 #glassListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#glassListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 글라스 리스트 게시판 목록네비  */
 #glassListForm #glassListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #glassListForm #glassListNav div{
@@ -536,7 +567,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #glassListForm #glassMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -557,15 +587,20 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	
 }
 
+
 /* 플라스틱텀블러 리스트 메뉴 */
 #plasticTumblrListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#plasticTumblrListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 플라스틱 텀블러 리스트 게시판 목록네비  */
 #plasticTumblrListForm #plasticTumblrListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #plasticTumblrListForm #plasticTumblrListNav div{
@@ -604,7 +639,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #plasticTumblrListForm #plasticTumblrMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -628,12 +662,16 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 스테인리스텀블러 리스트 메뉴 */
 #stainlessTumblrListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#stainlessTumblrListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 스테인리스 텀블러 리스트 게시판 목록네비  */
 #stainlessTumblrListForm #stainlessTumblrListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #stainlessTumblrListForm #stainlessTumblrListNav div{
@@ -671,7 +709,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #stainlessTumblrListForm #stainlessTumblrMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -691,15 +728,20 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	
 }
 
+ 
 /* 보온병 리스트 메뉴 */
 #thermosListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#thermosListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 보온병 리스트 게시판 목록네비  */
 #thermosListForm #thermosListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #thermosListForm #thermosListNav div{
@@ -736,7 +778,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #thermosListForm #thermosMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -756,16 +797,20 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	
 }
 
-
+ 
 /* 커피용품 리스트 메뉴 */
 #coffeeEtcListForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
+}
+#coffeeEtcListForm h1 {
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 커피용품 리스트 게시판 목록네비  */
 #coffeeEtcListForm #coffeeEtcListNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #coffeeEtcListForm #coffeeEtcListNav div{
@@ -803,7 +848,6 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #coffeeEtcListForm #coffeeEtcMenuDiv {
 	background : #eee;
-	height: 25px;  
 	padding: 20px;
 	margin: 20px auto;
 	font-size : 18px;
@@ -827,16 +871,17 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 /* 쇼핑 상세페이지 */
 #shoppingDetailForm {
 	width: 60%;
-	margin: 40px auto;
+	margin: 120px auto 80px auto;
 }
 #shoppingDetailForm h1 {
-	padding-left: 12px;
+	font-size: 35px;
+	font-weight: bold;
 }
 
 /* 게시판 목록네비  */
 
 #shoppingDetailForm #shoppingDetailNav {  
-	margin-bottom: 70px;
+		margin-bottom: 65px;
 }
 
 #shoppingDetailForm #shoppingDetailNav div{
@@ -971,7 +1016,7 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #shoppingDetailForm table .length input {
 	width: 44px;
-	height: 30px;
+	height: 29px;
 	border: none;
 	border-right:1px solid #c6c6c6;
 	text-align:center;

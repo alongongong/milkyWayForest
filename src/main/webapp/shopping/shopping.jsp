@@ -2,14 +2,10 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/shopping.css">
 <form id="shoppingForm" name="shoppingForm">
-	<div id="top">
-		<div class="title">
-			<h1>쇼핑</h1>
-		</div>
-		<div class="Menubar">
-			<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
-			<a href="/milkyWayForest/shopping">Shopping</a>  
-		</div>
+	<h1>쇼핑</h1>
+	<div class="Menubar">
+		<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
+		<a href="/milkyWayForest/shopping">Shopping</a>  
 	</div>
 
 	<div id ="shoppingMenu">
@@ -27,7 +23,7 @@
 		
 		<div class="border"></div>
 		
-		<ul style="padding-left: 19px">
+		<ul style="padding-left: 7px; margin-bottom: 0;">
             <li>
 			 	<span id="menu2"><a href="/milkyWayForest/shopping/beanNTea">원두 / 차 </a> &nbsp; &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/beanList">원두</a>&nbsp; &nbsp;
@@ -35,7 +31,7 @@
 			</li>
 			
 			<li>
-				<span id="menu2" style="padding-right: 46px;"><a href="/milkyWayForest/shopping/product">상품 </a> &nbsp; &nbsp;</span>
+				<span id="menu2" style="padding-right: 42px;"><a href="/milkyWayForest/shopping/product">상품 </a> &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/mugList"> 머그</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/glassList"> 글라스</a>&nbsp; &nbsp;
 				<a href="/milkyWayForest/shopping/plasticTumblrList"> 플라스틱 텀블러</a>&nbsp; &nbsp;

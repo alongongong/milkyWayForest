@@ -246,6 +246,14 @@ public class MypageController {
 	}
 
 	//배송상품 주문정보 불러오기
+	@PostMapping("/getMainPaymentInfo")
+	@ResponseBody
+	public JSONObject getMainPaymentInfo(HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getMainPaymentInfo(id);
+	}
+		
+	//배송상품 주문정보 불러오기
 	@PostMapping("/getPaymentInfo")
 	@ResponseBody
 	public JSONObject getPaymentInfo(HttpSession session) {
@@ -280,14 +288,15 @@ public class MypageController {
 	//주문내역 상세내용 불러오기
 	@PostMapping("/getMyOrderInfo")
 	@ResponseBody
-	public PaymentDTO getMyOrderInfo(@RequestParam String paymentCode) {
+	public JSONObject getMyOrderInfo(@RequestParam String paymentCode) {
 		return mypageService.getMyOrderInfo(paymentCode);
 	}
 	
 	//주문 취소 신청 창
 	@GetMapping("/myOrderCancel")
-	public String myOrderCancel(@RequestParam String paymentCode, Model model) {
+	public String myOrderCancel(@RequestParam String paymentCode, @RequestParam String request, Model model) {
 		model.addAttribute("paymentCode", paymentCode);
+		model.addAttribute("request", request);
 		model.addAttribute("display", "mypage/mypageOrderCancel.jsp");
 		return "/index";
 	}
@@ -295,8 +304,29 @@ public class MypageController {
 	//주문 취소 DB 업데이트
 	@PostMapping("/updateMyOrderCancel")
 	@ResponseBody
-	public void updateMyOrderCancel(@RequestParam String paymentCode) {
-		mypageService.updateMyOrderCancel(paymentCode);
+	public void updateMyOrderCancel(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderCancel(paymentDTO);
+	}
+	
+	//주문 교환 DB 업데이트
+	@PostMapping("/updateMyOrderExchange")
+	@ResponseBody
+	public void updateMyOrderExchange(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderExchange(paymentDTO);
+	}
+	
+	//주문 반품 DB 업데이트
+	@PostMapping("/updateMyOrderReturn")
+	@ResponseBody
+	public void updateMyOrderReturn(@ModelAttribute PaymentDTO paymentDTO) {
+		mypageService.updateMyOrderReturn(paymentDTO);
+	}
+	
+	//주문취소내역 불러오기
+	@PostMapping("/getMyOrderCancelInfo")
+	@ResponseBody
+	public PaymentDTO getMyOrderCancelInfo(@RequestParam String paymentCode) {
+		return mypageService.getMyOrderCancelInfo(paymentCode);
 	}
 
 	//주문취소/교환/반품 내역 창
@@ -378,6 +408,7 @@ public class MypageController {
 	public MemberRatingDTO getMypageRating(String id) {
 		return mypageService.getMypageRating(id);
 	}
+
 	@GetMapping(value="/mypageCpnPnts")
 	public String mypageCpnPnts(@RequestParam int pg, Model model) {
 		model.addAttribute("pg", pg);
@@ -408,4 +439,5 @@ public class MypageController {
 		String id = (String) session.getAttribute("memId");
 		return mypageService.getCouponList(id);
 	}
+
 }

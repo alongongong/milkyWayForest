@@ -1,53 +1,92 @@
 @charset "UTF-8";
+
 #cartForm {
-	width: 80%;
-	margin: 0 auto;
+	width: 70%;
+	margin: 120px auto 100px;
+}
+#cartForm legend {
+	font-size: 28px;
+	font-weight: bold;
 }
 #cartForm #cartNotice {
 	background: #eee;
-	padding: 15px 40px;
+	padding: 17px 40px;
+	font-size: 14px;
 }
 #cartForm #cartNotice li:first-child {
 	color: olive;
 	font-weight: bold;
+	margin-bottom: 7px;
 }
 #cartForm #cartBody {
-	height: 1300px;
+	min-height: 750px;
 }
 #cartForm #cartTableDiv {
 	width: 75%;
 	float: left;
 }
-#cartForm #cartAllDeleteBtn, #cartForm #cartSelectDeleteBtn, #cartForm #cartSelectOrderBtn {
-	padding: 3px;
+#cartForm #cartTable {
+	margin-bottom: 0;
+}
+#cartForm #cartTable th {
+	font-size: 16px;
+	text-align: center;
+}
+#cartForm #cartTable td {
+	font-size: 14px;
+	vertical-align: middle;
+	padding: 7px 12px;
+}
+#cartForm #cartAllDeleteBtn, #cartForm #cartSelectDeleteBtn {
+	padding: 5px;
 	font-size: 10pt;
+}
+#cartForm #cartSelectOrderBtn {
+	padding: 5px;
+	font-size: 10pt;
+	color: #006633;
+	border: 1px solid #006633;
 }
 #cartForm #cartTotalDiv {
 	position: sticky;
 	float: right;
-	top: 140px;
+	top: 120px;
 	width: 23%;
 	border: 1px solid #999;
-	padding: 20px 10px;
+	padding: 20px 15px;
+	font-size: 14px;
 }
 #cartForm #cartOrderDetail {
 	border-bottom: 1px solid #ccc;
-	padding: 30px 0 10px 0;
+	padding: 10px 0 10px 0;
+}
+#cartForm #cartOrderDetail span,
+#cartForm #cartOrderTotal span {
+	float: right;
 }
 #cartForm #cartOrderTotal {
-	padding: 10px 0 30px 0;
-	color: #dc3545;
-	font-size: 13pt;
+	padding: 10px 0 20px 0;
+	color: #f02535;
+	font-size: 17px;
 }
 #cartForm #cartAllOrderBtn {
 	width: 100%;
-	height: 40px;
+	height: 48px;
 	margin: 5px 0;
+	font-size: 14px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
 }
 #cartForm #shoppingBtn {
 	width: 100%;
-	padding-top: 3px;
-	font-size: 10pt;
+	height: 35px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #154520;
+	border: 1px solid #154520;
+	box-shadow: none;
 }
 #cartForm #cartBody:after {
 	content: '';

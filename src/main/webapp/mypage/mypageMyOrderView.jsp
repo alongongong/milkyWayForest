@@ -30,31 +30,37 @@
 			<div>
 				<table class="table table-bordered">
 					<tr>
-						<td>주문일자</td>
+						<th>주문일자</th>
 						<td id="payDate"></td>
-						<td>주문번호</td>
+						<th>주문번호</th>
 						<td id="paymentCode"></td>
 					</tr>
 				</table>
 			</div>
 			<div>
+				<table class="table table-bordered" id="productInfoTable">
+					<tr>
+						<th scope="col">상품번호</th>
+						<th scope="col">상품사진</th>
+						<th scope="col">상품이름</th>
+						<th scope="col">상품금액(수량)</th>
+						<th scope="col">배송비</th>
+						<th scope="col">진행상태</th>
+					</tr>
+				</table>
+			</div>
+			<div id="orderChangeDiv">
+				<div class="navbar navbar-light alert-info">
+					<span id="orderChangeTitle" class="navbar-brand mb-0 h1"></span>			
+				</div>
 				<table class="table table-bordered">
 					<tr>
-						<td scope="col">상품번호</td>
-						<td scope="col">상품이름</td>
-						<td scope="col">상품금액(수량)</td>
-						<td scope="col">배송비</td>
-						<td scope="col">진행상태</td>
+						<th id="orderChangeReason"></th>
+						<td id="reason"></td>
 					</tr>
 					<tr>
-						<td id="productCode"></td>
-						<td id="productName"></td>
-						<td>
-							<span id="payPrice"></span>원<br>
-							<span id="payQty"></span>개
-						</td>
-						<td id="shipPay"></td>
-						<td id="deliveryInfo"></td>
+						<th>상세사유</th>
+						<td id="detailReason"></td>
 					</tr>
 				</table>
 			</div>
@@ -68,23 +74,23 @@
 			<div id="paymentTotal">
 				<table class="table table-bordered">
 					<tr>
-						<td>총 상품금액</td>
+						<th>총 상품금액</th>
 						<td id="totalProductPrice"></td>
 					</tr>
 					<tr>
-						<td>총 할인금액</td>
+						<th>총 할인금액</th>
 						<td id="totalSalePrice"></td>
 					</tr>
 					<tr>
-						<td>배송비</td>
+						<th>배송비</th>
 						<td id="shipPay"></td>
 					</tr>
 					<tr>
-						<td>총 결제금액</td>
+						<th>총 결제금액</th>
 						<td id="totalPayPrice"></td>
 					</tr>
 					<tr>
-						<td>적립금</td>
+						<th>적립금</th>
 						<td id="savedMoney"></td>
 					</tr>
 				</table>
@@ -98,27 +104,28 @@
 			<div>
 				<table class="table table-bordered">
 					<tr>
-						<td>수령인</td>
+						<th>수령인</th>
 						<td id="payShipReceiver"></td>
 					</tr>
 					<tr>
-						<td>연락처</td>
+						<th>연락처</th>
 						<td id="payShipTel"></td>
 					</tr>
 					<tr>
-						<td>배송지</td>
+						<th>배송지</th>
 						<td>
 							우편번호<span id="payShipZipcode"></span><br>
 							주소<span id="payShipAddr"></span>
 						</td>
 					</tr>
 					<tr>
-						<td>배송메모</td>
+						<th>배송메모</th>
 						<td id="shipMemo"></td>
 					</tr>
 				</table>
 			</div>
 		</div>
+		<div id="myOrderView4"></div>
 	</div>
 	
 </div><!-- main-wrapper -->
@@ -133,49 +140,119 @@ $(function(){
 		type: 'post',
 		data: 'paymentCode='+$('#paymentCode').val(),
 		success: function(data){
+			//alert(JSON.stringify(data));
 			//console.log(JSON.stringify(data));
-			if(data != ''){
-				if(data.deliveryInfo=='입금대기중' || data.deliveryInfo=='결제완료' || data.deliveryInfo=='배송준비중' || data.deliveryInfo=='배송중'){
-					$('#orderCancleBtn').show();
+			if(data.paymentList != ''){
+				var payQty=0;
+				var payPrice=0;
+				var payRate=0;
+				var shipPay=0;
+				
+				var totalProductPrice=0;
+				var totalSalePrice=0;
+				var totalPayPrice=0;
+				
+				
+				$.each(data.paymentList, function(index, items) {
+					if(items.deliveryInfo=='입금대기중' || items.deliveryInfo=='결제완료' || items.deliveryInfo=='배송준비중' || items.deliveryInfo=='배송중'){
+						$('#orderCancleBtn').show();
+	
+					}else if(items.deliveryInfo=='배송완료'){
+						$('#orderExchangeBtn').show();
+						$('#orderReturnBtn').show();
+					}
+					
+					$('#myOrderView1 #payDate').html(items.payDate);
+					$('#myOrderView1 #paymentCode').html(items.paymentCode);
+					
+					$('<tr>').append($('<td>',{
+						text: items.productCode
+					})).append($('<td>',{}).append($('<img>',{
+						id: 'productImageName'+index,
+						src: '/milkyWayForest/productImage/'+items.productImageName,
+						width: '100px',
+						heigiht: '100px'
+					}))).append($('<td>',{
+						text: items.productName
+					})).append($('<td>',{
+						text: items.payPrice+' ('+items.payQty+'개)'
+					})).append($('<td>',{
+						text: items.shipPay
+					})).append($('<td>',{
+						text: items.deliveryInfo
+					})).appendTo($('#productInfoTable'));
+					
+					payQty = items.payQty*1;
+					payPrice = items.payPrice*1;
+					payRate = items.payRate*1;
+					shipPay = items.shipPay*1;
+					
+					totalProductPrice += payQty*payPrice;
+					totalSalePrice += payQty*payPrice*payRate/100;
+					totalPayPrice += payQty*payPrice*(1-payRate/100);
+					
+					$('#myOrderView2 #totalProductPrice').html(totalProductPrice);
+					$('#myOrderView2 #totalSalePrice').html(totalSalePrice);
+					$('#myOrderView2 #shipPay').html(items.shipPay);
+					$('#myOrderView2 #savedMoney').html(items.newSavedMoney);
 
-				}else if(data.deliveryInfo=='배송완료'){
-					$('#orderExchangeBtn').show();
-					$('#orderReturnBtn').show();
-				}
-
-				$('#myOrderView1 #payDate').html(data.payDate);
-				$('#myOrderView1 #paymentCode').html(data.paymentCode);
-				$('#myOrderView1 #productCode').html(data.productCode);
-				$('#myOrderView1 #productName').html(data.productName);
-				$('#myOrderView1 #payPrice').html(data.payPrice);
-				$('#myOrderView1 #payQty').html(data.payQty);
-				$('#myOrderView1 #shipPay').html(data.shipPay);
-				$('#myOrderView1 #deliveryInfo').html(data.deliveryInfo);
+					var payShipTel = items.payShipTel1+"-"+items.payShipTel2+"-"+items.payShipTel3;
+					var payShipAddr = items.payShipAddr1+" "+items.payShipAddr2
+					
+					$('#myOrderView3 #payShipReceiver').html(items.payShipReceiver);
+					$('#myOrderView3 #payShipTel').html(payShipTel);
+					$('#myOrderView3 #payShipZipcode').html(items.payShipReceiver);
+					$('#myOrderView3 #payShipAddr').html(payShipAddr);
+					$('#myOrderView3 #shipMemo').html(items.shipMemo);
+				});
 				
-				var payQty = data.payQty*1;
-				var payPrice = data.payPrice*1;
-				var payRate = data.payRate*1;
-				var shipPay = data.shipPay*1;
-				
-				var totalProductPrice = payQty*payPrice;
-				var totalSalePrice = payQty*payPrice*payRate/100;
-				var totalPayPrice = payQty*payPrice*(1-payRate/100) + shipPay;
-				
-				$('#myOrderView2 #totalProductPrice').html(totalProductPrice);
-				$('#myOrderView2 #totalSalePrice').html(totalSalePrice);
-				$('#myOrderView2 #shipPay').html(data.shipPay);
+				totalPayPrice += shipPay;
 				$('#myOrderView2 #totalPayPrice').html(totalPayPrice);
-				$('#myOrderView2 #savedMoney').html(data.newSavedMoney);
 				
-				var payShipTel = data.payShipTel1+"-"+data.payShipTel2+"-"+data.payShipTel3;
-				var payShipAddr = data.payShipAddr1+" "+data.payShipAddr2
-				
-				$('#myOrderView3 #payShipReceiver').html(data.payShipReceiver);
-				$('#myOrderView3 #payShipTel').html(payShipTel);
-				$('#myOrderView3 #payShipZipcode').html(data.payShipReceiver);
-				$('#myOrderView3 #payShipAddr').html(payShipAddr);
-				$('#myOrderView3 #shipMemo').html(data.shipMemo);
-			}	
+				$('#productInfoTable').rowspan(4);
+				$('#productInfoTable').rowspan(5);
+
+			}//if	
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+
+$(function(){
+	//취소 교환 반품 사유
+	$.ajax({
+		url: '/milkyWayForest/mypage/getMyOrderCancelInfo',
+		type: 'post',
+		data: 'paymentCode='+$('#paymentCode').val(),
+		success: function(data){
+			//console.log(JSON.stringify(data));
+			if(data.deliveryInfo != 'false'){
+				if(data.deliveryInfo=='취소'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('주문취소');
+					$('#orderChangeReason').html('주문취소사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+					
+				}else if(data.deliveryInfo=='교환'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('교환신청');
+					$('#orderChangeReason').html('교환사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+					
+				}else if(data.deliveryInfo=='반품'){
+					$('#orderChangeDiv').show();
+					$('#orderChangeTitle').html('반품신청');
+					$('#orderChangeReason').html('반품사유');
+					$('#reason').html(data.reason);
+					$('#detailReason').html(data.detailReason);
+				}
+			}
 
 		},
 		error: function(err){
@@ -188,12 +265,68 @@ $('#myOrderView1 #reorderBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
 });
 $('#myOrderView1 #orderCancleBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=취소';
 });
 $('#myOrderView1 #orderExchangeBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderExchange?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=교환';
 });
 $('#myOrderView1 #orderReturnBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myOrderReturn?paymentCode='+$('#paymentCode').val();
+	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=반품';
 });
+
+$.fn.colspan = function(rowIdx) {
+	return this.each(function(){
+		
+		var that;
+		$('tr', this).filter(":eq("+rowIdx+")").each(function(row) {
+			$(this).find('th').filter(':visible').each(function(col) {
+				if ($(this).html() == $(that).html()) {
+					colspan = $(that).attr("colSpan") || 1;
+					colspan = Number(colspan)+1;
+					
+					$(that).attr("colSpan",colspan);
+					$(this).hide(); // .remove();
+				} else {
+					that = this;
+				}
+				
+				// set the that if not already set
+				that = (that == null) ? this : that;
+				
+			});
+		});
+	});
+};
+$.fn.rowspan = function(colIdx, isStats) {       
+	return this.each(function(){      
+		var that;     
+		$('tr', this).each(function(row) {      
+			$('td:eq('+colIdx+')', this).filter(':visible').each(function(col) {
+				
+				if ($(this).html() == $(that).html()
+					&& (!isStats 
+							|| isStats && $(this).prev().html() == $(that).prev().html()
+							)
+					) {            
+					rowspan = $(that).attr("rowspan") || 1;
+					rowspan = Number(rowspan)+1;
+
+					$(that).attr("rowspan",rowspan);
+					
+					// do your action for the colspan cell here            
+					$(this).hide();
+					
+					//$(this).remove(); 
+					// do your action for the old cell here
+					
+				} else {            
+					that = this;         
+				}          
+				
+				// set the that if not already set
+				that = (that == null) ? this : that;      
+			});     
+		});    
+	});  
+}; 
 </script>

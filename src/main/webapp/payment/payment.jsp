@@ -25,7 +25,7 @@
 			<p>주문자정보</p>
 			<table id="ordererTable" class="table">
 				<tr>
-					<th>이름</th>
+					<th width="200">이름</th>
 					<td><input type="text" id="name" name="name">
 				</tr>
 				<tr>
@@ -59,12 +59,12 @@
 				<tr>
 					<td colspan="2">
 						<select id="shipSelect">
-							<option> ----배송지를 선택해주세요---- </option>
+							<option style="text-align:center;"> ---------- 배송지를 선택해주세요 ---------- </option>
 						</select>
 					</td>
 				</tr>
 				<tr>
-					<th>배송지명</th>
+					<th width="200">배송지명</th>
 					<td>
 						<input type="text" id="payShipNickname" name="payShipNickname">
 					</td>
@@ -94,7 +94,7 @@
 					<th>수령지 주소</th>
 					<td>
 						<input type="text" id="payShipZipcode" name="payShipZipcode" readonly>
-						<input type="button" class="btn btn-outline-secondary" id="payShipZipcodeBtn" value="우편번호 검색"><br>
+						<input type="button" class="btn" id="payShipZipcodeBtn" value="우편번호 검색"><br>
 						<input type="text" id="payShipAddr1" name="payShipAddr1" readonly><br>
 						<input type="text" id="payShipAddr2" name="payShipAddr2">
 					</td>
@@ -102,16 +102,16 @@
 				<tr>
 					<th>배송 메모</th>
 					<td>
-						<textarea cols="50" rows="5" name="shipMemo"></textarea>
+						<textarea id="shipMemo" name="shipMemo"></textarea>
 					</td>
 				</tr>
 			</table>
 		</div> <!-- paymentShip -->
 		<div id="paymentSaleSelect" class="item">
-			적립금/쿠폰
+			<p>적립금/쿠폰</p>
 			<table id="paymentSaleSelectTable" class="table">
 				<tr>
-					<th>적립금</th>
+					<th width="200">적립금</th>
 					<td>
 						<input type="text" id="paymentSavedMoney" name="paymentSavedMoney" value="0">
 						<div id="haveSavedMoneyDiv"> 보유 적립금 : 
@@ -123,7 +123,7 @@
 					<th>할인쿠폰</th>
 					<td>
 						<select id="paymentCoupon" name="paymentCoupon">
-							<option> ----쿠폰을 선택해주세요----</option>
+							<option style="text-align: center;"> ---------- 쿠폰을 선택해주세요 ---------- </option>
 						</select>
 						<div id="haveCouponDiv"> 보유 쿠폰수 : 
 							<span id="haveCoupon"></span> 장
@@ -133,7 +133,7 @@
 			</table>
 		</div> <!-- paymentSaleSelect -->
 		<div id="paymentMethod" class="item">
-			결제정보
+			<p>결제정보</p>
 			<ul class="table">
 				<li>
 					<input type="radio" id="paymentMethodCheck1" name="paymentMethod" value="무통장입금">
@@ -161,8 +161,8 @@
 					<input type="hidden" id="shipPay1" name="shipPay"><br>
 				<p>총 결제금액<span id="totalPayPrice"></span></p>
 				
-				<input type="button" id="paymentOrderBtn" class="btn btn-danger" value="주문하기">
-				<input type="button" id="paymentCancelBtn" class="btn btn-outline-secondary" value="취소">
+				<input type="button" id="paymentOrderBtn" class="btn" value="주문하기">
+				<input type="button" id="paymentCancelBtn" class="btn" value="취소">
 				<div id="paymentDiv"></div> <!-- 유효성검사 -->
 			</div> <!-- paymentTotal -->
 		</div> <!-- paymentStickyDiv -->
@@ -323,9 +323,12 @@ $(function(){
 				//alert(items.cartCode)
 				
 				$('<tr>').append($('<td>',{
-					text: items.productName,
-					colspan: '2',
-					style: 'padding-left: 30px;'
+					style: 'width: 70px; padding: 0 40px;'
+				}).append($('<img>',{
+					src: '/milkyWayForest/productImage/'+items.productImageName,
+					style: 'height: 70px; margin: 0;'
+				}))).append($('<td>',{
+					text: items.productName
 				}).append($('<input>',{
 					type: 'hidden',
 					name: 'productCode',

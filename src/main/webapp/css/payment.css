@@ -1,13 +1,26 @@
 @charset "UTF-8";
+
 #paymentForm {
-	width: 80%;
-	margin: 0 auto;
+	width: 70%;
+	margin: 120px auto 200px;
+}
+#paymentForm legend {
+	font-size: 35px;
+	font-weight: bold;
+}
+#paymentForm table th {
+	vertical-align: middle;
+	font-size: 14px;
+}
+#paymentForm table td {
+	vertical-align: middle;
+	font-size: 14px;
 }
 #paymentForm #paymentContainer {
 	display: grid;
 	grid-template-columns: 75% 23%;
 	column-gap: 2%;
-	height: 1300px;
+	min-height: 1300px;
 }
 #paymentForm .item:nth-child(1){
 	grid-column: 1 / 3;
@@ -15,37 +28,55 @@
 }
 #paymentForm .item:last-child {
 	grid-column: 2 / 3;
-	grid-row: 2 / 5;
+	grid-row: 2 / 6;
 }
 #paymentForm #leftDiv {
 	width: 75%;
 }
 #paymentForm #rightDiv {
 	width: 23%;
+
 }
 #paymentForm #paymentTotal {
 	position: sticky;
 	border: 1px solid #999;
-	margin-top: 40px;
-	padding: 30px 10px 10px 10px;
-	top: 140px;
+	margin-top: 63px;
+	padding: 30px 15px 5px 15px;
+	top: 120px;
+	font-size: 14px;
+}
+#paymentForm #paymentStickDiv span {
+	float: right;
+	font-size: 14px;
 }
 #paymentForm #paymentTotal p {
 	margin-top: 30px; 
 	padding: 10px 0;
 	color: #dc3545;
-	font-size: 13pt;
+	font-size: 17px;
 	border-top: 1px solid #ccc;
+}
+#paymentForm #paymentStickDiv #paymentTotal #totalPayPrice {
+	font-size: 16px;
 }
 #paymentForm #paymentOrderBtn {
 	width: 100%;
-	height: 40px;
-	margin: 5px 0;
+	height: 48px;
+	margin: 15px 0 5px 0;
+	font-size: 14px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+	box-shadow: none;
 }
 #paymentForm #paymentCancelBtn {
 	width: 100%;
-	padding-top: 3px;
-	font-size: 10pt;
+	height: 35px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #154520;
+	border: 1px solid #154520;
+	box-shadow: none;
 }
 #paymentForm .table {
 	border-top: 2px solid #999;
@@ -61,6 +92,7 @@
 }
 #paymentForm #paymentMethod li {
 	list-style: none;
+	font-size: 14px;
 }
 #paymentForm #haveSavedMoneyDiv, #paymentForm #haveCouponDiv {
 	display: inline-block;
@@ -75,9 +107,77 @@
 	text-align: center;
 }
 #paymentForm #paymentDiv {
-	color: #dc3545;
-	font-size: 9pt;
 	font-weight: bold;
-	text-align: center;
-	margin: 15px 0;
+	margin: 10px 0;
+	height: 15px;
+    font-size: 12px;
+    color: #777;
+}
+#paymentForm #paymentContainer > div > p {
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#paymentForm #ordererTable #name, #paymentForm #paymentShipTable #payShipNickname,
+#paymentForm #paymentShipTable #payShipReceiver, #paymentForm #paymentSaleSelectTable #paymentSavedMoney, 
+#paymentForm #paymentShipTable #payShipAddr1, #paymentForm #paymentShipTable #payShipAddr2 {
+	width: 500px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #ordererTable #email1, #paymentForm #ordererTable #email2 {
+	width: 239px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #ordererTable #tel1, #paymentForm #ordererTable #tel2,
+#paymentForm #ordererTable #tel3, #paymentForm #paymentShipTable #payShipTel1,
+#paymentForm #paymentShipTable #payShipTel2, #paymentForm #paymentShipTable #payShipTel3 {
+	width: 156px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentShipTable #shipSelect {
+	width: 700px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentSaleSelectTable #paymentCoupon {
+	width: 500px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentShipTable #payShipZipcode {
+	width: 350px;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+#paymentForm #paymentShipTable #payShipZipcodeBtn {
+	width: 145px;
+	height: 35px;
+	border: 1px solid #154520;
+	color: #154520;
+	font-size: 14px;
+	font-weight: bold;
+	box-shadow: none;
+}
+#paymentForm #paymentShipTable #shipMemo {
+	width: 500px;
+	height: 125px;
+	resize: none;
+	outline: none;
+	border: 1px solid #777;
 }

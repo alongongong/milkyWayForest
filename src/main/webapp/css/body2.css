@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+* {
+	border:0;
+	padding:0;
+	margin:0;
+}
+
+
+
+div {
+	display:flex;  /* 글자를 사진 위에 올리는거  */
+	align-items:center; /* 원하는 div 높이 크기만큼만 가운데 배치하는거 이거 안하면 뷰포트 높이만큼 div 가 잡혀버림*/
+ 	justify-content:center;   /* 가운데 배치 */
+	width: 100%;
+	height: 100vh;  /* 뷰포트 높이 */
+
+}
+h2 {
+	font-size: 20px;
+	/* background:#eee;
+	padding: 8px 24px; */
+	color: white;
+	font-weight: bold;
+	margin-bottom: 20px;
+	
+}
+p {
+	font-size: 14px;
+	color: white;
+	font-weight: bold;
+	margin-top: 15%;
+}
+
+div:nth-child(1) {  /* :nth-child(1) 속성을 안쓰면 안나타나는거 같음  */
+	background-image:url(/milkyWayForest/image/sbg_new.jpg);
+	background-size: cover;
+	
+}
+
+/* [data-trigger] { 속성선택자.데이터 트리거라는 속성이 있는.  데이터 트리거라는 속성이 있는 
+	opacity: 0;
+	position:relative;
+	top:20px;
+	transition: 0.5s ease-out;
+}
+[data-trigger].visible {
+	opacity: 1;
+	top: 0;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 애니메이션  동시에 나타나는거 */
+
+div:nth-child(1) h2 { 
+	animation: showText 2s;
+	animation-fill-mode: forwards;
+	animation-delay:0.2s;
+}
+
+@keyframes showText {
+	  0% {
+	   opacity:0;
+	   left:100%;
+	   transform:translateX(-550%);
+
+	 
+	  }
+	
+	  100% {
+	  	opacity:1;
+	  	left: 70%;
+	    transform:translateX(60%);
+	  
+	  }
+
+}
+
+/* 애니메이션  동시에 나타나는거 */
+div:nth-child(1) p {
+	margin-top: 5%;
+	margin-left: 30%;
+	animation: showText2 2s;
+	animation-fill-mode:forwards;
+	animation-delay:0.1s;
+}
+
+@keyframes showText2 {
+	  0% {
+	   opacity:0;
+	   transform:translateX(-400%);
+		
+	 
+	  }
+	 
+	
+	  100% {
+	  	opacity:1;
+	   transform:translateX(-10%);
+	  
+	  }
+}
+
+
+div:nth-child(1) h2 { 
+	animation: showText 2s;
+	animation-fill-mode: forwards;
+	animation-delay:0.2s;
+}
+
+@keyframes showText {
+	  0% {
+	   opacity:0;
+	   left:100%;
+	   transform:translateX(-550%);
+
+	 
+	  }
+	
+	  100% {
+	  	opacity:1;
+	  	left: 70%;
+	    transform:translateX(60%);
+	  
+	  }
+
+}
+
+div:nth-child(1) p {
+	margin-top: 5%;
+	margin-left: 30%;
+	animation: showText2 2s;
+	animation-fill-mode:forwards;
+	animation-delay:0.1s;
+}
+
+@keyframes showText2 {
+	  0% {
+	   opacity:0;
+	   transform:translateX(-400%);
+		
+	 
+	  }
+	 
+	
+	  100% {
+	  	opacity:1;
+	   transform:translateX(-10%);
+	  
+	  }
+} 
+
+
+
+
+div:nth-child(2) {
+	background: skyblue;
+
+}
+
+div:nth-child(3){ 
+	/* height: 80%; */
+	background-image: url(/milkyWayForest/image/sbg_new.jpg);
+	background-attachment: fixed;  /* 고정되도록 하면 시차효과가 나타남  */
+	background-size: cover;
+}
+
+/* 애니메이션 */
+div:nth-child(3) h2 {
+	animation: showTextCh31 2s;
+	animation-fill-mode: forwards;
+	animation-delay:0.1s;
+} 
+
+@keyframes showTextCh31 {
+	  0% {
+	   opacity:0;
+	   /* left:100%; */
+	 /*   transform:translateX(-550%); */
+
+	 
+	  }
+	
+	  100% {
+	  	opacity:1;
+	  /* 	left: 70%; */
+	  /*   transform:translateX(50%); */
+	  
+	  }
+
+}
+
+div:nth-child(3) p {
+	animation: showTextCh32 2s;
+	animation-fill-mode:both;
+	animation-delay:0.5s;
+}
+
+@keyframes showTextCh32 {
+	  0% {
+	   opacity:0;
+	  /*  transform:translateX(-400%); */
+		
+	  }
+	 
+	  100% {
+	  	opacity:1;
+	  /*  transform:translateX(-100%); */
+	  
+	  }
+}
+
+div:nth-child(3) h1 {
+	 height: 100px;
+	
+}
+
+div:nth-child(3) h1 span{
+	position: relative;
+  top: 20px;
+  display: inline-block;
+  animation: bounce .3s ease infinite alternate;
+  font-family: 'Titan One', cursive;
+  font-size: 80px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #CCC,
+               0 2px 0 #CCC,
+               0 3px 0 #CCC,
+               0 4px 0 #CCC,
+               0 5px 0 #CCC,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0, 0, 0, .4);
+}	
+div:nth-child(3) h1 span:nth-child(2) { animation-delay: .1s; }
+div:nth-child(3) h1 span:nth-child(3) { animation-delay: .2s; }
+div:nth-child(3) h1 span:nth-child(4) { animation-delay: .3s; }
+div:nth-child(3) h1 span:nth-child(5) { animation-delay: .4s; }
+div:nth-child(3) h1 span:nth-child(6) { animation-delay: .5s; }
+div:nth-child(3) h1 span:nth-child(7) { animation-delay: .6s; }
+div:nth-child(3) h1 span:nth-child(8) { animation-delay: .7s; }
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC,
+                 0 50px 25px rgba(0, 0, 0, .2);
+  }
+}
+
+	
+div:nth-child(4) { 
+	background: aquamarine;
+}
+
+
+

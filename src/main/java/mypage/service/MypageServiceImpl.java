@@ -110,6 +110,40 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
+	public JSONObject getMainPaymentInfo(String id) {
+		List<PaymentDTO> paymentList = mypageDAO.getMainPaymentInfo(id);
+		int countCoupon = mypageDAO.countCoupon(id);
+		int countPayment = mypageDAO.countPayment(id);
+		
+		int countPending = mypageDAO.countPending(id);
+		int countFinished = mypageDAO.countFinished(id);
+		int countProcessing = mypageDAO.countProcessing(id);
+		int countShipping = mypageDAO.countShipping(id);
+		int countShipped = mypageDAO.countShipped(id);
+		int countCancel = mypageDAO.countCancel(id);
+		int countExchange = mypageDAO.countExchange(id);
+		int countReturn = mypageDAO.countReturn(id);
+		int countRefund = mypageDAO.countRefund(id);
+		
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+		json.put("countCoupon", countCoupon);
+		json.put("countPayment", countPayment);
+		
+		json.put("countPending", countPending);
+		json.put("countFinished", countFinished);
+		json.put("countProcessing", countProcessing);
+		json.put("countShipping", countShipping);
+		json.put("countShipped", countShipped);
+		json.put("countCancel", countCancel);
+		json.put("countExchange", countExchange);
+		json.put("countReturn", countReturn);
+		json.put("countRefund", countRefund);
+		
+		return json;
+	}
+	
+	@Override
 	public JSONObject getPaymentInfo(String id) {
 		List<PaymentDTO> paymentList = mypageDAO.getPaymentList(id);
 		int countCoupon = mypageDAO.countCoupon(id);
@@ -177,8 +211,13 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public PaymentDTO getMyOrderInfo(String paymentCode) {
-		return mypageDAO.getMyOrderInfo(paymentCode);
+	public JSONObject getMyOrderInfo(String paymentCode) {
+		List<PaymentDTO> paymentList = mypageDAO.getMyOrderInfo(paymentCode);
+
+		JSONObject json = new JSONObject();
+		json.put("paymentList", paymentList);
+
+		return json;
 	}
 	
 	@Override
@@ -274,8 +313,18 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public void updateMyOrderCancel(String paymentCode) {
-		mypageDAO.updateMyOrderCancel(paymentCode);
+	public void updateMyOrderCancel(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderCancel(paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderExchange(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderExchange(paymentDTO);
+	}
+	
+	@Override
+	public void updateMyOrderReturn(PaymentDTO paymentDTO) {
+		mypageDAO.updateMyOrderReturn(paymentDTO);
 	}
 	
 	@Override
@@ -325,6 +374,15 @@ public class MypageServiceImpl implements MypageService {
 		return mypageDAO.getCouponList(id);
 	}
 
+	public PaymentDTO getMyOrderCancelInfo(String paymentCode) {
+		PaymentDTO paymentDTO = mypageDAO.getMyOrderCancelInfo(paymentCode);
+		
+		if(paymentDTO.getDetailReason() != null) {
+			paymentDTO.setDetailReason(paymentDTO.getDetailReason().replace("\n", "<br>"));
+		}
+		
+		return paymentDTO;
+	}
 
 
 }

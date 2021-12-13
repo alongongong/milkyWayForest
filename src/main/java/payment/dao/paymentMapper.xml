@@ -15,10 +15,11 @@
 	</select>
 	
 	<select id="getPayment" parameterType="String" resultType="cart">
-		select cartCode, id, productCode, cartOption, cartQty, productName, productUnit, productRate
+		select cartCode, id, productCode, cartOption, cartQty, productName, productUnit, productRate, productImageName
 			from milkycart
 			join milkyproductinfo using(productCode)
-		where cartcode=#{cartCode}
+			join milkyproductImage using(productCode)
+		where cartcode=#{cartCode} and substr(productImagename,5,2) in('.j', '_1', '.p')
 	</select>
 	
 	<select id="getMember" parameterType="String" resultType="member">

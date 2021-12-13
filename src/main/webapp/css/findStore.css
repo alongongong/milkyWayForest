@@ -2,33 +2,65 @@
 #findStoreDiv {
 	width: 100%;
 	position: relative;
-	margin: 0;
-	top: -17px;
+	margin: 120px 0 0;
 }
 #findStoreDiv #storeList {
 	position: absolute;
-	width: 375px;
-	height: 70%;
+	width: 320px;
+	height: 80%;
 	background: white;
-	margin: auto 30px;
-	top: 60px;
+	margin: auto 20px;
+	top: 25px;
 	z-index: 10;
-	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+#findStoreDiv #storeFindSubject {
+	background: #106439;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	width: 100%;
+	height: 60px;
+	text-align: center;	
+	padding: 20px 0;
+}
+#findStoreDiv #storeListBorder {
+	margin: 0 0 3px 3px;
 	overflow: auto;
+}
+#findStoreDiv #storeListBorder::-webkit-scrollbar {
+	width: 5px;
+}
+#findStoreDiv #storeListBorder::-webkit-scrollbar-thumb {
+	background-color: #666;
+	border-radius: 5px;
+}
+#findStoreDiv #storeListBorder::-webkit-scrollbar-track {
+	background-color: #ccc;
 }
 #findStoreDiv #storeMap {
 	width: 100%;
-	height: 900px;
+	height: 830px;
 	z-index: 0;
 	position: relative;
 	overflow: hidden;
 }
 #findStoreDiv .storeList {
-	border: 1px solid #999;
-	padding: 20px 15px 10px 15px;
-	font-size: 10pt;
+	border-bottom: 1px solid #ccc;
+	padding: 20px 15px;
+	font-size: 12px;
+	display: grid;
+	grid-template-columns: 230px 30px;
+	grid-column-gap: 10px;
 }
 #findStoreDiv .storeName {
 	font-weight: bold;
-	font-size: 11pt;
+	font-size: 14px;
+	cursor: pointer;
+}
+#findStoreDiv .storePin {
+	grid-column: 2 / 3;
+	grid-row: 1 / 3;
+	cursor: pointer;
 }
