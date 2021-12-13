@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import comment.bean.CommentDTO;
+import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
@@ -407,21 +408,36 @@ public class MypageController {
 	public MemberRatingDTO getMypageRating(String id) {
 		return mypageService.getMypageRating(id);
 	}
-	
-	//재주문 창
-	@GetMapping("/myreorder")
-	public String myreorder(@RequestParam String paymentCode, Model model) {
-		model.addAttribute("paymentCode", paymentCode);
-		model.addAttribute("display", "mypage/myreorder.jsp");
+
+	@GetMapping(value="/mypageCpnPnts")
+	public String mypageCpnPnts(@RequestParam int pg, Model model) {
+		model.addAttribute("pg", pg);
+		model.addAttribute("display", "mypage/mypageCpnPnts.jsp");
 		return "/index";
 	}
-	
-	//재주문 정보
-	@PostMapping("/getMyReorderInfo")
+	@PostMapping(value="/getMemberdate")
 	@ResponseBody
-	public JSONObject getMyReorderInfo(@RequestParam String paymentCode, HttpSession session) {
-		String id = (String) session.getAttribute("memId");
-		return mypageService.getMyReorderInfo(paymentCode, id);
+	public MemberDTO getMemberdate(String id) {
+		return mypageService.getMemberdate(id);
 	}
 	
+	@PostMapping(value="/getPaymentSaveMoneyList")
+	@ResponseBody
+	public JSONObject getPaymentSaveMoneyList(@RequestParam int pg, HttpSession session){
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getPaymentSaveMoneyList(id, pg);
+	}
+	
+	@GetMapping("/mypageCoupon")	
+	public String mypageCoupon(Model model) {
+		model.addAttribute("display", "mypage/mypageCoupon.jsp");
+		return "/index";
+	}
+	@PostMapping(value="/getCouponList")
+	@ResponseBody
+	public List<MemberCouponDTO> getCouponList(HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		return mypageService.getCouponList(id);
+	}
+
 }

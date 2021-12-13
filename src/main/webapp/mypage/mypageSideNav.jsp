@@ -26,7 +26,10 @@
 	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageRating">등급/혜택</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link alert-link" href="#">적립금/쿠폰</a>
+	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageCpnPnts?pg=1">적립금</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link alert-link" href="/milkyWayForest/mypage/mypageCoupon">쿠폰</a>
 	  </li>
 
 	  <li class="nav-item alert-info">

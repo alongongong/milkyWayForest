@@ -20,7 +20,9 @@
 		
 		<div id="menuDetailView">
 			<div id="menuImgDiv" class="items">
-				<img id="bigImg">
+				<div id="menuDetailBigImg">
+					<img id="bigImg" class="imgClick">
+				</div>
 				<ul class="imgList">
 					<li class="on"><img></li>
 				</ul>

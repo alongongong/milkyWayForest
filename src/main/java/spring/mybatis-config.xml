@@ -33,6 +33,8 @@
 		
 		<typeAlias type="mypage.bean.MemberRatingDTO" alias="rating"/>
 		
+		<typeAlias type="member.bean.MemberCouponDTO" alias="memberCoupon"/>
+		
 		<typeAlias type="cart.bean.CartDTO" alias="cart"/>
 	</typeAliases>
 </configuration>

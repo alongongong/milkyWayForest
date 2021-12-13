@@ -50,13 +50,14 @@ $(function(){
 				}).append($('<div>',{
 					width: '70%',
 					height: '300px',
-					style: 'cursor: pointer;',
+					style: 'cursor: pointer; overflow:hidden;',
 					position: 'relative'
 				}).append($('<img>',{
 					src: items.menuImg,
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
+					class: 'imgClick'
 				}).append($('<input>',{
 					type: 'hidden',
 					id: 'menuCode'+index,
@@ -89,13 +90,14 @@ $(function(){
 				}).append($('<div>',{
 					width: '70%',
 					height: '300px',
-					style: 'cursor: pointer;',
+					style: 'cursor: pointer; overflow:hidden;',
 					position: 'relative'
 				}).append($('<img>',{
 					src: items.menuImg,
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
+					class: 'imgClick'
 				}).append($('<input>',{
 					type: 'hidden',
 					id: 'menuCode'+index,
