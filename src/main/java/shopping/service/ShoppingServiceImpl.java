@@ -8,6 +8,8 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import paging.BoardPaging;
+import shopping.bean.ReviewDTO;
 import shopping.bean.ShoppingDTO;
 import shopping.dao.ShoppingDAO;
 
@@ -15,6 +17,8 @@ import shopping.dao.ShoppingDAO;
 public class ShoppingServiceImpl implements ShoppingService {
 	@Autowired
 	private ShoppingDAO shoppingDAO;
+	@Autowired
+	private BoardPaging boardPaging;
 
 	@Override
 	public List<ShoppingDTO> getShoppingList() {
@@ -139,11 +143,26 @@ public class ShoppingServiceImpl implements ShoppingService {
 		map.put("endNum", endNum);
 		map.put("productCode", productCode);
 		
-		int reviewTotalA = shoppingDAO.getReviewTotalA();
-		return null;
+		int reviewTotalA = shoppingDAO.getReviewTotalA(productCode);
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(5);
+		boardPaging.setPageSize(5);
+		boardPaging.setTotalA(reviewTotalA);
+		boardPaging.makePagingHTML();
+		
+		List<ReviewDTO> list = shoppingDAO.getReview(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(list != null) {
+			json.put("list", list);
+		}
+		json.put("pg", pg);
+		json.put("boardpaging", boardPaging.getPagingHTML().toString());
+		
+		return json;
 	}
-	
-
-	
+		
 
 }
