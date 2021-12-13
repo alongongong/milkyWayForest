@@ -41,3 +41,25 @@ $('#pQnaBoardTable').on('click', '.qnaSubject', function(){
 	$(this).next().find('td').removeClass('pQnaContent').addClass('pQnaContentClick');
 	$(this).next().next().find('td').removeClass('pQnaContent').addClass('pQnaContentClick');
 });
+
+
+
+
+
+$('#adminLoginForm #login-button').click(function(){
+	$('#adminLoginForm  #result-div').empty();
+	
+	if($('#adminLoginForm #id-input').val()=='') {
+		$('#adminLoginForm #result-div').html('아이디를 입력하세요');
+		$('#adminLoginForm #id-input').focus();	
+			
+	}else if($('#adminLoginForm #pwd-input').val()=='') {
+		$('#adminLoginForm #result-div').html('비밀번호를 입력하세요');
+		$('#adminLoginForm #pwd-input').focus();	
+	}
+	else{
+
+	}
+
+});
+

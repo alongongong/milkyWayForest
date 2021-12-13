@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-
-
-
-
 /* 공통사항 */
 #currentPaging {
 	border: 1px solid #ddd;
@@ -160,3 +156,118 @@
 #pOrderCancelForm #pOrderCancelTable th {
  	text-align: center;
  }
+
+
+
+ /****** 관리자 로그인 *******/
+ 
+#adminLoginForm {
+	margin:0;
+	padding:0;
+} 
+
+#adminLoginForm ul {
+	margin:0;
+	padding:0;
+}
+ 
+#adminLoginForm #headerBackground {
+	height: 120px;
+	background: #f6f5ef;
+	position: sticky;
+	top: 0;
+}
+#adminLoginForm #main-container {
+	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
+	background-size: 100%;
+	padding: 220px 0 220px 0;
+	-webkit-background-size: cover;
+	width: 100%;
+}
+#adminLoginForm #main-container h1 {
+	text-align: center; 
+	margin-top: 0;
+	color: white;
+	margin-bottom: 40px;
+	font-size: 38px;
+	font-weight: bold;
+}
+#adminLoginForm #main-wrap{
+	width: 515px;
+	height: 40%;
+	text-align: center;
+	margin: auto;
+	background: white;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	padding: 10px 0;
+}
+#adminLoginForm #main-wrap #welcomdeLogin {
+	font-size: 16px;
+	text-align: center;
+	padding: 20px 0 30px 0;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 25px;
+}
+#adminLoginForm #main-wrap #welcomdeLogin span {
+	color: #006633;
+	font-weight: bold;
+}
+#adminLoginForm #login-input-wrap, 
+#adminLoginForm #easy-login-wrap{
+	text-align: center;
+}
+#adminLoginForm #login-input-wrap h2, 
+#adminLoginForm #easy-login-wrap h2{
+	font-size: 20px;
+}
+#adminLoginForm #id-input-wrap, 
+#adminLoginForm #pwd-input-wrap{
+	width: 465px;
+	height :48px;
+	border: solid 1px gray;
+	background: white;
+	margin: 10px auto 0 auto;
+    border-radius: 3px;
+}
+#adminLoginForm #id-input-wrap input, 
+#adminLoginForm #pwd-input-wrap input{
+	border: none;
+    width: 452px;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 45px;
+    border-radius: 3px;
+}
+#adminLoginForm #id-input-wrap input:focus, 
+#adminLoginForm #pwd-input-wrap input:focus{
+	outline: none;
+}
+#adminLoginForm #result-div{
+	padding-top: 10px;
+    font-size: 12px;
+    color: #777;
+	width: 92%;
+	height :35px;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: left;
+}
+
+#adminLoginForm #login-button-wrap {
+	padding-top: 10%;
+}
+#adminLoginForm #login-button-wrap button{
+	width: 465px;
+	height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	background: #154520;
+	color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+ 
+ 
