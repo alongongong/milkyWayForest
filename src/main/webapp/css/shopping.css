@@ -19,6 +19,22 @@ src: url('http://webfonts-cdn.mobilis.co.kr/webfonts/Nanum/NanumGothicCompact.wo
 #coffeeEtcListForm ul, #shoppingDetailForm ul {
 	margin: 10px;
 }
+#shoppingForm .imgClick, #beanNTeaForm .imgClick, #productForm .imgClick,
+#beanListForm .imgClick, #teaListForm .imgClick, #mugListForm .imgClick, 
+#glassListForm .imgClick, #plasticTumblrListForm .imgClick, 
+#stainlessTumblrListForm .imgClick, #thermosListForm .imgClick, 
+#coffeeEtcListForm .imgClick, #shoppingDetailForm .imgClick {
+	transform: scale(1);
+	transition: all 1s ease-in-out;
+}
+#shoppingForm .imgClick:hover, #beanNTeaForm .imgClick:hover, #productForm .imgClick:hover,
+#beanListForm .imgClick:hover, #teaListForm .imgClick:hover, #mugListForm .imgClick:hover, 
+#glassListForm .imgClick:hover, #plasticTumblrListForm .imgClick:hover, 
+#stainlessTumblrListForm .imgClick:hover, #thermosListForm .imgClick:hover, 
+#coffeeEtcListForm .imgClick:hover, #shoppingDetailForm .imgClick:hover {
+	transform: scale(1.2);
+	transition: all 1s ease-in-out;
+}
 /* 쇼핑 top Menu */
 #shoppingForm #top { padding-top: .5rem; padding-bottom: .1rem; }
 #shoppingForm #top .title { font-size : 18px; font-style: "bold"
@@ -928,8 +944,12 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	grid-column: 1 / 2;
 	grid-row: 1 / 4;
 }
-#shoppingDetailForm .productView .shoppingDetailImg > img {
+#shoppingDetailForm .productView .shoppingDetailImg #shoppingDetailBigImg {
+	overflow: hidden;
+	width: 100%;	
 	border: 1px solid silver;
+}
+#shoppingDetailForm .productView .shoppingDetailImg #shoppingDetailBigImg > img {
 	width: 100%;
 }
 

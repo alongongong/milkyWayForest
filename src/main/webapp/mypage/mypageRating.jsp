@@ -88,50 +88,52 @@ $(function(){
 				//paidTotal = paidTotal.toLocaleString(); 세자리 , 찍어주는 거때문에 안됐나봐요
 				$('#amount').html(paidTotal);
 			}
+			
+			$.ajax({
+				url: '/milkyWayForest/mypage/getMypageRating',
+				type: 'post',
+				data: {'id' : $('#id').val()},
+				success: function(data){
+					console.log(JSON.stringify(data));
+					
+					$('.txt_grade').html(data.memberGrade);	
+					$('#contentTxt').html(data.gradeBenefit);
+					
+					if(data.memberGrade == 'welcome'){
+						$('#memberRating1').html(' 등급 향상을 위한 목표 금액');
+						$('#memberRating').html('green');
+						$('.purpose').html('목표 7만원');
+						document.getElementById('targetAmount').max = '70000';
+						document.getElementById('targetAmount').value = paidTotal;
+						$('#rmnngAmnt').html(remainingAmount+" 원 남음");
+						
+					}else if(data.memberGrade == 'green'){
+						$('#memberRating1').html(' 등급 향상을 위한 목표 금액');
+						$('#memberRating').html('gold');
+						$('.purpose').html('목표 15만원');
+						document.getElementById('targetAmount').max = '150000';
+						document.getElementById('targetAmount').value = paidTotal;
+						$('#rmnngAmnt').html(remainingAmount1+" 원 남음");
+					}else if(data.memberGrade == 'gold'){
+		/* 				$('#memberRating').html('gold');
+						$('.purpose').html('목표 15만원'); */
+						document.getElementById('targetAmount').max = '150000';
+						document.getElementById('targetAmount').value = paidTotal;
+						$('#rmnngAmnt').html(remainingAmount1+" 원");
+					}
+
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});//getMypageRating
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});//getPaymentInfo
 	
-	$.ajax({
-		url: '/milkyWayForest/mypage/getMypageRating',
-		type: 'post',
-		data: {'id' : $('#id').val()},
-		success: function(data){
-			console.log(JSON.stringify(data));
-			$('.txt_grade').html(data.memberGrade);	
-			$('#contentTxt').html(data.gradeBenefit);
-			
-			if(data.memberGrade == 'welcome'){
-				alert(paidTotal);
-				$('#memberRating1').html(' 등급 향상을 위한 목표 금액');
-				$('#memberRating').html('green');
-				$('.purpose').html('목표 7만원');
-				document.getElementById('targetAmount').max = '70000';
-				document.getElementById('targetAmount').value = paidTotal;
-				$('#rmnngAmnt').html(remainingAmount+" 원 남음");
-				
-			}else if(data.memberGrade == 'green'){
-				$('#memberRating1').html(' 등급 향상을 위한 목표 금액');
-				$('#memberRating').html('gold');
-				$('.purpose').html('목표 15만원');
-				document.getElementById('targetAmount').max = '150000';
-				document.getElementById('targetAmount').value = paidTotal;
-				$('#rmnngAmnt').html(remainingAmount1+" 원 남음");
-			}else if(data.memberGrade == 'gold'){
-/* 				$('#memberRating').html('gold');
-				$('.purpose').html('목표 15만원'); */
-				document.getElementById('targetAmount').max = '150000';
-				document.getElementById('targetAmount').value = paidTotal;
-				$('#rmnngAmnt').html(remainingAmount1+" 원");
-			}
-
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});//getMypageRating
+	
 	
 });
 </script>

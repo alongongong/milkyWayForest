@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+
+
+
+
 /* 공통사항 */
 #currentPaging {
 	border: 1px solid #ddd;
@@ -45,6 +50,23 @@
 #pProductInsert #emptyDiv {
 	color: red;
 	font-size: 8pt;
+	font-weight: bold;
+}
+
+
+#pProductInsert #insertProductBtn {
+	border: 1px solid #323232;
+	border-radius: 5px;
+	background : #323232; 
+	color:  white; 
+	font-weight: bold;
+}
+
+#pProductInsert #insertCancelBtn {
+	border: 1px solid #323232;
+	border-radius: 5px;
+	background : #323232; 
+	color:  white; 
 	font-weight: bold;
 }
 
@@ -118,6 +140,7 @@
 	height: 25px;
 	padding: 0;
 	display: none;
+	
 }
 #pStockDiv #pStockTable .deleteBtn {
 	width: 45px;

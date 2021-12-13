@@ -22,6 +22,17 @@
 	margin: 10px;
 }
 
+#menuInfoForm .imgClick, #drinkInfoForm .imgClick, #foodInfoForm .imgClick,
+#allMenuInfoForm .imgClick, #menuDetailForm .imgClick {
+	transform: scale(1);
+	transition: all 1s ease-in-out;
+}
+#menuInfoForm .imgClick:hover, #drinkInfoForm .imgClick:hover, #foodInfoForm .imgClick:hover,
+#allMenuInfoForm .imgClick:hover, #menuDetailForm .imgClick:hover {
+	transform: scale(1.2);
+	transition: all 1s ease-in-out;
+}
+
 /* 메뉴소개 */
 #menuInfoForm {
 	width: 60%;
@@ -382,12 +393,16 @@
 	width: 100%;
 	margin:0 auto;
 }
+#menuDetailForm #menuDetailView #menuDetailBigImg {
+	overflow: hidden;
+	width: 95%;
+}
 #menuDetailForm #menuImgDiv {
 	grid-column: 1 / 2;
 	grid-row: 1 / 5;
 }
 #menuDetailForm #menuImgDiv #bigImg {
-	width: 95%;
+	width: 100%;
 	margin: 0 auto;
 }
 #menuDetailForm #menuEngName {

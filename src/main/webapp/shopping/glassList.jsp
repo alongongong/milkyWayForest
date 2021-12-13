@@ -56,7 +56,7 @@ $(function(){
 				$('<div>') .append($('<div>', {
 					width: '70%',
 					height: '300px',
-					style : 'margin: 10px; cursor:pointer;',
+					style : 'margin: 10px; cursor:pointer; overflow:hidden',
 					position: 'relative'
 					
 				}).append($('<img>', {
@@ -64,7 +64,8 @@ $(function(){
 					position: 'absolute',
 					width: '100%',
 					height: '100%',
-					class: 'imgClick'+items.productCode
+					id: 'imgClick'+items.productCode,
+					class: 'imgClick'
 					
 				})).append($('<input>', { 
 					type: 'hidden',
@@ -86,7 +87,7 @@ $(function(){
 				}))
 				.appendTo($('#menuImgDiv1'));
 				
-				$('.imgClick'+items.productCode).click(function(){
+				$('#imgClick'+items.productCode).click(function(){
 					$.ajax({
 						url:'/milkyWayForest/shopping/clickImg',
 						type: 'post',
