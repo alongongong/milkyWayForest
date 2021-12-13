@@ -16,7 +16,7 @@
 	<%----------------- 디폴트 설정 -----------------%>
 	<div id="myPayment-state" class="item">
 		<div align="right" id="buttonWrap">
-			<input type="button" class="btn" id="contents"value="배송지 등록" onclick="showPopup();">
+			<input type="button" class="btn" id="WriteBtn"value="배송지 등록" onclick="showPopup();">
 		</div>
 		<div id="myPayment-title" class="navbar navbar-light">
 			<span class="mb-0">배송지 관리</span>
@@ -28,7 +28,7 @@
 						<th scope="col" style="text-align: center;">배송지명</th>
 						<th scope="col" style="text-align: center;">주소</th>
 						<th scope="col" style="text-align: center;">연락처</th>
-						<th scope="col" width="300px;">수정/삭제</th>
+						<th scope="col" width="350px;">수정/삭제</th>
 					</tr>
 				</thead>
 			</table>
@@ -79,7 +79,8 @@ $(function(){
 					type:'button',
 					align:'center',
 					value:'삭제',
-					class:'deleteBtn btn',
+					class:'btn',
+					id:'deleteBtn',
 					onclick:'showPopup2('+items.shipCode+');'
 				}))).appendTo($('#mypageShpMngTable'));
 			});

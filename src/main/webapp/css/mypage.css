@@ -48,7 +48,6 @@
 #mypageShpMngListForm .navbar-light,
 #mypageShpMngModifyForm .navbar-light,
 #mypageShpMngWriteForm .navbar-light {
-	background : #eee;
 	font-size : 18px;
 	font-weight: bold;
 	padding: 16px;
@@ -171,7 +170,11 @@
 	width: 820px;
 	/* padding-left: 15px; */
 }
-#mypageMain #myShipment-wrapper{
+#mypageMain #myShipment-wrapper,
+#mypageMain #myPayment-wrapper,
+#myOrderView #orderChangeDiv,
+#myOrderView #myOrderView2,
+#myOrderView #myOrderView3{
 	margin-top: 60px;
 }
 #mypageMain .orderSubject:link { color: black; text-decoration: none; }
@@ -438,33 +441,124 @@
 	text-align: end;
 	margin-bottom: 10px;
 }
-#myOrderView .btn,
-#myOrderCancel .btn,
-#mypagePwdForm .btn,
-#mypagePwdForm2 .btn,
-#mypageMyInfo .btn,
-#mypageMyQnaView .btn,
-#mypageShpMngModifyForm .btn,
-#mypageShpMngWriteForm .btn{
-	background: #154520;
-    color: white;
-    padding: 7px 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
 #mypageShpMngListForm #buttonWrap{
 	margin-bottom: 10px;
 }
-#mypageShpMngListForm .btn {
+
+#mypageShpMngListForm #modifyBtn,
+#mypageShpMngWriteForm #saveBtn,
+#mypageShpMngModifyForm #modifySaveBtn{
+	width: 80px;
+    height: 40px;
 	background: #154520;
     color: white;
     padding: 7px 20px;
     font-size: 14px;
     font-weight: bold;
-    border-inline-style: none;
-    margin-right: 5px;
+    box-shadow: none;
+}
+#myOrderView #reorderBtn,
+#myOrderCancel #myOrderCancelBtn,
+#mypageMyQnaView #myQnaListBtn,
+#mypageMyQnaView #updateBtn,
+#updateMyQnaViewForm #updateMyQnaBtn{
+	width: 100px;
+    height: 40px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+#mypageMyInfo #Update-button,
+#mypageShpMngListForm #WriteBtn{
+	width: 130px;
+    height: 40px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+#mypagePwdForm #next-button,
+#mypagePwdForm2 #next-button{
+	width: 230px;
+    height: 48px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+/*************************************/
+#mypageShpMngListForm #deleteBtn,
+#mypageShpMngWriteForm #closeBtn,
+#mypageShpMngModifyForm #modifyCloseBtn {
+	width: 80px;
+    height: 40px;
+	background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+    
+}
+#myOrderView #orderCancleBtn,
+#myOrderView #orderExchangeBtn,
+#myOrderView #orderReturnBtn,
+#myOrderCancel #cancelBtn,
+#mypageMyQnaView #deleteBtn,
+#updateMyQnaViewForm #cancelBtn,
+#mypageShpMngWriteForm #zipcodeBtn,
+#mypageShpMngModifyForm #zipcodeBtn {
+	width: 100px;
+    height: 40px;
+	background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+    
+}
+#mypageMyInfo #email-send-button,
+#mypageMyInfo #email-number-button,
+#mypageMyInfo #Delete-button,
+#mypageMyInfo #reset-button {
+	width: 130px;
+    height: 40px;
+	background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+    
+}
+#mypagePwdForm #reset-button,
+#mypagePwdForm2 #reset-button{
+	width: 230px;
+    height: 48px;
+    background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
 }
 
+#mypageShpMngListForm .btn {
+	border-inline-style: none;
+    margin-right: 5px;
+}
 
 
 #myOrderView #buttonWrap #orderCancleBtn,
