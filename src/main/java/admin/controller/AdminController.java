@@ -235,4 +235,11 @@ public class AdminController {
 	public List<PaymentDTO> getOrderCancel() {
 		return adminService.getOrderCancel();
 	}
+	
+	@PostMapping("/admin/shipBtn")
+	@ResponseBody
+	public void shipBtn(@RequestParam String paymentCode, @RequestParam String deliveryInfo) {
+		adminService.shipBtn(paymentCode, deliveryInfo);
+	}
+
 }

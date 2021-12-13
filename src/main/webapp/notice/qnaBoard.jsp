@@ -20,13 +20,13 @@
 						<th>
 							<input type="checkbox" id="allQnaCheck">
 						</th>
-						<th>글번호</th>
-						<th>말머리</th>
+						<th width="70">글번호</th>
+						<th width="120">말머리</th>
 						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일자</th>
-						<th>조회수</th>
-						<th>답변여부</th>
+						<th width="110">작성자</th>
+						<th width="110">작성일자</th>
+						<th width="70">조회수</th>
+						<th width="100">답변여부</th>
 					</tr>
 				</thead>
 				<tbody></tbody>
@@ -54,21 +54,27 @@ $(function(){
 					class: 'qnaCheck',
 					id: 'qnaCheck' + index
 				}))).append($('<td>',{
-					text: items.qnaCode
+					text: items.qnaCode,
+					align: 'center'
 				})).append($('<td>',{
-					text: items.qnaQuestionType
+					text: items.qnaQuestionType,
+					align: 'center'
 				})).append($('<td>',{
 					text: items.qnaSubject,
 					id: 'qnaSubject'+index,
 					class: 'qnaSubject'
 				})).append($('<td>',{
-					text: items.id
+					text: items.id,
+					align: 'center'
 				})).append($('<td>',{
-					text: items.qnaDate
+					text: items.qnaDate,
+					align: 'center'
 				})).append($('<td>',{
-					text: items.qnaHit
+					text: items.qnaHit,
+					align: 'center'
 				})).append($('<td>',{
-					text: items.qnaAnswerCheck
+					text: items.qnaAnswerCheck,
+					align: 'center'
 				})).appendTo($('#qnaBoardTable tbody'));
 			
 				$('<tr>', {

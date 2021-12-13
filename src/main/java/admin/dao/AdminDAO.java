@@ -45,4 +45,6 @@ public interface AdminDAO {
 	public List<PaymentDTO> getOrderNShip();
 
 	public List<PaymentDTO> getOrderCancel();
+
+	public void shipBtn(Map<String, String> map);
 }
