@@ -1128,17 +1128,18 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	grid-column: 1 / 2;
 	grid-row: 1 / 2;
 	text-align: center;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: bold;
 	padding-top: 13px;
 }
 
 #shoppingDetailForm #detailReviewName {
+	border: 0;
 	border-bottom: 1px solid #555;
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
 	text-align: center;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: bold;
 	padding-top: 13px;
 }
@@ -1158,9 +1159,11 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	width: 100%;
 	padding: 60px 40px;
 	font-size: 13px;
+	height: 600px;
 }
 
 #shoppingDetailForm #reviewDiv {
 	display: none;
+	height: 600px;
 }
 	

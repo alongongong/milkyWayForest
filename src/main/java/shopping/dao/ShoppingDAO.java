@@ -48,5 +48,7 @@ public interface ShoppingDAO {
 	public ShoppingDTO clickImg(String productCode);
 	
 	public int productSelect(Map<String, String> map);
+
+	public int getReviewTotalA();
 	
 }

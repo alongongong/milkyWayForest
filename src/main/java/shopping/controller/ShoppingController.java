@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -246,27 +247,11 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 		return shoppingService.productSelect(session.getAttribute("memId")+"", productCode);
 	}
 	
+	@PostMapping("/shopping/getReview")
+	@ResponseBody
+	public JSONObject getReview(@RequestParam String productCode, @RequestParam int pg) {
+		return shoppingService.getReview(productCode, pg);
+	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
