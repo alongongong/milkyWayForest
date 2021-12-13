@@ -4,6 +4,7 @@
 <!-- <link rel="stylesheet" href="/milkyWayForest/css/mypage.css"> -->
 
 <form id="mypageShpMngWriteForm" action="/milkyWayForest/mypage/mypageShpMngWrite" method="post">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 	<div id="myBasicInfo-wrapper" class="item">
 		<div id="myBasicInfo-title" class="navbar navbar-light alert-info"style="text-align: center">
 			<span class="navbar-brand mb-0 h1" style="text-align: center">배송지 관리</span>

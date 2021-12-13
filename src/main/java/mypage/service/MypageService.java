@@ -71,5 +71,4 @@ public interface MypageService {
 
 	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
 
-
 }

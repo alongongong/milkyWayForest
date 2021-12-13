@@ -13,12 +13,10 @@ import cart.dao.CartDAO;
 public class CartServiceImpl implements CartService {
 	@Autowired
 	private CartDAO cartDAO;
-	
-	
+
 	@Override
 	public void cartInsert(CartDTO cartDTO) {
 		cartDAO.cartInsert(cartDTO);
-		
 	}
 
 	@Override

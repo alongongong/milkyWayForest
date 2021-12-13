@@ -279,7 +279,9 @@ public class MypageController {
 	
 	//주문내역 상세 페이지
 	@GetMapping("/MyOrderView")
-	public String MyOrderView(@RequestParam String paymentCode, Model model) {
+	public String MyOrderView(@RequestParam String paymentCode, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("memId");
+		model.addAttribute("id", id);
 		model.addAttribute("paymentCode", paymentCode);
 		model.addAttribute("display", "mypage/mypageMyOrderView.jsp");
 		return "/index";
