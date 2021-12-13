@@ -191,15 +191,15 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 	} else {
 		var paymentCode;
 		
-		//카카오페이
+		var totalPayPrice = $('#paymentForm #totalPayPrice').val();
+		var email = $('#paymentForm #email1').val()+'@'+$('#paymentForm #email2').val();
+		var name = $('#paymentForm #name').val();
+		var tel = $('#paymentForm #tel1').val()+'-'+$('#paymentForm #tel2').val()+'-'+$('#paymentForm #tel3').val();
+		var addr = $('#paymentForm #payShipAddr1').val()+' '+$('#paymentForm #payShipAddr2').val();
+		var postcode = $('#paymentForm #payShipZipcode').val();
+		
+		//카카오페이 https://wogus789789.tistory.com/m/178
 		if($('input:radio').eq(3).is(':checked')){
-			/* var totalPayPrice = $('#paymentForm #totalPayPrice').val();
-			var email = $('#paymentForm #email1').val()+'@'+$('#paymentForm #email2').val();
-			var name = $('#paymentForm #name').val();
-			var tel = $('#paymentForm #tel1').val()+'-'+$('#paymentForm #tel2').val()+'-'+$('#paymentForm #tel3').val();
-			var addr = $('#paymentForm #payShipAddr1').val()+' '+$('#paymentForm #payShipAddr2').val();
-			var postcode = $('#paymentForm #payShipZipcode').val() */;
-
 		    var IMP = window.IMP; // 생략가능
 		    IMP.init('imp48332369'); //가맹점 식별코드
 		    var msg;
@@ -210,11 +210,11 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 		        merchant_uid : 'merchant_' + new Date().getTime(),
 		        name : '은하숲 상품 결제', //결제창에서 보여질 이름
 		        amount : amount, //실제 결제되는 가격
-		        /* buyer_email : email,
+		        buyer_email : email,
 		        buyer_name : name,
 	        	buyer_tel : tel,
 	            buyer_addr : addr,
-		        buyer_postcode : postcode */
+		        buyer_postcode : postcode
 		    }, function(rsp) {
 				console.log(rsp);
 		        
@@ -252,6 +252,59 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 
 		    });
 		}//카카오페이
+		else if($('input:radio').eq(1).is(':checked')){
+			var IMP = window.IMP; // 생략가능
+		    IMP.init('imp48332369'); //가맹점 식별코드
+		    var msg;
+		    
+		    IMP.request_pay({
+		        pg : 'html5_inicis',
+		        pay_method : 'card',
+		        merchant_uid : 'merchant_' + new Date().getTime(),
+		        name : '은하숲 상품 결제', //결제창에서 보여질 이름
+		        amount : amount, //실제 결제되는 가격
+		        buyer_email : email,
+		        buyer_name : name,
+	        	buyer_tel : tel,
+	            buyer_addr : addr,
+		        buyer_postcode : postcode
+		    }, function(rsp) {
+				console.log(rsp);
+		        
+		        if ( rsp.success ) { //결제 성공시
+		        	//DB
+		        	$.ajax({
+						url: '/milkyWayForest/payment/payment',
+						type: 'post',
+						data: $('#paymentForm').serialize(),
+						success: function(data) {
+							alert(data);
+							paymentCode = data;
+			
+						},
+						error: function(err) {
+							console.log(err);
+						}
+					});
+		        	
+	                msg = '결제가 완료되었습니다.';
+	                msg += '\n고유ID : ' + rsp.imp_uid;
+	                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+	                msg += '\n결제 금액 : ' + rsp.paid_amount;
+	                msg += '\n카드 승인번호 : ' + rsp.apply_num;
+
+	                alert(msg);
+	    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
+
+		        } else { //결제 실패시
+		            msg = '결제에 실패하였습니다.';
+		            msg += '\n에러내용 : ' + rsp.error_msg;
+		            
+		            alert(msg);
+		        }
+
+		    });
+		}//카드결제
 		else { // 나머지 결제수단
 			$.ajax({
 				url: '/milkyWayForest/payment/payment',
