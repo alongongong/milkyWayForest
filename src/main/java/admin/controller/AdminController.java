@@ -241,5 +241,12 @@ public class AdminController {
 	public void shipBtn(@RequestParam String paymentCode, @RequestParam String deliveryInfo) {
 		adminService.shipBtn(paymentCode, deliveryInfo);
 	}
-
+	
+	
+	//관리자 로그인
+//	@GetMapping("/admin/adminlogin")
+//	public String cart(Model model) {
+//		model.addAttribute("display", "admin/adminlogin.jsp");
+//		return "/index";
+//	}
 }
