@@ -19,8 +19,8 @@
 			</div>
 
 			<div align="center" id="button-wrap">
-				<button type="button" id="next-button" class="btn btn-info">확인</button>
-				<button type="reset" id="reset-button" onclick="history.back()" class="btn btn-info">취소</button>
+				<button type="button" id="next-button" class="btn">확인</button>
+				<button type="reset" id="reset-button" onclick="history.back()" class="btn">취소</button>
 			</div>
 			<div id="result-div"></div>
 		</div>

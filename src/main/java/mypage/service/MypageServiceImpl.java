@@ -342,18 +342,4 @@ public class MypageServiceImpl implements MypageService {
 		return paymentDTO;
 	}
 
-	@Override
-	public JSONObject getMyReorderInfo(String paymentCode, String id) {
-		List<PaymentDTO> paymentList = mypageDAO.getMyOrderInfo(paymentCode);
-		MemberDTO memberDTO = mypageDAO.getMypageMyInfo(id);
-		List<MypageShipmentDTO> shipList = mypageDAO.getShpMngList(id); 
-		
-		JSONObject json = new JSONObject();
-		if(paymentList != null) json.put("paymentList", paymentList);
-		if(memberDTO != null) json.put("memberDTO", memberDTO);
-		if(shipList != null) json.put("shipList", shipList);
-
-		return json;
-	}
-
 }

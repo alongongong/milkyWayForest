@@ -64,6 +64,4 @@ public interface MypageService {
 
 	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
 
-	public JSONObject getMyReorderInfo(String paymentCode, String id);
-
 }

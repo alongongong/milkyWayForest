@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="mypageMyPost" name="mypageMyPost">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -15,13 +16,13 @@
 	<%----------------- 디폴트 설정 -----------------%>
 	
 	<div id="myQna-wrapper" class="item">
-		<div id="myQna-title" class="navbar navbar-light alert-info">
-			<span class="navbar-brand mb-0 h1">나의 문의 & 답변 내역</span>
+		<div id="myQna-title" class="navbar navbar-light">
+			<span class="mb-0">나의 문의 & 답변 내역</span>
 		</div>
 		<input type="hidden" id="id" value="${memId }">
 		
 		<div id="myQna-state">		
-			<table id="myQnaTable" class="table table-bordered">
+			<table id="myQnaTable" class="table border-bottom">
 				<thead>
 					<tr>
 						<td scope="col">번호</td>

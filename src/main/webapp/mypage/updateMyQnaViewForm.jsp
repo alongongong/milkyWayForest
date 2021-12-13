@@ -9,6 +9,7 @@
 
 <form id="updateMyQnaViewForm"> <!-- method="post" enctype="multipart/form-data"
 		action="/milkyWayForest/mypage/updateMyQnaView" -->
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
