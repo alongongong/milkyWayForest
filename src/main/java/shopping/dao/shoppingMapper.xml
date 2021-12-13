@@ -199,5 +199,11 @@
    		select count(*) from milkycart where id=#{id} and productCode=#{productCode}
    	</select> 
    	
+   	<select id="getReviewTotalA" parameterType="String" resultType="int">
+   		select count(*) from milkyreview where productCode=#{productCode}
+   	</select>
 
+	<select id="getReview" parameterType="java.util.Map" resultType="review">
+		select * from (select rownum rn, a.* from (select * from milkyreview where productCode=#{productCode}) a) where rn between #{startNum} and #{endNum} 
+	</select>
 </mapper>

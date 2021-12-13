@@ -36,5 +36,7 @@
 		<typeAlias type="member.bean.MemberCouponDTO" alias="memberCoupon"/>
 		
 		<typeAlias type="cart.bean.CartDTO" alias="cart"/>
+		
+		<typeAlias type="shopping.bean.ReviewDTO" alias="review"/>
 	</typeAliases>
 </configuration>

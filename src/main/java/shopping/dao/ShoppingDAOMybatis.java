@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import shopping.bean.ReviewDTO;
 import shopping.bean.ShoppingDTO;
 
 
@@ -121,6 +122,16 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 	public int productSelect(Map<String, String> map) {
 		
 		return sqlSession.selectOne("shoppingSQL.productSelect",map);
+	}
+
+	@Override
+	public int getReviewTotalA(String productCode) {
+		return sqlSession.selectOne("shoppingSQL.getReviewTotalA", productCode);
+	}
+
+	@Override
+	public List<ReviewDTO> getReview(Map<String, Object> map) {
+		return sqlSession.selectList("shoppingSQL.getReview", map);
 	}
 
 
