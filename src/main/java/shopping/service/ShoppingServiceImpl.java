@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -126,6 +127,20 @@ public class ShoppingServiceImpl implements ShoppingService {
 		
 		
 		return shoppingDAO.productSelect(map);
+	}
+
+	@Override
+	public JSONObject getReview(String productCode, int pg) {
+		int endNum = pg * 5;
+		int startNum = endNum - 4;
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		map.put("productCode", productCode);
+		
+		int reviewTotalA = shoppingDAO.getReviewTotalA();
+		return null;
 	}
 	
 

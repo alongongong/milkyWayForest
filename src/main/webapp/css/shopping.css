@@ -1115,6 +1115,40 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	font-weight: bold;
 		
 }	
+
+#shoppingDetailForm #detailBottom {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 50px;
+	margin-top: 80px;
+}
+#shoppingDetailForm #detailInfoName {
+	border: 1px solid #555;
+	border-bottom: 0;
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
+	padding-top: 13px;
+}
+
+#shoppingDetailForm #detailReviewName {
+	border: 0;
+	border-bottom: 1px solid #555;
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
+	padding-top: 13px;
+}
+
+#shoppingDetailForm #detailInfoName span,
+#shoppingDetailForm #detailReviewName span {
+	cursor: pointer;
+}
+
 #shoppingDetailForm #DetailInfoDiv {
 	width: 100%;
 	margin: 0 auto;
@@ -1123,10 +1157,13 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 
 #shoppingDetailForm #productDetailInfoDiv {
 	width: 100%;
-	margin: 100px auto;
 	padding: 60px 40px;
 	font-size: 13px;
-	border-top: 1px solid gainsboro;
+	height: 600px;
 }
 
+#shoppingDetailForm #reviewDiv {
+	display: none;
+	height: 600px;
+}
 	
