@@ -23,6 +23,7 @@ import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
+import mypage.bean.WishListDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
 import payment.bean.PaymentDTO;
@@ -442,4 +443,17 @@ public class MypageController {
 		return mypageService.getCouponList(id);
 	}
 
+	@GetMapping("/wishList")
+	public String wishList(Model model) {
+		model.addAttribute("display", "mypage/mypageWishList.jsp");
+		return "/index";
+	}
+	
+	@PostMapping("/getWishList")
+	@ResponseBody
+	public JSONObject getWishList(HttpSession session, int pg) {
+		String id = session.getAttribute("memId")+"";
+		return mypageService.getWishList(id, pg);
+	}
+	
 }

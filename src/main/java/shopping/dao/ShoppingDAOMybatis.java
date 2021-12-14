@@ -139,6 +139,16 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 		sqlSession.insert("shoppingSQL.reviewInsert", reviewDTO);
 	}
 
+	@Override
+	public void insertWishList(Map<String, String> map) {
+		sqlSession.insert("shoppingSQL.insertWishList", map);
+	}
+
+	@Override
+	public String getWishProduct(Map<String, String> map) {
+		return sqlSession.selectOne("shoppingSQL.getWishProduct", map);
+	}
+
 
 	
 

@@ -13,6 +13,7 @@ import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
+import mypage.bean.WishListDTO;
 import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -244,6 +245,16 @@ public class MypageDAOMybatis implements MypageDAO {
 		}
 
 		return paymentDTO;	
+	}
+
+	@Override
+	public List<WishListDTO> getWishList(Map<String, Object> map) {
+		return sqlSession.selectList("mypageSQL.getWishList", map);
+	}
+
+	@Override
+	public int getWishListTotalA(String id) {
+		return sqlSession.selectOne("mypageSQL.getWishListTotalA", id);
 	}
 
 }

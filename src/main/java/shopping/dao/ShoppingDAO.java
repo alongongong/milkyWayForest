@@ -55,5 +55,9 @@ public interface ShoppingDAO {
 	public List<ReviewDTO> getReview(Map<String, Object> map);
 
 	public void reviewInsert(ReviewDTO reviewDTO);
+
+	public void insertWishList(Map<String, String> map);
+
+	public String getWishProduct(Map<String, String> map);
 	
 }

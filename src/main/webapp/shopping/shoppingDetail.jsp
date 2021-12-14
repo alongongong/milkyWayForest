@@ -197,7 +197,7 @@ $(function(){
 		dataType: 'json',  
 		success : function(data) {
 		
-			console.log(JSON.stringify(data));
+		// console.log(JSON.stringify(data));
 				
 		$.each(data, function(index,items) {		
 			$('#korsubjectSpan').text(items.productName);
@@ -540,6 +540,41 @@ $(function(){
 		}
 	})
 	
+	
+	$('#wishListBtn').click(function(){
+		$.ajax({
+			url: '/milkyWayForest/shopping/getWishProduct',
+			type: 'post',
+			data: 'productCode=${productCode}',
+			success: function(data) {
+				alert(data);
+				if('${productCode}' == data) {
+					if(confirm("이미 찜하기 목록에 있습니다. 찜하기 목록으로 이동하시겠습니까?")) {
+						location.href="/milkyWayForest/mypage/wishList?pg=1";
+					} 
+				} else {	
+
+					$.ajax({
+						url: '/milkyWayForest/shopping/insertWishList',
+						type: 'post',
+						data: 'productCode=${productCode}',
+						success: function(data) {
+							if(confirm("찜하기되었습니다. 찜하기 목록으로 이동하시겠습니까?")) {
+								location.href="/milkyWayForest/mypage/wishList?pg=1";
+							}
+						},
+						error: function(err) {
+							console.log(err);
+						}
+					});
+				}
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+		
+	});
 }); //큰 function
 
 function boardPaging(page){

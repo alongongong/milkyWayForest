@@ -36,7 +36,7 @@
 	    <a class="nav-link disabled text-dark text-dark" href="#" tabindex="-1" aria-disabled="true">나의 관심 목록</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link active alert-link text-dark" href="#">찜한 상품</a>
+	    <a class="nav-link active alert-link text-dark" href="/milkyWayForest/mypage/wishList?pg=1">찜한 상품</a>
 	  </li>
 	  
 	  <li class="nav-item sideNavTitle">

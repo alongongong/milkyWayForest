@@ -289,5 +289,12 @@
 		join milkyPayment a using(paymentCode)
 		where paymentCode=#{paymentCode}
 	</select>
+	
+	<select id="getWishList" parameterType="java.util.Map" resultType="wishList">
+		select * from (select rownum rn, a.* from (select wishlistcode, to_char(wishdate, 'yyyy-mm-dd') "wishDate", productcode, productName, productOption, productImageName from milkywishlist join milkyproductinfo using(productcode) join milkyProductImage using(productcode) where id=#{id} order by wishlistcode desc) a) where rn between #{startNum} and #{endNum}
+	</select>
 
+	<select id="getWishListTotalA" parameterType="String" resultType="int">
+		select count(*) from milkywishlist where id=#{id}
+	</select>
 </mapper>

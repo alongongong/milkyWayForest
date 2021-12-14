@@ -7,6 +7,7 @@ import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
+import mypage.bean.WishListDTO;
 import net.sf.json.JSONObject;
 import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
@@ -70,5 +71,7 @@ public interface MypageService {
 	public List<MemberCouponDTO> getCouponList(String id);
 
 	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
+
+	public JSONObject getWishList(String id, int pg);
 
 }

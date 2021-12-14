@@ -266,5 +266,18 @@ public class ShoppingController {// 컨트롤러-> 서비스-> DAO -> 맵퍼 -> 
 		reviewDTO.setId(session.getAttribute("memId")+"");
 		shoppingService.reviewInsert(reviewDTO);
 	}
+	
+	@PostMapping("/shopping/insertWishList")
+	@ResponseBody
+	public void insertWishList(@RequestParam String productCode, HttpSession session) {
+		String id = session.getAttribute("memId") + "";
+		shoppingService.insertWishList(productCode, id);
+	}
+	
+	@PostMapping("/shopping/getWishProduct")
+	@ResponseBody
+	public String getWishProduct(@RequestParam String productCode, HttpSession session) {
+		return shoppingService.getWishProduct(productCode, session.getAttribute("memId")+"");
+	}
 }
 

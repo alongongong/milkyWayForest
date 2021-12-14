@@ -54,6 +54,10 @@ public interface ShoppingService {
 	public JSONObject getReview(String productCode, int pg);
 
 	public void reviewInsert(ReviewDTO reviewDTO);
+
+	public void insertWishList(String productCode, String id);
+
+	public String getWishProduct(String productCode, String id);
 	
 	
 	

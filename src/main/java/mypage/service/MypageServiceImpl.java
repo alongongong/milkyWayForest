@@ -12,6 +12,7 @@ import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
+import mypage.bean.WishListDTO;
 import mypage.dao.MypageDAO;
 import net.sf.json.JSONObject;
 import paging.BoardPaging;
@@ -382,6 +383,38 @@ public class MypageServiceImpl implements MypageService {
 		}
 		
 		return paymentDTO;
+	}
+
+	@Override
+	public JSONObject getWishList(String id, int pg) {
+		int endNum = pg * 7;
+		int startNum = endNum - 6;
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		map.put("id", id);
+
+		int wishListTotalA = mypageDAO.getWishListTotalA(id);
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(7);
+		boardPaging.setPageSize(10);
+		boardPaging.setTotalA(wishListTotalA);
+		boardPaging.makePagingHTML();
+		
+		List<WishListDTO> list =  mypageDAO.getWishList(map);
+
+		JSONObject json = new JSONObject();
+		if(list != null) {
+			json.put("list", list);
+		}
+		
+		json.put("pg", pg);
+		json.put("boardPaging", boardPaging.getPagingHTML().toString());
+		
+		return json;
 	}
 
 }

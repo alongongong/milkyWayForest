@@ -168,6 +168,23 @@ public class ShoppingServiceImpl implements ShoppingService {
 	public void reviewInsert(ReviewDTO reviewDTO) {
 		shoppingDAO.reviewInsert(reviewDTO);
 	}
+
+	@Override
+	public void insertWishList(String productCode, String id) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("productCode", productCode);
+		map.put("id", id);
+		
+		shoppingDAO.insertWishList(map);
+	}
+
+	@Override
+	public String getWishProduct(String productCode, String id) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("productCode", productCode);
+		map.put("id", id);
+		return shoppingDAO.getWishProduct(map);
+	}
 		
 
 }

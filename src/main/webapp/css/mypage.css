@@ -691,3 +691,12 @@
 	width: 820px;
 	margin-top: 16px;
 }
+
+/* wishList */
+#myWishList-wrapper #myWishListTable td {
+	font-size: 14px;
+}
+#myWishListTable .productName:link { color: black; text-decoration: none; }
+#myWishListTable .productName:visited { color: black; text-decoration: none; }
+#myWishListTable .productName:hover { color: #154520; text-decoration: underline; }
+#myWishListTable .productName:active { color: black; text-decoration: none; }

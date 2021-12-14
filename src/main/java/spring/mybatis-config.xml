@@ -40,5 +40,7 @@
 		<typeAlias type="shopping.bean.ReviewDTO" alias="review"/>
 		
 		<typeAlias type="admin.bean.AdminDTO" alias="admin"/>
+		
+		<typeAlias type="mypage.bean.WishListDTO" alias="wishList"/>
 	</typeAliases>
 </configuration>
