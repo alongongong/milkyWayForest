@@ -10,7 +10,7 @@
           </div> -->
           <!-- <p>CT</p> -->
         </a>
-        <a href="/milkyWayForest/admin" class="simple-text logo-normal">
+        <a href="/milkyWayForest/admin/adminIndex" class="simple-text logo-normal">
           <div class="logo-image-big">
             <img src="/milkyWayForest/image/milkyWayForestLogo.png" border="1" width="60%">
           </div>

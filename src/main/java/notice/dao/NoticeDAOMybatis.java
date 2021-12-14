@@ -82,4 +82,9 @@ public class NoticeDAOMybatis implements NoticeDAO {
 		return sqlSession.selectList("noticeSQL.getQnaComment", qnaCode);
 	}
 
+	@Override
+	public void commentInsert(CommentDTO commentDTO) {
+		sqlSession.insert("noticeSQL.commentInsert", commentDTO);
+	}
+
 }

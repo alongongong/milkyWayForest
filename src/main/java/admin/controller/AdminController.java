@@ -29,7 +29,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@GetMapping("/admin")
+	@GetMapping("/admin/adminIndex")
 	public String admin() {
 		return "/admin/adminIndex";
 	}
@@ -249,7 +249,7 @@ public class AdminController {
 	
 	
 	//관리자 로그인 *******************************
-	@GetMapping("/admin/adminloginForm")
+	@GetMapping("/admin")
 	public String cart(Model model) {
 		model.addAttribute("display", "admin/adminlogin.jsp");
 		return "/index";
@@ -283,4 +283,9 @@ public class AdminController {
 		return adminService.getReview(pg);
 	}
 	
+	@PostMapping("/admin/adminLogout")
+	@ResponseBody
+	public void adminLogout(HttpSession session) {
+		session.invalidate();
+	}
 }

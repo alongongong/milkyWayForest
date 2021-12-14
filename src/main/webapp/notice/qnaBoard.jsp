@@ -18,9 +18,6 @@
 			<table id="qnaBoardTable" class="table">
 				<thead>
 					<tr>
-						<th>
-							<input type="checkbox" id="allQnaCheck">
-						</th>
 						<th width="70">글번호</th>
 						<th width="120">말머리</th>
 						<th>제목</th>
@@ -52,11 +49,7 @@ $(function(){
 		success: function(data){
 			// alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
-				$('<tr>').append($('<td>').append($('<input>',{
-					type: 'checkbox',
-					class: 'qnaCheck',
-					id: 'qnaCheck' + index
-				}))).append($('<td>',{
+				$('<tr>').append($('<td>',{
 					text: items.qnaCode,
 					align: 'center'
 				})).append($('<td>',{
@@ -83,7 +76,7 @@ $(function(){
 				$('<tr>', {
 					class: 'pwdWrite'
 				}).append($('<td>',{
-					colspan: '8',
+					colspan: '7',
 					style: 'vertical-align: middle; text-align: center; padding: 60px;'
 				}).append($('<input>',{
 					type: 'password',
@@ -103,7 +96,7 @@ $(function(){
 					$('<tr>', {
 						class: 'contentHide'
 					}).append($('<td>', {
-						colspan: '8',
+						colspan: '7',
 						text: items.qnaContent,
 						style: 'padding: 80px 80px 120px 80px;'
 					})).appendTo($('#qnaBoardTable tbody'));
@@ -144,7 +137,8 @@ $(function(){
 				}).append($('<td>',{
 					colspan: '8',
 					style: 'padding: 10px 10px 20px 10px;',
-					class: 'pQnaContent'
+					class: 'pQnaContent',
+					id: 'commentAppend'+index
 				}).append($('<div>',{
 					id: 'commentDiv'+index,
 					align: 'left',
@@ -152,13 +146,12 @@ $(function(){
 				})).append($('<textarea>',{
 					type: 'text',
 					id: 'qnaComment'+index,
-					style: 'width: 80%; margin: 5px; height: 60px; vertical-align: middle'
+					style: 'width: 83%; margin: 5px 5px 5px 60px; height: 60px; vertical-align: middle; resize: none;'
 				})).append($('<input>',{
 					type: 'button',
 					value: '입력',
 					class: 'btn qnaCommentBtn',
-					id: 'commentInsertBtn'+index,
-					style: 'height: 60px;'
+					id: 'commentInsertBtn'+index
 				}))).appendTo($('#qnaBoardTable tbody'));
 			
 				
@@ -174,6 +167,43 @@ $(function(){
 					}
 				});
 				
+				if(${memId==null}) {
+					$('#qnaComment'+index).prop('placeholder', '로그인 후 입력하세요.');
+					$('#commentInsertBtn'+index).prop('disabled', true);
+				} 
+				
+				$('#commentInsertBtn'+index).click(function(){
+					if($('#qnaComment'+index).val() == '') {
+						alert('내용을 입력해주세요');
+					} else {
+						$.ajax({
+							url: '/milkyWayForest/notice/commentInsert',
+							type: 'post',
+							data: 'qnaCode='+items.qnaCode+'&commentContent='+$('#qnaComment'+index).val(),
+							success: function(data) {
+								$('<div>').append($('<p>').append($('<span>',{
+									text: '${memId}'
+								})).append($('<input>',{
+									type: 'button',
+									value: '수정',
+									id: 'commentUpdate'+index
+								})).append($('<input>',{
+									type: 'button',
+									value: '삭제',
+									id: 'commentDelete'+index
+								}))).append($('<div>',{
+									text: $('#qnaComment'+index).val(),
+									style: 'width: 83%; height: 60px; background: #999;'
+								})).prependTo($('#commentAppend'+index));
+								
+								$('#qnaComment'+index).val('');
+							},
+							error: function(err) {
+								console.log(err);
+							}
+						});
+					}
+				});
 				
 				
 				$.ajax({
@@ -182,7 +212,7 @@ $(function(){
 					data: 'qnaCode='+items.qnaCode,
 					success: function(data) {
 						// alert(JSON.stringify(data))
-						$.each(data, function(index1, items){
+						$.each(data, function(index1, items1){
 							$('#commentDiv'+index).append($('<p>',{
 								class: 'commentContent'
 							}).append($('<span>', {

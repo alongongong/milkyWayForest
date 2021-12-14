@@ -32,4 +32,10 @@ body::-webkit-scrollbar-track {
 .row .col-md-12 {
 	min-height: 90vh;
 }
-
+#logoutBtn {
+	background: #154520;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	margin-right: 10px; 
+}

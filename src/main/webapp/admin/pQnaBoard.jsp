@@ -114,18 +114,18 @@ $(function(){
 							})).append($('<input>',{
 								type: 'button',
 								value: '수정',
-								id: 'commentUpdataBtn'+index,
+								id: 'commentUpdataBtn'+index1,
 								class: 'btn commentUpdateBtn'
 							})).append($('<input>',{
 								type: 'button',
 								value: '삭제',
-								id: 'commentDeleteBtn'+index,
+								id: 'commentDeleteBtn'+index1,
 								class: 'btn commentDeleteBtn'
 							})).append($('<p>', {
 								text: items.commentContent
 							})));
+							
 						});
-						
 					},
 					error: function(err) {
 						console.log(err);
@@ -143,12 +143,28 @@ $(function(){
 							data: 'commentContent='+$('#qnaComment'+index).val()+'&qnaCode='+items.qnaCode,
 							success: function(data){
 								alert('작성완료');
-								$('<p>',{
-									text: $('#qnaComment'+index).val(),
+								$('#commentDiv'+index).append($('<div>',{
+									style: 'margin: 0 auto; font-size: 14px;',
 									class: 'commentContent'
-								}).appendTo($('#commentDiv'+index));
-								$('#qnaComment'+index).empty();
+								}).append($('<p>').append($('<span>', {
+									text: '${adminId}',
+								})).append($('<input>',{
+									type: 'button',
+									value: '수정',
+									id: 'commentUpdataBtn'+index,
+									class: 'btn commentUpdateBtn'
+								})).append($('<input>',{
+									type: 'button',
+									value: '삭제',
+									id: 'commentDeleteBtn'+index,
+									class: 'btn commentDeleteBtn'
+								}))).append($('<p>', {
+									text: $('#qnaComment'+index).val(),
+								})));
+								
+								$('#qnaComment'+index).val('');
 
+								
 								
 							},
 							error: function(err){
@@ -157,6 +173,9 @@ $(function(){
 						});
 					}
 				});
+				
+				
+				
 			});
 			
 			$('#boardPagingDiv').html(data.boardPaging);

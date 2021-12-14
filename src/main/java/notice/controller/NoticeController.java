@@ -172,4 +172,11 @@ public class NoticeController {
 	public List<CommentDTO> getQnaComment(@RequestParam int qnaCode) {
 		return noticeService.getQnaComment(qnaCode);
 	}
+	
+	@PostMapping("/notice/commentInsert")
+	@ResponseBody
+	public void commentInsert(@ModelAttribute CommentDTO commentDTO, HttpSession session) {
+		commentDTO.setId(session.getAttribute("memId")+"");
+		noticeService.commentInsert(commentDTO);
+	}
 }
