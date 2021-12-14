@@ -105,7 +105,8 @@ $(function(){
 				.appendTo($('#menuImgDiv1'));
 				
 				 $('#imgClick'+items.productCode).click(function(){
-					$.ajax({
+					 location.href="/milkyWayForest/shopping/shoppingDetail?productCode="+items.productCode
+					/* $.ajax({
 						url:'/milkyWayForest/shopping/clickImg',
 						type: 'post',
 						data: 'productCode='+items.productCode,
@@ -117,7 +118,7 @@ $(function(){
 						error: function(err){ 
 							console.log(err);
 						}	
-					});
+					}); */
 				});  
 			});//each	
 		},

@@ -37,6 +37,7 @@
 				<tbody>
 				</tbody>
 			</table>
+			<div id="boardPagingDiv"></div>
 		</div>
 	</div><!-- 나의 주문처리 현황 -->
 
@@ -75,6 +76,8 @@ $(function(){
 					align: 'center'
 				})).appendTo($('#myWishListTable tbody'));
 			});
+			
+			$('#boardPagingDiv').html(data.boardPaging);
 		},
 		error: function(err) {
 			console.log(err);
@@ -89,12 +92,23 @@ $(function(){
 		}
 	});
 	
+	
 	$('#wishSelectDelete').click(function(){
 		
 	});
 	
 	$('#wishAllDelete').click(function(){
-		
+		$.ajax({
+			url: '/milkyWayForest/mypage/wishAllDelete',
+			type: 'post',
+			success: function(data) {
+				alert('삭제되었습니다.');
+				$('#myWishListTable tbody').empty();
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
 	});
 });
 </script>

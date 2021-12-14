@@ -417,4 +417,9 @@ public class MypageServiceImpl implements MypageService {
 		return json;
 	}
 
+	@Override
+	public void wishAllDelete(String id) {
+		mypageDAO.wishAllDelete(id);
+	}
+
 }

@@ -74,4 +74,6 @@ public interface MypageService {
 
 	public JSONObject getWishList(String id, int pg);
 
+	public void wishAllDelete(String id);
+
 }

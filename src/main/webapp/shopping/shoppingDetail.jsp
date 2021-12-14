@@ -547,7 +547,7 @@ $(function(){
 			type: 'post',
 			data: 'productCode=${productCode}',
 			success: function(data) {
-				alert(data);
+				//alert(data);
 				if('${productCode}' == data) {
 					if(confirm("이미 찜하기 목록에 있습니다. 찜하기 목록으로 이동하시겠습니까?")) {
 						location.href="/milkyWayForest/mypage/wishList?pg=1";
