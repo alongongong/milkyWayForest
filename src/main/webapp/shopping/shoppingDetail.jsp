@@ -115,6 +115,12 @@
 			
 	</div>
 	
+	
+	<div id="detailBottom">
+		<div id="detailInfoName"><span>상품정보</span></div>
+		<div id="detailReviewName"><span>상품후기</span></div>
+	</div>
+	
 	<div id="DetailInfoDiv">
 		<div id="productDetailInfoDiv"></div>
 	</div>	
@@ -393,6 +399,48 @@ $(function(){
 	}); // purchaseBtn 클릭시
 
 
+	$.ajax({
+		url: '/milkyWayForest/shopping/getReview?pg=1',
+		type: 'post',
+		data: 'productCode=${productCode}',
+		success: function(data) {
+			// alert(JSON.stringify(data));
+			
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					text: items.reviewLike 
+				})).append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.reviewContent
+				})).append($('<td>',{
+					text: items.reviewDate
+				})).appendTo($('#reviewTable'));
+			});
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	
+	$('#detailInfoName').click(function(){
+		$('#DetailInfoDiv').css('display','block');
+		$('#detailInfoName').css('border','1px solid #555');
+		$('#detailInfoName').css('border-bottom','0');
+		$('#reviewDiv').css('display','none');
+		$('#detailReviewName').css('border','0');
+		$('#detailReviewName').css('border-bottom','1px solid #555');
+	});
+	
+	$('#detailReviewName').click(function(){
+		$('#DetailInfoDiv').css('display', 'none');
+		$('#detailInfoName').css('border','0');
+		$('#detailInfoName').css('border-bottom','1px solid #555');
+		$('#reviewDiv').css('display', 'block');
+		$('#detailReviewName').css('border','1px solid #555');
+		$('#detailReviewName').css('border-bottom','0');
+	});
+	
 }); //큰 function
 
 

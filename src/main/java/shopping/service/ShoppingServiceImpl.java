@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import paging.BoardPaging;
+import shopping.bean.ReviewDTO;
 import shopping.bean.ShoppingDTO;
 import shopping.dao.ShoppingDAO;
 
@@ -14,6 +17,8 @@ import shopping.dao.ShoppingDAO;
 public class ShoppingServiceImpl implements ShoppingService {
 	@Autowired
 	private ShoppingDAO shoppingDAO;
+	@Autowired
+	private BoardPaging boardPaging;
 
 	@Override
 	public List<ShoppingDTO> getShoppingList() {
@@ -127,8 +132,37 @@ public class ShoppingServiceImpl implements ShoppingService {
 		
 		return shoppingDAO.productSelect(map);
 	}
-	
 
-	
+	@Override
+	public JSONObject getReview(String productCode, int pg) {
+		int endNum = pg * 5;
+		int startNum = endNum - 4;
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		map.put("productCode", productCode);
+		
+		int reviewTotalA = shoppingDAO.getReviewTotalA(productCode);
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(5);
+		boardPaging.setPageSize(5);
+		boardPaging.setTotalA(reviewTotalA);
+		boardPaging.makePagingHTML();
+		
+		List<ReviewDTO> list = shoppingDAO.getReview(map);
+		
+		JSONObject json = new JSONObject();
+		
+		if(list != null) {
+			json.put("list", list);
+		}
+		json.put("pg", pg);
+		json.put("boardpaging", boardPaging.getPagingHTML().toString());
+		
+		return json;
+	}
+		
 
 }
