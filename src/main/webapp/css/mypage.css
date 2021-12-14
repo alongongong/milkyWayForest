@@ -32,6 +32,9 @@
 
 
 /*********** 디폴트 설정 ***********/
+#sideNav-wrapper li {
+	font-size: 14px;
+}
 #sideNav-wrapper .sideNavTitle {
 	background : #eee;
 	font-size : 16px;
@@ -693,8 +696,27 @@
 }
 
 /* wishList */
+#myWishList-wrapper {
+	width: 820px;
+}
 #myWishList-wrapper #myWishListTable td {
 	font-size: 14px;
+}
+#myWishList-wrapper #wishAllDelete {
+ 	font-size: 14px;
+ 	color: #154520;
+ 	border: 1px solid #154520;
+ 	float: right;
+ 	margin: 5px 0;
+ 	width: 100px;
+ }
+#myWishList-wrapper #wishSelectDelete {
+	background: #154520;
+	font-size: 14px;
+	color: white;
+	float: right;
+	margin: 5px 5px;
+	width: 100px;
 }
 #myWishListTable .productName:link { color: black; text-decoration: none; }
 #myWishListTable .productName:visited { color: black; text-decoration: none; }

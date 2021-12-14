@@ -21,6 +21,8 @@
 		</div>
 		
 		<div id="myWishList-state">
+			<input type="button" id="wishSelectDelete" class="btn" value="선택삭제">
+			<input type="button" id="wishAllDelete" class="btn" value="전체삭제">
 			<table id="myWishListTable" class="table border-bottom">
 				<thead>
 					<tr align="center">
@@ -77,6 +79,22 @@ $(function(){
 		error: function(err) {
 			console.log(err);
 		}
+	});
+	
+	$('#allCheck').click(function(){
+		if($('#allCheck').is(':checked')) {
+			$('.wishCheck').prop('checked', false);
+		} else {
+			$('.wishCheck').prop('checked', false);
+		}
+	});
+	
+	$('#wishSelectDelete').click(function(){
+		
+	});
+	
+	$('#wishAllDelete').click(function(){
+		
 	});
 });
 </script>

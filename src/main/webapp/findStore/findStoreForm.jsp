@@ -50,6 +50,11 @@ $(function(){
 	        // 마커와 인포윈도우를 표시합니다
 	        displayMarker(locPosition, message); 
 			alert('와이파이 이용시 정확도가 다소 떨어질 수 있습니다');
+			
+	        now_x = lat;
+	        now_y = lon;
+	        
+			getStore();
     	}
 	    
 	    function geo_error() {
@@ -76,6 +81,8 @@ $(function(){
 	        message = '현재 위치를 찾을 수 없습니다'
 	        
 	    displayMarker(locPosition, message);
+	
+	    getStore();
 	}
 
 	// 지도에 마커와 인포윈도우를 표시하는 함수입니다
@@ -103,109 +110,109 @@ $(function(){
 	    map.setCenter(locPosition);      
 	}   
 	
+	function getStore() {
+		//스타벅스 매장
+		$.ajax({
+			type: 'post',
+			url: '/milkyWayForest/findStore/getStore',
+			data: { 'now_x': now_x,
+					'now_y': now_y },
+			success: function(data){
+				console.log(JSON.stringify(data));
+				$.each(data, function(index, items){
+					let json = new Object();
+					json = {'title': items.storeName,
+							'latlng': new kakao.maps.LatLng(items.storeX, items.storeY),
+							'storeUrl': items.storeUrl}
+					positions.push(json);
 	
-	//스타벅스 매장
-	$.ajax({
-		type: 'post',
-		url: '/milkyWayForest/findStore/getStore',
-		data: { 'now_x': now_x,
-				'now_y': now_y },
-		success: function(data){
-			console.log(JSON.stringify(data));
-			$.each(data, function(index, items){
-				let json = new Object();
-				json = {'title': items.storeName,
-						'latlng': new kakao.maps.LatLng(items.storeX, items.storeY),
-						'storeUrl': items.storeUrl}
-				positions.push(json);
-
-				
-				$('<div>',{
-					class: 'storeList',
-					id: 'storeList'+index
-				}).append($('<div>',{
-					text: '스타벅스 '+items.storeName+'점',
-					class: 'storeName',
-					id: 'storeName'+index
-				})).append($('<div>',{
-					text: items.storeLocation,
-					class: 'storeLocation'
-				})).append($('<div>',{
-					class: 'storePin'
-				}).append($('<img>',{
-					src: '//image.istarbucks.co.kr/common/img/store/pin/pin_general.png',
-					width: '35px',
-					height: '55px',
-					id: 'storePin'+index
-				}))).appendTo($('#storeListBorder'))
-				
-			});
-
-			
-				// 마커의 이미지 주소
-				let imageSrc = "//image.istarbucks.co.kr/common/img/store/pin/pin_general.png"; 
-				
-				// 마커 이미지 크기
-				let imageSize = new kakao.maps.Size(35, 55);
-				
-				// 마커 이미지 생성
-				let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-			
-				// 지도에 마커를 생성하고 표시한다
-				$.each(positions, function(index, items){
-
-					// 마커 생성
-					let marker = new kakao.maps.Marker({
-						map: map, // 마커를 표시할 지도
-						position: items.latlng, // 마커를 표시할 위치
-						title: items.title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시
-						image: markerImage // 마커 이미지
-					});
-				
-				
-					// 마커 위에 표시할 인포윈도우를 생성한다
-					let infowindow = new kakao.maps.InfoWindow({
-						content : '<div class="infoWindow" id="infoWindow'+index+'" style="padding:5px; font-size: 10pt;">스타벅스 '+items.title+'점</div>' // 인포윈도우에 표시할 내용
-					});
-
-
-					// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
-					kakao.maps.event.addListener(marker, 'click', function() {
-						infowindow.open(map, marker);
-						if(aa) {
-							aa.hide();
-						} 
-						aa = $('#infoWindow'+index).parent().parent();
-						aa.show();
-						
-						$('.infoWindow').click(function(){
-							window.open(items.storeUrl);
-						})
-					});
 					
-					$('#findStoreDiv').on('click', '#storeList'+index, function() {
-						infowindow.open(map, marker);
-						if(aa) {
-							aa.hide();
-						} 
-						aa = $('#infoWindow'+index).parent().parent();
-						aa.show();
-						
-						$('.infoWindow').click(function(){
-							window.open(items.storeUrl);
-						})
-					});
+					$('<div>',{
+						class: 'storeList',
+						id: 'storeList'+index
+					}).append($('<div>',{
+						text: '스타벅스 '+items.storeName+'점',
+						class: 'storeName',
+						id: 'storeName'+index
+					})).append($('<div>',{
+						text: items.storeLocation,
+						class: 'storeLocation'
+					})).append($('<div>',{
+						class: 'storePin'
+					}).append($('<img>',{
+						src: '//image.istarbucks.co.kr/common/img/store/pin/pin_general.png',
+						width: '35px',
+						height: '55px',
+						id: 'storePin'+index
+					}))).appendTo($('#storeListBorder'))
 					
 				});
 	
-				/* // 인포윈도우를 지도에 표시한다
-				infowindow.open(map, markerNow); */
-		},
-		error: function(err){
-			console.log(err);
-		}
+				
+					// 마커의 이미지 주소
+					let imageSrc = "//image.istarbucks.co.kr/common/img/store/pin/pin_general.png"; 
+					
+					// 마커 이미지 크기
+					let imageSize = new kakao.maps.Size(35, 55);
+					
+					// 마커 이미지 생성
+					let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+				
+					// 지도에 마커를 생성하고 표시한다
+					$.each(positions, function(index, items){
+	
+						// 마커 생성
+						let marker = new kakao.maps.Marker({
+							map: map, // 마커를 표시할 지도
+							position: items.latlng, // 마커를 표시할 위치
+							title: items.title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시
+							image: markerImage // 마커 이미지
+						});
+					
+					
+						// 마커 위에 표시할 인포윈도우를 생성한다
+						let infowindow = new kakao.maps.InfoWindow({
+							content : '<div class="infoWindow" id="infoWindow'+index+'" style="padding:5px; font-size: 10pt;">스타벅스 '+items.title+'점</div>' // 인포윈도우에 표시할 내용
+						});
+	
+	
+						// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+						kakao.maps.event.addListener(marker, 'click', function() {
+							infowindow.open(map, marker);
+							if(aa) {
+								aa.hide();
+							} 
+							aa = $('#infoWindow'+index).parent().parent();
+							aa.show();
+							
+							$('.infoWindow').click(function(){
+								window.open(items.storeUrl);
+							})
+						});
+						
+						$('#findStoreDiv').on('click', '#storeList'+index, function() {
+							infowindow.open(map, marker);
+							if(aa) {
+								aa.hide();
+							} 
+							aa = $('#infoWindow'+index).parent().parent();
+							aa.show();
+							
+							$('.infoWindow').click(function(){
+								window.open(items.storeUrl);
+							})
+						});
+						
+					});
 		
-	});
-
+					/* // 인포윈도우를 지도에 표시한다
+					infowindow.open(map, markerNow); */
+			},
+			error: function(err){
+				console.log(err);
+			}
+			
+		});
+	}
 });
 </script>
