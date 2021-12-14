@@ -53,10 +53,10 @@ $(function(){
 			//alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr>').append($('<td>',{
+					align: 'center'
 				}).append($('<input>',{
 					type: 'checkbox',
-					class: 'wishCheck',
-					align: 'center'
+					class: 'wishCheck'
 				}))).append($('<td>',{
 					style: 'width: 80px; height: 80px;'
 				}).append($('<img>',{
@@ -83,7 +83,7 @@ $(function(){
 	
 	$('#allCheck').click(function(){
 		if($('#allCheck').is(':checked')) {
-			$('.wishCheck').prop('checked', false);
+			$('.wishCheck').prop('checked', true);
 		} else {
 			$('.wishCheck').prop('checked', false);
 		}
