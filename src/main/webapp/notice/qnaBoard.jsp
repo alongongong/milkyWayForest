@@ -86,7 +86,7 @@ $(function(){
 					colspan: '8',
 					style: 'vertical-align: middle; text-align: center; padding: 60px;'
 				}).append($('<input>',{
-					type: 'text',
+					type: 'password',
 					placeholder: '비밀번호 입력',
 					style: 'margin-right: 5px; padding: 3px; outline: none;',
 					class: 'pwdInput'
@@ -138,19 +138,11 @@ $(function(){
 					}))))).appendTo($('#qnaBoardTable tbody'));
 				}
 				
-				$('<tr>',{
-					class: 'contentHide'
-				}).append($('<td>',{
-					colspan: '6',
-					text: items.qnaContent,
-					style: 'padding: 20px;',
-					class: 'pQnaContent'
-				})).appendTo($('#qnaBoardTable tbody'));
 				
 				$('<tr>',{
 					class: 'contentHide'
 				}).append($('<td>',{
-					colspan: '6',
+					colspan: '8',
 					style: 'padding: 10px 10px 20px 10px;',
 					class: 'pQnaContent'
 				}).append($('<div>',{
@@ -189,24 +181,25 @@ $(function(){
 					type: 'post',
 					data: 'qnaCode='+items.qnaCode,
 					success: function(data) {
+						// alert(JSON.stringify(data))
 						$.each(data, function(index1, items){
 							$('#commentDiv'+index).append($('<p>',{
 								class: 'commentContent'
 							}).append($('<span>', {
-								text: items.id,
+								text: items1.id,
 								style: 'margin: 0 10px;'
 							})).append($('<input>',{
 								type: 'button',
 								value: '수정',
-								id: 'commentUpdataBtn'+index,
+								id: 'commentUpdataBtn'+index1,
 								class: 'btn commentUpdateBtn'
 							})).append($('<input>',{
 								type: 'button',
 								value: '삭제',
-								id: 'commentDeleteBtn'+index,
+								id: 'commentDeleteBtn'+index1,
 								class: 'btn commentDeleteBtn'
 							})).append($('<p>', {
-								text: items.commentContent
+								text: items1.commentContent
 							})));
 						});
 					},

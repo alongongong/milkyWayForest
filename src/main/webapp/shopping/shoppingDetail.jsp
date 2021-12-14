@@ -11,16 +11,14 @@
 		<h1>상품</h1>
 		
 		<div id="shoppingDetailNav">
-			<div>
+			<div id="shoppingDetailCategory">
 				<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 				<a href="/milkyWayForest/shopping">Shopping</a> > 
-				<a href="/milkyWayForest/shopping/beanNTea">원두/차</a> > 
-				<a href="/milkyWayForest/shopping/beanList">원두</a>
 			</div>
 		</div>
 
 	<div class="productView">
-		
+		<input type="hidden" id="categoryDiv">
 		<div class="shoppingDetailImg items">
 			<div id="shoppingDetailBigImg">
 				<img alt="B001" id="bigImg" class="imgClick">
@@ -208,6 +206,7 @@ $(function(){
 			$('#productOptionSpan2').text(items.productOption); */
 			/* $('#productTotalSpan').text((items.productUnit)*parseInt($('.length input').val())); */
 			$('#productDetailInfoDiv').text(items.productDetailInfo);	
+			$('#categoryDiv').val(items.category);
 			
 			//사진 나타나게 하기(인덱스별로 조정)
 			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것
@@ -347,6 +346,76 @@ $(function(){
 
 		}); //li:eq(5)
 
+
+		
+		if($('#categoryDiv').val() == '원두') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '원두 / 차',
+				href: '/milkyWayForest/shopping/beanNTea'
+			})).append(' > ').append($('<a>', {
+				text: '원두',
+				href: '/milkyWayForest/shopping/beanList'
+			}));
+		} else if($('#categoryDiv').val() == '차') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '원두 / 차',
+				href: '/milkyWayForest/shopping/beanNTea'
+			})).append(' > ').append($('<a>', {
+				text: '차',
+				href: '/milkyWayForest/shopping/teaList'
+			}));
+		} else if($('#categoryDiv').val() == '머그') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '머그',
+				href: '/milkyWayForest/shopping/mugList'
+			}));
+		} else if($('#categoryDiv').val() == '글라스') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '글라스',
+				href: '/milkyWayForest/shopping/glassList'
+			}));
+		} else if($('#categoryDiv').val() == '플라스틱 텀블러') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '플라스틱 텀블러',
+				href: '/milkyWayForest/shopping/plasticTumblrList'
+			}));
+		} else if($('#categoryDiv').val() == '스테인리스 텀블러') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '스테인리스 텀블러',
+				href: '/milkyWayForest/shopping/stainlessTumblrList'
+			}));
+		} else if($('#categoryDiv').val() == '보온병') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '보온병',
+				href: '/milkyWayForest/shopping/thermosList'
+			}));
+		} else if($('#categoryDiv').val() == '커피용품') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '커피용품',
+				href: '/milkyWayForest/shopping/coffeeEtcList'
+			}));
+		}
+		
+
+		
 		}, //getShoppingDetail success
 
 		error: function(err) {
@@ -574,6 +643,7 @@ $(function(){
 		});
 		
 	});
+
 }); //큰 function
 
 function boardPaging(page){
