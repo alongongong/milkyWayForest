@@ -81,7 +81,7 @@
 	
 	<insert id="qnaCommentInsert" parameterType="comment">
 		begin
-		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, 'aaa', #{commentContent});
+		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, #{id}, #{commentContent});
 		update milkyqna set qnaAnswerCheck='답변 완료' where qnaCode=#{qnaCode};
 		end;
 	</insert>

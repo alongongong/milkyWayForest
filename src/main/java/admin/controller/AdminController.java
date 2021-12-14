@@ -212,7 +212,8 @@ public class AdminController {
 	
 	@PostMapping("/admin/qnaCommentInsert")
 	@ResponseBody
-	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO) {
+	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO, HttpSession session) {
+		commentDTO.setId(session.getAttribute("adminId")+"");
 		adminService.qnaCommentInsert(commentDTO);
 	}
 	

@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,11 +85,12 @@ public class NoticeController {
 	@ResponseBody
 	public void qnaBoardWrite(@ModelAttribute QnaBoardDTO qnaBoardDTO,
 								@RequestParam MultipartFile[] img,
-								Model model) {
+								Model model, HttpSession session) {
 		String filePath = "D:\\Spring\\workspace\\milkyWayForest\\src\\main\\webapp\\storage";
 		// String filePath = "C:\\study\\Spring\\workspace\\milkyWayForest\\src\\main\\storage";
 		String fileName;
 		File file;
+		qnaBoardDTO.setId(session.getAttribute("memId")+"");
 		
 		if(img[0] != null) {
 			fileName = img[0].getOriginalFilename();
