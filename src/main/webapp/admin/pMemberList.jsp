@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <form id="pMemberListForm">
 <div class="card" id="pQnaBoardDiv">
   <div class="card-header">
@@ -9,7 +10,7 @@
 	</div>
   </div>
   <div class="card-body">
-    <div class="table-responsive">
+    <div class="">
       <table class="table" id="pQnaBoardTable">
         <thead class=" text-primary">
           <th>아이디</th>

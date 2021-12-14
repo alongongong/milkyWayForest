@@ -138,6 +138,17 @@
 	display: none;
 	
 }
+#pOrderNShipForm .shipPrepareBtn, #pOrderNShipForm .shipGoingBtn, 
+#pOrderNShipForm .shipCompleteBtn, #pOrderCancelForm .cancelBtn,
+#pOrderCancelForm .tradeBtn, #pOrderCancelForm .returnBtn,
+#pStockDiv .deleteBtn, #pStockDiv .updateBtn,
+#pProductListDiv .deleteBtn, #pProductListDiv .updateBtn {
+	background: #154520; 
+	color: white; 
+	font-weight: bold;
+	font-size: 13px;
+	padding: 5px 15px;
+}
 #pStockDiv #pStockTable .deleteBtn {
 	width: 45px;
 	height: 25px;

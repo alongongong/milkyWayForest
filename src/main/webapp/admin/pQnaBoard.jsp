@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <div class="card" id="pQnaBoardDiv">
   <div class="card-header">
@@ -9,25 +10,25 @@
 	</div>
   </div>
   <div class="card-body">
-    <div class="table-responsive">
+    <div class="">
       <table class="table" id="pQnaBoardTable">
         <thead class=" text-primary">
-          <th>
+          <th width="120">
             말머리
           </th>
-          <th>
+          <th width="70">
             글번호
           </th>
           <th>
           	제목
           </th>
-          <th>
+          <th width="120">
             작성자
           </th>
-          <th>
+          <th width="120">
           	작성일자
           </th>
-          <th>
+          <th width="120">
           	답변여부
           </th>
         </thead>
@@ -59,7 +60,8 @@ $(function(){
 				})).append($('<td>',{
 					text: items.qnaCode
 				})).append($('<td>',{
-					text: items.qnaSubject
+					text: items.qnaSubject,
+					style: 'text-align: left; padding: 20px;'
 				})).append($('<td>',{
 					text: items.id
 				})).append($('<td>',{
@@ -72,7 +74,7 @@ $(function(){
 				$('<tr>').append($('<td>',{
 					colspan: '6',
 					text: items.qnaContent,
-					style: 'padding: 20px;',
+					style: 'padding: 40px 20px;',
 					class: 'pQnaContent'
 				})).appendTo($('#pQnaBoardTable tbody'));
 				
@@ -87,13 +89,13 @@ $(function(){
 				})).append($('<textarea>',{
 					type: 'text',
 					id: 'qnaComment'+index,
-					style: 'width: 80%; margin: 5px; height: 60px; vertical-align: middle'
+					style: 'width: 80%; margin: 5px; height: 60px; vertical-align: middle; resize: none;'
 				})).append($('<input>',{
 					type: 'button',
 					value: '입력',
 					class: 'btn qnaCommentBtn',
 					id: 'commentInsertBtn'+index,
-					style: 'height: 60px;'
+					style: 'height: 60px; background:#154520; color: white; font-weight: bold;'
 				}))).appendTo($('#pQnaBoardTable tbody'));
 				
 				

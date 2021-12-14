@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <form id="pOrderCancelForm">
 <div class="card" id="pOrderCancelDiv">
@@ -10,7 +11,7 @@
 	</div>
   </div>
   <div class="card-body">
-    <div class="table-responsive">
+    <div class="">
       <table class="table" id="pOrderCancelTable">
         <thead class=" text-primary">
           <th>주문번호</th>
@@ -81,19 +82,19 @@ $(function(){
 				
 				if(items.deliveryInfo == '취소') {
 					$('<input>',{
-						class: 'cancelBtn',
+						class: 'btn cancelBtn',
 						type: 'button',
 						value: '취소처리'
 					}).appendTo($('#cancelBtn'+index));
 				} else if(items.deliveryInfo == '교환') {
 					$('<input>',{
-						class: 'tradeBtn',
+						class: 'btn tradeBtn',
 						type: 'button',
 						value: '교환처리'
 					}).appendTo($('#cancelBtn'+index));
 				} else if(items.deliveryInfo == '반품') {
 					$('<input>',{
-						class: 'returnBtn',
+						class: 'btn returnBtn',
 						type: 'button',
 						value: '반품처리'
 					}).appendTo($('#cancelBtn'+index));					

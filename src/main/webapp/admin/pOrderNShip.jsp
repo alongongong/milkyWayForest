@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <form id="pOrderNShipForm">
 <div class="card" id="pOrderNShipDiv">
@@ -10,7 +11,7 @@
 	</div>
   </div>
   <div class="card-body">
-    <div class="table-responsive">
+    <div class="">
       <table class="table" id="pOrderNShipTable">
         <thead class=" text-primary">
           <th>주문번호</th>
@@ -82,19 +83,19 @@ $(function(){
 				
 				if(items.deliveryInfo == '결제완료') {
 					$('<input>', {
-						class: 'shipPrepareBtn',
+						class: 'btn shipPrepareBtn',
 						type: 'button',
 						value: '배송준비'
 					}).appendTo($('#shipBtn'+index));
 				} else if(items.deliveryInfo == '배송준비중') {
 					$('<input>', {
-						class: 'shipGoingBtn',
+						class: 'btn shipGoingBtn',
 						type: 'button',
 						value: '발송'
 					}).appendTo($('#shipBtn'+index));
 				} else if(items.deliveryInfo == '배송중') {
 					$('<input>', {
-						class: 'shipCompleteBtn',
+						class: 'btn shipCompleteBtn',
 						type: 'button',
 						value: '배송완료'
 					}).appendTo($('#shipBtn'+index));
