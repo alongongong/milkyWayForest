@@ -461,4 +461,10 @@ public class MypageController {
 	public void wishAllDelete(HttpSession session) {
 		mypageService.wishAllDelete(session.getAttribute("memId")+"");
 	}
+	
+	@PostMapping("/wishSelectDelete")
+	@ResponseBody
+	public void wishSelectDelete(@RequestParam String[] wishListCode) {
+		mypageService.wishSelectDelete(wishListCode);
+	}
 }

@@ -76,4 +76,6 @@ public interface MypageService {
 
 	public void wishAllDelete(String id);
 
+	public void wishSelectDelete(String[] wishListCode);
+
 }

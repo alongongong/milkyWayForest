@@ -309,4 +309,8 @@
 	<delete id="wishAllDelete" parameterType="String">
 		delete milkywishlist where id=#{id}
 	</delete>
+	
+	<delete id="wishSelectDelete" parameterType="String">
+		delete milkywishlist where wishlistcode=#{wishListCode}
+	</delete>
 </mapper>

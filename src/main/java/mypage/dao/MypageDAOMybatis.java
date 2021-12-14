@@ -262,4 +262,9 @@ public class MypageDAOMybatis implements MypageDAO {
 		sqlSession.delete("mypageSQL.wishAllDelete", id);
 	}
 
+	@Override
+	public void wishSelectDelete(String wishListCode) {
+		sqlSession.delete("mypageSQL.wishSelectDelete", wishListCode);
+	}
+
 }

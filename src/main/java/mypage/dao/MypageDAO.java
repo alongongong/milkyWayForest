@@ -106,4 +106,6 @@ public interface MypageDAO {
 
 	public void wishAllDelete(String id);
 
+	public void wishSelectDelete(String wishListCode);
+
 }
