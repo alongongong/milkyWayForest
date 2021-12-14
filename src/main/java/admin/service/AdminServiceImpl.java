@@ -167,7 +167,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String adminlogin(AdminDTO adminDTO) {
-		return null;
+		return adminDAO.adminlogin(adminDTO);
 	}
 
 }

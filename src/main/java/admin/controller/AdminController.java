@@ -254,9 +254,9 @@ public class AdminController {
 	}
 	
 	//  
-	@PostMapping(value="/admin/adminlogin")  
+	@PostMapping("/admin/adminlogin")  
 	@ResponseBody			//이름같은걸 매칭해서 저장시켜주는 역할 이름이 맡는걸 저장해준다.(setadminId 해준다는것) 	//어드민 디티오에 내가 담아준아이디랑 비번이 있음
-	public String adminlogin(@ModelAttribute AdminDTO adminDTO,HttpSession session) {  //로그인 성공 실패의 결과만 가져오기때문에 
+	public String adminlogin(@ModelAttribute AdminDTO adminDTO, HttpSession session) {  //로그인 성공 실패의 결과만 가져오기때문에 
 		
 		 String id= adminService.adminlogin(adminDTO);
 		 
@@ -264,17 +264,15 @@ public class AdminController {
 		//아이디 널이면 내가 받아온 데이터가 false면 div 에 유효성 검사 해주는거 뿌려주면 
 		
 		 // 아이디 있는지 확인
-//		 if(id != null) {
-//			 //
-//			 session.setAttribute("id", adminDTO.getAdminId()); 
-//			 
-//		 }else (id == null) {
-//			 
-//			 
-//		 }
-//		 
+		 if(id != null) {
+			 session.setAttribute("adminId", id);  // 세션에 넣을 변수를 adminId 로 지정을 해주는거고 id 를 위에서 String id= adminService.adminlogin(adminDTO); 로 지정해줘서 이 줄의 괄호 끝에는 id 라는 변수로 쓰는것. 
 		 
-		 return id; //
+		 }else {
+			 id="false";  //여기서 아이디가 있는걸 false 라고 지정해줬으니까  js 에 있는 에이작스에 갈때는 data== false 가 된다.
+			 
+		 }
+		 
+		 return id; 
 	}
 	
 	

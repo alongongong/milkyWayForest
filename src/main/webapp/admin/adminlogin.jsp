@@ -9,8 +9,9 @@
 	<div id="headerBackground"> </div>
 		<div id="main-container">
 			<h1>로그인</h1>
+			
 				<div id="main-wrap">
-					
+				
 					<div id="welcomdeLogin">
 						<span>Welcome! </span> 은하숲 관리자 로그인 페이지에 오신 것을 환영합니다.
 					</div>
@@ -29,11 +30,13 @@
 							<button type="button" id="login-button"  class="btn">로그인</button>
 						</div>
 					
+						<div id="result-div"> </div>
+						
 					</section>
-					
-				<div id="result-div"> </div>	
+				
 				
 			</div>  <!-- main-wrap  -->
+			
 	</div>  <!-- main-container -->
 </form>		
 

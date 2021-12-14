@@ -116,5 +116,9 @@
 	<update id="shipBtn" parameterType="java.util.Map">
 		update milkypayment set deliveryinfo=#{deliveryInfo} where paymentCode=#{paymentCode}
 	</update>
-
+	
+	<select id="adminlogin"  parameterType="admin" resultType="String">
+		select adminId,adminPwd from milkyAdmin where adminId=#{adminId} and adminPwd=#{adminPwd}
+	</select>
+	
 </mapper>

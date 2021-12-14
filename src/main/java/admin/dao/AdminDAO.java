@@ -3,6 +3,7 @@ package admin.dao;
 import java.util.List;
 import java.util.Map;
 
+import admin.bean.AdminDTO;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
@@ -47,4 +48,7 @@ public interface AdminDAO {
 	public List<PaymentDTO> getOrderCancel();
 
 	public void shipBtn(Map<String, String> map);
+	
+	public String adminlogin(AdminDTO adminDTO);
+	
 }

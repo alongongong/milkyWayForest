@@ -38,5 +38,7 @@
 		<typeAlias type="cart.bean.CartDTO" alias="cart"/>
 		
 		<typeAlias type="shopping.bean.ReviewDTO" alias="review"/>
+		
+		<typeAlias type="admin.bean.AdminDTO" alias="admin"/>
 	</typeAliases>
 </configuration>
