@@ -94,6 +94,12 @@ $(function(){
 		}
 	});
 	
+	$(document).on('click', '.wishCheck', function(){
+		if($('.wishCheck:checked').length < $('.wishCheck').length)
+			$('#allCheck').prop('checked', false);
+		else $('#allCheck').prop('checked', true);
+	});
+	
 	
 	$('#wishSelectDelete').click(function(){
 		if($('.wishCheck:checked').length == 0) {
