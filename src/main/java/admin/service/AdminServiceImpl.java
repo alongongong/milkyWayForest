@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import admin.bean.AdminDTO;
 import admin.dao.AdminDAO;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
@@ -162,6 +163,11 @@ public class AdminServiceImpl implements AdminService {
 		map.put("deliveryInfo", deliveryInfo);
 		adminDAO.shipBtn(map);
 		
+	}
+
+	@Override
+	public String adminlogin(AdminDTO adminDTO) {
+		return null;
 	}
 
 }

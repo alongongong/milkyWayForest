@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 
+import admin.bean.AdminDTO;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import payment.bean.PaymentDTO;
@@ -42,6 +43,8 @@ public interface AdminService {
 	public List<PaymentDTO> getOrderCancel();
 
 	public void shipBtn(String paymentCode, String deliveryInfo);
+
+	public String adminlogin(AdminDTO adminDTO);
 
 	
 

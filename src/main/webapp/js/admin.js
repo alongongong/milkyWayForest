@@ -61,10 +61,10 @@ $('#adminLoginForm #login-button').click(function(){
 		$.ajax({
 			url: '/milkyWayForest/admin/adminlogin',
 			type: 'post',
-			data: {'id':$('#loginForm #id-input').val(),
-				   'pwd':$('#loginForm #pwd-input').val()},
+			data: {'adminId':$('#loginForm #id-input').val(),
+				   'adminPwd':$('#loginForm #pwd-input').val()},
 			success: function(data){
-				console.log(JSON.stringify(data));
+				console.log(JSON.stringify(data));  
 				
 				if(data == ''){
 					$('#loginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');

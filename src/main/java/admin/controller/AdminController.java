@@ -2,6 +2,8 @@ package admin.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import admin.bean.AdminDTO;
 import admin.service.AdminService;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
@@ -243,10 +246,36 @@ public class AdminController {
 	}
 	
 	
-	//관리자 로그인
-//	@GetMapping("/admin/adminlogin")
-//	public String cart(Model model) {
-//		model.addAttribute("display", "admin/adminlogin.jsp");
-//		return "/index";
-//	}
+	//관리자 로그인 *******************************
+	@GetMapping("/admin/adminloginForm")
+	public String cart(Model model) {
+		model.addAttribute("display", "admin/adminlogin.jsp");
+		return "/index";
+	}
+	
+	//  
+	@PostMapping(value="/admin/adminlogin")  
+	@ResponseBody			//이름같은걸 매칭해서 저장시켜주는 역할 이름이 맡는걸 저장해준다.(setadminId 해준다는것) 	//어드민 디티오에 내가 담아준아이디랑 비번이 있음
+	public String adminlogin(@ModelAttribute AdminDTO adminDTO,HttpSession session) {  //로그인 성공 실패의 결과만 가져오기때문에 
+		
+		 String id= adminService.adminlogin(adminDTO);
+		 
+		//받아온 다음에 아이디가 널이 아닐때 session.setAttri 아이디를 세션에 실어준다
+		//아이디 널이면 내가 받아온 데이터가 false면 div 에 유효성 검사 해주는거 뿌려주면 
+		
+		 // 아이디 있는지 확인
+//		 if(id != null) {
+//			 //
+//			 session.setAttribute("id", adminDTO.getAdminId()); 
+//			 
+//		 }else (id == null) {
+//			 
+//			 
+//		 }
+//		 
+		 
+		 return id; //
+	}
+	
+	
 }
