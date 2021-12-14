@@ -85,9 +85,9 @@ $(function(){
 
 			if(data.paymentList == ''){
 				$('<tr>').append($('<td>',{
-					text: '주문정보가 존재하지 않습니다',
-					colspan: '6',
-					align: 'center'
+					colSpan: '6',
+					align: 'center',
+					text: '주문정보가 존재하지 않습니다'
 				})).appendTo($('#myPaymentTable'));
 				
 			}else{
