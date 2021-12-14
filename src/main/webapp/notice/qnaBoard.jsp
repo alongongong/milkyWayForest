@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/notice.css">
 <form id="qnaBoardForm">
@@ -32,7 +33,9 @@
 				<tbody></tbody>
 			</table>
 			<div id="qndBoardBtnDiv">
-				<input type="button" id="qnaBoardWriteBtn" class="btn" value="글쓰기">
+				<c:if test="${memId != null }">
+					<input type="button" id="qnaBoardWriteBtn" class="btn" value="글쓰기">
+				</c:if>
 			</div>
 			<div id="qnaBoardPaging"></div>
 		</section>

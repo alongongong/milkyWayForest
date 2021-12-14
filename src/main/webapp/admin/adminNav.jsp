@@ -101,19 +101,6 @@
               <p>물류 관리</p>
             </a>
           </li>
-          <li class="menu">통계</li>
-          <li class="navMenu" id="13">
-            <a href="/milkyWayForest/admin/memberStatics?dataNum=13">
-              <i class="nc-icon nc-chart-bar-32"></i>
-              <p>접속자수 통계</p>
-            </a>
-          </li>
-          <li class="navMenu" id="14">
-            <a href="/milkyWayForest/admin/payStatics?dataNum=14">
-              <i class="nc-icon nc-chart-pie-36"></i>
-              <p>판매 통계</p>
-            </a>
-          </li>
         </ul>
       </div>
     </div>

@@ -53,6 +53,7 @@ $(function(){
 					text: items.noticeCode
 				})).append($('<td>').append($('<a>',{
 					text: items.noticeSubject,
+					class: 'noticeSubject'
 					href: '/milkyWayForest/notice/noticeView?noticeCode='+items.noticeCode+'&pg='+data.pg,
 					style: 'padding-left: 10px;'
 				}))).append($('<td>',{

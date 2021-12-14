@@ -32,11 +32,13 @@
 #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
+	cursor: pointer;
 }
 #paging {
 	padding: 3px 8px;
+	cursor: pointer;
 }
 
 
@@ -89,6 +91,14 @@
 #noticeBoardForm #noticeBoardTable th {
 	text-align: center;
 }
+#noticeBoardForm #noticeBoardTable {
+	border-bottom: 1px solid #ddd;
+}
+#noticeBoardForm .noticeSubject:link { color: black; text-decoration: none; }
+#noticeBoardForm .noticeSubject:visited { color: black; text-decoration: none; }
+#noticeBoardForm .noticeSubject:hover { color: #154520; text-decoration: underline; }
+#noticeBoardForm .noticeSubject:active { color: black; text-decoration: none; }
+
 
 /* 공지사항 글내용 */
 #noticeBoardViewForm #noticeBoardViewDiv {
@@ -335,6 +345,14 @@
 	margin-bottom: 4px;
 }
 
+#qnaBoardForm #qnaBoardTable {
+	border-bottom: 1px solid #ddd;
+}
+#qnaBoardForm .qnaSubject:link { color: black; text-decoration: none; }
+#qnaBoardForm .qnaSubject:visited { color: black; text-decoration: none; }
+#qnaBoardForm .qnaSubject:hover { color: #154520; text-decoration: underline; }
+#qnaBoardForm .qnaSubject:active { color: black; text-decoration: none; }
+
 /* 자주 묻는 질문 */
 #faqBoardForm .faqSubject:hover {
 	color: blue;
@@ -368,3 +386,10 @@
 	font-size: 14px;
 	font-weight: bold;
 }
+#faqBoardForm #faqBoardTable {
+	border-bottom: 1px solid #ddd;
+}
+#faqBoardForm .faqSubject:link { color: black; text-decoration: none; }
+#faqBoardForm .faqSubject:visited { color: black; text-decoration: none; }
+#faqBoardForm .faqSubject:hover { color: #154520; text-decoration: underline; }
+#faqBoardForm .faqSubject:active { color: black; text-decoration: none; }
