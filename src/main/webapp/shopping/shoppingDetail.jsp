@@ -462,8 +462,7 @@ $(function(){
 			
 			$.each(data.list, function(index, items){
 				$('<tr>').append($('<td>',{
-					id: 'reviewLike'+index,
-					style: 'font-weight: bold; color: red;'
+					id: 'reviewLike'+index
 				})).append($('<td>',{
 					text: items.reviewContent
 				})).append($('<td>',{

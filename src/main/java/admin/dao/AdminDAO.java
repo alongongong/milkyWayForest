@@ -10,6 +10,7 @@ import member.bean.MemberDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ReviewDTO;
 
 public interface AdminDAO {
 
@@ -50,5 +51,9 @@ public interface AdminDAO {
 	public void shipBtn(Map<String, String> map);
 	
 	public String adminlogin(AdminDTO adminDTO);
+
+	public int getReviewTotalA();
+
+	public List<ReviewDTO> getReview(Map<String, Integer> map);
 	
 }

@@ -16,6 +16,7 @@ import member.bean.MemberDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ReviewDTO;
 
 @Repository
 @Transactional
@@ -120,6 +121,16 @@ public class AdminDAOMybatis implements AdminDAO {
 	@Override
 	public String adminlogin(AdminDTO adminDTO) {
 		return sqlSession.selectOne("adminSQL.adminlogin", adminDTO);
+	}
+
+	@Override
+	public int getReviewTotalA() {
+		return sqlSession.selectOne("adminSQL.getReviewTotalA");
+	}
+
+	@Override
+	public List<ReviewDTO> getReview(Map<String, Integer> map) {
+		return sqlSession.selectList("adminSQL.getReview", map);
 	}
 
 

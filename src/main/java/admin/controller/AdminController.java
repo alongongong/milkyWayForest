@@ -22,6 +22,7 @@ import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
+import shopping.bean.ReviewDTO;
 
 @Controller
 public class AdminController {
@@ -275,5 +276,10 @@ public class AdminController {
 		 return id; 
 	}
 	
+	@PostMapping("/admin/getReview")
+	@ResponseBody
+	public JSONObject getReview(@RequestParam int pg) {
+		return adminService.getReview(pg);
+	}
 	
 }

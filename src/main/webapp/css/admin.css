@@ -4,7 +4,7 @@
 #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #154520;
 	padding: 3px 8px;
 }
 #paging {
@@ -287,4 +287,9 @@
 	align-items: center;
 	padding-left: 0px;
 	margin: 10px auto 5px auto;
+}
+#pReviewBoardForm #boardPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 }

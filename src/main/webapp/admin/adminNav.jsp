@@ -91,7 +91,7 @@
           <li class="navMenu" id="11">
             <a href="/milkyWayForest/admin/reviewBoard?dataNum=11">
               <i class="nc-icon nc-ruler-pencil"></i>
-              <p>상품 리뷰 관리</p>
+              <p>상품 후기 관리</p>
             </a>
           </li>
           <li class="menu">물류 관리</li>

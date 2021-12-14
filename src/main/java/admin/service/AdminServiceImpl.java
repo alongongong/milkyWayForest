@@ -17,6 +17,7 @@ import paging.BoardPaging;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ReviewDTO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -168,6 +169,36 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public String adminlogin(AdminDTO adminDTO) {
 		return adminDAO.adminlogin(adminDTO);
+	}
+
+	@Override
+	public JSONObject getReview(int pg) {
+		int endNum = pg * 10;
+		int startNum = endNum - 9;
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		int reviewTotalA = adminDAO.getReviewTotalA();
+		
+		boardPaging.setCurrentPage(pg);
+		boardPaging.setPageBlock(10);
+		boardPaging.setPageSize(10);
+		boardPaging.setTotalA(reviewTotalA);
+		boardPaging.makePagingHTML();
+		
+		JSONObject json = new JSONObject();
+		
+		List<ReviewDTO> list = adminDAO.getReview(map);
+		
+		if(list != null) {
+			json.put("list", list);
+		}
+		json.put("pg", pg);
+		json.put("boardPaging", boardPaging.getPagingHTML().toString());
+		
+		return json;
 	}
 
 }
