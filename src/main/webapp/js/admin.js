@@ -61,15 +61,15 @@ $('#adminLoginForm #login-button').click(function(){
 		$.ajax({
 			url: '/milkyWayForest/admin/adminlogin',
 			type: 'post',
-			data: {'adminId':$('#loginForm #id-input').val(),
-				   'adminPwd':$('#loginForm #pwd-input').val()},
+			data: {'adminId':$('#adminLoginForm #id-input').val(),
+				   'adminPwd':$('#adminLoginForm #pwd-input').val()},
 			success: function(data){
 				console.log(JSON.stringify(data));  
 				
-				if(data == ''){
-					$('#loginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');
+				if(data == false){
+					$('#adminLoginForm #result-div').html('아이디와 비밀번호를 정확히 입력하세요');
 				}else{
-					location.href='/milkyWayForest/adminIndex.jsp';
+					location.href='/milkyWayForest/admin';  //관리자 페이지에서 로그인을 성공하면 관리자 페이지로 이동함
 				}
 			},
 			error: function(err){

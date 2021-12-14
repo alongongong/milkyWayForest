@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import admin.bean.AdminDTO;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
@@ -114,6 +115,11 @@ public class AdminDAOMybatis implements AdminDAO {
 	@Override
 	public void shipBtn(Map<String, String> map) {
 		sqlSession.update("adminSQL.shipBtn", map);
+	}
+
+	@Override
+	public String adminlogin(AdminDTO adminDTO) {
+		return sqlSession.selectOne("adminSQL.adminlogin", adminDTO);
 	}
 
 
