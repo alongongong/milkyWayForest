@@ -12,6 +12,6 @@ public class ReviewDTO {
 	private int reviewLike;
 	private String id;
 	private String reviewContent;
-	private String reviewAnswer;
+	private String reviewAnswerCheck;
 	private String reviewDate;
 }

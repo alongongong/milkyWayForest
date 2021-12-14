@@ -134,6 +134,11 @@ public class ShoppingDAOMybatis implements ShoppingDAO {
 		return sqlSession.selectList("shoppingSQL.getReview", map);
 	}
 
+	@Override
+	public void reviewInsert(ReviewDTO reviewDTO) {
+		sqlSession.insert("shoppingSQL.reviewInsert", reviewDTO);
+	}
+
 
 	
 

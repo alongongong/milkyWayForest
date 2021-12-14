@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 
+import shopping.bean.ReviewDTO;
 import shopping.bean.ShoppingDTO;
 
 public interface ShoppingService {
@@ -51,6 +52,8 @@ public interface ShoppingService {
 	public int productSelect(String memId, String productCode);
 
 	public JSONObject getReview(String productCode, int pg);
+
+	public void reviewInsert(ReviewDTO reviewDTO);
 	
 	
 	

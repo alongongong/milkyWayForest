@@ -1116,13 +1116,13 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 		
 }	
 
-#shoppingDetailForm #detailBottom {
+#detailBottom {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: 50px;
 	margin-top: 80px;
 }
-#shoppingDetailForm #detailInfoName {
+#detailBottom #detailInfoName {
 	border: 1px solid #555;
 	border-bottom: 0;
 	grid-column: 1 / 2;
@@ -1133,7 +1133,7 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	padding-top: 13px;
 }
 
-#shoppingDetailForm #detailReviewName {
+#detailBottom #detailReviewName {
 	border: 0;
 	border-bottom: 1px solid #555;
 	grid-column: 2 / 3;
@@ -1144,26 +1144,76 @@ position: absolute; bottom:1rem;  width: 100%; margin: 0 auto;
 	padding-top: 13px;
 }
 
-#shoppingDetailForm #detailInfoName span,
-#shoppingDetailForm #detailReviewName span {
+#detailBottom #detailInfoName span,
+#detailBottom #detailReviewName span {
 	cursor: pointer;
 }
 
-#shoppingDetailForm #DetailInfoDiv {
+#DetailInfoDiv {
 	width: 100%;
 	margin: 0 auto;
 }
 
 
-#shoppingDetailForm #productDetailInfoDiv {
+#DetailInfoDiv #productDetailInfoDiv {
 	width: 100%;
 	padding: 60px 40px;
 	font-size: 13px;
-	height: 600px;
+	min-height: 400px;
+}
+#reviewDiv {
+	display: none;
+	min-height: 400px;
+	width: 100%;
+	padding: 30px 40px;
+	font-size: 14px;
+}
+#reviewDiv .reviewLike {
+	vertical-align: middle;
+}
+#reviewDiv #reviewTable label {
+	margin-right: 20px;
+}
+#reviewDiv #reviewContent {
+	width: 975px;
+	height: 80px;
+	vertical-align: middle;
+	resize: none;
+}
+#reviewDiv #reivewInsertBtn {
+	width: 90px;
+	height: 80px;
+	vertical-align: middle;
+	background: #154520;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	box-shadow: none;
+}
+#reviewDiv #reviewTable {
+	border-bottom: 1px solid #ddd;
+	margin: 0 auto;
+}
+#reviewDiv #reviewTable thead td {
+	border-top: 0;
+}
+#reviewDiv #boardPaging {
+	text-align: center;
+	width: 70%;
+	margin: 30px auto;	
+}
+#reviewDiv #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: #106030;
+	padding: 3px 8px;
+	cursor: pointer;	
+} 
+#reviewDiv #paging {
+	padding: 3px 8px;
+	cursor: pointer;
 }
 
-#shoppingDetailForm #reviewDiv {
-	display: none;
-	height: 600px;
+	
 }
 	

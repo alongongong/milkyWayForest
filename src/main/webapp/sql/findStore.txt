@@ -3,4 +3,5 @@ create table milkyFindStore(
 	storeName varchar(40),
 	storeLocation varchar(200),
 	storeX number,
-	storeY number);
+	storeY number
+);

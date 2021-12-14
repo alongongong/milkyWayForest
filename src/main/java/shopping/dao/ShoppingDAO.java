@@ -53,5 +53,7 @@ public interface ShoppingDAO {
 	public int getReviewTotalA(String productCode);
 
 	public List<ReviewDTO> getReview(Map<String, Object> map);
+
+	public void reviewInsert(ReviewDTO reviewDTO);
 	
 }

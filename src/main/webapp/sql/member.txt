@@ -18,12 +18,14 @@ create table milkyMember(
     idPwdQuestion varchar(50),					-- 아이디비번찾기 질문
     idPwdAnswer varchar(50),					-- 아이디비번찾기 답
     writePath varchar(20),						-- 가입경로
-    loginTime date default sysdate);			-- 로그인 시간
+    loginTime date default sysdate				-- 로그인 시간
+);
     
     
 create table milkyMemberBenefit(
 	id varchar(15),
 	couponName varchar(50),	-- 쿠폰명
-	coupon varchar(150));	-- 쿠폰
+	coupon varchar(150)	-- 쿠폰
+);
 	
 	

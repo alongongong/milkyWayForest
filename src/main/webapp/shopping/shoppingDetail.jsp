@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/shopping.css">
 
 <form id="shoppingDetailForm" name="shoppingDetailForm">
@@ -114,23 +116,75 @@
 		</div>
 			
 	</div>
-	
+</form>		
 	
 	<div id="detailBottom">
 		<div id="detailInfoName"><span>상품정보</span></div>
 		<div id="detailReviewName"><span>상품후기</span></div>
 	</div>
-	
+
 	<div id="DetailInfoDiv">
 		<div id="productDetailInfoDiv"></div>
 	</div>	
 	
 	<div id="reviewDiv">
-		<table id="reviewTable"></table>
+		<form id="reviewForm">
+			<table id="reviewTable" class="table">
+				<thead>
+					<tr>
+						<td colspan="4">
+							<div>
+								<input type="radio" class="reviewLike" id="like1" name="reviewLike" value="1">
+								<label for="like1">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like2" name="reviewLike" value="2">
+								<label for="like2">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like3" name="reviewLike" value="3">
+								<label for="like3">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like4" name="reviewLike" value="4">
+								<label for="like4">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like5" name="reviewLike" value="5">
+								<label for="like5">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label><br>
+							</div>
+							<input type="hidden" name="productCode" value="${productCode }">
+							<c:if test="${memId == null }">
+								<textarea id="reviewContent" name="reviewContent" placeholder="로그인 후 후기를 작성할 수 있습니다." disabled></textarea>
+								<input type="button" id="reivewInsertBtn" class="btn" value="리뷰 등록" disabled>
+							</c:if>
+							<c:if test="${memId != null }">
+								<textarea id="reviewContent" name="reviewContent"></textarea>
+								<input type="button" id="reivewInsertBtn" class="btn" value="리뷰 등록">
+							</c:if>
+						</td>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</form>
+		<div id="boardPaging"></div>
 	</div>
 	
 	</section>
-</form>
+
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -408,15 +462,29 @@ $(function(){
 			
 			$.each(data.list, function(index, items){
 				$('<tr>').append($('<td>',{
-					text: items.reviewLike 
-				})).append($('<td>',{
-					text: items.id
+					id: 'reviewLike'+index,
+					style: 'font-weight: bold; color: red;'
 				})).append($('<td>',{
 					text: items.reviewContent
 				})).append($('<td>',{
-					text: items.reviewDate
-				})).appendTo($('#reviewTable'));
+					text: items.id
+				})).append($('<td>',{
+					text: items.reviewDate,
+					style: 'font-size: 12px; color: #999;'
+				})).appendTo($('#reviewTable tbody'));
+				
+				var reviewStar = '';
+				
+				for(var i=0; i< items.reviewLike; i++) {
+					reviewStar += '<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">';
+				}
+				
+				$('#reviewLike'+index).html(reviewStar);
+				
 			});
+			
+			$('#boardPaging').html(data.boardPaging);
+			
 		},
 		error: function(err) {
 			console.log(err);
@@ -441,7 +509,91 @@ $(function(){
 		$('#detailReviewName').css('border-bottom','0');
 	});
 	
+	$('#reivewInsertBtn').click(function(){
+		if($('#reviewContent').val() == ''){
+			alert('상품후기를 입력하세요.');
+		} else {
+			$.ajax({
+				url: '/milkyWayForest/shopping/reviewInsert',
+				type: 'post',
+				data: $('#reviewForm').serialize(),
+				success: function(data) {
+					$('#reviewTable tbody tr:eq(4)').remove();
+					$('<tr>').append($('<td>',{
+						html: $('label[for='+$('input[name=reviewLike]:checked').attr('id')+']').html()
+					})).append($('<td>',{
+						text: $('#reviewContent').val()
+					})).append($('<td>',{
+						text: '${memId}'
+					})).append($('<td>',{
+						text: dateFormat(new Date()),
+						style: 'font-size: 12px; color: #999;'
+					})).prependTo($('#reviewTable tbody'));
+					
+					$('#reviewContent').val('');
+					$('.reviewLike').prop('checked', 'false');
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		}
+	})
+	
 }); //큰 function
 
+function boardPaging(page){
+	$.ajax({
+		url: "/milkyWayForest/shopping/getReview?pg="+page,
+		type: 'post',
+		data: 'productCode=${productCode}',
+		success: function(data) {
+			$('#reviewTable tbody').empty();
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					id: 'reviewLike'+index,
+					style: 'font-weight: bold; color: red;'
+				})).append($('<td>',{
+					text: items.reviewContent
+				})).append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.reviewDate,
+					style: 'font-size: 12px; color: #999;'
+				})).appendTo($('#reviewTable tbody'));
+				
+				var reviewStar = '';
+				
+				for(var i=0; i< items.reviewLike; i++) {
+					reviewStar += '<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">';
+				}
+				
+				$('#reviewLike'+index).html(reviewStar);
+				
+			});
+			
+			$('#boardPaging').html(data.boardPaging);
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+}
 
+function dateFormat(date) {
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+
+    month = month >= 10 ? month : '0' + month;
+    day = day >= 10 ? day : '0' + day;
+    hour = hour >= 10 ? hour : '0' + hour;
+    minute = minute >= 10 ? minute : '0' + minute;
+    second = second >= 10 ? second : '0' + second;
+
+    return date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+}
 </script>

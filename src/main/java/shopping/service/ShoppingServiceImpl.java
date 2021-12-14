@@ -159,9 +159,14 @@ public class ShoppingServiceImpl implements ShoppingService {
 			json.put("list", list);
 		}
 		json.put("pg", pg);
-		json.put("boardpaging", boardPaging.getPagingHTML().toString());
+		json.put("boardPaging", boardPaging.getPagingHTML().toString());
 		
 		return json;
+	}
+
+	@Override
+	public void reviewInsert(ReviewDTO reviewDTO) {
+		shoppingDAO.reviewInsert(reviewDTO);
 	}
 		
 
