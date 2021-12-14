@@ -92,6 +92,7 @@ $(function(){
 						text:items.paymentSavedMoney.toLocaleString()
 					})).appendTo($('#depositTable tbody'));
 				}
+				
 				if(${pg}==data.totalP) {
 					$('<tr/>').append($('<td>',{
 						id: 'birthDay',
