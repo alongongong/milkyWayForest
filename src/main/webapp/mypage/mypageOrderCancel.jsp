@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="myOrderCancel">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -19,11 +20,11 @@
 	
 	<div id="myOrderCancel-wrapper" class="item">
 		<div id="myOrderView1">
-			<div class="navbar navbar-light alert-info">
-				<span class="navbar-brand mb-0 h1">주문 상세정보</span>			
+			<div class="navbar navbar-light">
+				<span class="mb-0">주문 상세정보</span>			
 			</div>
 			<div>
-				<table class="table table-bordered">
+				<table class="table">
 					<tr>
 						<td>주문일자</td>
 						<td id="payDate"></td>
@@ -33,11 +34,11 @@
 				</table>
 			</div>
 			<div>
-				<table class="table table-bordered" id="productInfoTable">
+				<table class="table" id="productInfoTable">
 					<tr>
 						<th scope="col">상품번호</th>
 						<th scope="col">상품사진</th>
-						<th scope="col">상품이름</th>
+						<th scope="col" width="200px;">상품이름</th>
 						<th scope="col">상품금액(수량)</th>
 						<th scope="col">배송비</th>
 						<th scope="col">진행상태</th>
@@ -79,8 +80,8 @@
 			</tr>
 		</table>
 		<div id="myOrderCancelBtnDiv" align="center">
-			<input type="button" value=" 제출 " id="myOrderCancelBtn" class="btn btn-warning">
-			<input type="button" value=" 취소 " id="cancelBtn" onclick="history.back()" class="btn btn-outline-secondary">
+			<input type="button" value=" 제출 " id="myOrderCancelBtn" class="btn">
+			<input type="button" value=" 취소 " id="cancelBtn" onclick="history.back()" class="btn">
 		</div>
 	</div>
 	

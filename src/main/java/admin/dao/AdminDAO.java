@@ -3,12 +3,14 @@ package admin.dao;
 import java.util.List;
 import java.util.Map;
 
+import admin.bean.AdminDTO;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ReviewDTO;
 
 public interface AdminDAO {
 
@@ -45,4 +47,13 @@ public interface AdminDAO {
 	public List<PaymentDTO> getOrderNShip();
 
 	public List<PaymentDTO> getOrderCancel();
+
+	public void shipBtn(Map<String, String> map);
+	
+	public String adminlogin(AdminDTO adminDTO);
+
+	public int getReviewTotalA();
+
+	public List<ReviewDTO> getReview(Map<String, Integer> map);
+	
 }

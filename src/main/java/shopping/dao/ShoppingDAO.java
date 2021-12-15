@@ -3,6 +3,7 @@ package shopping.dao;
 import java.util.List;
 import java.util.Map;
 
+import shopping.bean.ReviewDTO;
 import shopping.bean.ShoppingDTO;
 
 public interface ShoppingDAO {
@@ -48,5 +49,15 @@ public interface ShoppingDAO {
 	public ShoppingDTO clickImg(String productCode);
 	
 	public int productSelect(Map<String, String> map);
+
+	public int getReviewTotalA(String productCode);
+
+	public List<ReviewDTO> getReview(Map<String, Object> map);
+
+	public void reviewInsert(ReviewDTO reviewDTO);
+
+	public void insertWishList(Map<String, String> map);
+
+	public String getWishProduct(Map<String, String> map);
 	
 }

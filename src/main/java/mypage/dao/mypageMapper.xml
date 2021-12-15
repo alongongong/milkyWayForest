@@ -36,8 +36,8 @@
 		select * from (select rownum rn, a.* from 
 		(select qnacode, qnaquestiontype, qnasubject, id, qnacontent, qnapwd, qnahit, 
 		qnaimage1, qnaimage2, qnaanswercheck, to_char(qnadate, 'yyyy-mm-dd')
-		 "qnadate" from milkyqna order by qnaCode desc) a)
-		  where rn between #{startNum} and #{endNum} and id=#{id}
+		 "qnadate" from milkyqna where id=#{id} order by qnaCode desc) a)
+		  where rn between #{startNum} and #{endNum}
 	</select>
 	
 	<select id="getMyQnaView" parameterType="String" resultType="qnaBoard">
@@ -289,5 +289,28 @@
 		join milkyPayment a using(paymentCode)
 		where paymentCode=#{paymentCode}
 	</select>
+	
+	<select id="getWishList" parameterType="java.util.Map" resultType="wishList">
+		select * from 
+			(select rownum rn, a.* from 
+				(select wishlistcode, to_char(wishdate, 'yyyy-mm-dd') "wishDate", 
+						productcode, productName, productOption, productImageName 
+				from milkywishlist join milkyproductinfo using(productcode) 
+									join milkyProductImage using(productcode) 
+				where id=#{id} and substr(productImagename,5,2) in('.j', '_1', '.p')
+					order by wishlistcode desc) a)
+			where rn between #{startNum} and #{endNum}
+	</select>
 
+	<select id="getWishListTotalA" parameterType="String" resultType="int">
+		select count(*) from milkywishlist where id=#{id}
+	</select>
+	
+	<delete id="wishAllDelete" parameterType="String">
+		delete milkywishlist where id=#{id}
+	</delete>
+	
+	<delete id="wishSelectDelete" parameterType="String">
+		delete milkywishlist where wishlistcode=#{wishListCode}
+	</delete>
 </mapper>

@@ -155,4 +155,9 @@ public class NoticeServiceImpl implements NoticeService {
 	public List<CommentDTO> getQnaComment(int qnaCode) {
 		return noticeDAO.getQnaComment(qnaCode);
 	}
+
+	@Override
+	public void commentInsert(CommentDTO commentDTO) {
+		noticeDAO.commentInsert(commentDTO);
+	}
 }

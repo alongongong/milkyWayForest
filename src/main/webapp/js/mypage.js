@@ -208,7 +208,7 @@ $('#mypagePwdForm2 #next-button').click(function(){
 						success: function(data){
 							console.log(JSON.stringify(data));
 							alert('회원정보가 삭제되었습니다');
-							location.href='/milkyWayForest/index.jsp';
+							location.href='/milkyWayForest/login/logout';
 						},
 						error: function(err){
 							console.log(err);

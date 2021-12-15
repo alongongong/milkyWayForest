@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/shopping.css">
 
 <form id="shoppingDetailForm" name="shoppingDetailForm">
@@ -9,16 +11,14 @@
 		<h1>상품</h1>
 		
 		<div id="shoppingDetailNav">
-			<div>
+			<div id="shoppingDetailCategory">
 				<a href="/milkyWayForest/"><img src="/milkyWayForest/image/icon_home.png" alt="홈"></a> > 
 				<a href="/milkyWayForest/shopping">Shopping</a> > 
-				<a href="/milkyWayForest/shopping/beanNTea">원두/차</a> > 
-				<a href="/milkyWayForest/shopping/beanList">원두</a>
 			</div>
 		</div>
 
 	<div class="productView">
-		
+		<input type="hidden" id="categoryDiv">
 		<div class="shoppingDetailImg items">
 			<div id="shoppingDetailBigImg">
 				<img alt="B001" id="bigImg" class="imgClick">
@@ -114,13 +114,75 @@
 		</div>
 			
 	</div>
+</form>		
 	
+	<div id="detailBottom">
+		<div id="detailInfoName"><span>상품정보</span></div>
+		<div id="detailReviewName"><span>상품후기</span></div>
+	</div>
+
 	<div id="DetailInfoDiv">
 		<div id="productDetailInfoDiv"></div>
 	</div>	
 	
+	<div id="reviewDiv">
+		<form id="reviewForm">
+			<table id="reviewTable" class="table">
+				<thead>
+					<tr>
+						<td colspan="4">
+							<div>
+								<input type="radio" class="reviewLike" id="like1" name="reviewLike" value="1">
+								<label for="like1">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like2" name="reviewLike" value="2">
+								<label for="like2">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like3" name="reviewLike" value="3">
+								<label for="like3">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like4" name="reviewLike" value="4">
+								<label for="like4">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label>
+								<input type="radio" class="reviewLike" id="like5" name="reviewLike" value="5">
+								<label for="like5">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+									<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">
+								</label><br>
+							</div>
+							<input type="hidden" name="productCode" value="${productCode }">
+							<c:if test="${memId == null }">
+								<textarea id="reviewContent" name="reviewContent" placeholder="로그인 후 후기를 작성할 수 있습니다." disabled></textarea>
+								<input type="button" id="reivewInsertBtn" class="btn" value="리뷰 등록" disabled>
+							</c:if>
+							<c:if test="${memId != null }">
+								<textarea id="reviewContent" name="reviewContent"></textarea>
+								<input type="button" id="reivewInsertBtn" class="btn" value="리뷰 등록">
+							</c:if>
+						</td>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</form>
+		<div id="boardPaging"></div>
+	</div>
+	
 	</section>
-</form>
+
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -133,7 +195,7 @@ $(function(){
 		dataType: 'json',  
 		success : function(data) {
 		
-			console.log(JSON.stringify(data));
+		// console.log(JSON.stringify(data));
 				
 		$.each(data, function(index,items) {		
 			$('#korsubjectSpan').text(items.productName);
@@ -144,6 +206,7 @@ $(function(){
 			$('#productOptionSpan2').text(items.productOption); */
 			/* $('#productTotalSpan').text((items.productUnit)*parseInt($('.length input').val())); */
 			$('#productDetailInfoDiv').text(items.productDetailInfo);	
+			$('#categoryDiv').val(items.category);
 			
 			//사진 나타나게 하기(인덱스별로 조정)
 			if(index==0) {  // 여기 인덱스는 위에 each 문의 인덱스. 우리가 데이터를 가져올때 이미지는 여러개(프로덕트코드만 같고 이미지명은 뒤에 _1 이런식으로 다른 이미지들)가져오니깐 그 이미지네임에 조건을 붙여서 써주기위해 인덱스라는 순번을 붙여준것
@@ -283,6 +346,76 @@ $(function(){
 
 		}); //li:eq(5)
 
+
+		
+		if($('#categoryDiv').val() == '원두') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '원두 / 차',
+				href: '/milkyWayForest/shopping/beanNTea'
+			})).append(' > ').append($('<a>', {
+				text: '원두',
+				href: '/milkyWayForest/shopping/beanList'
+			}));
+		} else if($('#categoryDiv').val() == '차') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '원두 / 차',
+				href: '/milkyWayForest/shopping/beanNTea'
+			})).append(' > ').append($('<a>', {
+				text: '차',
+				href: '/milkyWayForest/shopping/teaList'
+			}));
+		} else if($('#categoryDiv').val() == '머그') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '머그',
+				href: '/milkyWayForest/shopping/mugList'
+			}));
+		} else if($('#categoryDiv').val() == '글라스') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '글라스',
+				href: '/milkyWayForest/shopping/glassList'
+			}));
+		} else if($('#categoryDiv').val() == '플라스틱 텀블러') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '플라스틱 텀블러',
+				href: '/milkyWayForest/shopping/plasticTumblrList'
+			}));
+		} else if($('#categoryDiv').val() == '스테인리스 텀블러') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '스테인리스 텀블러',
+				href: '/milkyWayForest/shopping/stainlessTumblrList'
+			}));
+		} else if($('#categoryDiv').val() == '보온병') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '보온병',
+				href: '/milkyWayForest/shopping/thermosList'
+			}));
+		} else if($('#categoryDiv').val() == '커피용품') {
+			$('#shoppingDetailCategory').append($('<a>', {
+				text: '상품',
+				href: '/milkyWayForest/shopping/product'
+			})).append(' > ').append($('<a>', {
+				text: '커피용품',
+				href: '/milkyWayForest/shopping/coffeeEtcList'
+			}));
+		}
+		
+
+		
 		}, //getShoppingDetail success
 
 		error: function(err) {
@@ -389,7 +522,182 @@ $(function(){
 	}); // purchaseBtn 클릭시
 
 
+	$.ajax({
+		url: '/milkyWayForest/shopping/getReview?pg=1',
+		type: 'post',
+		data: 'productCode=${productCode}',
+		success: function(data) {
+			// alert(JSON.stringify(data));
+			
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					id: 'reviewLike'+index
+				})).append($('<td>',{
+					text: items.reviewContent
+				})).append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.reviewDate,
+					style: 'font-size: 12px; color: #999;'
+				})).appendTo($('#reviewTable tbody'));
+				
+				var reviewStar = '';
+				
+				for(var i=0; i< items.reviewLike; i++) {
+					reviewStar += '<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">';
+				}
+				
+				$('#reviewLike'+index).html(reviewStar);
+				
+			});
+			
+			$('#boardPaging').html(data.boardPaging);
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	
+	$('#detailInfoName').click(function(){
+		$('#DetailInfoDiv').css('display','block');
+		$('#detailInfoName').css('border','1px solid #555');
+		$('#detailInfoName').css('border-bottom','0');
+		$('#reviewDiv').css('display','none');
+		$('#detailReviewName').css('border','0');
+		$('#detailReviewName').css('border-bottom','1px solid #555');
+	});
+	
+	$('#detailReviewName').click(function(){
+		$('#DetailInfoDiv').css('display', 'none');
+		$('#detailInfoName').css('border','0');
+		$('#detailInfoName').css('border-bottom','1px solid #555');
+		$('#reviewDiv').css('display', 'block');
+		$('#detailReviewName').css('border','1px solid #555');
+		$('#detailReviewName').css('border-bottom','0');
+	});
+	
+	$('#reivewInsertBtn').click(function(){
+		if($('#reviewContent').val() == ''){
+			alert('상품후기를 입력하세요.');
+		} else {
+			$.ajax({
+				url: '/milkyWayForest/shopping/reviewInsert',
+				type: 'post',
+				data: $('#reviewForm').serialize(),
+				success: function(data) {
+					$('#reviewTable tbody tr:eq(4)').remove();
+					$('<tr>').append($('<td>',{
+						html: $('label[for='+$('input[name=reviewLike]:checked').attr('id')+']').html()
+					})).append($('<td>',{
+						text: $('#reviewContent').val()
+					})).append($('<td>',{
+						text: '${memId}'
+					})).append($('<td>',{
+						text: dateFormat(new Date()),
+						style: 'font-size: 12px; color: #999;'
+					})).prependTo($('#reviewTable tbody'));
+					
+					$('#reviewContent').val('');
+					$('.reviewLike').prop('checked', 'false');
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+		}
+	})
+	
+	
+	$('#wishListBtn').click(function(){
+		$.ajax({
+			url: '/milkyWayForest/shopping/getWishProduct',
+			type: 'post',
+			data: 'productCode=${productCode}',
+			success: function(data) {
+				//alert(data);
+				if('${productCode}' == data) {
+					if(confirm("이미 찜하기 목록에 있습니다. 찜하기 목록으로 이동하시겠습니까?")) {
+						location.href="/milkyWayForest/mypage/wishList?pg=1";
+					} 
+				} else {	
+
+					$.ajax({
+						url: '/milkyWayForest/shopping/insertWishList',
+						type: 'post',
+						data: 'productCode=${productCode}',
+						success: function(data) {
+							if(confirm("찜하기되었습니다. 찜하기 목록으로 이동하시겠습니까?")) {
+								location.href="/milkyWayForest/mypage/wishList?pg=1";
+							}
+						},
+						error: function(err) {
+							console.log(err);
+						}
+					});
+				}
+			},
+			error: function(err) {
+				console.log(err);
+			}
+		});
+		
+	});
+
 }); //큰 function
 
+function boardPaging(page){
+	$.ajax({
+		url: "/milkyWayForest/shopping/getReview?pg="+page,
+		type: 'post',
+		data: 'productCode=${productCode}',
+		success: function(data) {
+			$('#reviewTable tbody').empty();
+			$.each(data.list, function(index, items){
+				$('<tr>').append($('<td>',{
+					id: 'reviewLike'+index,
+					style: 'font-weight: bold; color: red;'
+				})).append($('<td>',{
+					text: items.reviewContent
+				})).append($('<td>',{
+					text: items.id
+				})).append($('<td>',{
+					text: items.reviewDate,
+					style: 'font-size: 12px; color: #999;'
+				})).appendTo($('#reviewTable tbody'));
+				
+				var reviewStar = '';
+				
+				for(var i=0; i< items.reviewLike; i++) {
+					reviewStar += '<img width="20px" height="20px" src="https://cdn-icons-png.flaticon.com/512/1163/1163655.png">';
+				}
+				
+				$('#reviewLike'+index).html(reviewStar);
+				
+			});
+			
+			$('#boardPaging').html(data.boardPaging);
+			
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+}
 
+function dateFormat(date) {
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
+
+    month = month >= 10 ? month : '0' + month;
+    day = day >= 10 ? day : '0' + day;
+    hour = hour >= 10 ? hour : '0' + hour;
+    minute = minute >= 10 ? minute : '0' + minute;
+    second = second >= 10 ? second : '0' + second;
+
+    return date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+}
 </script>

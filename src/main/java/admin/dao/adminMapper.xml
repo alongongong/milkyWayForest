@@ -81,7 +81,7 @@
 	
 	<insert id="qnaCommentInsert" parameterType="comment">
 		begin
-		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, 'aaa', #{commentContent});
+		insert into milkycomment(commentcode, qnaCode, id, commentContent) values(milkyCommentSeq.nextval, #{qnaCode}, #{id}, #{commentContent});
 		update milkyqna set qnaAnswerCheck='답변 완료' where qnaCode=#{qnaCode};
 		end;
 	</insert>
@@ -101,7 +101,7 @@
 		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentoption using(paymentcode)
 		join milkyProductInfo using(productcode)
-		where deliveryinfo='결제완료' or deliveryinfo='배송준비중'
+		where deliveryinfo like'결제%' or deliveryinfo like '배송%'
 		order by paydate desc, deliveryInfo
 	</select>
 	
@@ -109,7 +109,28 @@
 		select paymentcode, productname, payqty, deliveryinfo from milkypayment
 		join milkypaymentOption using(paymentcode)
 		join milkyProductInfo using(productCode)
-		where deliveryinfo='취소' or deliveryinfo='교환' or deliveryinfo='반품'
+		where deliveryinfo like '취소%' or deliveryinfo like '교환%' or deliveryinfo like '반품%'
 		order by paydate desc, deliveryInfo
+	</select>
+	
+	<update id="shipBtn" parameterType="java.util.Map">
+		update milkypayment set deliveryinfo=#{deliveryInfo} where paymentCode=#{paymentCode}
+	</update>
+	
+	<select id="adminlogin"  parameterType="admin" resultType="String">
+		select adminId,adminPwd from milkyAdmin where adminId=#{adminId} and adminPwd=#{adminPwd}
+	</select>
+	
+	<select id="getReviewTotalA" resultType="int">
+		select count(*) from milkyreview
+	</select>
+	
+	<select id="getReview" parameterType="java.util.Map" resultType="review">
+		select * from 
+			(select rownum rn, a.*  
+				from (select reviewcode, productcode, productname, reviewlike, id,
+				reviewcontent, to_char(reviewdate, 'yyyy-mm-dd') "reviewDate"
+			from milkyreview join milkyproductinfo using(productcode) order by reviewcode desc) a)
+			where rn between #{startNum} and #{endNum}
 	</select>
 </mapper>

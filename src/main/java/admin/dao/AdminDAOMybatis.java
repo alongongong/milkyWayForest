@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import admin.bean.AdminDTO;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import member.bean.MemberDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
 import qnaBoard.bean.QnaBoardDTO;
+import shopping.bean.ReviewDTO;
 
 @Repository
 @Transactional
@@ -110,4 +112,26 @@ public class AdminDAOMybatis implements AdminDAO {
 	public List<PaymentDTO> getOrderCancel() {
 		return sqlSession.selectList("adminSQL.getOrderCancel");
 	}
+
+	@Override
+	public void shipBtn(Map<String, String> map) {
+		sqlSession.update("adminSQL.shipBtn", map);
+	}
+
+	@Override
+	public String adminlogin(AdminDTO adminDTO) {
+		return sqlSession.selectOne("adminSQL.adminlogin", adminDTO);
+	}
+
+	@Override
+	public int getReviewTotalA() {
+		return sqlSession.selectOne("adminSQL.getReviewTotalA");
+	}
+
+	@Override
+	public List<ReviewDTO> getReview(Map<String, Integer> map) {
+		return sqlSession.selectList("adminSQL.getReview", map);
+	}
+
+
 }

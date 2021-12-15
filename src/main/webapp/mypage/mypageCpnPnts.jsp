@@ -12,6 +12,7 @@
 </style>
 
 <form id="mypageShpMngListForm" name="mypageMyInfo">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -21,13 +22,14 @@
 		<jsp:include page="mypageTopNav.jsp"/>	
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
-	<div>
+	<div id="mypageShpMn-wrapper" class="item">
 	<input type="hidden" id="id" value="${memId }">
-		<table id="depositTable" class="table table-bordered" style="width:820px;">
+		<div id="mypageShpMn-title" class="navbar navbar-light">
+			<span class="mb-0">적립금 적립 및 사용내역</span>
+		</div>
+	
+		<table id="depositTable" class="table border-bottom" style="width:820px;">
 			<thead>
-				<tr>
-					<th colspan="4" style="text-align:center;">적립금 적립 & 사용내역</th>
-				</tr>
 				<tr >
 					<th style="width:200px;text-align:center;">발 생 일</th>
 					<th style="width:200px;text-align:center;">주문 번호</th>
@@ -90,6 +92,7 @@ $(function(){
 						text:items.paymentSavedMoney.toLocaleString()
 					})).appendTo($('#depositTable tbody'));
 				}
+				
 				if(${pg}==data.totalP) {
 					$('<tr/>').append($('<td>',{
 						id: 'birthDay',

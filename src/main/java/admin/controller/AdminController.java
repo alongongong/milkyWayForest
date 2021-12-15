@@ -2,6 +2,8 @@ package admin.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,18 +16,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import admin.bean.AdminDTO;
 import admin.service.AdminService;
 import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
+import shopping.bean.ReviewDTO;
 
 @Controller
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@GetMapping("/admin")
+	@GetMapping("/admin/adminIndex")
 	public String admin() {
 		return "/admin/adminIndex";
 	}
@@ -208,7 +212,8 @@ public class AdminController {
 	
 	@PostMapping("/admin/qnaCommentInsert")
 	@ResponseBody
-	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO) {
+	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO, HttpSession session) {
+		commentDTO.setId(session.getAttribute("adminId")+"");
 		adminService.qnaCommentInsert(commentDTO);
 	}
 	
@@ -234,5 +239,53 @@ public class AdminController {
 	@ResponseBody
 	public List<PaymentDTO> getOrderCancel() {
 		return adminService.getOrderCancel();
+	}
+	
+	@PostMapping("/admin/shipBtn")
+	@ResponseBody
+	public void shipBtn(@RequestParam String paymentCode, @RequestParam String deliveryInfo) {
+		adminService.shipBtn(paymentCode, deliveryInfo);
+	}
+	
+	
+	//관리자 로그인 *******************************
+	@GetMapping("/admin")
+	public String cart(Model model) {
+		model.addAttribute("display", "admin/adminlogin.jsp");
+		return "/index";
+	}
+	
+	//  
+	@PostMapping("/admin/adminlogin")  
+	@ResponseBody			//이름같은걸 매칭해서 저장시켜주는 역할 이름이 맡는걸 저장해준다.(setadminId 해준다는것) 	//어드민 디티오에 내가 담아준아이디랑 비번이 있음
+	public String adminlogin(@ModelAttribute AdminDTO adminDTO, HttpSession session) {  //로그인 성공 실패의 결과만 가져오기때문에 
+		
+		 String id= adminService.adminlogin(adminDTO);
+		 
+		//받아온 다음에 아이디가 널이 아닐때 session.setAttri 아이디를 세션에 실어준다
+		//아이디 널이면 내가 받아온 데이터가 false면 div 에 유효성 검사 해주는거 뿌려주면 
+		
+		 // 아이디 있는지 확인
+		 if(id != null) {
+			 session.setAttribute("adminId", id);  // 세션에 넣을 변수를 adminId 로 지정을 해주는거고 id 를 위에서 String id= adminService.adminlogin(adminDTO); 로 지정해줘서 이 줄의 괄호 끝에는 id 라는 변수로 쓰는것. 
+		 
+		 }else {
+			 id="false";  //여기서 아이디가 있는걸 false 라고 지정해줬으니까  js 에 있는 에이작스에 갈때는 data== false 가 된다.
+			 
+		 }
+		 
+		 return id; 
+	}
+	
+	@PostMapping("/admin/getReview")
+	@ResponseBody
+	public JSONObject getReview(@RequestParam int pg) {
+		return adminService.getReview(pg);
+	}
+	
+	@PostMapping("/admin/adminLogout")
+	@ResponseBody
+	public void adminLogout(HttpSession session) {
+		session.invalidate();
 	}
 }

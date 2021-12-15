@@ -1,4 +1,19 @@
 @charset "UTF-8";
+
+
+/* 전체스크롤 */
+body::-webkit-scrollbar {
+   width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+   background-color: #666;
+   border-radius: 5px;
+}
+body::-webkit-scrollbar-track {
+   background-color: #ccc;
+}
+
+
 .menu {
     margin: 3px 5px;
     padding: 5px;
@@ -16,4 +31,11 @@
 }
 .row .col-md-12 {
 	min-height: 90vh;
+}
+#logoutBtn {
+	background: #154520;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	margin-right: 10px; 
 }

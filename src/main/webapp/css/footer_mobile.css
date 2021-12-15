@@ -18,7 +18,6 @@
 	font-size: 12px;
 	display: inli;
 	width:200px;
-
 }	
 	
 #footerBody .footerInfo li{
@@ -31,6 +30,7 @@
 #footerBody .footerCopy {
 	font-size: 9px;
 	display:block;
+	margin-left: 10%;
 }
 
 

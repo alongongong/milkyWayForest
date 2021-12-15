@@ -9,6 +9,7 @@
 
 <form id="updateMyQnaViewForm"> <!-- method="post" enctype="multipart/form-data"
 		action="/milkyWayForest/mypage/updateMyQnaView" -->
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -56,8 +57,8 @@
 			</tr>
 		</table>
 		<div id="updateMyQnaViewBtnDiv" align="center">
-			<input type="button" value=" 글수정 " id="updateMyQnaBtn" class="btn btn-warning">
-			<input type="button" value=" 취소 " id="cancelBtn" onclick="history.back()" class="btn btn-outline-secondary">
+			<input type="button" value=" 글수정 " id="updateMyQnaBtn" class="btn">
+			<input type="button" value=" 취소 " id="cancelBtn" onclick="history.back()" class="btn">
 		</div>
 	</div>
 	

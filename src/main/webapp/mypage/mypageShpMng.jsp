@@ -3,13 +3,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
-<style type="text/css">
-#mypageMyinfo #contents{
-	margin-bottom: 10px;
-}
-
-</style>
 <form id="mypageShpMngListForm" name="mypageMyInfo">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -19,20 +14,21 @@
 		<jsp:include page="mypageTopNav.jsp"/>	
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
-	<div id="myPayment-state">
-		<div align="right" id="abcd">
-			<input type="button" id="contents"value="배송지 등록" onclick="showPopup();">
+	<div id="myPayment-state" class="item">
+		<div align="right" id="buttonWrap">
+			<input type="button" class="btn" id="WriteBtn"value="배송지 등록" onclick="showPopup();">
+		</div>
+		<div id="myPayment-title" class="navbar navbar-light">
+			<span class="mb-0">배송지 관리</span>
 		</div>
 		<div>
-			<table id="mypageShpMngTable" class="table table-bordered" style="width:820px;">
+			<table id="mypageShpMngTable" class="table border-bottom" style="width:820px;">
 				<thead>
-					<tr>
-						<th colspan="4" style="text-align: center;">배송지 관리</th>
 					<tr>
 						<th scope="col" style="text-align: center;">배송지명</th>
 						<th scope="col" style="text-align: center;">주소</th>
 						<th scope="col" style="text-align: center;">연락처</th>
-						<th scope="col" style="text-align: center;">수정/삭제</th>
+						<th scope="col" width="350px;">수정/삭제</th>
 					</tr>
 				</thead>
 			</table>
@@ -73,6 +69,7 @@ $(function(){
 					type:'button',
 					align:'center',
 					value:'수정',
+					class:'btn',
 					id:'modifyBtn',
 					onclick:'showPopup1('+items.shipCode+');'
 				})).append($('<input>',{
@@ -82,7 +79,8 @@ $(function(){
 					type:'button',
 					align:'center',
 					value:'삭제',
-					class:'deleteBtn',
+					class:'btn',
+					id:'deleteBtn',
 					onclick:'showPopup2('+items.shipCode+');'
 				}))).appendTo($('#mypageShpMngTable'));
 			});

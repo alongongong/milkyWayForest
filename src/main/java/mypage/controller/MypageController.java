@@ -23,6 +23,7 @@ import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
+import mypage.bean.WishListDTO;
 import mypage.service.MypageService;
 import net.sf.json.JSONObject;
 import payment.bean.PaymentDTO;
@@ -279,7 +280,9 @@ public class MypageController {
 	
 	//주문내역 상세 페이지
 	@GetMapping("/MyOrderView")
-	public String MyOrderView(@RequestParam String paymentCode, Model model) {
+	public String MyOrderView(@RequestParam String paymentCode, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("memId");
+		model.addAttribute("id", id);
 		model.addAttribute("paymentCode", paymentCode);
 		model.addAttribute("display", "mypage/mypageMyOrderView.jsp");
 		return "/index";
@@ -440,4 +443,28 @@ public class MypageController {
 		return mypageService.getCouponList(id);
 	}
 
+	@GetMapping("/wishList")
+	public String wishList(Model model) {
+		model.addAttribute("display", "mypage/mypageWishList.jsp");
+		return "/index";
+	}
+	
+	@PostMapping("/getWishList")
+	@ResponseBody
+	public JSONObject getWishList(HttpSession session, int pg) {
+		String id = session.getAttribute("memId")+"";
+		return mypageService.getWishList(id, pg);
+	}
+	
+	@PostMapping("/wishAllDelete")
+	@ResponseBody
+	public void wishAllDelete(HttpSession session) {
+		mypageService.wishAllDelete(session.getAttribute("memId")+"");
+	}
+	
+	@PostMapping("/wishSelectDelete")
+	@ResponseBody
+	public void wishSelectDelete(@RequestParam String[] wishListCode) {
+		mypageService.wishSelectDelete(wishListCode);
+	}
 }

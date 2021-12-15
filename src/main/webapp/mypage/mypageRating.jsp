@@ -11,6 +11,7 @@
 
 </style>
 <form id="mypageShpMngListForm" name="mypageMyInfo">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -23,7 +24,7 @@
 	<div class="customer_grade">
 		<input type="hidden" id="id" value="${memId }">
     
-    <div class="grade_box family_type" style="padding:56px 96px 55px;border:1px solid #e9e9e9;display:block; width:820px;">
+    <div class="grade_box family_type" style="padding:56px 96px 55px;border:1px solid #e9e9e9;display:block; width:820px; margin-top: 60px;">
         <div class="grade_summury" style="min-height:64px; padding-bottom:20px; border-bottom:1px solid #e9e9e9; color:#999; font-size:16px; line-height:28px; letter-spacing:-1px;">
             <div id="sp_mytmall_grade ico_grade"></div>
             <div class="grade_inner">

@@ -50,7 +50,7 @@ create sequence milkyFAQSeq nocache nocycle;
 create table milkyQnA (
   qnaCode number primary key,
   qnaQuestionType varchar(20),
-  qnaSubject varchar(50),
+  qnaSubject varchar(270),
   id varchar(15),
   qnaContent varchar(800),
   qnaPwd varchar(15),

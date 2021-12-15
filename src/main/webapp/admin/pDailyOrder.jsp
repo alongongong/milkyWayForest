@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <form id="pDailyOrderForm">
 <div class="card" id="pDailyOrderFDiv">
@@ -10,7 +11,7 @@
 	</div>
   </div>
   <div class="card-body">
-    <div class="table-responsive">
+    <div class="">
       <table class="table" id="pDailyOrderTable">
         <thead class=" text-primary">
           <th>주문번호</th>

@@ -16,7 +16,7 @@
 	background: black;
 }
 #footerBody .footerGroup ul {
-	margin: .8rem;;
+	margin: .8rem;
 	
 }
 
@@ -69,6 +69,7 @@
 	color: silver;
 	padding-top: .5rem;
 	padding-bottom: 2.rem;
+	
 }
 
 #footerBody .footerMenu a:link { color: white; text-decoration: none; }

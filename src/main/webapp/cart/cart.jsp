@@ -153,6 +153,23 @@ $(function(){
 							$('#totalSalePrice').text(totalSalePrice.toLocaleString()+'원');
 							
 							$('#totalPayPrice').text(allPrice.toLocaleString()+'원'); 
+							
+							var shipPay = 0;
+
+							$('#totalProductPrice').text(totalPrice.toLocaleString()+'원');
+							$('#totalSalePrice').text(totalSalePrice.toLocaleString()+'원');
+							if((totalPrice-totalSalePrice) >= 50000) {
+								$('#shipPay').text('0원');
+								shipPay=0;
+							} else {
+								$('#shipPay').text('2,500원')
+								shipPay = 2500;
+							}
+								//alert(allPrice+"   "+ shipPay);
+							allPrice += shipPay;
+							$('#shipPay1').val(shipPay);
+							$('#totalPayPrice').text(allPrice.toLocaleString()+'원');  
+							
 						
 					},
 					
@@ -192,7 +209,22 @@ $(function(){
 						 
 					success: function() {
 						//alert("해보쟈");
-					
+						var shipPay = 0;
+
+						$('#totalProductPrice').text(totalPrice.toLocaleString()+'원');
+						$('#totalSalePrice').text(totalSalePrice.toLocaleString()+'원');
+						if((totalPrice-totalSalePrice) >= 50000) {
+							$('#shipPay').text('0원');
+							shipPay=0;
+						} else {
+							$('#shipPay').text('2,500원')
+							shipPay = 2500;
+						}
+							//alert(allPrice+"   "+ shipPay);
+						allPrice += shipPay;
+						$('#shipPay1').val(shipPay);
+						$('#totalPayPrice').text(allPrice.toLocaleString()+'원');  
+						
 						
 					},
 					
@@ -309,12 +341,15 @@ $(function(){
 		$(document).on('click', '.check', function(){  //on은 나중에 들어오는 체크박스 때문에 그래서 온으로 써주는것.
 			//alert("11");
 			
-			if(!$('.check').is(':checked'))  //체크박스가 선택해제인지 알아보는게 is, ! 부정하는것. 폴스가 오면 이프문이 거짓으로 인식하니까 그래서 느낌표로 바꾼것.
+			if($('.check:checked').length < $('.check').length)  //체크박스가 선택해제인지 알아보는게 is, ! 부정하는것. 폴스가 오면 이프문이 거짓으로 인식하니까 그래서 느낌표로 바꾼것.
 				$('.cartProductCheck').prop('checked',false); 
 			// 이프문에 조건은 트루가 되어야 수행을 하는데
 			// 내가 체크박스를 체크해제 하면 조건이 false 가 되어버리는데 그러면 그 폴스가 된게 참이되어야만 if문 아래에 있는
 			//$('.cartProductCheck').prop('checked',false);  문장을 수행할수 있음
 			//그래서 이프문을 위와같이 참으로 만들고 그런 다음 .cartProductCheck 에 체크드를 해제하라 라는 문장이 완성됨
+			
+			if($('.check:checked').length == $('.check').length)
+				$('.cartProductCheck').prop('checked', true);
 		}); 
 		
 		

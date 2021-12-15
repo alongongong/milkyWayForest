@@ -199,5 +199,28 @@
    		select count(*) from milkycart where id=#{id} and productCode=#{productCode}
    	</select> 
    	
+   	<select id="getReviewTotalA" parameterType="String" resultType="int">
+   		select count(*) from milkyreview where productCode=#{productCode}
+   	</select>
 
+	<select id="getReview" parameterType="java.util.Map" resultType="review">
+		select * from 
+			(select rownum rn, a.*  
+				from (select reviewcode, productcode, reviewlike, id,
+				reviewcontent, to_char(reviewdate, 'yyyy-mm-dd hh24:Mi:ss') "reviewDate"
+			from milkyreview where productCode=#{productCode} order by reviewcode desc) a)
+			where rn between #{startNum} and #{endNum} 
+	</select>
+	
+	<insert id="reviewInsert" parameterType="review">
+		insert into milkyreview values(milkyReviewSeq.nextval, #{productCode}, #{reviewLike}, #{id}, #{reviewContent}, '답변 대기', sysdate)
+	</insert>
+	
+	<insert id="insertWishList" parameterType="java.util.Map">
+		insert into milkywishlist values(milkywishlistseq.nextval, #{id}, #{productCode}, sysdate)
+	</insert>
+	
+	<select id="getWishProduct" parameterType="java.util.Map" resultType="String">
+		select productCode from milkywishlist where id=#{id} and productcode=#{productCode}
+	</select>
 </mapper>

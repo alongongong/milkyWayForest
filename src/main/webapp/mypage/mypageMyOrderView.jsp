@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="myOrderView">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -15,20 +16,21 @@
 	<%----------------- 디폴트 설정 -----------------%>
 	<input type="hidden" id="paymentCode" name="paymentCode" value="${paymentCode }">
 	<input type="hidden" id="pg" name="pg" value="${pg }">
+	<input type="hidden" id="id" name="id" value="${id }">
 	
 	<div id="myOrderView-wrapper" class="item">
 		<div id="myOrderView1">
 			<div id="buttonWrap">
-				<input type="button" id="reorderBtn" class="btn btn-info" value="재주문">
-				<input type="button" id="orderCancleBtn" class="btn btn-info" value="주문취소">
-				<input type="button" id="orderExchangeBtn" class="btn btn-info" value="교환신청">
-				<input type="button" id="orderReturnBtn" class="btn btn-info" value="반품신청">
+				<input type="button" id="reorderBtn" class="btn" value="재주문">
+				<input type="button" id="orderCancleBtn" class="btn" value="주문취소">
+				<input type="button" id="orderExchangeBtn" class="btn" value="교환신청">
+				<input type="button" id="orderReturnBtn" class="btn" value="반품신청">
 			</div>
-			<div class="navbar navbar-light alert-info">
-				<span class="navbar-brand mb-0 h1">주문 상세정보</span>			
+			<div class="navbar navbar-light">
+				<span class="mb-0">주문 상세정보</span>			
 			</div>
 			<div>
-				<table class="table table-bordered">
+				<table class="table">
 					<tr>
 						<th>주문일자</th>
 						<td id="payDate"></td>
@@ -38,11 +40,11 @@
 				</table>
 			</div>
 			<div>
-				<table class="table table-bordered" id="productInfoTable">
+				<table class="table border-bottom" id="productInfoTable">
 					<tr>
 						<th scope="col">상품번호</th>
 						<th scope="col">상품사진</th>
-						<th scope="col">상품이름</th>
+						<th scope="col" width="200px;">상품이름</th>
 						<th scope="col">상품금액(수량)</th>
 						<th scope="col">배송비</th>
 						<th scope="col">진행상태</th>
@@ -50,12 +52,12 @@
 				</table>
 			</div>
 			<div id="orderChangeDiv">
-				<div class="navbar navbar-light alert-info">
-					<span id="orderChangeTitle" class="navbar-brand mb-0 h1"></span>			
+				<div class="navbar navbar-light">
+					<span id="orderChangeTitle" class="mb-0"></span>			
 				</div>
-				<table class="table table-bordered">
+				<table class="table border-bottom">
 					<tr>
-						<th id="orderChangeReason"></th>
+						<th id="orderChangeReason" width="200px;"></th>
 						<td id="reason"></td>
 					</tr>
 					<tr>
@@ -67,14 +69,14 @@
 		</div>
 		
 		<div id="myOrderView2">
-			<div class="navbar navbar-light alert-info">
-				<span class="navbar-brand mb-0 h1">주문/결제 금액 정보</span>			
+			<div class="navbar navbar-light">
+				<span class="mb-0">주문/결제 금액 정보</span>			
 			</div>
 			
 			<div id="paymentTotal">
-				<table class="table table-bordered">
+				<table class="table border-bottom">
 					<tr>
-						<th>총 상품금액</th>
+						<th width="200px;">총 상품금액</th>
 						<td id="totalProductPrice"></td>
 					</tr>
 					<tr>
@@ -98,13 +100,13 @@
 		</div>
 		
 		<div id="myOrderView3">
-			<div class="navbar navbar-light alert-info">
-				<span class="navbar-brand mb-0 h1">배송지 정보</span>			
+			<div class="navbar navbar-light">
+				<span class="mb-0">배송지 정보</span>			
 			</div>
 			<div>
-				<table class="table table-bordered">
+				<table class="table border-bottom">
 					<tr>
-						<th>수령인</th>
+						<th width="200px;">수령인</th>
 						<td id="payShipReceiver"></td>
 					</tr>
 					<tr>
@@ -131,6 +133,11 @@
 </div><!-- main-wrapper -->
 </form>
 
+<form id="cartInsertList">
+	<table id="cartInsertListTable" >
+	</table>
+</form>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(function(){
@@ -151,8 +158,7 @@ $(function(){
 				var totalProductPrice=0;
 				var totalSalePrice=0;
 				var totalPayPrice=0;
-				
-				
+
 				$.each(data.paymentList, function(index, items) {
 					if(items.deliveryInfo=='입금대기중' || items.deliveryInfo=='결제완료' || items.deliveryInfo=='배송준비중' || items.deliveryInfo=='배송중'){
 						$('#orderCancleBtn').show();
@@ -212,6 +218,26 @@ $(function(){
 				$('#productInfoTable').rowspan(4);
 				$('#productInfoTable').rowspan(5);
 
+				//재주문 정보 저장
+				$.each(data.paymentList, function(index, items) {
+					$('<tr>').append($('<td>').append($('<input>',{
+						type: 'hidden',
+						name: 'productCode',
+						value: items.productCode
+						
+					})).append($('<input>',{
+						type: 'hidden',
+						name: 'cartOption',
+						value: items.productOption
+						
+					})).append($('<input>',{
+						type: 'hidden',
+						name: 'cartQty',
+						value: items.payQty
+						
+					}))).appendTo($('#cartInsertListTable'));
+				});
+
 			}//if	
 
 		},
@@ -261,9 +287,25 @@ $(function(){
 	});
 });
 
-$('#myOrderView1 #reorderBtn').click(function(){
-	location.href='/milkyWayForest/mypage/myreorder?paymentCode='+$('#paymentCode').val();
+$('#myOrderView1').on('click','#reorderBtn',function(){
+	$.ajax({
+		url: '/milkyWayForest/cart/cartInsertList',
+		type: 'post',
+		data: $('#cartInsertList').serialize(),
+		
+		success : function() {
+			if(confirm("장바구니로 이동하시겠습니까?")){
+				location.href= "/milkyWayForest/cart";
+			}
+		},
+
+		error: function(err) {
+			console.log(err);
+		
+		} 
+	});
 });
+
 $('#myOrderView1 #orderCancleBtn').click(function(){
 	location.href='/milkyWayForest/mypage/myOrderCancel?paymentCode='+$('#paymentCode').val()+'&request=취소';
 });

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!-- <link rel="stylesheet" href="/milkyWayForest/css/mypage.css"> -->
+<link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="mypageShpMngModifyForm" action="/milkyWayForest/mypage/mypageShpMngWrite" method="post">
 <input type="hidden" name="shipCode" id="shipCode" value="${requestScope.shipCode }">
 	<div id="myBasicInfo-wrapper" class="item">
-		<div id="myBasicInfo-title" class="navbar navbar-light alert-info"style="text-align: center">
-			<span class="navbar-brand mb-0 h1" style="text-align: center">배송지 관리</span>
+		<div id="myBasicInfo-title" class="navbar navbar-light"style="text-align: center">
+			<span class="mb-0" style="text-align: center">배송지 관리</span>
 		</div>
 		
 		<div id="myBasicInfo-state" style="padding-top:40px;padding-left:50px;padding-right:50px;">		
@@ -30,7 +30,7 @@
 						<td style="padding-bottom:20px;">
 							<div id="dd" class="input-group" style="padding-bottom:10px;">
 								<input type="text" id="shipZipcode" name="shipZipcode" class="form-control bg-white border" size="5" readonly>
-								<input type="button" value="주소검색" id="zipcodeBtn" onclick="sample6_execDaumPostcode()" >
+								<input type="button" class="btn" value="주소검색" id="zipcodeBtn" onclick="sample6_execDaumPostcode()" >
 							</div>
 							<div id="dd1" class="input-group"style="padding-bottom:10px;">
 								<input type="text" id="shipAddr1" name="shipAddr1" class="form-control bg-white border" readonly>
@@ -70,8 +70,8 @@
 			<div id="result-div"></div>
 			
 			<div align="center" id="button-wrap" style="padding-top:70px;">
-				<button type="button" id="modifyCloseBtn" class="btn btn-info" onclick="javascript:window.close(); return false;">닫기</button>
-				<button type="button" id="modifySaveBtn" class="btn btn-info">저장</button>
+				<button type="button" id="modifyCloseBtn" class="btn" onclick="javascript:window.close(); return false;">닫기</button>
+				<button type="button" id="modifySaveBtn" class="btn">저장</button>
 				
 			</div>
 		</div>

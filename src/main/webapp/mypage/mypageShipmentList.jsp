@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="mypageShipmentList">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -15,20 +16,20 @@
 	<%----------------- 디폴트 설정 -----------------%>
 
 	<div id="myPayment-wrapper" class="item">
-		<div id="myPayment-title" class="navbar navbar-light alert-info">
-			<span class="navbar-brand mb-0 h1">주문/배송조회</span>
+		<div id="myPayment-title" class="navbar navbar-light">
+			<span class="mb-0">주문/배송조회</span>
 		</div>
 		
 		<div id="myPayment-state">
-			<table class="table table-bordered" id="myPaymentTable">
+			<table class="table border-bottom" id="myPaymentTable">
 				<thead>
 					<tr>
-						<td scope="col">주문번호</td>
-						<td scope="col">상품정보</td>
-						<td scope="col">수량</td>
-						<td scope="col">상품금액</td>
-						<td scope="col">배송비</td>
-						<td scope="col">주문처리상태</td>
+						<th scope="col" width="130px;">주문번호</th>
+						<th scope="col">상품정보</th>
+						<th scope="col">수량</th>
+						<th scope="col">상품금액</th>
+						<th scope="col">배송비</th>
+						<th scope="col">주문처리상태</th>
 					</tr>
 				</thead>
 				<tbody></tbody>
@@ -55,7 +56,7 @@ $(function(){
 			if(data.paymentList == ''){
 				$('<tr>').append($('<td>',{
 					text: '주문정보가 존재하지 않습니다',
-					colspan: '6',
+					colSpan: '6',
 					align: 'center'
 				})).appendTo($('#myPaymentTable'));
 				

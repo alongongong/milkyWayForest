@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/milkyWayForest/css/mypage.css">
 
 <form id="mypageMyInfo" name="mypageMyInfo">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -15,12 +16,12 @@
 	<%----------------- 디폴트 설정 -----------------%>
 	
 	<div id="myBasicInfo-wrapper" class="item">
-		<div id="myBasicInfo-title" class="navbar navbar-light alert-info">
-			<span class="navbar-brand mb-0 h1">기본 정보</span>
+		<div id="myBasicInfo-title" class="navbar navbar-light">
+			<span class="mb-0">기본 정보</span>
 		</div>
 		
 		<div id="myBasicInfo-state">		
-			<table class="table table-bordered">
+			<table class="table border-bottom">
 				<tbody>
 					<tr>
 						<td id="td-id">아이디 *</td>
@@ -127,12 +128,12 @@
 								<input type="text" id="email2" name="email2" class="form-control bg-white border rounded">
 								
 								<input type="hidden" id="reEmail2" class="form-control bg-white border-0">
-								<button type="button" id="email-send-button" class="btn btn-info">이메일인증</button>
+								<button type="button" id="email-send-button" class="btn">이메일인증</button>
 							</div>
 							
 							<div id="email-number-wrapper" class="input-group">
 								<input type="text" id="emailNum" name="emailNum" class="form-control bg-white border rounded" disabled>
-								<button type="button" id="email-number-button" class="btn btn-info" disabled>인증번호확인</button>
+								<button type="button" id="email-number-button" class="btn" disabled>인증번호확인</button>
 							</div>
 						</td>
 					</tr>
@@ -141,9 +142,9 @@
 			<div id="result-div"></div>
 			
 			<div align="center" id="button-wrap">
-				<button type="button" id="Update-button" class="btn btn-info">회원정보수정</button>
-				<button type="button" id="Delete-button" class="btn btn-info" onclick="location.href='/milkyWayForest/mypage/mypagePwdForm2'">회원탈퇴</button>
-				<button type="reset" id="reset-button" class="btn btn-info">취소</button>
+				<button type="button" id="Update-button" class="btn">회원정보수정</button>
+				<button type="button" id="Delete-button" class="btn" onclick="location.href='/milkyWayForest/mypage/mypagePwdForm2'">회원탈퇴</button>
+				<button type="reset" id="reset-button" class="btn">취소</button>
 			</div>
 		</div>
 	</div>

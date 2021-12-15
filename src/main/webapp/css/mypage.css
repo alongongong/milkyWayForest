@@ -2,7 +2,7 @@
 
 #mypageMain,
 #mypageMyInfo,
-#mypageShpMngListForm, /* 배송지관리 */
+#mypageShpMngListForm,
 #mypageMyPost,
 #mypageMyQnaView,
 #updateMyQnaViewForm,
@@ -10,11 +10,53 @@
 #myOrderView,
 #mypageCancelList,
 #mypageShipmentList,
-#myOrderCancel {
-	margin: 0;
-	padding: 0;
+#myOrderCancel,
+#mypagePwdForm,
+#mypagePwdForm2 {
+	margin: 120px auto 80px auto;
 }
+#mypageMain #h1Div,
+#mypageMyInfo #h1Div,
+#mypageShpMngListForm #h1Div,
+#mypageMyPost #h1Div,
+#mypageMyQnaView #h1Div,
+#updateMyQnaViewForm #h1Div,
+#mypageOrderList #h1Div,
+#myOrderView #h1Div,
+#mypageCancelList #h1Div,
+#mypageShipmentList #h1Div,
+#myOrderCancel #h1Div {
+	width: 58%;
+	margin: 0 auto;
+}
+
+
 /*********** 디폴트 설정 ***********/
+#sideNav-wrapper li {
+	font-size: 14px;
+}
+#sideNav-wrapper .sideNavTitle {
+	background : #eee;
+	font-size : 16px;
+	font-weight: bold; 
+}
+#mypageMain .navbar-light,
+#mypageOrderList #myPayment-title,
+#mypageShipmentList #myPayment-title,
+#mypageCancelList #myPayment-title,
+#myOrderView .navbar-light,
+#myOrderCancel .navbar-light,
+#mypageMyInfo .navbar-light,
+#mypageMyPost .navbar-light,
+#mypageShpMngListForm .navbar-light,
+#mypageShpMngModifyForm .navbar-light,
+#mypageShpMngWriteForm .navbar-light {
+	font-size : 18px;
+	font-weight: bold;
+	padding: 16px;
+}
+
+
 #topNav-wrapper {
 	display: grid;
 	grid-auto-rows: minmax(100px, auto); /* 행(row)의 배치, minmax(최소값, 최대값) */
@@ -61,6 +103,10 @@
 	margin-top: -1px;
 }
 
+#topNav-wrapper .topnavATag:link { color: black; text-decoration: none; }
+#topNav-wrapper .topnavATag:visited { color: black; text-decoration: none; }
+#topNav-wrapper .topnavATag:hover { color: #154520; text-decoration: underline; }
+#topNav-wrapper .topnavATag:active { color: black; text-decoration: none; }
 
 /*********** 마이페이지 메인 ***********/
 #mypageMain #main-wrapper,
@@ -127,12 +173,25 @@
 	width: 820px;
 	/* padding-left: 15px; */
 }
+#mypageMain #myShipment-wrapper,
+#mypageMain #myPayment-wrapper,
+#myOrderView #orderChangeDiv,
+#myOrderView #myOrderView2,
+#myOrderView #myOrderView3{
+	margin-top: 60px;
+}
 #mypageMain .orderSubject:link { color: black; text-decoration: none; }
 #mypageMain .orderSubject:visited { color: black; text-decoration: none; }
-#mypageMain .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageMain .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageMain .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageMain table td {
+
+#mypageMain table td,
+#mypageOrderList table td,
+#myOrderView table td,
+#mypageCancelList table td,
+#mypageShipmentList table td,
+#myOrderCancel table td {
 	vertical-align: middle;
 }
 
@@ -140,6 +199,7 @@
 #mypagePwdForm #main-wrapper,
 #mypagePwdForm2 #main-wrapper{
 	width:100%;
+	height:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -150,10 +210,13 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 160px;
 }
 #mypagePwdForm #mypagePwd-wrapper h2,
 #mypagePwdForm2 #mypagePwd-wrapper h2{
-	font-size: 20px;
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
 }
 #mypagePwdForm #mypagePwd-wrapper p,
 #mypagePwdForm2 #mypagePwd-wrapper p{
@@ -243,7 +306,7 @@
 #mypageMyPost #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -263,7 +326,7 @@
 
 #mypageMyPost .qnaSubject:link { color: black; text-decoration: none; }
 #mypageMyPost .qnaSubject:visited { color: black; text-decoration: none; }
-#mypageMyPost .qnaSubject:hover { color: red; text-decoration: underline; }
+#mypageMyPost .qnaSubject:hover { color: #154520; text-decoration: underline; }
 #mypageMyPost .qnaSubject:active { color: black; text-decoration: none; }
 
 /*********** 문의글 보기 ***********/
@@ -350,7 +413,7 @@
 #mypageOrderList #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -366,24 +429,141 @@
 
 #mypageOrderList .orderSubject:link { color: black; text-decoration: none; }
 #mypageOrderList .orderSubject:visited { color: black; text-decoration: none; }
-#mypageOrderList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageOrderList .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageOrderList .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageOrderList table td {
-	vertical-align: middle;
-}
 
 /*********** 주문상세내역 창 ***********/
 #myOrderView #myOrderView-wrapper{
 	grid-column: 2;
 	grid-row: 2;
 	width: 820px;
-	margin-top: 60px;
+	margin-top: 16px;
 }
 #myOrderView #buttonWrap{
 	text-align: end;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
+#mypageShpMngListForm #buttonWrap{
+	margin-bottom: 10px;
+}
+
+#mypageShpMngListForm #modifyBtn,
+#mypageShpMngWriteForm #saveBtn,
+#mypageShpMngModifyForm #modifySaveBtn{
+	width: 80px;
+    height: 40px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+#myOrderView #reorderBtn,
+#myOrderCancel #myOrderCancelBtn,
+#mypageMyQnaView #myQnaListBtn,
+#mypageMyQnaView #updateBtn,
+#updateMyQnaViewForm #updateMyQnaBtn{
+	width: 100px;
+    height: 40px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+#mypageMyInfo #Update-button,
+#mypageShpMngListForm #WriteBtn{
+	width: 130px;
+    height: 40px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+#mypagePwdForm #next-button,
+#mypagePwdForm2 #next-button{
+	width: 230px;
+    height: 48px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+/*************************************/
+#mypageShpMngListForm #deleteBtn,
+#mypageShpMngWriteForm #closeBtn,
+#mypageShpMngModifyForm #modifyCloseBtn {
+	width: 80px;
+    height: 40px;
+	background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+    
+}
+#myOrderView #orderCancleBtn,
+#myOrderView #orderExchangeBtn,
+#myOrderView #orderReturnBtn,
+#myOrderCancel #cancelBtn,
+#mypageMyQnaView #deleteBtn,
+#updateMyQnaViewForm #cancelBtn,
+#mypageShpMngWriteForm #zipcodeBtn,
+#mypageShpMngModifyForm #zipcodeBtn {
+	width: 100px;
+    height: 40px;
+	background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+    
+}
+#mypageMyInfo #email-send-button,
+#mypageMyInfo #email-number-button,
+#mypageMyInfo #Delete-button,
+#mypageMyInfo #reset-button {
+	width: 130px;
+    height: 40px;
+	background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+    
+}
+#mypagePwdForm #reset-button,
+#mypagePwdForm2 #reset-button{
+	width: 230px;
+    height: 48px;
+    background: white;
+    color: #154520;
+    border: 1px solid #154520;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+#mypageShpMngListForm .btn {
+	border-inline-style: none;
+    margin-right: 5px;
+}
+
+
 #myOrderView #buttonWrap #orderCancleBtn,
 #myOrderView #buttonWrap #orderExchangeBtn,
 #myOrderView #buttonWrap #orderReturnBtn,
@@ -394,9 +574,8 @@
 	width: 100px;
 	height: 100px;
 }
-
-#myOrderView table td {
-	vertical-align: middle;
+#myOrderView #cartInsertListTable{
+	display: hidden;
 }
 
 /*********** 주문취소/교환/반품내역 창 ***********/
@@ -409,7 +588,7 @@
 #mypageCancelList #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -425,12 +604,9 @@
 
 #mypageCancelList .orderSubject:link { color: black; text-decoration: none; }
 #mypageCancelList .orderSubject:visited { color: black; text-decoration: none; }
-#mypageCancelList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageCancelList .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageCancelList .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageCancelList table td {
-	vertical-align: middle;
-}
 
 /*********** 주문/배송조회 창 ***********/
 #mypageShipmentList #myPayment-wrapper{
@@ -442,7 +618,7 @@
 #mypageShipmentList #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #106030;
 	padding: 3px 8px;
 	cursor: pointer;
 }
@@ -458,12 +634,10 @@
 
 #mypageShipmentList .orderSubject:link { color: black; text-decoration: none; }
 #mypageShipmentList .orderSubject:visited { color: black; text-decoration: none; }
-#mypageShipmentList .orderSubject:hover { color: red; text-decoration: underline; }
+#mypageShipmentList .orderSubject:hover { color: #154520; text-decoration: underline; }
 #mypageShipmentList .orderSubject:active { color: black; text-decoration: none; }
 
-#mypageShipmentList table td {
-	vertical-align: middle;
-}
+
 
 /*********** 주문 취소신청 창 ***********/
 #myOrderCancel #myOrderCancel-wrapper{
@@ -489,6 +663,81 @@
 	width: 100%;
 }
 
-#myOrderCancel table td {
-	vertical-align: middle;
+/*********** 적립금, 쿠폰 창 ***********/
+#mypageShpMngListForm #mypageShpMn-wrapper{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 60px;
+}
+#mypageShpMngListForm #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: #106030;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageShpMngListForm #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#mypageShpMngListForm #mypagePointPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+/*********** 배송지 관리 창 ***********/
+#mypageShpMngListForm #myPayment-state{
+	grid-column: 2;
+	grid-row: 2;
+	width: 820px;
+	margin-top: 16px;
+}
+
+/* wishList */
+#myWishList-wrapper {
+	width: 820px;
+}
+#myWishList-wrapper #myWishListTable td {
+	font-size: 14px;
+}
+#myWishList-wrapper #wishAllDelete {
+ 	font-size: 14px;
+ 	color: #154520;
+ 	border: 1px solid #154520;
+ 	float: right;
+ 	margin: 5px 0;
+ 	width: 100px;
+ }
+#myWishList-wrapper #wishSelectDelete {
+	background: #154520;
+	font-size: 14px;
+	color: white;
+	float: right;
+	margin: 5px 5px;
+	width: 100px;
+}
+#myWishListTable .productName:link { color: black; text-decoration: none; }
+#myWishListTable .productName:visited { color: black; text-decoration: none; }
+#myWishListTable .productName:hover { color: #154520; text-decoration: underline; }
+#myWishListTable .productName:active { color: black; text-decoration: none; }
+
+
+#myWishList-state #currentPaging {
+	border: 1px solid #ddd;
+	font-weight: bold;
+	color: #106030;
+	padding: 3px 8px;
+	cursor: pointer;
+}
+#myWishList-state #paging {
+	padding: 3px 8px;
+	cursor: pointer;
+}
+
+#myWishList-state #boardPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 }

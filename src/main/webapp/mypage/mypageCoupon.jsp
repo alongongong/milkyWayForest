@@ -12,6 +12,7 @@
 </style>
 
 <form id="mypageShpMngListForm" name="mypageMyInfo">
+<div id="h1Div"><h1 style="font-size: 35px;">마이페이지</h1></div>
 <div id="main-wrapper">
 	<div id="main-sideNav" class="item">
 		<jsp:include page="mypageSideNav.jsp"/>
@@ -21,12 +22,13 @@
 		<jsp:include page="mypageTopNav.jsp"/>	
 	</div>
 	<%----------------- 디폴트 설정 -----------------%>
-	<div>
+	<div id="mypageShpMn-wrapper" class="item">
 	<input type="hidden" id="id" value="${memId }">
-		<table id="memberCouponTable" class="table table-bordered" style="width:820px;">
-			<tr style="border-bottom: 1 solid black;">
-				<th colspan="4" style="text-align:center;">할인 쿠폰</th>
-			</tr>
+		<div id="mypageShpMn-title" class="navbar navbar-light">
+			<span class="mb-0">할인 쿠폰</span>
+		</div>
+	
+		<table id="memberCouponTable" class="table border-bottom" style="width:820px;">
 			<tr id="last">
 				<th style="width:200px;text-align:center;">발 생 일</th>
 				<th style="width:200px;text-align:center;">쿠 폰</th>

@@ -8,6 +8,7 @@ import member.bean.MemberCouponDTO;
 import member.bean.MemberDTO;
 import mypage.bean.MemberRatingDTO;
 import mypage.bean.MypageShipmentDTO;
+import mypage.bean.WishListDTO;
 import payment.bean.PaymentDTO;
 import qnaBoard.bean.QnaBoardDTO;
 
@@ -98,5 +99,13 @@ public interface MypageDAO {
 	public void updateMyOrderReturn(PaymentDTO paymentDTO);
 
 	public PaymentDTO getMyOrderCancelInfo(String paymentCode);
+
+	public List<WishListDTO> getWishList(Map<String, Object> map);
+
+	public int getWishListTotalA(String id);
+
+	public void wishAllDelete(String id);
+
+	public void wishSelectDelete(String wishListCode);
 
 }

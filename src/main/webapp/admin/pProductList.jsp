@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/admin.css">
 <div class="card" id="pProductListDiv">
   <div class="card-header">
@@ -11,7 +12,7 @@
 	</div>
   </div>
   <div class="card-body">
-    <div class="table-responsive">
+    <div class="">
       <table class="table" id="pProductListTable">
         <thead class=" text-primary">
           <th>
