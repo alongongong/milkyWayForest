@@ -226,7 +226,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 						type: 'post',
 						data: $('#paymentForm').serialize(),
 						success: function(data) {
-							alert(data);
+							//alert(data);
 							paymentCode = data;
 							
 							msg = '결제가 완료되었습니다.';
@@ -235,7 +235,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 			                msg += '\n결제 금액 : ' + rsp.paid_amount;
 			                msg += '\n카드 승인번호 : ' + rsp.apply_num;
 
-			                alert(msg);
+			                //alert(msg);
 			    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
 			
 						},
@@ -278,7 +278,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 						type: 'post',
 						data: $('#paymentForm').serialize(),
 						success: function(data) {
-							alert(data);
+							//alert(data);
 							paymentCode = data;
 							
 							msg = '결제가 완료되었습니다.';
@@ -287,7 +287,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 			                msg += '\n결제 금액 : ' + rsp.paid_amount;
 			                msg += '\n카드 승인번호 : ' + rsp.apply_num;
 
-			                alert(msg);
+			                //alert(msg);
 			    	        location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
 			
 						},
@@ -310,7 +310,7 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 				type: 'post',
 				data: $('#paymentForm').serialize(),
 				success: function(data) {
-					alert(data);
+					//alert(data);
 					paymentCode = data;
 					
 					location.href="/milkyWayForest/payment/paySuccess?paymentCode="+paymentCode;
