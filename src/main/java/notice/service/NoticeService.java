@@ -30,4 +30,6 @@ public interface NoticeService {
 
 	public List<CommentDTO> getQnaComment(int qnaCode);
 
+	public void commentInsert(CommentDTO commentDTO);
+
 }

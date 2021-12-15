@@ -12,12 +12,12 @@
 	
 #footerBody #footer {
 	text-align: left;
-	
 }
 
 #footerBody .footerMenu {	
 	font-size: 12px;
-	
+	display: inli;
+	width:200px;
 }	
 	
 #footerBody .footerInfo li{

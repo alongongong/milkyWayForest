@@ -422,4 +422,11 @@ public class MypageServiceImpl implements MypageService {
 		mypageDAO.wishAllDelete(id);
 	}
 
+	@Override
+	public void wishSelectDelete(String[] wishListCode) {
+		for(int i=0; i<wishListCode.length; i++) {
+			mypageDAO.wishSelectDelete(wishListCode[i]);
+		}
+	}
+
 }

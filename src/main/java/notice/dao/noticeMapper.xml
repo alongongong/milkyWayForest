@@ -6,7 +6,7 @@
 <mapper namespace="noticeSQL">
 	<insert id="qnaBoardWrite" parameterType="qnaBoard">
 		insert into milkyqna values(
-		milkyQnASeq.nextval, #{qnaQuestionType}, #{qnaSubject}, 'aaa', 
+		milkyQnASeq.nextval, #{qnaQuestionType}, #{qnaSubject}, #{id}, 
 		#{qnaContent}, #{qnaPwd}, #{qnaHit}, #{qnaImage1}, #{qnaImage2}, '답변 대기', sysdate)
 	</insert>
 	
@@ -77,4 +77,8 @@
 	<select id="getQnaComment" parameterType="int" resultType="comment">
 		select * from milkycomment where qnacode=#{qnaCode} order by commentCode desc
 	</select>
+	
+	<insert id="commentInsert" parameterType="comment">
+		insert into milkycomment(commentcode, qnacode, id, commentcontent) values(milkycommentseq.nextval, #{qnaCode}, #{id}, #{commentContent})
+	</insert>
 </mapper>

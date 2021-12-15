@@ -37,4 +37,6 @@ public interface NoticeDAO {
 
 	public List<CommentDTO> getQnaComment(int qnaCode);
 
+	public void commentInsert(CommentDTO commentDTO);
+
 }

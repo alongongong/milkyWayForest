@@ -46,5 +46,7 @@ public interface AdminService {
 
 	public String adminlogin(AdminDTO adminDTO);
 
+	public JSONObject getReview(int pg);
+
 
 }

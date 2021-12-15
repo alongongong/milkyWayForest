@@ -57,7 +57,9 @@ $(function(){
 					align: 'center'
 				}).append($('<input>',{
 					type: 'checkbox',
-					class: 'wishCheck'
+					class: 'wishCheck',
+					value: items.wishListCode,
+					name: 'wishListCode'
 				}))).append($('<td>',{
 					style: 'width: 80px; height: 80px;'
 				}).append($('<img>',{
@@ -92,9 +94,31 @@ $(function(){
 		}
 	});
 	
+	$(document).on('click', '.wishCheck', function(){
+		if($('.wishCheck:checked').length < $('.wishCheck').length)
+			$('#allCheck').prop('checked', false);
+		else $('#allCheck').prop('checked', true);
+	});
+	
 	
 	$('#wishSelectDelete').click(function(){
-		
+		if($('.wishCheck:checked').length == 0) {
+			alert('선택된 상품이 없습니다.');
+		} else {
+			$.ajax({
+				url: '/milkyWayForest/mypage/wishSelectDelete',
+				type: 'post',
+				data: $('#mypageMain').serialize(),
+				success: function(data) {
+					alert('삭제되었습니다.');
+					$('.wishCheck:checked').parents('tr').empty();
+				},
+				error: function(err) {
+					console.log(err);
+				}
+			});
+			
+		}
 	});
 	
 	$('#wishAllDelete').click(function(){

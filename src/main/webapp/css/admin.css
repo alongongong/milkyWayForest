@@ -4,7 +4,7 @@
 #currentPaging {
 	border: 1px solid #ddd;
 	font-weight: bold;
-	color: blue;
+	color: #154520;
 	padding: 3px 8px;
 }
 #paging {
@@ -94,6 +94,7 @@
 /* 문의 게시판 */
 #pQnaBoardDiv #pQnaBoardTable th, #pQnaBoardDiv #pQnaBoardTable td {
 	text-align: center;
+	font-size: 14px;
 } 
 
 #pQnaBoardDiv #boardPagingDiv {
@@ -190,7 +191,7 @@
 #adminLoginForm #main-container {
 	background: url("/milkyWayForest/image/login_bg.jpg") center top no-repeat fixed #0a0807;
 	background-size: 100%;
-	padding: 220px 0 220px 0;
+	padding: 160px 0 170px 0;
 	-webkit-background-size: cover;
 	width: 100%;
 	
@@ -219,7 +220,7 @@
 	padding: 20px 0 30px 0;
 	width: 100%;
 	border-bottom: 1px solid #ccc;
-	margin-bottom: 25px;
+	margin-bottom: 40px;
 }
 #adminLoginForm #main-wrap #welcomdeLogin span {
 	color: #006633;
@@ -258,14 +259,14 @@
     font-size: 12px;
     color: #777;
 	width: 92%;
-	height :35px;
+	height :25px;
 	margin: 0 auto;
 	font-weight: bold;
 	text-align: left;
 }
 
 #adminLoginForm #login-button-wrap {
-	padding-top: 10%;
+	padding-top: 8%;
 	
 }
 #adminLoginForm #login-button-wrap button{
@@ -279,7 +280,7 @@
     cursor: pointer;
 }
 
-#loginForm #login-button-wrap ul{
+#adminLoginForm #login-button-wrap ul{
 	list-style: none;
 	width: 465px;
 	display: flex;
@@ -287,4 +288,9 @@
 	align-items: center;
 	padding-left: 0px;
 	margin: 10px auto 5px auto;
+}
+#pReviewBoardForm #boardPagingDiv {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 }

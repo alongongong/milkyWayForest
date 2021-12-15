@@ -22,13 +22,14 @@ import comment.bean.CommentDTO;
 import grade.bean.GradeDTO;
 import payment.bean.PaymentDTO;
 import product.bean.ProductDTO;
+import shopping.bean.ReviewDTO;
 
 @Controller
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@GetMapping("/admin")
+	@GetMapping("/admin/adminIndex")
 	public String admin() {
 		return "/admin/adminIndex";
 	}
@@ -211,7 +212,8 @@ public class AdminController {
 	
 	@PostMapping("/admin/qnaCommentInsert")
 	@ResponseBody
-	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO) {
+	public void qnaCommentInsert(@ModelAttribute CommentDTO commentDTO, HttpSession session) {
+		commentDTO.setId(session.getAttribute("adminId")+"");
 		adminService.qnaCommentInsert(commentDTO);
 	}
 	
@@ -247,7 +249,7 @@ public class AdminController {
 	
 	
 	//관리자 로그인 *******************************
-	@GetMapping("/admin/adminloginForm")
+	@GetMapping("/admin")
 	public String cart(Model model) {
 		model.addAttribute("display", "admin/adminlogin.jsp");
 		return "/index";
@@ -275,5 +277,15 @@ public class AdminController {
 		 return id; 
 	}
 	
+	@PostMapping("/admin/getReview")
+	@ResponseBody
+	public JSONObject getReview(@RequestParam int pg) {
+		return adminService.getReview(pg);
+	}
 	
+	@PostMapping("/admin/adminLogout")
+	@ResponseBody
+	public void adminLogout(HttpSession session) {
+		session.invalidate();
+	}
 }

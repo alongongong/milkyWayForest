@@ -307,6 +307,14 @@
 #qnaBoardForm #qnaBoardTable th {
 	text-align: center;
 }
+#qnaBoardForm .qnaCommentBtn {
+	color: white;
+	background: #154520;
+	font-size: 13px;
+	font-weight: bold;
+	width: 70px;
+	height: 60px;
+}
 #qnaBoardTable .qnaSubject:hover {
 	color: blue;
 	text-decoration: underline;

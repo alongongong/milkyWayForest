@@ -4,10 +4,12 @@
 <html>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="/milkyWayForest/css/body.css">
 <link rel="stylesheet" href="/milkyWayForest/css/thirdScroll.css">
 <link rel="stylesheet" type="text/css" href="/milkyWayForest/css/jquery.fullPage.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/milkyWayForest/css/body.css"><!-- pc버전 -->
+<link rel="stylesheet" href="/milkyWayForest/css/body_tablet.css" media="all and (max-width:1252px)">
+<link rel="stylesheet" href="/milkyWayForest/css/body_mobile.css" media="all and (max-width:767px)"> <!--960 이하 모바일-->	
 <style type="text/css">
 .section {  width:100%; height:100%; position:relative; color:#ffffff; font-size:24pt; }
 .section .second_section_text { position:relative; top:26%; transform:translate(-47%, -50%); opacity:0;}  
@@ -29,16 +31,13 @@
 			<div class="sildeDiv">
 				<ul>
 					<li>
-						<img src="/milkyWayForest/image/main1_Image.jpg" alt="mainpic1.jpg" 
-						style="width: 110vw; height: 100vh;  top: 0;">
+						<img src="/milkyWayForest/image/main1_Image.jpg" alt="mainpic1.jpg" id="image1">
 					</li>
 					<li>
-						<img src="/milkyWayForest/image/mainImage3.jpg" alt="mainImage3.jpg" 
-						style="width: 100vw; height: 100vh;  top: 0;">
+						<img src="/milkyWayForest/image/mainImage3.jpg" alt="mainImage3.jpg" id="image2">
 					</li>
 					<li>
-						<img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" 
-						style="width: 100vw; height: 100vh;  top: 0;">
+						<img src="/milkyWayForest/image/imageSlide.jpg" alt="imageSlide.jpg" id="image3">
 					</li>
 				</ul>
 				<div id="dotDiv" style="text-align:center">

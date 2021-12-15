@@ -43,6 +43,21 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
 	margin:0; 
 	padding:0;
 }
+.sildeDiv > ul > li > #image1{
+	width: 110vw;
+    height: 100vh;
+    top: 0;
+}
+.sildeDiv > ul > li > #image2{
+	width: 100vw;
+    height: 100vh;
+    top: 0;
+}
+.sildeDiv > ul > li > #image3{
+	width: 100vw;
+    height: 100vh;
+    top: 0;
+}
 
 /* 도트 슬라이드 */
 #dotDiv {
@@ -358,4 +373,19 @@ input, select, textarea {font-family: "Malgun Gothic", "맑은 고딕", arial, s
   border-radius: 70px;
 }
 
+.sildeDiv > ul > li > #image1{
+	width: 110vw;
+    height: 100vh;
+    top: 0;
+}
+.sildeDiv > ul > li > #image2{
+	width: 100vw;
+    height: 100vh;
+    top: 0;
+}
+.sildeDiv > ul > li > #image3{
+	width: 100vw;
+    height: 100vh;
+    top: 0;
+}
 

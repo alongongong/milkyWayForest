@@ -9,21 +9,10 @@
 	</div>
 
 	<div id ="shoppingMenu">
-		<p class="shoppingMenuSubject">
-			분류보기
-			<div class="down_up_button">
-				<span class="list_up" style="float: right;">
-					<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
-				</span>
-				<span class="list_down" style="display: none; float: right;">
-					<img src="/milkyWayForest/image/list_up_btn.png" alt="list_up_btn">
-				</span>
-			</div>
-		</p>
 		
-		<div class="border"></div>
+		<div id="shoppingMenuSubject">쇼핑</div>
 		
-		<ul style="padding-left: 7px; margin-bottom: 0;">
+		<ul>
             <li>
 			 	<span id="menu2"><a href="/milkyWayForest/shopping/beanNTea">원두 / 차 </a> &nbsp; &nbsp; &nbsp;</span>
 				<a href="/milkyWayForest/shopping/beanList">원두</a>&nbsp; &nbsp;
