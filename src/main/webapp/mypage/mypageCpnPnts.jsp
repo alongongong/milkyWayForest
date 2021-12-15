@@ -37,8 +37,7 @@
 					<th style="width:200px;text-align:center;">사용 적립금</th>
 				</tr>
 			</thead>
-			
-			
+
 			<tbody>
 				<!-- <tr>
 					<td id="birthDay" style="text-align:center;"></td>

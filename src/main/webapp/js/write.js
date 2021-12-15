@@ -45,7 +45,7 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWritePwd').focus();
 	}else if($('#memberWriteForm #memberWriteName').val() == ''){
-		$('#memberWriteForm #emailDiv').html('이름를 입력하세요');
+		$('#memberWriteForm #emailDiv').html('이름을 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteName').focus();
 	}else if(!nameForm.test(name)){
@@ -53,7 +53,7 @@ $('#memberWriteForm #memberWriteBtn').click(function(){
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteName').focus();
 	}else if($('#memberWriteForm #memberWriteNick').val() == ''){
-		$('#memberWriteForm #emailDiv').html('닉네임를 입력하세요');
+		$('#memberWriteForm #emailDiv').html('닉네임을 입력하세요');
 		$('#memberWriteForm #emailDiv').css('color','red');
 		$('#memberWriteNick').focus();
 	}else if(!nicknameForm.test(nickname)){
