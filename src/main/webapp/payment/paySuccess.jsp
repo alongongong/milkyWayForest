@@ -3,6 +3,20 @@
 <link rel="stylesheet" href="/milkyWayForest/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="/milkyWayForest/css/payment.css">
 <style>
+#paySuccess {
+margin: 120px auto 80px auto;
+}
+#paySuccess #homeBtn,
+#paySuccess #mypageBtn{
+	width: 130px;
+    height: 40px;
+	background: #154520;
+    color: white;
+    padding: 7px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: none;
+}
 #paySuccess #paymentInfoDivWrap {
 	width:100%;
 	display:flex;
@@ -39,8 +53,8 @@
 			<p>총 결제금액<br><span id="totalPayPrice"></span></p>
 			
 			<div id="buttonWrap">
-				<input type="button" id="homeBtn" class="btn btn-info" value="메인화면으로">
-				<input type="button" id="mypageBtn" class="btn btn-info" value="구매내역확인">
+				<input type="button" id="homeBtn" class="btn" value="메인화면으로">
+				<input type="button" id="mypageBtn" class="btn" value="구매내역확인">
 			</div>
 		</div>
 	</div>
