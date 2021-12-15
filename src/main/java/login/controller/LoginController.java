@@ -43,7 +43,8 @@ public class LoginController {
 		
 		//비밀번호 복호화
 		String inputPwd = memberDTO.getPwd();
-		String dbPwd = memberDTO2.getPwd();
+		String dbPwd = null;
+		if(memberDTO2 != null) dbPwd = memberDTO2.getPwd();
 		
 		if(! passwordEncoder.matches(inputPwd, dbPwd)) {
 			return "";
