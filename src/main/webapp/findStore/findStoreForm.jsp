@@ -59,6 +59,8 @@ $(function(){
 	    
 	    function geo_error() {
 	    	alert("위치 정보를 사용할 수 없습니다."); 
+	    	
+	    	getStore();
     	}
 	    
 	    var geo_options = {
