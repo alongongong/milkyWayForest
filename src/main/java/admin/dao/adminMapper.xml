@@ -7,9 +7,9 @@
 	
 	<insert id="pProductInsert" parameterType="product">
 		begin
-		insert into milkyproductinfo values(milkyProductSeq.nexval, #{productName}, #{category}, #{productOption}, #{productUnit}, #{productRate}, 0);
-		insert into milkyproductdetail values(milkyProductSeq.nexval, #{productEngName}, #{productSmallInfo}, #{productDetailInfo});
-		insert into milkystock values(milkyProductSeq.nexval, 0, 0);
+		insert into milkyproductinfo values(#{productCode}, #{productName}, #{category}, #{productOption}, #{productUnit}, #{productRate}, 0);
+		insert into milkyproductdetail values(#{productCode}, #{productEngName}, #{productSmallInfo}, #{productDetailInfo});
+		insert into milkystock values(#{productCode}, 0, 0);
 		end;
 	</insert>
 	

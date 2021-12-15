@@ -1,7 +1,8 @@
-$('#insertProductBtn').click(function(){
+$('#pProductInsert #insertProductBtn').click(function(){
+alert('aa');
 	$('#emptyDiv').empty();
 	if($('#productCode').val()=='') {
-		$('#emptuDiv').text('상품 코드를 입력해주세요.');
+		$('#emptyDiv').text('상품 코드를 입력해주세요.');
 	} else if($('#productName').val()=='') {
 		$('#emptyDiv').text('상품 이름을 입력해주세요.');
 	} else if($('#productEngName').val()=='') {
