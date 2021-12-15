@@ -1,5 +1,4 @@
 $('#pProductInsert #insertProductBtn').click(function(){
-alert('aa');
 	$('#emptyDiv').empty();
 	if($('#productCode').val()=='') {
 		$('#emptyDiv').text('상품 코드를 입력해주세요.');
