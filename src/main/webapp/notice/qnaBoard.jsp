@@ -181,20 +181,25 @@ $(function(){
 							type: 'post',
 							data: 'qnaCode='+items.qnaCode+'&commentContent='+$('#qnaComment'+index).val(),
 							success: function(data) {
-								$('<div>').append($('<p>').append($('<span>',{
-									text: '${memId}'
+								$('<div>').append($('<p>',{
+									style: 'width: 93%; height: 70px; background: #ccc;margin:5px auto;border-radius: 5px; padding: 5px 15px;'
+								}).append($('<span>',{
+									text: '${memId}',
+									style: 'padding-left: 15px;'
 								})).append($('<input>',{
 									type: 'button',
-									value: '수정',
-									id: 'commentUpdate'+index
+									value: '',
+									id: 'commentUpdate'+index,
+									class: 'btn'
 								})).append($('<input>',{
 									type: 'button',
-									value: '삭제',
-									id: 'commentDelete'+index
-								}))).append($('<div>',{
+									value: '',
+									id: 'commentDelete'+index,
+									class: 'btn'
+								})).append($('<div>',{
 									text: $('#qnaComment'+index).val(),
-									style: 'width: 83%; height: 60px; background: #999;'
-								})).prependTo($('#commentAppend'+index));
+									style: 'margin: 0 10px;'
+								}))).prependTo($('#commentAppend'+index));
 								
 								$('#qnaComment'+index).val('');
 							},
@@ -214,22 +219,24 @@ $(function(){
 						// alert(JSON.stringify(data))
 						$.each(data, function(index1, items1){
 							$('#commentDiv'+index).append($('<p>',{
-								class: 'commentContent'
+								class: 'commentContent',
+								style: 'width: 93%; height: 70px; background: #ccc;margin:5px auto;border-radius: 5px; padding: 5px 15px;'
 							}).append($('<span>', {
 								text: items1.id,
 								style: 'margin: 0 10px;'
 							})).append($('<input>',{
 								type: 'button',
-								value: '수정',
+								value: '',
 								id: 'commentUpdataBtn'+index1,
 								class: 'btn commentUpdateBtn'
 							})).append($('<input>',{
 								type: 'button',
-								value: '삭제',
+								value: '',
 								id: 'commentDeleteBtn'+index1,
 								class: 'btn commentDeleteBtn'
 							})).append($('<p>', {
-								text: items1.commentContent
+								text: items1.commentContent,
+								style: 'margin: 0 10px;'
 							})));
 						});
 					},

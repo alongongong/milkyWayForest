@@ -393,7 +393,7 @@ $(function(){
 							type: 'post',
 							data: $('#cartForm').serialize(),  //체크박스에서는 특징이 선택한애들만 네임값을 넘겨준다.대신이렇게 하려면 서브밋을 걸어야 한다 버튼은 안됨(서브밋의 특징!!)
 							success: function() {
-								alert("삭제제되었습니다.")
+								alert("삭제되었습니다.")
 								console.log(JSON.stringify(data)); 
 							
 							},
@@ -413,7 +413,7 @@ $(function(){
 		
 		//계속쇼핑하기 버튼
 		$('#cartForm #shoppingBtn').click(function(){
-			location.href='/milkyWayForest/';
+			location.href='/milkyWayForest/shopping';
 			
 		});	
 		

@@ -325,6 +325,10 @@ $('#paymentForm #paymentOrderBtn').click(function(){
 });
 
 $(function(){
+	$('#paymentCancelBtn').click(function(){
+		history.back();
+	});
+	
 	
 	$.ajax({
 		url: '/milkyWayForest/payment/getPayment',
