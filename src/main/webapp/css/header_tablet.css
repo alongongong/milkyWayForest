@@ -6,7 +6,7 @@
 
 #Allheader header > div nav {display:none;}
 
-#Allheader header > div .spot i {display:inline-block;font-size:3rem;padding-bottom:10rem;}
+#Allheader header > div .spot i {display:inline-block;font-size:3rem;padding-bottom:10rem;z-index:5;}
 
 #Allheader header .total{display:inline-block;position:absolute; font-size:3rem; right:4rem; top:40px;}
 
@@ -28,3 +28,68 @@
 
 .navbar{flex-direction:column;align-teims:flex-start;}
 
+#menu__toggle {opacity: 1; }
+
+#menu__toggle:checked ~ .menu__btn > span {transform: rotate(45deg);}
+#menu__toggle:checked ~ .menu__btn > span::before {top: 0;transform: rotate(0);}
+#menu__toggle:checked ~ .menu__btn > span::after {top: 0;transform: rotate(90deg);}
+#menu__toggle:checked ~ .menu__box {visibility: visible;right: 0;}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+
+  margin: 0;
+  padding: 120px 0;
+
+  list-style: none;
+
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+
+  transition-duration: .25s;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+
+  color: #333;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition-duration: .25s;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+#menu__toggle{
+	display:none;
+}
+#Allheader header .total{
+	cursor:pointer;
+	z-index:1;
+}
+.menu__item1{
+  display: block;
+  padding: 8px 45px;
+
+  color: #333;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition-duration: .25s;
+}

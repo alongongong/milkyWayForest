@@ -20,11 +20,11 @@
 		<!--				header전체메뉴				--> 		
 		<!--				header 하단메뉴				-->
 		<div>
-			<h1><a href="/milkyWayForest/"><img src="/milkyWayForest/image/milkyWayForestLogo2.png" alt="logo"></a></h1>
+			<h1><a href="/milkyWayForest/admin"><img src="/milkyWayForest/image/milkyWayForestLogo2.png" alt="logo"></a></h1>
 		
 			<nav>
 				<ul class="menu">
-					<li><a href="javascript:void(0);" style="text-decoration: none; cursor: default;">NOTICE</a>
+					<li><a href="">NOTICE</a>
 						<ul class="middleMenu">
 							<li><a href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
 							<li><a href="/milkyWayForest/notice/eventBoard">이벤트</a></li>
@@ -71,7 +71,7 @@
 						</ul>
 					</li>
 					<li><a href="/milkyWayForest/findStore">STORE</a></li>
-					<li><a href="javascript:void(0);" style="text-decoration: none; cursor: default;">EUNHASOOP</a>
+					<li><a href="">EUNHASOOP</a>
 						<ul class="middleMenu">
 							<li><a href="/milkyWayForest/info/componyInfo">은하숲 소개</a></li>
 							<li><a href="/milkyWayForest/info/gradeBenefitInfo">등급 혜택 안내</a></li>
@@ -99,6 +99,44 @@
 			<!-- 모바일버전시, 전체메뉴 아이콘 -->
 				<a href="#a" class="total xi-bars"></a>
 		</div>
+		
+		<div class="hamburger-menu">
+	    <input id="menu__toggle" type="checkbox" autocomplete="off" />
+	    <label class="total xi-bars" for="menu__toggle">
+	      <span></span>
+	    </label>
+	
+	    <ul class="menu__box">
+	      	<li><a class="menu__item" href="/milkyWayForest/info/componyInfo">EUNHASOOP</a>
+	      		<ul>
+	      			<li><a class="menu__item1" href="/milkyWayForest/info/componyInfo">은하숲 소개</a></li>
+	      			<li><a class="menu__item1" href="/milkyWayForest/info/gradeBenefitInfo">등급 혜택 안내</a></li>
+	      		</ul>
+	      	</li>
+			<li><a class="menu__item" href="/milkyWayForest/findStore">STORE</a></li>
+			<li><a class="menu__item" href="/milkyWayForest/shopping">SHOPPING</a>
+				<ul>
+					<li><a class="menu__item1" href="/milkyWayForest/shopping/beanNTea">원두/차</a><li>
+					<li><a class="menu__item1" href="/milkyWayForest/shopping/product">상품</a></li>
+				</ul>
+			</li>
+			<li><a class="menu__item" href="/milkyWayForest/menuInfo">MENU</a>
+				<ul>
+					<li><a class="menu__item1" href="/milkyWayForest/menuInfo/drinkInfo">음료</a></li>
+					<li><a class="menu__item1" href="/milkyWayForest/menuInfo/foodInfo">푸드</a></li>
+				</ul>
+			</li>
+			<li><a class="menu__item" href="/milkyWayForest/notice/noticeBoard?pg=1">NOTICE</a>
+				<ul>
+					<li><a class="menu__item1" href="/milkyWayForest/notice/noticeBoard?pg=1">공지사항</a></li>
+					<li><a class="menu__item1" href="/milkyWayForest/notice/eventBoard">이벤트</a></li>
+					<li><a class="menu__item1" href="/milkyWayForest/notice/faqBoard?pg=1">자주 묻는 질문</a></li>
+					<li><a class="menu__item1" href="/milkyWayForest/notice/qnaBoard?pg=1">문의 게시판</a></li>
+				</ul>
+			</li>
+	    </ul>
+	  </div>
+		
 		
 		
 	</header>

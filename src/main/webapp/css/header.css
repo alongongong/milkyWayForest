@@ -96,3 +96,26 @@ font-size: 1rem; color:#000; }
 #Allheader header > div .spot i { display:none; } 
 
 #Allheader header .total { display : none; color: black; }
+
+#menu__toggle{
+	display:none;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+
+  margin: 0;
+  padding: 120px 0;
+
+  list-style: none;
+
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+
+  transition-duration: .25s;
+}
