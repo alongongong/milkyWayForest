@@ -16,12 +16,12 @@ ul { list-style:none; }
 
 /* header의 전체메뉴 */
 /* 가운데정렬 = { position: relative; width: 69rem; margin: 0 auto; } */
-#Allheader header > div {  margin: 0 auto; padding: 24px 0 0 100px ; } 
+#Allheader header > div {  margin: 0 auto; padding: 24px 0 0 30px ; } 
 /* header > div { position: relative; width: 69rem; margin: 0 auto; }  */
 #Allheader header > div:after { content: ""; display: block; clear: both; }
 
 /* 로고 */
-#Allheader header > div h1 { float: left; padding: 1.5rem 0 0.1rems; margin: auto 0; }
+#Allheader header > div h1 { float: left; padding: 1.5rem 0 0.1mres; margin: auto 0; }
 
 /* 전체 스크롤 */
 body::-webkit-scrollbar {
@@ -37,7 +37,7 @@ body::-webkit-scrollbar-track {
 
 /*header 하단메뉴*/
 #Allheader header > div .menu {  font-size: 1rem; float: left; 
-font-weight:bold; padding: 16px 0 10px 4rem; height: 95px;}
+font-weight:bold; padding: 18px 0 10px 4rem; height: 95px;}
 #Allheader header > div nav > ul > li { float: right; }
 #Allheader header > div nav > ul > li > a { display: block; padding: 12px 1.7rem 0; height: .4rem; 
 font-size: .9rem; color:#444; line-height: 100%;}

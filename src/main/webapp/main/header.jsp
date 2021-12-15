@@ -12,8 +12,8 @@
 	<!--xeicon.min.css = 돋보기 아이콘, 매장검색 아이콘-->
 <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" href="/milkyWayForest/css/header.css"> <!-- PC전용 -->
-					   <!-- 모바일, 태블릿에서도 가능한 반응형 웹 크기 960(모바일) -->
-<link rel="stylesheet" href="/milkyWayForest/css/header_mobile.css" media="all and (max-width:767px)"> <!--960 이하 모바일-->														 
+<link rel="stylesheet" href="/milkyWayForest/css/header_tablet.css" media="all and (max-width:1252px)">
+<link rel="stylesheet" href="/milkyWayForest/css/header_mobile.css" media="all and (max-width:767px)"> <!--960 이하 모바일-->	
 
 <div id="Allheader">
 	<header>
@@ -82,23 +82,25 @@
 		 	<!--				header 로그인메뉴				-->
 				<ul class="spot">
 					<c:if test="${memId == null }">
-						<li><a href="/milkyWayForest/write/memberAgree"><i class="xi-user"></i><span>Sign Up</span></a></li>
-						<li><a href="/milkyWayForest/login/loginForm">Login</a></li>					
+						<li><a href="/milkyWayForest/write/memberAgree"><span>Sign Up</span></a></li>
+						<li><a href="/milkyWayForest/login/loginForm"><i class="xi-user"></i><span>Login</span></a></li>					
 					</c:if>
 					
 					<c:if test="${memId != null }">
-						<li><a href="/milkyWayForest/mypage/mypageMain">My Page</a></li>
-						<li><a href="/milkyWayForest/login/logout">Logout</a></li>
-						<li><a href="/milkyWayForest/cart">cart</a></li>
+						<li><a href="/milkyWayForest/mypage/mypageMain"><span>My Page</span></a></li>
+						<li><a href="/milkyWayForest/login/logout"><span>Logout</span></a></li>
+						<li><a href="/milkyWayForest/cart"><span>cart</span></a></li>
 					</c:if>
 
 					<!-- <li><a href="">Customer Service &amp; Ideas</a></li> -->
-					<li><a href=""></i></a></li>
+					<!-- <li><a href=""></i></a></li> -->
 					<!-- <li><a href="#a">search</a></li> -->
 				</ul>
 			<!-- 모바일버전시, 전체메뉴 아이콘 -->
-			<a href="#a" class="total xi-bars"></a>
-			</div>
+				<a href="#a" class="total xi-bars"></a>
+		</div>
+		
+		
 	</header>
 </div>
 

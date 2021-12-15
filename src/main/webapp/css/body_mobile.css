@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+
+.second_section_text {
+    padding: 6rem 0 0 1rem;
+}
+.second_section_text h1{
+	font-size: 2rem;
+}
+.second_section_text h2{
+	font-size: 13px;
+}
+.text_container {
+	font-family: 'Noto Sans KR', sans-serif;
+	padding: 13rem 0 0 3rem;
+	opacity: 0;
+}
+.text_container h1{
+	display: inline-block;
+	opacity: 1;
+	line-height: 1;
+	color: #000;
+	font-size: 19px;
+	font-weight: 800;
+	margin-bottom: 15px;
+}
+.text_container h3 {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+}
+.text_container h4{
+	display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #333;
+}
+
+.container2 {
+	display:none;
+}
+

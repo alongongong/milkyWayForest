@@ -1,3 +1,30 @@
 @charset "UTF-8";
 
-/* body { background-color: blue; } 확인용 */ 
+#Allheader html { font-size: 18px; }
+
+#Allheader body { font-size: 13pt; }
+
+#Allheader header > div nav {display:none;}
+
+#Allheader header > div .spot i {display:inline-block;font-size:3rem;padding-bottom:10rem;}
+
+#Allheader header .total{display:inline-block;position:absolute; font-size:3rem; right:4rem; top:40px;}
+
+#Allheader header > div .spot { position:absolute; right:0.1px; padding: 15px 6.5rem 0 0;}
+
+#Allheader header .spot li:first-child {display:none;}
+
+#Allheader header .spot li:nth-child(3), 
+#Allheader header .spot li:nth-child(4),
+#Allheader header .spot li:nth-child(5) {display:none;}
+
+#Allheader header .spot li span{position:absolute; left:-10000%;}
+
+.navbar_menu{display:flex;list-style:none;padding-left:0;}
+
+#Allheader header .spot li ~ li a:after{display:none;}
+
+#menu__toggle {opacity: 1;}
+
+.navbar{flex-direction:column;align-teims:flex-start;}
+
