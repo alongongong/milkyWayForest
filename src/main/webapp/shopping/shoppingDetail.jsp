@@ -356,7 +356,7 @@ $(function(){
 				text: '원두',
 				href: '/milkyWayForest/shopping/beanList'
 			}));
-		} else if($('#categoryDiv').val() == '차') {
+		} else if($('#categoryDiv').val() == '티') {
 			$('#shoppingDetailCategory').append($('<a>', {
 				text: '원두 / 차',
 				href: '/milkyWayForest/shopping/beanNTea'
