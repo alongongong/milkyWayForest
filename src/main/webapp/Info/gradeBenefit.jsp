@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="/milkyWayForest/css/grade.css">
 </head> 
+
+<style type="text/css">
+.bg-white {
+	padding-top : 50px;
+}
+</style>
 <body>
 
 <form id="gradeBenefitForm" name="gradeBenefitForm">
@@ -89,7 +95,7 @@
 							골드회원 적립금 5%
 						</p>
 						<div align="center" style="padding-top:1rem;">
-							<button type="button" class="btn btn-outline-secondary" id="button1_open" data-toggle="modal" data-target="#modal1">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary" id="button1_open" data-toggle="modal" data-target="#modal1">자세히 보기</button> -->
 						</div>
 					</div>
 	
@@ -105,7 +111,7 @@
 							Personalized Offer 쿠폰
 						</p>
 						<div align="center" style="padding-top:1rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -120,7 +126,7 @@
 							골드회원만의 e-Gold Card 발급!
 						</p>
 						<div align="center" style="padding-top:1rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -136,7 +142,7 @@
 							Beverage BOGO 쿠폰
 						</p>
 						<div align="center" style="padding-top:1rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -153,7 +159,7 @@
 							카페 아메리카노(Hot/Iced) 쿠폰
 						</p>
 						<div align="center" style="padding-top:1rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -170,7 +176,7 @@
 							스타벅스 리저브™ 음료
 						</p>
 						<div align="center" style="padding-top:.5rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -187,7 +193,7 @@
 							풀 리프 티(Hot/Iced) 쿠폰
 						</p>
 						<div align="center" style="padding-top:.5rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -203,7 +209,7 @@
 							생일 쿠폰 발행
 						</p>
 						<div align="center" style="padding-top:.8rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+							<!-- <button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -219,7 +225,7 @@
 							웰컴 첫 구매 쿠폰 발행
 						</p>
 						<div align="center" style="padding-top:.8rem;">
-							<button type="button" class="btn btn-outline-secondary">자세히 보기</button>
+						<!-- 	<button type="button" class="btn btn-outline-secondary">자세히 보기</button> -->
 						</div>
 					</div>
 					
@@ -235,10 +241,10 @@
 							분실 신고 시 잔액 보호
 						</p>
 						<div align="center" style="padding-top:.8rem;">
-							<button type="button" class="btn btn-outline-secondary" 
+							<!-- <button type="button" class="btn btn-outline-secondary" 
 							data-toggle="modal" data-target="#exampleModal">
 								자세히 보기
-							</button>
+							</button> -->
 						</div>
 					</div>
 					
