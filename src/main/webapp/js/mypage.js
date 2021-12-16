@@ -163,6 +163,9 @@ $('#mypageMyInfo #Update-button').click(function(){
 	}else if(!emailForm.test(email)){
 		$('#mypageMyInfo #result-div').html('잘못된 이메일 형식입니다');
 		
+	}else if($('#mypageMyInfo #emailNum').val() == ''){
+		$('#mypageMyInfo #result-div').html('이메일을 인증하세요');
+		
 	}else if(email1==reEmail1 && email2==reEmail2){
 		
 		$.ajax({

@@ -24,18 +24,18 @@
 
 #Allheader header .spot li ~ li a:after{display:none;}
 
-#menu__toggle {opacity: 1;}
+#Allheader header #menu__toggle {opacity: 1;}
 
-.navbar{flex-direction:column;align-teims:flex-start;}
+#Allheader header .navbar{flex-direction:column;align-teims:flex-start;}
 
-#menu__toggle {opacity: 1; }
+#Allheader header #menu__toggle {opacity: 1; }
 
-#menu__toggle:checked ~ .menu__btn > span {transform: rotate(45deg);}
-#menu__toggle:checked ~ .menu__btn > span::before {top: 0;transform: rotate(0);}
-#menu__toggle:checked ~ .menu__btn > span::after {top: 0;transform: rotate(90deg);}
-#menu__toggle:checked ~ .menu__box {visibility: visible;right: 0;}
+#Allheader header #menu__toggle:checked ~ .menu__btn > span {transform: rotate(45deg);}
+#Allheader header #menu__toggle:checked ~ .menu__btn > span::before {top: 0;transform: rotate(0);}
+#Allheader header #menu__toggle:checked ~ .menu__btn > span::after {top: 0;transform: rotate(90deg);}
+#Allheader header #menu__toggle:checked ~ .menu__box {visibility: visible;right: 0;}
 
-.menu__box {
+#Allheader header .menu__box {
   display: block;
   position: fixed;
   visibility: hidden;
@@ -55,7 +55,7 @@
   transition-duration: .25s;
 }
 
-.menu__item {
+#Allheader header .menu__item {
   display: block;
   padding: 12px 24px;
 
@@ -69,17 +69,17 @@
 
   transition-duration: .25s;
 }
-.menu__item:hover {
+#Allheader header .menu__item:hover {
   background-color: #CFD8DC;
 }
-#menu__toggle{
+#Allheader header #menu__toggle{
 	display:none;
 }
 #Allheader header .total{
 	cursor:pointer;
 	z-index:1;
 }
-.menu__item1{
+#Allheader header .menu__item1{
   display: block;
   padding: 8px 45px;
 
@@ -92,4 +92,11 @@
   text-decoration: none;
 
   transition-duration: .25s;
+}
+
+#Allheader header .scrollBilnd{
+	width:230px;
+	height:100%;
+	overflow-y:scroll;
+	background-color:green;
 }
