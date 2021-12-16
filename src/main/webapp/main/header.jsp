@@ -20,7 +20,7 @@
 		<!--				header전체메뉴				--> 		
 		<!--				header 하단메뉴				-->
 		<div>
-			<h1><a href="/milkyWayForest/admin"><img src="/milkyWayForest/image/milkyWayForestLogo2.png" alt="logo"></a></h1>
+			<h1><a href="/milkyWayForest/"><img src="/milkyWayForest/image/milkyWayForestLogo2.png" alt="logo"></a></h1>
 		
 			<nav>
 				<ul class="menu">
